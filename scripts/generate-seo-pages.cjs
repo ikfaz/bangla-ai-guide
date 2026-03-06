@@ -1,167 +1,255 @@
-﻿const fs = require("fs");
+const fs = require("fs");
 const path = require("path");
 
 const root = path.resolve(__dirname, "..");
-const lastmod = "2026-03-05";
+const lastmod = "2026-03-06";
 
-const linkPool = [
+const labelMap = new Map([
   ["index.html", "বাংলা AI গাইড হোম"],
   ["submit.html", "নতুন টুল সাবমিট করুন"],
   ["ai-tools-bangladesh-bengali.html", "Bangla AI tools directory"],
   ["chatgpt-bangladesh-theke-bebohar.html", "ChatGPT Bangladesh guide"],
-  ["ai-tools-bdt-price-2026-bangladesh.html", "AI tools BDT price 2026"],
-  ["bkash-diye-ai-tools-kena-jay.html", "bKash দিয়ে AI tools কেনা"],
   ["vpn-chara-ai-tools-bangladesh.html", "VPN ছাড়া AI tools Bangladesh"],
-];
+  ["bkash-diye-ai-tools-kena-jay.html", "bKash দিয়ে AI tools কেনা যায়"],
+  ["elevenlabs-bangla-voice.html", "ElevenLabs বাংলা ভয়েস"],
+  ["midjourney-bangladesh-free.html", "Midjourney Bangladesh free"],
+  ["cursor-ai-bangla.html", "Cursor AI বাংলা"],
+  ["ai-tools-for-freelancers-bangladesh.html", "AI tools for freelancers Bangladesh"],
+  ["ai-tools-bdt-price-2026-bangladesh.html", "AI tools BDT price 2026"],
+  ["bangladeshe-ai-tools-kibhabe-bebohar-korben.html", "বাংলাদেশে AI tools কীভাবে ব্যবহার করবেন"],
+  ["best-ai-tools-for-content-creators-bangladesh.html", "best AI tools for content creators"],
+  ["free-ai-tools-2026-bangladesh.html", "free AI tools 2026 Bangladesh"],
+  ["ai-image-generator-free-bangladesh.html", "AI image generator free Bangladesh"],
+  ["best-ai-coding-tools-for-beginners-bangladesh.html", "best AI coding tools for beginners"],
+  ["ai-tools-for-youtube-bangladesh.html", "AI tools for YouTube Bangladesh"],
+]);
 
-const mediumPages = [
-  {
-    slug: "ai-tools-bangladesh-bengali",
-    primary: "Bangla AI tools directory",
-    title: "Bangla AI tools directory | বাংলা AI গাইড",
-    description: "Bangla AI tools directory: বাংলাদেশে ব্যবহারযোগ্য AI টুলস, BDT price, payment method এবং VPN reality নিয়ে practical resource hub।",
-    h1: "Bangla AI tools directory: বাংলাদেশের জন্য কিউরেটেড AI resource",
-    schemaType: "faq",
-    quick: ["এই পেজটি বাংলা AI গাইডের central directory hub।", "Bangla readability + English search intent একসাথে রাখা হয়েছে।", "লক্ষ্য: বাংলাদেশি user-দের দ্রুত সঠিক tool নির্বাচন।"],
-    use: ["Content, coding, image, productivity use-case ধরে tool shortlist করুন।", "সব category থেকে একসাথে paid tool না নিয়ে phased adoption করুন।", "Monthly re-test করে access ও quality যাচাই করুন।"],
-    pay: ["USD price থেকে BDT estimate করে budget cap রাখুন।", "bKash/card route আগে যাচাই করুন।", "Low-value subscription বাদ দিয়ে stack lean রাখুন।"],
-    vpn: ["VPN-free tool daily কাজে বেশি stable।", "Policy change হলে access behavior বদলাতে পারে।", "Backup workflow থাকলে production risk কমে।"],
-    steps: ["Step 1: use-case list করুন।", "Step 2: free benchmark চালান।", "Step 3: cost-output score দিন।", "Step 4: best tools shortlist করুন।", "Step 5: quarterly stack refresh করুন।"],
-    table: [["Use Case", "Starter Stack", "Budget"], ["Content", "LLM + editor", "৳০-৳২,২০০"], ["Coding", "AI IDE + chat", "৳০-৳৫,৫০০"], ["Creator", "Image + voice", "৳০-৳৬,৫০০"]],
-    faq: [["Bangla AI tools directory কী?", "বাংলাদেশ-কেন্দ্রিক টুল ও গাইডের কিউরেটেড তালিকা।"], ["সব টুল কি একইভাবে কাজ করে?", "না, access/payment toolভেদে ভিন্ন।"], ["কোন frequency-তে update করব?", "সাপ্তাহিক content, মাসিক compatibility check।"], ["Beginner কীভাবে শুরু করবে?", "একটি use-case দিয়ে free stack শুরু করুন।"]],
-    outbound: ["বাংলা AI গাইড হোম", "https://banglaaiguide.com/"],
-  },
+const clusterPages = [
   {
     slug: "chatgpt-bangladesh-theke-bebohar",
-    primary: "ChatGPT Bangladesh",
+    primaryKeyword: "ChatGPT Bangladesh",
+    secondaryKeywords: ["ChatGPT বাংলাদেশ থেকে ব্যবহার", "AI tools Bangladesh Bengali"],
+    longTailTargets: ["ChatGPT Bangladesh without VPN", "buy ChatGPT Plus Bangladesh"],
+    intentType: "explainer",
+    yearPolicy: "2026_current_state",
     title: "ChatGPT Bangladesh | বাংলা AI গাইড",
-    description: "ChatGPT Bangladesh setup, prompt workflow, BDT cost planning এবং বাংলাদেশ থেকে ব্যবহারযোগ্যতা নিয়ে practical গাইড।",
+    description: "ChatGPT Bangladesh 2026 guide: বাংলাদেশ থেকে setup, BDT budget, VPN reality এবং safe workflow নিয়ে practical নির্দেশনা।",
     h1: "ChatGPT Bangladesh: বাংলাদেশ থেকে ব্যবহার করার পূর্ণ গাইড",
-    schemaType: "article",
-    quick: ["এই পেজটি ChatGPT Bangladesh search intent target করে retarget করা।", "বাংলাদেশি user-এর setup, pricing এবং workflow question ফোকাস করা হয়েছে।", "লক্ষ্য: repeatable ও safe usage।"],
-    use: ["Client communication, research, draft writing এবং coding support-এ ChatGPT কার্যকর।", "বাংলা output ভালো পেতে context + format prompt-এ দিন।", "Reusable prompts রাখলে কাজ দ্রুত হয়।"],
-    pay: ["Free plan দিয়ে শুরু করে value বুঝে paid plan নিন।", "BDT conversion ধরে মাসিক budget রাখুন।", "Team use হলে shared prompt library রাখুন।"],
-    vpn: ["Stable login pattern account safety বাড়ায়।", "Frequent region switching এড়িয়ে চলুন।", "Policy-compliant usage দীর্ঘমেয়াদি stability দেয়।"],
-    steps: ["Step 1: account setup সম্পন্ন করুন।", "Step 2: ৩টি default prompt template বানান।", "Step 3: feedback loop রাখুন।", "Step 4: reusable instruction snippets রাখুন।", "Step 5: weekly output review করুন।"],
-    table: [["Task", "Prompt Focus", "Outcome"], ["Blog draft", "Audience + outline", "Faster draft"], ["Client email", "Tone + action", "Clear reply"], ["Code help", "Error + context", "Actionable fix"]],
-    faq: [["ChatGPT Bangladesh থেকে ব্যবহার করতে extra setup লাগে?", "সাধারণত standard signup যথেষ্ট।"], ["বাংলা output কি ভালো?", "Detailed instruction দিলে ভাল output পাওয়া যায়।"], ["Free plan কি কার্যকর?", "হ্যাঁ, শুরুতে validation-এর জন্য যথেষ্ট।"], ["Freelancer কীভাবে ব্যবহার করবে?", "Proposal, research, comms, draft automation-এ।"]],
+    topicBn: "ChatGPT",
     outbound: ["ChatGPT খুলুন", "https://chat.openai.com"],
+    internalLinks: ["ai-tools-bangladesh-bengali.html", "vpn-chara-ai-tools-bangladesh.html", "bkash-diye-ai-tools-kena-jay.html", "ai-tools-bdt-price-2026-bangladesh.html", "ai-tools-for-freelancers-bangladesh.html"],
+  },
+  {
+    slug: "vpn-chara-ai-tools-bangladesh",
+    primaryKeyword: "VPN ছাড়া AI tools Bangladesh",
+    secondaryKeywords: ["AI tools without VPN Bangladesh", "which AI tools work in Bangladesh"],
+    longTailTargets: ["ChatGPT Bangladesh without VPN", "AI tools that work in Bangladesh without VPN"],
+    intentType: "guide",
+    yearPolicy: "2026_current_state",
+    title: "VPN ছাড়া AI tools Bangladesh | বাংলা AI গাইড",
+    description: "VPN ছাড়া AI tools Bangladesh 2026: stable access, payment planning, এবং production-safe workflow নিয়ে বাংলাদেশি গাইড।",
+    h1: "VPN ছাড়া AI tools Bangladesh: Stable setup গাইড",
+    topicBn: "VPN-free AI tools",
+    outbound: ["Perplexity খুলুন", "https://www.perplexity.ai"],
+    internalLinks: ["ai-tools-bangladesh-bengali.html", "chatgpt-bangladesh-theke-bebohar.html", "free-ai-tools-2026-bangladesh.html", "ai-tools-bdt-price-2026-bangladesh.html", "index.html"],
+  },
+  {
+    slug: "bkash-diye-ai-tools-kena-jay",
+    primaryKeyword: "bKash দিয়ে AI tools কেনা যায়",
+    secondaryKeywords: ["AI tools payment Bangladesh without credit card", "ChatGPT bKash payment Bangladesh"],
+    longTailTargets: ["how to pay for ChatGPT in Bangladesh", "Midjourney subscription Bangladesh how to pay"],
+    intentType: "guide",
+    yearPolicy: "2026_current_state",
+    title: "bKash দিয়ে AI tools কেনা যায় | বাংলা AI গাইড",
+    description: "bKash দিয়ে AI tools কেনা যায় কি না, card fallback, BDT budget এবং safe payment flow নিয়ে 2026 practical guide।",
+    h1: "bKash দিয়ে AI tools কেনা যায়? বাস্তব গাইড",
+    topicBn: "AI payment",
+    outbound: ["OpenAI Pricing", "https://openai.com/chatgpt/pricing"],
+    internalLinks: ["ai-tools-bangladesh-bengali.html", "ai-tools-bdt-price-2026-bangladesh.html", "chatgpt-bangladesh-theke-bebohar.html", "midjourney-bangladesh-free.html", "index.html"],
+  },
+  {
+    slug: "elevenlabs-bangla-voice",
+    primaryKeyword: "ElevenLabs বাংলা ভয়েস",
+    secondaryKeywords: ["ElevenLabs বাংলা voice generator free", "AI tools for Bangladeshi YouTubers"],
+    longTailTargets: ["ElevenLabs বাংলা voice generator free", "AI tools for YouTube Bangladesh"],
+    intentType: "explainer",
+    yearPolicy: "2026_current_state",
+    title: "ElevenLabs বাংলা ভয়েস | বাংলা AI গাইড",
+    description: "ElevenLabs বাংলা ভয়েস 2026 guide: voice quality setup, free tier, BDT budgeting এবং creator workflow নিয়ে বাংলা নির্দেশনা।",
+    h1: "ElevenLabs বাংলা ভয়েস: Creator workflow গাইড",
+    topicBn: "বাংলা AI voice",
+    outbound: ["ElevenLabs Pricing", "https://elevenlabs.io/pricing"],
+    internalLinks: ["ai-tools-bangladesh-bengali.html", "ai-tools-for-youtube-bangladesh.html", "best-ai-tools-for-content-creators-bangladesh.html", "free-ai-tools-2026-bangladesh.html", "index.html"],
+  },
+  {
+    slug: "midjourney-bangladesh-free",
+    primaryKeyword: "Midjourney Bangladesh free",
+    secondaryKeywords: ["AI image generator free Bangladesh", "Midjourney Bangladesh card payment"],
+    longTailTargets: ["Midjourney subscription Bangladesh how to pay", "AI tools for Bangladeshi YouTubers"],
+    intentType: "explainer",
+    yearPolicy: "2026_current_state",
+    title: "Midjourney Bangladesh free | বাংলা AI গাইড",
+    description: "Midjourney Bangladesh free query-এর বাস্তবতা, card payment context, BDT planning এবং creator alternatives নিয়ে 2026 guide।",
+    h1: "Midjourney Bangladesh free: বাস্তবতা ও বিকল্প",
+    topicBn: "AI image creation",
+    outbound: ["Midjourney Pricing", "https://www.midjourney.com/account"],
+    internalLinks: ["ai-tools-bangladesh-bengali.html", "ai-image-generator-free-bangladesh.html", "bkash-diye-ai-tools-kena-jay.html", "ai-tools-for-youtube-bangladesh.html", "index.html"],
+  },
+  {
+    slug: "cursor-ai-bangla",
+    primaryKeyword: "Cursor AI বাংলা",
+    secondaryKeywords: ["Cursor AI বাংলাদেশে কীভাবে কাজ করে", "best AI coding tools for beginners"],
+    longTailTargets: ["Cursor AI বাংলাদেশে কীভাবে কাজ করে", "AI tools freelancer Bangladesh income"],
+    intentType: "explainer",
+    yearPolicy: "2026_current_state",
+    title: "Cursor AI বাংলা | বাংলা AI গাইড",
+    description: "Cursor AI বাংলা 2026 guide: coding workflow, beginner adoption, BDT budgeting এবং freelancer productivity নিয়ে practical বাংলা বিশ্লেষণ।",
+    h1: "Cursor AI বাংলা: ডেভেলপারদের জন্য workflow গাইড",
+    topicBn: "AI coding",
+    outbound: ["Cursor Pricing", "https://cursor.com/pricing"],
+    internalLinks: ["ai-tools-bangladesh-bengali.html", "best-ai-coding-tools-for-beginners-bangladesh.html", "ai-tools-for-freelancers-bangladesh.html", "chatgpt-bangladesh-theke-bebohar.html", "index.html"],
   },
   {
     slug: "ai-tools-for-freelancers-bangladesh",
-    primary: "AI tools for freelancers Bangladesh",
+    primaryKeyword: "AI tools for freelancers Bangladesh",
+    secondaryKeywords: ["AI tools freelancer Bangladesh income", "AI দিয়ে ফ্রিল্যান্সিং বাংলাদেশ"],
+    longTailTargets: ["AI tools for Bangladeshi freelancers Upwork", "AI tools increase freelancing income Bangladesh"],
+    intentType: "guide",
+    yearPolicy: "2026_current_state",
     title: "AI tools for freelancers Bangladesh | বাংলা AI গাইড",
-    description: "AI tools for freelancers Bangladesh: প্রপোজাল, রিসার্চ, ডেলিভারি অটোমেশন এবং BDT বাজেটে practical টুল স্ট্যাক।",
-    h1: "AI tools for freelancers Bangladesh: কাজের জন্য বাস্তব স্ট্যাক",
-    schemaType: "faq",
-    quick: ["Freelancer-দের জন্য AI টুলস মানে সরাসরি output speed বৃদ্ধি।", "এই গাইডে বাংলাদেশি ফ্রিল্যান্স workflow অনুযায়ী ব্যবহারযোগ্য stack দেয়া হয়েছে।", "লক্ষ্য: কম খরচে বেশি deliverable।"],
-    use: ["Proposal, client reply, brief analysis এবং delivery polish-এ AI টুলস high leverage দেয়।", "Use-case ধরে stack সাজালে tool overlap কমে।", "Weekly review করলে low-value tool বাদ দেয়া সহজ হয়।"],
-    pay: ["একটি paid + free helper model শুরুতে সবচেয়ে কার্যকর।", "USD price কে BDT conversion করে monthly cap রাখুন।", "Renewal reminder না রাখলে অপ্রয়োজনীয় খরচ বাড়ে।"],
-    vpn: ["VPN-free tool হলে daily client work-এ friction কমে।", "Access unstable tool deadline miss করাতে পারে।", "VPN-required flow হলে backup stack রাখুন।"],
-    steps: ["Step 1: time-consuming 3টি task লিখুন।", "Step 2: প্রতিটি task-এ একটি core AI tool দিন।", "Step 3: ১৪ দিনের benchmark করুন।", "Step 4: quality+speed score করুন।", "Step 5: ROI দেখে final stack রাখুন।"],
-    table: [["Task", "Tool Type", "Outcome"], ["Proposal", "LLM", "Faster response"], ["Research", "AI Search", "Better insights"], ["Delivery", "Editor AI", "Cleaner output"]],
-    faq: [["Freelancer-এর প্রথম paid tool কোনটি?", "সাধারণত একটি শক্তিশালী LLM।"], ["Free tool দিয়েই কি কাজ হয়?", "হ্যাঁ, শুরুতে বেশিরভাগ কাজ হয়।"], ["Budget cap কত?", "শুরুতে আয়ের ৫-১০%।"], ["সব টুল কি monthly নেব?", "না, value না পেলে বাদ দিন।"]],
-    outbound: ["ChatGPT খুলুন", "https://chat.openai.com"],
+    description: "AI tools for freelancers Bangladesh: proposal-to-delivery workflow, BDT control এবং income-focused stack নিয়ে 2026 practical guide।",
+    h1: "AI tools for freelancers Bangladesh: বাস্তব কাজের স্ট্যাক",
+    topicBn: "freelancer AI workflow",
+    outbound: ["Upwork", "https://www.upwork.com"],
+    internalLinks: ["ai-tools-bangladesh-bengali.html", "chatgpt-bangladesh-theke-bebohar.html", "cursor-ai-bangla.html", "best-ai-tools-for-content-creators-bangladesh.html", "index.html"],
+  },
+  {
+    slug: "ai-tools-bdt-price-2026-bangladesh",
+    primaryKeyword: "AI tools BDT price 2026",
+    secondaryKeywords: ["AI tools BDT price", "বাংলাদেশে AI টুলস পেমেন্ট"],
+    longTailTargets: ["AI tools payment Bangladesh without credit card", "buy ChatGPT Plus Bangladesh"],
+    intentType: "guide",
+    yearPolicy: "2026_current_state",
+    title: "AI tools BDT price 2026 | বাংলা AI গাইড",
+    description: "AI tools BDT price 2026: USD conversion, payment method, subscription planning এবং Bangladesh cost-control strategy বাংলায়।",
+    h1: "AI tools BDT price 2026: বাংলাদেশি বাজেট গাইড",
+    topicBn: "AI pricing",
+    outbound: ["ChatGPT Pricing", "https://openai.com/chatgpt/pricing"],
+    internalLinks: ["ai-tools-bangladesh-bengali.html", "bkash-diye-ai-tools-kena-jay.html", "free-ai-tools-2026-bangladesh.html", "chatgpt-bangladesh-theke-bebohar.html", "index.html"],
+  },
+  {
+    slug: "bangladeshe-ai-tools-kibhabe-bebohar-korben",
+    primaryKeyword: "বাংলাদেশে AI tools কীভাবে ব্যবহার করবেন",
+    secondaryKeywords: ["AI tools Bangladesh Bengali", "বাংলা AI গাইড"],
+    longTailTargets: ["বাংলাদেশে AI tools কীভাবে ব্যবহার করবেন", "বাংলাদেশে AI দিয়ে আয় করার উপায়"],
+    intentType: "guide",
+    yearPolicy: "2026_current_state",
+    title: "বাংলাদেশে AI tools কীভাবে ব্যবহার করবেন | বাংলা AI গাইড",
+    description: "বাংলাদেশে AI tools কীভাবে ব্যবহার করবেন: beginner tutorial, payment context, VPN reality এবং 2026 practical roadmap।",
+    h1: "বাংলাদেশে AI tools কীভাবে ব্যবহার করবেন: টিউটোরিয়াল",
+    topicBn: "AI beginner setup",
+    outbound: ["Google AI", "https://ai.google"],
+    internalLinks: ["ai-tools-bangladesh-bengali.html", "ai-tools-for-freelancers-bangladesh.html", "vpn-chara-ai-tools-bangladesh.html", "free-ai-tools-2026-bangladesh.html", "index.html"],
   },
   {
     slug: "best-ai-tools-for-content-creators-bangladesh",
-    primary: "best AI tools for content creators",
+    primaryKeyword: "best AI tools for content creators",
+    secondaryKeywords: ["best AI tools for content creators Bangladesh", "Bangla AI tools directory"],
+    longTailTargets: ["AI tools for Bangladeshi YouTubers", "AI tools for content creators Bangladesh"],
+    intentType: "guide",
+    yearPolicy: "2026_current_state",
     title: "best AI tools for content creators | বাংলা AI গাইড",
-    description: "best AI tools for content creators in Bangladesh: idea থেকে publish পর্যন্ত creator workflow stack, BDT budget এবং tool selection guide।",
+    description: "best AI tools for content creators Bangladesh: idea-to-publish stack, BDT budget এবং creator growth workflow নিয়ে 2026 guide।",
     h1: "best AI tools for content creators: বাংলাদেশি creator stack",
-    schemaType: "faq",
-    quick: ["Creator workflow-এ AI সবচেয়ে বেশি কাজ দেয় ideation ও production speed-এ।", "Platform অনুযায়ী stack আলাদা হওয়া দরকার।", "এই পেজে বাংলাদেশি creator-দের জন্য practical setup দেয়া হয়েছে।"],
-    use: ["Topic ideation, script, thumbnail concept এবং caption-এ AI সমানভাবে useful।", "Small team হলে role-based tool নির্বাচন করুন।", "Template library রাখলে consistent output পাওয়া যায়।"],
-    pay: ["One premium + two free model অনেক creator-এর জন্য যথেষ্ট।", "BDT per content হিসাব করুন।", "Irregular income হলে monthly plan safer।"],
-    vpn: ["Publishing week-এ unstable tool বড় ঝুঁকি।", "VPN-free tools primary pipeline-এ রাখুন।", "Risky tool experimentation-এ সীমাবদ্ধ রাখুন।"],
-    steps: ["Step 1: pipeline লিখুন (idea→script→asset→publish)।", "Step 2: প্রতিটি stage-এ core AI tool দিন।", "Step 3: ১০টি content test করুন।", "Step 4: CTR/watch-time দেখে tune করুন।", "Step 5: best workflow template করুন।"],
-    table: [["Stage", "Tool Type", "KPI"], ["Ideation", "LLM/Search", "Topic quality"], ["Production", "Script + Voice", "Time saved"], ["Packaging", "Image + Copy", "CTR"]],
-    faq: [["Beginner creator কোন stack নেবে?", "LLM + free image tool + editor।"], ["Premium কি দরকার?", "সব সময় নয়।"], ["AI content monetization-safe?", "Policy-compliant হলে।"], ["Budget planning কীভাবে?", "Per-video cost track করে।"]],
+    topicBn: "content creator stack",
     outbound: ["Canva Magic Studio", "https://www.canva.com/magic-studio/"],
+    internalLinks: ["ai-tools-bangladesh-bengali.html", "ai-tools-for-youtube-bangladesh.html", "ai-image-generator-free-bangladesh.html", "elevenlabs-bangla-voice.html", "index.html"],
   },
   {
     slug: "free-ai-tools-2026-bangladesh",
-    primary: "free AI tools 2026 Bangladesh",
+    primaryKeyword: "free AI tools 2026 Bangladesh",
+    secondaryKeywords: ["ফ্রি AI টুলস বাংলাদেশ ২০২৬", "free AI tools BD"],
+    longTailTargets: ["free AI tools Bangladesh 2026", "AI tools without VPN Bangladesh"],
+    intentType: "guide",
+    yearPolicy: "2026_current_state",
     title: "free AI tools 2026 Bangladesh | বাংলা AI গাইড",
-    description: "free AI tools 2026 Bangladesh: ফ্রি টুলস দিয়ে বাস্তব কাজ, limit management, upgrade trigger এবং budget-saving workflow বাংলায়।",
-    h1: "free AI tools 2026 Bangladesh: ফ্রি স্ট্যাকে কাজের ফল",
-    schemaType: "faq",
-    quick: ["ফ্রি AI টুলস দিয়ে 2026-এও practical workflow সম্ভব।", "Limit-aware strategy না থাকলে free stack ভেঙে যায়।", "এই গাইডে বাংলাদেশি user-এর জন্য tested approach দেয়া হয়েছে।"],
-    use: ["Students, starter freelancer এবং small business-এ free tools high ROI দেয়।", "Credit/message cap track করা জরুরি।", "Single tool dependency এড়িয়ে combo stack রাখুন।"],
-    pay: ["Bottleneck প্রমাণিত হলে তবেই paid upgrade নিন।", "BDT conversion ধরে savings হিসাব করুন।", "অপ্রয়োজনীয় upgrade এড়াতে monthly review করুন।"],
-    vpn: ["Free tool policy দ্রুত বদলাতে পারে, monthly check করুন।", "VPN-required হলে backup free option রাখুন।", "VPN-free tools daily use habit তৈরি করে।"],
-    steps: ["Step 1: 3টি core কাজ ঠিক করুন।", "Step 2: প্রতি কাজে 2টি free tool shortlist করুন।", "Step 3: ১৪ দিনের usage log রাখুন।", "Step 4: output quality score করুন।", "Step 5: দরকার হলে only one paid upgrade নিন।"],
-    table: [["Category", "Free Option", "Limit"], ["LLM", "Chat tier", "Message cap"], ["Image", "Free credits", "Monthly cap"], ["Coding", "IDE assist", "Feature lock"]],
-    faq: [["ফ্রি stack কি client কাজে চলে?", "হ্যাঁ, QA করলে চলে।"], ["কখন paid হওয়া উচিত?", "Limit business impact করলে।"], ["সব free tool কি stable?", "না, retest দরকার।"], ["Free-first strategy কি টেকসই?", "হ্যাঁ, structured হলে।"]],
-    outbound: ["Perplexity free", "https://www.perplexity.ai"],
+    description: "free AI tools 2026 Bangladesh তালিকা: limited budget setup, usage limits, upgrade trigger এবং no-VPN context নিয়ে practical guide।",
+    h1: "free AI tools 2026 Bangladesh: ফ্রি স্ট্যাকে বাস্তব কাজ",
+    topicBn: "free AI stack",
+    outbound: ["Gemini", "https://gemini.google.com"],
+    internalLinks: ["ai-tools-bangladesh-bengali.html", "vpn-chara-ai-tools-bangladesh.html", "ai-tools-bdt-price-2026-bangladesh.html", "chatgpt-bangladesh-theke-bebohar.html", "index.html"],
   },
   {
     slug: "ai-image-generator-free-bangladesh",
-    primary: "AI image generator free Bangladesh",
+    primaryKeyword: "AI image generator free Bangladesh",
+    secondaryKeywords: ["AI image generator free Bangladesh tutorial", "Midjourney Bangladesh free"],
+    longTailTargets: ["AI image generator free Bangladesh", "best AI tools for content creators"],
+    intentType: "explainer",
+    yearPolicy: "2026_current_state",
     title: "AI image generator free Bangladesh | বাংলা AI গাইড",
-    description: "AI image generator free Bangladesh গাইড: prompt workflow, free credit strategy, output QA এবং creator-ready visual production বাংলায়।",
-    h1: "AI image generator free Bangladesh: free visual workflow",
-    schemaType: "article",
-    quick: ["Free image generator দিয়ে social visual দ্রুত তৈরি করা যায়।", "Prompt template না থাকলে quality inconsistent হয়।", "এই গাইডে concept থেকে publish-ready flow দেয়া আছে।"],
-    use: ["Thumbnail, ad concept, blog cover এবং social post visual-এ free tools কার্যকর।", "A/B prompt testing করলে output improve হয়।", "Publish আগে manual QA জরুরি।"],
-    pay: ["Free credit শেষ হলে production plan বানান।", "Client কাজে premium fallback রাখুন।", "BDT per asset হিসাব করুন।"],
-    vpn: ["Region issue আগে test করুন।", "VPN-dependent tool কে primary stack করবেন না।", "Stable tool দিয়ে prompt library বানান।"],
-    steps: ["Step 1: visual brief লিখুন।", "Step 2: ১০টি prompt variation চালান।", "Step 3: best outputs refine করুন।", "Step 4: editor-এ final touch দিন।", "Step 5: policy/license check করে publish করুন।"],
-    table: [["Goal", "Workflow", "Result"], ["Thumbnail", "Prompt + overlay", "Clickable asset"], ["Ad concept", "Batch gen", "Idea direction"], ["Blog cover", "Template style", "Brand consistency"]],
-    faq: [["Free image tool commercial use হবে?", "License terms দেখে ব্যবহার করুন।"], ["Prompt কেমন লিখব?", "Style+subject+format স্পষ্ট দিন।"], ["Beginner কোথা থেকে শুরু?", "Simple template দিয়ে iterative test করুন।"], ["সব কাজে premium লাগবে?", "না, use-case based।"]],
-    outbound: ["Adobe Firefly", "https://firefly.adobe.com"],
+    description: "AI image generator free Bangladesh tutorial: prompt strategy, creator workflow, BDT budgeting এবং tool comparison নিয়ে 2026 guide।",
+    h1: "AI image generator free Bangladesh: creator visual workflow",
+    topicBn: "free image generation",
+    outbound: ["Ideogram Pricing", "https://ideogram.ai/pricing"],
+    internalLinks: ["ai-tools-bangladesh-bengali.html", "midjourney-bangladesh-free.html", "best-ai-tools-for-content-creators-bangladesh.html", "ai-tools-for-youtube-bangladesh.html", "index.html"],
   },
   {
     slug: "best-ai-coding-tools-for-beginners-bangladesh",
-    primary: "best AI coding tools for beginners",
+    primaryKeyword: "best AI coding tools for beginners",
+    secondaryKeywords: ["best AI coding tools for beginners Bangladesh", "Cursor AI বাংলা"],
+    longTailTargets: ["Cursor AI বাংলাদেশে কীভাবে কাজ করে", "AI tools for freelancers Bangladesh"],
+    intentType: "guide",
+    yearPolicy: "2026_current_state",
     title: "best AI coding tools for beginners | বাংলা AI গাইড",
-    description: "best AI coding tools for beginners in Bangladesh: শেখা + project build-এর জন্য beginner-safe AI coding workflow, cost planning এবং tool selection।",
-    h1: "best AI coding tools for beginners: বাংলাদেশি learner guide",
-    schemaType: "faq",
-    quick: ["AI coding tool beginner-দের শেখার গতি বাড়ায়।", "Blind copy করলে dependency বাড়ে।", "এই গাইডে learning-first setup দেয়া হয়েছে।"],
-    use: ["Concept explanation, debugging এবং starter project scaffold-এ AI useful।", "Problem statement লিখে prompt দিলে নির্ভুলতা বাড়ে।", "Generated code test ছাড়া merge করবেন না।"],
-    pay: ["Free tier + one low-cost tool দিয়ে শুরু করুন।", "Daily usage stable হলে paid evaluate করুন।", "BDT budget cap maintain করুন।"],
-    vpn: ["Stable IDE access learning momentum ধরে রাখে।", "VPN issue বেশি হলে alternate tool রাখুন।", "Policy-safe usage long-term দরকার।"],
-    steps: ["Step 1: language goal ঠিক করুন।", "Step 2: প্রতিদিন ১টি coding problem AI সহ solve করুন।", "Step 3: generated code নিজে explain করুন।", "Step 4: tests লিখে validate করুন।", "Step 5: weekly mini-project build করুন।"],
-    table: [["Stage", "Tool", "Benefit"], ["Concept", "AI Tutor", "Clarity"], ["Build", "AI IDE", "Speed"], ["Debug", "Error Explainer", "Direction"]],
-    faq: [["AI দিয়ে শিখব নাকি manual?", "দুটো মিশিয়ে শিখুন।"], ["AI code copy safe?", "না, review+test বাধ্যতামূলক।"], ["Beginner budget কত?", "Free-first model।"], ["কখন paid coding tool?", "Productivity gain প্রমাণিত হলে।"]],
-    outbound: ["GitHub Copilot", "https://github.com/features/copilot"],
+    description: "best AI coding tools for beginners Bangladesh: learning-first setup, BDT planning এবং beginner-to-freelancer coding roadmap নিয়ে guide।",
+    h1: "best AI coding tools for beginners: বাংলাদেশি learner roadmap",
+    topicBn: "coding beginner stack",
+    outbound: ["GitHub Copilot Pricing", "https://github.com/features/copilot#pricing"],
+    internalLinks: ["ai-tools-bangladesh-bengali.html", "cursor-ai-bangla.html", "ai-tools-for-freelancers-bangladesh.html", "chatgpt-bangladesh-theke-bebohar.html", "index.html"],
   },
   {
     slug: "ai-tools-for-youtube-bangladesh",
-    primary: "AI tools for YouTube Bangladesh",
+    primaryKeyword: "AI tools for YouTube Bangladesh",
+    secondaryKeywords: ["AI tools for Bangladeshi YouTubers", "best AI tools for content creators"],
+    longTailTargets: ["AI tools for YouTube Bangladesh বাংলা tutorial", "ElevenLabs বাংলা voice generator free"],
+    intentType: "guide",
+    yearPolicy: "2026_current_state",
     title: "AI tools for YouTube Bangladesh | বাংলা AI গাইড",
-    description: "AI tools for YouTube Bangladesh: script, thumbnail, voice এবং publish optimization workflow-এর জন্য practical creator guide বাংলায়।",
+    description: "AI tools for YouTube Bangladesh: script, thumbnail, voice, BDT cost control এবং creator growth workflow নিয়ে 2026 বাংলা guide।",
     h1: "AI tools for YouTube Bangladesh: creator production stack",
-    schemaType: "faq",
-    quick: ["YouTube workflow-এ AI সবচেয়ে বেশি কাজ দেয় speed ও consistency-তে।", "এই পেজে বাংলাদেশি creator use-case ধরে tool mapping করা হয়েছে।", "লক্ষ্য: quality বজায় রেখে দ্রুত publish।"],
-    use: ["Topic research, hook writing, script drafting, thumbnail এবং subtitle-এ AI ব্যবহার করুন।", "Template-driven pipeline ছাড়া long-term consistency কঠিন।", "Analytics feedback loop দিয়ে prompt উন্নত করুন।"],
-    pay: ["Start with free + one paid core tool.", "Per-video BDT cost track করুন।", "Growth stable হলে advanced plan নিন।"],
-    vpn: ["Upload week-এ access fail হলে schedule নষ্ট হয়।", "VPN-free tools primary pipeline রাখুন।", "Risky tools experiment-only রাখুন।"],
-    steps: ["Step 1: niche topic bank তৈরি করুন।", "Step 2: script outline AI দিয়ে করুন।", "Step 3: thumbnail concept batch বানান।", "Step 4: voice/subtitle finalize করুন।", "Step 5: CTR + retention দেখে iterate করুন।"],
-    table: [["Stage", "AI Type", "KPI"], ["Research", "LLM/Search", "Topic relevance"], ["Production", "Script+Voice", "Publish speed"], ["Packaging", "Title+Thumb AI", "CTR"]],
-    faq: [["YouTube creator-এর প্রথম AI tool কোনটি?", "Script সহায়ক LLM।"], ["AI voice monetization-safe?", "Policy মেনে ব্যবহার করুন।"], ["Daily upload-এ AI দরকার?", "Consistency-এর জন্য খুব useful।"], ["Budget কম হলে?", "Free stack দিয়ে শুরু করুন।"]],
+    topicBn: "YouTube creator AI",
     outbound: ["YouTube Studio", "https://studio.youtube.com"],
+    internalLinks: ["ai-tools-bangladesh-bengali.html", "best-ai-tools-for-content-creators-bangladesh.html", "elevenlabs-bangla-voice.html", "ai-image-generator-free-bangladesh.html", "index.html"],
   },
 ];
 
-function faqSchema(url, faq) {
+function buildFaqItems(page) {
+  return [
+    [`${page.primaryKeyword} বাংলাদেশে কি practical?`, "হ্যাঁ, সঠিক workflow, QA এবং cost control থাকলে practical।"],
+    [`${page.longTailTargets[0]} নিয়ে সাধারণ ভুল কী?`, "Official policy না দেখে সিদ্ধান্ত নেওয়া এবং no-log usage করা।"],
+    ["2026 সালে কীভাবে safe rollout করব?", "Small pilot, measurable KPI, এবং monthly optimization দিয়ে rollout করুন।"],
+  ];
+}
+
+for (const page of clusterPages) {
+  page.faqItems = buildFaqItems(page);
+}
+
+function faqSchema(url, page) {
   return {
-    "@context": "https://schema.org",
     "@type": "FAQPage",
     inLanguage: "bn-BD",
     url,
-    mainEntity: faq.map(([q, a]) => ({
+    mainEntity: page.faqItems.map((item) => ({
       "@type": "Question",
-      name: q,
-      acceptedAnswer: { "@type": "Answer", text: a },
+      name: item[0],
+      acceptedAnswer: { "@type": "Answer", text: item[1] },
     })),
   };
 }
 
 function articleSchema(url, page) {
   return {
-    "@context": "https://schema.org",
     "@type": "Article",
     headline: page.h1,
     description: page.description,
@@ -175,21 +263,42 @@ function articleSchema(url, page) {
   };
 }
 
-function renderTable(rows) {
-  const [head, ...body] = rows;
-  return `<div class="seo-table-wrap"><table class="seo-table"><thead><tr>${head.map((x) => `<th>${x}</th>`).join("")}</tr></thead><tbody>${body.map((row) => `<tr>${row.map((x) => `<td>${x}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
+function keywordSignal(page) {
+  return `<p class="seo-lead" data-keyword-signal="true">${page.primaryKeyword} ফোকাস ধরে ${page.secondaryKeywords[0]} এবং ${page.longTailTargets[0]} সহ বাংলাদেশি ব্যবহারকারীর জন্য 2026-ready গাইড দেয়া হয়েছে।</p>`;
+}
+
+function renderTable(page) {
+  return `<div class="seo-table-wrap"><table class="seo-table"><thead><tr><th>Focus</th><th>বাংলাদেশ context</th><th>Execution</th></tr></thead><tbody><tr><td>${page.topicBn}</td><td>Payment + VPN reality</td><td>Structured workflow</td></tr><tr><td>${page.primaryKeyword}</td><td>BDT budget discipline</td><td>14-day validation</td></tr><tr><td>${page.longTailTargets[0]}</td><td>Low-risk rollout</td><td>Monthly review</td></tr></tbody></table></div>`;
+}
+
+function renderResources(page, fileName) {
+  const required = ["index.html", "ai-tools-bangladesh-bengali.html", ...page.internalLinks, "submit.html"]
+    .filter((href) => href !== fileName)
+    .filter((href, index, arr) => arr.indexOf(href) === index)
+    .slice(0, 8);
+  return required.map((href) => `<li><a href="${href}">${labelMap.get(href) || href}</a></li>`).join("");
+}
+
+function buildSchema(url, page) {
+  const graph = [];
+  if (page.intentType === "explainer") {
+    graph.push(articleSchema(url, page));
+  }
+  graph.push(faqSchema(url, page));
+  return { "@context": "https://schema.org", "@graph": graph };
 }
 
 function renderPage(page) {
   const file = `${page.slug}.html`;
   const url = `https://banglaaiguide.com/${file}`;
-  const schema = page.schemaType === "article" ? articleSchema(url, page) : faqSchema(url, page.faq);
-  const related = [...linkPool, ...mediumPages.map((p) => [`${p.slug}.html`, p.primary])]
-    .filter(([href], idx, arr) => arr.findIndex((x) => x[0] === href) === idx && href !== file)
-    .slice(0, 6)
-    .map(([href, text]) => `<li><a href="${href}">${text}</a></li>`)
-    .join("");
-
+  const schema = buildSchema(url, page);
+  const steps = [
+    `Step 1: ${page.topicBn} use-case স্পষ্টভাবে লিখুন।`,
+    "Step 2: Free/freemium tier দিয়ে ৭-১৪ দিন test run করুন।",
+    "Step 3: BDT budget cap, payment path এবং access stability যাচাই করুন।",
+    "Step 4: Template workflow বানিয়ে repeatable execution নিশ্চিত করুন।",
+    "Step 5: মাসিকভাবে ROI review করে stack optimize করুন।",
+  ];
   return `<!DOCTYPE html>
 <html lang="bn">
 <head>
@@ -215,31 +324,33 @@ function renderPage(page) {
   <script type="application/ld+json">${JSON.stringify(schema)}</script>
   <script src="js/seo-pages.js" defer></script>
 </head>
-<body data-page-slug="${page.slug}">
+<body data-page-slug="${page.slug}" data-year-policy="${page.yearPolicy}">
   <header class="navbar" id="top"><div class="container navbar-inner"><a href="index.html" class="logo" aria-label="বাংলা AI গাইড হোম"><img class="logo-mark" src="/favicon.svg" alt="বাংলা AI গাইড লোগো" width="28" height="28" decoding="async" /><span class="logo-text">বাংলা AI গাইড</span></a><button class="hamburger" id="hamburgerBtn" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="মেনু টগল করুন"><span></span><span></span><span></span></button><div class="nav-desktop"><nav class="nav-links" aria-label="প্রধান ন্যাভিগেশন"><a href="index.html#toolsSection">টুলস দেখুন</a><a href="index.html#categoryTabs">ক্যাটাগরি</a><a href="index.html#newsletter">নিউজলেটার</a></nav><a href="submit.html" class="btn btn-primary">টুল সাবমিট করুন</a></div></div><div class="mobile-menu" id="mobileMenu" aria-hidden="true"><a href="index.html#toolsSection">টুলস দেখুন</a><a href="index.html#categoryTabs">ক্যাটাগরি</a><a href="index.html#newsletter">নিউজলেটার</a><a href="submit.html" class="btn btn-primary mobile-cta">টুল সাবমিট করুন</a></div></header>
   <main class="seo-main">
     <article class="container seo-article-page">
-      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">হোম</a><span>&gt;</span><span>${page.primary}</span></nav>
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">হোম</a><span>&gt;</span><span>${page.primaryKeyword}</span></nav>
       <h1>${page.h1}</h1>
-      ${page.quick.map((x) => `<p class="seo-lead">${x}</p>`).join("")}
-      <section class="seo-block"><h2>বাংলাদেশে ব্যবহারযোগ্যতা</h2>${page.use.map((x) => `<p>${x}</p>`).join("")}</section>
-      <section class="seo-block"><h2>Payment/Price Context (BDT + bKash)</h2>${page.pay.map((x) => `<p>${x}</p>`).join("")}</section>
-      <section class="seo-block"><h2>VPN Requirement Reality</h2>${page.vpn.map((x) => `<p>${x}</p>`).join("")}</section>
-      <section class="seo-block"><h2>Step-by-step ব্যবহার পদ্ধতি</h2><ol class="seo-steps">${page.steps.map((x) => `<li>${x}</li>`).join("")}</ol></section>
-      <section class="seo-block"><h2>দ্রুত তুলনামূলক টেবিল</h2>${renderTable(page.table)}</section>
-      <section class="seo-block"><h2>FAQ</h2>${page.faq.map(([q, a]) => `<article class="seo-faq-item"><h3>${q}</h3><p>${a}</p></article>`).join("")}</section>
+      ${keywordSignal(page)}
+      <p class="seo-lead">${page.primaryKeyword} intent-এ এই পেজটি 2026 current-state অনুযায়ী Bangladesh-first guidance দেয়।</p>
+      <p class="seo-lead">${page.secondaryKeywords[0]} এবং ${page.secondaryKeywords[1]} query cluster ধরে content সাজানো হয়েছে যাতে cannibalization কমে।</p>
+      <p class="seo-lead">${page.longTailTargets[0]} সহ long-tail search intent গুলো FAQ এবং section heading-এ naturalভাবে কভার করা হয়েছে।</p>
+      <section class="seo-block"><h2>বাংলাদেশে ব্যবহারযোগ্যতা</h2><p>${page.topicBn} workflow-এ local payment, bandwidth stability এবং language quality একসাথে বিবেচনা করতে হয়।</p><p>Freelancer, creator, learner - সবার জন্য একই tool stack কার্যকর নয়, তাই use-case-wise rollout করুন।</p><p>Small pilot চালিয়ে measurable KPI নিয়ে এগোলে ভুল subscription এড়ানো যায়।</p></section>
+      <section class="seo-block"><h2>Payment/BDT Context</h2><p>USD plan কে BDT budget-এ normalize করে monthly cap নির্ধারণ করুন।</p><p>Card availability, fee margin, এবং renewal risk ধরা না হলে planning ভুল হবে।</p><p>bKash route থাকলে official policy cross-check করে তবেই payment চালান।</p></section>
+      <section class="seo-block"><h2>VPN Requirement</h2><p>Production workflow-এ VPN-free stability সাধারণত বেশি নির্ভরযোগ্য।</p><p>VPN-dependent tools থাকলে alternative fallback ready রাখুন।</p><p>Policy change হলে 30-day interval-এ access audit করুন।</p></section>
+      <section class="seo-block"><h2>Step-by-step ব্যবহার পদ্ধতি</h2><ol class="seo-steps">${steps.map((x) => `<li>${x}</li>`).join("")}</ol></section>
+      <section class="seo-block"><h2>দ্রুত তুলনামূলক টেবিল</h2>${renderTable(page)}</section>
+      <section class="seo-block"><h2>FAQ</h2>${page.faqItems.map((item) => `<article class="seo-faq-item"><h3>${item[0]}</h3><p>${item[1]}</p></article>`).join("")}</section>
       <section class="seo-cta-block"><h2>পরবর্তী ধাপ</h2><p>আরও AI resource দেখতে index-এ যান অথবা নতুন tool submit করুন।</p><div class="seo-cta-actions"><a class="btn btn-primary" data-cluster-cta="index" href="index.html">সব টুল দেখুন</a><a class="btn btn-ghost" data-cluster-cta="submit" href="submit.html">টুল সাবমিট করুন</a><a class="btn btn-ghost" data-outbound-affiliate="true" href="${page.outbound[1]}" target="_blank" rel="nofollow noopener noreferrer">${page.outbound[0]}</a></div></section>
-      <section class="seo-block"><h2>Bangladesh AI Resources</h2><ul class="seo-links-list">${related}</ul></section>
+      <section class="seo-block"><h2>Bangladesh AI Resources</h2><ul class="seo-links-list">${renderResources(page, file)}</ul></section>
     </article>
   </main>
-  <footer class="site-footer"><div class="container footer-inner"><p class="footer-brand"><img class="logo-mark" src="/favicon.svg" alt="বাংলা AI গাইড লোগো" width="20" height="20" decoding="async" /><span>????? AI ????</span></p><p>© ২০২৬ বাংলা AI গাইড · বাংলাদেশের জন্য তৈরি</p><nav class="footer-links" aria-label="ফুটার লিংক"><a href="submit.html">টুল সাবমিট</a><a href="index.html#newsletter">বিজ্ঞাপন</a><a href="privacy.html">প্রাইভেসি</a><a href="index.html#newsletter">যোগাযোগ</a></nav></div></footer>
+  <footer class="site-footer"><div class="container footer-inner"><p class="footer-brand"><img class="logo-mark" src="/favicon.svg" alt="বাংলা AI গাইড লোগো" width="20" height="20" decoding="async" /><span>বাংলা AI গাইড</span></p><p>© ২০২৬ বাংলা AI গাইড · বাংলাদেশের জন্য তৈরি</p><nav class="footer-links" aria-label="ফুটার লিংক"><a href="submit.html">টুল সাবমিট</a><a href="index.html#newsletter">বিজ্ঞাপন</a><a href="privacy.html">প্রাইভেসি</a><a href="index.html#newsletter">যোগাযোগ</a></nav></div></footer>
 </body>
 </html>`;
 }
 
-for (const page of mediumPages) {
+for (const page of clusterPages) {
   fs.writeFileSync(path.join(root, `${page.slug}.html`), renderPage(page), "utf8");
 }
 
-console.log(`Generated ${mediumPages.length} medium SEO pages`);
-
+console.log(`Generated ${clusterPages.length} cluster SEO pages`);
