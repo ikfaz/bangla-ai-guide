@@ -3,7 +3,7 @@
 // No API key needed. Free to use.
 // Fallback: Google Favicon API if Clearbit fails
 
-const USD_TO_BDT = 110;
+const USD_TO_BDT = 122;
 
 const tools = [
 
@@ -150,6 +150,21 @@ const tools = [
     direct_url: "https://huggingface.co/chat",
     affiliate_url: "https://huggingface.co/chat",
     pricing_url: "https://huggingface.co/chat",
+  },
+  {
+    name: "DeepSeek",
+    logo: "https://logo.clearbit.com/deepseek.com",
+    logo_fallback: "https://www.google.com/s2/favicons?domain=deepseek.com&sz=64",
+    category: "llm",
+    pricing: "free",
+    usdPrice: "সম্পূর্ণ ফ্রি",
+    verified: "মার্চ ২০২৬",
+    description_bn: "চীনের DeepSeek — কোডিং ও ম্যাথে ChatGPT-4 এর চেয়ে ভালো। রিজনিং মডেল সম্পূর্ণ ফ্রি।",
+    review_bn: "কোডিং সমস্যা সমাধানে এটি এখন আমার প্রথম পছন্দ। ফ্রি অথচ শক্তিশালী!",
+    works_in_bd: true, no_vpn: true, payment: "free", rating: 4.7,
+    direct_url: "https://chat.deepseek.com",
+    affiliate_url: "https://chat.deepseek.com",
+    pricing_url: "https://chat.deepseek.com",
   },
   {
     name: "Grok",
