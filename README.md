@@ -18,6 +18,9 @@
   ├── elevenlabs-bangla-voice.html
   ├── favicon.svg
   ├── index.html
+  ├── contact.html
+  ├── terms.html
+  ├── disclaimer.html
   ├── midjourney-bangladesh-free.html
   ├── privacy.html
   ├── submit.html
@@ -29,6 +32,7 @@
   │   └── style.css
   ├── js/
   │   ├── 404.js
+  │   ├── contact.js
   │   ├── main.js
   │   ├── privacy.js
   │   ├── seo-pages.js
@@ -59,7 +63,9 @@
 - Tool detail page via URL parameter (`tool-detail.html?tool=chatgpt`).
 - Submit page with Bengali validation and success message.
 - Friendly Bengali 404 page with random tool suggestions.
-- Bengali privacy policy page and dismissible affiliate disclaimer banner.
+- Bengali legal pages: privacy, terms, disclaimer, and contact.
+- Contact page with static form UI and Bengali validation feedback.
+- Dismissible affiliate disclaimer banner on homepage.
 - Phase-1 SEO cluster pages for low-competition Bangladesh keywords.
 - Dynamic stats bar from dataset.
 - Category tabs with live count badges.

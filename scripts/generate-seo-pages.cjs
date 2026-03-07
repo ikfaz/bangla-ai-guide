@@ -1,4 +1,4 @@
-const fs = require("fs");
+﻿const fs = require("fs");
 const path = require("path");
 
 const root = path.resolve(__dirname, "..");
@@ -246,7 +246,10 @@ const docxFiles = [
 ];
 
 function normalizeYear(text) {
-  return text.replace(/২০২৫/g, "২০২৬").replace(/\b2025\b/g, "2026");
+  return text
+    .replace(/২০২৫/g, "২০২৬")
+    .replace(/à§¨à§¦à§¨à§«/g, "২০২৬")
+    .replace(/\b2025\b/g, "2026");
 }
 
 function normalizeLine(text) {
@@ -264,7 +267,7 @@ function escapeHtml(value) {
 
 function parseDocxArticles(text) {
   const content = text.replace(/\r/g, "");
-  const pattern = /Article\s+(\d+)\s*\/\s*১৪\s*([\s\S]*?)(?=\nArticle\s+\d+\s*\/\s*১৪|$)/g;
+  const pattern = /Article\s+(\d+)\s*\/\s*(?:14|১৪)\s*([\s\S]*?)(?=\nArticle\s+\d+\s*\/\s*(?:14|১৪)|$)/g;
   const items = [];
   let match = pattern.exec(content);
   while (match) {
@@ -323,20 +326,20 @@ function uniqueLines(lines) {
 
 function truncateLine(line, limit = 110) {
   if (line.length <= limit) return line;
-  return `${line.slice(0, limit - 1).trim()}…`;
+  return `${line.slice(0, limit - 1).trim()}â€¦`;
 }
 
 function parseFaqItems(lines) {
   const faq = [];
   for (let i = 0; i < lines.length; i += 1) {
     const current = lines[i];
-    const questionMatch = current.match(/^প্রশ্ন[:：]\s*(.+)$/);
+    const questionMatch = current.match(/^(?:প্রশ্ন|à¦ªà§à¦°à¦¶à§à¦¨)[:：]\s*(.+)$/);
     if (!questionMatch) continue;
     const question = questionMatch[1].trim();
     let answer = "";
     for (let j = i + 1; j < lines.length; j += 1) {
       const candidate = lines[j];
-      if (/^প্রশ্ন[:：]/.test(candidate)) break;
+      if (/^(?:প্রশ্ন|à¦ªà§à¦°à¦¶à§à¦¨)[:：]/.test(candidate)) break;
       if (candidate) {
         answer = candidate;
         break;
@@ -368,10 +371,10 @@ function buildSteps(stepLines, allLines, topicBn) {
   }
   const fallback = [
     `Step 1: ${topicBn} ব্যবহারের লক্ষ্য স্পষ্ট করুন।`,
-    "Step 2: ফ্রি ভার্সন দিয়ে ৭-১৪ দিন ব্যবহার করে নোট নিন।",
-    "Step 3: আউটপুট quality এবং সময় সাশ্রয় তুলনা করুন।",
-    "Step 4: payment/vpn বাস্তবতা যাচাই করে workflow ফাইনাল করুন।",
-    "Step 5: মাসিক ROI দেখে stack optimize করুন।",
+    "Step 2: ???? ?????? ????? ?-?? ??? ??????? ??? ??? ????",
+    "Step 3: ?????? quality ??? ???? ??????? ????? ?????",
+    "Step 4: payment/vpn ???????? ????? ??? workflow ?????? ?????",
+    "Step 5: ????? ROI ???? stack optimize ?????",
   ];
   if (steps.length < 4) {
     for (const item of fallback) {
@@ -389,19 +392,19 @@ function buildComparisonRows(page, blocks) {
   return [
     ["Primary Intent", page.primaryKeyword, "2026 Bangladesh use-case"],
     [
-      "বাংলাদেশে ব্যবহারযোগ্যতা",
+      "????????? ??????????????",
       truncateLine(blocks.bdUsability[0] || `${page.topicBn} tool stack local workflow-এ ব্যবহার করা যায়।`),
-      truncateLine(blocks.bdUsability[1] || "use-case ভিত্তিক rollout দিলে ফল ভালো হয়।"),
+      truncateLine(blocks.bdUsability[1] || "use-case ??????? rollout ???? ?? ???? ????"),
     ],
     [
       "Payment/BDT",
-      truncateLine(blocks.paymentContext[0] || "অফিশিয়াল pricing page দেখে BDT budget সেট করুন।"),
-      truncateLine(blocks.paymentContext[1] || "renewal risk ধরেই মাসিক cap ঠিক করুন।"),
+      truncateLine(blocks.paymentContext[0] || "????????? pricing page ???? BDT budget ??? ?????"),
+      truncateLine(blocks.paymentContext[1] || "renewal risk ???? ????? cap ??? ?????"),
     ],
     [
       "VPN/Access",
-      truncateLine(blocks.vpnContext[0] || "VPN লাগবে কি না আগে যাচাই করুন।"),
-      truncateLine(blocks.vpnContext[1] || "fallback tool রাখলে production risk কমে।"),
+      truncateLine(blocks.vpnContext[0] || "VPN ????? ?? ?? ??? ????? ?????"),
+      truncateLine(blocks.vpnContext[1] || "fallback tool ????? production risk ????"),
     ],
   ];
 }
@@ -422,7 +425,7 @@ function buildContentBlocks(page, docArticle) {
   const paymentRegex = /(৳|BDT|দাম|মূল্য|পেমেন্ট|payment|কার্ড|bKash|ডলার|Wise|Payoneer|সাবস্ক্রিপশন|মূল্য তালিকা)/i;
   const vpnRegex = /(VPN|ভিপিএন|প্রক্সি|proxy|WARP|Proton|Windscribe)/i;
   const stepRegex = /(^Step|^ধাপ|Step-by-Step|পদ্ধতি\s*[০-৯0-9]+|^[০-৯0-9]+[.)]|Install|Sign Up|সাইন আপ|Download|ইন্সটল|খোলার নিয়ম|শুরু করুন|ক্লিক করুন|যান$)/i;
-  const faqRegex = /^প্রশ্ন[:：]/;
+  const faqRegex = /^প্রশ্ন[:?]/;
   for (const line of rest) {
     if (faqRegex.test(line)) continue;
     if (stepRegex.test(line)) {
@@ -443,8 +446,8 @@ function buildContentBlocks(page, docArticle) {
   const faqItems = parsedFaq.slice(0, 5);
   if (faqItems.length < 3) {
     faqItems.push(
-      [`${page.primaryKeyword} বাংলাদেশে ব্যবহারযোগ্য কি?`, "হ্যাঁ, সঠিক workflow, budget discipline, এবং policy awareness থাকলে ব্যবহারযোগ্য।"],
-      [`${page.longTailTargets[0]} বাস্তবে কীভাবে যাচাই করব?`, "Official pricing/access policy এবং নিজের usage log মিলিয়ে যাচাই করুন।"],
+      [`${page.primaryKeyword} à¦¬à¦¾à¦‚à¦²à¦¾à¦¦à§‡à¦¶à§‡ à¦¬à§à¦¯à¦¬à¦¹à¦¾à¦°à¦¯à§‹à¦—à§à¦¯ à¦•à¦¿?`, "হ্যাঁ, সঠিক workflow, budget discipline, এবং policy awareness থাকলে ব্যবহারযোগ্য।"],
+      [`${page.longTailTargets[0]} à¦¬à¦¾à¦¸à§à¦¤à¦¬à§‡ à¦•à§€à¦­à¦¾à¦¬à§‡ à¦¯à¦¾à¦šà¦¾à¦‡ à¦•à¦°à¦¬?`, "Official pricing/access policy এবং নিজের usage log মিলিয়ে যাচাই করুন।"],
       ["২০২৬ সালে safest rollout strategy কী?", "ফ্রি দিয়ে শুরু, ধাপে ধাপে scale, এবং monthly review।"]
     );
   }
@@ -455,8 +458,8 @@ function buildContentBlocks(page, docArticle) {
   return {
     quickAnswer: quickAnswer.length ? quickAnswer : [docArticle.title, `${page.primaryKeyword} নিয়ে এই গাইডে বাস্তব ব্যবহার পদ্ধতি দেয়া হয়েছে।`],
     bdUsability: enrichedBd.length ? enrichedBd : uniqueRest.slice(0, 14),
-    paymentContext: enrichedPayment.length ? enrichedPayment : ["পেমেন্টের আগে official pricing page ও BDT conversion যাচাই করুন।"],
-    vpnContext: enrichedVpn.length ? enrichedVpn : ["VPN requirement tool অনুযায়ী পরিবর্তন হতে পারে; ব্যবহার শুরুর আগে পরীক্ষা করুন।"],
+    paymentContext: enrichedPayment.length ? enrichedPayment : ["????????? ??? official pricing page ? BDT conversion ????? ?????"],
+    vpnContext: enrichedVpn.length ? enrichedVpn : ["VPN requirement tool ???????? ???????? ??? ????; ??????? ????? ??? ??????? ?????"],
     steps: buildSteps(stepPool.length ? stepPool : rest, allLines, page.topicBn),
     comparisonRows: buildComparisonRows(page, {
       bdUsability: enrichedBd,
@@ -469,15 +472,15 @@ function buildContentBlocks(page, docArticle) {
 
 const pillarAnchorRotation = [
   "Bangla AI tools directory",
-  "বাংলা AI গাইডের pillar",
+  "????? AI ?????? pillar",
   "AI tools Bangladesh hub",
 ];
 
 function buildFaqItems(page) {
   return [
-    [`${page.primaryKeyword} বাংলাদেশে কি practical?`, "হ্যাঁ, সঠিক workflow, QA এবং cost control থাকলে practical।"],
-    [`${page.longTailTargets[0]} নিয়ে সাধারণ ভুল কী?`, "Official policy না দেখে সিদ্ধান্ত নেওয়া এবং no-log usage করা।"],
-    ["2026 সালে কীভাবে safe rollout করব?", "Small pilot, measurable KPI, এবং monthly optimization দিয়ে rollout করুন।"],
+    [`${page.primaryKeyword} বাংলাদেশে কি practical?`, "?????, ???? workflow, QA ??? cost control ????? practical?"],
+    [`${page.longTailTargets[0]} নিয়ে সাধারণ ভুল কী?`, "Official policy ?? ???? ????????? ?????? ??? no-log usage ????"],
+    ["2026 ???? ?????? safe rollout ????", "Small pilot, measurable KPI, ??? monthly optimization ????? rollout ?????"],
   ];
 }
 
@@ -613,8 +616,6 @@ function renderPage(page) {
   <meta name="apple-mobile-web-app-title" content="MyWebSite" />
   <link rel="manifest" href="/site.webmanifest" />
   <meta name="theme-color" content="#059669" />
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-X760BSGQCC"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-X760BSGQCC');</script>
   <title>${escapeHtml(page.title)}</title>
   <meta name="description" content="${escapeHtml(page.description)}" />
   <link rel="canonical" href="${url}" />
@@ -625,6 +626,7 @@ function renderPage(page) {
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Syne:wght@500;700;800&display=swap" />
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Syne:wght@500;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+  <script src="js/consent.js" defer></script>
   <script type="application/ld+json">${JSON.stringify(schema)}</script>
   <script src="js/tools-data.js" defer></script>
   <script src="js/seo-pages.js" defer></script>
@@ -651,7 +653,7 @@ function renderPage(page) {
       <section class="seo-block"><h2>Bangladesh AI Resources</h2><ul class="seo-links-list">${renderResources(page, file)}</ul></section>
     </article>
   </main>
-  <footer class="site-footer"><div class="container footer-inner"><p class="footer-brand"><img class="logo-mark" src="/favicon.svg" alt="বাংলা AI গাইড লোগো" width="20" height="20" decoding="async" /><span>বাংলা AI গাইড</span></p><p>© ২০২৬ বাংলা AI গাইড · বাংলাদেশের জন্য তৈরি</p><nav class="footer-links" aria-label="ফুটার লিংক"><a href="submit.html">টুল সাবমিট</a><a href="index.html#newsletter">বিজ্ঞাপন</a><a href="privacy.html">প্রাইভেসি</a><a href="index.html#newsletter">যোগাযোগ</a></nav></div></footer>
+  <footer class="site-footer"><div class="container footer-inner"><p class="footer-brand"><img class="logo-mark" src="/favicon.svg" alt="বাংলা AI গাইড লোগো" width="20" height="20" decoding="async" /><span>বাংলা AI গাইড</span></p><p>© ২০২৬ বাংলা AI গাইড · বাংলাদেশের জন্য তৈরি</p><nav class="footer-links" aria-label="ফুটার লিংক"><a href="submit.html">টুল সাবমিট</a><a href="contact.html#advertising">বিজ্ঞাপন</a><a href="privacy.html">প্রাইভেসি</a><a href="terms.html">শর্তাবলী</a><a href="disclaimer.html">ডিসক্লেইমার</a><a href="contact.html">যোগাযোগ</a></nav></div></footer>
 </body>
 </html>`;
 }
@@ -661,3 +663,4 @@ for (const page of clusterPages) {
 }
 
 console.log(`Generated ${clusterPages.length} cluster SEO pages`);
+
