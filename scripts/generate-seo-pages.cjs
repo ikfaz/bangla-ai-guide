@@ -582,6 +582,10 @@ function renderResources(page, fileName) {
   return required.map((href) => `<li><a href="${href}">${labelMap.get(href) || href}</a></li>`).join("");
 }
 
+function renderNewsletterSignup(idSuffix) {
+  return `<section class="seo-block seo-newsletter-block"><h2>Want more AI tools like this?</h2><p>Subscribe to get the best AI tools every week.</p><form class="newsletter-form newsletter-form--mailchimp" action="https://banglaaiguide.us15.list-manage.com/subscribe/post?u=d389c0647878724daecc58fc6&amp;id=aaca6896d2&amp;f_id=007e9ae1f0" method="post" target="_blank" novalidate><label class="sr-only" for="newsletterEmail-${idSuffix}">ইমেইল</label><input id="newsletterEmail-${idSuffix}" type="email" name="EMAIL" placeholder="আপনার ইমেইল লিখুন" required /><div class="mailchimp-trap" aria-hidden="true"><input type="text" name="b_d389c0647878724daecc58fc6_aaca6896d2" tabindex="-1" value="" /></div><button type="submit" class="btn btn-primary">Get AI Tools Weekly</button></form><p class="mailchimp-note">ফ্রি নিউজলেটার। যেকোনো সময় আনসাবস্ক্রাইব করতে পারবেন।</p></section>`;
+}
+
 function buildSchema(url, page) {
   const graph = [];
   if (page.intentType === "explainer") {
@@ -658,6 +662,7 @@ function renderPage(page) {
       <section class="seo-block"><h2>দ্রুত তুলনামূলক টেবিল</h2>${renderTable(blocks)}</section>
       <section class="seo-block"><h2>FAQ</h2>${faqHtml}</section>
       <section class="seo-cta-block"><h2>পরবর্তী ধাপ</h2><p>আরও AI resource দেখতে index-এ যান অথবা নতুন tool submit করুন।</p><div class="seo-cta-actions"><a class="btn btn-primary" data-cluster-cta="index" href="index.html">সব টুল দেখুন</a><a class="btn btn-ghost" data-cluster-cta="submit" href="submit.html">টুল সাবমিট করুন</a><a class="btn btn-ghost" data-outbound-affiliate="true" href="${page.outbound[1]}" target="_blank" rel="nofollow noopener noreferrer">${page.outbound[0]}</a></div></section>
+      ${renderNewsletterSignup(page.slug)}
       <section class="seo-block"><h2>Bangladesh AI Resources</h2><ul class="seo-links-list">${renderResources(page, file)}</ul></section>
     </article>
   </main>

@@ -247,6 +247,54 @@
             box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3);
         }
 
+        .mailchimp-card {
+            margin-top: 2rem;
+            padding: 2rem;
+            border: 1px solid #d1fae5;
+            border-radius: 1rem;
+            background: #f7fffb;
+        }
+
+        .mailchimp-card h2 {
+            margin-bottom: 0.75rem;
+        }
+
+        .mailchimp-card p {
+            margin-bottom: 1rem;
+        }
+
+        .mailchimp-form {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .mailchimp-form input[type="email"] {
+            flex: 1 1 260px;
+            min-height: 52px;
+            padding: 0.9rem 1rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.75rem;
+            font: inherit;
+        }
+
+        .mailchimp-form button {
+            border: none;
+            cursor: pointer;
+        }
+
+        .mailchimp-note {
+            margin: 0.85rem 0 0;
+            color: #6b7280;
+            font-size: 0.95rem;
+        }
+
+        .mailchimp-trap {
+            position: absolute;
+            left: -5000px;
+        }
+
         .btn {
             display: inline-flex;
             align-items: center;
@@ -407,6 +455,19 @@
             }
 
             .cookie-actions .btn {
+                width: 100%;
+            }
+
+            .mailchimp-card {
+                padding: 1.5rem;
+            }
+
+            .mailchimp-form {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .mailchimp-form button {
                 width: 100%;
             }
         }
@@ -709,6 +770,20 @@
             <a href="https://chat.deepseek.com" target="_blank" rel="nofollow noopener noreferrer" class="cta-button">
                 🚀 DeepSeek ফ্রিতে ব্যবহার শুরু করুন
             </a>
+
+            <section class="mailchimp-card" aria-labelledby="deepseekNewsletterTitle">
+                <h2 id="deepseekNewsletterTitle">Want more AI tools like this?</h2>
+                <p>Subscribe to get the best AI tools every week.</p>
+                <form class="mailchimp-form" action="https://banglaaiguide.us15.list-manage.com/subscribe/post?u=d389c0647878724daecc58fc6&amp;id=aaca6896d2&amp;f_id=007e9ae1f0" method="post" target="_blank" novalidate>
+                    <label class="sr-only" for="deepseekNewsletterEmail">ইমেইল</label>
+                    <input id="deepseekNewsletterEmail" type="email" name="EMAIL" placeholder="আপনার ইমেইল লিখুন" required>
+                    <div class="mailchimp-trap" aria-hidden="true">
+                        <input type="text" name="b_d389c0647878724daecc58fc6_aaca6896d2" tabindex="-1" value="">
+                    </div>
+                    <button type="submit" class="cta-button">Get AI Tools Weekly</button>
+                </form>
+                <p class="mailchimp-note">ফ্রি নিউজলেটার। যেকোনো সময় আনসাবস্ক্রাইব করতে পারবেন।</p>
+            </section>
 
             <p style="margin-top: 3rem; padding-top: 2rem; border-top: 2px solid #e5e7eb;">
                 <strong>আরও পড়ুন:</strong> <a href="bangla-ai-guide.html">বাংলা AI গাইড</a> - বাংলাদেশের জন্য সম্পূর্ণ AI টুলস রিভিউ, BDT মূল্য, ব্যবহারের নিয়ম সহ ৪০+ টুলের তথ্য।
