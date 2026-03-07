@@ -33,6 +33,7 @@
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Syne:wght@500;700;800&display=swap" />
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Syne:wght@500;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+  <script src="js/mailchimp.js" defer></script>
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -310,25 +311,30 @@
       <div class="container newsletter-inner">
         <div>
           <p class="newsletter-chip">📬 সাপ্তাহিক নিউজলেটার</p>
-          <h2>AI-র খবর সবার আগে পান</h2>
-          <p>প্রতি সপ্তাহে নতুন AI টুলস, বাংলা রিভিউ, এবং বাংলাদেশে কাজের টিপস সরাসরি আপনার ইনবক্সে।</p>
+          <h2>Join the Bangla AI Newsletter</h2>
+          <p>Discover the newest AI tools and tutorials in Bangla.</p>
         </div>
         <div class="newsletter-signup">
+          <!-- Mailchimp requires the hosted POST action, EMAIL field name, and hidden anti-bot field below. -->
           <form
             class="newsletter-form newsletter-form--mailchimp"
-            action="https://banglaaiguide.us15.list-manage.com/subscribe/post?u=d389c0647878724daecc58fc6&amp;id=aaca6896d2&amp;f_id=007e9ae1f0"
+            action="https://banglaaiguide.us15.list-manage.com/subscribe/post?u=d389c0647878724daecc58fc6&amp;id=aaca6896d2&amp;f_id=007d9ae1f0"
             method="post"
-            target="_blank"
-            novalidate
+            target="mailchimp-subscribe-frame-home"
+            accept-charset="UTF-8"
+            data-mailchimp-form="true"
           >
             <label class="sr-only" for="newsletterEmailHome">ইমেইল</label>
-            <input id="newsletterEmailHome" type="email" name="EMAIL" placeholder="আপনার ইমেইল" required />
+            <input id="newsletterEmailHome" type="email" name="EMAIL" placeholder="আপনার ইমেইল" autocomplete="email" required />
+            <!-- Mailchimp honeypot field: do not remove. -->
             <div class="mailchimp-trap" aria-hidden="true">
               <input type="text" name="b_d389c0647878724daecc58fc6_aaca6896d2" tabindex="-1" value="" />
             </div>
             <button type="submit" class="btn btn-primary">Get AI Tools Weekly</button>
           </form>
+          <p class="mailchimp-status" data-mailchimp-status hidden aria-live="polite"></p>
           <p class="mailchimp-note">ফ্রি নিউজলেটার। নতুন AI tools, বাংলা রিভিউ, আর বাংলাদেশি ব্যবহার টিপস প্রতি সপ্তাহে ইনবক্সে পাবেন।</p>
+          <iframe class="mailchimp-frame" name="mailchimp-subscribe-frame-home" title="Mailchimp signup response" hidden></iframe>
         </div>
       </div>
     </section>

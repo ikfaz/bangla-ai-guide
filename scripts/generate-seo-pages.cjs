@@ -583,7 +583,7 @@ function renderResources(page, fileName) {
 }
 
 function renderNewsletterSignup(idSuffix) {
-  return `<section class="seo-block seo-newsletter-block"><h2>Want more AI tools like this?</h2><p>Subscribe to get the best AI tools every week.</p><form class="newsletter-form newsletter-form--mailchimp" action="https://banglaaiguide.us15.list-manage.com/subscribe/post?u=d389c0647878724daecc58fc6&amp;id=aaca6896d2&amp;f_id=007e9ae1f0" method="post" target="_blank" novalidate><label class="sr-only" for="newsletterEmail-${idSuffix}">ইমেইল</label><input id="newsletterEmail-${idSuffix}" type="email" name="EMAIL" placeholder="আপনার ইমেইল লিখুন" required /><div class="mailchimp-trap" aria-hidden="true"><input type="text" name="b_d389c0647878724daecc58fc6_aaca6896d2" tabindex="-1" value="" /></div><button type="submit" class="btn btn-primary">Get AI Tools Weekly</button></form><p class="mailchimp-note">ফ্রি নিউজলেটার। যেকোনো সময় আনসাবস্ক্রাইব করতে পারবেন।</p></section>`;
+  return `<section class="seo-block seo-newsletter-block"><h2>Join the Bangla AI Newsletter</h2><p>Discover the newest AI tools and tutorials in Bangla.</p><!-- Mailchimp requires the hosted POST action, EMAIL field name, and hidden anti-bot field below. --><form class="newsletter-form newsletter-form--mailchimp" action="https://banglaaiguide.us15.list-manage.com/subscribe/post?u=d389c0647878724daecc58fc6&amp;id=aaca6896d2&amp;f_id=007d9ae1f0" method="post" target="mailchimp-subscribe-frame-${idSuffix}" accept-charset="UTF-8" data-mailchimp-form="true"><label class="sr-only" for="newsletterEmail-${idSuffix}">ইমেইল</label><input id="newsletterEmail-${idSuffix}" type="email" name="EMAIL" placeholder="আপনার ইমেইল লিখুন" autocomplete="email" required /><!-- Mailchimp honeypot field: do not remove. --><div class="mailchimp-trap" aria-hidden="true"><input type="text" name="b_d389c0647878724daecc58fc6_aaca6896d2" tabindex="-1" value="" /></div><button type="submit" class="btn btn-primary">Get AI Tools Weekly</button></form><p class="mailchimp-status" data-mailchimp-status hidden aria-live="polite"></p><p class="mailchimp-note">ফ্রি নিউজলেটার। যেকোনো সময় আনসাবস্ক্রাইব করতে পারবেন।</p><iframe class="mailchimp-frame" name="mailchimp-subscribe-frame-${idSuffix}" title="Mailchimp signup response" hidden></iframe></section>`;
 }
 
 function buildSchema(url, page) {
@@ -634,6 +634,7 @@ function renderPage(page) {
   <script type="application/ld+json">${JSON.stringify(schema)}</script>
   <script src="js/tools-data.js" defer></script>
   <script src="js/seo-pages.js" defer></script>
+  <script src="js/mailchimp.js" defer></script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-DMM6V53DKC"></script>
   <script>

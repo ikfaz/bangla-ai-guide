@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="js/consent.js" defer></script>
+    <script src="js/mailchimp.js" defer></script>
     <style>
         * {
             margin: 0;
@@ -288,6 +289,49 @@
             margin: 0.85rem 0 0;
             color: #6b7280;
             font-size: 0.95rem;
+        }
+
+        .mailchimp-status {
+            margin: 1rem 0 0;
+            padding: 0.85rem 1rem;
+            border-radius: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .mailchimp-status[hidden] {
+            display: none;
+        }
+
+        .mailchimp-status.is-loading {
+            background: #eff6ff;
+            color: #1d4ed8;
+        }
+
+        .mailchimp-status.is-success {
+            background: #ecfdf5;
+            color: #047857;
+        }
+
+        .mailchimp-status.is-error {
+            background: #fef2f2;
+            color: #b91c1c;
+        }
+
+        .mailchimp-frame {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            border: 0;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+        }
+
+        .mailchimp-form[aria-busy="true"] .cta-button {
+            opacity: 0.8;
+            cursor: wait;
         }
 
         .mailchimp-trap {
@@ -772,9 +816,10 @@
             </a>
 
             <section class="mailchimp-card" aria-labelledby="deepseekNewsletterTitle">
-                <h2 id="deepseekNewsletterTitle">Want more AI tools like this?</h2>
-                <p>Subscribe to get the best AI tools every week.</p>
-                <form class="mailchimp-form" action="https://banglaaiguide.us15.list-manage.com/subscribe/post?u=d389c0647878724daecc58fc6&amp;id=aaca6896d2&amp;f_id=007e9ae1f0" method="post" target="_blank" novalidate>
+                <h2 id="deepseekNewsletterTitle">Join the Bangla AI Newsletter</h2>
+                <p>Discover the newest AI tools and tutorials in Bangla.</p>
+                <!-- Mailchimp requires the hosted POST action, EMAIL field name, and hidden anti-bot field below. -->
+                <form class="mailchimp-form" action="https://banglaaiguide.us15.list-manage.com/subscribe/post?u=d389c0647878724daecc58fc6&amp;id=aaca6896d2&amp;f_id=007d9ae1f0" method="post" target="mailchimp-subscribe-frame-deepseek" accept-charset="UTF-8" data-mailchimp-form="true">
                     <label class="sr-only" for="deepseekNewsletterEmail">ইমেইল</label>
                     <input id="deepseekNewsletterEmail" type="email" name="EMAIL" placeholder="আপনার ইমেইল লিখুন" required>
                     <div class="mailchimp-trap" aria-hidden="true">
@@ -782,6 +827,8 @@
                     </div>
                     <button type="submit" class="cta-button">Get AI Tools Weekly</button>
                 </form>
+                <p class="mailchimp-status" data-mailchimp-status hidden aria-live="polite"></p>
+                <iframe class="mailchimp-frame" name="mailchimp-subscribe-frame-deepseek" title="Mailchimp signup response" hidden></iframe>
                 <p class="mailchimp-note">ফ্রি নিউজলেটার। যেকোনো সময় আনসাবস্ক্রাইব করতে পারবেন।</p>
             </section>
 

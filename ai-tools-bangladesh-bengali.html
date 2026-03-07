@@ -18,6 +18,7 @@
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Syne:wght@500;700;800&display=swap" />
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Syne:wght@500;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+  <script src="js/mailchimp.js" defer></script>
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -495,9 +496,10 @@
       </section>
 
       <section class="seo-block seo-newsletter-block">
-        <h2>Want more AI tools like this?</h2>
-        <p>Subscribe to get the best AI tools every week.</p>
-        <form class="newsletter-form newsletter-form--mailchimp" action="https://banglaaiguide.us15.list-manage.com/subscribe/post?u=d389c0647878724daecc58fc6&amp;id=aaca6896d2&amp;f_id=007e9ae1f0" method="post" target="_blank" novalidate>
+        <h2>Join the Bangla AI Newsletter</h2>
+        <p>Discover the newest AI tools and tutorials in Bangla.</p>
+        <!-- Mailchimp requires the hosted POST action, EMAIL field name, and hidden anti-bot field below. -->
+        <form class="newsletter-form newsletter-form--mailchimp" action="https://banglaaiguide.us15.list-manage.com/subscribe/post?u=d389c0647878724daecc58fc6&amp;id=aaca6896d2&amp;f_id=007d9ae1f0" method="post" target="mailchimp-subscribe-frame-ai-tools-bangladesh-bengali" accept-charset="UTF-8" data-mailchimp-form="true">
           <label class="sr-only" for="newsletterEmail-ai-tools-bangladesh-bengali">ইমেইল</label>
           <input id="newsletterEmail-ai-tools-bangladesh-bengali" type="email" name="EMAIL" placeholder="আপনার ইমেইল লিখুন" required />
           <div class="mailchimp-trap" aria-hidden="true">
@@ -505,6 +507,8 @@
           </div>
           <button type="submit" class="btn btn-primary">Get AI Tools Weekly</button>
         </form>
+        <p class="mailchimp-status" data-mailchimp-status hidden aria-live="polite"></p>
+        <iframe class="mailchimp-frame" name="mailchimp-subscribe-frame-ai-tools-bangladesh-bengali" title="Mailchimp signup response" hidden></iframe>
         <p class="mailchimp-note">ফ্রি নিউজলেটার। যেকোনো সময় আনসাবস্ক্রাইব করতে পারবেন।</p>
       </section>
 

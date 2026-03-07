@@ -21,7 +21,14 @@
 .newsletter-signup .newsletter-form{max-width:none}
 .newsletter-form--mailchimp input[name="EMAIL"]{flex:1;min-width:240px}
 .mailchimp-trap{position:absolute;left:-5000px}
+.mailchimp-frame{position:absolute;width:1px;height:1px;border:0;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
 .mailchimp-note{margin:12px 0 0;color:var(--muted);font-size:14px;line-height:1.6}
+.mailchimp-status{margin:12px 0 0;padding:10px 12px;border-radius:10px;font-size:14px;line-height:1.6}
+.mailchimp-status[hidden]{display:none}
+.mailchimp-status.is-loading{background:#eff6ff;color:#1d4ed8}
+.mailchimp-status.is-success{background:#ecfdf5;color:#047857}
+.mailchimp-status.is-error{background:#fef2f2;color:#b91c1c}
+.newsletter-form[aria-busy="true"] .btn,.mailchimp-form[aria-busy="true"] .btn,.mailchimp-form[aria-busy="true"] .cta-button{cursor:wait;opacity:.8}
 .seo-newsletter-block{background:#f7fffb;border-color:rgba(5,150,105,.24)}
 .seo-newsletter-block .newsletter-form{margin-top:16px;max-width:none}
 .seo-newsletter-block .btn{white-space:nowrap}
