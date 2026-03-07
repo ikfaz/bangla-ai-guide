@@ -630,6 +630,14 @@ function renderPage(page) {
   <script type="application/ld+json">${JSON.stringify(schema)}</script>
   <script src="js/tools-data.js" defer></script>
   <script src="js/seo-pages.js" defer></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DMM6V53DKC"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DMM6V53DKC');
+  </script>
 </head>
 <body data-page-slug="${escapeHtml(page.slug)}" data-year-policy="${escapeHtml(page.yearPolicy)}" data-docx-article-id="${page.docxArticleId}">
   <header class="navbar" id="top"><div class="container navbar-inner"><a href="index.html" class="logo" aria-label="বাংলা AI গাইড হোম"><img class="logo-mark" src="/favicon.svg" alt="বাংলা AI গাইড লোগো" width="28" height="28" decoding="async" /><span class="logo-text">বাংলা AI গাইড</span></a><button class="hamburger" id="hamburgerBtn" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="মেনু টগল করুন"><span></span><span></span><span></span></button><div class="nav-desktop"><nav class="nav-links" aria-label="প্রধান ন্যাভিগেশন"><a href="index.html#toolsSection">টুলস দেখুন</a><a href="index.html#categoryTabs">ক্যাটাগরি</a><a href="index.html#newsletter">নিউজলেটার</a></nav><a href="submit.html" class="btn btn-primary">টুল সাবমিট করুন</a></div></div><div class="mobile-menu" id="mobileMenu" aria-hidden="true"><a href="index.html#toolsSection">টুলস দেখুন</a><a href="index.html#categoryTabs">ক্যাটাগরি</a><a href="index.html#newsletter">নিউজলেটার</a><a href="submit.html" class="btn btn-primary mobile-cta">টুল সাবমিট করুন</a></div></header>
@@ -663,4 +671,5 @@ for (const page of clusterPages) {
 }
 
 console.log(`Generated ${clusterPages.length} cluster SEO pages`);
+
 

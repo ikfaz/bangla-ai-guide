@@ -3,8 +3,6 @@
   const LEGACY_ACCEPT_KEY = "banglaAiGuideCookieAccepted";
   const CONSENT_ACCEPTED = "accepted";
   const CONSENT_REJECTED = "rejected";
-  const MEASUREMENT_ID = "G-DMM6V53DKC";
-
   function getConsentState() {
     try {
       const value = localStorage.getItem(CONSENT_KEY);
@@ -27,25 +25,6 @@
     } catch {
       // Ignore private mode storage errors.
     }
-  }
-
-  function loadAnalyticsOnce() {
-    if (window.__baigGaLoaded) {
-      return;
-    }
-    window.__baigGaLoaded = true;
-
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = window.gtag || function gtag() {
-      window.dataLayer.push(arguments);
-    };
-    window.gtag("js", new Date());
-    window.gtag("config", MEASUREMENT_ID);
-
-    const script = document.createElement("script");
-    script.async = true;
-    script.src = `https://www.googletagmanager.com/gtag/js?id=${MEASUREMENT_ID}`;
-    document.head.appendChild(script);
   }
 
   function buildBanner() {
@@ -88,7 +67,6 @@
       const action = actionButton.getAttribute("data-consent-action");
       if (action === "accept") {
         setConsentState(CONSENT_ACCEPTED);
-        loadAnalyticsOnce();
       } else if (action === "reject") {
         setConsentState(CONSENT_REJECTED);
       }
@@ -99,7 +77,6 @@
   function initConsent() {
     const consentState = getConsentState();
     if (consentState === CONSENT_ACCEPTED) {
-      loadAnalyticsOnce();
       return;
     }
     if (consentState === CONSENT_REJECTED) {
