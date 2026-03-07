@@ -392,19 +392,19 @@ function buildComparisonRows(page, blocks) {
   return [
     ["Primary Intent", page.primaryKeyword, "2026 Bangladesh use-case"],
     [
-      "????????? ??????????????",
+      "বাংলাদেশে ব্যবহারযোগ্যতা",
       truncateLine(blocks.bdUsability[0] || `${page.topicBn} tool stack local workflow-এ ব্যবহার করা যায়।`),
-      truncateLine(blocks.bdUsability[1] || "use-case ??????? rollout ???? ?? ???? ????"),
+      truncateLine(blocks.bdUsability[1] || "Use-case অনুযায়ী rollout করুন এবং টেস্ট করুন।"),
     ],
     [
       "Payment/BDT",
-      truncateLine(blocks.paymentContext[0] || "????????? pricing page ???? BDT budget ??? ?????"),
-      truncateLine(blocks.paymentContext[1] || "renewal risk ???? ????? cap ??? ?????"),
+      truncateLine(blocks.paymentContext[0] || "Official pricing page থেকে BDT budget করে নিন।"),
+      truncateLine(blocks.paymentContext[1] || "Renewal risk এড়াতে মাসিক cap সেট করুন।"),
     ],
     [
       "VPN/Access",
-      truncateLine(blocks.vpnContext[0] || "VPN ????? ?? ?? ??? ????? ?????"),
-      truncateLine(blocks.vpnContext[1] || "fallback tool ????? production risk ????"),
+      truncateLine(blocks.vpnContext[0] || "VPN লাগবে কি না তা যাচাই করুন।"),
+      truncateLine(blocks.vpnContext[1] || "Fallback tool রাখুন production risk কমাতে।"),
     ],
   ];
 }
@@ -458,8 +458,8 @@ function buildContentBlocks(page, docArticle) {
   return {
     quickAnswer: quickAnswer.length ? quickAnswer : [docArticle.title, `${page.primaryKeyword} নিয়ে এই গাইডে বাস্তব ব্যবহার পদ্ধতি দেয়া হয়েছে।`],
     bdUsability: enrichedBd.length ? enrichedBd : uniqueRest.slice(0, 14),
-    paymentContext: enrichedPayment.length ? enrichedPayment : ["????????? ??? official pricing page ? BDT conversion ????? ?????"],
-    vpnContext: enrichedVpn.length ? enrichedVpn : ["VPN requirement tool ???????? ???????? ??? ????; ??????? ????? ??? ??????? ?????"],
+    paymentContext: enrichedPayment.length ? enrichedPayment : ["Official pricing page এবং BDT conversion rate চেক করুন।"],
+    vpnContext: enrichedVpn.length ? enrichedVpn : ["Tool-specific VPN requirement যাচাই করুন; fallback plan রাখুন।"],
     steps: buildSteps(stepPool.length ? stepPool : rest, allLines, page.topicBn),
     comparisonRows: buildComparisonRows(page, {
       bdUsability: enrichedBd,
@@ -478,9 +478,9 @@ const pillarAnchorRotation = [
 
 function buildFaqItems(page) {
   return [
-    [`${page.primaryKeyword} বাংলাদেশে কি practical?`, "?????, ???? workflow, QA ??? cost control ????? practical?"],
-    [`${page.longTailTargets[0]} নিয়ে সাধারণ ভুল কী?`, "Official policy ?? ???? ????????? ?????? ??? no-log usage ????"],
-    ["2026 ???? ?????? safe rollout ????", "Small pilot, measurable KPI, ??? monthly optimization ????? rollout ?????"],
+    [`${page.primaryKeyword} বাংলাদেশে কি practical?`, "হ্যাঁ, সঠিক workflow, QA এবং cost control থাকলে practical।"],
+    [`${page.longTailTargets[0]} নিয়ে সাধারণ ভুল কী?`, "Official policy না দেখে ভুল পদ্ধতি ব্যবহার এবং no-log usage করা।"],
+    ["২০২৬ সালে safest rollout কৌশল কী?", "Small pilot, measurable KPI, এবং monthly optimization দিয়ে rollout করুন।"],
   ];
 }
 
