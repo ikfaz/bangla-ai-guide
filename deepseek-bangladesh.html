@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="js/consent.js" defer></script>
     <style>
         * {
             margin: 0;
@@ -246,6 +247,72 @@
             box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3);
         }
 
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+            cursor: pointer;
+            font: inherit;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: #16a34a;
+            border-color: #16a34a;
+            color: #ffffff;
+        }
+
+        .btn-primary:hover,
+        .btn-primary:focus-visible {
+            filter: brightness(0.92);
+        }
+
+        .btn-ghost {
+            background: #ffffff;
+            color: #16a34a;
+            border-color: rgba(22, 163, 74, 0.35);
+        }
+
+        .btn-ghost:hover,
+        .btn-ghost:focus-visible {
+            background: #f0fdf4;
+        }
+
+        .cookie-banner {
+            position: fixed;
+            left: 16px;
+            right: 16px;
+            bottom: 16px;
+            z-index: 70;
+        }
+
+        .cookie-banner-inner {
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            background: #ffffff;
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            box-shadow: 0 10px 20px rgba(17, 24, 39, 0.08);
+        }
+
+        .cookie-banner p {
+            margin: 0;
+            color: #111827;
+        }
+
+        .cookie-actions {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            justify-content: end;
+        }
+
         .faq-section {
             margin-top: 3rem;
         }
@@ -328,6 +395,19 @@
             .comparison-table th,
             .comparison-table td {
                 padding: 0.75rem 0.5rem;
+            }
+
+            .cookie-banner-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .cookie-actions {
+                width: 100%;
+            }
+
+            .cookie-actions .btn {
+                width: 100%;
             }
         }
     </style>
@@ -747,15 +827,6 @@
         }
       ]
     }
-    </script>
-
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
     </script>
 </body>
 </html>

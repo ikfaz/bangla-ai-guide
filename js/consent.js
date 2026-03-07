@@ -3,7 +3,7 @@
   const LEGACY_ACCEPT_KEY = "banglaAiGuideCookieAccepted";
   const CONSENT_ACCEPTED = "accepted";
   const CONSENT_REJECTED = "rejected";
-  const MEASUREMENT_ID = "G-X760BSGQCC";
+  const MEASUREMENT_ID = "G-BJE53GQVP7";
 
   function getConsentState() {
     try {
