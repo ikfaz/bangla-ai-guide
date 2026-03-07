@@ -373,29 +373,155 @@
     }
   };
 
-  function fallbackSeo(tool) {
+  const CATEGORY_PROFILE_RULES = {
+    llm: {
+      intent: "LLM ও চ্যাট workflow",
+      useCase: "prompt, লেখা, research ও client communication",
+      steps: ["use-case ঠিক করুন", "small prompt template বানান", "output human-edit করে final দিন", "repeatable workflow সেট করুন"],
+      bestFor: ["freelancer proposal/reply", "বাংলা content drafting", "research summary দ্রুত করা"],
+      pros: ["দ্রুত output", "কম setup", "বহুমুখী ব্যবহার"],
+      limits: ["fact-check দরকার", "heavy usage-এ plan upgrade লাগতে পারে", "sensitive data-এ সতর্কতা জরুরি"]
+    },
+    image: {
+      intent: "image/video production workflow",
+      useCase: "thumbnail, ad creative, short ভিডিও asset",
+      steps: ["visual লক্ষ্য নির্ধারণ করুন", "reference সহ prompt দিন", "variation test করুন", "final export publish করুন"],
+      bestFor: ["YouTube visual pipeline", "social media creative", "client ad concept দ্রুত delivery"],
+      pros: ["দ্রুত visual generation", "A/B test সহজ", "creator workflow scalable"],
+      limits: ["prompt quality sensitive", "copyright/source check দরকার", "high-res এ cost বাড়তে পারে"]
+    },
+    coding: {
+      intent: "AI coding assistant workflow",
+      useCase: "bug-fix, refactor, boilerplate development",
+      steps: ["editor/tool setup করুন", "ছোট task দিয়ে শুরু করুন", "generated code test করুন", "review + commit discipline মানুন"],
+      bestFor: ["beginner coding support", "freelance bug-fix gigs", "MVP delivery speed-up"],
+      pros: ["development speed বাড়ায়", "learning support দেয়", "repetitive কাজ কমায়"],
+      limits: ["blind copy risky", "security review জরুরি", "context mismatch হতে পারে"]
+    },
+    productivity: {
+      intent: "workflow automation ও productivity",
+      useCase: "presentation, automation, notes, team collaboration",
+      steps: ["bottleneck identify করুন", "একটি use-case automate করুন", "template বানিয়ে reuse করুন", "team SOP-এ নিন"],
+      bestFor: ["operations automation", "presentation workflow", "agency/team productivity"],
+      pros: ["সময় সাশ্রয়", "repeat কাজ কমায়", "team output বাড়ায়"],
+      limits: ["initial setup time", "integration limit", "team adoption দরকার"]
+    }
+  };
+
+  const TOOL_PAGE_LINKS = {
+    chatgpt: { href: "chatgpt-bangladesh-theke-bebohar.html", text: "ChatGPT Bangladesh guide" },
+    cursor: { href: "cursor-ai-bangla.html", text: "Cursor AI বাংলা" },
+    elevenlabs: { href: "elevenlabs-bangla-voice.html", text: "ElevenLabs বাংলা ভয়েস" },
+    midjourney: { href: "midjourney-bangladesh-free.html", text: "Midjourney Bangladesh free" },
+    "kling-ai": { href: "ai-tools-for-youtube-bangladesh.html", text: "AI tools for YouTube Bangladesh" },
+    claude: { href: "ai-tools-for-freelancers-bangladesh.html", text: "AI tools for freelancers Bangladesh" },
+    gamma: { href: "best-ai-tools-for-content-creators-bangladesh.html", text: "best AI tools for content creators" }
+  };
+
+  const RELATED_COMPLEMENTARY_MAP = {
+    llm: ["coding", "productivity", "image"],
+    image: ["productivity", "llm", "coding"],
+    coding: ["llm", "productivity", "image"],
+    productivity: ["llm", "coding", "image"]
+  };
+
+  function asList(value) {
+    return Array.isArray(value) ? value.filter(Boolean).map((x) => String(x).trim()).filter(Boolean) : [];
+  }
+
+  function parseDetailsHighlights(details) {
+    return String(details || "")
+      .replace(/\s+/g, " ")
+      .trim()
+      .split(/(?<=[.!?])\s+/)
+      .map((x) => x.replace(/[.!?]+$/, "").trim())
+      .filter(Boolean)
+      .slice(0, 2);
+  }
+
+  function mergeProfile(generated, curated) {
+    if (!curated || typeof curated !== "object") return generated;
+    const merged = { ...generated, ...curated };
+    ["quickAnswer", "bdUsage", "paymentContext", "vpnContext", "steps", "bestFor", "pros", "limits", "faq", "comparison", "internalLinks", "incomeAngles", "youtubeAngles"].forEach((key) => {
+      if (Array.isArray(curated[key]) && curated[key].length) merged[key] = curated[key];
+    });
+    return merged;
+  }
+
+  function buildToolProfile(tool, slug) {
+    const rule = CATEGORY_PROFILE_RULES[tool.category] || CATEGORY_PROFILE_RULES.productivity;
+    const priceInfo = getPriceInfo(tool);
+    const detailHighlights = parseDetailsHighlights(tool.details);
+    const primaryKeyword = `${tool.name} বাংলাদেশে ব্যবহার গাইড`;
+    const metaDescriptionRaw = `${tool.name} বাংলাদেশে ব্যবহার গাইড: ${tool.works_in_bd ? "BD-তে কাজ করে" : "availability check দরকার"}, ${tool.no_vpn ? "সাধারণত VPN লাগে না" : "VPN লাগতে পারে"}, ${priceInfo.bdtLabel} বাজেট ও ${rule.intent} টিপস বাংলায়।`;
+    const metaDescription = metaDescriptionRaw.length > 165
+      ? `${metaDescriptionRaw.slice(0, 162).trim()}...`
+      : (metaDescriptionRaw.length < 140 ? `${metaDescriptionRaw} setup, payment ও workflow tips ২০২৬ আপডেটসহ।` : metaDescriptionRaw);
+    const internalLinks = [TOOL_PAGE_LINKS[slug], { href: "ai-tools-bangladesh-bengali.html", text: "Bangla AI tools directory" }, ...baseLinks, ...(catLinks[tool.category] || [])].filter(Boolean);
+    const comparisonPeers = data
+      .filter((item) => item.name !== tool.name && item.category === tool.category)
+      .sort((a, b) => Number(b.rating || 0) - Number(a.rating || 0) || String(a.name).localeCompare(String(b.name)))
+      .slice(0, 2);
+    const comparison = [
+      { name: tool.name, focus: rule.useCase, price: priceInfo.bdtLabel, access: tool.no_vpn ? "VPN লাগে না" : "VPN লাগতে পারে" },
+      ...comparisonPeers.map((peer) => {
+        const peerPrice = getPriceInfo(peer);
+        return {
+          name: peer.name,
+          focus: (parseDetailsHighlights(peer.details)[0] || (CATEGORY_PROFILE_RULES[peer.category] || rule).useCase),
+          price: peerPrice.bdtLabel,
+          access: peer.no_vpn ? "VPN লাগে না" : "VPN লাগতে পারে"
+        };
+      })
+    ];
     return {
-      primaryKeyword: `${tool.name} বাংলাদেশে কীভাবে ব্যবহার করবেন`,
-      metaDescription: `${tool.name} বাংলাদেশে কীভাবে ব্যবহার করবেন, payment, VPN এবং practical use-case বাংলায় জানুন।`,
-      intentTitle: `${tool.name} — বাংলাদেশে ব্যবহার গাইড`,
-      quickAnswer: [`${tool.name} বাংলাদেশে ব্যবহার করা যায়।`, "শুরুতে ফ্রি/বেসিক usage দিয়ে workflow সেট করুন।"],
-      bdUsage: ["বাংলাদেশ থেকে setup ও usage সাধারণত সহজ।", "Prompt/template optimize করলে ভালো output পাওয়া যায়।"],
-      paymentContext: ["USD plan থাকলে BDT conversion ধরে বাজেট করুন।", "কার্ড পেমেন্ট বেশি কমন।"],
-      vpnContext: ["সাধারণত VPN ছাড়া ব্যবহার করা যায়।", "Region issue হলে browser/network check করুন।"],
-      steps: ["Account setup", "Small test use", "Workflow optimize", "Client কাজে ব্যবহার"],
-      faq: [
-        { q: `${tool.name} বাংলাদেশ থেকে কাজ করে?`, a: "সাধারণভাবে হ্যাঁ, তবে plan/region অনুযায়ী কিছু ফিচার বদলাতে পারে।" },
-        { q: `${tool.name} ব্যবহার করতে VPN লাগে?`, a: "বেশিরভাগ ক্ষেত্রে লাগে না।" },
-        { q: "বাংলাদেশে AI দিয়ে আয় করার উপায় কী?", a: "নিজের skill অনুযায়ী service package করে freelancing/client কাজ বাড়ানো যায়।" }
+      primaryKeyword,
+      metaDescription,
+      intentTitle: `${tool.name} — ${rule.intent}`,
+      quickAnswer: [
+        `${tool.name} ${tool.works_in_bd ? "বাংলাদেশ থেকে সাধারণভাবে ব্যবহার করা যায়" : "ব্যবহারের আগে region support যাচাই করা উচিত"} এবং ${tool.no_vpn ? "বেশিরভাগ ক্ষেত্রে VPN লাগে না" : "কিছু ক্ষেত্রে VPN লাগতে পারে"}।`,
+        `${rule.useCase} use-case-এ টুলটি practical।`,
+        ...(detailHighlights[0] ? [`ডেটা নোট: ${detailHighlights[0]}`] : [])
       ],
-      incomeAngles: ["Service delivery time কমিয়ে আয় বাড়ানো"],
-      youtubeAngles: tool.category === "image" ? ["YouTube visual workflow-এ asset তৈরি করা যায়"] : [],
-      internalLinks: (catLinks[tool.category] || []).slice(0, 3)
+      bdUsage: [
+        `ক্যাটাগরি: ${categoryLabelMap[tool.category] || "অন্যান্য"} — বাংলাদেশি workflow-এ ব্যবহারযোগ্যতা ভালো।`,
+        `রেটিং: ${Number(tool.rating || 0).toLocaleString("bn-BD", { minimumFractionDigits: 1, maximumFractionDigits: 1 })} / ৫`,
+        ...(detailHighlights[1] ? [`ব্যবহার তথ্য: ${detailHighlights[1]}`] : [])
+      ],
+      paymentContext: [
+        `Pricing model: ${tool.pricing || "unknown"} • Payment: ${tool.payment || "card"}`,
+        `USD price: ${priceInfo.usdLabel}`,
+        `BDT estimate: ${priceInfo.bdtLabel}`,
+        tool.payment === "card" ? "International card checkout-এর আগে activation status চেক করুন।" : "Free বা local-friendly option হলে onboarding সহজ হয়।"
+      ],
+      vpnContext: [
+        tool.no_vpn ? "সাধারণত VPN ছাড়াই ব্যবহার করা যায়।" : "কিছু feature/access-এর জন্য VPN লাগতে পারে।",
+        "Login/network issue হলে official status page ও account region policy check করুন।"
+      ],
+      steps: [`${tool.name} account খুলে free/basic tier দিয়ে শুরু করুন`, ...asList(rule.steps)].slice(0, 5),
+      bestFor: [...asList(rule.bestFor), ...(tool.pricing !== "paid" ? ["কম বাজেটে শুরু করতে"] : ["pro workflow scale করতে"])].slice(0, 5),
+      pros: asList(rule.pros).concat(tool.works_in_bd ? ["BD-তে কাজ করে"] : []).concat(tool.no_vpn ? ["VPN dependency কম"] : []).slice(0, 5),
+      limits: asList(rule.limits).concat(tool.payment === "card" ? ["কার্ড ছাড়া payment কঠিন হতে পারে"] : []).concat(tool.pricing === "paid" ? ["ফ্রি tier নেই"] : []).slice(0, 5),
+      faq: [
+        { q: `${tool.name} বাংলাদেশে ব্যবহার গাইড অনুযায়ী শুরু করব কীভাবে?`, a: `${tool.name} account খুলে ছোট use-case দিয়ে শুরু করুন, তারপর template/prompt standardize করে workflow-এ নিন।` },
+        { q: `${tool.name} এর BDT price আনুমানিক কত?`, a: `বর্তমান USD price (${priceInfo.usdLabel}) ধরলে আনুমানিক ${priceInfo.bdtLabel} কনটেক্সট পাওয়া যায়। কেনার আগে official pricing check করুন।` },
+        { q: `${tool.name} ব্যবহার করতে VPN লাগে কি?`, a: tool.no_vpn ? "সাধারণত না, তবে network/region issue হলে workaround লাগতে পারে।" : "কিছু region বা feature-এ VPN লাগতে পারে।" },
+        { q: `${tool.name} কারা ব্যবহার করলে বেশি লাভবান হবে?`, a: `${rule.intent} এবং ${rule.useCase} workflow-এ কাজ করেন এমন ব্যবহারকারীরা বেশি উপকার পাবেন।` }
+      ],
+      comparison,
+      internalLinks,
+      incomeAngles: tool.category === "coding" || tool.category === "llm" || tool.category === "productivity" ? ["freelance delivery speed বাড়িয়ে আয় বৃদ্ধি"] : [],
+      youtubeAngles: tool.category === "image" ? ["YouTube visual ও short-video asset pipeline"] : [],
+      relatedStrategy: { sameCategory: 2, budget: 1, complementary: 1 }
     };
   }
 
-  function seoConfig(tool, slug) {
-    return LONG_TAIL_SEO_MAP[slug] || fallbackSeo(tool);
+  function fallbackSeo(tool) {
+    return buildToolProfile(tool, toSlug(tool.name));
+  }
+
+  function resolveSeoProfile(tool, slug) {
+    return mergeProfile(buildToolProfile(tool, slug), LONG_TAIL_SEO_MAP[slug]);
   }
 
   function mergeLinks(seo, category) {
@@ -413,11 +539,28 @@
     return `<section class="detail-seo-block"><h2>Step-by-step ব্যবহার গাইড</h2><ol class="detail-seo-steps">${steps.map((s) => `<li>${esc(s)}</li>`).join("")}</ol></section>`;
   }
 
+  function renderBestForBlock(bestFor) {
+    if (!Array.isArray(bestFor) || !bestFor.length) return "";
+    return `<section class="detail-seo-block"><h2>Best for কারা</h2><ul class="detail-seo-list detail-bestfor-list">${bestFor.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></section>`;
+  }
+
+  function renderProsLimitsBlock(pros, limits) {
+    const prosList = asList(pros);
+    const limitsList = asList(limits);
+    if (!prosList.length && !limitsList.length) return "";
+    return `<section class="detail-seo-block"><h2>শক্তি (Pros) / সীমাবদ্ধতা (Limits)</h2><div class="detail-pros-limits">${prosList.length ? `<article class="detail-pros-box"><h3>শক্তি</h3><ul class="detail-seo-list">${prosList.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></article>` : ""}${limitsList.length ? `<article class="detail-limits-box"><h3>সীমাবদ্ধতা</h3><ul class="detail-seo-list">${limitsList.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></article>` : ""}</div></section>`;
+  }
+
   function renderAnglesBlock(income, yt) {
     const hasIncome = Array.isArray(income) && income.length;
     const hasYt = Array.isArray(yt) && yt.length;
     if (!hasIncome && !hasYt) return "";
     return `<section class="detail-seo-block"><h2>প্র্যাকটিক্যাল ব্যবহার ও আয়ের দিক</h2>${hasIncome ? `<h3>বাংলাদেশে AI দিয়ে আয় করার উপায়</h3><ul class="detail-seo-list">${income.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}${hasYt ? `<h3>AI tools for Bangladeshi YouTubers</h3><ul class="detail-seo-list">${yt.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}</section>`;
+  }
+
+  function renderComparisonBlock(rows) {
+    if (!Array.isArray(rows) || rows.length < 2) return "";
+    return `<section class="detail-seo-block"><h2>দ্রুত comparison</h2><div class="detail-comparison-table-wrap"><table class="detail-comparison-table"><thead><tr><th>টুল</th><th>ফোকাস</th><th>দাম (BDT)</th><th>VPN</th></tr></thead><tbody>${rows.map((row) => `<tr><td>${esc(row.name)}</td><td>${esc(row.focus || "প্রযোজ্য নয়")}</td><td>${esc(row.price || "প্রযোজ্য নয়")}</td><td>${esc(row.access || "প্রযোজ্য নয়")}</td></tr>`).join("")}</tbody></table></div></section>`;
   }
 
   function renderFaqBlock(faq) {
@@ -432,7 +575,7 @@
   function renderSeoSection(tool, slug, seo) {
     if (!refs.detailSeoSection) return;
     const links = mergeLinks(seo, tool.category);
-    refs.detailSeoSection.innerHTML = `<article class="detail-seo-article"><h2 class="detail-seo-intent">${esc(seo.intentTitle)}</h2>${renderTextBlock("Quick answer", seo.quickAnswer)}${renderTextBlock("বাংলাদেশে ব্যবহারযোগ্যতা", seo.bdUsage)}${renderTextBlock("Payment/BDT context", seo.paymentContext)}${renderTextBlock("VPN requirement", seo.vpnContext)}${renderStepsBlock(seo.steps)}${renderAnglesBlock(seo.incomeAngles, seo.youtubeAngles)}${renderFaqBlock(seo.faq)}${renderLinksBlock(links, slug)}</article>`;
+    refs.detailSeoSection.innerHTML = `<article class="detail-seo-article"><h2 class="detail-seo-intent">${esc(seo.intentTitle)}</h2>${renderTextBlock("Quick answer", seo.quickAnswer)}${renderTextBlock("বাংলাদেশে ব্যবহারযোগ্যতা", seo.bdUsage)}${renderTextBlock("Payment/BDT context", seo.paymentContext)}${renderTextBlock("VPN requirement", seo.vpnContext)}${renderStepsBlock(seo.steps)}${renderBestForBlock(seo.bestFor)}${renderProsLimitsBlock(seo.pros, seo.limits)}${renderAnglesBlock(seo.incomeAngles, seo.youtubeAngles)}${renderComparisonBlock(seo.comparison)}${renderFaqBlock(seo.faq)}${renderLinksBlock(links, slug)}</article>`;
   }
 
   function renderFaqSchema(slug, faq) {
@@ -446,10 +589,48 @@
     });
   }
 
-  function applySeoMeta(slug, seo) {
-    document.title = `${seo.primaryKeyword} | বাংলা AI গাইড`;
+  function applySeoMeta(toolName, slug, seo) {
+    document.title = `${toolName} বাংলাদেশে ব্যবহার গাইড | বাংলা AI গাইড`;
     ensureMetaTag("description", seo.metaDescription);
     ensureCanonical(`https://banglaaiguide.com/tool-detail.html?tool=${encodeURIComponent(slug)}`);
+  }
+
+  function trackEvent(eventName, payload) {
+    if (typeof window.gtag === "function") window.gtag("event", eventName, payload);
+  }
+
+  function trackToolProfileView(tool, slug) {
+    trackEvent("view_tool_profile", {
+      tool_slug: slug,
+      category: tool.category || "unknown",
+      pricing: tool.pricing || "unknown",
+      works_in_bd: Boolean(tool.works_in_bd),
+      no_vpn: Boolean(tool.no_vpn)
+    });
+  }
+
+  let detailClickTrackingBound = false;
+
+  function bindDetailClickTracking() {
+    if (detailClickTrackingBound) return;
+    detailClickTrackingBound = true;
+    document.addEventListener("click", (e) => {
+      const pricingLink = e.target.closest("[data-pricing-link='1']");
+      if (pricingLink) {
+        trackEvent("click_pricing_link", {
+          tool_slug: pricingLink.getAttribute("data-tool-slug") || "unknown",
+          category: pricingLink.getAttribute("data-tool-category") || "unknown",
+          pricing_url: pricingLink.getAttribute("href") || ""
+        });
+      }
+      const affiliateLink = e.target.closest("[data-outbound-affiliate='true']");
+      if (affiliateLink) {
+        trackEvent("click_affiliate", {
+          tool_slug: affiliateLink.getAttribute("data-tool-slug") || "unknown",
+          target_url: affiliateLink.getAttribute("href") || ""
+        });
+      }
+    });
   }
 
   function bindClusterCta(pageSlug) {
@@ -461,8 +642,44 @@
     });
   }
 
+  function scoreRelatedTool(currentTool, candidate) {
+    let score = 0;
+    if (candidate.category === currentTool.category) score += 50;
+    if (candidate.pricing === currentTool.pricing) score += 16;
+    if (candidate.payment === currentTool.payment) score += 8;
+    if (Boolean(candidate.no_vpn) === Boolean(currentTool.no_vpn)) score += 6;
+    if (Boolean(candidate.works_in_bd) === Boolean(currentTool.works_in_bd)) score += 6;
+    score += Math.max(0, 12 - Math.abs(Number(candidate.rating || 0) - Number(currentTool.rating || 0)) * 10);
+    if (isFullyFree(candidate) || candidate.pricing === "freemium") score += 4;
+    return score;
+  }
+
+  function pickRelated(candidates, count, currentTool) {
+    return candidates
+      .slice()
+      .sort((a, b) => scoreRelatedTool(currentTool, b) - scoreRelatedTool(currentTool, a) || String(a.name).localeCompare(String(b.name)))
+      .slice(0, count);
+  }
+
+  function selectRelatedTools(currentTool) {
+    const others = data.filter((tool) => tool.name !== currentTool.name);
+    const chosen = [];
+    const used = new Set();
+    const use = (tool) => {
+      if (!tool || used.has(tool.name)) return;
+      chosen.push(tool);
+      used.add(tool.name);
+    };
+    pickRelated(others.filter((tool) => tool.category === currentTool.category), 2, currentTool).forEach(use);
+    use(pickRelated(others.filter((tool) => !used.has(tool.name) && (isFullyFree(tool) || tool.pricing === "freemium")), 1, currentTool)[0]);
+    const complementary = RELATED_COMPLEMENTARY_MAP[currentTool.category] || ["llm", "coding", "productivity"];
+    use(pickRelated(others.filter((tool) => !used.has(tool.name) && complementary.includes(tool.category)), 1, currentTool)[0]);
+    if (chosen.length < 4) pickRelated(others.filter((tool) => !used.has(tool.name)), 4 - chosen.length, currentTool).forEach(use);
+    return chosen.slice(0, 4);
+  }
+
   function renderRelatedTools(currentTool) {
-    const related = data.filter((t) => t.category === currentTool.category && t.name !== currentTool.name).slice(0, 3);
+    const related = selectRelatedTools(currentTool);
     if (!related.length) {
       refs.relatedGrid.innerHTML = '<p class="rating">এই ক্যাটাগরিতে আরও টুল যোগ করা হবে।</p>';
       return;
@@ -524,7 +741,7 @@
 
   function renderTool(tool) {
     const slug = toSlug(tool.name);
-    const seo = seoConfig(tool, slug);
+    const seo = resolveSeoProfile(tool, slug);
     const categoryLabel = categoryLabelMap[tool.category] || "অন্যান্য";
     const priceInfo = getPriceInfo(tool);
     const rating = Number(tool.rating || 0).toLocaleString("bn-BD", { minimumFractionDigits: 1, maximumFractionDigits: 1 });
@@ -533,14 +750,16 @@
     const actionUrl = tool.affiliate_url || tool.direct_url || "#";
 
     refs.breadcrumb.innerHTML = `<a href="index.html">হোম</a><span>&gt;</span><a href="index.html#categoryTabs">${esc(categoryLabel)}</a><span>&gt;</span><span>${esc(tool.name)}</span>`;
-    refs.detailContent.innerHTML = `<div class="tool-header detail-title-row"><div class="tool-title-wrap"><h1 class="detail-title" itemprop="name">${esc(tool.name)}</h1></div><span class="category-tag">${esc(categoryLabel)}</span></div><div class="badges detail-badges">${getBadges(tool)}</div><p class="detail-description" itemprop="description">${esc(tool.description_bn || "")}</p><blockquote class="review-block detail-review"><p>"${esc(tool.review_bn || "রিভিউ শিগগিরই যোগ হবে")}"</p><p class="review-source">— BanglaAIGuide পাঠক</p></blockquote><div class="detail-meta"><div><p class="price">${esc(priceInfo.usdLabel)} | ${esc(priceInfo.bdtLabel)}</p><a class="pricing-link" href="${pricingUrl}" target="_blank" rel="noopener noreferrer">💰 দাম দেখুন</a><span class="verified-date">🗓️ যাচাই: ${verifiedText}</span></div><p class="rating">★ ${rating}</p></div><a class="btn btn-primary detail-cta" href="${esc(actionUrl)}" target="_blank" rel="nofollow noopener noreferrer" data-outbound-affiliate="true">এখনই ব্যবহার করুন →</a><meta itemprop="applicationCategory" content="${esc(categoryLabel)}" /><meta itemprop="operatingSystem" content="Web" /><link itemprop="url" href="${esc(tool.direct_url || actionUrl)}" />`;
+    refs.detailContent.innerHTML = `<div class="tool-header detail-title-row"><div class="tool-title-wrap"><h1 class="detail-title" itemprop="name">${esc(tool.name)}</h1></div><span class="category-tag">${esc(categoryLabel)}</span></div><div class="badges detail-badges">${getBadges(tool)}</div><p class="detail-description" itemprop="description">${esc(tool.description_bn || "")}</p><blockquote class="review-block detail-review"><p>"${esc(tool.review_bn || "রিভিউ শিগগিরই যোগ হবে")}"</p><p class="review-source">— BanglaAIGuide পাঠক</p></blockquote><div class="detail-meta"><div><p class="price">${esc(priceInfo.usdLabel)} | ${esc(priceInfo.bdtLabel)}</p><a class="pricing-link" href="${pricingUrl}" target="_blank" rel="noopener noreferrer" data-pricing-link="1" data-tool-slug="${esc(slug)}" data-tool-category="${esc(tool.category || "unknown")}">💰 দাম দেখুন</a><span class="verified-date">🗓️ যাচাই: ${verifiedText}</span></div><p class="rating">★ ${rating}</p></div><a class="btn btn-primary detail-cta" href="${esc(actionUrl)}" target="_blank" rel="nofollow noopener noreferrer" data-outbound-affiliate="true" data-tool-slug="${esc(slug)}">এখনই ব্যবহার করুন →</a><meta itemprop="applicationCategory" content="${esc(categoryLabel)}" /><meta itemprop="operatingSystem" content="Web" /><link itemprop="url" href="${esc(tool.direct_url || actionUrl)}" />`;
 
-    applySeoMeta(slug, seo);
+    applySeoMeta(tool.name, slug, seo);
     renderSeoSection(tool, slug, seo);
     renderFaqSchema(slug, seo.faq);
     renderRelatedTools(tool);
     renderDetailResources(tool);
     bindClusterCta(slug);
+    bindDetailClickTracking();
+    trackToolProfileView(tool, slug);
   }
 
   function init() {

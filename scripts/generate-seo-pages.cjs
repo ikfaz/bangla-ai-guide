@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 const root = path.resolve(__dirname, "..");
-const lastmod = "2026-03-06";
+const lastmod = "2026-03-07";
 
 const labelMap = new Map([
   ["index.html", "বাংলা AI গাইড হোম"],
@@ -223,6 +223,256 @@ const clusterPages = [
   },
 ];
 
+const docxSlugToExistingSlug = {
+  "chatgpt-bangladesh.html": "chatgpt-bangladesh-theke-bebohar",
+  "vpn-free-ai-tools-bangladesh.html": "vpn-chara-ai-tools-bangladesh",
+  "bkash-ai-tools-payment-bangladesh.html": "bkash-diye-ai-tools-kena-jay",
+  "ai-tools-bdt-price-2026.html": "ai-tools-bdt-price-2026-bangladesh",
+  "elevenlabs-bangla-voice.html": "elevenlabs-bangla-voice",
+  "ai-tools-freelancers-bangladesh.html": "ai-tools-for-freelancers-bangladesh",
+  "midjourney-bangladesh-free.html": "midjourney-bangladesh-free",
+  "cursor-ai-bangla.html": "cursor-ai-bangla",
+  "bangladeshe-ai-tools-kivabe-byabohar-korben.html": "bangladeshe-ai-tools-kibhabe-bebohar-korben",
+  "ai-tools-content-creators-bangladesh.html": "best-ai-tools-for-content-creators-bangladesh",
+  "free-ai-tools-2026-bangladesh.html": "free-ai-tools-2026-bangladesh",
+  "ai-image-generator-free-bangladesh.html": "ai-image-generator-free-bangladesh",
+  "ai-coding-tools-beginners-bangladesh.html": "best-ai-coding-tools-for-beginners-bangladesh",
+  "ai-tools-youtube-bangladesh.html": "ai-tools-for-youtube-bangladesh",
+};
+
+const docxFiles = [
+  path.join(__dirname, "data", "cluster-articles-1-7.txt"),
+  path.join(__dirname, "data", "cluster-articles-8-14.txt"),
+];
+
+function normalizeYear(text) {
+  return text.replace(/২০২৫/g, "২০২৬").replace(/\b2025\b/g, "2026");
+}
+
+function normalizeLine(text) {
+  return normalizeYear(text).replace(/\s+/g, " ").trim();
+}
+
+function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function parseDocxArticles(text) {
+  const content = text.replace(/\r/g, "");
+  const pattern = /Article\s+(\d+)\s*\/\s*১৪\s*([\s\S]*?)(?=\nArticle\s+\d+\s*\/\s*১৪|$)/g;
+  const items = [];
+  let match = pattern.exec(content);
+  while (match) {
+    const articleId = Number(match[1]);
+    const block = match[2].trim();
+    const lines = block
+      .split("\n")
+      .map((line) => line.trim())
+      .filter(Boolean);
+    const title = lines[0] || `Article ${articleId}`;
+    const fileMatch = block.match(/File:\s*([a-z0-9\-]+\.html)/i);
+    const sourceSlug = fileMatch ? fileMatch[1].toLowerCase() : "";
+    const primaryMatch = block.match(/Primary Keyword:\s*([^\n]+)/i);
+    const primaryFromDocx = primaryMatch ? normalizeLine(primaryMatch[1]) : "";
+    const internalLinkIndex = lines.findIndex((line) => /^Internal Link:/i.test(line));
+    const fallbackStart = lines.findIndex((line) => /^Primary Keyword:/i.test(line));
+    const bodyStart = (internalLinkIndex >= 0 ? internalLinkIndex : fallbackStart) + 1;
+    const bodyLines = lines
+      .slice(Math.max(bodyStart, 0))
+      .map(normalizeLine)
+      .filter(Boolean)
+      .filter((line) => !/^File:/i.test(line) && !/^Primary Keyword:/i.test(line) && !/^Internal Link:/i.test(line));
+    items.push({ articleId, title: normalizeLine(title), sourceSlug, primaryFromDocx, bodyLines });
+    match = pattern.exec(content);
+  }
+  return items;
+}
+
+function loadDocxCorpus() {
+  const combined = [];
+  for (const filePath of docxFiles) {
+    if (!fs.existsSync(filePath)) {
+      throw new Error(`Missing DOCX extracted text source: ${filePath}`);
+    }
+    const rawText = fs.readFileSync(filePath, "utf8");
+    combined.push(...parseDocxArticles(rawText));
+  }
+  if (combined.length !== 14) {
+    throw new Error(`Expected 14 DOCX articles, found ${combined.length}`);
+  }
+  return combined;
+}
+
+function uniqueLines(lines) {
+  const seen = new Set();
+  const result = [];
+  for (const line of lines) {
+    const key = line.toLowerCase();
+    if (!seen.has(key)) {
+      seen.add(key);
+      result.push(line);
+    }
+  }
+  return result;
+}
+
+function truncateLine(line, limit = 110) {
+  if (line.length <= limit) return line;
+  return `${line.slice(0, limit - 1).trim()}…`;
+}
+
+function parseFaqItems(lines) {
+  const faq = [];
+  for (let i = 0; i < lines.length; i += 1) {
+    const current = lines[i];
+    const questionMatch = current.match(/^প্রশ্ন[:：]\s*(.+)$/);
+    if (!questionMatch) continue;
+    const question = questionMatch[1].trim();
+    let answer = "";
+    for (let j = i + 1; j < lines.length; j += 1) {
+      const candidate = lines[j];
+      if (/^প্রশ্ন[:：]/.test(candidate)) break;
+      if (candidate) {
+        answer = candidate;
+        break;
+      }
+    }
+    if (question && answer) {
+      faq.push([question, answer]);
+    }
+  }
+  return faq;
+}
+
+function buildSteps(stepLines, allLines, topicBn) {
+  const raw = uniqueLines(stepLines.map(normalizeLine)).filter(Boolean);
+  const steps = [];
+  for (const line of raw) {
+    if (line.length < 8) continue;
+    if (line.length > 160) continue;
+    const normalized = line.replace(/^[-•*]\s*/, "");
+    if (/\?$/.test(normalized) && !/^(Step|ধাপ|পদ্ধতি|দিন\s*\d+)/i.test(normalized)) continue;
+    if (/^(Step|ধাপ|পদ্ধতি|দিন\s*\d+)/i.test(normalized)) {
+      steps.push(normalized);
+    } else if (/^\d+[.)]/.test(normalized) || /^[০-৯]+[.)]/.test(normalized)) {
+      steps.push(`ধাপ ${steps.length + 1}: ${normalized.replace(/^[০-৯0-9]+[.)]\s*/, "")}`);
+    } else {
+      steps.push(`ধাপ ${steps.length + 1}: ${normalized}`);
+    }
+    if (steps.length === 7) break;
+  }
+  const fallback = [
+    `Step 1: ${topicBn} ব্যবহারের লক্ষ্য স্পষ্ট করুন।`,
+    "Step 2: ফ্রি ভার্সন দিয়ে ৭-১৪ দিন ব্যবহার করে নোট নিন।",
+    "Step 3: আউটপুট quality এবং সময় সাশ্রয় তুলনা করুন।",
+    "Step 4: payment/vpn বাস্তবতা যাচাই করে workflow ফাইনাল করুন।",
+    "Step 5: মাসিক ROI দেখে stack optimize করুন।",
+  ];
+  if (steps.length < 4) {
+    for (const item of fallback) {
+      if (steps.length >= 5) break;
+      steps.push(item);
+    }
+  }
+  if (!steps.length) {
+    return fallback;
+  }
+  return steps;
+}
+
+function buildComparisonRows(page, blocks) {
+  return [
+    ["Primary Intent", page.primaryKeyword, "2026 Bangladesh use-case"],
+    [
+      "বাংলাদেশে ব্যবহারযোগ্যতা",
+      truncateLine(blocks.bdUsability[0] || `${page.topicBn} tool stack local workflow-এ ব্যবহার করা যায়।`),
+      truncateLine(blocks.bdUsability[1] || "use-case ভিত্তিক rollout দিলে ফল ভালো হয়।"),
+    ],
+    [
+      "Payment/BDT",
+      truncateLine(blocks.paymentContext[0] || "অফিশিয়াল pricing page দেখে BDT budget সেট করুন।"),
+      truncateLine(blocks.paymentContext[1] || "renewal risk ধরেই মাসিক cap ঠিক করুন।"),
+    ],
+    [
+      "VPN/Access",
+      truncateLine(blocks.vpnContext[0] || "VPN লাগবে কি না আগে যাচাই করুন।"),
+      truncateLine(blocks.vpnContext[1] || "fallback tool রাখলে production risk কমে।"),
+    ],
+  ];
+}
+
+function buildContentBlocks(page, docArticle) {
+  const allLines = uniqueLines(
+    docArticle.bodyLines
+      .map(normalizeLine)
+      .filter(Boolean)
+      .filter((line) => !/^Article\s+\d+/i.test(line))
+  ).filter((line) => line !== docArticle.title && line !== page.h1 && line !== page.primaryKeyword);
+  const quickAnswer = allLines.slice(0, 3);
+  const rest = allLines.slice(3);
+  const paymentContext = [];
+  const vpnContext = [];
+  const stepPool = [];
+  const bdUsability = [];
+  const paymentRegex = /(৳|BDT|দাম|মূল্য|পেমেন্ট|payment|কার্ড|bKash|ডলার|Wise|Payoneer|সাবস্ক্রিপশন|মূল্য তালিকা)/i;
+  const vpnRegex = /(VPN|ভিপিএন|প্রক্সি|proxy|WARP|Proton|Windscribe)/i;
+  const stepRegex = /(^Step|^ধাপ|Step-by-Step|পদ্ধতি\s*[০-৯0-9]+|^[০-৯0-9]+[.)]|Install|Sign Up|সাইন আপ|Download|ইন্সটল|খোলার নিয়ম|শুরু করুন|ক্লিক করুন|যান$)/i;
+  const faqRegex = /^প্রশ্ন[:：]/;
+  for (const line of rest) {
+    if (faqRegex.test(line)) continue;
+    if (stepRegex.test(line)) {
+      stepPool.push(line);
+      continue;
+    }
+    if (vpnRegex.test(line)) {
+      vpnContext.push(line);
+      continue;
+    }
+    if (paymentRegex.test(line)) {
+      paymentContext.push(line);
+      continue;
+    }
+    bdUsability.push(line);
+  }
+  const parsedFaq = parseFaqItems(allLines);
+  const faqItems = parsedFaq.slice(0, 5);
+  if (faqItems.length < 3) {
+    faqItems.push(
+      [`${page.primaryKeyword} বাংলাদেশে ব্যবহারযোগ্য কি?`, "হ্যাঁ, সঠিক workflow, budget discipline, এবং policy awareness থাকলে ব্যবহারযোগ্য।"],
+      [`${page.longTailTargets[0]} বাস্তবে কীভাবে যাচাই করব?`, "Official pricing/access policy এবং নিজের usage log মিলিয়ে যাচাই করুন।"],
+      ["২০২৬ সালে safest rollout strategy কী?", "ফ্রি দিয়ে শুরু, ধাপে ধাপে scale, এবং monthly review।"]
+    );
+  }
+  const uniqueRest = uniqueLines(rest);
+  const enrichedBd = uniqueLines([...bdUsability, ...uniqueRest.filter((line) => !paymentRegex.test(line) && !vpnRegex.test(line))]).slice(0, 40);
+  const enrichedPayment = uniqueLines(paymentContext).slice(0, 25);
+  const enrichedVpn = uniqueLines(vpnContext).slice(0, 20);
+  return {
+    quickAnswer: quickAnswer.length ? quickAnswer : [docArticle.title, `${page.primaryKeyword} নিয়ে এই গাইডে বাস্তব ব্যবহার পদ্ধতি দেয়া হয়েছে।`],
+    bdUsability: enrichedBd.length ? enrichedBd : uniqueRest.slice(0, 14),
+    paymentContext: enrichedPayment.length ? enrichedPayment : ["পেমেন্টের আগে official pricing page ও BDT conversion যাচাই করুন।"],
+    vpnContext: enrichedVpn.length ? enrichedVpn : ["VPN requirement tool অনুযায়ী পরিবর্তন হতে পারে; ব্যবহার শুরুর আগে পরীক্ষা করুন।"],
+    steps: buildSteps(stepPool.length ? stepPool : rest, allLines, page.topicBn),
+    comparisonRows: buildComparisonRows(page, {
+      bdUsability: enrichedBd,
+      paymentContext: enrichedPayment,
+      vpnContext: enrichedVpn,
+    }),
+    faqItems: faqItems.slice(0, 5),
+  };
+}
+
+const pillarAnchorRotation = [
+  "Bangla AI tools directory",
+  "বাংলা AI গাইডের pillar",
+  "AI tools Bangladesh hub",
+];
+
 function buildFaqItems(page) {
   return [
     [`${page.primaryKeyword} বাংলাদেশে কি practical?`, "হ্যাঁ, সঠিক workflow, QA এবং cost control থাকলে practical।"],
@@ -231,8 +481,52 @@ function buildFaqItems(page) {
   ];
 }
 
-for (const page of clusterPages) {
-  page.faqItems = buildFaqItems(page);
+function ensureInternalLinks(page) {
+  const links = Array.isArray(page.internalLinks) ? page.internalLinks : [];
+  const set = new Set(links.filter(Boolean));
+  set.add("index.html");
+  set.add("ai-tools-bangladesh-bengali.html");
+  page.internalLinks = Array.from(set);
+  if (page.internalLinks.length < 4) {
+    throw new Error(`Minimum internal links requirement failed for ${page.slug}`);
+  }
+}
+
+function buildDocxMap() {
+  const map = new Map();
+  const corpus = loadDocxCorpus();
+  for (const item of corpus) {
+    const existingSlug = docxSlugToExistingSlug[item.sourceSlug];
+    if (!existingSlug) {
+      throw new Error(`Missing slug mapping for DOCX source ${item.sourceSlug}`);
+    }
+    map.set(existingSlug, item);
+  }
+  if (map.size !== 14) {
+    throw new Error(`Expected mapped 14 DOCX articles, found ${map.size}`);
+  }
+  return map;
+}
+
+const docxBySlug = buildDocxMap();
+
+for (const [index, page] of clusterPages.entries()) {
+  if (!Array.isArray(page.secondaryKeywords) || page.secondaryKeywords.length > 2) {
+    throw new Error(`secondaryKeywords max 2 for ${page.slug}`);
+  }
+  ensureInternalLinks(page);
+  if (!page.internalLinks.includes("ai-tools-bangladesh-bengali.html")) {
+    throw new Error(`Missing mandatory pillar link for ${page.slug}`);
+  }
+  const docArticle = docxBySlug.get(page.slug);
+  if (!docArticle) {
+    throw new Error(`Missing DOCX article payload for ${page.slug}`);
+  }
+  page.docxArticleId = docArticle.articleId;
+  page.docxSourceSlug = docArticle.sourceSlug;
+  page.contentBlocks = buildContentBlocks(page, docArticle);
+  page.pillarBacklinkLabel = page.pillarBacklinkLabel || pillarAnchorRotation[index % pillarAnchorRotation.length];
+  page.faqItems = page.contentBlocks.faqItems.length >= 3 ? page.contentBlocks.faqItems : buildFaqItems(page);
 }
 
 function faqSchema(url, page) {
@@ -264,11 +558,17 @@ function articleSchema(url, page) {
 }
 
 function keywordSignal(page) {
-  return `<p class="seo-lead" data-keyword-signal="true">${page.primaryKeyword} ফোকাস ধরে ${page.secondaryKeywords[0]} এবং ${page.longTailTargets[0]} সহ বাংলাদেশি ব্যবহারকারীর জন্য 2026-ready গাইড দেয়া হয়েছে।</p>`;
+  return `<p class="seo-lead" data-keyword-signal="true">${escapeHtml(page.primaryKeyword)} ফোকাস ধরে ${escapeHtml(page.secondaryKeywords[0])} এবং ${escapeHtml(page.longTailTargets[0])} সহ বাংলাদেশি ব্যবহারকারীর জন্য 2026-ready গাইড দেয়া হয়েছে।</p>`;
 }
 
-function renderTable(page) {
-  return `<div class="seo-table-wrap"><table class="seo-table"><thead><tr><th>Focus</th><th>বাংলাদেশ context</th><th>Execution</th></tr></thead><tbody><tr><td>${page.topicBn}</td><td>Payment + VPN reality</td><td>Structured workflow</td></tr><tr><td>${page.primaryKeyword}</td><td>BDT budget discipline</td><td>14-day validation</td></tr><tr><td>${page.longTailTargets[0]}</td><td>Low-risk rollout</td><td>Monthly review</td></tr></tbody></table></div>`;
+function renderPillarBacklink(page) {
+  return `<p class="seo-lead">Full stack comparison দেখতে <a href="ai-tools-bangladesh-bengali.html">${escapeHtml(page.pillarBacklinkLabel)}</a> দেখুন।</p>`;
+}
+
+function renderTable(blocks) {
+  return `<div class="seo-table-wrap"><table class="seo-table"><thead><tr><th>Focus</th><th>বাংলাদেশ context</th><th>Execution</th></tr></thead><tbody>${blocks.comparisonRows
+    .map((row) => `<tr><td>${escapeHtml(row[0])}</td><td>${escapeHtml(row[1])}</td><td>${escapeHtml(row[2])}</td></tr>`)
+    .join("")}</tbody></table></div>`;
 }
 
 function renderResources(page, fileName) {
@@ -292,13 +592,15 @@ function renderPage(page) {
   const file = `${page.slug}.html`;
   const url = `https://banglaaiguide.com/${file}`;
   const schema = buildSchema(url, page);
-  const steps = [
-    `Step 1: ${page.topicBn} use-case স্পষ্টভাবে লিখুন।`,
-    "Step 2: Free/freemium tier দিয়ে ৭-১৪ দিন test run করুন।",
-    "Step 3: BDT budget cap, payment path এবং access stability যাচাই করুন।",
-    "Step 4: Template workflow বানিয়ে repeatable execution নিশ্চিত করুন।",
-    "Step 5: মাসিকভাবে ROI review করে stack optimize করুন।",
-  ];
+  const blocks = page.contentBlocks;
+  const quickAnswerHtml = blocks.quickAnswer.map((line) => `<p>${escapeHtml(line)}</p>`).join("");
+  const bdUsabilityHtml = blocks.bdUsability.map((line) => `<p>${escapeHtml(line)}</p>`).join("");
+  const paymentHtml = blocks.paymentContext.map((line) => `<p>${escapeHtml(line)}</p>`).join("");
+  const vpnHtml = blocks.vpnContext.map((line) => `<p>${escapeHtml(line)}</p>`).join("");
+  const stepsHtml = blocks.steps.map((line) => `<li>${escapeHtml(line)}</li>`).join("");
+  const faqHtml = page.faqItems
+    .map((item) => `<article class="seo-faq-item"><h3>${escapeHtml(item[0])}</h3><p>${escapeHtml(item[1])}</p></article>`)
+    .join("");
   return `<!DOCTYPE html>
 <html lang="bn">
 <head>
@@ -313,33 +615,38 @@ function renderPage(page) {
   <meta name="theme-color" content="#059669" />
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-X760BSGQCC"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-X760BSGQCC');</script>
-  <title>${page.title}</title>
-  <meta name="description" content="${page.description}" />
+  <title>${escapeHtml(page.title)}</title>
+  <meta name="description" content="${escapeHtml(page.description)}" />
   <link rel="canonical" href="${url}" />
+  <meta name="docx-article-id" content="${page.docxArticleId}" />
+  <meta name="docx-source-slug" content="${escapeHtml(page.docxSourceSlug)}" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Syne:wght@500;700;800&display=swap" />
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Syne:wght@500;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
   <script type="application/ld+json">${JSON.stringify(schema)}</script>
+  <script src="js/tools-data.js" defer></script>
   <script src="js/seo-pages.js" defer></script>
 </head>
-<body data-page-slug="${page.slug}" data-year-policy="${page.yearPolicy}">
+<body data-page-slug="${escapeHtml(page.slug)}" data-year-policy="${escapeHtml(page.yearPolicy)}" data-docx-article-id="${page.docxArticleId}">
   <header class="navbar" id="top"><div class="container navbar-inner"><a href="index.html" class="logo" aria-label="বাংলা AI গাইড হোম"><img class="logo-mark" src="/favicon.svg" alt="বাংলা AI গাইড লোগো" width="28" height="28" decoding="async" /><span class="logo-text">বাংলা AI গাইড</span></a><button class="hamburger" id="hamburgerBtn" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="মেনু টগল করুন"><span></span><span></span><span></span></button><div class="nav-desktop"><nav class="nav-links" aria-label="প্রধান ন্যাভিগেশন"><a href="index.html#toolsSection">টুলস দেখুন</a><a href="index.html#categoryTabs">ক্যাটাগরি</a><a href="index.html#newsletter">নিউজলেটার</a></nav><a href="submit.html" class="btn btn-primary">টুল সাবমিট করুন</a></div></div><div class="mobile-menu" id="mobileMenu" aria-hidden="true"><a href="index.html#toolsSection">টুলস দেখুন</a><a href="index.html#categoryTabs">ক্যাটাগরি</a><a href="index.html#newsletter">নিউজলেটার</a><a href="submit.html" class="btn btn-primary mobile-cta">টুল সাবমিট করুন</a></div></header>
   <main class="seo-main">
     <article class="container seo-article-page">
-      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">হোম</a><span>&gt;</span><span>${page.primaryKeyword}</span></nav>
-      <h1>${page.h1}</h1>
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">হোম</a><span>&gt;</span><span>${escapeHtml(page.primaryKeyword)}</span></nav>
+      <h1>${escapeHtml(page.h1)}</h1>
       ${keywordSignal(page)}
-      <p class="seo-lead">${page.primaryKeyword} intent-এ এই পেজটি 2026 current-state অনুযায়ী Bangladesh-first guidance দেয়।</p>
-      <p class="seo-lead">${page.secondaryKeywords[0]} এবং ${page.secondaryKeywords[1]} query cluster ধরে content সাজানো হয়েছে যাতে cannibalization কমে।</p>
-      <p class="seo-lead">${page.longTailTargets[0]} সহ long-tail search intent গুলো FAQ এবং section heading-এ naturalভাবে কভার করা হয়েছে।</p>
-      <section class="seo-block"><h2>বাংলাদেশে ব্যবহারযোগ্যতা</h2><p>${page.topicBn} workflow-এ local payment, bandwidth stability এবং language quality একসাথে বিবেচনা করতে হয়।</p><p>Freelancer, creator, learner - সবার জন্য একই tool stack কার্যকর নয়, তাই use-case-wise rollout করুন।</p><p>Small pilot চালিয়ে measurable KPI নিয়ে এগোলে ভুল subscription এড়ানো যায়।</p></section>
-      <section class="seo-block"><h2>Payment/BDT Context</h2><p>USD plan কে BDT budget-এ normalize করে monthly cap নির্ধারণ করুন।</p><p>Card availability, fee margin, এবং renewal risk ধরা না হলে planning ভুল হবে।</p><p>bKash route থাকলে official policy cross-check করে তবেই payment চালান।</p></section>
-      <section class="seo-block"><h2>VPN Requirement</h2><p>Production workflow-এ VPN-free stability সাধারণত বেশি নির্ভরযোগ্য।</p><p>VPN-dependent tools থাকলে alternative fallback ready রাখুন।</p><p>Policy change হলে 30-day interval-এ access audit করুন।</p></section>
-      <section class="seo-block"><h2>Step-by-step ব্যবহার পদ্ধতি</h2><ol class="seo-steps">${steps.map((x) => `<li>${x}</li>`).join("")}</ol></section>
-      <section class="seo-block"><h2>দ্রুত তুলনামূলক টেবিল</h2>${renderTable(page)}</section>
-      <section class="seo-block"><h2>FAQ</h2>${page.faqItems.map((item) => `<article class="seo-faq-item"><h3>${item[0]}</h3><p>${item[1]}</p></article>`).join("")}</section>
+      <p class="seo-lead">${escapeHtml(page.primaryKeyword)} intent-এ এই পেজটি 2026 current-state অনুযায়ী Bangladesh-first guidance দেয়।</p>
+      <p class="seo-lead">${escapeHtml(page.secondaryKeywords[0])} এবং ${escapeHtml(page.secondaryKeywords[1] || page.longTailTargets[1] || page.primaryKeyword)} query cluster ধরে content সাজানো হয়েছে যাতে cannibalization কমে।</p>
+      <p class="seo-lead">${escapeHtml(page.longTailTargets[0])} সহ long-tail search intent গুলো FAQ এবং section heading-এ naturalভাবে কভার করা হয়েছে।</p>
+      ${renderPillarBacklink(page)}
+      <section class="seo-block"><h2>Quick answer</h2>${quickAnswerHtml}</section>
+      <section class="seo-block"><h2>বাংলাদেশে ব্যবহারযোগ্যতা</h2>${bdUsabilityHtml}</section>
+      <section class="seo-block"><h2>Payment/BDT Context</h2>${paymentHtml}</section>
+      <section class="seo-block"><h2>VPN Requirement</h2>${vpnHtml}</section>
+      <section class="seo-block"><h2>Step-by-step ব্যবহার পদ্ধতি</h2><ol class="seo-steps">${stepsHtml}</ol></section>
+      <section class="seo-block"><h2>দ্রুত তুলনামূলক টেবিল</h2>${renderTable(blocks)}</section>
+      <section class="seo-block"><h2>FAQ</h2>${faqHtml}</section>
       <section class="seo-cta-block"><h2>পরবর্তী ধাপ</h2><p>আরও AI resource দেখতে index-এ যান অথবা নতুন tool submit করুন।</p><div class="seo-cta-actions"><a class="btn btn-primary" data-cluster-cta="index" href="index.html">সব টুল দেখুন</a><a class="btn btn-ghost" data-cluster-cta="submit" href="submit.html">টুল সাবমিট করুন</a><a class="btn btn-ghost" data-outbound-affiliate="true" href="${page.outbound[1]}" target="_blank" rel="nofollow noopener noreferrer">${page.outbound[0]}</a></div></section>
       <section class="seo-block"><h2>Bangladesh AI Resources</h2><ul class="seo-links-list">${renderResources(page, file)}</ul></section>
     </article>
