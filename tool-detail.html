@@ -32,7 +32,7 @@
     const rawSlug = params.get("tool");
     if (!rawSlug) return;
     const slug = aliases[rawSlug] || rawSlug;
-    window.location.replace(`tools/${encodeURIComponent(slug)}.html`);
+    window.location.replace(`/${encodeURIComponent(slug)}/`);
   })();
   </script>
   <script type="application/ld+json" id="detailFaqSchema"></script>
@@ -121,6 +121,5 @@
   </footer>
 </body>
 </html>
-
 
 

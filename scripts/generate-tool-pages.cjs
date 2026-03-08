@@ -3,18 +3,9 @@ const path = require("path");
 const vm = require("vm");
 
 const root = path.resolve(__dirname, "..");
-const toolDir = path.join(root, "tools");
+const toolRedirectDir = path.join(root, "tools");
 const lastmod = "2026-03-09";
 const siteUrl = "https://banglaaiguide.com";
-
-const slugAliases = {
-  mistral: "mistral-ai",
-  kling: "kling-ai",
-  runway: "runway-ml",
-  leonardo: "leonardo-ai",
-  suno: "suno-ai",
-  jasper: "jasper-ai",
-};
 
 const categoryLabelMap = {
   llm: "LLM",
@@ -37,7 +28,7 @@ const articleLinks = {
   midjourney: { href: "../midjourney-bangladesh-free.html", text: "Midjourney Bangladesh free" },
   "kling-ai": { href: "../ai-tools-for-youtube-bangladesh.html", text: "AI tools for YouTube Bangladesh" },
   claude: { href: "../ai-tools-for-freelancers-bangladesh.html", text: "AI tools for freelancers Bangladesh" },
-  gamma: { href: "../best-ai-tools-for-content-creators-bangladesh.html", text: "best AI tools for content creators" },
+  gamma: { href: "../best-ai-tools-for-content-creators-bangladesh.html", text: "Best AI tools for content creators" },
   notebooklm: { href: "../notebooklm-bangla-guide.html", text: "NotebookLM বাংলা গাইড" },
 };
 
@@ -52,7 +43,7 @@ const categoryLinks = {
   llm: [
     { href: "../chatgpt-bangladesh-theke-bebohar.html", text: "ChatGPT Bangladesh guide" },
     { href: "../ai-tools-for-freelancers-bangladesh.html", text: "AI tools for freelancers Bangladesh" },
-    { href: "../best-ai-tools-for-content-creators-bangladesh.html", text: "best AI tools for content creators" },
+    { href: "../best-ai-tools-for-content-creators-bangladesh.html", text: "Best AI tools for content creators" },
   ],
   image: [
     { href: "../midjourney-bangladesh-free.html", text: "Midjourney Bangladesh free" },
@@ -61,7 +52,7 @@ const categoryLinks = {
   ],
   coding: [
     { href: "../cursor-ai-bangla.html", text: "Cursor AI বাংলা" },
-    { href: "../best-ai-coding-tools-for-beginners-bangladesh.html", text: "best AI coding tools for beginners" },
+    { href: "../best-ai-coding-tools-for-beginners-bangladesh.html", text: "Best AI coding tools for beginners" },
     { href: "../ai-tools-for-freelancers-bangladesh.html", text: "AI tools freelancer Bangladesh income" },
   ],
   productivity: [
@@ -186,7 +177,7 @@ function buildNotebookLmProfile(tool, slug, conversionRate) {
   const priceInfo = getPriceInfo(tool, conversionRate);
   return {
     title: `${tool.name} বাংলাদেশে ব্যবহার গাইড | বাংলা AI গাইড`,
-    description: "NotebookLM বাংলাদেশে কীভাবে ব্যবহার করবেন, PDF summary workflow, study notes, audio overview, এবং free access context বাংলায় জানুন।",
+    description: "NotebookLM বাংলাদেশে কীভাবে ব্যবহার করবেন, PDF summary workflow, study notes, audio overview, এবং free access context বাংলায় জানুন।",
     intro: [
       "NotebookLM হলো Google-এর research assistant যেখানে PDF, notes, website summary, এবং source-based প্রশ্নোত্তর করা যায়।",
       "বাংলাদেশের শিক্ষার্থী, শিক্ষক, researcher, এবং content planner-দের জন্য এটি বিশেষভাবে useful কারণ source-grounded summary দ্রুত পাওয়া যায়।",
@@ -237,7 +228,7 @@ function buildGenericProfile(tool, slug, conversionRate) {
   ];
   return {
     title: `${tool.name} বাংলাদেশে ব্যবহার, দাম ও রিভিউ | বাংলা AI গাইড`,
-    description: `${tool.name} বাংলাদেশে ব্যবহার গাইড: ${tool.no_vpn ? "VPN ছাড়া access" : "access policy"}, ${priceInfo.bdtLabel} price context, এবং ${categoryLabel} workflow বাংলায় জানুন।`,
+    description: `${tool.name} বাংলাদেশে ব্যবহার গাইড: ${tool.no_vpn ? "VPN ছাড়া access" : "access policy"}, ${priceInfo.bdtLabel} price context, এবং ${categoryLabel} workflow বাংলায় জানুন।`,
     intro,
     quickAnswer: [
       `${tool.name} ${tool.works_in_bd ? "বাংলাদেশ থেকে সাধারণভাবে ব্যবহার করা যায়" : "ব্যবহারের আগে availability যাচাই করা উচিত"} এবং ${tool.no_vpn ? "বেশিরভাগ ক্ষেত্রে VPN লাগে না" : "কিছু ক্ষেত্রে VPN লাগতে পারে"}।`,
@@ -247,7 +238,7 @@ function buildGenericProfile(tool, slug, conversionRate) {
     usage: [
       tool.description_bn || `${tool.name} ${categoryLabel} use-case-এ কাজ করে।`,
       details[1] || `${tool.name} ব্যবহার করার আগে official pricing, limits, এবং support policy মিলিয়ে দেখা উচিত।`,
-      details[2] || `${tool.name} নিয়ে কাজ করার সময় output quality ও cost দুইটাই একসাথে track করা ভালো।`,
+      details[2] || `${tool.name} নিয়ে কাজ করার সময় output quality ও cost দুটিই একসাথে track করা ভালো।`,
     ],
     steps: [
       `${tool.name} account খুলে free/basic tier দিয়ে শুরু করুন।`,
@@ -302,7 +293,7 @@ function renderRelatedTools(tools, currentTool) {
           <p class="tool-desc">${escapeHtml(tool.description_bn || "")}</p>
           <div class="tool-meta">
             <p class="rating">★ ${Number(tool.rating || 0).toLocaleString("bn-BD", { minimumFractionDigits: 1, maximumFractionDigits: 1 })}</p>
-            <a class="btn btn-ghost" href="./${escapeHtml(slug)}.html">দেখুন →</a>
+            <a class="btn btn-ghost" href="../${escapeHtml(slug)}/">দেখুন →</a>
           </div>
         </article>
       `;
@@ -310,7 +301,7 @@ function renderRelatedTools(tools, currentTool) {
     .join("");
 }
 
-function buildSchema(tool, slug, canonicalUrl, priceInfo, profile) {
+function buildSchema(tool, canonicalUrl, priceInfo, profile) {
   const breadcrumb = {
     "@type": "BreadcrumbList",
     itemListElement: [
@@ -347,7 +338,7 @@ function buildSchema(tool, slug, canonicalUrl, priceInfo, profile) {
 
 function renderPage(tool, tools, conversionRate) {
   const slug = toSlug(tool.name);
-  const canonicalUrl = `${siteUrl}/tools/${slug}.html`;
+  const canonicalUrl = `${siteUrl}/${slug}/`;
   const priceInfo = getPriceInfo(tool, conversionRate);
   const profile = slug === "notebooklm" ? buildNotebookLmProfile(tool, slug, conversionRate) : buildGenericProfile(tool, slug, conversionRate);
   const relatedHtml = renderRelatedTools(tools, tool);
@@ -356,7 +347,7 @@ function renderPage(tool, tools, conversionRate) {
     <span class="badge ${tool.no_vpn ? "badge--accent" : "badge--neutral"}">${tool.no_vpn ? "🔵 VPN লাগে না" : "⚠️ VPN লাগতে পারে"}</span>
     ${getPaymentBadges(tool)}
   `;
-  const schema = buildSchema(tool, slug, canonicalUrl, priceInfo, profile);
+  const schema = buildSchema(tool, canonicalUrl, priceInfo, profile);
   const verifiedText = escapeHtml(tool.verified || "মার্চ ২০২৬");
   const actionUrl = escapeHtml(tool.affiliate_url || tool.direct_url || "#");
   const pricingUrl = escapeHtml(tool.pricing_url || tool.direct_url || tool.affiliate_url || "#");
@@ -429,7 +420,7 @@ function renderPage(tool, tools, conversionRate) {
       <div class="badges detail-badges">${badgeHtml}</div>
       <p class="detail-description">${escapeHtml(tool.description_bn || profile.description)}</p>
       <blockquote class="review-block detail-review">
-        <p>"${escapeHtml(tool.review_bn || `${tool.name} সম্পর্কে বাংলা রিভিউ ও ব্যবহার গাইড এখানে দেয়া হয়েছে।`) }"</p>
+        <p>"${escapeHtml(tool.review_bn || `${tool.name} সম্পর্কে বাংলা রিভিউ ও ব্যবহার গাইড এখানে দেয়া হয়েছে।`)}"</p>
         <p class="review-source">— BanglaAIGuide</p>
       </blockquote>
       <div class="detail-meta">
@@ -471,13 +462,35 @@ function renderPage(tool, tools, conversionRate) {
 </html>`;
 }
 
+function renderLegacyRedirectPage(slug) {
+  const canonicalUrl = `${siteUrl}/${slug}/`;
+  const escapedCanonical = escapeHtml(canonicalUrl);
+  const escapedPath = `/${encodeURIComponent(slug)}/`;
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="refresh" content="0; url=${escapedCanonical}" />
+  <meta name="robots" content="noindex,follow" />
+  <link rel="canonical" href="${escapedCanonical}" />
+  <title>Redirecting...</title>
+  <script>
+    window.location.replace(${JSON.stringify(escapedPath)});
+  </script>
+</head>
+<body>
+  <p>This page has moved to <a href="${escapedCanonical}">${escapedCanonical}</a>.</p>
+</body>
+</html>`;
+}
+
 function updateSitemap(tools) {
   const sitemapPath = path.join(root, "sitemap.xml");
   const sitemap = fs.readFileSync(sitemapPath, "utf8");
   const toolEntries = tools
     .map((tool) => {
       const slug = toSlug(tool.name);
-      return `  <url>\n    <loc>${siteUrl}/tools/${slug}.html</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.6</priority>\n  </url>`;
+      return `  <url>\n    <loc>${siteUrl}/${slug}/</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.6</priority>\n  </url>`;
     })
     .join("\n");
   const notebookEntry = `  <url>\n    <loc>${siteUrl}/notebooklm-bangla-guide.html</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.7</priority>\n  </url>`;
@@ -493,16 +506,19 @@ function main() {
     throw new Error("No tools loaded from js/tools-data.js");
   }
 
-  fs.mkdirSync(toolDir, { recursive: true });
+  fs.mkdirSync(toolRedirectDir, { recursive: true });
 
   for (const tool of tools) {
     const slug = toSlug(tool.name);
     const html = renderPage(tool, tools, usdToBdt);
-    fs.writeFileSync(path.join(toolDir, `${slug}.html`), html, "utf8");
+    const canonicalDir = path.join(root, slug);
+    fs.mkdirSync(canonicalDir, { recursive: true });
+    fs.writeFileSync(path.join(canonicalDir, "index.html"), html, "utf8");
+    fs.writeFileSync(path.join(toolRedirectDir, `${slug}.html`), renderLegacyRedirectPage(slug), "utf8");
   }
 
   updateSitemap(tools);
-  console.log(`Generated ${tools.length} static tool pages`);
+  console.log(`Generated ${tools.length} clean tool pages and legacy redirects`);
 }
 
 main();

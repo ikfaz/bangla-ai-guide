@@ -154,225 +154,226 @@
     <priority>0.5</priority>
   </url>
 
+
   <!-- Generated Tool Pages -->
   <url>
-    <loc>https://banglaaiguide.com/tools/chatgpt.html</loc>
+    <loc>https://banglaaiguide.com/chatgpt/</loc>
     <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://banglaaiguide.com/tools/claude.html</loc>
+    <loc>https://banglaaiguide.com/claude/</loc>
     <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://banglaaiguide.com/tools/gemini.html</loc>
+    <loc>https://banglaaiguide.com/gemini/</loc>
     <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://banglaaiguide.com/tools/perplexity-ai.html</loc>
+    <loc>https://banglaaiguide.com/perplexity-ai/</loc>
     <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://banglaaiguide.com/tools/groq.html</loc>
+    <loc>https://banglaaiguide.com/groq/</loc>
     <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://banglaaiguide.com/tools/mistral-ai.html</loc>
+    <loc>https://banglaaiguide.com/mistral-ai/</loc>
     <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://banglaaiguide.com/tools/poe.html</loc>
+    <loc>https://banglaaiguide.com/poe/</loc>
     <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://banglaaiguide.com/tools/meta-ai.html</loc>
+    <loc>https://banglaaiguide.com/meta-ai/</loc>
     <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://banglaaiguide.com/tools/huggingchat.html</loc>
+    <loc>https://banglaaiguide.com/huggingchat/</loc>
     <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://banglaaiguide.com/tools/deepseek.html</loc>
+    <loc>https://banglaaiguide.com/deepseek/</loc>
     <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://banglaaiguide.com/tools/grok.html</loc>
+    <loc>https://banglaaiguide.com/grok/</loc>
     <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://banglaaiguide.com/tools/midjourney.html</loc>
+    <loc>https://banglaaiguide.com/midjourney/</loc>
     <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://banglaaiguide.com/tools/ideogram.html</loc>
+    <loc>https://banglaaiguide.com/ideogram/</loc>
     <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://banglaaiguide.com/tools/kling-ai.html</loc>
+    <loc>https://banglaaiguide.com/kling-ai/</loc>
     <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://banglaaiguide.com/tools/runway-ml.html</loc>
+    <loc>https://banglaaiguide.com/runway-ml/</loc>
     <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://banglaaiguide.com/tools/leonardo-ai.html</loc>
+    <loc>https://banglaaiguide.com/leonardo-ai/</loc>
     <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://banglaaiguide.com/tools/stable-diffusion.html</loc>
+    <loc>https://banglaaiguide.com/stable-diffusion/</loc>
     <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://banglaaiguide.com/tools/adobe-firefly.html</loc>
+    <loc>https://banglaaiguide.com/adobe-firefly/</loc>
     <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://banglaaiguide.com/tools/flux.html</loc>
+    <loc>https://banglaaiguide.com/flux/</loc>
     <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://banglaaiguide.com/tools/cursor.html</loc>
+    <loc>https://banglaaiguide.com/cursor/</loc>
     <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://banglaaiguide.com/tools/github-copilot.html</loc>
+    <loc>https://banglaaiguide.com/github-copilot/</loc>
     <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://banglaaiguide.com/tools/bolt-new.html</loc>
+    <loc>https://banglaaiguide.com/bolt-new/</loc>
     <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://banglaaiguide.com/tools/v0-by-vercel.html</loc>
+    <loc>https://banglaaiguide.com/v0-by-vercel/</loc>
     <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://banglaaiguide.com/tools/windsurf.html</loc>
+    <loc>https://banglaaiguide.com/windsurf/</loc>
     <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://banglaaiguide.com/tools/replit-ai.html</loc>
+    <loc>https://banglaaiguide.com/replit-ai/</loc>
     <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://banglaaiguide.com/tools/claude-code.html</loc>
+    <loc>https://banglaaiguide.com/claude-code/</loc>
     <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://banglaaiguide.com/tools/elevenlabs.html</loc>
+    <loc>https://banglaaiguide.com/elevenlabs/</loc>
     <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://banglaaiguide.com/tools/gamma.html</loc>
+    <loc>https://banglaaiguide.com/gamma/</loc>
     <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://banglaaiguide.com/tools/notion-ai.html</loc>
+    <loc>https://banglaaiguide.com/notion-ai/</loc>
     <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://banglaaiguide.com/tools/suno-ai.html</loc>
+    <loc>https://banglaaiguide.com/suno-ai/</loc>
     <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://banglaaiguide.com/tools/descript.html</loc>
+    <loc>https://banglaaiguide.com/descript/</loc>
     <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://banglaaiguide.com/tools/otter-ai.html</loc>
+    <loc>https://banglaaiguide.com/otter-ai/</loc>
     <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://banglaaiguide.com/tools/zapier.html</loc>
+    <loc>https://banglaaiguide.com/zapier/</loc>
     <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://banglaaiguide.com/tools/make.html</loc>
+    <loc>https://banglaaiguide.com/make/</loc>
     <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://banglaaiguide.com/tools/jasper-ai.html</loc>
+    <loc>https://banglaaiguide.com/jasper-ai/</loc>
     <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://banglaaiguide.com/tools/notebooklm.html</loc>
+    <loc>https://banglaaiguide.com/notebooklm/</loc>
     <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://banglaaiguide.com/tools/lovable.html</loc>
+    <loc>https://banglaaiguide.com/lovable/</loc>
     <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>

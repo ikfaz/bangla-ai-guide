@@ -45,7 +45,7 @@
   const esc = (t) => String(t ?? "").replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;").replaceAll("'", "&#039;");
   const toSlug = (v) => String(v || "").trim().toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
   const bnNum = (v) => Number(v).toLocaleString("bn-BD");
-  const getToolPagePath = (slug) => `tools/${encodeURIComponent(slug)}.html`;
+  const getToolPagePath = (slug) => `${encodeURIComponent(slug)}/`;
   const getToolLandingUrl = (tool) => `https://banglaaiguide.com/${getToolPagePath(toSlug(tool.name))}`;
   const getFacebookShareUrl = (tool) => `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(getToolLandingUrl(tool))}`;
   const getWhatsAppShareUrl = (tool) => `https://wa.me/?text=${encodeURIComponent(`${tool.name} — বাংলাদেশ থেকে কাজ করে!\nদেখুন: ${getToolLandingUrl(tool)}\nবাংলা AI গাইডে আরও ১৫০+ টুলস →`)}`;
@@ -584,7 +584,7 @@
     refs.detailFaqSchema.textContent = JSON.stringify({
       "@context": "https://schema.org",
       "@type": "FAQPage",
-      url: `https://banglaaiguide.com/tools/${encodeURIComponent(slug)}.html`,
+      url: `https://banglaaiguide.com/${encodeURIComponent(slug)}/`,
       inLanguage: "bn-BD",
       mainEntity: faq.map((i) => ({ "@type": "Question", name: i.q, acceptedAnswer: { "@type": "Answer", text: i.a } }))
     });
@@ -593,7 +593,7 @@
   function applySeoMeta(toolName, slug, seo) {
     document.title = `${toolName} বাংলাদেশে ব্যবহার গাইড | বাংলা AI গাইড`;
     ensureMetaTag("description", seo.metaDescription);
-    ensureCanonical(`https://banglaaiguide.com/tools/${encodeURIComponent(slug)}.html`);
+    ensureCanonical(`https://banglaaiguide.com/${encodeURIComponent(slug)}/`);
   }
 
   function trackEvent(eventName, payload) {

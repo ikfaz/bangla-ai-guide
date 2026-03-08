@@ -140,7 +140,9 @@
 
   function getToolPageHref(slug) {
     const encodedSlug = encodeURIComponent(slug);
-    return window.location.pathname.includes("/tools/") ? `${encodedSlug}.html` : `tools/${encodedSlug}.html`;
+    const pathname = window.location.pathname || "";
+    const isNestedToolPage = pathname.includes("/tools/") || /^\/[^/]+\/$/.test(pathname) || /\/[^/]+\/index\.html$/.test(pathname);
+    return isNestedToolPage ? `../${encodedSlug}/` : `${encodedSlug}/`;
   }
 
   function escapeHtml(value) {

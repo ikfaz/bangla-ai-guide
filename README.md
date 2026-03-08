@@ -60,7 +60,7 @@
 - SEO head tags (title/meta/canonical/Open Graph/Twitter).
 - JSON-LD structured data (`WebSite` + `ItemList` for first 10 tools).
 - Hero section with live search.
-- Static tool pages via `/tools/<slug>.html` plus legacy `tool-detail.html?tool=` redirect compatibility.
+- Static tool pages via `/<slug>/` plus legacy `tool-detail.html?tool=` and `/tools/<slug>.html` redirect compatibility.
 - Submit page with Bengali validation and success message.
 - Friendly Bengali 404 page with random tool suggestions.
 - Bengali legal pages: privacy, terms, disclaimer, and contact.
@@ -107,5 +107,5 @@
 
 ## Tool URL Pattern
 
-- `tools/chatgpt.html`
-- Legacy compatibility: `tool-detail.html?tool=chatgpt` redirects to the static canonical page.
+- `/chatgpt/`
+- Legacy compatibility: `tool-detail.html?tool=chatgpt` and `/tools/chatgpt.html` redirect to the static canonical page.

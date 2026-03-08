@@ -282,7 +282,7 @@
   }
 
   function getToolPagePath(slug) {
-    return `tools/${encodeURIComponent(slug)}.html`;
+    return `${encodeURIComponent(slug)}/`;
   }
 
   function getToolLandingUrl(tool) {
