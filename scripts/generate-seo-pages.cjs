@@ -3,6 +3,26 @@ const path = require("path");
 
 const root = path.resolve(__dirname, "..");
 const lastmod = "2026-03-09";
+const siteUrl = "https://banglaaiguide.com";
+const manualArticleSourceDir = path.join(__dirname, "manual-article-sources");
+const utilityHtmlFiles = new Set([
+  "404.html",
+  "contact.html",
+  "disclaimer.html",
+  "index.html",
+  "privacy.html",
+  "submit.html",
+  "terms.html",
+  "tool-detail.html",
+]);
+const manualArticleSourceFiles = [
+  "ai-tools-bangladesh-bengali.html",
+  "ai-tools-bdt-price-2025-bangladesh.html",
+  "bangla-ai-guide.html",
+  "deepseek-bangladesh.html",
+  "grok-ai-bangladesh.html",
+  "notebooklm-bangla-guide.html",
+];
 
 const labelMap = new Map([
   ["index.html", "বাংলা AI গাইড হোম"],
@@ -244,6 +264,146 @@ const docxFiles = [
   path.join(__dirname, "data", "cluster-articles-1-7.txt"),
   path.join(__dirname, "data", "cluster-articles-8-14.txt"),
 ];
+
+const generatedArticleFiles = clusterPages.map((page) => `${page.slug}.html`);
+const articleHtmlFiles = new Set([...generatedArticleFiles, ...manualArticleSourceFiles]);
+
+function stripHtmlExtension(fileName) {
+  return String(fileName || "").replace(/\.html$/i, "");
+}
+
+function articleCanonicalUrl(slug) {
+  return `${siteUrl}/${slug}/`;
+}
+
+function toCleanSiteUrl(url) {
+  const match = String(url || "").match(/^https:\/\/banglaaiguide\.com\/([^?#]+?)(\.html)([?#].*)?$/i);
+  if (!match) {
+    return url;
+  }
+  const fileName = match[1].split("/").pop();
+  if (!fileName || utilityHtmlFiles.has(`${fileName}.html`)) {
+    return url;
+  }
+  return `${siteUrl}/${fileName}/${match[3] || ""}`;
+}
+
+function rewriteJsonLdPageUrls(html, canonicalUrl) {
+  const pageTypes = new Set(["article", "faqpage", "webpage", "blogposting", "newsarticle"]);
+
+  function visit(node) {
+    if (!node || typeof node !== "object") {
+      return;
+    }
+    if (Array.isArray(node)) {
+      node.forEach(visit);
+      return;
+    }
+
+    const typeValues = Array.isArray(node["@type"]) ? node["@type"] : [node["@type"]];
+    const isPageNode = typeValues.some((value) => pageTypes.has(String(value || "").toLowerCase()));
+    if (isPageNode) {
+      if (typeof node.url === "string" && node.url.startsWith(siteUrl)) {
+        node.url = canonicalUrl;
+      }
+      if (typeof node.mainEntityOfPage === "string" && node.mainEntityOfPage.startsWith(siteUrl)) {
+        node.mainEntityOfPage = canonicalUrl;
+      }
+    }
+
+    Object.values(node).forEach(visit);
+  }
+
+  return html.replace(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/gi, (full, jsonText) => {
+    try {
+      const parsed = JSON.parse(jsonText);
+      visit(parsed);
+      return `<script type="application/ld+json">${JSON.stringify(parsed)}</script>`;
+    } catch {
+      return full;
+    }
+  });
+}
+
+function isExternalHref(href) {
+  return /^(?:[a-z]+:|\/\/|#)/i.test(href || "");
+}
+
+function splitHrefParts(href) {
+  const match = String(href || "").match(/^([^?#]*)(\?[^#]*)?(#.*)?$/);
+  return {
+    base: match?.[1] || "",
+    query: match?.[2] || "",
+    hash: match?.[3] || "",
+  };
+}
+
+function toRootRelativeHref(href) {
+  if (!href || isExternalHref(href)) {
+    return href;
+  }
+
+  const { base, query, hash } = splitHrefParts(href);
+  if (!base) {
+    return `${query}${hash}`;
+  }
+  if (base.startsWith("/")) {
+    const absoluteBase = base.replace(/^\/+/, "");
+    if (absoluteBase === "index.html") {
+      return `/${query}${hash}`.replace(/\/\?/, "/?");
+    }
+    if (articleHtmlFiles.has(absoluteBase)) {
+      return `/${stripHtmlExtension(absoluteBase)}/${query}${hash}`;
+    }
+    return `/${absoluteBase}${query}${hash}`;
+  }
+  if (base === "index.html") {
+    return `/${query}${hash}`.replace(/\/\?/, "/?");
+  }
+  if (articleHtmlFiles.has(base)) {
+    return `/${stripHtmlExtension(base)}/${query}${hash}`;
+  }
+  return `/${base}${query}${hash}`;
+}
+
+function rewriteCanonicalArticleHtml(html, slug) {
+  const canonicalUrl = articleCanonicalUrl(slug);
+  const previousUrl = `${siteUrl}/${slug}.html`;
+  let updated = String(html || "").replaceAll(previousUrl, canonicalUrl);
+
+  updated = updated.replace(/https:\/\/banglaaiguide\.com\/[^"'<\s)]+?\.html(?:[?#][^"'<\s)]*)?/gi, (url) => toCleanSiteUrl(url));
+
+  updated = updated.replace(/(<link\s+rel=["']canonical["'][^>]*href=["'])[^"']*(["'][^>]*>)/i, `$1${canonicalUrl}$2`);
+  updated = updated.replace(/(<meta\s+property=["']og:url["'][^>]*content=["'])[^"']*(["'][^>]*>)/i, `$1${canonicalUrl}$2`);
+  updated = rewriteJsonLdPageUrls(updated, canonicalUrl);
+
+  updated = updated.replace(/\b(href|src)=["']([^"']+)["']/g, (full, attr, href) => {
+    const nextHref = toRootRelativeHref(href);
+    return `${attr}="${nextHref}"`;
+  });
+
+  return updated;
+}
+
+function renderLegacyRedirectPage(slug) {
+  const canonicalUrl = articleCanonicalUrl(slug);
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="refresh" content="0; url=${canonicalUrl}" />
+  <meta name="robots" content="noindex,follow" />
+  <link rel="canonical" href="${canonicalUrl}" />
+  <title>Redirecting...</title>
+  <script>
+    window.location.replace(${JSON.stringify(`/${slug}/`)});
+  </script>
+</head>
+<body>
+  <p>This page has moved to <a href="${canonicalUrl}">${canonicalUrl}</a>.</p>
+</body>
+</html>`;
+}
 
 function normalizeYear(text) {
   return text
@@ -561,7 +721,7 @@ function articleSchema(url, page) {
 }
 
 function renderPillarBacklink(page) {
-  return `<p class="seo-lead">Full stack comparison দেখতে <a href="ai-tools-bangladesh-bengali.html">${escapeHtml(page.pillarBacklinkLabel)}</a> দেখুন।</p>`;
+  return `<p class="seo-lead">Full stack comparison দেখতে <a href="${toRootRelativeHref("ai-tools-bangladesh-bengali.html")}">${escapeHtml(page.pillarBacklinkLabel)}</a> দেখুন।</p>`;
 }
 
 function renderTable(blocks) {
@@ -575,7 +735,7 @@ function renderResources(page, fileName) {
     .filter((href) => href !== fileName)
     .filter((href, index, arr) => arr.indexOf(href) === index)
     .slice(0, 8);
-  return required.map((href) => `<li><a href="${href}">${labelMap.get(href) || href}</a></li>`).join("");
+  return required.map((href) => `<li><a href="${toRootRelativeHref(href)}">${labelMap.get(href) || href}</a></li>`).join("");
 }
 
 function renderNewsletterSignup(idSuffix) {
@@ -589,7 +749,7 @@ function buildSchema(url, page) {
 
 function renderPage(page) {
   const file = `${page.slug}.html`;
-  const url = `https://banglaaiguide.com/${file}`;
+  const url = articleCanonicalUrl(page.slug);
   const schema = buildSchema(url, page);
   const blocks = page.contentBlocks;
   const quickAnswerHtml = blocks.quickAnswer.map((line) => `<p>${escapeHtml(line)}</p>`).join("");
@@ -621,12 +781,12 @@ function renderPage(page) {
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Syne:wght@500;700;800&display=swap" />
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Syne:wght@500;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
-  <script src="js/consent.js" defer></script>
+  <link rel="stylesheet" href="/css/style.css" />
+  <script src="/js/consent.js" defer></script>
   <script type="application/ld+json">${JSON.stringify(schema)}</script>
-  <script src="js/tools-data.js" defer></script>
-  <script src="js/seo-pages.js" defer></script>
-  <script src="js/mailchimp.js" defer></script>
+  <script src="/js/tools-data.js" defer></script>
+  <script src="/js/seo-pages.js" defer></script>
+  <script src="/js/mailchimp.js" defer></script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-DMM6V53DKC"></script>
   <script>
@@ -637,10 +797,10 @@ function renderPage(page) {
   </script>
 </head>
 <body data-page-slug="${escapeHtml(page.slug)}" data-year-policy="${escapeHtml(page.yearPolicy)}" data-docx-article-id="${page.docxArticleId}">
-  <header class="navbar" id="top"><div class="container navbar-inner"><a href="/" class="logo" aria-label="বাংলা AI গাইড হোম"><img class="logo-mark" src="/favicon.svg" alt="বাংলা AI গাইড লোগো" width="28" height="28" decoding="async" /><span class="logo-text">বাংলা AI গাইড</span></a><button class="hamburger" id="hamburgerBtn" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="মেনু টগল করুন"><span></span><span></span><span></span></button><div class="nav-desktop"><nav class="nav-links" aria-label="প্রধান ন্যাভিগেশন"><a href="index.html#toolsSection">টুলস দেখুন</a><a href="index.html#categoryTabs">ক্যাটাগরি</a><a href="index.html#newsletter">নিউজলেটার</a></nav><a href="submit.html" class="btn btn-primary">টুল সাবমিট করুন</a></div></div><div class="mobile-menu" id="mobileMenu" aria-hidden="true"><a href="index.html#toolsSection">টুলস দেখুন</a><a href="index.html#categoryTabs">ক্যাটাগরি</a><a href="index.html#newsletter">নিউজলেটার</a><a href="submit.html" class="btn btn-primary mobile-cta">টুল সাবমিট করুন</a></div></header>
+  <header class="navbar" id="top"><div class="container navbar-inner"><a href="/" class="logo" aria-label="বাংলা AI গাইড হোম"><img class="logo-mark" src="/favicon.svg" alt="বাংলা AI গাইড লোগো" width="28" height="28" decoding="async" /><span class="logo-text">বাংলা AI গাইড</span></a><button class="hamburger" id="hamburgerBtn" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="মেনু টগল করুন"><span></span><span></span><span></span></button><div class="nav-desktop"><nav class="nav-links" aria-label="প্রধান ন্যাভিগেশন"><a href="/#toolsSection">টুলস দেখুন</a><a href="/#categoryTabs">ক্যাটাগরি</a><a href="/#newsletter">নিউজলেটার</a></nav><a href="/submit.html" class="btn btn-primary">টুল সাবমিট করুন</a></div></div><div class="mobile-menu" id="mobileMenu" aria-hidden="true"><a href="/#toolsSection">টুলস দেখুন</a><a href="/#categoryTabs">ক্যাটাগরি</a><a href="/#newsletter">নিউজলেটার</a><a href="/submit.html" class="btn btn-primary mobile-cta">টুল সাবমিট করুন</a></div></header>
   <main class="seo-main">
     <article class="container seo-article-page">
-      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">হোম</a><span>&gt;</span><span>${escapeHtml(page.primaryKeyword)}</span></nav>
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">হোম</a><span>&gt;</span><span>${escapeHtml(page.primaryKeyword)}</span></nav>
       <h1>${escapeHtml(page.h1)}</h1>
       <p class="seo-lead">${escapeHtml(page.description)}</p>
       <p class="seo-lead">${escapeHtml(blocks.quickAnswer[0] || `${page.topicBn} ব্যবহার করার আগে official pricing, access, এবং workflow context বুঝে নেওয়া ভালো।`)}</p>
@@ -652,18 +812,57 @@ function renderPage(page) {
       <section class="seo-block"><h2>Step-by-step ব্যবহার পদ্ধতি</h2><ol class="seo-steps">${stepsHtml}</ol></section>
       <section class="seo-block"><h2>দ্রুত তুলনামূলক টেবিল</h2>${renderTable(blocks)}</section>
       <section class="seo-block"><h2>FAQ</h2>${faqHtml}</section>
-      <section class="seo-cta-block"><h2>পরবর্তী ধাপ</h2><p>আরও AI resource দেখতে index-এ যান অথবা নতুন tool submit করুন।</p><div class="seo-cta-actions"><a class="btn btn-primary" data-cluster-cta="index" href="index.html">সব টুল দেখুন</a><a class="btn btn-ghost" data-cluster-cta="submit" href="submit.html">টুল সাবমিট করুন</a><a class="btn btn-ghost" data-outbound-affiliate="true" href="${page.outbound[1]}" target="_blank" rel="nofollow noopener noreferrer">${page.outbound[0]}</a></div></section>
+      <section class="seo-cta-block"><h2>পরবর্তী ধাপ</h2><p>আরও AI resource দেখতে index-এ যান অথবা নতুন tool submit করুন।</p><div class="seo-cta-actions"><a class="btn btn-primary" data-cluster-cta="index" href="/">সব টুল দেখুন</a><a class="btn btn-ghost" data-cluster-cta="submit" href="/submit.html">টুল সাবমিট করুন</a><a class="btn btn-ghost" data-outbound-affiliate="true" href="${page.outbound[1]}" target="_blank" rel="nofollow noopener noreferrer">${page.outbound[0]}</a></div></section>
       ${renderNewsletterSignup(page.slug)}
       <section class="seo-block"><h2>Bangladesh AI Resources</h2><ul class="seo-links-list">${renderResources(page, file)}</ul></section>
     </article>
   </main>
-  <footer class="site-footer"><div class="container footer-inner"><p class="footer-brand"><img class="logo-mark" src="/favicon.svg" alt="বাংলা AI গাইড লোগো" width="20" height="20" decoding="async" /><span>বাংলা AI গাইড</span></p><p>© ২০২৬ বাংলা AI গাইড · বাংলাদেশের জন্য তৈরি</p><nav class="footer-links" aria-label="ফুটার লিংক"><a href="submit.html">টুল সাবমিট</a><a href="contact.html#advertising">বিজ্ঞাপন</a><a href="privacy.html">প্রাইভেসি</a><a href="terms.html">শর্তাবলী</a><a href="disclaimer.html">ডিসক্লেইমার</a><a href="contact.html">যোগাযোগ</a></nav></div></footer>
+  <footer class="site-footer"><div class="container footer-inner"><p class="footer-brand"><img class="logo-mark" src="/favicon.svg" alt="বাংলা AI গাইড লোগো" width="20" height="20" decoding="async" /><span>বাংলা AI গাইড</span></p><p>© ২০২৬ বাংলা AI গাইড · বাংলাদেশের জন্য তৈরি</p><nav class="footer-links" aria-label="ফুটার লিংক"><a href="/submit.html">টুল সাবমিট</a><a href="/contact.html#advertising">বিজ্ঞাপন</a><a href="/privacy.html">প্রাইভেসি</a><a href="/terms.html">শর্তাবলী</a><a href="/disclaimer.html">ডিসক্লেইমার</a><a href="/contact.html">যোগাযোগ</a></nav></div></footer>
 </body>
 </html>`;
 }
 
-for (const page of clusterPages) {
-  fs.writeFileSync(path.join(root, `${page.slug}.html`), renderPage(page), "utf8");
+function updateSitemap(articleSlugs) {
+  const sitemapPath = path.join(root, "sitemap.xml");
+  let sitemap = fs.readFileSync(sitemapPath, "utf8");
+
+  for (const slug of articleSlugs) {
+    sitemap = sitemap.replaceAll(`${siteUrl}/${slug}.html`, articleCanonicalUrl(slug));
+  }
+
+  fs.writeFileSync(sitemapPath, sitemap, "utf8");
 }
 
-console.log(`Generated ${clusterPages.length} cluster SEO pages`);
+function writeCanonicalArticle(slug, html) {
+  const canonicalDir = path.join(root, slug);
+  fs.mkdirSync(canonicalDir, { recursive: true });
+  fs.writeFileSync(path.join(canonicalDir, "index.html"), html, "utf8");
+  fs.writeFileSync(path.join(root, `${slug}.html`), renderLegacyRedirectPage(slug), "utf8");
+}
+
+function renderManualArticle(sourceFile) {
+  const slug = stripHtmlExtension(sourceFile);
+  const sourcePath = path.join(manualArticleSourceDir, sourceFile);
+  const html = fs.readFileSync(sourcePath, "utf8");
+  return { slug, html: rewriteCanonicalArticleHtml(html, slug) };
+}
+
+const generatedSlugs = [];
+
+for (const page of clusterPages) {
+  const html = rewriteCanonicalArticleHtml(renderPage(page), page.slug);
+  writeCanonicalArticle(page.slug, html);
+  generatedSlugs.push(page.slug);
+}
+
+const manualSlugs = [];
+
+for (const file of manualArticleSourceFiles) {
+  const article = renderManualArticle(file);
+  writeCanonicalArticle(article.slug, article.html);
+  manualSlugs.push(article.slug);
+}
+
+updateSitemap([...generatedSlugs, ...manualSlugs]);
+
+console.log(`Generated ${clusterPages.length} cluster SEO pages and ${manualSlugs.length} manual article routes`);

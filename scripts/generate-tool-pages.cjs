@@ -22,43 +22,43 @@ const applicationCategoryMap = {
 };
 
 const articleLinks = {
-  chatgpt: { href: "../chatgpt-bangladesh-theke-bebohar.html", text: "ChatGPT Bangladesh guide" },
-  cursor: { href: "../cursor-ai-bangla.html", text: "Cursor AI বাংলা" },
-  elevenlabs: { href: "../elevenlabs-bangla-voice.html", text: "ElevenLabs বাংলা ভয়েস" },
-  midjourney: { href: "../midjourney-bangladesh-free.html", text: "Midjourney Bangladesh free" },
-  "kling-ai": { href: "../ai-tools-for-youtube-bangladesh.html", text: "AI tools for YouTube Bangladesh" },
-  claude: { href: "../ai-tools-for-freelancers-bangladesh.html", text: "AI tools for freelancers Bangladesh" },
-  gamma: { href: "../best-ai-tools-for-content-creators-bangladesh.html", text: "Best AI tools for content creators" },
-  notebooklm: { href: "../notebooklm-bangla-guide.html", text: "NotebookLM বাংলা গাইড" },
+  chatgpt: { href: "/chatgpt-bangladesh-theke-bebohar/", text: "ChatGPT Bangladesh guide" },
+  cursor: { href: "/cursor-ai-bangla/", text: "Cursor AI বাংলা" },
+  elevenlabs: { href: "/elevenlabs-bangla-voice/", text: "ElevenLabs বাংলা ভয়েস" },
+  midjourney: { href: "/midjourney-bangladesh-free/", text: "Midjourney Bangladesh free" },
+  "kling-ai": { href: "/ai-tools-for-youtube-bangladesh/", text: "AI tools for YouTube Bangladesh" },
+  claude: { href: "/ai-tools-for-freelancers-bangladesh/", text: "AI tools for freelancers Bangladesh" },
+  gamma: { href: "/best-ai-tools-for-content-creators-bangladesh/", text: "Best AI tools for content creators" },
+  notebooklm: { href: "/notebooklm-bangla-guide/", text: "NotebookLM বাংলা গাইড" },
 };
 
 const baseLinks = [
-  { href: "../index.html", text: "সব AI টুলস দেখুন" },
-  { href: "../ai-tools-bdt-price-2026-bangladesh.html", text: "AI tools BDT price 2026" },
-  { href: "../vpn-chara-ai-tools-bangladesh.html", text: "VPN ছাড়া AI tools Bangladesh" },
-  { href: "../submit.html", text: "নতুন টুল সাবমিট করুন" },
+  { href: "/", text: "সব AI টুলস দেখুন" },
+  { href: "/ai-tools-bdt-price-2026-bangladesh/", text: "AI tools BDT price 2026" },
+  { href: "/vpn-chara-ai-tools-bangladesh/", text: "VPN ছাড়া AI tools Bangladesh" },
+  { href: "/submit.html", text: "নতুন টুল সাবমিট করুন" },
 ];
 
 const categoryLinks = {
   llm: [
-    { href: "../chatgpt-bangladesh-theke-bebohar.html", text: "ChatGPT Bangladesh guide" },
-    { href: "../ai-tools-for-freelancers-bangladesh.html", text: "AI tools for freelancers Bangladesh" },
-    { href: "../best-ai-tools-for-content-creators-bangladesh.html", text: "Best AI tools for content creators" },
+    { href: "/chatgpt-bangladesh-theke-bebohar/", text: "ChatGPT Bangladesh guide" },
+    { href: "/ai-tools-for-freelancers-bangladesh/", text: "AI tools for freelancers Bangladesh" },
+    { href: "/best-ai-tools-for-content-creators-bangladesh/", text: "Best AI tools for content creators" },
   ],
   image: [
-    { href: "../midjourney-bangladesh-free.html", text: "Midjourney Bangladesh free" },
-    { href: "../ai-tools-for-youtube-bangladesh.html", text: "AI tools for YouTube Bangladesh" },
-    { href: "../ai-image-generator-free-bangladesh.html", text: "AI image generator free Bangladesh" },
+    { href: "/midjourney-bangladesh-free/", text: "Midjourney Bangladesh free" },
+    { href: "/ai-tools-for-youtube-bangladesh/", text: "AI tools for YouTube Bangladesh" },
+    { href: "/ai-image-generator-free-bangladesh/", text: "AI image generator free Bangladesh" },
   ],
   coding: [
-    { href: "../cursor-ai-bangla.html", text: "Cursor AI বাংলা" },
-    { href: "../best-ai-coding-tools-for-beginners-bangladesh.html", text: "Best AI coding tools for beginners" },
-    { href: "../ai-tools-for-freelancers-bangladesh.html", text: "AI tools freelancer Bangladesh income" },
+    { href: "/cursor-ai-bangla/", text: "Cursor AI বাংলা" },
+    { href: "/best-ai-coding-tools-for-beginners-bangladesh/", text: "Best AI coding tools for beginners" },
+    { href: "/ai-tools-for-freelancers-bangladesh/", text: "AI tools freelancer Bangladesh income" },
   ],
   productivity: [
-    { href: "../bangladeshe-ai-tools-kibhabe-bebohar-korben.html", text: "বাংলাদেশে AI tools কীভাবে ব্যবহার করবেন" },
-    { href: "../best-ai-tools-for-content-creators-bangladesh.html", text: "AI tools for content creators Bangladesh" },
-    { href: "../ai-tools-for-freelancers-bangladesh.html", text: "AI tools freelancer Bangladesh income" },
+    { href: "/bangladeshe-ai-tools-kibhabe-bebohar-korben/", text: "বাংলাদেশে AI tools কীভাবে ব্যবহার করবেন" },
+    { href: "/best-ai-tools-for-content-creators-bangladesh/", text: "AI tools for content creators Bangladesh" },
+    { href: "/ai-tools-for-freelancers-bangladesh/", text: "AI tools freelancer Bangladesh income" },
   ],
 };
 
@@ -390,25 +390,25 @@ function renderPage(tool, tools, conversionRate) {
       </button>
       <div class="nav-desktop">
         <nav class="nav-links" aria-label="প্রধান ন্যাভিগেশন">
-          <a href="../index.html#toolsSection">টুলস দেখুন</a>
-          <a href="../index.html#categoryTabs">ক্যাটাগরি</a>
-          <a href="../index.html#newsletter">নিউজলেটার</a>
+          <a href="/#toolsSection">টুলস দেখুন</a>
+          <a href="/#categoryTabs">ক্যাটাগরি</a>
+          <a href="/#newsletter">নিউজলেটার</a>
         </nav>
-        <a href="../submit.html" class="btn btn-primary">টুল সাবমিট করুন</a>
+        <a href="/submit.html" class="btn btn-primary">টুল সাবমিট করুন</a>
       </div>
     </div>
     <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-      <a href="../index.html#toolsSection">টুলস দেখুন</a>
-      <a href="../index.html#categoryTabs">ক্যাটাগরি</a>
-      <a href="../index.html#newsletter">নিউজলেটার</a>
-      <a href="../submit.html" class="btn btn-primary mobile-cta">টুল সাবমিট করুন</a>
+      <a href="/#toolsSection">টুলস দেখুন</a>
+      <a href="/#categoryTabs">ক্যাটাগরি</a>
+      <a href="/#newsletter">নিউজলেটার</a>
+      <a href="/submit.html" class="btn btn-primary mobile-cta">টুল সাবমিট করুন</a>
     </div>
   </header>
 
   <main class="seo-main">
     <article class="container seo-article-page">
       <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="../index.html">হোম</a><span>&gt;</span><a href="../index.html#categoryTabs">${escapeHtml(categoryLabelMap[tool.category] || "অন্যান্য")}</a><span>&gt;</span><span>${escapeHtml(tool.name)}</span>
+        <a href="/">হোম</a><span>&gt;</span><a href="/#categoryTabs">${escapeHtml(categoryLabelMap[tool.category] || "অন্যান্য")}</a><span>&gt;</span><span>${escapeHtml(tool.name)}</span>
       </nav>
       <div class="tool-header detail-title-row">
         <div class="tool-title-wrap">
@@ -433,7 +433,7 @@ function renderPage(tool, tools, conversionRate) {
       </div>
       <div class="seo-cta-actions">
         <a class="btn btn-primary detail-cta" href="${actionUrl}" target="_blank" rel="nofollow noopener noreferrer">এখনই ব্যবহার করুন →</a>
-        <a class="btn btn-ghost" href="../index.html">সব টুলস দেখুন</a>
+        <a class="btn btn-ghost" href="/">সব টুলস দেখুন</a>
       </div>
 
       <section class="seo-block"><h2>Quick answer</h2>${profile.quickAnswer.map((item) => `<p>${escapeHtml(item)}</p>`).join("")}</section>
@@ -455,7 +455,7 @@ function renderPage(tool, tools, conversionRate) {
     <div class="container footer-inner">
       <p class="footer-brand"><img class="logo-mark" src="../favicon.svg" alt="বাংলা AI গাইড লোগো" width="20" height="20" decoding="async" /><span>বাংলা AI গাইড</span></p>
       <p>© ২০২৬ বাংলা AI গাইড · বাংলাদেশের জন্য তৈরি</p>
-      <nav class="footer-links" aria-label="ফুটার লিংক"><a href="../submit.html">টুল সাবমিট</a><a href="../contact.html#advertising">বিজ্ঞাপন</a><a href="../privacy.html">প্রাইভেসি</a><a href="../terms.html">শর্তাবলী</a><a href="../disclaimer.html">ডিসক্লেইমার</a><a href="../contact.html">যোগাযোগ</a></nav>
+      <nav class="footer-links" aria-label="ফুটার লিংক"><a href="/submit.html">টুল সাবমিট</a><a href="/contact.html#advertising">বিজ্ঞাপন</a><a href="/privacy.html">প্রাইভেসি</a><a href="/terms.html">শর্তাবলী</a><a href="/disclaimer.html">ডিসক্লেইমার</a><a href="/contact.html">যোগাযোগ</a></nav>
     </div>
   </footer>
 </body>
@@ -493,7 +493,7 @@ function updateSitemap(tools) {
       return `  <url>\n    <loc>${siteUrl}/${slug}/</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.6</priority>\n  </url>`;
     })
     .join("\n");
-  const notebookEntry = `  <url>\n    <loc>${siteUrl}/notebooklm-bangla-guide.html</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.7</priority>\n  </url>`;
+  const notebookEntry = `  <url>\n    <loc>${siteUrl}/notebooklm-bangla-guide/</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.7</priority>\n  </url>`;
   const block = `\n  <!-- Generated Tool Pages -->\n${toolEntries}\n\n  <!-- NotebookLM Tool Article -->\n${notebookEntry}\n`;
   let updated = sitemap.replace(/\n  <!-- Generated Tool Pages -->[\s\S]*?\n(?=<\/urlset>)/, "\n");
   updated = updated.replace("</urlset>", `${block}</urlset>`);

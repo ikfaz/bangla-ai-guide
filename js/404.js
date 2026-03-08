@@ -46,7 +46,7 @@
   }
 
   function getWhatsAppShareUrl(tool) {
-    const shareText = `${tool.name} — বাংলাদেশ থেকে কাজ করে!\nদেখুন: ${getToolLandingUrl(tool)}\nবাংলা AI গাইডে আরও ১৫০+ টুলস →`;
+    const shareText = `${tool.name} — বাংলাদেশ থেকে কাজ করে!\nদেখুন: ${getToolLandingUrl(tool)}\nবাংলা AI গাইডে আরও AI টুলস →`;
     return `https://wa.me/?text=${encodeURIComponent(shareText)}`;
   }
 

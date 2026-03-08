@@ -14,31 +14,31 @@
 
   const categoryLabelMap = { llm: "LLM", image: "ইমেজ ও ভিডিও", coding: "কোডিং", productivity: "প্রোডাক্টিভিটি" };
   const baseLinks = [
-    { href: "index.html", text: "সব AI টুলস দেখুন" },
-    { href: "ai-tools-bdt-price-2026-bangladesh.html", text: "AI tools BDT price 2026" },
-    { href: "vpn-chara-ai-tools-bangladesh.html", text: "VPN ছাড়া AI tools Bangladesh" },
+    { href: "/", text: "সব AI টুলস দেখুন" },
+    { href: "/ai-tools-bdt-price-2026-bangladesh/", text: "AI tools BDT price 2026" },
+    { href: "/vpn-chara-ai-tools-bangladesh/", text: "VPN ছাড়া AI tools Bangladesh" },
     { href: "submit.html", text: "নতুন টুল সাবমিট করুন" },
   ];
   const catLinks = {
     llm: [
-      { href: "chatgpt-bangladesh-theke-bebohar.html", text: "ChatGPT Bangladesh guide" },
-      { href: "ai-tools-for-freelancers-bangladesh.html", text: "AI tools for freelancers Bangladesh" },
-      { href: "best-ai-tools-for-content-creators-bangladesh.html", text: "best AI tools for content creators" },
+      { href: "/chatgpt-bangladesh-theke-bebohar/", text: "ChatGPT Bangladesh guide" },
+      { href: "/ai-tools-for-freelancers-bangladesh/", text: "AI tools for freelancers Bangladesh" },
+      { href: "/best-ai-tools-for-content-creators-bangladesh/", text: "best AI tools for content creators" },
     ],
     image: [
-      { href: "midjourney-bangladesh-free.html", text: "Midjourney Bangladesh free" },
-      { href: "ai-tools-for-youtube-bangladesh.html", text: "AI tools for YouTube Bangladesh" },
-      { href: "ai-image-generator-free-bangladesh.html", text: "AI image generator free Bangladesh" },
+      { href: "/midjourney-bangladesh-free/", text: "Midjourney Bangladesh free" },
+      { href: "/ai-tools-for-youtube-bangladesh/", text: "AI tools for YouTube Bangladesh" },
+      { href: "/ai-image-generator-free-bangladesh/", text: "AI image generator free Bangladesh" },
     ],
     coding: [
-      { href: "cursor-ai-bangla.html", text: "Cursor AI বাংলা" },
-      { href: "best-ai-coding-tools-for-beginners-bangladesh.html", text: "best AI coding tools for beginners" },
-      { href: "ai-tools-for-freelancers-bangladesh.html", text: "AI tools freelancer Bangladesh income" },
+      { href: "/cursor-ai-bangla/", text: "Cursor AI বাংলা" },
+      { href: "/best-ai-coding-tools-for-beginners-bangladesh/", text: "best AI coding tools for beginners" },
+      { href: "/ai-tools-for-freelancers-bangladesh/", text: "AI tools freelancer Bangladesh income" },
     ],
     productivity: [
-      { href: "bangladeshe-ai-tools-kibhabe-bebohar-korben.html", text: "বাংলাদেশে AI tools কীভাবে ব্যবহার করবেন" },
-      { href: "best-ai-tools-for-content-creators-bangladesh.html", text: "AI tools for content creators Bangladesh" },
-      { href: "ai-tools-for-freelancers-bangladesh.html", text: "AI tools freelancer Bangladesh income" },
+      { href: "/bangladeshe-ai-tools-kibhabe-bebohar-korben/", text: "বাংলাদেশে AI tools কীভাবে ব্যবহার করবেন" },
+      { href: "/best-ai-tools-for-content-creators-bangladesh/", text: "AI tools for content creators Bangladesh" },
+      { href: "/ai-tools-for-freelancers-bangladesh/", text: "AI tools freelancer Bangladesh income" },
     ],
   };
 
@@ -48,7 +48,7 @@
   const getToolPagePath = (slug) => `${encodeURIComponent(slug)}/`;
   const getToolLandingUrl = (tool) => `https://banglaaiguide.com/${getToolPagePath(toSlug(tool.name))}`;
   const getFacebookShareUrl = (tool) => `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(getToolLandingUrl(tool))}`;
-  const getWhatsAppShareUrl = (tool) => `https://wa.me/?text=${encodeURIComponent(`${tool.name} — বাংলাদেশ থেকে কাজ করে!\nদেখুন: ${getToolLandingUrl(tool)}\nবাংলা AI গাইডে আরও ১৫০+ টুলস →`)}`;
+  const getWhatsAppShareUrl = (tool) => `https://wa.me/?text=${encodeURIComponent(`${tool.name} — বাংলাদেশ থেকে কাজ করে!\nদেখুন: ${getToolLandingUrl(tool)}\nবাংলা AI গাইডে আরও AI টুলস →`)}`;
   const getToolDomain = (tool) => {
     const rawUrl = tool.direct_url || tool.affiliate_url || "";
     try {
@@ -235,9 +235,9 @@
       incomeAngles: ["Proposal automation", "Client communication speed", "Service delivery time কমানো"],
       youtubeAngles: [],
       internalLinks: [
-        { href: "chatgpt-bangladesh-theke-bebohar.html", text: "ChatGPT Bangladesh full guide" },
-        { href: "ai-tools-for-freelancers-bangladesh.html", text: "AI tools for freelancers Bangladesh" },
-        { href: "bangladeshe-ai-tools-kibhabe-bebohar-korben.html", text: "বাংলাদেশে AI tools tutorial" }
+        { href: "/chatgpt-bangladesh-theke-bebohar/", text: "ChatGPT Bangladesh full guide" },
+        { href: "/ai-tools-for-freelancers-bangladesh/", text: "AI tools for freelancers Bangladesh" },
+        { href: "/bangladeshe-ai-tools-kibhabe-bebohar-korben/", text: "বাংলাদেশে AI tools tutorial" }
       ]
     },
     claude: {
@@ -257,9 +257,9 @@
       incomeAngles: ["Long-form content service", "Research summary service"],
       youtubeAngles: [],
       internalLinks: [
-        { href: "ai-tools-for-freelancers-bangladesh.html", text: "Freelancer AI tools" },
-        { href: "best-ai-tools-for-content-creators-bangladesh.html", text: "Creator AI tools" },
-        { href: "ai-tools-bangladesh-bengali.html", text: "Bangla AI tools directory" }
+        { href: "/ai-tools-for-freelancers-bangladesh/", text: "Freelancer AI tools" },
+        { href: "/best-ai-tools-for-content-creators-bangladesh/", text: "Creator AI tools" },
+        { href: "/ai-tools-bangladesh-bengali/", text: "Bangla AI tools directory" }
       ]
     },
     midjourney: {
@@ -279,9 +279,9 @@
       incomeAngles: ["Freelance thumbnail pack service"],
       youtubeAngles: ["Thumbnail A/B test", "Faceless channel visual"],
       internalLinks: [
-        { href: "midjourney-bangladesh-free.html", text: "Midjourney Bangladesh free guide" },
-        { href: "ai-tools-for-youtube-bangladesh.html", text: "AI tools for YouTube Bangladesh" },
-        { href: "ai-image-generator-free-bangladesh.html", text: "AI image generator free Bangladesh" }
+        { href: "/midjourney-bangladesh-free/", text: "Midjourney Bangladesh free guide" },
+        { href: "/ai-tools-for-youtube-bangladesh/", text: "AI tools for YouTube Bangladesh" },
+        { href: "/ai-image-generator-free-bangladesh/", text: "AI image generator free Bangladesh" }
       ]
     },
     cursor: {
@@ -301,9 +301,9 @@
       incomeAngles: ["Quick bug-fix gigs", "MVP delivery দ্রুত করা"],
       youtubeAngles: [],
       internalLinks: [
-        { href: "cursor-ai-bangla.html", text: "Cursor AI বাংলা guide" },
-        { href: "best-ai-coding-tools-for-beginners-bangladesh.html", text: "AI coding tools for beginners" },
-        { href: "ai-tools-for-freelancers-bangladesh.html", text: "AI tools freelancer Bangladesh income" }
+        { href: "/cursor-ai-bangla/", text: "Cursor AI বাংলা guide" },
+        { href: "/best-ai-coding-tools-for-beginners-bangladesh/", text: "AI coding tools for beginners" },
+        { href: "/ai-tools-for-freelancers-bangladesh/", text: "AI tools freelancer Bangladesh income" }
       ]
     },
     elevenlabs: {
@@ -323,9 +323,9 @@
       incomeAngles: ["Voiceover gig package", "Local Bengali narration service"],
       youtubeAngles: ["Faceless ভিডিও narration", "Shorts voice pipeline"],
       internalLinks: [
-        { href: "elevenlabs-bangla-voice.html", text: "ElevenLabs বাংলা voice guide" },
-        { href: "ai-tools-for-youtube-bangladesh.html", text: "AI tools for YouTube Bangladesh" },
-        { href: "free-ai-tools-2026-bangladesh.html", text: "free AI tools 2026 Bangladesh" }
+        { href: "/elevenlabs-bangla-voice/", text: "ElevenLabs বাংলা voice guide" },
+        { href: "/ai-tools-for-youtube-bangladesh/", text: "AI tools for YouTube Bangladesh" },
+        { href: "/free-ai-tools-2026-bangladesh/", text: "free AI tools 2026 Bangladesh" }
       ]
     },
     "kling-ai": {
@@ -345,9 +345,9 @@
       incomeAngles: ["Short ভিডিও ad creative service"],
       youtubeAngles: ["YouTube shorts visual", "Intro/B-roll style generation"],
       internalLinks: [
-        { href: "ai-tools-for-youtube-bangladesh.html", text: "AI tools for YouTube Bangladesh" },
-        { href: "ai-image-generator-free-bangladesh.html", text: "AI image generator free Bangladesh" },
-        { href: "midjourney-bangladesh-free.html", text: "Midjourney vs alternatives" }
+        { href: "/ai-tools-for-youtube-bangladesh/", text: "AI tools for YouTube Bangladesh" },
+        { href: "/ai-image-generator-free-bangladesh/", text: "AI image generator free Bangladesh" },
+        { href: "/midjourney-bangladesh-free/", text: "Midjourney vs alternatives" }
       ]
     },
     gamma: {
@@ -367,9 +367,9 @@
       incomeAngles: ["Pitch deck package", "Monthly presentation support"],
       youtubeAngles: [],
       internalLinks: [
-        { href: "bangladeshe-ai-tools-kibhabe-bebohar-korben.html", text: "বাংলাদেশে AI tutorial hub" },
-        { href: "ai-tools-for-freelancers-bangladesh.html", text: "AI tools freelancer Bangladesh income" },
-        { href: "best-ai-tools-for-content-creators-bangladesh.html", text: "AI tools for content creators" }
+        { href: "/bangladeshe-ai-tools-kibhabe-bebohar-korben/", text: "বাংলাদেশে AI tutorial hub" },
+        { href: "/ai-tools-for-freelancers-bangladesh/", text: "AI tools freelancer Bangladesh income" },
+        { href: "/best-ai-tools-for-content-creators-bangladesh/", text: "AI tools for content creators" }
       ]
     }
   };
@@ -410,13 +410,13 @@
   };
 
   const TOOL_PAGE_LINKS = {
-    chatgpt: { href: "chatgpt-bangladesh-theke-bebohar.html", text: "ChatGPT Bangladesh guide" },
-    cursor: { href: "cursor-ai-bangla.html", text: "Cursor AI বাংলা" },
-    elevenlabs: { href: "elevenlabs-bangla-voice.html", text: "ElevenLabs বাংলা ভয়েস" },
-    midjourney: { href: "midjourney-bangladesh-free.html", text: "Midjourney Bangladesh free" },
-    "kling-ai": { href: "ai-tools-for-youtube-bangladesh.html", text: "AI tools for YouTube Bangladesh" },
-    claude: { href: "ai-tools-for-freelancers-bangladesh.html", text: "AI tools for freelancers Bangladesh" },
-    gamma: { href: "best-ai-tools-for-content-creators-bangladesh.html", text: "best AI tools for content creators" }
+    chatgpt: { href: "/chatgpt-bangladesh-theke-bebohar/", text: "ChatGPT Bangladesh guide" },
+    cursor: { href: "/cursor-ai-bangla/", text: "Cursor AI বাংলা" },
+    elevenlabs: { href: "/elevenlabs-bangla-voice/", text: "ElevenLabs বাংলা ভয়েস" },
+    midjourney: { href: "/midjourney-bangladesh-free/", text: "Midjourney Bangladesh free" },
+    "kling-ai": { href: "/ai-tools-for-youtube-bangladesh/", text: "AI tools for YouTube Bangladesh" },
+    claude: { href: "/ai-tools-for-freelancers-bangladesh/", text: "AI tools for freelancers Bangladesh" },
+    gamma: { href: "/best-ai-tools-for-content-creators-bangladesh/", text: "best AI tools for content creators" }
   };
 
   const RELATED_COMPLEMENTARY_MAP = {
@@ -458,7 +458,7 @@
     const metaDescription = metaDescriptionRaw.length > 165
       ? `${metaDescriptionRaw.slice(0, 162).trim()}...`
       : (metaDescriptionRaw.length < 140 ? `${metaDescriptionRaw} setup, payment ও workflow tips ২০২৬ আপডেটসহ।` : metaDescriptionRaw);
-    const internalLinks = [TOOL_PAGE_LINKS[slug], { href: "ai-tools-bangladesh-bengali.html", text: "Bangla AI tools directory" }, ...baseLinks, ...(catLinks[tool.category] || [])].filter(Boolean);
+    const internalLinks = [TOOL_PAGE_LINKS[slug], { href: "/ai-tools-bangladesh-bengali/", text: "Bangla AI tools directory" }, ...baseLinks, ...(catLinks[tool.category] || [])].filter(Boolean);
     const comparisonPeers = data
       .filter((item) => item.name !== tool.name && item.category === tool.category)
       .sort((a, b) => Number(b.rating || 0) - Number(a.rating || 0) || String(a.name).localeCompare(String(b.name)))
@@ -719,10 +719,10 @@
   function renderDetailResources(tool) {
     if (!refs.detailResourcesGrid) return;
     const shared = [
-      { href: "ai-tools-bangladesh-bengali.html", text: "Bangla AI tools directory" },
-      { href: "ai-tools-bdt-price-2026-bangladesh.html", text: "AI tools BDT price 2026" },
-      { href: "bkash-diye-ai-tools-kena-jay.html", text: "bKash দিয়ে AI tools কেনা যায়" },
-      { href: "vpn-chara-ai-tools-bangladesh.html", text: "VPN ছাড়া AI tools Bangladesh" },
+      { href: "/ai-tools-bangladesh-bengali/", text: "Bangla AI tools directory" },
+      { href: "/ai-tools-bdt-price-2026-bangladesh/", text: "AI tools BDT price 2026" },
+      { href: "/bkash-diye-ai-tools-kena-jay/", text: "bKash দিয়ে AI tools কেনা যায়" },
+      { href: "/vpn-chara-ai-tools-bangladesh/", text: "VPN ছাড়া AI tools Bangladesh" },
     ];
     const selected = catLinks[tool.category] || [];
     refs.detailResourcesGrid.innerHTML = [...selected, ...shared]

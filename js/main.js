@@ -294,7 +294,7 @@
   }
 
   function getWhatsAppShareUrl(tool) {
-    const shareText = `${tool.name} — বাংলাদেশ থেকে কাজ করে!\nদেখুন: ${getToolLandingUrl(tool)}\nবাংলা AI গাইডে আরও ১৫০+ টুলস →`;
+    const shareText = `${tool.name} — বাংলাদেশ থেকে কাজ করে!\nদেখুন: ${getToolLandingUrl(tool)}\nবাংলা AI গাইডে আরও AI টুলস →`;
     return `https://wa.me/?text=${encodeURIComponent(shareText)}`;
   }
 
@@ -635,10 +635,10 @@
     const freeTools = data.filter((tool) => isFullyFree(tool)).length;
     const reviewed = data.filter((tool) => Boolean(tool.review_bn)).length;
 
-    refs.statTotal.textContent = `${bnNum(total)}+ টুলস লিস্টেড`;
-    refs.statBd.textContent = `${bnNum(bdWorking)}+ বাংলাদেশ থেকে কাজ করে`;
-    refs.statFree.textContent = `${bnNum(freeTools)}+ সম্পূর্ণ ফ্রি`;
-    refs.statReview.textContent = `${bnNum(reviewed)}+ ভিডিও রিভিউ সহ`;
+    refs.statTotal.textContent = `${bnNum(total)}টি টুল লিস্টেড`;
+    refs.statBd.textContent = `${bnNum(bdWorking)}টি বাংলাদেশ থেকে কাজ করে`;
+    refs.statFree.textContent = `${bnNum(freeTools)}টি সম্পূর্ণ ফ্রি`;
+    refs.statReview.textContent = `${bnNum(reviewed)}টি ভিডিও রিভিউ সহ`;
   }
 
   function renderCategoryCounts(baseTools) {
