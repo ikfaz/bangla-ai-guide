@@ -438,7 +438,7 @@ const tools = [
     review_bn: "বাংলা পডকাস্ট ও ভয়েসওভারের জন্য দারুণ। বাংলা উচ্চারণও বেশ ভালো!",
     works_in_bd: true, no_vpn: true, payment: "card", rating: 4.8,
     direct_url: "https://elevenlabs.io",
-    affiliate_url: "https://elevenlabs.io/affiliates",
+    affiliate_url: "https://try.elevenlabs.io/zrypgupkyu99",
     pricing_url: "https://elevenlabs.io/pricing",
   },
   {
