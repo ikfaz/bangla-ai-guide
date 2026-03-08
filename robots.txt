@@ -1,4 +1,13 @@
-﻿User-agent: *
+# robots.txt — banglaaiguide.com
+# Last Updated: March 2026
+
+User-agent: *
 Allow: /
+
+# Block any future admin or private paths
 Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+
+# Sitemap location
 Sitemap: https://banglaaiguide.com/sitemap.xml
