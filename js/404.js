@@ -33,8 +33,12 @@
       .replace(/^-+|-+$/g, "");
   }
 
+  function getToolPagePath(slug) {
+    return `tools/${encodeURIComponent(slug)}.html`;
+  }
+
   function getToolLandingUrl(tool) {
-    return `https://banglaaiguide.com/?tool=${encodeURIComponent(toSlug(tool.name))}`;
+    return `https://banglaaiguide.com/${getToolPagePath(toSlug(tool.name))}`;
   }
 
   function getFacebookShareUrl(tool) {
@@ -167,7 +171,7 @@
 
     const randomTools = getRandomTools(3);
     refs.toolsGrid.innerHTML = randomTools.map((tool) => {
-      const detailUrl = `tool-detail.html?tool=${encodeURIComponent(toSlug(tool.name))}`;
+      const detailUrl = getToolPagePath(toSlug(tool.name));
       const category = categoryLabelMap[tool.category] || "অন্যান্য";
       const facebookShareUrl = getFacebookShareUrl(tool);
       const whatsAppShareUrl = getWhatsAppShareUrl(tool);

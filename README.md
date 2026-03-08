@@ -60,7 +60,7 @@
 - SEO head tags (title/meta/canonical/Open Graph/Twitter).
 - JSON-LD structured data (`WebSite` + `ItemList` for first 10 tools).
 - Hero section with live search.
-- Tool detail page via URL parameter (`tool-detail.html?tool=chatgpt`).
+- Static tool pages via `/tools/<slug>.html` plus legacy `tool-detail.html?tool=` redirect compatibility.
 - Submit page with Bengali validation and success message.
 - Friendly Bengali 404 page with random tool suggestions.
 - Bengali legal pages: privacy, terms, disclaimer, and contact.
@@ -105,7 +105,7 @@
 - Pure CSS (no framework)
 - Vanilla JavaScript (no jQuery)
 
-## Future Detail URL Pattern
+## Tool URL Pattern
 
-- `tool-detail.html?tool=chatgpt`
-- `<title>ChatGPT বাংলা রিভিউ — বাংলাদেশ থেকে ব্যবহার, BDT প্রাইস | বাংলা AI গাইড</title>`
+- `tools/chatgpt.html`
+- Legacy compatibility: `tool-detail.html?tool=chatgpt` redirects to the static canonical page.

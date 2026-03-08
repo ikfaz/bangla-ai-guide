@@ -281,8 +281,12 @@
     state.visibleCount = PAGE_SIZE;
   }
 
+  function getToolPagePath(slug) {
+    return `tools/${encodeURIComponent(slug)}.html`;
+  }
+
   function getToolLandingUrl(tool) {
-    return `https://banglaaiguide.com/?tool=${encodeURIComponent(toSlug(tool.name))}`;
+    return `https://banglaaiguide.com/${getToolPagePath(toSlug(tool.name))}`;
   }
 
   function getFacebookShareUrl(tool) {
@@ -510,7 +514,7 @@
       return;
     }
 
-    const detailUrl = `tool-detail.html?tool=${encodeURIComponent(toSlug(tool.name))}`;
+    const detailUrl = getToolPagePath(toSlug(tool.name));
 
     refs.featuredBanner.innerHTML = `
       <span class="featured-badge">⭐ ফিচার্ড</span>
@@ -529,7 +533,7 @@
   }
 
   function renderToolCard(tool) {
-    const detailUrl = `tool-detail.html?tool=${encodeURIComponent(toSlug(tool.name))}`;
+    const detailUrl = getToolPagePath(toSlug(tool.name));
     const directUrl = tool.direct_url || tool.affiliate_url || "#";
     const facebookShareUrl = getFacebookShareUrl(tool);
     const whatsAppShareUrl = getWhatsAppShareUrl(tool);

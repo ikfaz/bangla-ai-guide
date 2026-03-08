@@ -10,6 +10,7 @@
   <meta name="apple-mobile-web-app-title" content="MyWebSite" />
   <link rel="manifest" href="/site.webmanifest" />
   <meta name="theme-color" content="#059669" />
+  <meta name="robots" content="noindex,follow" />
 <title>টুল ডিটেইলস | বাংলা AI গাইড</title>
   <meta name="description" content="বাংলা AI গাইডে টুল ডিটেইলস, রিভিউ, প্রাইস ও বাংলাদেশে ব্যবহার গাইড দেখুন।" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -17,6 +18,23 @@
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Syne:wght@500;700;800&display=swap" />
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Syne:wght@500;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+  <script>
+  (() => {
+    const aliases = {
+      mistral: "mistral-ai",
+      kling: "kling-ai",
+      runway: "runway-ml",
+      leonardo: "leonardo-ai",
+      suno: "suno-ai",
+      jasper: "jasper-ai"
+    };
+    const params = new URLSearchParams(window.location.search);
+    const rawSlug = params.get("tool");
+    if (!rawSlug) return;
+    const slug = aliases[rawSlug] || rawSlug;
+    window.location.replace(`tools/${encodeURIComponent(slug)}.html`);
+  })();
+  </script>
   <script type="application/ld+json" id="detailFaqSchema"></script>
   <script src="js/tools-data.js" defer></script>
   <script src="js/tool-detail.js" defer></script>
@@ -66,7 +84,12 @@
     <section class="container detail-section" id="detailSection">
       <nav class="breadcrumb" aria-label="Breadcrumb" id="breadcrumb"></nav>
       <article class="detail-card" id="detailCard" itemscope itemtype="https://schema.org/SoftwareApplication">
-        <div id="detailContent"></div>
+        <div id="detailContent">
+          <div class="empty-state">
+            <p>এই টুল পেজটি নতুন static URL-এ সরানো হয়েছে।</p>
+            <p><a class="btn btn-primary" href="index.html">সব টুলস দেখুন</a></p>
+          </div>
+        </div>
       </article>
     </section>
 
@@ -98,7 +121,6 @@
   </footer>
 </body>
 </html>
-
 
 
 

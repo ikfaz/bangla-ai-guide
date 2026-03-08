@@ -45,7 +45,8 @@
   const esc = (t) => String(t ?? "").replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;").replaceAll("'", "&#039;");
   const toSlug = (v) => String(v || "").trim().toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
   const bnNum = (v) => Number(v).toLocaleString("bn-BD");
-  const getToolLandingUrl = (tool) => `https://banglaaiguide.com/?tool=${encodeURIComponent(toSlug(tool.name))}`;
+  const getToolPagePath = (slug) => `tools/${encodeURIComponent(slug)}.html`;
+  const getToolLandingUrl = (tool) => `https://banglaaiguide.com/${getToolPagePath(toSlug(tool.name))}`;
   const getFacebookShareUrl = (tool) => `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(getToolLandingUrl(tool))}`;
   const getWhatsAppShareUrl = (tool) => `https://wa.me/?text=${encodeURIComponent(`${tool.name} — বাংলাদেশ থেকে কাজ করে!\nদেখুন: ${getToolLandingUrl(tool)}\nবাংলা AI গাইডে আরও ১৫০+ টুলস →`)}`;
   const getToolDomain = (tool) => {
@@ -583,7 +584,7 @@
     refs.detailFaqSchema.textContent = JSON.stringify({
       "@context": "https://schema.org",
       "@type": "FAQPage",
-      url: `https://banglaaiguide.com/tool-detail.html?tool=${encodeURIComponent(slug)}`,
+      url: `https://banglaaiguide.com/tools/${encodeURIComponent(slug)}.html`,
       inLanguage: "bn-BD",
       mainEntity: faq.map((i) => ({ "@type": "Question", name: i.q, acceptedAnswer: { "@type": "Answer", text: i.a } }))
     });
@@ -592,7 +593,7 @@
   function applySeoMeta(toolName, slug, seo) {
     document.title = `${toolName} বাংলাদেশে ব্যবহার গাইড | বাংলা AI গাইড`;
     ensureMetaTag("description", seo.metaDescription);
-    ensureCanonical(`https://banglaaiguide.com/tool-detail.html?tool=${encodeURIComponent(slug)}`);
+    ensureCanonical(`https://banglaaiguide.com/tools/${encodeURIComponent(slug)}.html`);
   }
 
   function trackEvent(eventName, payload) {
@@ -685,7 +686,7 @@
       return;
     }
     refs.relatedGrid.innerHTML = related.map((tool) => {
-      const detailUrl = `tool-detail.html?tool=${encodeURIComponent(toSlug(tool.name))}`;
+      const detailUrl = getToolPagePath(toSlug(tool.name));
       const fb = getFacebookShareUrl(tool);
       const wa = getWhatsAppShareUrl(tool);
       const copyUrl = tool.direct_url || tool.affiliate_url || getToolLandingUrl(tool);

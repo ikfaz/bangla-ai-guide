@@ -138,6 +138,11 @@
       .replace(/^-+|-+$/g, "");
   }
 
+  function getToolPageHref(slug) {
+    const encodedSlug = encodeURIComponent(slug);
+    return window.location.pathname.includes("/tools/") ? `${encodedSlug}.html` : `tools/${encodedSlug}.html`;
+  }
+
   function escapeHtml(value) {
     return String(value || "")
       .replaceAll("&", "&amp;")
@@ -279,7 +284,7 @@
 
         const link = document.createElement("a");
         link.className = "tool-inline-link";
-        link.href = `tool-detail.html?tool=${encodeURIComponent(entry.slug)}`;
+        link.href = getToolPageHref(entry.slug);
         link.setAttribute("data-tool-slug", entry.slug);
         link.setAttribute("aria-label", `${matched} বিস্তারিত দেখুন`);
         link.innerHTML = escapeHtml(matched);

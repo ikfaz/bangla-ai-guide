@@ -2,7 +2,7 @@
 const path = require("path");
 
 const root = path.resolve(__dirname, "..");
-const lastmod = "2026-03-07";
+const lastmod = "2026-03-09";
 
 const labelMap = new Map([
   ["index.html", "বাংলা AI গাইড হোম"],
@@ -326,20 +326,20 @@ function uniqueLines(lines) {
 
 function truncateLine(line, limit = 110) {
   if (line.length <= limit) return line;
-  return `${line.slice(0, limit - 1).trim()}â€¦`;
+  return `${line.slice(0, limit - 1).trim()}…`;
 }
 
 function parseFaqItems(lines) {
   const faq = [];
   for (let i = 0; i < lines.length; i += 1) {
     const current = lines[i];
-    const questionMatch = current.match(/^(?:প্রশ্ন|à¦ªà§à¦°à¦¶à§à¦¨)[:：]\s*(.+)$/);
+    const questionMatch = current.match(/^প্রশ্ন[:：]\s*(.+)$/);
     if (!questionMatch) continue;
     const question = questionMatch[1].trim();
     let answer = "";
     for (let j = i + 1; j < lines.length; j += 1) {
       const candidate = lines[j];
-      if (/^(?:প্রশ্ন|à¦ªà§à¦°à¦¶à§à¦¨)[:：]/.test(candidate)) break;
+      if (/^প্রশ্ন[:：]/.test(candidate)) break;
       if (candidate) {
         answer = candidate;
         break;
@@ -371,10 +371,10 @@ function buildSteps(stepLines, allLines, topicBn) {
   }
   const fallback = [
     `Step 1: ${topicBn} ব্যবহারের লক্ষ্য স্পষ্ট করুন।`,
-    "Step 2: ???? ?????? ????? ?-?? ??? ??????? ??? ??? ????",
-    "Step 3: ?????? quality ??? ???? ??????? ????? ?????",
-    "Step 4: payment/vpn ???????? ????? ??? workflow ?????? ?????",
-    "Step 5: ????? ROI ???? stack optimize ?????",
+    "Step 2: ফ্রি বা বেসিক প্ল্যান দিয়ে ছোট use-case পরীক্ষা করুন।",
+    "Step 3: আউটপুট quality যাচাই করে নিজের workflow অনুযায়ী ঠিক করুন।",
+    "Step 4: payment, VPN, এবং access policy দেখে production workflow সেট করুন।",
+    "Step 5: মাসিক ROI দেখে প্রয়োজন হলে stack optimize করুন।",
   ];
   if (steps.length < 4) {
     for (const item of fallback) {
@@ -446,9 +446,9 @@ function buildContentBlocks(page, docArticle) {
   const faqItems = parsedFaq.slice(0, 5);
   if (faqItems.length < 3) {
     faqItems.push(
-      [`${page.primaryKeyword} à¦¬à¦¾à¦‚à¦²à¦¾à¦¦à§‡à¦¶à§‡ à¦¬à§à¦¯à¦¬à¦¹à¦¾à¦°à¦¯à§‹à¦—à§à¦¯ à¦•à¦¿?`, "হ্যাঁ, সঠিক workflow, budget discipline, এবং policy awareness থাকলে ব্যবহারযোগ্য।"],
-      [`${page.longTailTargets[0]} à¦¬à¦¾à¦¸à§à¦¤à¦¬à§‡ à¦•à§€à¦­à¦¾à¦¬à§‡ à¦¯à¦¾à¦šà¦¾à¦‡ à¦•à¦°à¦¬?`, "Official pricing/access policy এবং নিজের usage log মিলিয়ে যাচাই করুন।"],
-      ["২০২৬ সালে safest rollout strategy কী?", "ফ্রি দিয়ে শুরু, ধাপে ধাপে scale, এবং monthly review।"]
+      [`${page.primaryKeyword} বাংলাদেশে ব্যবহারযোগ্য কি?`, "হ্যাঁ, সঠিক workflow, budget discipline, এবং policy awareness থাকলে ব্যবহারযোগ্য।"],
+      [`${page.longTailTargets[0]} বাস্তবে কীভাবে যাচাই করব?`, "Official pricing/access policy এবং নিজের usage log মিলিয়ে যাচাই করুন।"],
+      ["২০২৬ সালে rollout strategy কী হওয়া উচিত?", "ফ্রি দিয়ে শুরু, ছোট workflow validate করুন, তারপর ধাপে ধাপে scale করুন।"]
     );
   }
   const uniqueRest = uniqueLines(rest);
@@ -472,7 +472,7 @@ function buildContentBlocks(page, docArticle) {
 
 const pillarAnchorRotation = [
   "Bangla AI tools directory",
-  "????? AI ?????? pillar",
+  "বাংলা AI গাইড pillar",
   "AI tools Bangladesh hub",
 ];
 
@@ -480,7 +480,7 @@ function buildFaqItems(page) {
   return [
     [`${page.primaryKeyword} বাংলাদেশে কি practical?`, "হ্যাঁ, সঠিক workflow, QA এবং cost control থাকলে practical।"],
     [`${page.longTailTargets[0]} নিয়ে সাধারণ ভুল কী?`, "Official policy না দেখে ভুল পদ্ধতি ব্যবহার এবং no-log usage করা।"],
-    ["২০২৬ সালে safest rollout কৌশল কী?", "Small pilot, measurable KPI, এবং monthly optimization দিয়ে rollout করুন।"],
+    ["২০২৬ সালে rollout কৌশল কী হওয়া উচিত?", "Small pilot, measurable KPI, এবং monthly optimization দিয়ে rollout করুন।"],
   ];
 }
 
@@ -560,10 +560,6 @@ function articleSchema(url, page) {
   };
 }
 
-function keywordSignal(page) {
-  return `<p class="seo-lead" data-keyword-signal="true">${escapeHtml(page.primaryKeyword)} ফোকাস ধরে ${escapeHtml(page.secondaryKeywords[0])} এবং ${escapeHtml(page.longTailTargets[0])} সহ বাংলাদেশি ব্যবহারকারীর জন্য 2026-ready গাইড দেয়া হয়েছে।</p>`;
-}
-
 function renderPillarBacklink(page) {
   return `<p class="seo-lead">Full stack comparison দেখতে <a href="ai-tools-bangladesh-bengali.html">${escapeHtml(page.pillarBacklinkLabel)}</a> দেখুন।</p>`;
 }
@@ -587,11 +583,7 @@ function renderNewsletterSignup(idSuffix) {
 }
 
 function buildSchema(url, page) {
-  const graph = [];
-  if (page.intentType === "explainer") {
-    graph.push(articleSchema(url, page));
-  }
-  graph.push(faqSchema(url, page));
+  const graph = [articleSchema(url, page), faqSchema(url, page)];
   return { "@context": "https://schema.org", "@graph": graph };
 }
 
@@ -650,10 +642,8 @@ function renderPage(page) {
     <article class="container seo-article-page">
       <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">হোম</a><span>&gt;</span><span>${escapeHtml(page.primaryKeyword)}</span></nav>
       <h1>${escapeHtml(page.h1)}</h1>
-      ${keywordSignal(page)}
-      <p class="seo-lead">${escapeHtml(page.primaryKeyword)} intent-এ এই পেজটি 2026 current-state অনুযায়ী Bangladesh-first guidance দেয়।</p>
-      <p class="seo-lead">${escapeHtml(page.secondaryKeywords[0])} এবং ${escapeHtml(page.secondaryKeywords[1] || page.longTailTargets[1] || page.primaryKeyword)} query cluster ধরে content সাজানো হয়েছে যাতে cannibalization কমে।</p>
-      <p class="seo-lead">${escapeHtml(page.longTailTargets[0])} সহ long-tail search intent গুলো FAQ এবং section heading-এ naturalভাবে কভার করা হয়েছে।</p>
+      <p class="seo-lead">${escapeHtml(page.description)}</p>
+      <p class="seo-lead">${escapeHtml(blocks.quickAnswer[0] || `${page.topicBn} ব্যবহার করার আগে official pricing, access, এবং workflow context বুঝে নেওয়া ভালো।`)}</p>
       ${renderPillarBacklink(page)}
       <section class="seo-block"><h2>Quick answer</h2>${quickAnswerHtml}</section>
       <section class="seo-block"><h2>বাংলাদেশে ব্যবহারযোগ্যতা</h2>${bdUsabilityHtml}</section>
@@ -677,5 +667,3 @@ for (const page of clusterPages) {
 }
 
 console.log(`Generated ${clusterPages.length} cluster SEO pages`);
-
-
