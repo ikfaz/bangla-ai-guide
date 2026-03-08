@@ -265,9 +265,11 @@
 
       const originalText = node.nodeValue;
       const lowerText = originalText.toLowerCase();
+      const isTableCell = node.parentElement?.tagName === "TD";
 
       for (const entry of toolEntries) {
-        if (linkedSlugs.has(entry.slug)) {
+        const isExactTableToolCell = isTableCell && originalText.trim().toLowerCase() === entry.tokenLower;
+        if (!isExactTableToolCell && linkedSlugs.has(entry.slug)) {
           continue;
         }
         const index = lowerText.indexOf(entry.tokenLower);
@@ -297,7 +299,9 @@
         }
 
         node.parentNode.replaceChild(fragment, node);
-        linkedSlugs.add(entry.slug);
+        if (!isExactTableToolCell) {
+          linkedSlugs.add(entry.slug);
+        }
         break;
       }
     });

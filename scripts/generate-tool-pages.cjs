@@ -381,7 +381,7 @@ function renderPage(tool, tools, conversionRate) {
 <body data-page-slug="${escapeHtml(slug)}">
   <header class="navbar" id="top">
     <div class="container navbar-inner">
-      <a href="../index.html" class="logo" aria-label="বাংলা AI গাইড হোম">
+      <a href="/" class="logo" aria-label="বাংলা AI গাইড হোম">
         <img class="logo-mark" src="../favicon.svg" alt="বাংলা AI গাইড লোগো" width="28" height="28" decoding="async" />
         <span class="logo-text">বাংলা AI গাইড</span>
       </a>
