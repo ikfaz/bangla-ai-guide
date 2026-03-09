@@ -158,25 +158,33 @@
 
       <div class="nav-desktop">
         <nav class="nav-links" aria-label="প্রধান ন্যাভিগেশন">
-          <a href="#toolsSection">টুলস দেখুন</a>
-          <a href="#categoryTabs">ক্যাটাগরি</a>
-          <a href="#newsletter">নিউজলেটার</a>
+          <a href="#toolsSection" data-i18n="nav_view_tools">টুলস দেখুন</a>
+          <a href="#categoryTabs" data-i18n="nav_categories">ক্যাটাগরি</a>
+          <a href="#newsletter" data-i18n="nav_newsletter">নিউজলেটার</a>
         </nav>
-        <a href="submit.html" class="btn btn-primary">টুল সাবমিট করুন</a>
+        <div class="language-switcher" aria-label="ভাষা নির্বাচন">
+          <button type="button" class="lang-btn active" data-language-toggle="bn">বাংলা</button>
+          <button type="button" class="lang-btn" data-language-toggle="en">English</button>
+        </div>
+        <a href="submit.html" class="btn btn-primary" data-i18n="nav_submit_tool">টুল সাবমিট করুন</a>
       </div>
     </div>
 
     <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-      <a href="#toolsSection">টুলস দেখুন</a>
-      <a href="#categoryTabs">ক্যাটাগরি</a>
-      <a href="#newsletter">নিউজলেটার</a>
-      <a href="submit.html" class="btn btn-primary mobile-cta">টুল সাবমিট করুন</a>
+      <a href="#toolsSection" data-i18n="nav_view_tools">টুলস দেখুন</a>
+      <a href="#categoryTabs" data-i18n="nav_categories">ক্যাটাগরি</a>
+      <a href="#newsletter" data-i18n="nav_newsletter">নিউজলেটার</a>
+      <div class="language-switcher language-switcher--mobile" aria-label="ভাষা নির্বাচন">
+        <button type="button" class="lang-btn active" data-language-toggle="bn">বাংলা</button>
+        <button type="button" class="lang-btn" data-language-toggle="en">English</button>
+      </div>
+      <a href="submit.html" class="btn btn-primary mobile-cta" data-i18n="nav_submit_tool">টুল সাবমিট করুন</a>
     </div>
   </header>
 
   <aside class="affiliate-disclaimer" id="affiliateDisclaimer" aria-live="polite">
     <div class="container affiliate-disclaimer-inner">
-      <p>⚠️ এই সাইটে কিছু লিংক affiliate — আপনার কোনো অতিরিক্ত খরচ ছাড়াই আমরা কমিশন পেতে পারি।</p>
+      <p data-i18n="affiliate_disclaimer">⚠️ এই সাইটে কিছু লিংক affiliate — আপনার কোনো অতিরিক্ত খরচ ছাড়াই আমরা কমিশন পেতে পারি।</p>
       <button type="button" class="affiliate-close" id="affiliateCloseBtn" aria-label="বার্তাটি বন্ধ করুন">✕</button>
     </div>
   </aside>
@@ -188,18 +196,18 @@
           <div class="hero-grid">
             <div class="hero-copy">
               <h2 class="sr-only">বাংলাদেশে AI টুলস খুঁজুন</h2>
-              <p class="hero-badge">Bangladesh AI Directory</p>
-              <h1>বাংলাদেশের জন্য সেরা <em>AI টুলস</em></h1>
-              <p class="hero-subtext">বাংলাদেশ থেকে কোন AI tool ব্যবহার করা যাবে, কোনটা free বা freemium, কোনটা creator, coding, writing বা productivity-এর জন্য best, আর local ব্যবহারকারীর জন্য কোনটা practical সেটা দ্রুত খুঁজে দেখুন।</p>
+              <p class="hero-badge" data-i18n="hero_badge">বাংলাদেশের AI টুল ডিরেক্টরি</p>
+              <h1 data-i18n="hero_title" data-i18n-html="true">বাংলাদেশের জন্য সেরা <em>AI টুলস</em></h1>
+              <p class="hero-subtext" data-i18n="hero_subtext">বাংলাদেশ থেকে কোন AI tool ব্যবহার করা যাবে, কোনটা free বা freemium, কোনটা creator, coding, writing বা productivity-এর জন্য best, আর local ব্যবহারকারীর জন্য কোনটা practical সেটা দ্রুত খুঁজে দেখুন।</p>
               <div class="hero-search-shell">
                 <label class="sr-only" for="searchInput">টুল খুঁজুন</label>
-                <input id="searchInput" class="search-input" type="search" placeholder="টুল খুঁজুন… যেমন: ChatGPT, ভিডিও, কোডিং" />
-                <a href="#toolsSection" class="hero-search-cta">Search</a>
+                <input id="searchInput" class="search-input" type="search" placeholder="টুল খুঁজুন… যেমন: ChatGPT, ভিডিও, কোডিং" data-i18n-placeholder="hero_search_placeholder" />
+                <a href="#toolsSection" class="hero-search-cta" data-i18n="hero_search_cta">খুঁজুন</a>
               </div>
               <div class="hero-points" aria-label="Directory highlights">
-                <span class="hero-point">300+ AI tools listed</span>
-                <span class="hero-point">বাংলাদেশে ব্যবহারযোগ্য</span>
-                <span class="hero-point">নিয়মিত আপডেট</span>
+                <span class="hero-point" data-i18n="hero_point_1">৩০০+ AI টুল তালিকাভুক্ত</span>
+                <span class="hero-point" data-i18n="hero_point_2">বাংলাদেশে ব্যবহারযোগ্য</span>
+                <span class="hero-point" data-i18n="hero_point_3">নিয়মিত আপডেট</span>
               </div>
             </div>
 
@@ -209,13 +217,13 @@
                 <div class="hero-illustration-ring"></div>
                 <div class="hero-illustration-core">
                   <span class="hero-core-chip hero-core-chip--one">AI</span>
-                  <span class="hero-core-chip hero-core-chip--two">Search</span>
-                  <span class="hero-core-chip hero-core-chip--three">Tools</span>
+                  <span class="hero-core-chip hero-core-chip--two" data-i18n="hero_chip_search">সার্চ</span>
+                  <span class="hero-core-chip hero-core-chip--three" data-i18n="hero_chip_tools">টুলস</span>
                 </div>
-                <div class="hero-float-card hero-float-card--chat">Writing</div>
-                <div class="hero-float-card hero-float-card--image">Image</div>
-                <div class="hero-float-card hero-float-card--code">Coding</div>
-                <div class="hero-float-card hero-float-card--video">Video</div>
+                <div class="hero-float-card hero-float-card--chat" data-i18n="category_writing">রাইটিং</div>
+                <div class="hero-float-card hero-float-card--image" data-i18n="category_image">ইমেজ</div>
+                <div class="hero-float-card hero-float-card--code" data-i18n="category_coding">কোডিং</div>
+                <div class="hero-float-card hero-float-card--video" data-i18n="category_video">ভিডিও</div>
               </div>
             </div>
           </div>
@@ -226,24 +234,24 @@
     <section class="container tabs-shell" id="categoryTabs">
       <h2 class="sr-only">ক্যাটাগরি ফিল্টার</h2>
       <div class="tabs-scroll" id="categoryTabList" role="tablist" aria-label="ক্যাটাগরি ফিল্টার">
-        <button class="tab-btn active" data-category="all" role="tab" aria-selected="true">All Tools</button>
-        <button class="tab-btn" data-category="writing" role="tab" aria-selected="false">Writing</button>
-        <button class="tab-btn" data-category="image" role="tab" aria-selected="false">Image</button>
-        <button class="tab-btn" data-category="video" role="tab" aria-selected="false">Video</button>
-        <button class="tab-btn" data-category="coding" role="tab" aria-selected="false">Coding</button>
-        <button class="tab-btn" data-category="marketing" role="tab" aria-selected="false">Marketing</button>
-        <button class="tab-btn" data-category="productivity" role="tab" aria-selected="false">Productivity</button>
-        <button class="tab-btn" data-category="free" role="tab" aria-selected="false">Free Tools</button>
+        <button class="tab-btn active" data-category="all" role="tab" aria-selected="true" data-i18n="category_all">সব টুলস</button>
+        <button class="tab-btn" data-category="writing" role="tab" aria-selected="false" data-i18n="category_writing">রাইটিং</button>
+        <button class="tab-btn" data-category="image" role="tab" aria-selected="false" data-i18n="category_image">ইমেজ</button>
+        <button class="tab-btn" data-category="video" role="tab" aria-selected="false" data-i18n="category_video">ভিডিও</button>
+        <button class="tab-btn" data-category="coding" role="tab" aria-selected="false" data-i18n="category_coding">কোডিং</button>
+        <button class="tab-btn" data-category="marketing" role="tab" aria-selected="false" data-i18n="category_marketing">মার্কেটিং</button>
+        <button class="tab-btn" data-category="productivity" role="tab" aria-selected="false" data-i18n="category_productivity">প্রোডাক্টিভিটি</button>
+        <button class="tab-btn" data-category="free" role="tab" aria-selected="false" data-i18n="category_free_tools">ফ্রি টুলস</button>
       </div>
     </section>
 
     <section class="container trending-section" id="trendingSection">
       <div class="section-heading">
         <div>
-          <p class="section-kicker">Popular now</p>
-          <h2>🔥 Trending AI Tools</h2>
+          <p class="section-kicker" data-i18n="trending_kicker">এখন জনপ্রিয়</p>
+          <h2 data-i18n="trending_title">🔥 ট্রেন্ডিং AI টুলস</h2>
         </div>
-        <p class="section-copy">Most-searched and popular tools users are exploring right now.</p>
+        <p class="section-copy" data-i18n="trending_copy">এই মুহূর্তে সবচেয়ে বেশি খোঁজা এবং জনপ্রিয় টুলগুলো দেখুন।</p>
       </div>
       <div class="trending-grid" id="trendingGrid" aria-live="polite"></div>
     </section>
@@ -251,82 +259,82 @@
     <section class="container tools-layout tools-layout-polish" id="toolsSection">
       <aside class="sidebar" aria-label="ফিল্টার সাইডবার">
         <div class="filter-box">
-          <h3>পেমেন্ট পদ্ধতি</h3>
+          <h3 data-i18n="filter_payment_title">পেমেন্ট পদ্ধতি</h3>
           <div class="filter-group" data-filter-group="payment">
-            <button class="filter-chip active" data-payment="all">সব</button>
-            <button class="filter-chip" data-payment="bkash">bKash সাপোর্ট</button>
-            <button class="filter-chip" data-payment="card">ডেবিট/ক্রেডিট কার্ড</button>
-            <button class="filter-chip" data-payment="free">সম্পূর্ণ ফ্রি</button>
+            <button class="filter-chip active" data-payment="all" data-i18n="filter_all">সব</button>
+            <button class="filter-chip" data-payment="bkash" data-i18n="filter_payment_bkash">bKash সাপোর্ট</button>
+            <button class="filter-chip" data-payment="card" data-i18n="filter_payment_card">ডেবিট/ক্রেডিট কার্ড</button>
+            <button class="filter-chip" data-payment="free" data-i18n="filter_payment_free">সম্পূর্ণ ফ্রি</button>
           </div>
         </div>
 
         <div class="filter-box">
-          <h3>বাংলাদেশ ফিল্টার</h3>
+          <h3 data-i18n="filter_bd_title">বাংলাদেশ ফিল্টার</h3>
           <div class="filter-group" data-filter-group="bd">
-            <button class="filter-chip active" data-bd="all">সব</button>
-            <button class="filter-chip" data-bd="works">✅ BD থেকে কাজ করে</button>
-            <button class="filter-chip" data-bd="no-vpn">🔵 VPN ছাড়া</button>
-            <button class="filter-chip" data-bd="vpn">⚠️ VPN লাগে</button>
+            <button class="filter-chip active" data-bd="all" data-i18n="filter_all">সব</button>
+            <button class="filter-chip" data-bd="works" data-i18n="filter_bd_works">✅ BD থেকে কাজ করে</button>
+            <button class="filter-chip" data-bd="no-vpn" data-i18n="filter_bd_no_vpn">🔵 VPN ছাড়া</button>
+            <button class="filter-chip" data-bd="vpn" data-i18n="filter_bd_vpn">⚠️ VPN লাগে</button>
           </div>
         </div>
 
         <div class="filter-box">
-          <h3>মূল্য (টাকায়)</h3>
+          <h3 data-i18n="filter_price_title">মূল্য (টাকায়)</h3>
           <div class="filter-group" data-filter-group="price">
-            <button class="filter-chip active" data-price="all">সব</button>
-            <button class="filter-chip" data-price="free">ফ্রি ৳০</button>
-            <button class="filter-chip" data-price="budget">বাজেট ৳১-৳৫০০</button>
-            <button class="filter-chip" data-price="mid">মিড ৳৫০০-৳২০০০</button>
-            <button class="filter-chip" data-price="premium">প্রিমিয়াম ৳২০০০+</button>
+            <button class="filter-chip active" data-price="all" data-i18n="filter_all">সব</button>
+            <button class="filter-chip" data-price="free" data-i18n="filter_price_free">ফ্রি ৳০</button>
+            <button class="filter-chip" data-price="budget" data-i18n="filter_price_budget">বাজেট ৳১-৳৫০০</button>
+            <button class="filter-chip" data-price="mid" data-i18n="filter_price_mid">মিড ৳৫০০-৳২০০০</button>
+            <button class="filter-chip" data-price="premium" data-i18n="filter_price_premium">প্রিমিয়াম ৳২০০০+</button>
           </div>
         </div>
 
         <div class="sponsor-card">
-          <h3>এখানে বিজ্ঞাপন দিন</h3>
-          <p>প্রতি মাসে ৫০,০০০+ বাংলাদেশি AI ব্যবহারকারীর কাছে পৌঁছান।</p>
-          <a href="contact.html#advertising" class="btn btn-primary">যোগাযোগ করুন →</a>
+          <h3 data-i18n="sponsor_title">এখানে বিজ্ঞাপন দিন</h3>
+          <p data-i18n="sponsor_copy">প্রতি মাসে ৫০,০০০+ বাংলাদেশি AI ব্যবহারকারীর কাছে পৌঁছান।</p>
+          <a href="contact.html#advertising" class="btn btn-primary" data-i18n="sponsor_cta">যোগাযোগ করুন →</a>
         </div>
       </aside>
 
       <section class="content-area">
         <div class="directory-header">
           <div>
-            <p class="section-kicker">AI directory</p>
-            <h2 class="directory-title">Discover tools by fit, price, and category</h2>
+            <p class="section-kicker" data-i18n="directory_kicker">AI ডিরেক্টরি</p>
+            <h2 class="directory-title" data-i18n="directory_title">প্রয়োজন, দাম, আর ক্যাটাগরি অনুযায়ী টুল খুঁজুন</h2>
           </div>
-          <p class="directory-copy">Search-first discovery with clean modern cards and Bangladesh-friendly filtering.</p>
+          <p class="directory-copy" data-i18n="directory_copy">সার্চ-ফার্স্ট ডিসকভারি, পরিষ্কার আধুনিক কার্ড, আর বাংলাদেশ-ফ্রেন্ডলি ফিল্টারিং।</p>
         </div>
         <div class="mobile-filters" aria-label="মোবাইল ফিল্টার">
           <div class="mobile-filter-row" data-filter-group="payment">
-            <button class="filter-chip active" data-payment="all">সব</button>
-            <button class="filter-chip" data-payment="bkash">bKash</button>
-            <button class="filter-chip" data-payment="card">কার্ড</button>
-            <button class="filter-chip" data-payment="free">ফ্রি</button>
+            <button class="filter-chip active" data-payment="all" data-i18n="filter_all">সব</button>
+            <button class="filter-chip" data-payment="bkash" data-i18n="filter_payment_bkash_short">bKash</button>
+            <button class="filter-chip" data-payment="card" data-i18n="filter_payment_card_short">কার্ড</button>
+            <button class="filter-chip" data-payment="free" data-i18n="filter_payment_free_short">ফ্রি</button>
           </div>
           <div class="mobile-filter-row" data-filter-group="bd">
-            <button class="filter-chip active" data-bd="all">সব</button>
-            <button class="filter-chip" data-bd="works">BD</button>
-            <button class="filter-chip" data-bd="no-vpn">VPN ছাড়া</button>
-            <button class="filter-chip" data-bd="vpn">VPN লাগে</button>
+            <button class="filter-chip active" data-bd="all" data-i18n="filter_all">সব</button>
+            <button class="filter-chip" data-bd="works" data-i18n="filter_bd_works_short">BD</button>
+            <button class="filter-chip" data-bd="no-vpn" data-i18n="filter_bd_no_vpn_short">VPN ছাড়া</button>
+            <button class="filter-chip" data-bd="vpn" data-i18n="filter_bd_vpn_short">VPN লাগে</button>
           </div>
           <div class="mobile-filter-row" data-filter-group="price">
-            <button class="filter-chip active" data-price="all">সব</button>
-            <button class="filter-chip" data-price="free">৳০</button>
-            <button class="filter-chip" data-price="budget">৳১-৳৫০০</button>
-            <button class="filter-chip" data-price="mid">৳৫০০-৳২০০০</button>
-            <button class="filter-chip" data-price="premium">৳২০০০+</button>
+            <button class="filter-chip active" data-price="all" data-i18n="filter_all">সব</button>
+            <button class="filter-chip" data-price="free" data-i18n="filter_price_free_short">৳০</button>
+            <button class="filter-chip" data-price="budget" data-i18n="filter_price_budget_short">৳১-৳৫০০</button>
+            <button class="filter-chip" data-price="mid" data-i18n="filter_price_mid_short">৳৫০০-৳২০০০</button>
+            <button class="filter-chip" data-price="premium" data-i18n="filter_price_premium_short">৳২০০০+</button>
           </div>
         </div>
 
         <div class="grid-header">
-          <h3 class="grid-title">All AI Tools</h3>
-          <button type="button" class="sort-btn" aria-label="সাজানোর অপশন (শীঘ্রই)">↕ জনপ্রিয়তা অনুযায়ী</button>
+          <h3 class="grid-title" data-i18n="grid_title">সব AI টুলস</h3>
+          <button type="button" class="sort-btn" aria-label="সাজানোর অপশন (শীঘ্রই)" data-i18n="sort_label">↕ জনপ্রিয়তা অনুযায়ী</button>
         </div>
 
         <p class="results-count" id="resultsCount">০ টি টুলস পাওয়া গেছে</p>
         <div class="tools-grid" id="toolsGrid" aria-live="polite"></div>
         <div class="tools-actions">
-          <button type="button" class="btn btn-ghost" id="loadMoreBtn" hidden>আরও টুলস দেখুন</button>
+          <button type="button" class="btn btn-ghost" id="loadMoreBtn" hidden data-i18n="load_more">আরও টুলস দেখুন</button>
         </div>
       </section>
     </section>
@@ -334,36 +342,36 @@
     <section class="container category-grid-section" id="seoCategories">
       <div class="section-heading">
         <div>
-          <p class="section-kicker">Explore by topic</p>
-          <h2>Category Pages</h2>
+          <p class="section-kicker" data-i18n="seo_kicker">বিষয়ভিত্তিক দেখুন</p>
+          <h2 data-i18n="seo_title">ক্যাটাগরি পেজ</h2>
         </div>
-        <p class="section-copy">SEO-friendly landing blocks for users who want a focused tool list by use-case.</p>
+        <p class="section-copy" data-i18n="seo_copy">নির্দিষ্ট কাজের জন্য ফোকাসড টুল লিস্ট চাইলে এই ক্যাটাগরি পেজগুলো দেখুন।</p>
       </div>
       <div class="category-grid">
         <a class="category-block" href="/ai-tools-bangladesh-bengali/">
-          <span class="category-block-kicker">Writing</span>
-          <strong>AI Writing Tools</strong>
-          <p>Copy, content, email, and document workflow tools.</p>
+          <span class="category-block-kicker" data-i18n="category_writing">রাইটিং</span>
+          <strong data-i18n="seo_writing_title">AI Writing Tools</strong>
+          <p data-i18n="seo_writing_copy">Copy, content, email, and document workflow tools.</p>
         </a>
         <a class="category-block" href="/ai-image-generator-free-bangladesh/">
-          <span class="category-block-kicker">Image</span>
-          <strong>AI Image Tools</strong>
-          <p>Prompt-based image generation, design, and visual concept tools.</p>
+          <span class="category-block-kicker" data-i18n="category_image">ইমেজ</span>
+          <strong data-i18n="seo_image_title">AI Image Tools</strong>
+          <p data-i18n="seo_image_copy">Prompt-based image generation, design, and visual concept tools.</p>
         </a>
         <a class="category-block" href="/ai-tools-for-youtube-bangladesh/">
-          <span class="category-block-kicker">Video</span>
-          <strong>AI Video Tools</strong>
-          <p>Video generation, shorts workflow, and creator automation tools.</p>
+          <span class="category-block-kicker" data-i18n="category_video">ভিডিও</span>
+          <strong data-i18n="seo_video_title">AI Video Tools</strong>
+          <p data-i18n="seo_video_copy">Video generation, shorts workflow, and creator automation tools.</p>
         </a>
         <a class="category-block" href="/best-ai-coding-tools-for-beginners-bangladesh/">
-          <span class="category-block-kicker">Coding</span>
-          <strong>AI Coding Tools</strong>
-          <p>Developer copilots, code assistants, and prototyping tools.</p>
+          <span class="category-block-kicker" data-i18n="category_coding">কোডিং</span>
+          <strong data-i18n="seo_coding_title">AI Coding Tools</strong>
+          <p data-i18n="seo_coding_copy">Developer copilots, code assistants, and prototyping tools.</p>
         </a>
         <a class="category-block" href="/best-ai-tools-for-content-creators-bangladesh/">
-          <span class="category-block-kicker">Marketing</span>
-          <strong>AI Marketing Tools</strong>
-          <p>Campaign, content, automation, and creator growth tools.</p>
+          <span class="category-block-kicker" data-i18n="category_marketing">মার্কেটিং</span>
+          <strong data-i18n="seo_marketing_title">AI Marketing Tools</strong>
+          <p data-i18n="seo_marketing_copy">Campaign, content, automation, and creator growth tools.</p>
         </a>
       </div>
     </section>
@@ -371,9 +379,9 @@
     <section class="newsletter newsletter-polish" id="newsletter">
       <div class="container newsletter-inner">
         <div>
-          <p class="newsletter-chip">📬 সাপ্তাহিক নিউজলেটার</p>
-          <h2>Join the Bangla AI Newsletter</h2>
-          <p>Discover the newest AI tools and tutorials in Bangla.</p>
+          <p class="newsletter-chip" data-i18n="newsletter_chip">📬 সাপ্তাহিক নিউজলেটার</p>
+          <h2 data-i18n="newsletter_title">বাংলা AI নিউজলেটারে যোগ দিন</h2>
+          <p data-i18n="newsletter_copy">বাংলায় নতুন AI টুলস আর টিউটোরিয়াল সবার আগে জানুন।</p>
         </div>
         <div class="newsletter-signup">
           <!-- Begin Mailchimp Signup Form -->
@@ -382,7 +390,7 @@
               <div id="mc_embed_signup_scroll">
                 <div class="mc-field-group">
                   <label class="sr-only" for="mce-EMAIL">Email Address</label>
-                  <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="আপনার ইমেইল" autocomplete="email" required="" value="">
+                  <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="আপনার ইমেইল" autocomplete="email" required="" value="" data-i18n-placeholder="newsletter_placeholder">
                 </div>
                 <div id="mce-responses" class="clear foot">
                   <div class="response" id="mce-error-response" style="display: none;"></div>
@@ -392,44 +400,44 @@
                   <input type="text" name="b_d389c0647878724daecc58fc6_aaca6896d2" tabindex="-1" value="">
                 </div>
                 <div class="clear foot">
-                  <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary" value="Get AI Tools Weekly">
+                  <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary" value="প্রতি সপ্তাহে AI টুলস পান" data-i18n-value="newsletter_cta">
                 </div>
               </div>
             </form>
           </div>
           <!--End mc_embed_signup-->
-          <p class="mailchimp-note">ফ্রি নিউজলেটার। নতুন AI tools, বাংলা রিভিউ, আর বাংলাদেশি ব্যবহার টিপস প্রতি সপ্তাহে ইনবক্সে পাবেন।</p>
+          <p class="mailchimp-note" data-i18n="newsletter_note">ফ্রি নিউজলেটার। নতুন AI tools, বাংলা রিভিউ, আর বাংলাদেশি ব্যবহার টিপস প্রতি সপ্তাহে ইনবক্সে পাবেন।</p>
         </div>
       </div>
     </section>
 
     <section class="container resources-section" id="bdResources">
-      <h2>Bangladesh AI Resources</h2>
-      <p class="resource-intro">Low + medium competition query টার্গেট করা আমাদের curated গাইডগুলো নিচে দেখুন।</p>
+      <h2 data-i18n="resources_title">বাংলাদেশ AI রিসোর্সেস</h2>
+      <p class="resource-intro" data-i18n="resources_intro">Low + medium competition query টার্গেট করা আমাদের curated গাইডগুলো নিচে দেখুন।</p>
       <div class="resources-grid">
-        <a class="resource-card" href="/ai-tools-bangladesh-bengali/">বাংলা AI গাইড (Pillar)</a>
-        <a class="resource-card" href="/ai-tools-bdt-price-2026-bangladesh/">AI tools BDT price 2026</a>
-        <a class="resource-card" href="/bkash-diye-ai-tools-kena-jay/">bKash দিয়ে AI tools কেনা যায়</a>
-        <a class="resource-card" href="/vpn-chara-ai-tools-bangladesh/">VPN ছাড়া AI tools Bangladesh</a>
-        <a class="resource-card" href="/chatgpt-bangladesh-theke-bebohar/">ChatGPT বাংলাদেশ থেকে ব্যবহার</a>
-        <a class="resource-card" href="/cursor-ai-bangla/">Cursor AI বাংলা</a>
-        <a class="resource-card" href="/elevenlabs-bangla-voice/">ElevenLabs বাংলা ভয়েস</a>
-        <a class="resource-card" href="/midjourney-bangladesh-free/">Midjourney Bangladesh free</a>
-        <a class="resource-card" href="/bangladeshe-ai-tools-kibhabe-bebohar-korben/">বাংলাদেশে AI tools কীভাবে ব্যবহার করবেন</a>
-        <a class="resource-card" href="/ai-tools-for-freelancers-bangladesh/">AI tools for freelancers Bangladesh</a>
-        <a class="resource-card" href="/best-ai-tools-for-content-creators-bangladesh/">best AI tools for content creators</a>
-        <a class="resource-card" href="/free-ai-tools-2026-bangladesh/">free AI tools 2026 Bangladesh</a>
-        <a class="resource-card" href="/ai-image-generator-free-bangladesh/">AI image generator free Bangladesh</a>
-        <a class="resource-card" href="/best-ai-coding-tools-for-beginners-bangladesh/">best AI coding tools for beginners</a>
-        <a class="resource-card" href="/ai-tools-for-youtube-bangladesh/">AI tools for YouTube Bangladesh</a>
+        <a class="resource-card" href="/ai-tools-bangladesh-bengali/" data-i18n="resource_1">বাংলা AI গাইড (Pillar)</a>
+        <a class="resource-card" href="/ai-tools-bdt-price-2026-bangladesh/" data-i18n="resource_2">AI tools BDT price 2026</a>
+        <a class="resource-card" href="/bkash-diye-ai-tools-kena-jay/" data-i18n="resource_3">bKash দিয়ে AI tools কেনা যায়</a>
+        <a class="resource-card" href="/vpn-chara-ai-tools-bangladesh/" data-i18n="resource_4">VPN ছাড়া AI tools Bangladesh</a>
+        <a class="resource-card" href="/chatgpt-bangladesh-theke-bebohar/" data-i18n="resource_5">ChatGPT বাংলাদেশ থেকে ব্যবহার</a>
+        <a class="resource-card" href="/cursor-ai-bangla/" data-i18n="resource_6">Cursor AI বাংলা</a>
+        <a class="resource-card" href="/elevenlabs-bangla-voice/" data-i18n="resource_7">ElevenLabs বাংলা ভয়েস</a>
+        <a class="resource-card" href="/midjourney-bangladesh-free/" data-i18n="resource_8">Midjourney Bangladesh free</a>
+        <a class="resource-card" href="/bangladeshe-ai-tools-kibhabe-bebohar-korben/" data-i18n="resource_9">বাংলাদেশে AI tools কীভাবে ব্যবহার করবেন</a>
+        <a class="resource-card" href="/ai-tools-for-freelancers-bangladesh/" data-i18n="resource_10">AI tools for freelancers Bangladesh</a>
+        <a class="resource-card" href="/best-ai-tools-for-content-creators-bangladesh/" data-i18n="resource_11">best AI tools for content creators</a>
+        <a class="resource-card" href="/free-ai-tools-2026-bangladesh/" data-i18n="resource_12">free AI tools 2026 Bangladesh</a>
+        <a class="resource-card" href="/ai-image-generator-free-bangladesh/" data-i18n="resource_13">AI image generator free Bangladesh</a>
+        <a class="resource-card" href="/best-ai-coding-tools-for-beginners-bangladesh/" data-i18n="resource_14">best AI coding tools for beginners</a>
+        <a class="resource-card" href="/ai-tools-for-youtube-bangladesh/" data-i18n="resource_15">AI tools for YouTube Bangladesh</a>
       </div>
     </section>
   </main>
 <footer class="site-footer">
     <div class="container footer-inner">
       <p class="footer-brand"><img class="logo-mark" src="/favicon.svg" alt="বাংলা AI গাইড লোগো" width="20" height="20" decoding="async" /><span>বাংলা AI গাইড</span></p>
-      <p>© ২০২৬ বাংলা AI গাইড · বাংলাদেশের জন্য তৈরি</p>
-      <nav class="footer-links" aria-label="ফুটার লিংক"><a href="submit.html">টুল সাবমিট</a><a href="contact.html#advertising">বিজ্ঞাপন</a><a href="privacy.html">প্রাইভেসি</a><a href="terms.html">শর্তাবলী</a><a href="disclaimer.html">ডিসক্লেইমার</a><a href="contact.html">যোগাযোগ</a></nav>
+      <p data-i18n="footer_copy">© ২০২৬ বাংলা AI গাইড · বাংলাদেশের জন্য তৈরি</p>
+      <nav class="footer-links" aria-label="ফুটার লিংক"><a href="submit.html" data-i18n="footer_submit">টুল সাবমিট</a><a href="contact.html#advertising" data-i18n="footer_ads">বিজ্ঞাপন</a><a href="privacy.html" data-i18n="footer_privacy">প্রাইভেসি</a><a href="terms.html" data-i18n="footer_terms">শর্তাবলী</a><a href="disclaimer.html" data-i18n="footer_disclaimer">ডিসক্লেইমার</a><a href="contact.html" data-i18n="footer_contact">যোগাযোগ</a></nav>
     </div>
   </footer>
 </body>

@@ -14,6 +14,7 @@
     bdFilter: "all",
     priceFilter: "all",
     visibleCount: 12,
+    language: "bn",
   };
 
   const refs = {
@@ -34,26 +35,361 @@
   const mobileBreakpoint = window.matchMedia("(max-width: 840px)");
   const cookieConsentKey = "banglaAiGuideCookieAccepted";
   const affiliateDisclaimerKey = "banglaAiGuideAffiliateDisclaimerHidden";
+  const languagePreferenceKey = "banglaAiGuideLanguage";
   const PAGE_SIZE = 12;
   let searchDebounceTimer = null;
   let renderRequestId = 0;
 
-  const categoryLabelMap = {
-    llm: "LLM",
-    image: "ইমেজ/ভিডিও",
-    coding: "কোডিং",
-    productivity: "প্রোডাক্টিভিটি",
-  };
-
-  const applicationCategoryMap = {
-    llm: "AI Chatbot",
-    image: "Image and Video AI",
-    coding: "Developer Tool",
-    productivity: "Productivity Application",
+  const translations = {
+    bn: {
+      nav_view_tools: "টুলস দেখুন",
+      nav_categories: "ক্যাটাগরি",
+      nav_newsletter: "নিউজলেটার",
+      nav_submit_tool: "টুল সাবমিট করুন",
+      affiliate_disclaimer: "⚠️ এই সাইটে কিছু লিংক affiliate — আপনার কোনো অতিরিক্ত খরচ ছাড়াই আমরা কমিশন পেতে পারি।",
+      hero_badge: "বাংলাদেশের AI টুল ডিরেক্টরি",
+      hero_title: "বাংলাদেশের জন্য সেরা <em>AI টুলস</em>",
+      hero_subtext: "বাংলাদেশ থেকে কোন AI tool ব্যবহার করা যাবে, কোনটা free বা freemium, কোনটা creator, coding, writing বা productivity-এর জন্য best, আর local ব্যবহারকারীর জন্য কোনটা practical সেটা দ্রুত খুঁজে দেখুন।",
+      hero_search_placeholder: "টুল খুঁজুন… যেমন: ChatGPT, ভিডিও, কোডিং",
+      hero_search_cta: "খুঁজুন",
+      hero_point_1: "৩০০+ AI টুল তালিকাভুক্ত",
+      hero_point_2: "বাংলাদেশে ব্যবহারযোগ্য",
+      hero_point_3: "নিয়মিত আপডেট",
+      hero_chip_search: "সার্চ",
+      hero_chip_tools: "টুলস",
+      category_all: "সব টুলস",
+      category_writing: "রাইটিং",
+      category_image: "ইমেজ",
+      category_video: "ভিডিও",
+      category_coding: "কোডিং",
+      category_marketing: "মার্কেটিং",
+      category_productivity: "প্রোডাক্টিভিটি",
+      category_free_tools: "ফ্রি টুলস",
+      trending_kicker: "এখন জনপ্রিয়",
+      trending_title: "🔥 ট্রেন্ডিং AI টুলস",
+      trending_copy: "এই মুহূর্তে সবচেয়ে বেশি খোঁজা এবং জনপ্রিয় টুলগুলো দেখুন।",
+      filter_payment_title: "পেমেন্ট পদ্ধতি",
+      filter_bd_title: "বাংলাদেশ ফিল্টার",
+      filter_price_title: "মূল্য (টাকায়)",
+      filter_all: "সব",
+      filter_payment_bkash: "bKash সাপোর্ট",
+      filter_payment_card: "ডেবিট/ক্রেডিট কার্ড",
+      filter_payment_free: "সম্পূর্ণ ফ্রি",
+      filter_payment_bkash_short: "bKash",
+      filter_payment_card_short: "কার্ড",
+      filter_payment_free_short: "ফ্রি",
+      filter_bd_works: "✅ BD থেকে কাজ করে",
+      filter_bd_no_vpn: "🔵 VPN ছাড়া",
+      filter_bd_vpn: "⚠️ VPN লাগে",
+      filter_bd_works_short: "BD",
+      filter_bd_no_vpn_short: "VPN ছাড়া",
+      filter_bd_vpn_short: "VPN লাগে",
+      filter_price_free: "ফ্রি ৳০",
+      filter_price_budget: "বাজেট ৳১-৳৫০০",
+      filter_price_mid: "মিড ৳৫০০-৳২০০০",
+      filter_price_premium: "প্রিমিয়াম ৳২০০০+",
+      filter_price_free_short: "৳০",
+      filter_price_budget_short: "৳১-৳৫০০",
+      filter_price_mid_short: "৳৫০০-৳২০০০",
+      filter_price_premium_short: "৳২০০০+",
+      sponsor_title: "এখানে বিজ্ঞাপন দিন",
+      sponsor_copy: "প্রতি মাসে ৫০,০০০+ বাংলাদেশি AI ব্যবহারকারীর কাছে পৌঁছান।",
+      sponsor_cta: "যোগাযোগ করুন →",
+      directory_kicker: "AI ডিরেক্টরি",
+      directory_title: "প্রয়োজন, দাম, আর ক্যাটাগরি অনুযায়ী টুল খুঁজুন",
+      directory_copy: "সার্চ-ফার্স্ট ডিসকভারি, পরিষ্কার আধুনিক কার্ড, আর বাংলাদেশ-ফ্রেন্ডলি ফিল্টারিং।",
+      grid_title: "সব AI টুলস",
+      sort_label: "↕ জনপ্রিয়তা অনুযায়ী",
+      load_more: "আরও টুলস দেখুন",
+      seo_kicker: "বিষয়ভিত্তিক দেখুন",
+      seo_title: "ক্যাটাগরি পেজ",
+      seo_copy: "নির্দিষ্ট কাজের জন্য ফোকাসড টুল লিস্ট চাইলে এই ক্যাটাগরি পেজগুলো দেখুন।",
+      seo_writing_title: "AI Writing Tools",
+      seo_writing_copy: "কপি, কনটেন্ট, ইমেইল, আর ডকুমেন্ট ওয়ার্কফ্লোর জন্য টুলস।",
+      seo_image_title: "AI Image Tools",
+      seo_image_copy: "ইমেজ জেনারেশন, ডিজাইন, আর ভিজ্যুয়াল কনসেপ্টের টুলস।",
+      seo_video_title: "AI Video Tools",
+      seo_video_copy: "ভিডিও তৈরি, শর্টস ওয়ার্কফ্লো, আর ক্রিয়েটর অটোমেশনের টুলস।",
+      seo_coding_title: "AI Coding Tools",
+      seo_coding_copy: "ডেভেলপার কপাইলট, কোড অ্যাসিস্ট্যান্ট, আর প্রোটোটাইপিং টুলস।",
+      seo_marketing_title: "AI Marketing Tools",
+      seo_marketing_copy: "ক্যাম্পেইন, কনটেন্ট, অটোমেশন, আর ক্রিয়েটর গ্রোথের টুলস।",
+      newsletter_chip: "📬 সাপ্তাহিক নিউজলেটার",
+      newsletter_title: "বাংলা AI নিউজলেটারে যোগ দিন",
+      newsletter_copy: "বাংলায় নতুন AI টুলস আর টিউটোরিয়াল সবার আগে জানুন।",
+      newsletter_placeholder: "আপনার ইমেইল",
+      newsletter_cta: "প্রতি সপ্তাহে AI টুলস পান",
+      newsletter_note: "ফ্রি নিউজলেটার। নতুন AI tools, বাংলা রিভিউ, আর বাংলাদেশি ব্যবহার টিপস প্রতি সপ্তাহে ইনবক্সে পাবেন।",
+      resources_title: "বাংলাদেশ AI রিসোর্সেস",
+      resources_intro: "লো আর মিডিয়াম কম্পিটিশন কুয়েরির জন্য আমাদের কিউরেটেড গাইডগুলো নিচে দেখুন।",
+      resource_1: "বাংলা AI গাইড (Pillar)",
+      resource_2: "AI tools BDT price 2026",
+      resource_3: "bKash দিয়ে AI tools কেনা যায়",
+      resource_4: "VPN ছাড়া AI tools Bangladesh",
+      resource_5: "ChatGPT বাংলাদেশ থেকে ব্যবহার",
+      resource_6: "Cursor AI বাংলা",
+      resource_7: "ElevenLabs বাংলা ভয়েস",
+      resource_8: "Midjourney Bangladesh free",
+      resource_9: "বাংলাদেশে AI tools কীভাবে ব্যবহার করবেন",
+      resource_10: "AI tools for freelancers Bangladesh",
+      resource_11: "best AI tools for content creators",
+      resource_12: "free AI tools 2026 Bangladesh",
+      resource_13: "AI image generator free Bangladesh",
+      resource_14: "best AI coding tools for beginners",
+      resource_15: "AI tools for YouTube Bangladesh",
+      footer_copy: "© ২০২৬ বাংলা AI গাইড · বাংলাদেশের জন্য তৈরি",
+      footer_submit: "টুল সাবমিট",
+      footer_ads: "বিজ্ঞাপন",
+      footer_privacy: "প্রাইভেসি",
+      footer_terms: "শর্তাবলী",
+      footer_disclaimer: "ডিসক্লেইমার",
+      footer_contact: "যোগাযোগ",
+      label_llm: "LLM",
+      label_image: "ইমেজ/ভিডিও",
+      label_coding: "কোডিং",
+      label_productivity: "প্রোডাক্টিভিটি",
+      app_llm: "AI চ্যাটবট",
+      app_image: "ইমেজ ও ভিডিও AI",
+      app_coding: "ডেভেলপার টুল",
+      app_productivity: "প্রোডাক্টিভিটি অ্যাপ",
+      tag_free: "ফ্রি",
+      tag_freemium: "ফ্রিমিয়াম",
+      tag_bd_friendly: "বাংলাদেশে ব্যবহারযোগ্য",
+      tag_ai_tool: "AI টুল",
+      badge_bd_yes: "✅ BD-তে কাজ করে",
+      badge_bd_limited: "❌ BD-তে সীমিত",
+      badge_vpn_no: "🔵 VPN লাগে না",
+      badge_vpn_maybe: "⚠️ VPN লাগতে পারে",
+      badge_payment_card: "💳 কার্ড",
+      badge_payment_bkash: "💚 bKash",
+      badge_payment_free: "🆓 ফ্রি",
+      btn_view_tool: "টুল দেখুন",
+      btn_visit_tool: "টুলে যান",
+      empty_state: "কোনো টুল পাওয়া যায়নি। ফিল্টার পরিবর্তন করে আবার চেষ্টা করুন।",
+      empty_reset: "সব ফিল্টার রিসেট করুন",
+      data_error: "ডেটা লোড হয়নি। `js/tools-data.js` ফাইলটি ঠিকভাবে যুক্ত আছে কি না দেখুন।",
+      results_found: "টি টুলস পাওয়া গেছে",
+      desc_llm: "লেখা, গবেষণা, আর দৈনন্দিন প্রোডাক্টিভিটির জন্য AI সহকারী।",
+      desc_image: "ইমেজ, ডিজাইন, আর ভিডিও ওয়ার্কফ্লোর জন্য AI টুল।",
+      desc_coding: "ডেভেলপমেন্ট, ডিবাগিং, আর দ্রুত শিপিংয়ের জন্য AI কোডিং সহকারী।",
+      desc_productivity: "অটোমেশন, ডকুমেন্ট, আর টিম ওয়ার্কফ্লোর জন্য AI টুল।",
+    },
+    en: {
+      nav_view_tools: "Browse Tools",
+      nav_categories: "Categories",
+      nav_newsletter: "Newsletter",
+      nav_submit_tool: "Submit Tool",
+      affiliate_disclaimer: "⚠️ Some links on this site are affiliate links. We may earn a commission at no extra cost to you.",
+      hero_badge: "Bangladesh AI Directory",
+      hero_title: "The Best <em>AI Tools</em> for Bangladesh",
+      hero_subtext: "Find which AI tools work from Bangladesh, which ones are free or freemium, and which are best for creators, coding, writing, and productivity.",
+      hero_search_placeholder: "Search tools… e.g. ChatGPT, video, coding",
+      hero_search_cta: "Search",
+      hero_point_1: "300+ AI tools listed",
+      hero_point_2: "Usable from Bangladesh",
+      hero_point_3: "Updated regularly",
+      hero_chip_search: "Search",
+      hero_chip_tools: "Tools",
+      category_all: "All Tools",
+      category_writing: "Writing",
+      category_image: "Image",
+      category_video: "Video",
+      category_coding: "Coding",
+      category_marketing: "Marketing",
+      category_productivity: "Productivity",
+      category_free_tools: "Free Tools",
+      trending_kicker: "Popular now",
+      trending_title: "🔥 Trending AI Tools",
+      trending_copy: "Explore the most searched and popular tools right now.",
+      filter_payment_title: "Payment Options",
+      filter_bd_title: "Bangladesh Filters",
+      filter_price_title: "Price (in BDT)",
+      filter_all: "All",
+      filter_payment_bkash: "bKash Support",
+      filter_payment_card: "Debit/Credit Card",
+      filter_payment_free: "Completely Free",
+      filter_payment_bkash_short: "bKash",
+      filter_payment_card_short: "Card",
+      filter_payment_free_short: "Free",
+      filter_bd_works: "✅ Works from BD",
+      filter_bd_no_vpn: "🔵 No VPN",
+      filter_bd_vpn: "⚠️ Needs VPN",
+      filter_bd_works_short: "BD",
+      filter_bd_no_vpn_short: "No VPN",
+      filter_bd_vpn_short: "VPN",
+      filter_price_free: "Free ৳0",
+      filter_price_budget: "Budget ৳1-৳500",
+      filter_price_mid: "Mid ৳500-৳2000",
+      filter_price_premium: "Premium ৳2000+",
+      filter_price_free_short: "৳0",
+      filter_price_budget_short: "৳1-৳500",
+      filter_price_mid_short: "৳500-৳2000",
+      filter_price_premium_short: "৳2000+",
+      sponsor_title: "Advertise Here",
+      sponsor_copy: "Reach 50,000+ monthly AI users from Bangladesh.",
+      sponsor_cta: "Contact Us →",
+      directory_kicker: "AI directory",
+      directory_title: "Find tools by fit, price, and category",
+      directory_copy: "Search-first discovery with clean modern cards and Bangladesh-friendly filtering.",
+      grid_title: "All AI Tools",
+      sort_label: "↕ Sort by popularity",
+      load_more: "Load more tools",
+      seo_kicker: "Explore by topic",
+      seo_title: "Category Pages",
+      seo_copy: "Browse focused landing pages if you want a tighter list of tools by use case.",
+      seo_writing_title: "AI Writing Tools",
+      seo_writing_copy: "Tools for copy, content, email, and document workflows.",
+      seo_image_title: "AI Image Tools",
+      seo_image_copy: "Tools for image generation, design, and visual concept work.",
+      seo_video_title: "AI Video Tools",
+      seo_video_copy: "Tools for video generation, shorts workflows, and creator automation.",
+      seo_coding_title: "AI Coding Tools",
+      seo_coding_copy: "Developer copilots, code assistants, and prototyping tools.",
+      seo_marketing_title: "AI Marketing Tools",
+      seo_marketing_copy: "Tools for campaigns, content, automation, and creator growth.",
+      newsletter_chip: "📬 Weekly Newsletter",
+      newsletter_title: "Join the Bangla AI Newsletter",
+      newsletter_copy: "Get the newest AI tools and tutorials in Bangla.",
+      newsletter_placeholder: "Your email address",
+      newsletter_cta: "Get AI Tools Weekly",
+      newsletter_note: "Free newsletter. Get new AI tools, Bangla reviews, and Bangladesh usage tips in your inbox every week.",
+      resources_title: "Bangladesh AI Resources",
+      resources_intro: "Explore our curated guides targeting low and medium competition search queries.",
+      resource_1: "Bangla AI Guide (Pillar)",
+      resource_2: "AI tools BDT price 2026",
+      resource_3: "Can you buy AI tools with bKash?",
+      resource_4: "AI tools in Bangladesh without VPN",
+      resource_5: "Use ChatGPT from Bangladesh",
+      resource_6: "Cursor AI in Bangla",
+      resource_7: "ElevenLabs Bangla voice",
+      resource_8: "Midjourney Bangladesh free",
+      resource_9: "How to use AI tools in Bangladesh",
+      resource_10: "AI tools for freelancers in Bangladesh",
+      resource_11: "Best AI tools for content creators",
+      resource_12: "Free AI tools 2026 Bangladesh",
+      resource_13: "Free AI image generator Bangladesh",
+      resource_14: "Best AI coding tools for beginners",
+      resource_15: "AI tools for YouTube Bangladesh",
+      footer_copy: "© 2026 Bangla AI Guide · Built for Bangladesh",
+      footer_submit: "Submit Tool",
+      footer_ads: "Advertising",
+      footer_privacy: "Privacy",
+      footer_terms: "Terms",
+      footer_disclaimer: "Disclaimer",
+      footer_contact: "Contact",
+      label_llm: "LLM",
+      label_image: "Image/Video",
+      label_coding: "Coding",
+      label_productivity: "Productivity",
+      app_llm: "AI Chatbot",
+      app_image: "Image and Video AI",
+      app_coding: "Developer Tool",
+      app_productivity: "Productivity Application",
+      tag_free: "Free",
+      tag_freemium: "Freemium",
+      tag_bd_friendly: "Bangladesh Friendly",
+      tag_ai_tool: "AI Tool",
+      badge_bd_yes: "✅ Works in BD",
+      badge_bd_limited: "❌ Limited in BD",
+      badge_vpn_no: "🔵 No VPN needed",
+      badge_vpn_maybe: "⚠️ May need VPN",
+      badge_payment_card: "💳 Card",
+      badge_payment_bkash: "💚 bKash",
+      badge_payment_free: "🆓 Free",
+      btn_view_tool: "View Tool",
+      btn_visit_tool: "Visit Tool",
+      empty_state: "No tools matched your filters. Try changing the filters and search again.",
+      empty_reset: "Reset all filters",
+      data_error: "Tool data did not load. Check whether `js/tools-data.js` is linked correctly.",
+      results_found: "tools found",
+      desc_llm: "AI assistant for writing, research, and everyday productivity.",
+      desc_image: "AI tool for image, design, and video workflows.",
+      desc_coding: "AI coding assistant for development, debugging, and faster shipping.",
+      desc_productivity: "AI tool for automation, documents, and team workflows.",
+    },
   };
 
   function bnNum(value) {
     return Number(value).toLocaleString("bn-BD");
+  }
+
+  function localizedNum(value) {
+    const locale = state.language === "en" ? "en-US" : "bn-BD";
+    return Number(value).toLocaleString(locale);
+  }
+
+  function t(key) {
+    return translations[state.language]?.[key] || translations.bn[key] || key;
+  }
+
+  function getLocalizedCategoryLabel(category) {
+    return t(`label_${category}`) || category;
+  }
+
+  function getLocalizedApplicationCategory(category) {
+    return t(`app_${category}`) || "AI Application";
+  }
+
+  function getGenericToolDescription(tool) {
+    return t(`desc_${tool.category}`) || t("tag_ai_tool");
+  }
+
+  function getLocalizedToolDescription(tool) {
+    if (state.language === "bn") {
+      return String(tool.description_bn || "").trim() || getGenericToolDescription(tool);
+    }
+
+    const details = String(tool.details || "").trim();
+    if (details) {
+      const firstSentence = details
+        .split(".")
+        .map((segment) => segment.trim())
+        .find(Boolean);
+      if (firstSentence) {
+        return `${firstSentence}.`;
+      }
+    }
+
+    return getGenericToolDescription(tool);
+  }
+
+  function applyStaticTranslations(root = document) {
+    root.querySelectorAll("[data-i18n]").forEach((node) => {
+      const key = node.getAttribute("data-i18n");
+      const value = t(key);
+      if (node.getAttribute("data-i18n-html") === "true") {
+        node.innerHTML = value;
+        return;
+      }
+      node.textContent = value;
+    });
+
+    root.querySelectorAll("[data-i18n-placeholder]").forEach((node) => {
+      const key = node.getAttribute("data-i18n-placeholder");
+      node.setAttribute("placeholder", t(key));
+    });
+
+    root.querySelectorAll("[data-i18n-value]").forEach((node) => {
+      const key = node.getAttribute("data-i18n-value");
+      node.value = t(key);
+    });
+
+    document.documentElement.lang = state.language === "en" ? "en" : "bn";
+  }
+
+  function syncLanguageUi() {
+    document.querySelectorAll("[data-language-toggle]").forEach((button) => {
+      const isActive = button.getAttribute("data-language-toggle") === state.language;
+      button.classList.toggle("active", isActive);
+      button.setAttribute("aria-pressed", isActive ? "true" : "false");
+    });
+  }
+
+  function applyLanguage() {
+    applyStaticTranslations();
+    syncLanguageUi();
+    renderTrendingSection();
+    render(false);
   }
 
   function escapeHtml(text) {
@@ -89,7 +425,7 @@
   }
 
   function formatBdtAmount(amount) {
-    return `৳${bnNum(Math.round(amount))}`;
+    return `৳${localizedNum(Math.round(amount))}`;
   }
 
   function getPriceInfo(tool) {
@@ -503,19 +839,19 @@
 
   function getBadges(tool) {
     const bdBadge = tool.works_in_bd
-      ? '<span class="badge badge--accent">✅ BD-তে কাজ করে</span>'
-      : '<span class="badge badge--neutral">❌ BD-তে সীমিত</span>';
+      ? `<span class="badge badge--accent">${escapeHtml(t("badge_bd_yes"))}</span>`
+      : `<span class="badge badge--neutral">${escapeHtml(t("badge_bd_limited"))}</span>`;
 
     const vpnBadge = tool.no_vpn
-      ? '<span class="badge badge--accent">🔵 VPN লাগে না</span>'
-      : '<span class="badge badge--neutral">⚠️ VPN লাগতে পারে</span>';
+      ? `<span class="badge badge--accent">${escapeHtml(t("badge_vpn_no"))}</span>`
+      : `<span class="badge badge--neutral">${escapeHtml(t("badge_vpn_maybe"))}</span>`;
 
-    let paymentBadge = '<span class="badge badge--neutral">💳 কার্ড</span>';
+    let paymentBadge = `<span class="badge badge--neutral">${escapeHtml(t("badge_payment_card"))}</span>`;
     if (tool.payment === "bkash") {
-      paymentBadge = '<span class="badge badge--accent">💚 bKash</span>';
+      paymentBadge = `<span class="badge badge--accent">${escapeHtml(t("badge_payment_bkash"))}</span>`;
     }
     if (tool.payment === "free") {
-      paymentBadge = '<span class="badge badge--accent">🆓 ফ্রি</span>';
+      paymentBadge = `<span class="badge badge--accent">${escapeHtml(t("badge_payment_free"))}</span>`;
     }
 
     return `${bdBadge}${vpnBadge}${paymentBadge}`;
@@ -536,12 +872,12 @@
           </div>
           <div class="tool-name-block">
             <h3 class="tool-title"><a href="${escapeHtml(detailUrl)}">${escapeHtml(tool.name)}</a></h3>
-            <p class="tool-subtitle">${escapeHtml(categoryLabelMap[tool.category] || "অন্যান্য")}</p>
+            <p class="tool-subtitle">${escapeHtml(getLocalizedCategoryLabel(tool.category) || (state.language === "en" ? "Other" : "অন্যান্য"))}</p>
           </div>
         </div>
-        <p class="tool-desc">${escapeHtml(tool.description_bn || "")}</p>
+        <p class="tool-desc">${escapeHtml(getLocalizedToolDescription(tool))}</p>
         <div class="badges">${getBadges(tool)}</div>
-        <a class="btn btn-ghost" href="${escapeHtml(detailUrl)}">View Tool</a>
+        <a class="btn btn-ghost" href="${escapeHtml(detailUrl)}">${escapeHtml(t("btn_view_tool"))}</a>
       </article>
     `;
   }
@@ -563,18 +899,18 @@
     const detailUrl = getToolPagePath(toSlug(tool.name));
     const directUrl = tool.direct_url || tool.affiliate_url || "#";
     const toolName = escapeHtml(tool.name);
-    const appCategory = applicationCategoryMap[tool.category] || "AI Application";
+    const appCategory = getLocalizedApplicationCategory(tool.category);
     const tags = [];
     if (tool.pricing === "free" || isFullyFree(tool)) {
-      tags.push("Free");
+      tags.push(t("tag_free"));
     } else if (String(tool.usdPrice || "").toLowerCase().includes("free")) {
-      tags.push("Freemium");
+      tags.push(t("tag_freemium"));
     }
     if (tool.works_in_bd) {
-      tags.push("Bangladesh Friendly");
+      tags.push(t("tag_bd_friendly"));
     }
     if (!tags.length) {
-      tags.push("AI Tool");
+      tags.push(t("tag_ai_tool"));
     }
 
     return `
@@ -586,7 +922,7 @@
             </div>
             <div class="tool-name-block">
               <h3 class="tool-title" itemprop="name"><a href="${escapeHtml(detailUrl)}">${toolName}</a></h3>
-              <p class="tool-subtitle">${escapeHtml(categoryLabelMap[tool.category] || "অন্যান্য")}</p>
+              <p class="tool-subtitle">${escapeHtml(getLocalizedCategoryLabel(tool.category) || (state.language === "en" ? "Other" : "অন্যান্য"))}</p>
             </div>
           </div>
         </div>
@@ -594,12 +930,12 @@
         <meta itemprop="operatingSystem" content="Web" />
         <link itemprop="url" href="${escapeHtml(directUrl)}" />
 
-        <p class="tool-desc" itemprop="description">${escapeHtml(tool.description_bn || "")}</p>
+        <p class="tool-desc" itemprop="description">${escapeHtml(getLocalizedToolDescription(tool))}</p>
 
         <div class="badges">${tags.map((tag) => `<span class="badge badge--accent">${escapeHtml(tag)}</span>`).join("")}</div>
 
         <div class="tool-card-footer">
-          <a class="btn btn-primary" href="${escapeHtml(directUrl)}" target="_blank" rel="noopener noreferrer">Visit Tool</a>
+          <a class="btn btn-primary" href="${escapeHtml(directUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(t("btn_visit_tool"))}</a>
         </div>
       </article>
     `;
@@ -621,6 +957,11 @@
     } else {
       currentUrl.searchParams.delete("category");
     }
+    if (state.language && state.language !== "bn") {
+      currentUrl.searchParams.set("lang", state.language);
+    } else {
+      currentUrl.searchParams.delete("lang");
+    }
     window.history.replaceState({}, "", `${currentUrl.pathname}${currentUrl.search}${currentUrl.hash}`);
   }
 
@@ -628,8 +969,8 @@
     setLoadMoreVisible(false);
     refs.toolsGrid.innerHTML = `
       <div class="empty-state">
-        <p>কোনো টুল পাওয়া যায়নি। ফিল্টার পরিবর্তন করে আবার চেষ্টা করুন।</p>
-        <button type="button" class="btn btn-primary" id="clearFiltersBtn">সব ফিল্টার রিসেট করুন</button>
+        <p>${escapeHtml(t("empty_state"))}</p>
+        <button type="button" class="btn btn-primary" id="clearFiltersBtn">${escapeHtml(t("empty_reset"))}</button>
       </div>
     `;
 
@@ -681,8 +1022,8 @@
 
   function performRender() {
     if (!Array.isArray(data) || data.length === 0) {
-      refs.resultsCount.textContent = "০ টি টুলস পাওয়া গেছে";
-      refs.toolsGrid.innerHTML = '<div class="empty-state"><p>ডেটা লোড হয়নি। `js/tools-data.js` ফাইলটি ঠিকভাবে যুক্ত আছে কি না দেখুন।</p></div>';
+      refs.resultsCount.textContent = state.language === "en" ? "0 tools found" : "০ টি টুলস পাওয়া গেছে";
+      refs.toolsGrid.innerHTML = `<div class="empty-state"><p>${escapeHtml(t("data_error"))}</p></div>`;
       setLoadMoreVisible(false);
       return;
     }
@@ -692,7 +1033,9 @@
 
     const filtered = baseFiltered.filter((tool) => matchesVisualCategory(tool, state.activeCategory));
 
-    refs.resultsCount.textContent = `${bnNum(filtered.length)} টি টুলস পাওয়া গেছে`;
+    refs.resultsCount.textContent = state.language === "en"
+      ? `${localizedNum(filtered.length)} ${t("results_found")}`
+      : `${localizedNum(filtered.length)} ${t("results_found")}`;
     syncSearchParam();
 
     if (filtered.length === 0) {
@@ -724,8 +1067,18 @@
   }
 
   function bindEvents() {
-    const queryFromUrl = new URLSearchParams(window.location.search).get("q");
-    const categoryFromUrl = new URLSearchParams(window.location.search).get("category");
+    const searchParams = new URLSearchParams(window.location.search);
+    const queryFromUrl = searchParams.get("q");
+    const categoryFromUrl = searchParams.get("category");
+    const languageFromUrl = searchParams.get("lang");
+    const savedLanguage = window.localStorage?.getItem(languagePreferenceKey);
+
+    if (languageFromUrl === "en" || languageFromUrl === "bn") {
+      state.language = languageFromUrl;
+    } else if (savedLanguage === "en" || savedLanguage === "bn") {
+      state.language = savedLanguage;
+    }
+
     if (queryFromUrl) {
       state.searchQuery = queryFromUrl.trim();
       if (refs.searchInput) {
@@ -735,6 +1088,9 @@
     if (categoryFromUrl) {
       state.activeCategory = categoryFromUrl.trim();
     }
+
+    applyStaticTranslations();
+    syncLanguageUi();
 
     if (refs.searchInput) {
       refs.searchInput.addEventListener("input", (event) => {
@@ -792,6 +1148,19 @@
     }
 
     document.addEventListener("click", (event) => {
+      const languageButton = event.target.closest("[data-language-toggle]");
+      if (languageButton) {
+        const nextLanguage = languageButton.getAttribute("data-language-toggle");
+        if ((nextLanguage === "bn" || nextLanguage === "en") && nextLanguage !== state.language) {
+          state.language = nextLanguage;
+          try {
+            window.localStorage?.setItem(languagePreferenceKey, nextLanguage);
+          } catch {}
+          applyLanguage();
+        }
+        return;
+      }
+
       const copyButton = event.target.closest("[data-share-action='copy']");
       if (copyButton) {
         event.preventDefault();
