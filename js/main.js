@@ -515,18 +515,42 @@
     }
 
     const detailUrl = getToolPagePath(toSlug(tool.name));
+    const priceInfo = getPriceInfo(tool);
+    const rating = Number(tool.rating || 0).toLocaleString("bn-BD", {
+      minimumFractionDigits: 1,
+      maximumFractionDigits: 1,
+    });
 
     refs.featuredBanner.innerHTML = `
-      <span class="featured-badge">⭐ ফিচার্ড</span>
-      <h3>
-        <span class="tool-title-wrap">
-          ${renderToolLogo(tool)}
-          <span>${escapeHtml(tool.name)}</span>
-        </span>
-      </h3>
-      <p>${escapeHtml(tool.description_bn || "")}</p>
-      <div class="tool-meta">
-        <a class="btn btn-ghost" href="${escapeHtml(detailUrl)}">দেখুন →</a>
+      <div class="featured-banner-grid">
+        <div>
+          <span class="featured-badge">⭐ Spotlight Tool</span>
+          <h3 class="featured-title">
+            <span class="tool-title-wrap">
+              ${renderToolLogo(tool)}
+              <span>${escapeHtml(tool.name)}</span>
+            </span>
+          </h3>
+          <p class="featured-copy">${escapeHtml(tool.description_bn || "")}</p>
+        </div>
+        <div class="featured-meta-grid">
+          <div class="featured-meta-card">
+            <span>Category</span>
+            <strong>${escapeHtml(categoryLabelMap[tool.category] || "অন্যান্য")}</strong>
+          </div>
+          <div class="featured-meta-card">
+            <span>Price</span>
+            <strong>${escapeHtml(priceInfo.bdtLabel)}</strong>
+          </div>
+          <div class="featured-meta-card">
+            <span>Rating</span>
+            <strong>★ ${rating}</strong>
+          </div>
+        </div>
+      </div>
+      <div class="featured-actions">
+        <div class="badges">${getBadges(tool)}</div>
+        <a class="btn btn-ghost" href="${escapeHtml(detailUrl)}">ডিটেইলস দেখুন</a>
       </div>
     `;
     attachToolLogoHandlers(refs.featuredBanner);
@@ -546,44 +570,64 @@
     const toolName = escapeHtml(tool.name);
     const verifiedText = escapeHtml(tool.verified || "মার্চ ২০২৬");
     const pricingUrl = escapeHtml(tool.pricing_url || tool.direct_url || tool.affiliate_url || "#");
+    const categoryLabel = escapeHtml(categoryLabelMap[tool.category] || "অন্যান্য");
+    const shortReview = escapeHtml(tool.review_bn || "রিভিউ শিগগিরই যোগ হবে");
 
     return `
       <article class="tool-card" itemscope itemtype="https://schema.org/SoftwareApplication" data-category="${escapeHtml(tool.category || "other")}" data-pricing="${escapeHtml(tool.pricing || "unknown")}">
-        <div class="tool-header">
-          <div class="tool-title-wrap">
-            ${renderToolLogo(tool)}
-            <h3 class="tool-title" itemprop="name">${toolName}</h3>
+        <div class="tool-card-top">
+          <span class="tool-card-category">${categoryLabel}</span>
+          <span class="tool-card-rating">★ ${rating}</span>
+        </div>
+
+        <div class="tool-header tool-header-modern">
+          <div class="tool-title-wrap tool-title-wrap-modern">
+            <div class="tool-logo-shell">
+              ${renderToolLogo(tool)}
+            </div>
+            <div class="tool-name-block">
+              <h3 class="tool-title" itemprop="name">${toolName}</h3>
+              <p class="tool-subtitle">${verifiedText}</p>
+            </div>
           </div>
-          <span class="category-tag">${escapeHtml(categoryLabelMap[tool.category] || "অন্যান্য")}</span>
         </div>
         <meta itemprop="applicationCategory" content="${escapeHtml(appCategory)}" />
         <meta itemprop="operatingSystem" content="Web" />
         <link itemprop="url" href="${escapeHtml(directUrl)}" />
 
-        <div class="badges">${getBadges(tool)}</div>
-
         <p class="tool-desc" itemprop="description">${escapeHtml(tool.description_bn || "")}</p>
 
-        <blockquote class="review-block">
-          <p>"${escapeHtml(tool.review_bn || "রিভিউ শিগগিরই যোগ হবে")}"</p>
-          <p class="review-source">— BanglaAIGuide পাঠক</p>
+        <div class="badges">${getBadges(tool)}</div>
+
+        <div class="tool-insight-grid">
+          <div class="tool-insight-card">
+            <span>দাম</span>
+            <strong>${escapeHtml(priceInfo.bdtLabel)}</strong>
+          </div>
+          <div class="tool-insight-card">
+            <span>USD plan</span>
+            <strong>${escapeHtml(priceInfo.usdLabel)}</strong>
+          </div>
+          <div class="tool-insight-card">
+            <span>Pricing</span>
+            <a class="tool-inline-link" href="${pricingUrl}" target="_blank" rel="noopener noreferrer">official page</a>
+          </div>
+        </div>
+
+        <blockquote class="review-block review-block-modern">
+          <p>${shortReview}</p>
         </blockquote>
 
-        <div>
-          <p class="price">${escapeHtml(priceInfo.usdLabel)} | ${escapeHtml(priceInfo.bdtLabel)}</p>
-          <a class="pricing-link" href="${pricingUrl}" target="_blank" rel="noopener noreferrer">💰 দাম দেখুন</a>
-          <span class="verified-date">🗓️ যাচাই: ${verifiedText}</span>
-        </div>
-
-        <div class="tool-meta">
-          <p class="rating">★ ${rating}</p>
-          <a class="btn btn-ghost" href="${escapeHtml(detailUrl)}">দেখুন →</a>
-        </div>
-
-        <div class="share-row" aria-label="শেয়ার অপশন">
-          <a class="share-btn" href="${escapeHtml(facebookShareUrl)}" target="_blank" rel="noopener noreferrer" aria-label="Facebook এ শেয়ার করুন" title="Facebook এ শেয়ার করুন">f</a>
-          <a class="share-btn" href="${escapeHtml(whatsAppShareUrl)}" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp এ শেয়ার করুন" title="WhatsApp এ শেয়ার করুন">wa</a>
-          <button type="button" class="share-btn" data-share-action="copy" data-copy-url="${escapeHtml(directUrl)}" aria-label="লিংক কপি করুন" title="লিংক কপি করুন">⧉</button>
+        <div class="tool-card-footer">
+          <div class="share-row" aria-label="শেয়ার অপশন">
+            <a class="share-btn" href="${escapeHtml(facebookShareUrl)}" target="_blank" rel="noopener noreferrer" aria-label="Facebook এ শেয়ার করুন" title="Facebook এ শেয়ার করুন">f</a>
+            <a class="share-btn" href="${escapeHtml(whatsAppShareUrl)}" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp এ শেয়ার করুন" title="WhatsApp এ শেয়ার করুন">wa</a>
+            <button type="button" class="share-btn" data-share-action="copy" data-copy-url="${escapeHtml(directUrl)}" aria-label="লিংক কপি করুন" title="লিংক কপি করুন">⧉</button>
+          </div>
+          <div class="tool-action-row">
+            <a class="btn btn-ghost" href="${escapeHtml(detailUrl)}">ডিটেইলস</a>
+            <a class="btn btn-primary" href="${escapeHtml(directUrl)}" target="_blank" rel="noopener noreferrer">Visit Tool</a>
+          </div>
         </div>
       </article>
     `;
