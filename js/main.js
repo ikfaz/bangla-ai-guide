@@ -21,11 +21,7 @@
     categoryTabList: document.getElementById("categoryTabList"),
     resultsCount: document.getElementById("resultsCount"),
     toolsGrid: document.getElementById("toolsGrid"),
-    featuredBanner: document.getElementById("featuredBanner"),
-    statTotal: document.getElementById("statTotal"),
-    statBd: document.getElementById("statBd"),
-    statFree: document.getElementById("statFree"),
-    statReview: document.getElementById("statReview"),
+    trendingGrid: document.getElementById("trendingGrid"),
     hamburgerBtn: document.getElementById("hamburgerBtn"),
     mobileMenu: document.getElementById("mobileMenu"),
     cookieBanner: document.getElementById("cookieBanner"),
@@ -237,16 +233,32 @@
     return matchSearch(tool) && matchPayment(tool) && matchBd(tool) && matchPrice(tool);
   }
 
-  function applyAllFilters(tool) {
-    if (!applyBaseFilters(tool)) {
-      return false;
-    }
-
-    if (state.activeCategory === "all") {
+  function matchesVisualCategory(tool, category) {
+    if (category === "all") {
       return true;
     }
 
-    return tool.category === state.activeCategory;
+    if (category === "writing") {
+      return tool.category === "llm";
+    }
+
+    if (category === "image" || category === "video") {
+      return tool.category === "image";
+    }
+
+    if (category === "coding") {
+      return tool.category === "coding";
+    }
+
+    if (category === "marketing" || category === "productivity") {
+      return tool.category === "productivity";
+    }
+
+    if (category === "free") {
+      return isFullyFree(tool);
+    }
+
+    return tool.category === category;
   }
 
   function setMobileMenuOpen(open, options = {}) {
@@ -470,6 +482,7 @@
   function getSkeletonCardMarkup() {
     return `
       <article class="tool-card skeleton-card" aria-hidden="true">
+        <div class="skeleton-line skeleton-line--chip"></div>
         <div class="skeleton-line skeleton-line--title"></div>
         <div class="skeleton-line skeleton-line--chip"></div>
         <div class="skeleton-line skeleton-line--text"></div>
@@ -508,86 +521,72 @@
     return `${bdBadge}${vpnBadge}${paymentBadge}`;
   }
 
-  function renderFeatured(tool) {
+  function renderTrendingCard(tool) {
     if (!tool) {
-      refs.featuredBanner.innerHTML = "";
-      return;
+      return "";
     }
 
     const detailUrl = getToolPagePath(toSlug(tool.name));
-    const priceInfo = getPriceInfo(tool);
-    const rating = Number(tool.rating || 0).toLocaleString("bn-BD", {
-      minimumFractionDigits: 1,
-      maximumFractionDigits: 1,
-    });
 
-    refs.featuredBanner.innerHTML = `
-      <div class="featured-banner-grid">
-        <div>
-          <span class="featured-badge">⭐ Spotlight Tool</span>
-          <h3 class="featured-title">
-            <span class="tool-title-wrap">
-              ${renderToolLogo(tool)}
-              <span>${escapeHtml(tool.name)}</span>
-            </span>
-          </h3>
-          <p class="featured-copy">${escapeHtml(tool.description_bn || "")}</p>
-        </div>
-        <div class="featured-meta-grid">
-          <div class="featured-meta-card">
-            <span>Category</span>
-            <strong>${escapeHtml(categoryLabelMap[tool.category] || "অন্যান্য")}</strong>
+    return `
+      <article class="trending-card">
+        <div class="tool-title-wrap">
+          <div class="tool-logo-shell">
+            ${renderToolLogo(tool)}
           </div>
-          <div class="featured-meta-card">
-            <span>Price</span>
-            <strong>${escapeHtml(priceInfo.bdtLabel)}</strong>
-          </div>
-          <div class="featured-meta-card">
-            <span>Rating</span>
-            <strong>★ ${rating}</strong>
+          <div class="tool-name-block">
+            <h3 class="tool-title"><a href="${escapeHtml(detailUrl)}">${escapeHtml(tool.name)}</a></h3>
+            <p class="tool-subtitle">${escapeHtml(categoryLabelMap[tool.category] || "অন্যান্য")}</p>
           </div>
         </div>
-      </div>
-      <div class="featured-actions">
+        <p class="tool-desc">${escapeHtml(tool.description_bn || "")}</p>
         <div class="badges">${getBadges(tool)}</div>
-        <a class="btn btn-ghost" href="${escapeHtml(detailUrl)}">ডিটেইলস দেখুন</a>
-      </div>
+        <a class="btn btn-ghost" href="${escapeHtml(detailUrl)}">View Tool</a>
+      </article>
     `;
-    attachToolLogoHandlers(refs.featuredBanner);
+  }
+
+  function renderTrendingSection() {
+    if (!refs.trendingGrid) {
+      return;
+    }
+
+    const popularTools = [...data]
+      .sort((a, b) => Number(b.rating || 0) - Number(a.rating || 0) || String(a.name).localeCompare(String(b.name)))
+      .slice(0, 6);
+
+    refs.trendingGrid.innerHTML = popularTools.map((tool) => renderTrendingCard(tool)).join("");
+    attachToolLogoHandlers(refs.trendingGrid);
   }
 
   function renderToolCard(tool) {
     const detailUrl = getToolPagePath(toSlug(tool.name));
     const directUrl = tool.direct_url || tool.affiliate_url || "#";
-    const facebookShareUrl = getFacebookShareUrl(tool);
-    const whatsAppShareUrl = getWhatsAppShareUrl(tool);
-    const priceInfo = getPriceInfo(tool);
-    const rating = Number(tool.rating || 0).toLocaleString("bn-BD", {
-      minimumFractionDigits: 1,
-      maximumFractionDigits: 1,
-    });
-    const appCategory = applicationCategoryMap[tool.category] || "AI Application";
     const toolName = escapeHtml(tool.name);
-    const verifiedText = escapeHtml(tool.verified || "মার্চ ২০২৬");
-    const pricingUrl = escapeHtml(tool.pricing_url || tool.direct_url || tool.affiliate_url || "#");
-    const categoryLabel = escapeHtml(categoryLabelMap[tool.category] || "অন্যান্য");
-    const shortReview = escapeHtml(tool.review_bn || "রিভিউ শিগগিরই যোগ হবে");
+    const appCategory = applicationCategoryMap[tool.category] || "AI Application";
+    const tags = [];
+    if (tool.pricing === "free" || isFullyFree(tool)) {
+      tags.push("Free");
+    } else if (String(tool.usdPrice || "").toLowerCase().includes("free")) {
+      tags.push("Freemium");
+    }
+    if (tool.works_in_bd) {
+      tags.push("Bangladesh Friendly");
+    }
+    if (!tags.length) {
+      tags.push("AI Tool");
+    }
 
     return `
       <article class="tool-card" itemscope itemtype="https://schema.org/SoftwareApplication" data-category="${escapeHtml(tool.category || "other")}" data-pricing="${escapeHtml(tool.pricing || "unknown")}">
-        <div class="tool-card-top">
-          <span class="tool-card-category">${categoryLabel}</span>
-          <span class="tool-card-rating">★ ${rating}</span>
-        </div>
-
         <div class="tool-header tool-header-modern">
           <div class="tool-title-wrap tool-title-wrap-modern">
             <div class="tool-logo-shell">
               ${renderToolLogo(tool)}
             </div>
             <div class="tool-name-block">
-              <h3 class="tool-title" itemprop="name">${toolName}</h3>
-              <p class="tool-subtitle">${verifiedText}</p>
+              <h3 class="tool-title" itemprop="name"><a href="${escapeHtml(detailUrl)}">${toolName}</a></h3>
+              <p class="tool-subtitle">${escapeHtml(categoryLabelMap[tool.category] || "অন্যান্য")}</p>
             </div>
           </div>
         </div>
@@ -597,37 +596,10 @@
 
         <p class="tool-desc" itemprop="description">${escapeHtml(tool.description_bn || "")}</p>
 
-        <div class="badges">${getBadges(tool)}</div>
-
-        <div class="tool-insight-grid">
-          <div class="tool-insight-card">
-            <span>দাম</span>
-            <strong>${escapeHtml(priceInfo.bdtLabel)}</strong>
-          </div>
-          <div class="tool-insight-card">
-            <span>USD plan</span>
-            <strong>${escapeHtml(priceInfo.usdLabel)}</strong>
-          </div>
-          <div class="tool-insight-card">
-            <span>Pricing</span>
-            <a class="tool-inline-link" href="${pricingUrl}" target="_blank" rel="noopener noreferrer">official page</a>
-          </div>
-        </div>
-
-        <blockquote class="review-block review-block-modern">
-          <p>${shortReview}</p>
-        </blockquote>
+        <div class="badges">${tags.map((tag) => `<span class="badge badge--accent">${escapeHtml(tag)}</span>`).join("")}</div>
 
         <div class="tool-card-footer">
-          <div class="share-row" aria-label="শেয়ার অপশন">
-            <a class="share-btn" href="${escapeHtml(facebookShareUrl)}" target="_blank" rel="noopener noreferrer" aria-label="Facebook এ শেয়ার করুন" title="Facebook এ শেয়ার করুন">f</a>
-            <a class="share-btn" href="${escapeHtml(whatsAppShareUrl)}" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp এ শেয়ার করুন" title="WhatsApp এ শেয়ার করুন">wa</a>
-            <button type="button" class="share-btn" data-share-action="copy" data-copy-url="${escapeHtml(directUrl)}" aria-label="লিংক কপি করুন" title="লিংক কপি করুন">⧉</button>
-          </div>
-          <div class="tool-action-row">
-            <a class="btn btn-ghost" href="${escapeHtml(detailUrl)}">ডিটেইলস</a>
-            <a class="btn btn-primary" href="${escapeHtml(directUrl)}" target="_blank" rel="noopener noreferrer">Visit Tool</a>
-          </div>
+          <a class="btn btn-primary" href="${escapeHtml(directUrl)}" target="_blank" rel="noopener noreferrer">Visit Tool</a>
         </div>
       </article>
     `;
@@ -643,6 +615,11 @@
       currentUrl.searchParams.set("q", state.searchQuery);
     } else {
       currentUrl.searchParams.delete("q");
+    }
+    if (state.activeCategory && state.activeCategory !== "all") {
+      currentUrl.searchParams.set("category", state.activeCategory);
+    } else {
+      currentUrl.searchParams.delete("category");
     }
     window.history.replaceState({}, "", `${currentUrl.pathname}${currentUrl.search}${currentUrl.hash}`);
   }
@@ -674,36 +651,11 @@
   }
 
   function renderStats() {
-    const total = data.length;
-    const bdWorking = data.filter((tool) => tool.works_in_bd === true).length;
-    const freeTools = data.filter((tool) => isFullyFree(tool)).length;
-    const reviewed = data.filter((tool) => Boolean(tool.review_bn)).length;
-
-    refs.statTotal.textContent = `${bnNum(total)}টি টুল লিস্টেড`;
-    refs.statBd.textContent = `${bnNum(bdWorking)}টি বাংলাদেশ থেকে কাজ করে`;
-    refs.statFree.textContent = `${bnNum(freeTools)}টি সম্পূর্ণ ফ্রি`;
-    refs.statReview.textContent = `${bnNum(reviewed)}টি ভিডিও রিভিউ সহ`;
+    return;
   }
 
   function renderCategoryCounts(baseTools) {
-    const counts = {
-      all: baseTools.length,
-      llm: 0,
-      image: 0,
-      coding: 0,
-      productivity: 0,
-    };
-
-    baseTools.forEach((tool) => {
-      if (counts[tool.category] !== undefined) {
-        counts[tool.category] += 1;
-      }
-    });
-
-    document.querySelectorAll("[data-count-for]").forEach((node) => {
-      const key = node.getAttribute("data-count-for");
-      node.textContent = bnNum(counts[key] || 0);
-    });
+    return;
   }
 
   function syncActiveUi() {
@@ -729,7 +681,6 @@
 
   function performRender() {
     if (!Array.isArray(data) || data.length === 0) {
-      refs.featuredBanner.innerHTML = "";
       refs.resultsCount.textContent = "০ টি টুলস পাওয়া গেছে";
       refs.toolsGrid.innerHTML = '<div class="empty-state"><p>ডেটা লোড হয়নি। `js/tools-data.js` ফাইলটি ঠিকভাবে যুক্ত আছে কি না দেখুন।</p></div>';
       setLoadMoreVisible(false);
@@ -739,37 +690,20 @@
     const baseFiltered = data.filter(applyBaseFilters);
     renderCategoryCounts(baseFiltered);
 
-    const filtered = baseFiltered.filter((tool) => {
-      if (state.activeCategory === "all") {
-        return true;
-      }
-      return tool.category === state.activeCategory;
-    });
+    const filtered = baseFiltered.filter((tool) => matchesVisualCategory(tool, state.activeCategory));
 
     refs.resultsCount.textContent = `${bnNum(filtered.length)} টি টুলস পাওয়া গেছে`;
     syncSearchParam();
 
     if (filtered.length === 0) {
-      renderFeatured(null);
       renderEmptyState();
       syncActiveUi();
       return;
     }
 
-    const featuredTool = filtered[0];
-    const gridTools = filtered.slice(1);
-    const gridVisibleCount = Math.max(state.visibleCount - 1, 0);
-    const visibleTools = gridTools.slice(0, gridVisibleCount);
-
-    renderFeatured(featuredTool);
-
-    if (gridTools.length === 0) {
-      setLoadMoreVisible(false);
-      refs.toolsGrid.innerHTML = '<div class="empty-state"><p>এই ফিল্টারে শুধু ফিচার্ড টুলটি পাওয়া গেছে।</p></div>';
-    } else {
-      refs.toolsGrid.innerHTML = visibleTools.map((tool) => renderToolCard(tool)).join("");
-      setLoadMoreVisible(gridVisibleCount < gridTools.length);
-    }
+    const visibleTools = filtered.slice(0, state.visibleCount);
+    refs.toolsGrid.innerHTML = visibleTools.map((tool) => renderToolCard(tool)).join("");
+    setLoadMoreVisible(state.visibleCount < filtered.length);
 
     syncActiveUi();
     attachToolLogoHandlers(refs.toolsGrid);
@@ -791,11 +725,15 @@
 
   function bindEvents() {
     const queryFromUrl = new URLSearchParams(window.location.search).get("q");
+    const categoryFromUrl = new URLSearchParams(window.location.search).get("category");
     if (queryFromUrl) {
       state.searchQuery = queryFromUrl.trim();
       if (refs.searchInput) {
         refs.searchInput.value = state.searchQuery;
       }
+    }
+    if (categoryFromUrl) {
+      state.activeCategory = categoryFromUrl.trim();
     }
 
     if (refs.searchInput) {
@@ -963,6 +901,7 @@
 
   bindEvents();
   renderStats();
+  renderTrendingSection();
   render();
   showCookieBanner();
   showAffiliateDisclaimer();
