@@ -15,6 +15,7 @@
     priceFilter: "all",
     visibleCount: 12,
     language: "bn",
+    showcaseMode: "popular",
   };
 
   const refs = {
@@ -47,16 +48,22 @@
       nav_newsletter: "নিউজলেটার",
       nav_submit_tool: "টুল সাবমিট করুন",
       affiliate_disclaimer: "⚠️ এই সাইটে কিছু লিংক affiliate — আপনার কোনো অতিরিক্ত খরচ ছাড়াই আমরা কমিশন পেতে পারি।",
-      hero_badge: "বাংলাদেশের AI টুল ডিরেক্টরি",
-      hero_title: "বাংলাদেশের জন্য সেরা <em>AI টুলস</em>",
-      hero_subtext: "বাংলাদেশ থেকে কোন AI tool ব্যবহার করা যাবে, কোনটা free বা freemium, কোনটা creator, coding, writing বা productivity-এর জন্য best, আর local ব্যবহারকারীর জন্য কোনটা practical সেটা দ্রুত খুঁজে দেখুন।",
+      hero_badge: "বাংলা AI গাইড",
+      hero_title: "বাংলাদেশে <em>AI টুলস</em> আয়ত্ত করার সহজ পথ",
+      hero_subtext: "বাংলাদেশ থেকে কোন টুল কাজ করে, কোনটা ফ্রি বা ফ্রিমিয়াম, আর কোনটা আসলে দৈনন্দিন কাজে লাগবে সেটা পরিষ্কারভাবে খুঁজে দেখুন।",
       hero_search_placeholder: "টুল খুঁজুন… যেমন: ChatGPT, ভিডিও, কোডিং",
       hero_search_cta: "খুঁজুন",
-      hero_point_1: "৩০০+ AI টুল তালিকাভুক্ত",
-      hero_point_2: "বাংলাদেশে ব্যবহারযোগ্য",
-      hero_point_3: "নিয়মিত আপডেট",
-      hero_chip_search: "সার্চ",
-      hero_chip_tools: "টুলস",
+      hero_benefit_1: "<strong>ডিসকভার:</strong> আপনার কাজের জন্য ঠিক AI টুল খুঁজুন",
+      hero_benefit_2: "<strong>সেভ:</strong> ফ্রি, ফ্রিমিয়াম, আর বাংলাদেশ-ফ্রেন্ডলি অপশন আলাদা করে দেখুন",
+      hero_benefit_3: "<strong>শুরু করুন:</strong> রাইটিং, ইমেজ, কোডিং, আর প্রোডাক্টিভিটি টুল এক জায়গায়",
+      hero_browse_cta: "টুলস ব্রাউজ করুন",
+      hero_preview_1_meta: "বাংলা লেখা + আইডিয়া",
+      hero_preview_1_desc: "বাংলা লেখা, সারাংশ, ইমেইল, আর দৈনন্দিন প্রশ্নের জন্য সবচেয়ে জনপ্রিয় AI সহকারী।",
+      hero_preview_2_meta: "কোডিং + প্রোডাক্টিভিটি",
+      hero_preview_2_desc: "ডেভেলপারদের জন্য AI pair programmer, দ্রুত debug, edit, আর ship করার জন্য দারুণ।",
+      hero_preview_price_free: "ফ্রি",
+      hero_preview_price_freemium: "ফ্রিমিয়াম",
+      hero_preview_cta: "টুল দেখুন",
       category_all: "সব টুলস",
       category_writing: "রাইটিং",
       category_image: "ইমেজ",
@@ -67,7 +74,19 @@
       category_free_tools: "ফ্রি টুলস",
       trending_kicker: "এখন জনপ্রিয়",
       trending_title: "🔥 ট্রেন্ডিং AI টুলস",
+      trending_title_short: "জনপ্রিয় টুলস",
+      trending_recent: "সদ্য যোগ হয়েছে",
       trending_copy: "এই মুহূর্তে সবচেয়ে বেশি খোঁজা এবং জনপ্রিয় টুলগুলো দেখুন।",
+      showcase_categories_title: "সবচেয়ে জনপ্রিয় ক্যাটাগরি",
+      showcase_cat_1: "রাইটিং ও এডিটিং",
+      showcase_cat_2: "ডিজাইন ও ক্রিয়েটিভ",
+      showcase_cat_3: "ভিডিও টুলস",
+      showcase_cat_4: "টেকনোলজি ও কোডিং",
+      showcase_cat_5: "মার্কেটিং ও গ্রোথ",
+      showcase_cat_6: "ওয়ার্কফ্লো অটোমেশন",
+      showcase_cat_7: "ফ্রি টুলস",
+      showcase_score: "স্কোর",
+      showcase_access: "BD",
       filter_payment_title: "পেমেন্ট পদ্ধতি",
       filter_bd_title: "বাংলাদেশ ফিল্টার",
       filter_price_title: "মূল্য (টাকায়)",
@@ -101,19 +120,17 @@
       grid_title: "সব AI টুলস",
       sort_label: "↕ জনপ্রিয়তা অনুযায়ী",
       load_more: "আরও টুলস দেখুন",
-      seo_kicker: "বিষয়ভিত্তিক দেখুন",
-      seo_title: "ক্যাটাগরি পেজ",
-      seo_copy: "নির্দিষ্ট কাজের জন্য ফোকাসড টুল লিস্ট চাইলে এই ক্যাটাগরি পেজগুলো দেখুন।",
-      seo_writing_title: "AI Writing Tools",
-      seo_writing_copy: "কপি, কনটেন্ট, ইমেইল, আর ডকুমেন্ট ওয়ার্কফ্লোর জন্য টুলস।",
-      seo_image_title: "AI Image Tools",
-      seo_image_copy: "ইমেজ জেনারেশন, ডিজাইন, আর ভিজ্যুয়াল কনসেপ্টের টুলস।",
-      seo_video_title: "AI Video Tools",
-      seo_video_copy: "ভিডিও তৈরি, শর্টস ওয়ার্কফ্লো, আর ক্রিয়েটর অটোমেশনের টুলস।",
-      seo_coding_title: "AI Coding Tools",
-      seo_coding_copy: "ডেভেলপার কপাইলট, কোড অ্যাসিস্ট্যান্ট, আর প্রোটোটাইপিং টুলস।",
-      seo_marketing_title: "AI Marketing Tools",
-      seo_marketing_copy: "ক্যাম্পেইন, কনটেন্ট, অটোমেশন, আর ক্রিয়েটর গ্রোথের টুলস।",
+      seo_kicker: "ট্রেন্ডিং ক্যাটাগরি",
+      seo_title: "ট্রেন্ডিং AI ক্যাটাগরি",
+      seo_copy: "বাংলাদেশি ব্যবহারকারীরা এখন যে AI category আর use-case সবচেয়ে বেশি খুঁজছেন, সেগুলো এখানে একসাথে দেখুন।",
+      trend_cat_marketing: "মার্কেটিং",
+      trend_cat_productivity: "প্রোডাক্টিভিটি",
+      trend_cat_design: "ডিজাইন",
+      trend_cat_video: "ভিডিও",
+      trend_cat_research: "রিসার্চ",
+      trend_cat_text_to_image: "টেক্সট-টু-ইমেজ",
+      trend_cat_coding: "কোডিং",
+      trend_cat_free: "ফ্রি টুলস",
       newsletter_chip: "📬 সাপ্তাহিক নিউজলেটার",
       newsletter_title: "বাংলা AI নিউজলেটারে যোগ দিন",
       newsletter_copy: "বাংলায় নতুন AI টুলস আর টিউটোরিয়াল সবার আগে জানুন।",
@@ -180,16 +197,22 @@
       nav_newsletter: "Newsletter",
       nav_submit_tool: "Submit Tool",
       affiliate_disclaimer: "⚠️ Some links on this site are affiliate links. We may earn a commission at no extra cost to you.",
-      hero_badge: "Bangladesh AI Directory",
-      hero_title: "The Best <em>AI Tools</em> for Bangladesh",
-      hero_subtext: "Find which AI tools work from Bangladesh, which ones are free or freemium, and which are best for creators, coding, writing, and productivity.",
+      hero_badge: "Bangla AI Guide",
+      hero_title: "Your easiest path to mastering <em>AI tools</em> in Bangladesh",
+      hero_subtext: "See which tools work from Bangladesh, which ones are free or freemium, and which ones are actually useful for day-to-day work.",
       hero_search_placeholder: "Search tools… e.g. ChatGPT, video, coding",
       hero_search_cta: "Search",
-      hero_point_1: "300+ AI tools listed",
-      hero_point_2: "Usable from Bangladesh",
-      hero_point_3: "Updated regularly",
-      hero_chip_search: "Search",
-      hero_chip_tools: "Tools",
+      hero_benefit_1: "<strong>Discover:</strong> find the right AI tool for your workflow",
+      hero_benefit_2: "<strong>Save:</strong> quickly separate free, freemium, and Bangladesh-friendly options",
+      hero_benefit_3: "<strong>Start fast:</strong> browse writing, image, coding, and productivity tools in one place",
+      hero_browse_cta: "Browse Tools",
+      hero_preview_1_meta: "Bangla writing + ideas",
+      hero_preview_1_desc: "The most popular AI assistant for Bangla writing, summaries, email, and everyday questions.",
+      hero_preview_2_meta: "Coding + productivity",
+      hero_preview_2_desc: "An AI pair programmer for developers who want to debug, edit, and ship faster.",
+      hero_preview_price_free: "Free",
+      hero_preview_price_freemium: "Freemium",
+      hero_preview_cta: "View Tool",
       category_all: "All Tools",
       category_writing: "Writing",
       category_image: "Image",
@@ -200,7 +223,19 @@
       category_free_tools: "Free Tools",
       trending_kicker: "Popular now",
       trending_title: "🔥 Trending AI Tools",
+      trending_title_short: "Popular Tools",
+      trending_recent: "Recently Added",
       trending_copy: "Explore the most searched and popular tools right now.",
+      showcase_categories_title: "Most Popular Categories",
+      showcase_cat_1: "Writing & Editing",
+      showcase_cat_2: "Design & Creative",
+      showcase_cat_3: "Video Tools",
+      showcase_cat_4: "Technology & Coding",
+      showcase_cat_5: "Marketing & Growth",
+      showcase_cat_6: "Workflow Automation",
+      showcase_cat_7: "Free Tools",
+      showcase_score: "Score",
+      showcase_access: "BD",
       filter_payment_title: "Payment Options",
       filter_bd_title: "Bangladesh Filters",
       filter_price_title: "Price (in BDT)",
@@ -234,19 +269,17 @@
       grid_title: "All AI Tools",
       sort_label: "↕ Sort by popularity",
       load_more: "Load more tools",
-      seo_kicker: "Explore by topic",
-      seo_title: "Category Pages",
-      seo_copy: "Browse focused landing pages if you want a tighter list of tools by use case.",
-      seo_writing_title: "AI Writing Tools",
-      seo_writing_copy: "Tools for copy, content, email, and document workflows.",
-      seo_image_title: "AI Image Tools",
-      seo_image_copy: "Tools for image generation, design, and visual concept work.",
-      seo_video_title: "AI Video Tools",
-      seo_video_copy: "Tools for video generation, shorts workflows, and creator automation.",
-      seo_coding_title: "AI Coding Tools",
-      seo_coding_copy: "Developer copilots, code assistants, and prototyping tools.",
-      seo_marketing_title: "AI Marketing Tools",
-      seo_marketing_copy: "Tools for campaigns, content, automation, and creator growth.",
+      seo_kicker: "Trending Categories",
+      seo_title: "Trending AI Categories",
+      seo_copy: "Explore the AI categories and use-cases people in Bangladesh are searching for the most right now.",
+      trend_cat_marketing: "Marketing",
+      trend_cat_productivity: "Productivity",
+      trend_cat_design: "Design",
+      trend_cat_video: "Video",
+      trend_cat_research: "Research",
+      trend_cat_text_to_image: "Text-To-Image",
+      trend_cat_coding: "Coding",
+      trend_cat_free: "Free Tools",
       newsletter_chip: "📬 Weekly Newsletter",
       newsletter_title: "Join the Bangla AI Newsletter",
       newsletter_copy: "Get the newest AI tools and tutorials in Bangla.",
@@ -385,9 +418,18 @@
     });
   }
 
+  function syncShowcaseUi() {
+    document.querySelectorAll("[data-showcase-mode]").forEach((button) => {
+      const isActive = button.getAttribute("data-showcase-mode") === state.showcaseMode;
+      button.classList.toggle("is-active", isActive);
+      button.setAttribute("aria-pressed", isActive ? "true" : "false");
+    });
+  }
+
   function applyLanguage() {
     applyStaticTranslations();
     syncLanguageUi();
+    syncShowcaseUi();
     renderTrendingSection();
     render(false);
   }
@@ -857,27 +899,81 @@
     return `${bdBadge}${vpnBadge}${paymentBadge}`;
   }
 
+  function getShowcaseTools() {
+    if (state.showcaseMode === "recent") {
+      return [...data].reverse().slice(0, 7);
+    }
+
+    return [...data]
+      .sort((a, b) => Number(b.rating || 0) - Number(a.rating || 0) || String(a.name).localeCompare(String(b.name)))
+      .slice(0, 7);
+  }
+
+  function getShowcaseTags(tool) {
+    const tags = [];
+
+    if (tool.category === "llm") {
+      tags.push("#ai-chatbots", "#research");
+    } else if (tool.category === "image") {
+      tags.push("#image-tools", "#creative");
+    } else if (tool.category === "coding") {
+      tags.push("#coding", "#developer");
+    } else {
+      tags.push("#productivity", "#automation");
+    }
+
+    if (tool.works_in_bd) {
+      tags.push("#bangladesh");
+    }
+
+    return tags.slice(0, 3);
+  }
+
+  function getShowcaseScore(tool) {
+    const rating = Number(tool.rating || 0);
+    return Math.round(rating * 1000 + (tool.works_in_bd ? 180 : 80));
+  }
+
   function renderTrendingCard(tool) {
     if (!tool) {
       return "";
     }
 
     const detailUrl = getToolPagePath(toSlug(tool.name));
+    const showcaseTags = getShowcaseTags(tool);
+    const score = localizedNum(getShowcaseScore(tool));
+    const bdStatus = tool.works_in_bd ? "✓" : "•";
 
     return `
       <article class="trending-card">
-        <div class="tool-title-wrap">
-          <div class="tool-logo-shell">
-            ${renderToolLogo(tool)}
+        <div class="trending-card-main">
+          <div class="tool-title-wrap">
+            <div class="tool-logo-shell">
+              ${renderToolLogo(tool)}
+            </div>
+            <div class="tool-name-block">
+              <h3 class="tool-title"><a href="${escapeHtml(detailUrl)}">${escapeHtml(tool.name)}</a></h3>
+              <p class="tool-desc">${escapeHtml(getLocalizedToolDescription(tool))}</p>
+              <div class="trending-card-tags">
+                ${showcaseTags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join("")}
+              </div>
+            </div>
           </div>
-          <div class="tool-name-block">
-            <h3 class="tool-title"><a href="${escapeHtml(detailUrl)}">${escapeHtml(tool.name)}</a></h3>
-            <p class="tool-subtitle">${escapeHtml(getLocalizedCategoryLabel(tool.category) || (state.language === "en" ? "Other" : "অন্যান্য"))}</p>
+          <div class="trending-card-stats">
+            <div class="trending-stat-box">
+              <span>${escapeHtml(t("showcase_score"))}</span>
+              <strong>${score}</strong>
+            </div>
+            <div class="trending-stat-box trending-stat-box--accent">
+              <span>${escapeHtml(t("showcase_access"))}</span>
+              <strong>${escapeHtml(bdStatus)}</strong>
+            </div>
           </div>
         </div>
-        <p class="tool-desc">${escapeHtml(getLocalizedToolDescription(tool))}</p>
-        <div class="badges">${getBadges(tool)}</div>
-        <a class="btn btn-ghost" href="${escapeHtml(detailUrl)}">${escapeHtml(t("btn_view_tool"))}</a>
+        <div class="trending-card-actions">
+          <div class="badges">${getBadges(tool)}</div>
+          <a class="btn btn-ghost" href="${escapeHtml(detailUrl)}">${escapeHtml(t("btn_view_tool"))}</a>
+        </div>
       </article>
     `;
   }
@@ -887,11 +983,8 @@
       return;
     }
 
-    const popularTools = [...data]
-      .sort((a, b) => Number(b.rating || 0) - Number(a.rating || 0) || String(a.name).localeCompare(String(b.name)))
-      .slice(0, 6);
-
-    refs.trendingGrid.innerHTML = popularTools.map((tool) => renderTrendingCard(tool)).join("");
+    const showcaseTools = getShowcaseTools();
+    refs.trendingGrid.innerHTML = showcaseTools.map((tool) => renderTrendingCard(tool)).join("");
     attachToolLogoHandlers(refs.trendingGrid);
   }
 
@@ -1091,6 +1184,7 @@
 
     applyStaticTranslations();
     syncLanguageUi();
+    syncShowcaseUi();
 
     if (refs.searchInput) {
       refs.searchInput.addEventListener("input", (event) => {
@@ -1157,6 +1251,17 @@
             window.localStorage?.setItem(languagePreferenceKey, nextLanguage);
           } catch {}
           applyLanguage();
+        }
+        return;
+      }
+
+      const showcaseButton = event.target.closest("[data-showcase-mode]");
+      if (showcaseButton) {
+        const nextMode = showcaseButton.getAttribute("data-showcase-mode");
+        if ((nextMode === "popular" || nextMode === "recent") && nextMode !== state.showcaseMode) {
+          state.showcaseMode = nextMode;
+          syncShowcaseUi();
+          renderTrendingSection();
         }
         return;
       }
