@@ -48,22 +48,19 @@
       nav_newsletter: "নিউজলেটার",
       nav_submit_tool: "টুল সাবমিট করুন",
       affiliate_disclaimer: "⚠️ এই সাইটে কিছু লিংক affiliate — আপনার কোনো অতিরিক্ত খরচ ছাড়াই আমরা কমিশন পেতে পারি।",
-      hero_badge: "বাংলা AI গাইড",
-      hero_title: "বাংলাদেশে <em>AI টুলস</em> আয়ত্ত করার সহজ পথ",
-      hero_subtext: "বাংলাদেশ থেকে কোন টুল কাজ করে, কোনটা ফ্রি বা ফ্রিমিয়াম, আর কোনটা আসলে দৈনন্দিন কাজে লাগবে সেটা পরিষ্কারভাবে খুঁজে দেখুন।",
+      hero_badge: "বাংলাদেশের AI টুল ডিরেক্টরি",
+      hero_strip: "বাংলায় কিউরেটেড AI টুলস, রিভিউ, আর ব্যবহার গাইড",
+      hero_title: "বাংলাদেশের জন্য দরকারি সব <em>AI টুল</em>, এক জায়গায়",
+      hero_subtext: "যে AI টুলগুলো বাংলাদেশ থেকে কাজ করে, যেগুলোর ফ্রি অপশন আছে, আর যেগুলো দিয়ে সত্যি কাজ এগোয়, সেগুলো দ্রুত খুঁজে দেখুন।",
+      hero_metric_tools: "কিউরেটেড টুল",
+      hero_metric_bd_strong: "BD Ready",
+      hero_metric_bd: "বাংলাদেশ থেকে ব্যবহারযোগ্য",
+      hero_metric_update_strong: "Weekly",
+      hero_metric_update: "রিভিউ আর আপডেট",
       hero_search_placeholder: "টুল খুঁজুন… যেমন: ChatGPT, ভিডিও, কোডিং",
       hero_search_cta: "খুঁজুন",
-      hero_benefit_1: "<strong>ডিসকভার:</strong> আপনার কাজের জন্য ঠিক AI টুল খুঁজুন",
-      hero_benefit_2: "<strong>সেভ:</strong> ফ্রি, ফ্রিমিয়াম, আর বাংলাদেশ-ফ্রেন্ডলি অপশন আলাদা করে দেখুন",
-      hero_benefit_3: "<strong>শুরু করুন:</strong> রাইটিং, ইমেজ, কোডিং, আর প্রোডাক্টিভিটি টুল এক জায়গায়",
       hero_browse_cta: "টুলস ব্রাউজ করুন",
-      hero_preview_1_meta: "বাংলা লেখা + আইডিয়া",
-      hero_preview_1_desc: "বাংলা লেখা, সারাংশ, ইমেইল, আর দৈনন্দিন প্রশ্নের জন্য সবচেয়ে জনপ্রিয় AI সহকারী।",
-      hero_preview_2_meta: "কোডিং + প্রোডাক্টিভিটি",
-      hero_preview_2_desc: "ডেভেলপারদের জন্য AI pair programmer, দ্রুত debug, edit, আর ship করার জন্য দারুণ।",
-      hero_preview_price_free: "ফ্রি",
-      hero_preview_price_freemium: "ফ্রিমিয়াম",
-      hero_preview_cta: "টুল দেখুন",
+      hero_trust_label: "বিশ্বস্ত টুল কাভারেজ",
       category_all: "সব টুলস",
       category_writing: "রাইটিং",
       category_image: "ইমেজ",
@@ -197,22 +194,19 @@
       nav_newsletter: "Newsletter",
       nav_submit_tool: "Submit Tool",
       affiliate_disclaimer: "⚠️ Some links on this site are affiliate links. We may earn a commission at no extra cost to you.",
-      hero_badge: "Bangla AI Guide",
-      hero_title: "Your easiest path to mastering <em>AI tools</em> in Bangladesh",
-      hero_subtext: "See which tools work from Bangladesh, which ones are free or freemium, and which ones are actually useful for day-to-day work.",
+      hero_badge: "Bangladesh AI Tool Directory",
+      hero_strip: "Curated AI tools, reviews, and practical guides in Bangla",
+      hero_title: "Everything you need in <em>AI tools</em> for Bangladesh, in one place",
+      hero_subtext: "Quickly find the AI tools that work from Bangladesh, include free options, and genuinely help you get work done.",
+      hero_metric_tools: "Curated tools",
+      hero_metric_bd_strong: "BD Ready",
+      hero_metric_bd: "Usable from Bangladesh",
+      hero_metric_update_strong: "Weekly",
+      hero_metric_update: "Reviews and updates",
       hero_search_placeholder: "Search tools… e.g. ChatGPT, video, coding",
       hero_search_cta: "Search",
-      hero_benefit_1: "<strong>Discover:</strong> find the right AI tool for your workflow",
-      hero_benefit_2: "<strong>Save:</strong> quickly separate free, freemium, and Bangladesh-friendly options",
-      hero_benefit_3: "<strong>Start fast:</strong> browse writing, image, coding, and productivity tools in one place",
       hero_browse_cta: "Browse Tools",
-      hero_preview_1_meta: "Bangla writing + ideas",
-      hero_preview_1_desc: "The most popular AI assistant for Bangla writing, summaries, email, and everyday questions.",
-      hero_preview_2_meta: "Coding + productivity",
-      hero_preview_2_desc: "An AI pair programmer for developers who want to debug, edit, and ship faster.",
-      hero_preview_price_free: "Free",
-      hero_preview_price_freemium: "Freemium",
-      hero_preview_cta: "View Tool",
+      hero_trust_label: "TRUSTED TOOL COVERAGE",
       category_all: "All Tools",
       category_writing: "Writing",
       category_image: "Image",
@@ -418,6 +412,16 @@
     });
   }
 
+  function updateHeroMetrics() {
+    const countNode = document.getElementById("heroToolCount");
+    if (!countNode) {
+      return;
+    }
+
+    const total = Array.isArray(data) ? data.length : 0;
+    countNode.textContent = localizedNum(total);
+  }
+
   function syncShowcaseUi() {
     document.querySelectorAll("[data-showcase-mode]").forEach((button) => {
       const isActive = button.getAttribute("data-showcase-mode") === state.showcaseMode;
@@ -430,6 +434,7 @@
     applyStaticTranslations();
     syncLanguageUi();
     syncShowcaseUi();
+    updateHeroMetrics();
     renderTrendingSection();
     render(false);
   }
@@ -475,11 +480,18 @@
     const lowerRaw = raw.toLowerCase();
     const hasMonthly = /\/mo/i.test(raw);
     const isAddon = /add-on/i.test(raw);
+    const freeLabel = state.language === "en" ? "Completely free" : "সম্পূর্ণ ফ্রি";
+    const freeBdtLabel = state.language === "en" ? "৳0 - Free" : "৳০ — ফ্রি";
+    const usageLabel = state.language === "en" ? "Usage based" : "চাহিদাভিত্তিক";
+    const freeApiLabel = state.language === "en" ? "Free / API paid" : "ফ্রি / API পেইড";
+    const naLabel = state.language === "en" ? "Not specified" : "প্রযোজ্য নয়";
+    const monthlySuffix = hasMonthly ? (state.language === "en" ? "/month" : "/মাস") : "";
+    const addonSuffix = isAddon ? (state.language === "en" ? " (add-on)" : " (অ্যাড-অন)") : "";
 
     if (isFullyFree(tool)) {
       return {
-        usdLabel: raw || "সম্পূর্ণ ফ্রি",
-        bdtLabel: "৳০ — ফ্রি",
+        usdLabel: raw || freeLabel,
+        bdtLabel: freeBdtLabel,
         paidBdt: 0,
         isFree: true,
       };
@@ -488,7 +500,7 @@
     if (lowerRaw === "usage-based") {
       return {
         usdLabel: raw,
-        bdtLabel: "চাহিদাভিত্তিক",
+        bdtLabel: usageLabel,
         paidBdt: null,
         isFree: false,
       };
@@ -497,7 +509,7 @@
     if (/^free\s*\/\s*api paid$/i.test(raw)) {
       return {
         usdLabel: raw,
-        bdtLabel: "ফ্রি / API পেইড",
+        bdtLabel: freeApiLabel,
         paidBdt: null,
         isFree: false,
       };
@@ -507,13 +519,11 @@
     if (usdValue !== null) {
       const bdtValue = usdValue * conversionRate;
       const bdtAmount = formatBdtAmount(bdtValue);
-      const monthlySuffix = hasMonthly ? "/মাস" : "";
-      const addonSuffix = isAddon ? " (অ্যাড-অন)" : "";
 
       if (/^free\s*\//i.test(raw)) {
         return {
           usdLabel: raw,
-          bdtLabel: `ফ্রি / ${bdtAmount}${monthlySuffix}${addonSuffix}`,
+          bdtLabel: `${state.language === "en" ? "Free" : "ফ্রি"} / ${bdtAmount}${monthlySuffix}${addonSuffix}`,
           paidBdt: Math.round(bdtValue),
           isFree: false,
         };
@@ -528,8 +538,8 @@
     }
 
     return {
-      usdLabel: raw || "প্রযোজ্য নয়",
-      bdtLabel: raw || "প্রযোজ্য নয়",
+      usdLabel: raw || naLabel,
+      bdtLabel: raw || naLabel,
       paidBdt: null,
       isFree: false,
     };
@@ -993,6 +1003,10 @@
     const directUrl = tool.direct_url || tool.affiliate_url || "#";
     const toolName = escapeHtml(tool.name);
     const appCategory = getLocalizedApplicationCategory(tool.category);
+    const score = localizedNum(getShowcaseScore(tool));
+    const priceInfo = getPriceInfo(tool);
+    const priceLabel = state.language === "en" ? priceInfo.usdLabel : priceInfo.bdtLabel;
+    const bdStatusLabel = tool.no_vpn ? t("badge_vpn_no") : t("badge_vpn_maybe");
     const tags = [];
     if (tool.pricing === "free" || isFullyFree(tool)) {
       tags.push(t("tag_free"));
@@ -1008,6 +1022,10 @@
 
     return `
       <article class="tool-card" itemscope itemtype="https://schema.org/SoftwareApplication" data-category="${escapeHtml(tool.category || "other")}" data-pricing="${escapeHtml(tool.pricing || "unknown")}">
+        <div class="tool-card-top">
+          <span class="tool-card-category">${escapeHtml(getLocalizedCategoryLabel(tool.category) || (state.language === "en" ? "Other" : "অন্যান্য"))}</span>
+          <span class="tool-card-rating">${score}</span>
+        </div>
         <div class="tool-header tool-header-modern">
           <div class="tool-title-wrap tool-title-wrap-modern">
             <div class="tool-logo-shell">
@@ -1027,7 +1045,19 @@
 
         <div class="badges">${tags.map((tag) => `<span class="badge badge--accent">${escapeHtml(tag)}</span>`).join("")}</div>
 
+        <div class="tool-meta-strip">
+          <div class="tool-meta-item">
+            <span class="tool-meta-label">${escapeHtml(state.language === "en" ? "Pricing" : "প্রাইসিং")}</span>
+            <strong>${escapeHtml(priceLabel)}</strong>
+          </div>
+          <div class="tool-meta-item">
+            <span class="tool-meta-label">${escapeHtml(state.language === "en" ? "Access" : "অ্যাক্সেস")}</span>
+            <strong>${escapeHtml(bdStatusLabel)}</strong>
+          </div>
+        </div>
+
         <div class="tool-card-footer">
+          <a class="btn btn-ghost" href="${escapeHtml(detailUrl)}">${escapeHtml(t("btn_view_tool"))}</a>
           <a class="btn btn-primary" href="${escapeHtml(directUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(t("btn_visit_tool"))}</a>
         </div>
       </article>
