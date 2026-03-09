@@ -353,12 +353,70 @@
     return t(`label_${category}`) || category;
   }
 
+  function getHomepageCategoryLabel(category) {
+    return t(`category_${category}`) || getLocalizedCategoryLabel(category) || category;
+  }
+
   function getLocalizedApplicationCategory(category) {
     return t(`app_${category}`) || "AI Application";
   }
 
   function getGenericToolDescription(tool) {
     return t(`desc_${tool.category}`) || t("tag_ai_tool");
+  }
+
+  function getToolCategorySignals(tool) {
+    return [
+      tool.name,
+      tool.category,
+      tool.details,
+      tool.description_bn,
+      tool.review_bn,
+    ]
+      .filter(Boolean)
+      .join(" ")
+      .toLowerCase();
+  }
+
+  function getHomepageCategory(tool) {
+    const rawCategory = String(tool.category || "").toLowerCase();
+    const signals = getToolCategorySignals(tool);
+
+    if (rawCategory === "coding") {
+      return "coding";
+    }
+
+    if (rawCategory === "llm") {
+      if (/\bcopy|marketing|ads|email campaign|landing page|content platform|seo/.test(signals)) {
+        return "marketing";
+      }
+      return "writing";
+    }
+
+    if (rawCategory === "image") {
+      if (/video|text-to-video|image-to-video|animation|editor|gen-2|gen-4|runway|kling/.test(signals)) {
+        return "video";
+      }
+      return "image";
+    }
+
+    if (rawCategory === "productivity") {
+      if (/marketing|brand voice|campaign|ad copy|content platform|jasper/.test(signals)) {
+        return "marketing";
+      }
+
+      if (/video|podcast|voice|audio|music|speech|transcription|voiceover|youtube|descript|elevenlabs|otter|suno/.test(signals)) {
+        return "video";
+      }
+
+      if (/design|presentation|deck|slide|image/.test(signals) && /gamma/.test(signals)) {
+        return "productivity";
+      }
+
+      return "productivity";
+    }
+
+    return rawCategory || "other";
   }
 
   function getLocalizedToolDescription(tool) {
@@ -626,20 +684,30 @@
       return true;
     }
 
+    const homepageCategory = getHomepageCategory(tool);
+
     if (category === "writing") {
-      return tool.category === "llm";
+      return homepageCategory === "writing";
     }
 
-    if (category === "image" || category === "video") {
-      return tool.category === "image";
+    if (category === "image") {
+      return homepageCategory === "image";
+    }
+
+    if (category === "video") {
+      return homepageCategory === "video";
     }
 
     if (category === "coding") {
-      return tool.category === "coding";
+      return homepageCategory === "coding";
     }
 
-    if (category === "marketing" || category === "productivity") {
-      return tool.category === "productivity";
+    if (category === "marketing") {
+      return homepageCategory === "marketing";
+    }
+
+    if (category === "productivity") {
+      return homepageCategory === "productivity";
     }
 
     if (category === "free") {
@@ -675,6 +743,16 @@
     state.activeCategory = category || "all";
     resetVisibleCount();
     render();
+  }
+
+  function setShowcaseMode(mode) {
+    if ((mode !== "popular" && mode !== "recent") || mode === state.showcaseMode) {
+      return;
+    }
+
+    state.showcaseMode = mode;
+    syncShowcaseUi();
+    renderTrendingSection();
   }
 
   function resetVisibleCount() {
@@ -1003,6 +1081,7 @@
     const directUrl = tool.direct_url || tool.affiliate_url || "#";
     const toolName = escapeHtml(tool.name);
     const appCategory = getLocalizedApplicationCategory(tool.category);
+    const homepageCategory = getHomepageCategory(tool);
     const score = localizedNum(getShowcaseScore(tool));
     const priceInfo = getPriceInfo(tool);
     const priceLabel = state.language === "en" ? priceInfo.usdLabel : priceInfo.bdtLabel;
@@ -1021,9 +1100,9 @@
     }
 
     return `
-      <article class="tool-card" itemscope itemtype="https://schema.org/SoftwareApplication" data-category="${escapeHtml(tool.category || "other")}" data-pricing="${escapeHtml(tool.pricing || "unknown")}">
+      <article class="tool-card" itemscope itemtype="https://schema.org/SoftwareApplication" data-category="${escapeHtml(homepageCategory || "other")}" data-pricing="${escapeHtml(tool.pricing || "unknown")}">
         <div class="tool-card-top">
-          <span class="tool-card-category">${escapeHtml(getLocalizedCategoryLabel(tool.category) || (state.language === "en" ? "Other" : "অন্যান্য"))}</span>
+          <span class="tool-card-category">${escapeHtml(getHomepageCategoryLabel(homepageCategory) || (state.language === "en" ? "Other" : "অন্যান্য"))}</span>
           <span class="tool-card-rating">${score}</span>
         </div>
         <div class="tool-header tool-header-modern">
@@ -1033,7 +1112,7 @@
             </div>
             <div class="tool-name-block">
               <h3 class="tool-title" itemprop="name"><a href="${escapeHtml(detailUrl)}">${toolName}</a></h3>
-              <p class="tool-subtitle">${escapeHtml(getLocalizedCategoryLabel(tool.category) || (state.language === "en" ? "Other" : "অন্যান্য"))}</p>
+              <p class="tool-subtitle">${escapeHtml(getHomepageCategoryLabel(homepageCategory) || (state.language === "en" ? "Other" : "অন্যান্য"))}</p>
             </div>
           </div>
         </div>
@@ -1271,6 +1350,22 @@
       });
     }
 
+    document.querySelectorAll("[data-showcase-mode]").forEach((button) => {
+      button.addEventListener("click", (event) => {
+        event.preventDefault();
+        setShowcaseMode(button.getAttribute("data-showcase-mode"));
+      });
+
+      button.addEventListener("keydown", (event) => {
+        if (event.key !== "Enter" && event.key !== " ") {
+          return;
+        }
+
+        event.preventDefault();
+        setShowcaseMode(button.getAttribute("data-showcase-mode"));
+      });
+    });
+
     document.addEventListener("click", (event) => {
       const languageButton = event.target.closest("[data-language-toggle]");
       if (languageButton) {
@@ -1287,12 +1382,8 @@
 
       const showcaseButton = event.target.closest("[data-showcase-mode]");
       if (showcaseButton) {
-        const nextMode = showcaseButton.getAttribute("data-showcase-mode");
-        if ((nextMode === "popular" || nextMode === "recent") && nextMode !== state.showcaseMode) {
-          state.showcaseMode = nextMode;
-          syncShowcaseUi();
-          renderTrendingSection();
-        }
+        event.preventDefault();
+        setShowcaseMode(showcaseButton.getAttribute("data-showcase-mode"));
         return;
       }
 

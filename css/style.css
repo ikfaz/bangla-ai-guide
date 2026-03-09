@@ -2457,11 +2457,16 @@ body.home-page .section-copy{
 }
 
 body.home-page .showcase-switcher{
+  position:relative;
+  z-index:3;
   justify-content:center;
   margin-bottom:26px;
 }
 
 body.home-page .showcase-switcher-btn{
+  position:relative;
+  z-index:1;
+  pointer-events:auto;
   color:#64748b;
 }
 
