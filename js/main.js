@@ -1072,6 +1072,9 @@
     const toolName = escapeHtml(tool.name);
     const appCategory = getLocalizedApplicationCategory(tool.category);
     const homepageCategory = getHomepageCategory(tool);
+    const priceInfo = getPriceInfo(tool);
+    const rating = tool.rating ? Number(tool.rating).toFixed(1) : null;
+
     const tags = [];
     if (tool.pricing === "free" || isFullyFree(tool)) {
       tags.push(t("tag_free"));
@@ -1104,7 +1107,7 @@
 
         <p class="tool-desc" itemprop="description">${escapeHtml(getLocalizedToolDescription(tool))}</p>
 
-        <div class="badges">${tags.map((tag) => `<span class="badge badge--accent">${escapeHtml(tag)}</span>`).join("")}</div>
+        <div class="badges">${tags.map((tag) => `<span class="badge badge--accent">${escapeHtml(tag)}</span>`).join("")}${rating ? `<span class="badge badge--neutral">⭐ ${rating}</span>` : ""}</div>
 
         <div class="tool-card-footer">
           <a class="btn btn-primary" href="${escapeHtml(directUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(t("btn_visit_tool"))}</a>
