@@ -20,6 +20,10 @@
 
   const refs = {
     searchInput: document.getElementById("searchInput"),
+    heroStats: document.getElementById("heroStats"),
+    heroFeatured: document.getElementById("heroFeatured"),
+    heroProofStrip: document.getElementById("heroProofStrip"),
+    categorySpotlightGrid: document.getElementById("categorySpotlightGrid"),
     categoryTabList: document.getElementById("categoryTabList"),
     resultsCount: document.getElementById("resultsCount"),
     toolsGrid: document.getElementById("toolsGrid"),
@@ -38,6 +42,7 @@
   const affiliateDisclaimerKey = "banglaAiGuideAffiliateDisclaimerHidden";
   const languagePreferenceKey = "banglaAiGuideLanguage";
   const PAGE_SIZE = 12;
+  const HOMEPAGE_SPOTLIGHT_CATEGORIES = ["writing", "image", "video", "coding", "marketing", "productivity"];
   let searchDebounceTimer = null;
   let renderRequestId = 0;
 
@@ -53,17 +58,41 @@
       hero_subtext: "বাংলাদেশ থেকে কোন টুল কাজ করে, কোনটা ফ্রি বা ফ্রিমিয়াম, আর কোনটা আসলে দৈনন্দিন কাজে লাগবে সেটা পরিষ্কারভাবে খুঁজে দেখুন।",
       hero_search_placeholder: "টুল খুঁজুন… যেমন: ChatGPT, ভিডিও, কোডিং",
       hero_search_cta: "খুঁজুন",
+      hero_search_note: "একই জায়গা থেকে সার্চ, ক্যাটাগরি, দাম, আর বাংলাদেশ-ফ্রেন্ডলি ফিল্টার ব্যবহার করুন।",
       hero_benefit_1: "<strong>ডিসকভার:</strong> আপনার কাজের জন্য ঠিক AI টুল খুঁজুন",
       hero_benefit_2: "<strong>সেভ:</strong> ফ্রি, ফ্রিমিয়াম, আর বাংলাদেশ-ফ্রেন্ডলি অপশন আলাদা করে দেখুন",
       hero_benefit_3: "<strong>শুরু করুন:</strong> রাইটিং, ইমেজ, কোডিং, আর প্রোডাক্টিভিটি টুল এক জায়গায়",
       hero_browse_cta: "টুলস ব্রাউজ করুন",
-      hero_preview_1_meta: "বাংলা লেখা + আইডিয়া",
-      hero_preview_1_desc: "বাংলা লেখা, সারাংশ, ইমেইল, আর দৈনন্দিন প্রশ্নের জন্য সবচেয়ে জনপ্রিয় AI সহকারী।",
-      hero_preview_2_meta: "কোডিং + প্রোডাক্টিভিটি",
-      hero_preview_2_desc: "ডেভেলপারদের জন্য AI pair programmer, দ্রুত debug, edit, আর ship করার জন্য দারুণ।",
-      hero_preview_price_free: "ফ্রি",
-      hero_preview_price_freemium: "ফ্রিমিয়াম",
-      hero_preview_cta: "টুল দেখুন",
+      hero_secondary_cta: "ক্যাটাগরি দেখুন",
+      hero_curated_kicker: "আজকের হাইলাইট",
+      hero_curated_title: "সবচেয়ে দরকারি AI টুলস এক নজরে",
+      hero_curated_copy: "Futurepedia-এর editorial discovery vibe ধরে, কিন্তু বাংলাদেশি ব্যবহারকারীর দরকার মাথায় রেখে কিউরেটেড পিকস দেখুন।",
+      hero_proof_label: "সবচেয়ে বেশি দেখা টুলস",
+      hero_stat_tools: "মোট টুল",
+      hero_stat_free: "ফ্রি অপশন",
+      hero_stat_categories: "ক্যাটাগরি",
+      hero_stat_bd: "VPN ছাড়া",
+      category_spotlight_kicker: "ডিরেক্টরি এক্সপ্লোর",
+      category_spotlight_title: "ক্যাটাগরি দিয়ে AI টুল খুঁজুন",
+      category_spotlight_copy: "Futurepedia-এর মতো browse-first অনুভূতি রেখে আমরা সবচেয়ে দরকারি use-case গুলোকে পরিষ্কার কার্ডে সাজিয়েছি।",
+      category_spotlight_desc_writing: "কনটেন্ট, সারাংশ, ইমেইল, আর বাংলা লেখার জন্য সবচেয়ে কাজে লাগে।",
+      category_spotlight_desc_image: "ইমেজ জেনারেশন, ব্র্যান্ডিং, আর ডিজাইন exploration-এর জন্য।",
+      category_spotlight_desc_video: "ভিডিও, ভয়েস, অডিও, আর creator workflow দ্রুত করতে।",
+      category_spotlight_desc_coding: "কোড লেখা, ডিবাগ, pair programming, আর shipping-এর জন্য।",
+      category_spotlight_desc_marketing: "ক্যাম্পেইন, SEO, ad copy, আর growth workflow-এর জন্য।",
+      category_spotlight_desc_productivity: "ডকুমেন্ট, অটোমেশন, টিম collaboration, আর workflow ops-এর জন্য।",
+      category_card_count: "টি টুল",
+      category_card_cta: "এই ক্যাটাগরি দেখুন",
+      editorial_kicker: "বাংলাদেশ ফোকাস",
+      editorial_title: "বাংলাদেশি ব্যবহারকারীদের জন্য shortlist করা AI discovery",
+      editorial_copy: "দাম, পেমেন্ট, VPN, আর practical ব্যবহারযোগ্যতা একসাথে দেখিয়ে আমরা discovery-টা দ্রুত করেছি।",
+      editorial_link_1: "বাংলা AI গাইড",
+      editorial_link_2: "ফ্রি AI tools 2026",
+      editorial_link_3: "bKash দিয়ে AI tools",
+      editorial_link_4: "VPN ছাড়া AI tools",
+      editorial_card_kicker: "কেন এই ডিরেক্টরি",
+      editorial_card_title: "দাম, VPN, আর BD access একসাথে দেখুন",
+      editorial_card_copy: "শুধু tool list না, কোনটা বাংলাদেশে বাস্তবে চালানো সহজ সেটাও এখানে প্রথমেই বোঝা যায়।",
       category_all: "সব টুলস",
       category_writing: "রাইটিং",
       category_image: "ইমেজ",
@@ -161,6 +190,10 @@
       footer_terms: "শর্তাবলী",
       footer_disclaimer: "ডিসক্লেইমার",
       footer_contact: "যোগাযোগ",
+      tool_meta_price: "দাম",
+      tool_meta_access: "অ্যাক্সেস",
+      tool_access_ready: "সরাসরি চলে",
+      tool_access_vpn: "VPN লাগতে পারে",
       label_llm: "LLM",
       label_image: "ইমেজ/ভিডিও",
       label_coding: "কোডিং",
@@ -202,17 +235,41 @@
       hero_subtext: "See which tools work from Bangladesh, which ones are free or freemium, and which ones are actually useful for day-to-day work.",
       hero_search_placeholder: "Search tools… e.g. ChatGPT, video, coding",
       hero_search_cta: "Search",
+      hero_search_note: "Use search, category, price, and Bangladesh-friendly filters from one place.",
       hero_benefit_1: "<strong>Discover:</strong> find the right AI tool for your workflow",
       hero_benefit_2: "<strong>Save:</strong> quickly separate free, freemium, and Bangladesh-friendly options",
       hero_benefit_3: "<strong>Start fast:</strong> browse writing, image, coding, and productivity tools in one place",
       hero_browse_cta: "Browse Tools",
-      hero_preview_1_meta: "Bangla writing + ideas",
-      hero_preview_1_desc: "The most popular AI assistant for Bangla writing, summaries, email, and everyday questions.",
-      hero_preview_2_meta: "Coding + productivity",
-      hero_preview_2_desc: "An AI pair programmer for developers who want to debug, edit, and ship faster.",
-      hero_preview_price_free: "Free",
-      hero_preview_price_freemium: "Freemium",
-      hero_preview_cta: "View Tool",
+      hero_secondary_cta: "View Categories",
+      hero_curated_kicker: "Today’s Highlights",
+      hero_curated_title: "The most useful AI tools at a glance",
+      hero_curated_copy: "Keep the editorial discovery feel of Futurepedia, but tuned for what users in Bangladesh actually need.",
+      hero_proof_label: "Most viewed tools",
+      hero_stat_tools: "Total tools",
+      hero_stat_free: "Free options",
+      hero_stat_categories: "Categories",
+      hero_stat_bd: "No VPN",
+      category_spotlight_kicker: "Explore the Directory",
+      category_spotlight_title: "Find AI tools by category",
+      category_spotlight_copy: "We kept a browse-first, editorial directory feel while organizing the most useful use-cases into clearer cards.",
+      category_spotlight_desc_writing: "Best for content, summaries, email, and Bangla-first writing workflows.",
+      category_spotlight_desc_image: "Great for image generation, design exploration, and brand visuals.",
+      category_spotlight_desc_video: "Built for video, voice, audio, and creator workflows.",
+      category_spotlight_desc_coding: "For code generation, debugging, pair programming, and shipping faster.",
+      category_spotlight_desc_marketing: "Useful for campaigns, SEO, ad copy, and growth workflows.",
+      category_spotlight_desc_productivity: "For docs, automation, collaboration, and operations workflows.",
+      category_card_count: "tools",
+      category_card_cta: "Explore this category",
+      editorial_kicker: "Bangladesh Focus",
+      editorial_title: "Shortlisted AI discovery for users in Bangladesh",
+      editorial_copy: "We surface price, payments, VPN requirements, and real usability so discovery feels faster and more practical.",
+      editorial_link_1: "Bangla AI Guide",
+      editorial_link_2: "Free AI tools 2026",
+      editorial_link_3: "AI tools with bKash",
+      editorial_link_4: "AI tools without VPN",
+      editorial_card_kicker: "Why this directory",
+      editorial_card_title: "See price, VPN, and BD access together",
+      editorial_card_copy: "This is not just a tool list. It helps you understand which tools are easiest to use from Bangladesh right away.",
       category_all: "All Tools",
       category_writing: "Writing",
       category_image: "Image",
@@ -310,6 +367,10 @@
       footer_terms: "Terms",
       footer_disclaimer: "Disclaimer",
       footer_contact: "Contact",
+      tool_meta_price: "Price",
+      tool_meta_access: "Access",
+      tool_access_ready: "Ready",
+      tool_access_vpn: "VPN maybe",
       label_llm: "LLM",
       label_image: "Image/Video",
       label_coding: "Coding",
@@ -488,6 +549,10 @@
     applyStaticTranslations();
     syncLanguageUi();
     syncShowcaseUi();
+    renderStats();
+    renderHeroFeatured();
+    renderHeroProofStrip();
+    renderCategorySpotlight();
     renderTrendingSection();
     render(false);
   }
@@ -957,6 +1022,10 @@
     setLoadMoreVisible(false);
   }
 
+  function getRankedTools(collection = data) {
+    return [...collection].sort((a, b) => Number(b.rating || 0) - Number(a.rating || 0) || String(a.name).localeCompare(String(b.name)));
+  }
+
   function getBadges(tool) {
     const bdBadge = tool.works_in_bd
       ? `<span class="badge badge--accent">${escapeHtml(t("badge_bd_yes"))}</span>`
@@ -982,29 +1051,58 @@
       return [...data].reverse().slice(0, 7);
     }
 
-    return [...data]
-      .sort((a, b) => Number(b.rating || 0) - Number(a.rating || 0) || String(a.name).localeCompare(String(b.name)))
-      .slice(0, 7);
+    return getRankedTools().slice(0, 7);
   }
 
   function getShowcaseTags(tool) {
     const tags = [];
+    const localizedTags = state.language === "en"
+      ? {
+          llm: ["#chatbots", "#research"],
+          image: ["#image-tools", "#creative"],
+          coding: ["#coding", "#developer"],
+          productivity: ["#productivity", "#automation"],
+          bangladesh: "#bangladesh",
+        }
+      : {
+          llm: ["#চ্যাট", "#রিসার্চ"],
+          image: ["#ইমেজ", "#ক্রিয়েটিভ"],
+          coding: ["#কোডিং", "#ডেভেলপার"],
+          productivity: ["#প্রোডাক্টিভিটি", "#অটোমেশন"],
+          bangladesh: "#বাংলাদেশ",
+        };
 
     if (tool.category === "llm") {
-      tags.push("#ai-chatbots", "#research");
+      tags.push(...localizedTags.llm);
     } else if (tool.category === "image") {
-      tags.push("#image-tools", "#creative");
+      tags.push(...localizedTags.image);
     } else if (tool.category === "coding") {
-      tags.push("#coding", "#developer");
+      tags.push(...localizedTags.coding);
     } else {
-      tags.push("#productivity", "#automation");
+      tags.push(...localizedTags.productivity);
     }
 
     if (tool.works_in_bd) {
-      tags.push("#bangladesh");
+      tags.push(localizedTags.bangladesh);
     }
 
     return tags.slice(0, 3);
+  }
+
+  function getCategoryCount(category) {
+    return data.filter((tool) => matchesVisualCategory(tool, category)).length;
+  }
+
+  function getCategoryDescription(category) {
+    return t(`category_spotlight_desc_${category}`);
+  }
+
+  function getTopCategoryTools(category, limit = 3) {
+    return getRankedTools(data.filter((tool) => matchesVisualCategory(tool, category))).slice(0, limit);
+  }
+
+  function getHeroFeaturedTools() {
+    return getRankedTools().slice(0, 3);
   }
 
   function getShowcaseScore(tool) {
@@ -1066,6 +1164,91 @@
     attachToolLogoHandlers(refs.trendingGrid);
   }
 
+  function renderHeroFeatureCard(tool, index) {
+    if (!tool) {
+      return "";
+    }
+
+    const detailUrl = getToolPagePath(toSlug(tool.name));
+    const priceInfo = getPriceInfo(tool);
+    const showcaseTags = getShowcaseTags(tool);
+    const isLead = index === 0;
+    const rating = tool.rating ? Number(tool.rating).toFixed(1) : null;
+    const domain = getToolDomain(tool);
+
+    return `
+      <article class="hero-feature-card${isLead ? " hero-feature-card--lead" : ""}">
+        <div class="hero-feature-topline">
+          <span class="category-tag">${escapeHtml(getHomepageCategoryLabel(getHomepageCategory(tool)))}</span>
+          ${rating ? `<span class="hero-feature-rating">★ ${escapeHtml(rating)}</span>` : ""}
+        </div>
+        <div class="hero-feature-header">
+          <div class="tool-logo-shell">
+            ${renderToolLogo(tool)}
+          </div>
+          <div class="tool-name-block">
+            <h3 class="hero-feature-title"><a href="${escapeHtml(detailUrl)}">${escapeHtml(tool.name)}</a></h3>
+            <p class="hero-feature-domain">${escapeHtml(domain || getHomepageCategoryLabel(getHomepageCategory(tool)))}</p>
+          </div>
+        </div>
+        <p class="hero-feature-copy">${escapeHtml(getLocalizedToolDescription(tool))}</p>
+        <div class="hero-feature-tags">
+          ${showcaseTags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join("")}
+        </div>
+        <div class="hero-feature-footer">
+          <strong>${escapeHtml(priceInfo.bdtLabel)}</strong>
+          <a href="${escapeHtml(detailUrl)}">${escapeHtml(t("btn_view_tool"))}</a>
+        </div>
+      </article>
+    `;
+  }
+
+  function renderHeroFeatured() {
+    if (!refs.heroFeatured) {
+      return;
+    }
+
+    refs.heroFeatured.innerHTML = getHeroFeaturedTools().map((tool, index) => renderHeroFeatureCard(tool, index)).join("");
+    attachToolLogoHandlers(refs.heroFeatured);
+  }
+
+  function renderHeroProofStrip() {
+    if (!refs.heroProofStrip) {
+      return;
+    }
+
+    refs.heroProofStrip.innerHTML = getRankedTools().slice(0, 8).map((tool) => {
+      const detailUrl = getToolPagePath(toSlug(tool.name));
+      return `<a class="hero-proof-pill" href="${escapeHtml(detailUrl)}">${escapeHtml(tool.name)}</a>`;
+    }).join("");
+  }
+
+  function renderCategorySpotlight() {
+    if (!refs.categorySpotlightGrid) {
+      return;
+    }
+
+    refs.categorySpotlightGrid.innerHTML = HOMEPAGE_SPOTLIGHT_CATEGORIES.map((category) => {
+      const count = getCategoryCount(category);
+      const exampleTools = getTopCategoryTools(category, 3);
+
+      return `
+        <button type="button" class="category-spotlight-card" data-jump-category="${escapeHtml(category)}">
+          <div class="category-spotlight-header">
+            <span class="category-tag">${escapeHtml(getHomepageCategoryLabel(category))}</span>
+            <strong>${localizedNum(count)} ${escapeHtml(t("category_card_count"))}</strong>
+          </div>
+          <h3>${escapeHtml(getHomepageCategoryLabel(category))}</h3>
+          <p>${escapeHtml(getCategoryDescription(category))}</p>
+          <div class="category-spotlight-tools">
+            ${exampleTools.map((tool) => `<span>${escapeHtml(tool.name)}</span>`).join("")}
+          </div>
+          <span class="category-spotlight-cta">${escapeHtml(t("category_card_cta"))}</span>
+        </button>
+      `;
+    }).join("");
+  }
+
   function renderToolCard(tool) {
     const detailUrl = getToolPagePath(toSlug(tool.name));
     const directUrl = tool.direct_url || tool.affiliate_url || "#";
@@ -1074,6 +1257,7 @@
     const homepageCategory = getHomepageCategory(tool);
     const priceInfo = getPriceInfo(tool);
     const rating = tool.rating ? Number(tool.rating).toFixed(1) : null;
+    const domain = getToolDomain(tool);
 
     const tags = [];
     if (tool.pricing === "free" || isFullyFree(tool)) {
@@ -1090,6 +1274,10 @@
 
     return `
       <article class="tool-card" itemscope itemtype="https://schema.org/SoftwareApplication" data-category="${escapeHtml(homepageCategory || "other")}" data-pricing="${escapeHtml(tool.pricing || "unknown")}">
+        <div class="tool-card-topline">
+          <span class="category-tag">${escapeHtml(getHomepageCategoryLabel(homepageCategory) || (state.language === "en" ? "Other" : "অন্যান্য"))}</span>
+          ${rating ? `<span class="tool-rating-chip">★ ${escapeHtml(rating)}</span>` : ""}
+        </div>
         <div class="tool-header tool-header-modern">
           <div class="tool-title-wrap tool-title-wrap-modern">
             <div class="tool-logo-shell">
@@ -1097,7 +1285,7 @@
             </div>
             <div class="tool-name-block">
               <h3 class="tool-title" itemprop="name"><a href="${escapeHtml(detailUrl)}">${toolName}</a></h3>
-              <p class="tool-subtitle">${escapeHtml(getHomepageCategoryLabel(homepageCategory) || (state.language === "en" ? "Other" : "অন্যান্য"))}</p>
+              <p class="tool-subtitle">${escapeHtml(domain || getHomepageCategoryLabel(homepageCategory) || (state.language === "en" ? "Other" : "অন্যান্য"))}</p>
             </div>
           </div>
         </div>
@@ -1107,9 +1295,21 @@
 
         <p class="tool-desc" itemprop="description">${escapeHtml(getLocalizedToolDescription(tool))}</p>
 
-        <div class="badges">${tags.map((tag) => `<span class="badge badge--accent">${escapeHtml(tag)}</span>`).join("")}${rating ? `<span class="badge badge--neutral">⭐ ${rating}</span>` : ""}</div>
+        <div class="tool-insight-grid">
+          <div class="tool-insight-card">
+            <span>${escapeHtml(t("tool_meta_price"))}</span>
+            <strong>${escapeHtml(priceInfo.bdtLabel)}</strong>
+          </div>
+          <div class="tool-insight-card">
+            <span>${escapeHtml(t("tool_meta_access"))}</span>
+            <strong>${escapeHtml(tool.no_vpn ? t("tool_access_ready") : t("tool_access_vpn"))}</strong>
+          </div>
+        </div>
+
+        <div class="badges">${tags.map((tag) => `<span class="badge badge--accent">${escapeHtml(tag)}</span>`).join("")}</div>
 
         <div class="tool-card-footer">
+          <a class="btn btn-ghost" href="${escapeHtml(detailUrl)}">${escapeHtml(t("btn_view_tool"))}</a>
           <a class="btn btn-primary" href="${escapeHtml(directUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(t("btn_visit_tool"))}</a>
         </div>
       </article>
@@ -1167,7 +1367,26 @@
   }
 
   function renderStats() {
-    return;
+    if (!refs.heroStats) {
+      return;
+    }
+
+    const totalTools = data.length;
+    const freeTools = data.filter((tool) => isFullyFree(tool)).length;
+    const categoryCount = new Set(data.map((tool) => getHomepageCategory(tool))).size;
+    const noVpnCount = data.filter((tool) => tool.no_vpn).length;
+
+    refs.heroStats.innerHTML = [
+      { value: localizedNum(totalTools), label: t("hero_stat_tools") },
+      { value: localizedNum(freeTools), label: t("hero_stat_free") },
+      { value: localizedNum(categoryCount), label: t("hero_stat_categories") },
+      { value: localizedNum(noVpnCount), label: t("hero_stat_bd") },
+    ].map((item) => `
+      <article class="hero-stat-card">
+        <strong>${escapeHtml(item.value)}</strong>
+        <span>${escapeHtml(item.label)}</span>
+      </article>
+    `).join("");
   }
 
   function renderCategoryCounts(baseTools) {
@@ -1267,6 +1486,11 @@
     applyStaticTranslations();
     syncLanguageUi();
     syncShowcaseUi();
+    renderStats();
+    renderHeroFeatured();
+    renderHeroProofStrip();
+    renderCategorySpotlight();
+    renderTrendingSection();
 
     if (refs.searchInput) {
       refs.searchInput.addEventListener("input", (event) => {
@@ -1357,6 +1581,14 @@
       if (showcaseButton) {
         event.preventDefault();
         setShowcaseMode(showcaseButton.getAttribute("data-showcase-mode"));
+        return;
+      }
+
+      const categorySpotlightButton = event.target.closest("[data-jump-category]");
+      if (categorySpotlightButton) {
+        event.preventDefault();
+        setCategory(categorySpotlightButton.getAttribute("data-jump-category"));
+        document.getElementById("toolsSection")?.scrollIntoView({ behavior: "smooth", block: "start" });
         return;
       }
 
@@ -1468,8 +1700,6 @@
   }
 
   bindEvents();
-  renderStats();
-  renderTrendingSection();
   render();
   showCookieBanner();
   showAffiliateDisclaimer();

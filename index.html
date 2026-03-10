@@ -32,7 +32,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Syne:wght@500;700;800&display=swap" />
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Syne:wght@500;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css?v=2026-03-10-1" />
   <script src="js/mailchimp.js" defer></script>
   <script type="application/ld+json">
     {
@@ -131,7 +131,7 @@
     }
   </script>
   <script src="js/tools-data.js?v=2026-03-08" defer></script>
-  <script src="js/main.js?v=2026-03-08" defer></script>
+  <script src="js/main.js?v=2026-03-10-1" defer></script>
   <script src="js/consent.js" defer></script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-DMM6V53DKC"></script>
@@ -204,66 +204,70 @@
                 <li data-i18n="hero_benefit_2" data-i18n-html="true"><strong>সেভ:</strong> ফ্রি, ফ্রিমিয়াম, আর বাংলাদেশ-ফ্রেন্ডলি অপশন আলাদা করে দেখুন</li>
                 <li data-i18n="hero_benefit_3" data-i18n-html="true"><strong>শুরু করুন:</strong> রাইটিং, ইমেজ, কোডিং, আর প্রোডাক্টিভিটি টুল এক জায়গায়</li>
               </ul>
+              <div class="hero-search-card">
+                <label class="sr-only" for="searchInput">টুল খুঁজুন</label>
+                <div class="discover-search discover-search--hero">
+                  <input id="searchInput" class="search-input search-input--discover" type="search" placeholder="টুল খুঁজুন… যেমন: ChatGPT, ভিডিও, কোডিং" data-i18n-placeholder="hero_search_placeholder" />
+                  <a href="#toolsSection" class="discover-search-cta" data-i18n="hero_search_cta">খুঁজুন</a>
+                </div>
+                <p class="hero-search-note" data-i18n="hero_search_note">একই জায়গা থেকে সার্চ, ক্যাটাগরি, দাম, আর বাংলাদেশ-ফ্রেন্ডলি ফিল্টার ব্যবহার করুন।</p>
+              </div>
               <div class="hero-action-row">
                 <a href="#toolsSection" class="btn hero-primary-cta" data-i18n="hero_browse_cta">টুলস ব্রাউজ করুন</a>
+                <a href="#categorySpotlight" class="btn btn-ghost hero-secondary-cta" data-i18n="hero_secondary_cta">ক্যাটাগরি দেখুন</a>
               </div>
+              <div class="hero-stats" id="heroStats" aria-live="polite"></div>
             </div>
 
-            <div class="hero-visual" aria-hidden="true">
-              <div class="hero-showcase">
-                <article class="hero-preview-card hero-preview-card--primary">
-                  <div class="hero-preview-top">
-                    <div class="hero-preview-brand">
-                      <span class="hero-preview-logo">C</span>
-                      <div>
-                        <strong>ChatGPT</strong>
-                        <span data-i18n="hero_preview_1_meta">বাংলা লেখা + আইডিয়া</span>
-                      </div>
-                    </div>
-                    <span class="hero-preview-price" data-i18n="hero_preview_price_free">ফ্রি</span>
-                  </div>
-                  <p class="hero-preview-desc" data-i18n="hero_preview_1_desc">বাংলা লেখা, সারাংশ, ইমেইল, আর দৈনন্দিন প্রশ্নের জন্য সবচেয়ে জনপ্রিয় AI সহকারী।</p>
-                  <div class="hero-preview-tags">
-                    <span>#writing</span>
-                    <span>#research</span>
-                  </div>
-                  <a class="hero-preview-link" href="/chatgpt/" data-i18n="hero_preview_cta">টুল দেখুন</a>
-                </article>
-
-                <article class="hero-preview-card hero-preview-card--secondary">
-                  <div class="hero-preview-top">
-                    <div class="hero-preview-brand">
-                      <span class="hero-preview-logo hero-preview-logo--dark">R</span>
-                      <div>
-                        <strong>Cursor</strong>
-                        <span data-i18n="hero_preview_2_meta">কোডিং + প্রোডাক্টিভিটি</span>
-                      </div>
-                    </div>
-                    <span class="hero-preview-price" data-i18n="hero_preview_price_freemium">ফ্রিমিয়াম</span>
-                  </div>
-                  <p class="hero-preview-desc" data-i18n="hero_preview_2_desc">ডেভেলপারদের জন্য AI pair programmer, দ্রুত debug, edit, আর ship করার জন্য দারুণ।</p>
-                  <div class="hero-preview-tags">
-                    <span>#coding</span>
-                    <span>#developer</span>
-                  </div>
-                  <a class="hero-preview-link" href="/cursor/" data-i18n="hero_preview_cta">টুল দেখুন</a>
-                </article>
-
-                <button class="hero-showcase-arrow" type="button" tabindex="-1" aria-hidden="true">
-                  <span>→</span>
-                </button>
+            <div class="hero-curation">
+              <div class="hero-curation-header">
+                <p class="section-kicker" data-i18n="hero_curated_kicker">আজকের হাইলাইট</p>
+                <h2 data-i18n="hero_curated_title">সবচেয়ে দরকারি AI টুলস এক নজরে</h2>
+                <p class="hero-curation-copy" data-i18n="hero_curated_copy">Futurepedia-এর editorial discovery vibe ধরে, কিন্তু বাংলাদেশি ব্যবহারকারীর দরকার মাথায় রেখে কিউরেটেড পিকস দেখুন।</p>
               </div>
+              <div class="hero-feature-grid" id="heroFeatured" aria-live="polite"></div>
             </div>
+          </div>
+          <div class="hero-proof">
+            <p class="hero-proof-label" data-i18n="hero_proof_label">সবচেয়ে বেশি দেখা টুলস</p>
+            <div class="hero-proof-strip" id="heroProofStrip" aria-live="polite"></div>
           </div>
         </section>
       </div>
     </section>
 
-    <section class="container discover-shell">
-      <div class="discover-search">
-        <label class="sr-only" for="searchInput">টুল খুঁজুন</label>
-        <input id="searchInput" class="search-input search-input--discover" type="search" placeholder="টুল খুঁজুন… যেমন: ChatGPT, ভিডিও, কোডিং" data-i18n-placeholder="hero_search_placeholder" />
-        <a href="#toolsSection" class="discover-search-cta" data-i18n="hero_search_cta">খুঁজুন</a>
+    <section class="container editorial-section" id="categorySpotlight">
+      <div class="editorial-layout">
+        <div class="editorial-main">
+          <div class="section-heading section-heading--stack">
+            <div>
+              <p class="section-kicker" data-i18n="category_spotlight_kicker">ডিরেক্টরি এক্সপ্লোর</p>
+              <h2 data-i18n="category_spotlight_title">ক্যাটাগরি দিয়ে AI টুল খুঁজুন</h2>
+            </div>
+            <p class="section-copy" data-i18n="category_spotlight_copy">Futurepedia-এর মতো browse-first অনুভূতি রেখে আমরা সবচেয়ে দরকারি use-case গুলোকে পরিষ্কার কার্ডে সাজিয়েছি।</p>
+          </div>
+          <div class="category-spotlight-grid" id="categorySpotlightGrid" aria-live="polite"></div>
+        </div>
+
+        <aside class="editorial-sidebar">
+          <article class="editorial-card">
+            <p class="section-kicker" data-i18n="editorial_kicker">বাংলাদেশ ফোকাস</p>
+            <h3 data-i18n="editorial_title">বাংলাদেশি ব্যবহারকারীদের জন্য shortlist করা AI discovery</h3>
+            <p data-i18n="editorial_copy">দাম, পেমেন্ট, VPN, আর practical ব্যবহারযোগ্যতা একসাথে দেখিয়ে আমরা discovery-টা দ্রুত করেছি।</p>
+            <div class="editorial-link-list">
+              <a href="/bangla-ai-guide/" data-i18n="editorial_link_1">বাংলা AI গাইড</a>
+              <a href="/free-ai-tools-2026-bangladesh/" data-i18n="editorial_link_2">ফ্রি AI tools 2026</a>
+              <a href="/bkash-diye-ai-tools-kena-jay/" data-i18n="editorial_link_3">bKash দিয়ে AI tools</a>
+              <a href="/vpn-chara-ai-tools-bangladesh/" data-i18n="editorial_link_4">VPN ছাড়া AI tools</a>
+            </div>
+          </article>
+
+          <article class="editorial-card editorial-card--accent">
+            <p class="section-kicker" data-i18n="editorial_card_kicker">কেন এই ডিরেক্টরি</p>
+            <h3 data-i18n="editorial_card_title">দাম, VPN, আর BD access একসাথে দেখুন</h3>
+            <p data-i18n="editorial_card_copy">শুধু tool list না, কোনটা বাংলাদেশে বাস্তবে চালানো সহজ সেটাও এখানে প্রথমেই বোঝা যায়।</p>
+          </article>
+        </aside>
       </div>
     </section>
 
