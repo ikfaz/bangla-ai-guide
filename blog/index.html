@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>বাংলা AI গাইড ব্লগ — AI টুলস টিউটোরিয়াল এবং গাইড</title>
+    <meta name="description" content="বাংলায় AI টুলস সম্পর্কে বিস্তারিত গাইড, টিউটোরিয়াল এবং টিপস। ChatGPT, Claude, Midjourney, এবং আরও অনেক AI টুলস নিয়ে বাংলা আর্টিকেল পড়ুন।">
+    <meta name="keywords" content="AI টুলস বাংলা গাইড, ChatGPT টিউটোরিয়াল, AI ব্লগ বাংলা, AI টুলস আর্টিকেল, বাংলা AI গাইড">
+    <meta name="author" content="বাংলা AI গাইড">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Bengali">
+    <link rel="canonical" href="https://banglaaiguide.com/blog/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://banglaaiguide.com/blog/">
+    <meta property="og:title" content="বাংলা AI গাইড ব্লগ — AI টুলস টিউটোরিয়াল এবং গাইড">
+    <meta property="og:description" content="বাংলায় AI টুলস সম্পর্কে বিস্তারিত গাইড, টিউটোরিয়াল এবং টিপস।">
+    <meta property="og:locale" content="bn_BD">
+    <meta property="og:site_name" content="বাংলা AI গাইড">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="বাংলা AI গাইড ব্লগ">
+    <meta name="twitter:description" content="বাংলায় AI টুলস সম্পর্কে বিস্তারিত গাইড এবং টিউটোরিয়াল।">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Syne:wght@500;700;800&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css?v=2026-03-12">
+    <style>
+        .blog-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .blog-header {
+            text-align: center;
+            margin-bottom: 60px;
+            animation: slideUp 0.6s ease-out;
+        }
+
+        .blog-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .blog-header p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .blog-filters {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .filter-btn {
+            padding: 8px 16px;
+            border: 2px solid #e5e7eb;
+            background: white;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            color: #333;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            border-color: #059669;
+            background: #059669;
+            color: white;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .blog-card-header {
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+            padding: 20px;
+            color: white;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .blog-card-category {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+        }
+
+        .blog-card-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #1f2937;
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .blog-card-description {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.5;
+            flex-grow: 1;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .blog-card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .blog-card-date {
+            font-size: 0.85rem;
+            color: #999;
+        }
+
+        .blog-card-link {
+            display: inline-block;
+            color: #059669;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding: 8px 12px;
+            border-radius: 6px;
+        }
+
+        .blog-card-link:hover {
+            background: #f0fdf4;
+            color: #047857;
+        }
+
+        .blog-empty {
+            text-align: center;
+            padding: 60px 20px;
+            color: #999;
+        }
+
+        .blog-empty p {
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            .blog-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .blog-filters {
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding-bottom: 10px;
+            }
+        }
+
+        /* Dark mode styles */
+        :root[data-theme="dark"] .blog-card {
+            background: #1f2937;
+        }
+
+        :root[data-theme="dark"] .blog-card-title {
+            color: #f3f4f6;
+        }
+
+        :root[data-theme="dark"] .blog-card-description {
+            color: #d1d5db;
+        }
+
+        :root[data-theme="dark"] .blog-header p {
+            color: #d1d5db;
+        }
+
+        :root[data-theme="dark"] .filter-btn {
+            background: #1f2937;
+            border-color: #374151;
+            color: #f3f4f6;
+        }
+
+        :root[data-theme="dark"] .filter-btn:hover,
+        :root[data-theme="dark"] .filter-btn.active {
+            background: #059669;
+            border-color: #059669;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar" id="top">
+        <div class="container navbar-inner">
+            <a href="/" class="logo" aria-label="বাংলা AI গাইড হোম">
+                <img class="logo-mark" src="/favicon.svg" alt="বাংলা AI গাইড লোগো" width="28" height="28" decoding="async">
+                <span class="logo-text">বাংলা AI গাইড</span>
+            </a>
+
+            <button class="hamburger" id="hamburgerBtn" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="মেনু টগল করুন">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="nav-desktop">
+                <nav class="nav-links" aria-label="প্রধান ন্যাভিগেশন">
+                    <a href="/" data-i18n="nav_home">হোম</a>
+                    <a href="/#toolsSection" data-i18n="nav_view_tools">টুলস দেখুন</a>
+                    <a href="/#categoryTabs" data-i18n="nav_categories">ক্যাটাগরি</a>
+                    <a href="/blog/" class="active" data-i18n="nav_blog">আর্টিকেলস</a>
+                    <a href="/#newsletter" data-i18n="nav_newsletter">নিউজলেটার</a>
+                </nav>
+                <div class="language-switcher" aria-label="ভাষা নির্বাচন">
+                    <button type="button" class="lang-btn active" data-language-toggle="bn">বাংলা</button>
+                    <button type="button" class="lang-btn" data-language-toggle="en">English</button>
+                </div>
+                <button class="theme-toggle" id="themeToggle" aria-label="ডার্ক মোড চালু করুন" type="button">🌙</button>
+            </div>
+        </div>
+
+        <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+            <a href="/" data-i18n="nav_home">হোম</a>
+            <a href="/#toolsSection" data-i18n="nav_view_tools">টুলস দেখুন</a>
+            <a href="/#categoryTabs" data-i18n="nav_categories">ক্যাটাগরি</a>
+            <a href="/blog/" class="active" data-i18n="nav_blog">আর্টিকেলস</a>
+            <a href="/#newsletter" data-i18n="nav_newsletter">নিউজলেটার</a>
+            <div class="language-switcher language-switcher--mobile" aria-label="ভাষা নির্বাচন">
+                <button type="button" class="lang-btn active" data-language-toggle="bn">বাংলা</button>
+                <button type="button" class="lang-btn" data-language-toggle="en">English</button>
+            </div>
+            <button class="theme-toggle" id="themeToggle" aria-label="ডার্ক মোড চালু করুন" type="button">🌙</button>
+        </div>
+    </header>
+
+    <main class="blog-container">
+        <div class="blog-header">
+            <h1>বাংলা AI গাইড ব্লগ</h1>
+            <p>AI টুলস সম্পর্কে বিস্তারিত গাইড, টিউটোরিয়াল এবং টিপস। ChatGPT থেকে শুরু করে Midjourney, Claude, এবং আরও অনেক টুলস নিয়ে বাংলায় শিখুন।</p>
+        </div>
+
+        <div class="blog-grid" id="blogGrid">
+            <!-- Blog articles will be populated here -->
+        </div>
+
+        <div class="blog-empty" id="blogEmpty" style="display: none;">
+            <p>কোনো আর্টিকেল পাওয়া যায়নি।</p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>বাংলা AI গাইড</h4>
+                    <p>বাংলাদেশের জন্য AI টুলস ডিরেক্টরি। কোন টুল BD থেকে কাজ করে, BDT প্রাইস, bKash পেমেন্ট — সব বাংলায়।</p>
+                </div>
+                <div class="footer-section">
+                    <h4>দ্রুত লিংক</h4>
+                    <nav class="footer-links" aria-label="ফুটার লিংক">
+                        <a href="/" data-i18n="footer_home">হোম</a>
+                        <a href="/#toolsSection" data-i18n="footer_tools">টুলস</a>
+                        <a href="/blog/" data-i18n="footer_blog">ব্লগ</a>
+                        <a href="/contact.html" data-i18n="footer_contact">যোগাযোগ</a>
+                    </nav>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; ২০২৬ বাংলা AI গাইড। সর্বাধিকার সংরক্ষিত।</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Blog articles data
+        const blogArticles = [
+            {
+                title: "AI দিয়ে ব্লগ লেখা — SEO ফ্রেন্ডলি আর্টিকেল: একটি সম্পূর্ণ গাইড",
+                description: "এআই টুলস ব্যবহার করে কিভাবে বাংলা ভাষায় এসইও ফ্রেন্ডলি ব্লগ আর্টিকেল লিখবেন?",
+                url: "ai-diye-blog-lekha-seo-friendly-article-ekti-sompurno-guide.html",
+                date: "২০২৬-০৩-১১",
+                category: "গাইড"
+            },
+            {
+                title: "AI দিয়ে ফ্রিল্যান্সিং — কিভাবে আয় করবেন: সম্পূর্ণ বাংলা গাইড",
+                description: "AI ব্যবহার করে ফ্রিল্যান্সিং থেকে আয় করার প্রমাণিত উপায় এবং প্রয়োজনীয় টুলস।",
+                url: "ai-diye-freelancing-kivabe-ay-korben-sompurno-bangla-guide.html",
+                date: "২০২৬-০৩-১১",
+                category: "ফ্রিল্যান্সিং"
+            },
+            {
+                title: "AI দিয়ে YouTube ভিডিও তৈরি — সম্পূর্ণ গাইড",
+                description: "AI প্রযুক্তি ব্যবহার করে কিভাবে YouTube ভিডিও তৈরি করবেন তার সম্পূর্ণ বাংলা গাইড।",
+                url: "ai-diye-youtube-video-toiri-sompurno-guide.html",
+                date: "২০२६-०३-११",
+                category: "ভিডিও"
+            },
+            {
+                title: "ফ্রিল্যান্সারদের আয় বাড়াতে সেরা ৫টি AI টুলস ২०२६",
+                description: "২०२६ সালে ফ্রিল্যান্সিংয়ে আয় বাড়াতে এবং কাজ দ্রুত করতে সেরা AI টুলস।",
+                url: "ai-tools-for-freelancers-income-bangladesh.html",
+                date: "२०२६-०३-११",
+                category: "টুলস"
+            },
+            {
+                title: "গ্রাফিক ডিজাইনের জন্য সেরা এআই টুলস",
+                description: "বাংলাদেশের গ্রাফিক ডিজাইনারদের জন্য সেরা এআই টুলসগুলি আবিষ্কার করুন।",
+                url: "ai-tools-for-graphic-design-bangladesh.html",
+                date: "२०२६-०३-११",
+                category: "ডিজাইন"
+            },
+            {
+                title: "AI ভিডিও এডিটিং টুলস ২०२६",
+                description: "২०२६ সালের সেরা AI ভিডিও এডিটিং টুলস এবং তাদের ব্যবহার।",
+                url: "ai-video-editing-tools-2026.html",
+                date: "२०२६-०३-११",
+                category: "ভিডিও"
+            },
+            {
+                title: "বাংলাদেশে সেরা ফ্রি AI টুলস २०२६",
+                description: "বাংলাদেশ থেকে সম্পূর্ণ বিনামূল্যে ব্যবহার করা যায় এমন AI টুলস।",
+                url: "baanlaadeshe-seraa-phri-ai-ttuls-2026.html",
+                date: "२०२६-०३-११",
+                category: "ফ্রি টুলস"
+            },
+            {
+                title: "স্টুডেন্টদের জন্য সেরা AI টুলস",
+                description: "পড়াশোনা এবং প্রজেক্টে সাহায্য করার জন্য সেরা AI টুলস।",
+                url: "best-ai-tools-for-students-bangladesh.html",
+                date: "२०२६-०३-११",
+                category: "শিক্ষা"
+            },
+            {
+                title: "ChatGPT কিভাবে ব্যবহার করবেন — সম্পূর্ণ বাংলা গাইড",
+                description: "ChatGPT এর সম্পূর্ণ বাংলা টিউটোরিয়াল এবং ব্যবহারের টিপস।",
+                url: "chatgpt-kivabe-bebohar-korben-bangla-guide.html",
+                date: "२०२६-०३-११",
+                category: "টিউটোরিয়াল"
+            },
+            {
+                title: "Claude vs ChatGPT — বাংলাদেশে কোনটি ভালো",
+                description: "Claude এবং ChatGPT এর মধ্যে পার্থক্য এবং কোনটি ব্যবহার করবেন।",
+                url: "claude-vs-chatgpt---বাংলাদেশে-কোনটি-ভালো.html",
+                date: "२०२६-०३-११",
+                category: "তুলনা"
+            },
+            {
+                title: "Cursor AI বাংলা টিউটোরিয়াল",
+                description: "কোডিং এ বিপ্লব আনতে Cursor AI কিভাবে ব্যবহার করবেন।",
+                url: "cursor-ai-bangla-tutorial-codingye-biplob-anun.html",
+                date: "२०२६-०३-११",
+                category: "কোডিং"
+            },
+            {
+                title: "Midjourney বাংলাদেশ থেকে কিভাবে ব্যবহার করবেন",
+                description: "Midjourney দিয়ে AI ইমেজ জেনারেট করার সম্পূর্ণ গাইড।",
+                url: "midjourney-bangladesh-theke-kivabe-bebohar-korben-sompurno-guide.html",
+                date: "२०२६-०३-११",
+                category: "ইমেজ"
+            },
+            {
+                title: "সেরা AI কোডিং টুলস — বিগিনারদের জন্য",
+                description: "প্রোগ্রামিং শেখার জন্য সেরা AI টুলস এবং তাদের ব্যবহার।",
+                url: "sera-ai-coding-tools-biginarder-jonno.html",
+                date: "२०२६-०३-११",
+                category: "কোডিং"
+            },
+            {
+                title: "ফ্রি AI ইমেজ জেনারেটর — বাংলাদেশ থেকে ব্যবহার",
+                description: "বিনামূল্যে AI দিয়ে ইমেজ জেনারেট করার সেরা টুলস।",
+                url: "free-ai-image-generator-bangladesh-theke-bebohar-sompurno-guide.html",
+                date: "२०२६-०३-११",
+                category: "ইমেজ"
+            },
+            {
+                title: "AI দিয়ে ইনকাম করার १०টি উপায়",
+                description: "AI ব্যবহার করে অনলাইনে আয় করার বিভিন্ন উপায়।",
+                url: "ai-दिय-इनकम-करर-१०टि-उपय-समपरण-बनगल-गइड.html",
+                date: "२०२६-०३-११",
+                category: "আয়"
+            },
+            {
+                title: "AI টুলস প্রাইসিং গাইড — BDT তে কত খরচ",
+                description: "জনপ্রিয় AI টুলসের বাংলাদেশী টাকায় মূল্য এবং প্ল্যান।",
+                url: "ai-tools-pricing-guide-bdt-te-koto-khoroch.html",
+                date: "२०२६-०३-११",
+                category: "মূল্য"
+            },
+            {
+                title: "ChatGPT এর বিকল্প — ফ্রি AI চ্যাটবট",
+                description: "ChatGPT ছাড়া অন্য ফ্রি এবং পেইড AI চ্যাটবট অপশন।",
+                url: "chatgpt-er-bikalpo-free-ai-chatbot-bangladesher-byaboharokareder-jonno-sera-pochondo.html",
+                date: "२०२६-०३-११",
+                category: "বিকল্প"
+            },
+            {
+                title: "Canva AI দিয়ে ডিজাইন — বাংলা গাইড",
+                description: "Canva এর AI ফিচার ব্যবহার করে সুন্দর ডিজাইন তৈরি করুন।",
+                url: "canva-ai-diye-design-bangla-guide.html",
+                date: "२०२६-०३-११",
+                category: "ডিজাইন"
+            },
+            {
+                title: "ফ্রিল্যান্সারদের জন্য AI অটোমেশন",
+                description: "ফ্রিল্যান্সিং কাজ স্বয়ংক্রিয় করার জন্য AI টুলস।",
+                url: "freelancer-ai-automation.html",
+                date: "२०२६-०३-११",
+                category: "অটোমেশন"
+            },
+            {
+                title: "বাংলাদেশে VPN ছাড়া AI টুলস",
+                description: "VPN ছাড়াই বাংলাদেশ থেকে ব্যবহার করা যায় এমন AI টুলস।",
+                url: "vpn-ai.html",
+                date: "२०२६-०३-११",
+                category: "VPN"
+            }
+        ];
+
+        // Render blog articles
+        function renderBlogArticles() {
+            const blogGrid = document.getElementById('blogGrid');
+            const blogEmpty = document.getElementById('blogEmpty');
+
+            if (blogArticles.length === 0) {
+                blogEmpty.style.display = 'block';
+                blogGrid.innerHTML = '';
+                return;
+            }
+
+            blogGrid.innerHTML = blogArticles.map(article => `
+                <article class="blog-card">
+                    <div class="blog-card-header">
+                        <div>
+                            <div class="blog-card-category">${article.category}</div>
+                            <h2 style="font-size: 0; margin: 0;"></h2>
+                        </div>
+                    </div>
+                    <div class="blog-card-content">
+                        <h3 class="blog-card-title">${article.title}</h3>
+                        <p class="blog-card-description">${article.description}</p>
+                        <div class="blog-card-footer">
+                            <span class="blog-card-date">${article.date}</span>
+                            <a href="${article.url}" class="blog-card-link">পড়ুন →</a>
+                        </div>
+                    </div>
+                </article>
+            `).join('');
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', renderBlogArticles);
+
+        // Mobile menu toggle
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        if (hamburgerBtn) {
+            hamburgerBtn.addEventListener('click', function() {
+                const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                this.setAttribute('aria-expanded', !isExpanded);
+                mobileMenu.setAttribute('aria-hidden', isExpanded);
+                mobileMenu.style.display = isExpanded ? 'none' : 'block';
+            });
+        }
+
+        // Close mobile menu when a link is clicked
+        const mobileLinks = mobileMenu?.querySelectorAll('a');
+        mobileLinks?.forEach(link => {
+            link.addEventListener('click', function() {
+                hamburgerBtn.setAttribute('aria-expanded', 'false');
+                mobileMenu.setAttribute('aria-hidden', 'true');
+                mobileMenu.style.display = 'none';
+            });
+        });
+    </script>
+</body>
+</html>
