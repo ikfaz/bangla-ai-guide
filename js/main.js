@@ -50,6 +50,7 @@
     bn: {
       nav_view_tools: "টুলস দেখুন",
       nav_categories: "ক্যাটাগরি",
+      nav_blog: "ব্লগ",
       nav_newsletter: "নিউজলেটার",
       nav_submit_tool: "টুল সাবমিট করুন",
       affiliate_disclaimer: "⚠️ এই সাইটে কিছু লিংক affiliate — আপনার কোনো অতিরিক্ত খরচ ছাড়াই আমরা কমিশন পেতে পারি।",
@@ -227,6 +228,7 @@
     en: {
       nav_view_tools: "Browse Tools",
       nav_categories: "Categories",
+      nav_blog: "Blog",
       nav_newsletter: "Newsletter",
       nav_submit_tool: "Submit Tool",
       affiliate_disclaimer: "⚠️ Some links on this site are affiliate links. We may earn a commission at no extra cost to you.",
