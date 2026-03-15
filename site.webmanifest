@@ -1,6 +1,9 @@
 {
-  "name": "MyWebSite",
-  "short_name": "MySite",
+  "name": "BanglaAIGuide - বাংলা AI গাইড",
+  "short_name": "BanglaAIGuide",
+  "description": "বাংলাদেশের #১ ভেরিফাইড AI টুলস ডিরেক্টরি এবং গাইড",
+  "start_url": "/",
+  "scope": "/",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
@@ -15,7 +18,9 @@
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
-  "display": "standalone"
+  "theme_color": "#16a34a",
+  "background_color": "#0a0f1e",
+  "display": "standalone",
+  "lang": "bn",
+  "dir": "ltr"
 }

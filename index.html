@@ -7,7 +7,7 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="shortcut icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <meta name="apple-mobile-web-app-title" content="MyWebSite" />
+  <meta name="apple-mobile-web-app-title" content="BanglaAIGuide" />
   <link rel="manifest" href="/site.webmanifest" />
   <meta name="theme-color" content="#059669" />
 <title>বাংলা AI গাইড — বাংলাদেশের সেরা AI টুলস ডিরেক্টরি ২০২৬</title>
@@ -30,6 +30,8 @@
   <meta name="twitter:image" content="https://banglaaiguide.com/og-image.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://logo.clearbit.com" />
+  <link rel="preconnect" href="https://www.googletagmanager.com" />
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Syne:wght@500;700;800&display=swap" />
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Syne:wght@500;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css?v=2026-03-10-1" />
@@ -130,6 +132,14 @@
       ]
     }
   </script>
+  <style>
+    /* CLS prevention: min-height for JS-populated containers */
+    #heroFeatured { min-height: 280px; }
+    #heroStats { min-height: 100px; }
+    #toolsGrid { min-height: 400px; }
+    #trendingGrid { min-height: 300px; }
+    #categorySpotlightGrid { min-height: 200px; }
+  </style>
   <script src="js/tools-data.js?v=2026-03-08" defer></script>
   <script src="js/main.js?v=2026-03-10-1" defer></script>
   <script src="js/consent.js" defer></script>
@@ -244,7 +254,7 @@
         <div class="feature-cards-grid">
           <a href="/bkash-diye-ai-tools-kena-jay/" class="feature-card">
             <div class="feature-card-icon">
-              <img src="https://logo.clearbit.com/bkash.com" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="bKash" /><span style="display:none;font-size:28px">💳</span>
+              <img src="https://logo.clearbit.com/bkash.com" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="bKash" width="48" height="48" loading="lazy" /><span style="display:none;font-size:28px">💳</span>
             </div>
             <h3>বিকেএস/নগদ সাপোর্টেড টুইস</h3>
           </a>
@@ -346,9 +356,9 @@
           <div class="review-card-panel">
             <h3>টুল রিভিউ কার্ড</h3>
             <div class="review-card-header">
-              <img src="https://logo.clearbit.com/openai.com" onerror="this.src='https://www.google.com/s2/favicons?domain=openai.com&sz=64'" width="32" height="32" alt="ChatGPT" style="border-radius:8px" />
+              <img src="https://logo.clearbit.com/openai.com" onerror="this.src='https://www.google.com/s2/favicons?domain=openai.com&sz=64'" width="32" height="32" alt="ChatGPT" loading="lazy" style="border-radius:8px" />
               <span class="review-vs-badge">VS</span>
-              <img src="https://logo.clearbit.com/anthropic.com" onerror="this.src='https://www.google.com/s2/favicons?domain=anthropic.com&sz=64'" width="32" height="32" alt="Claude" style="border-radius:8px" />
+              <img src="https://logo.clearbit.com/anthropic.com" onerror="this.src='https://www.google.com/s2/favicons?domain=anthropic.com&sz=64'" width="32" height="32" alt="Claude" loading="lazy" style="border-radius:8px" />
               <span class="review-tool-name">ChatGPT Plus vs. Claude Pro — BDT Cost</span>
             </div>
             <div class="review-metrics">
@@ -651,7 +661,7 @@
       <div class="footer-dark-grid">
         <div class="footer-dark-brand">
           <a href="/" class="footer-dark-brand-logo">
-            <img src="/favicon.svg" alt="বাংলা AI গাইড" width="24" height="24" decoding="async" />
+            <img src="/favicon.svg" alt="বাংলা AI গাইড" width="24" height="24" decoding="async" loading="lazy" />
             <span>বাংলা AI গাইড</span>
           </a>
           <p class="footer-dark-brand-desc">বাংলাদেশের জন্য AI টুলস ডিরেক্টরি — বাংলায় রিভিউ, BDT প্রাইস, আর BD-ফ্রেন্ডলি ফিল্টার।</p>
