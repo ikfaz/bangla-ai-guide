@@ -315,12 +315,27 @@
             <p>AI টুলস সম্পর্কে বিস্তারিত গাইড, টিউটোরিয়াল এবং টিপস। ChatGPT থেকে শুরু করে Midjourney, Claude, এবং আরও অনেক টুলস নিয়ে বাংলায় শিখুন।</p>
         </div>
 
+        <!-- Search bar -->
+        <div style="max-width: 480px; margin: 0 auto 28px;">
+            <label for="blogSearch" class="sr-only">আর্টিকেল খুঁজুন</label>
+            <input type="search" id="blogSearch" placeholder="🔍 আর্টিকেল খুঁজুন…"
+                aria-label="আর্টিকেল খুঁজুন"
+                style="width: 100%; padding: 12px 18px; border: 2px solid #e5e7eb; border-radius: 24px;
+                       font-size: 1rem; font-family: inherit; outline: none; box-sizing: border-box;"
+                onfocus="this.style.borderColor='#059669'"
+                onblur="this.style.borderColor='#e5e7eb'">
+        </div>
+
+        <!-- Category filters (populated by JS) -->
+        <div class="blog-filters" id="blogFilters" role="group" aria-label="ক্যাটাগরি ফিল্টার"></div>
+
         <div class="blog-grid" id="blogGrid">
             <!-- Blog articles will be populated here -->
         </div>
 
-        <div class="blog-empty" id="blogEmpty" style="display: none;">
-            <p>কোনো আর্টিকেল পাওয়া যায়নি।</p>
+        <div class="blog-empty" id="blogEmpty" style="display: none; text-align: center; padding: 60px 20px; color: #6b7280;">
+            <p style="font-size: 1.1rem;">কোনো আর্টিকেল পাওয়া যায়নি।</p>
+            <button onclick="resetFilters()" style="margin-top: 12px; padding: 8px 20px; background: #059669; color: white; border: none; border-radius: 20px; cursor: pointer; font-family: inherit;">সব দেখুন</button>
         </div>
     </main>
 
@@ -545,7 +560,7 @@
                 url: "vpn-ai/",
                 date: "২০২৬-০৩-১১",
                 category: "VPN"
-            }
+            },
             {
                 title: "বিকাশ দিয়ে AI টুলস কেনার সম্পূর্ণ গাইড",
                 description: "বিকাশ ব্যবহার করে কিভাবে AI টুলস কিনবেন — ভার্চুয়াল কার্ড ও পেমেন্ট প্রক্রিয়া।",
@@ -555,18 +570,51 @@
             }
         ];
 
-        // Render blog articles
+        // --- Filter & Search state ---
+        let activeCategory = 'সব';
+        let searchQuery = '';
+
+        // Build category filter buttons from article data
+        function buildFilters() {
+            const filtersEl = document.getElementById('blogFilters');
+            const categories = ['সব', ...new Set(blogArticles.map(a => a.category))];
+            filtersEl.innerHTML = categories.map(cat => `
+                <button class="filter-btn${cat === activeCategory ? ' active' : ''}"
+                    data-cat="${cat}" type="button" aria-pressed="${cat === activeCategory}">
+                    ${cat}
+                </button>
+            `).join('');
+            filtersEl.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    activeCategory = btn.dataset.cat;
+                    filtersEl.querySelectorAll('.filter-btn').forEach(b => {
+                        b.classList.toggle('active', b.dataset.cat === activeCategory);
+                        b.setAttribute('aria-pressed', b.dataset.cat === activeCategory);
+                    });
+                    renderBlogArticles();
+                });
+            });
+        }
+
         function renderBlogArticles() {
             const blogGrid = document.getElementById('blogGrid');
             const blogEmpty = document.getElementById('blogEmpty');
 
-            if (blogArticles.length === 0) {
+            const q = searchQuery.trim().toLowerCase();
+            const filtered = blogArticles.filter(a => {
+                const matchCat = activeCategory === 'সব' || a.category === activeCategory;
+                const matchQ = !q || a.title.toLowerCase().includes(q) || a.description.toLowerCase().includes(q);
+                return matchCat && matchQ;
+            });
+
+            if (filtered.length === 0) {
                 blogEmpty.style.display = 'block';
                 blogGrid.innerHTML = '';
                 return;
             }
+            blogEmpty.style.display = 'none';
 
-            blogGrid.innerHTML = blogArticles.map(article => `
+            blogGrid.innerHTML = filtered.map(article => `
                 <article class="blog-card">
                     <div class="blog-card-header">
                         <div>
@@ -586,8 +634,29 @@
             `).join('');
         }
 
+        function resetFilters() {
+            activeCategory = 'সব';
+            searchQuery = '';
+            document.getElementById('blogSearch').value = '';
+            buildFilters();
+            renderBlogArticles();
+        }
+
         // Initialize on page load
-        document.addEventListener('DOMContentLoaded', renderBlogArticles);
+        document.addEventListener('DOMContentLoaded', () => {
+            buildFilters();
+            renderBlogArticles();
+
+            // Search input handler (debounced)
+            let searchTimer;
+            document.getElementById('blogSearch').addEventListener('input', e => {
+                clearTimeout(searchTimer);
+                searchTimer = setTimeout(() => {
+                    searchQuery = e.target.value;
+                    renderBlogArticles();
+                }, 250);
+            });
+        });
 
         // Mobile menu toggle
         const hamburgerBtn = document.getElementById('hamburgerBtn');
