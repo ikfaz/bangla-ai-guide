@@ -38,7 +38,7 @@
         <div class="cookie-actions">
           <button type="button" class="btn btn-primary" data-consent-action="accept">ঠিক আছে, মানলাম</button>
           <button type="button" class="btn btn-ghost" data-consent-action="reject">না, ধন্যবাদ</button>
-          <a href="privacy.html" class="btn btn-ghost">আরও জানুন</a>
+          <a href="/privacy/" class="btn btn-ghost">আরও জানুন</a>
         </div>
       </div>
     `;
