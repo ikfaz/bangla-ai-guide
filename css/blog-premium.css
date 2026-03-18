@@ -438,3 +438,60 @@ html {
     text-decoration: underline;
   }
 }
+
+/* ==========================================================================
+   Article Table of Contents
+   ========================================================================== */
+
+.article-toc {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-left: 4px solid #16a34a;
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin: 32px 0;
+}
+
+.toc-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #15803d;
+  margin: 0 0 12px 0;
+  padding: 0;
+  border: none;
+}
+
+.toc-list {
+  margin: 0;
+  padding-left: 20px;
+  list-style: decimal;
+}
+
+.toc-item {
+  margin: 6px 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.toc-item a {
+  color: #166534;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.toc-item a:hover,
+.toc-item a:focus {
+  color: #16a34a;
+  text-decoration: underline;
+}
+
+.toc-sub {
+  list-style: lower-alpha;
+  margin-left: 20px;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 640px) {
+  .article-toc { padding: 16px; }
+  .toc-item { font-size: 0.85rem; }
+}
