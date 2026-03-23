@@ -5557,3 +5557,94 @@ body.dark-home .container.resources-section {
   .fade-in-up { opacity: 1; transform: none; transition: none; }
   body.dark-home .hero-wrap::before { animation: none; }
 }
+
+/* ==========================================================================
+   Social Share Buttons
+   ========================================================================== */
+.share-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  margin: 16px 0;
+  border-top: 1px solid var(--line, #e5e7eb);
+  border-bottom: 1px solid var(--line, #e5e7eb);
+}
+
+.share-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-muted, #64748b);
+  white-space: nowrap;
+}
+
+.share-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--line, #e5e7eb);
+  background: var(--bg, #f9fafb);
+  color: var(--ink, #111827);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.share-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.share-fb:hover { background: #1877f2; color: white; border-color: #1877f2; }
+.share-wa:hover { background: #25d366; color: white; border-color: #25d366; }
+.share-copy:hover { background: #16a34a; color: white; border-color: #16a34a; }
+.share-x:hover { background: #000; color: white; border-color: #000; }
+
+/* Sticky mobile share bar */
+.share-bar-sticky {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .share-bar-sticky {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    justify-content: center;
+    gap: 12px;
+    padding: 10px 16px;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(8px);
+    border-top: 1px solid var(--line, #e5e7eb);
+    box-shadow: 0 -2px 12px rgba(0,0,0,0.08);
+  }
+  .share-bar-sticky .share-label { display: none; }
+  .share-bar-sticky .share-buttons { gap: 12px; }
+  .share-bar-sticky .share-btn { width: 44px; height: 44px; }
+}
+
+/* Dark theme share bar */
+body.dark-home .share-btn,
+.seo-article-page .share-btn {
+  border-color: rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.05);
+  color: #94a3b8;
+}
+
+@media (max-width: 768px) {
+  body.dark-home .share-bar-sticky {
+    background: rgba(13,21,38,0.95);
+    border-color: rgba(255,255,255,0.06);
+  }
+}
