@@ -70,86 +70,32 @@
       }
     }
   </script>
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      "name": "সেরা AI টুলস বাংলাদেশ ২০২৬",
-      "description": "বাংলাদেশের জন্য কিউরেটেড AI টুলস লিস্ট",
-      "numberOfItems": 37,
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "ChatGPT",
-          "url": "https://chat.openai.com",
-          "description": "OpenAI-এর সবচেয়ে জনপ্রিয় AI চ্যাটবট। লেখা, বিশ্লেষণ, কোড — সব কাজে দারুণ।"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Claude",
-          "url": "https://claude.ai",
-          "description": "Anthropic-এর AI — বাংলায় কথা বলে, লম্বা ডকুমেন্ট বিশ্লেষণ করে, কোড লেখে।"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Gemini",
-          "url": "https://gemini.google.com",
-          "description": "Google-এর AI মডেল। ইন্টারনেট সার্চ যুক্ত, বাংলা ভাষায় ভালো সাপোর্ট।"
-        },
-        {
-          "@type": "ListItem",
-          "position": 4,
-          "name": "Perplexity AI",
-          "url": "https://www.perplexity.ai",
-          "description": "AI দিয়ে ওয়েব সার্চ — সোর্স সহ উত্তর দেয়। রিসার্চ কাজে সেরা।"
-        },
-        {
-          "@type": "ListItem",
-          "position": 5,
-          "name": "Groq",
-          "url": "https://groq.com",
-          "description": "বিদ্যুৎ গতির LLM inference। Llama ও Mixtral মডেল চালায়। API ডেভেলপারদের জন্য।"
-        },
-        {
-          "@type": "ListItem",
-          "position": 6,
-          "name": "Mistral AI",
-          "url": "https://mistral.ai",
-          "description": "ইউরোপের সেরা ওপেনসোর্স LLM। ডেটা প্রাইভেসি ভালো, cost-effective।"
-        },
-        {
-          "@type": "ListItem",
-          "position": 7,
-          "name": "Poe",
-          "url": "https://poe.com",
-          "description": "এক জায়গায় GPT-4, Claude, Gemini সব। নিজের বট তৈরি করা যায়।"
-        },
-        {
-          "@type": "ListItem",
-          "position": 8,
-          "name": "Meta AI",
-          "url": "https://www.meta.ai",
-          "description": "Meta-র Llama AI — WhatsApp ও Instagram-এ বিল্টইন। বাংলায়ও কথা বলে।"
-        },
-        {
-          "@type": "ListItem",
-          "position": 9,
-          "name": "HuggingChat",
-          "url": "https://huggingface.co/chat",
-          "description": "Hugging Face-এর ফ্রি chatbot। ওপেনসোর্স মডেল, ডেটা কোথাও বিক্রি হয় না।"
-        },
-        {
-          "@type": "ListItem",
-          "position": 10,
-          "name": "Grok",
-          "url": "https://grok.com",
-          "description": "Elon Musk-এর xAI। X (Twitter) রিয়েল-টাইম ডেটা অ্যাক্সেস করে।"
-        }
-      ]
-    }
+  <script>
+    // Dynamic ItemList schema — auto-generates from tools-data.js
+    document.addEventListener("DOMContentLoaded", function() {
+      var toolsArr = window.tools || [];
+      if (!toolsArr.length) return;
+      var schema = {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "সেরা AI টুলস বাংলাদেশ ২০২৬",
+        "description": "বাংলাদেশের জন্য কিউরেটেড AI টুলস লিস্ট",
+        "numberOfItems": toolsArr.length,
+        "itemListElement": toolsArr.map(function(t, i) {
+          return {
+            "@type": "ListItem",
+            "position": i + 1,
+            "name": t.name,
+            "url": t.direct_url,
+            "description": t.description_bn
+          };
+        })
+      };
+      var el = document.createElement("script");
+      el.type = "application/ld+json";
+      el.textContent = JSON.stringify(schema);
+      document.head.appendChild(el);
+    });
   </script>
   <style>
     /* CLS prevention: min-height for JS-populated containers */
@@ -172,6 +118,7 @@
   </script>
 </head>
 <body class="dark-home">
+  <a class="skip-link" href="#main">মূল বিষয়বস্তুতে যান</a>
   <header class="navbar" id="top">
     <div class="container navbar-inner">
       <a href="/" class="logo" aria-label="বাংলা AI গাইড হোম">
@@ -220,7 +167,7 @@
     </div>
   </aside>
 
-  <main class="home-main">
+  <main class="home-main" id="main">
     <section class="hero-wrap">
       <div class="container hero-shell">
         <section class="hero hero-panel">
@@ -382,24 +329,24 @@
             </div>
             <div class="review-metrics">
               <div class="review-metric-row">
-                <span class="review-metric-label">Creest</span>
-                <div class="review-metric-bar"><div class="review-metric-fill" style="width:95%"></div></div>
-                <span class="review-metric-score">95</span>
-              </div>
-              <div class="review-metric-row">
-                <span class="review-metric-label">Wish</span>
-                <div class="review-metric-bar"><div class="review-metric-fill" style="width:98%"></div></div>
-                <span class="review-metric-score">98</span>
-              </div>
-              <div class="review-metric-row">
-                <span class="review-metric-label">Rample</span>
-                <div class="review-metric-bar"><div class="review-metric-fill" style="width:99%"></div></div>
-                <span class="review-metric-score">99</span>
-              </div>
-              <div class="review-metric-row">
-                <span class="review-metric-label">Cpnite</span>
+                <span class="review-metric-label">গতি</span>
                 <div class="review-metric-bar"><div class="review-metric-fill" style="width:85%"></div></div>
-                <span class="review-metric-score">85</span>
+                <span class="review-metric-score">85 / 90</span>
+              </div>
+              <div class="review-metric-row">
+                <span class="review-metric-label">বাংলা সাপোর্ট</span>
+                <div class="review-metric-bar"><div class="review-metric-fill" style="width:75%"></div></div>
+                <span class="review-metric-score">75 / 80</span>
+              </div>
+              <div class="review-metric-row">
+                <span class="review-metric-label">মূল্য (BDT)</span>
+                <div class="review-metric-bar"><div class="review-metric-fill" style="width:70%"></div></div>
+                <span class="review-metric-score">70 / 85</span>
+              </div>
+              <div class="review-metric-row">
+                <span class="review-metric-label">কোডিং</span>
+                <div class="review-metric-bar"><div class="review-metric-fill" style="width:88%"></div></div>
+                <span class="review-metric-score">88 / 92</span>
               </div>
             </div>
             <div class="review-card-footer">
@@ -715,10 +662,10 @@
         <div class="footer-dark-col">
           <h4>নিউজলেটার সাদ্রাইব</h4>
           <div class="footer-dark-newsletter">
-            <div class="footer-newsletter-form">
-              <input type="email" class="footer-newsletter-input" placeholder="Email" />
-              <button type="button" class="footer-newsletter-btn">সার্ভিস করুন</button>
-            </div>
+            <form action="https://banglaaiguide.us15.list-manage.com/subscribe/post?u=d389c0647878724daecc58fc6&amp;id=aaca6896d2&amp;f_id=007c9ae1f0" method="post" target="_blank" class="footer-newsletter-form">
+              <input type="email" name="EMAIL" class="footer-newsletter-input" placeholder="Email" required />
+              <button type="submit" class="footer-newsletter-btn">সাবস্ক্রাইব করুন</button>
+            </form>
             <div style="display:flex;gap:12px;margin-top:4px">
               <a href="contact/" style="font-size:13px;color:#475569;text-decoration:none">Contact</a>
               <a href="submit/" style="font-size:13px;color:#475569;text-decoration:none">Submit a Tool</a>
@@ -780,6 +727,20 @@
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
     fadeEls.forEach(el => observer.observe(el));
+  </script>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" aria-label="উপরে যান" title="উপরে যান">↑</button>
+  <script>
+    (function(){
+      var btn = document.getElementById('backToTop');
+      window.addEventListener('scroll', function(){
+        btn.classList.toggle('is-visible', window.scrollY > 600);
+      }, {passive:true});
+      btn.addEventListener('click', function(){
+        window.scrollTo({top:0, behavior:'smooth'});
+      });
+    })();
   </script>
 </body>
 </html>

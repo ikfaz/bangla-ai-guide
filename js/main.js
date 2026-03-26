@@ -1334,6 +1334,21 @@
     } else {
       currentUrl.searchParams.delete("category");
     }
+    if (state.paymentFilter && state.paymentFilter !== "all") {
+      currentUrl.searchParams.set("payment", state.paymentFilter);
+    } else {
+      currentUrl.searchParams.delete("payment");
+    }
+    if (state.bdFilter && state.bdFilter !== "all") {
+      currentUrl.searchParams.set("bd", state.bdFilter);
+    } else {
+      currentUrl.searchParams.delete("bd");
+    }
+    if (state.priceFilter && state.priceFilter !== "all") {
+      currentUrl.searchParams.set("price", state.priceFilter);
+    } else {
+      currentUrl.searchParams.delete("price");
+    }
     if (state.language && state.language !== "bn") {
       currentUrl.searchParams.set("lang", state.language);
     } else {
@@ -1483,6 +1498,19 @@
     }
     if (categoryFromUrl) {
       state.activeCategory = categoryFromUrl.trim();
+    }
+
+    const paymentFromUrl = searchParams.get("payment");
+    if (paymentFromUrl && ["free", "bkash", "card"].includes(paymentFromUrl)) {
+      state.paymentFilter = paymentFromUrl;
+    }
+    const bdFromUrl = searchParams.get("bd");
+    if (bdFromUrl && ["works", "no-vpn", "vpn"].includes(bdFromUrl)) {
+      state.bdFilter = bdFromUrl;
+    }
+    const priceFromUrl = searchParams.get("price");
+    if (priceFromUrl && ["free", "budget", "mid", "premium"].includes(priceFromUrl)) {
+      state.priceFilter = priceFromUrl;
     }
 
     applyStaticTranslations();
