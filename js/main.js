@@ -7,12 +7,47 @@
     ? window.USD_TO_BDT
     : (typeof USD_TO_BDT !== "undefined" && typeof USD_TO_BDT === "number" ? USD_TO_BDT : 110);
 
+  const FAVORITES_KEY = "banglaAiGuideFavorites";
+
+  function loadFavorites() {
+    try {
+      const raw = window.localStorage?.getItem(FAVORITES_KEY);
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        if (Array.isArray(parsed)) return parsed;
+      }
+    } catch {}
+    return [];
+  }
+
+  function saveFavorites(favs) {
+    try {
+      window.localStorage?.setItem(FAVORITES_KEY, JSON.stringify(favs));
+    } catch {}
+  }
+
+  function isFavorite(toolName) {
+    return state.favorites.includes(toolName);
+  }
+
+  function toggleFavorite(toolName) {
+    const idx = state.favorites.indexOf(toolName);
+    if (idx > -1) {
+      state.favorites.splice(idx, 1);
+    } else {
+      state.favorites.push(toolName);
+    }
+    saveFavorites(state.favorites);
+  }
+
   const state = {
     searchQuery: "",
     activeCategory: "all",
     paymentFilter: "all",
     bdFilter: "all",
     priceFilter: "all",
+    favoritesFilter: false,
+    favorites: loadFavorites(),
     visibleCount: 12,
     language: "bn",
     showcaseMode: "popular",
@@ -441,6 +476,7 @@
       tool.details,
       tool.description_bn,
       tool.review_bn,
+      Array.isArray(tool.tags) ? tool.tags.join(" ") : tool.tags,
     ]
       .filter(Boolean)
       .join(" ")
@@ -732,8 +768,13 @@
     return true;
   }
 
+  function matchFavorites(tool) {
+    if (!state.favoritesFilter) return true;
+    return isFavorite(tool.name);
+  }
+
   function applyBaseFilters(tool) {
-    return matchSearch(tool) && matchPayment(tool) && matchBd(tool) && matchPrice(tool);
+    return matchSearch(tool) && matchPayment(tool) && matchBd(tool) && matchPrice(tool) && matchFavorites(tool);
   }
 
   function matchesVisualCategory(tool, category) {
@@ -1278,7 +1319,12 @@
       <article class="tool-card" itemscope itemtype="https://schema.org/SoftwareApplication" data-category="${escapeHtml(homepageCategory || "other")}" data-pricing="${escapeHtml(tool.pricing || "unknown")}">
         <div class="tool-card-topline">
           <span class="category-tag">${escapeHtml(getHomepageCategoryLabel(homepageCategory) || (state.language === "en" ? "Other" : "অন্যান্য"))}</span>
-          ${rating ? `<span class="tool-rating-chip">★ ${escapeHtml(rating)}</span>` : ""}
+          <div class="tool-card-topline-right">
+            ${rating ? `<span class="tool-rating-chip">★ ${escapeHtml(rating)}</span>` : ""}
+            <button type="button" class="fav-btn${isFavorite(tool.name) ? " fav-btn--active" : ""}" data-fav-tool="${escapeHtml(tool.name)}" aria-label="${isFavorite(tool.name) ? "পছন্দের তালিকা থেকে সরান" : "পছন্দের তালিকায় যোগ করুন"}" title="${isFavorite(tool.name) ? "পছন্দের তালিকা থেকে সরান" : "পছন্দের তালিকায় যোগ করুন"}">
+              <svg class="fav-icon" viewBox="0 0 24 24" width="20" height="20"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            </button>
+          </div>
         </div>
         <div class="tool-header tool-header-modern">
           <div class="tool-title-wrap tool-title-wrap-modern">
@@ -1429,6 +1475,19 @@
     document.querySelectorAll("[data-price]").forEach((btn) => {
       btn.classList.toggle("active", btn.getAttribute("data-price") === state.priceFilter);
     });
+
+    syncFavoritesFilterUi();
+  }
+
+  function syncFavoritesFilterUi() {
+    const favCount = state.favorites.length;
+    document.querySelectorAll("[data-fav-filter]").forEach((btn) => {
+      btn.classList.toggle("active", state.favoritesFilter);
+      const countSpan = btn.querySelector(".fav-filter-count");
+      if (countSpan) {
+        countSpan.textContent = favCount > 0 ? ` (${favCount})` : "";
+      }
+    });
   }
 
   function performRender() {
@@ -1534,6 +1593,157 @@
           render();
         }, 300);
       });
+
+      // ── Autocomplete / Suggestions ──────────────────────────────────
+      (function initAutocomplete() {
+        const input = refs.searchInput;
+        const wrapper = input.closest(".discover-search") || input.parentElement;
+        wrapper.style.position = "relative";
+
+        const dropdown = document.createElement("ul");
+        dropdown.className = "autocomplete-dropdown";
+        dropdown.setAttribute("role", "listbox");
+        dropdown.id = "autocomplete-list";
+        wrapper.appendChild(dropdown);
+
+        input.setAttribute("role", "combobox");
+        input.setAttribute("aria-autocomplete", "list");
+        input.setAttribute("aria-controls", "autocomplete-list");
+        input.setAttribute("aria-expanded", "false");
+
+        let activeIndex = -1;
+        let currentSuggestions = [];
+
+        function getCategoryCssClass(cat) {
+          const map = { llm: "llm", image: "image", coding: "coding", productivity: "productivity" };
+          return map[cat] || cat;
+        }
+
+        function getCategoryDisplayLabel(cat) {
+          return getHomepageCategoryLabel(getHomepageCategory({ category: cat }));
+        }
+
+        function getSuggestions(query) {
+          if (!query) return [];
+          const q = query.toLowerCase();
+          const scored = [];
+          for (const tool of tools) {
+            const nameMatch = (tool.name || "").toLowerCase().includes(q);
+            const descMatch = (tool.description_bn || "").includes(q);
+            if (nameMatch || descMatch) {
+              scored.push({ tool, nameMatch });
+            }
+          }
+          scored.sort((a, b) => {
+            if (a.nameMatch && !b.nameMatch) return -1;
+            if (!a.nameMatch && b.nameMatch) return 1;
+            return 0;
+          });
+          return scored.slice(0, 5).map((s) => s.tool);
+        }
+
+        function showDropdown(suggestions) {
+          currentSuggestions = suggestions;
+          activeIndex = -1;
+          if (!suggestions.length) {
+            hideDropdown();
+            return;
+          }
+          dropdown.innerHTML = suggestions
+            .map((tool, i) => {
+              const catClass = getCategoryCssClass(tool.category);
+              const catLabel = getCategoryDisplayLabel(tool.category);
+              return `<li class="autocomplete-item" role="option" data-index="${i}">
+                <span class="autocomplete-name">${tool.name}</span>
+                <span class="autocomplete-badge autocomplete-badge--${catClass}">${catLabel}</span>
+              </li>`;
+            })
+            .join("");
+          dropdown.style.display = "block";
+          input.setAttribute("aria-expanded", "true");
+        }
+
+        function hideDropdown() {
+          dropdown.style.display = "none";
+          dropdown.innerHTML = "";
+          activeIndex = -1;
+          currentSuggestions = [];
+          input.setAttribute("aria-expanded", "false");
+        }
+
+        function setActive(index) {
+          const items = dropdown.querySelectorAll(".autocomplete-item");
+          items.forEach((el) => el.classList.remove("autocomplete-item--active"));
+          if (index >= 0 && index < items.length) {
+            items[index].classList.add("autocomplete-item--active");
+            items[index].setAttribute("aria-selected", "true");
+            input.setAttribute("aria-activedescendant", "");
+          }
+          activeIndex = index;
+        }
+
+        function selectSuggestion(tool) {
+          input.value = tool.name;
+          state.searchQuery = tool.name;
+          resetVisibleCount();
+          render();
+          hideDropdown();
+          input.focus();
+        }
+
+        input.addEventListener("input", function () {
+          const q = this.value.trim();
+          if (q.length > 0) {
+            showDropdown(getSuggestions(q));
+          } else {
+            hideDropdown();
+          }
+        });
+
+        input.addEventListener("keydown", function (e) {
+          if (dropdown.style.display !== "block") return;
+          const count = currentSuggestions.length;
+          if (e.key === "ArrowDown") {
+            e.preventDefault();
+            setActive(activeIndex < count - 1 ? activeIndex + 1 : 0);
+          } else if (e.key === "ArrowUp") {
+            e.preventDefault();
+            setActive(activeIndex > 0 ? activeIndex - 1 : count - 1);
+          } else if (e.key === "Enter" && activeIndex >= 0) {
+            e.preventDefault();
+            selectSuggestion(currentSuggestions[activeIndex]);
+          } else if (e.key === "Escape") {
+            hideDropdown();
+          }
+        });
+
+        dropdown.addEventListener("mousedown", function (e) {
+          e.preventDefault(); // prevent blur before click registers
+        });
+
+        dropdown.addEventListener("click", function (e) {
+          const item = e.target.closest(".autocomplete-item");
+          if (!item) return;
+          const idx = parseInt(item.getAttribute("data-index"), 10);
+          if (currentSuggestions[idx]) {
+            selectSuggestion(currentSuggestions[idx]);
+          }
+        });
+
+        document.addEventListener("click", function (e) {
+          if (!wrapper.contains(e.target)) {
+            hideDropdown();
+          }
+        });
+
+        input.addEventListener("focus", function () {
+          const q = this.value.trim();
+          if (q.length > 0 && currentSuggestions.length === 0) {
+            showDropdown(getSuggestions(q));
+          }
+        });
+      })();
+      // ── End Autocomplete ────────────────────────────────────────────
     }
 
     if (refs.categoryTabList) {
@@ -1619,6 +1829,36 @@
         event.preventDefault();
         setCategory(categorySpotlightButton.getAttribute("data-jump-category"));
         document.getElementById("toolsSection")?.scrollIntoView({ behavior: "smooth", block: "start" });
+        return;
+      }
+
+      const favButton = event.target.closest(".fav-btn");
+      if (favButton) {
+        event.preventDefault();
+        event.stopPropagation();
+        const toolName = favButton.getAttribute("data-fav-tool");
+        if (toolName) {
+          toggleFavorite(toolName);
+          const isNowFav = isFavorite(toolName);
+          favButton.classList.toggle("fav-btn--active", isNowFav);
+          favButton.setAttribute("aria-label", isNowFav ? "পছন্দের তালিকা থেকে সরান" : "পছন্দের তালিকায় যোগ করুন");
+          favButton.setAttribute("title", isNowFav ? "পছন্দের তালিকা থেকে সরান" : "পছন্দের তালিকায় যোগ করুন");
+          syncFavoritesFilterUi();
+          if (state.favoritesFilter) {
+            resetVisibleCount();
+            render();
+          }
+        }
+        return;
+      }
+
+      const favFilterButton = event.target.closest("[data-fav-filter]");
+      if (favFilterButton) {
+        event.preventDefault();
+        state.favoritesFilter = !state.favoritesFilter;
+        syncFavoritesFilterUi();
+        resetVisibleCount();
+        render();
         return;
       }
 

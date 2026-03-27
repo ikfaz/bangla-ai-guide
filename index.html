@@ -105,8 +105,8 @@
     #trendingGrid { min-height: 300px; }
     #categorySpotlightGrid { min-height: 200px; }
   </style>
-  <script src="js/tools-data.js?v=2026-03-08" defer></script>
-  <script src="js/main.js?v=2026-03-10-1" defer></script>
+  <script src="js/tools-data.js?v=2026-03-27" defer></script>
+  <script src="js/main.js?v=2026-03-27" defer></script>
   <script src="js/consent.js" defer></script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-DMM6V53DKC"></script>
@@ -393,6 +393,13 @@
     <section class="container tools-layout tools-layout-polish" id="toolsSection">
       <aside class="sidebar" aria-label="ফিল্টার সাইডবার">
         <div class="filter-box">
+          <h3>পছন্দের টুলস</h3>
+          <div class="filter-group" data-filter-group="favorites">
+            <button class="filter-chip fav-filter-chip" data-fav-filter="true">&#10084; পছন্দের টুলস<span class="fav-filter-count"></span></button>
+          </div>
+        </div>
+
+        <div class="filter-box">
           <h3 data-i18n="filter_payment_title">পেমেন্ট পদ্ধতি</h3>
           <div class="filter-group" data-filter-group="payment">
             <button class="filter-chip active" data-payment="all" data-i18n="filter_all">সব</button>
@@ -439,6 +446,9 @@
           <p class="directory-copy" data-i18n="directory_copy">সার্চ-ফার্স্ট ডিসকভারি, পরিষ্কার আধুনিক কার্ড, আর বাংলাদেশ-ফ্রেন্ডলি ফিল্টারিং।</p>
         </div>
         <div class="mobile-filters" aria-label="মোবাইল ফিল্টার">
+          <div class="mobile-filter-row" data-filter-group="favorites">
+            <button class="filter-chip fav-filter-chip" data-fav-filter="true">&#10084; পছন্দের<span class="fav-filter-count"></span></button>
+          </div>
           <div class="mobile-filter-row" data-filter-group="payment">
             <button class="filter-chip active" data-payment="all" data-i18n="filter_all">সব</button>
             <button class="filter-chip" data-payment="bkash" data-i18n="filter_payment_bkash_short">bKash</button>
