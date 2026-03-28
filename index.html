@@ -73,7 +73,7 @@
   <script>
     // Dynamic ItemList schema — auto-generates from tools-data.js
     document.addEventListener("DOMContentLoaded", function() {
-      var toolsArr = window.tools || [];
+      var toolsArr = window.tools || (typeof tools !== "undefined" && Array.isArray(tools) ? tools : []);
       if (!toolsArr.length) return;
       var schema = {
         "@context": "https://schema.org",
@@ -105,8 +105,8 @@
     #trendingGrid { min-height: 300px; }
     #categorySpotlightGrid { min-height: 200px; }
   </style>
-  <script src="js/tools-data.js?v=2026-03-27" defer></script>
-  <script src="js/main.js?v=2026-03-27" defer></script>
+  <script src="js/tools-data.js?v=2026-03-29" defer></script>
+  <script src="js/main.js?v=2026-03-29" defer></script>
   <script src="js/consent.js" defer></script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-DMM6V53DKC"></script>
