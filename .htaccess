@@ -1,36 +1,79 @@
 # Enable rewrite engine
 RewriteEngine On
 
-# Remove .html extension and redirect to clean URLs (EXCEPT /blog/)
-# Example: /page.html → /page/
-RewriteCond %{REQUEST_URI} !^/blog/
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.+)\.html$ /$1/ [R=301,L]
+# ============================================================
+# 1. HTTPS enforcement (must come first)
+# ============================================================
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
 
-# If a .html file exists, redirect to directory version (EXCEPT /blog/)
-RewriteCond %{REQUEST_URI} !^/blog/
-RewriteCond %{REQUEST_URI} \.html$
-RewriteRule ^(.*)\.html$ /$1/ [R=301,L]
+# ============================================================
+# 2. Non-www enforcement
+# ============================================================
+RewriteCond %{HTTP_HOST} ^www\.banglaaiguide\.com$ [NC]
+RewriteRule ^(.*)$ https://banglaaiguide.com/$1 [R=301,L]
 
-# Ensure trailing slash for directories (EXCEPT /blog/ .html files)
+# ============================================================
+# 3. Legacy URL 301 redirects
+# ============================================================
+
+# /index.html → /
+RewriteRule ^index\.html$ / [R=301,L]
+
+# /tool-detail.html?tool=stable-diffusion → /stable-diffusion/
+RewriteCond %{QUERY_STRING} ^tool=stable-diffusion
+RewriteRule ^tool-detail\.html$ /stable-diffusion/? [R=301,L]
+
+# /tool-detail.html?tool=huggingchat → /huggingchat/
+RewriteCond %{QUERY_STRING} ^tool=huggingchat
+RewriteRule ^tool-detail\.html$ /huggingchat/? [R=301,L]
+
+# /tool-detail.html?tool=meta-ai → /meta-ai/
+RewriteCond %{QUERY_STRING} ^tool=meta-ai
+RewriteRule ^tool-detail\.html$ /meta-ai/? [R=301,L]
+
+# /elevenlabs-bangla-voice/privacy.html → /elevenlabs/
+RewriteRule ^elevenlabs-bangla-voice/privacy\.html$ /elevenlabs/ [R=301,L]
+
+# /elevenlabs/privacy.html → /elevenlabs/
+RewriteRule ^elevenlabs/privacy\.html$ /elevenlabs/ [R=301,L]
+
+# /deepseek/privacy.html → /deepseek/
+RewriteRule ^deepseek/privacy\.html$ /deepseek/ [R=301,L]
+
+# /terms/privacy/ → /privacy/
+RewriteRule ^terms/privacy/?$ /privacy/ [R=301,L]
+
+# /best-ai-coding-tools-for-beginners-bangladesh/tool-detail.html?tool=cursor → /cursor/
+RewriteCond %{QUERY_STRING} ^tool=cursor
+RewriteRule ^best-ai-coding-tools-for-beginners-bangladesh/tool-detail\.html$ /cursor/? [R=301,L]
+
+# /ai-tools-bangladesh-bengali/tool-detail.html?tool=bolt-new → /bolt-new/
+RewriteCond %{QUERY_STRING} ^tool=bolt-new
+RewriteRule ^ai-tools-bangladesh-bengali/tool-detail\.html$ /bolt-new/? [R=301,L]
+
+# ============================================================
+# 4. Sitewide .html → clean URL (strips .html, adds trailing slash)
+#    Excludes /blog/ article pages which are served as directories
+# ============================================================
+
+# Specific files that legitimately serve as .html and must NOT be stripped:
+# (none currently — all pages use directory/index.html pattern)
+
+# Strip .html from any URL not already handled above
 RewriteCond %{REQUEST_URI} !^/blog/.*\.html$
+RewriteCond %{THE_REQUEST} \ /(.+)\.html[?\ ]
+RewriteRule ^ /%1/ [R=301,L]
+
+# ============================================================
+# 5. Trailing-slash normalisation (add slash to bare directory names)
+# ============================================================
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_URI} !(.*)/$
 RewriteRule ^(.*)$ /$1/ [R=301,L]
 
 # Handle directory index files
 DirectoryIndex index.html
-
-# Force HTTPS (optional but recommended)
-RewriteCond %{HTTPS} off
-RewriteCond %{HTTP_HOST} ^banglaaiguide\.com$ [OR]
-RewriteCond %{HTTP_HOST} ^www\.banglaaiguide\.com$
-RewriteRule ^(.*)$ https://banglaaiguide.com/$1 [R=301,L]
-
-# Remove www (optional - redirects www to non-www)
-RewriteCond %{HTTP_HOST} ^www\.banglaaiguide\.com$ [NC]
-RewriteRule ^(.*)$ https://banglaaiguide.com/$1 [R=301,L]
 
 # ============================================================
 # GZIP Compression
