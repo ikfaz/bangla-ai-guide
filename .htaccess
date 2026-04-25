@@ -2,65 +2,63 @@
 RewriteEngine On
 
 # ============================================================
-# 1. HTTPS enforcement (must come first)
+# 1. Legacy URL 301 redirects
+#    Listed FIRST with absolute https:// targets so that HTTP,
+#    www, and HTTPS entry points all land in a single hop —
+#    no HTTP→HTTPS→legacy chain.
+# ============================================================
+
+# /index.html → /
+RewriteRule ^index\.html$ https://banglaaiguide.com/ [R=301,L]
+
+# /tool-detail.html?tool=stable-diffusion → /stable-diffusion/
+RewriteCond %{QUERY_STRING} ^tool=stable-diffusion
+RewriteRule ^tool-detail\.html$ https://banglaaiguide.com/stable-diffusion/? [R=301,L]
+
+# /tool-detail.html?tool=huggingchat → /huggingchat/
+RewriteCond %{QUERY_STRING} ^tool=huggingchat
+RewriteRule ^tool-detail\.html$ https://banglaaiguide.com/huggingchat/? [R=301,L]
+
+# /tool-detail.html?tool=meta-ai → /meta-ai/
+RewriteCond %{QUERY_STRING} ^tool=meta-ai
+RewriteRule ^tool-detail\.html$ https://banglaaiguide.com/meta-ai/? [R=301,L]
+
+# /elevenlabs-bangla-voice/privacy.html → /elevenlabs/
+RewriteRule ^elevenlabs-bangla-voice/privacy\.html$ https://banglaaiguide.com/elevenlabs/ [R=301,L]
+
+# /elevenlabs/privacy.html → /elevenlabs/
+RewriteRule ^elevenlabs/privacy\.html$ https://banglaaiguide.com/elevenlabs/ [R=301,L]
+
+# /deepseek/privacy.html → /deepseek/
+RewriteRule ^deepseek/privacy\.html$ https://banglaaiguide.com/deepseek/ [R=301,L]
+
+# /terms/privacy/ → /privacy/
+RewriteRule ^terms/privacy/?$ https://banglaaiguide.com/privacy/ [R=301,L]
+
+# /best-ai-coding-tools-for-beginners-bangladesh/tool-detail.html?tool=cursor → /cursor/
+RewriteCond %{QUERY_STRING} ^tool=cursor
+RewriteRule ^best-ai-coding-tools-for-beginners-bangladesh/tool-detail\.html$ https://banglaaiguide.com/cursor/? [R=301,L]
+
+# /ai-tools-bangladesh-bengali/tool-detail.html?tool=bolt-new → /bolt-new/
+RewriteCond %{QUERY_STRING} ^tool=bolt-new
+RewriteRule ^ai-tools-bangladesh-bengali/tool-detail\.html$ https://banglaaiguide.com/bolt-new/? [R=301,L]
+
+# ============================================================
+# 2. HTTPS enforcement
 # ============================================================
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
 
 # ============================================================
-# 2. Non-www enforcement
+# 3. Non-www enforcement
 # ============================================================
 RewriteCond %{HTTP_HOST} ^www\.banglaaiguide\.com$ [NC]
 RewriteRule ^(.*)$ https://banglaaiguide.com/$1 [R=301,L]
 
 # ============================================================
-# 3. Legacy URL 301 redirects
-# ============================================================
-
-# /index.html → /
-RewriteRule ^index\.html$ / [R=301,L]
-
-# /tool-detail.html?tool=stable-diffusion → /stable-diffusion/
-RewriteCond %{QUERY_STRING} ^tool=stable-diffusion
-RewriteRule ^tool-detail\.html$ /stable-diffusion/? [R=301,L]
-
-# /tool-detail.html?tool=huggingchat → /huggingchat/
-RewriteCond %{QUERY_STRING} ^tool=huggingchat
-RewriteRule ^tool-detail\.html$ /huggingchat/? [R=301,L]
-
-# /tool-detail.html?tool=meta-ai → /meta-ai/
-RewriteCond %{QUERY_STRING} ^tool=meta-ai
-RewriteRule ^tool-detail\.html$ /meta-ai/? [R=301,L]
-
-# /elevenlabs-bangla-voice/privacy.html → /elevenlabs/
-RewriteRule ^elevenlabs-bangla-voice/privacy\.html$ /elevenlabs/ [R=301,L]
-
-# /elevenlabs/privacy.html → /elevenlabs/
-RewriteRule ^elevenlabs/privacy\.html$ /elevenlabs/ [R=301,L]
-
-# /deepseek/privacy.html → /deepseek/
-RewriteRule ^deepseek/privacy\.html$ /deepseek/ [R=301,L]
-
-# /terms/privacy/ → /privacy/
-RewriteRule ^terms/privacy/?$ /privacy/ [R=301,L]
-
-# /best-ai-coding-tools-for-beginners-bangladesh/tool-detail.html?tool=cursor → /cursor/
-RewriteCond %{QUERY_STRING} ^tool=cursor
-RewriteRule ^best-ai-coding-tools-for-beginners-bangladesh/tool-detail\.html$ /cursor/? [R=301,L]
-
-# /ai-tools-bangladesh-bengali/tool-detail.html?tool=bolt-new → /bolt-new/
-RewriteCond %{QUERY_STRING} ^tool=bolt-new
-RewriteRule ^ai-tools-bangladesh-bengali/tool-detail\.html$ /bolt-new/? [R=301,L]
-
-# ============================================================
 # 4. Sitewide .html → clean URL (strips .html, adds trailing slash)
 #    Excludes /blog/ article pages which are served as directories
 # ============================================================
-
-# Specific files that legitimately serve as .html and must NOT be stripped:
-# (none currently — all pages use directory/index.html pattern)
-
-# Strip .html from any URL not already handled above
 RewriteCond %{REQUEST_URI} !^/blog/.*\.html$
 RewriteCond %{THE_REQUEST} \ /(.+)\.html[?\ ]
 RewriteRule ^ /%1/ [R=301,L]
@@ -104,7 +102,7 @@ DirectoryIndex index.html
   ExpiresByType image/gif                 "access plus 6 months"
   ExpiresByType image/svg+xml             "access plus 6 months"
   ExpiresByType image/webp                "access plus 6 months"
-  ExpiresByType image/x-icon              "access plus 1 year"
+  ExpiresByType image/x-icon             "access plus 1 year"
   ExpiresByType font/woff                 "access plus 1 year"
   ExpiresByType font/woff2                "access plus 1 year"
   ExpiresByType application/font-woff     "access plus 1 year"
