@@ -5937,3 +5937,41 @@ body.dark-home .fav-filter-chip.active {
   border-color: rgba(239, 68, 68, 0.5) !important;
   color: #f87171 !important;
 }
+
+/* Pillar-link block (injected by scripts/inject-pillar-links.cjs) */
+.pillar-links-section {
+  margin: 3rem auto 2rem;
+  padding: 1.5rem 1.25rem;
+  background: linear-gradient(135deg, #ecfdf5, #f0fdf4);
+  border: 1px solid #bbf7d0;
+  border-radius: 14px;
+}
+.pillar-links-heading {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #064e3b;
+  margin: 0 0 1rem;
+}
+.pillar-links-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+.pillar-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.55rem 0.95rem;
+  background: #fff;
+  border: 1px solid #d1fae5;
+  border-radius: 999px;
+  color: #047857;
+  font-weight: 500;
+  font-size: 0.92rem;
+  text-decoration: none;
+  transition: all .15s ease;
+}
+.pillar-link:hover {
+  border-color: #10b981;
+  background: #10b981;
+  color: #fff;
+}
