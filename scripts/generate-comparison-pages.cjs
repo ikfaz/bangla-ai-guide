@@ -212,6 +212,7 @@ function buildPage(a, b) {
   <link rel="preconnect" href="https://logo.clearbit.com" />
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700;800&family=Syne:wght@500;700;800&display=swap" rel="stylesheet" />
   <script src="/js/search-overlay.js?v=2026-05-26" defer></script>
+  <script src="/js/newsletter-popup.js?v=2026-05-26" defer></script>
 
   <script type="application/ld+json">${JSON.stringify({
     '@context': 'https://schema.org',
