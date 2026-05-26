@@ -137,7 +137,8 @@ function renderJsArray(articles) {
                 description: "${escapeJs(a.description)}",
                 url: "${escapeJs(a.slug)}/",
                 date: "${toBnDate(a.date)}",
-                category: "${escapeJs(a.category)}"
+                category: "${escapeJs(a.category)}",
+                cover: ${a.cover ? `"${escapeJs(a.slug)}/${escapeJs(a.cover)}"` : 'null'}
             }`).join(',\n');
   return `        const blogArticles = [
 ${items}
@@ -204,15 +205,23 @@ function run() {
   const articles = collectArticles();
   console.log(`Collected ${articles.length} articles from filesystem`);
 
-  const cardsHtml = articles.map(renderCardHtml).join('\n');
   const jsBlock = renderJsArray(articles);
 
   let html = fs.readFileSync(LISTING, 'utf8');
-  html = replaceCardSection(html, cardsHtml);
+
+  // The live blog page renders cards dynamically from blogArticles[] —
+  // we only need to keep that array in sync. If a static .blog-grid card
+  // section exists, also regenerate it (legacy support).
+  const hasStaticCards = /<article class="blog-card"/i.test(html);
+  if (hasStaticCards) {
+    const cardsHtml = articles.map(renderCardHtml).join('\n');
+    html = replaceCardSection(html, cardsHtml);
+  }
+
   html = replaceJsArray(html, jsBlock);
   fs.writeFileSync(LISTING, html, 'utf8');
 
-  console.log(`Updated blog/index.html: ${articles.length} cards + JS array`);
+  console.log(`Updated blog/index.html: ${articles.length} articles in blogArticles[]${hasStaticCards ? ' + static cards' : ''}`);
 }
 
 run();
