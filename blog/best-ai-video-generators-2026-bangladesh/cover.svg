@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="সেরা ৫টি AI ভিডিও জেনারেটর ২০২৬ | বাংলা AI গাইড">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="সেরা ৬টি AI ভিডিও জেনারেটর ২০২৬ — বাংলাদেশ গাইড | বাংলা AI গাইড">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#F0FDF9"/>
@@ -48,7 +48,7 @@
   </g>
 
   <!-- Title -->
-  <text class="title" font-size="66"><tspan x="100" y="218">সেরা ৫টি AI ভিডিও</tspan><tspan x="100" y="299">জেনারেটর ২০২৬ | বাংলা</tspan><tspan x="100" y="380">AI গাইড</tspan></text>
+  <text class="title" font-size="56"><tspan x="100" y="229">সেরা ৬টি AI ভিডিও জেনারেটর</tspan><tspan x="100" y="297">২০২৬ — বাংলাদেশ গাইড |</tspan><tspan x="100" y="365">বাংলা AI গাইড</tspan></text>
 
   <!-- Bottom divider -->
   <line x1="100" y1="540" x2="1100" y2="540" stroke="#E2E8F0" stroke-width="2"/>
