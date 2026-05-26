@@ -13,6 +13,7 @@ const steps = [
   "inject-pillar-links.cjs",
   "generate-blog-covers.cjs",
   "inject-related-posts.cjs",
+  "inject-faq-schema.cjs",
   "regenerate-blog-listing.cjs",
   "generate-search-index.cjs",
   "generate-feed.cjs",
