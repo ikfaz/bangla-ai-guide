@@ -100,6 +100,18 @@ function collectPages() {
     }
   }
 
+  // Comparison subpages (compare/<a-vs-b>/)
+  const compareDir = path.join(ROOT, "compare");
+  if (fs.existsSync(compareDir)) {
+    for (const entry of fs.readdirSync(compareDir, { withFileTypes: true })) {
+      if (!entry.isDirectory()) continue;
+      if (hasNonAscii(entry.name)) continue;
+      if (isHtmlPage(path.join(compareDir, entry.name))) {
+        pages.push(`compare/${entry.name}`);
+      }
+    }
+  }
+
   return pages;
 }
 
