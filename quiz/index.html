@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <meta name="theme-color" content="#0A0A0F" />
+  <title>আপনার জন্য কোন AI? — ৬০ সেকেন্ডে খুঁজুন | বাংলা AI গাইড</title>
+  <meta name="description" content="৫টি প্রশ্নের উত্তর দিন, AI আপনার জন্য ৩টি সেরা টুল সাজেস্ট করবে — ব্যবহার, বাজেট, পেমেন্ট, ভাষা অনুযায়ী। বাংলাদেশের জন্য কিউরেটেড।" />
+  <meta name="keywords" content="AI quiz, which AI is best, AI tool finder, AI suggestion bangla, কোন AI ভালো, AI বাছাই" />
+  <meta name="author" content="বাংলা AI গাইড" />
+  <link rel="canonical" href="https://banglaaiguide.com/quiz/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://banglaaiguide.com/quiz/" />
+  <meta property="og:title" content="আপনার জন্য কোন AI? — ৬০ সেকেন্ডে খুঁজুন" />
+  <meta property="og:description" content="৫টি প্রশ্ন। ৬০ সেকেন্ড। আপনার পারফেক্ট AI টুল।" />
+  <meta property="og:image" content="https://banglaaiguide.com/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="bn_BD" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="আপনার জন্য কোন AI? — ৬০ সেকেন্ডে খুঁজুন" />
+  <meta name="twitter:image" content="https://banglaaiguide.com/og-image.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://logo.clearbit.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700;800&family=Syne:wght@500;700;800&display=swap" rel="stylesheet" />
+  <script src="/js/tools-data.js?v=2026-05-26" defer></script>
+  <script src="/js/search-overlay.js?v=2026-05-26" defer></script>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Quiz","name":"আপনার জন্য কোন AI টুল?","description":"৫টি প্রশ্নের উত্তর দিয়ে আপনার জন্য পারফেক্ট AI টুল খুঁজুন","url":"https://banglaaiguide.com/quiz/","inLanguage":"bn-BD","author":{"@type":"Organization","name":"বাংলা AI গাইড"}}
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    :root {
+      --bg: #0A0A0F; --bg-2: #0F0F17;
+      --surface: rgba(255,255,255,0.03); --surface-2: rgba(255,255,255,0.06); --surface-3: rgba(255,255,255,0.09);
+      --border: rgba(255,255,255,0.08); --border-2: rgba(255,255,255,0.14);
+      --text: #FFFFFF; --text-2: #D8DEE9; --text-3: #94A3B8; --text-4: #64748B;
+      --accent: #22C55E; --accent-2: #16A34A; --accent-soft: rgba(34,197,94,0.12); --accent-glow: rgba(34,197,94,0.35);
+      --cyan: #22D3EE; --purple: #A78BFA; --warning: #FBBF24;
+      --r: 16px; --r-lg: 24px; --r-xl: 32px; --r-pill: 9999px;
+      --font-display: 'Syne', 'Hind Siliguri', sans-serif;
+      --font-body: 'Hind Siliguri', system-ui, sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 16px; line-height: 1.65; -webkit-font-smoothing: antialiased; min-height: 100vh; }
+    body::before {
+      content: ''; position: fixed; inset: 0; z-index: 0;
+      background:
+        radial-gradient(ellipse 80% 50% at 30% 0%, rgba(34,197,94,0.18) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 70% 100%, rgba(167,139,250,0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 40% at 50% 50%, rgba(34,211,238,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    body > * { position: relative; z-index: 1; }
+    a { color: inherit; }
+    .container { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+
+    .nav { padding: 20px 0; border-bottom: 1px solid var(--border); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; }
+    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text); }
+    .brand-mark { width: 38px; height: 38px; display: grid; place-items: center; background: linear-gradient(135deg, var(--accent), var(--accent-2)); border-radius: 11px; font-family: var(--font-display); font-weight: 800; color: white; }
+    .brand-name { font-weight: 700; font-size: 16px; }
+    .nav-links { display: flex; gap: 24px; }
+    .nav-links a { color: var(--text-2); text-decoration: none; font-size: 14px; font-weight: 500; }
+    .nav-links a:hover { color: var(--text); }
+
+    .quiz-wrap { padding: 64px 0 120px; }
+
+    /* Intro */
+    .intro { text-align: center; max-width: 720px; margin: 0 auto; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 6px 18px; background: var(--surface-2); border: 1px solid var(--border-2); border-radius: var(--r-pill); color: var(--accent); font-size: 13px; font-weight: 600; margin-bottom: 24px; }
+    .eyebrow .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 12px var(--accent-glow); animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+    .intro h1 { font-family: var(--font-display); font-size: clamp(36px, 5.5vw, 64px); font-weight: 800; line-height: 1.05; letter-spacing: -0.035em; margin: 0 0 20px; }
+    .intro h1 .grad { background: linear-gradient(135deg, var(--accent), var(--cyan)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .intro p { color: var(--text-3); font-size: 18px; max-width: 56ch; margin: 0 auto 32px; line-height: 1.7; }
+    .intro-stats { display: flex; gap: 32px; justify-content: center; margin-bottom: 40px; flex-wrap: wrap; }
+    .intro-stat { display: flex; flex-direction: column; align-items: center; }
+    .intro-stat .num { font-family: var(--font-display); font-size: 28px; font-weight: 800; }
+    .intro-stat .label { font-size: 12px; color: var(--text-3); text-transform: uppercase; letter-spacing: 0.06em; }
+
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; border-radius: var(--r-pill); font-family: inherit; font-weight: 700; font-size: 16px; text-decoration: none; border: 1px solid transparent; cursor: pointer; transition: all .2s ease; }
+    .btn-primary { background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: white; box-shadow: 0 8px 24px var(--accent-glow); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 32px var(--accent-glow); }
+    .btn-ghost { background: var(--surface-2); color: var(--text); border-color: var(--border); }
+    .btn-ghost:hover { background: var(--surface-3); border-color: var(--border-2); }
+    .btn-sm { padding: 10px 20px; font-size: 14px; }
+
+    /* Progress */
+    .progress { display: none; max-width: 720px; margin: 0 auto 40px; }
+    .progress.active { display: block; }
+    .progress-bar { height: 6px; background: var(--surface-2); border-radius: var(--r-pill); overflow: hidden; margin-bottom: 12px; }
+    .progress-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--cyan)); border-radius: var(--r-pill); transition: width .3s ease; width: 0%; }
+    .progress-meta { display: flex; justify-content: space-between; font-size: 13px; color: var(--text-3); }
+    .progress-meta .step { color: var(--accent); font-weight: 600; }
+
+    /* Question */
+    .question { display: none; max-width: 720px; margin: 0 auto; }
+    .question.active { display: block; animation: slideUp .35s ease; }
+    @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .question h2 { font-family: var(--font-display); font-size: clamp(28px, 4vw, 42px); font-weight: 700; line-height: 1.15; letter-spacing: -0.02em; margin: 0 0 12px; }
+    .question .q-sub { color: var(--text-3); font-size: 15px; margin: 0 0 32px; }
+    .options { display: grid; gap: 12px; }
+    .option {
+      display: flex; align-items: center; gap: 16px;
+      padding: 20px 24px;
+      background: var(--surface); border: 1.5px solid var(--border);
+      border-radius: var(--r);
+      cursor: pointer; transition: all .2s ease;
+      text-align: left; font-family: inherit; font-size: 16px; color: var(--text);
+    }
+    .option:hover { background: var(--surface-2); border-color: var(--border-2); transform: translateX(4px); }
+    .option.selected { border-color: var(--accent); background: var(--accent-soft); box-shadow: 0 0 0 4px rgba(34,197,94,0.08); }
+    .option .opt-icon { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; background: var(--surface-3); border: 1px solid var(--border-2); font-size: 22px; flex-shrink: 0; }
+    .option.selected .opt-icon { background: linear-gradient(135deg, var(--accent), var(--accent-2)); border-color: transparent; }
+    .option .opt-text { flex: 1; min-width: 0; }
+    .option .opt-label { font-weight: 600; }
+    .option .opt-desc { font-size: 13px; color: var(--text-3); margin-top: 2px; }
+    .option .opt-check { width: 24px; height: 24px; border-radius: 50%; border: 2px solid var(--border-2); flex-shrink: 0; display: grid; place-items: center; transition: all .2s; }
+    .option.selected .opt-check { background: var(--accent); border-color: var(--accent); }
+    .option.selected .opt-check::after { content: '✓'; color: white; font-weight: 800; font-size: 14px; }
+
+    .q-actions { display: flex; gap: 12px; justify-content: space-between; margin-top: 32px; }
+
+    /* Result */
+    .result { display: none; }
+    .result.active { display: block; animation: slideUp .35s ease; }
+    .result-head { text-align: center; margin-bottom: 48px; }
+    .result-head h2 { font-family: var(--font-display); font-size: clamp(32px, 5vw, 48px); font-weight: 800; line-height: 1.1; letter-spacing: -0.025em; margin: 0 0 12px; }
+    .result-head h2 .grad { background: linear-gradient(135deg, var(--accent), var(--cyan)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .result-head p { color: var(--text-3); font-size: 16px; margin: 0; }
+    .results-grid { display: grid; gap: 20px; max-width: 720px; margin: 0 auto; }
+    .result-card {
+      display: flex; gap: 20px; align-items: flex-start;
+      padding: 28px;
+      background: var(--surface); border: 1px solid var(--border-2);
+      border-radius: var(--r-lg);
+      transition: all .2s;
+      position: relative;
+    }
+    .result-card:hover { background: var(--surface-2); transform: translateY(-2px); }
+    .result-card.rank-1 { background: linear-gradient(135deg, var(--accent-soft), rgba(34,211,238,0.05)); border-color: var(--accent); box-shadow: 0 12px 32px var(--accent-glow); }
+    .result-card .rank { position: absolute; top: -14px; left: 24px; padding: 4px 14px; background: var(--bg-2); border: 1px solid var(--border-2); border-radius: var(--r-pill); font-family: var(--font-display); font-size: 12px; font-weight: 800; letter-spacing: 0.06em; }
+    .result-card.rank-1 .rank { background: linear-gradient(135deg, var(--accent), var(--accent-2)); border-color: transparent; color: white; }
+    .result-card .logo { width: 64px; height: 64px; border-radius: 14px; object-fit: contain; background: white; padding: 8px; flex-shrink: 0; }
+    .result-card .body { flex: 1; min-width: 0; }
+    .result-card h3 { font-family: var(--font-display); font-size: 22px; font-weight: 700; margin: 0 0 6px; }
+    .result-card .desc { color: var(--text-3); font-size: 14px; margin: 0 0 14px; line-height: 1.6; }
+    .result-card .meta-row { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 16px; }
+    .result-card .meta-pill { display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; background: var(--surface-3); border: 1px solid var(--border); border-radius: var(--r-pill); font-size: 12px; color: var(--text-2); }
+    .result-card .meta-pill.good { background: rgba(34,197,94,0.15); color: var(--accent); border-color: rgba(34,197,94,0.3); }
+    .result-card .meta-pill.warn { background: rgba(251,191,36,0.15); color: var(--warning); border-color: rgba(251,191,36,0.3); }
+    .result-card .actions { display: flex; gap: 10px; flex-wrap: wrap; }
+    .result-card .actions .btn { padding: 8px 16px; font-size: 13px; }
+
+    /* Newsletter capture */
+    .nl-capture {
+      margin: 56px auto 0; max-width: 540px;
+      padding: 32px 28px;
+      background: linear-gradient(135deg, rgba(34,197,94,0.08), rgba(34,211,238,0.05));
+      border: 1px solid var(--accent);
+      border-radius: var(--r-lg);
+      text-align: center;
+    }
+    .nl-capture h3 { font-family: var(--font-display); font-size: 22px; margin: 0 0 8px; }
+    .nl-capture p { color: var(--text-3); font-size: 14px; margin: 0 0 18px; }
+    .nl-form { display: flex; gap: 8px; max-width: 420px; margin: 0 auto; }
+    .nl-form input { flex: 1; padding: 12px 18px; background: var(--surface-2); border: 1px solid var(--border-2); border-radius: var(--r-pill); color: var(--text); font-family: inherit; font-size: 14px; }
+    .nl-form input:focus { outline: none; border-color: var(--accent); }
+    .nl-form button { padding: 12px 20px; }
+
+    .result-footer { text-align: center; margin-top: 48px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+    @media (max-width: 600px) {
+      .quiz-wrap { padding: 40px 0 80px; }
+      .question h2 { font-size: 26px; }
+      .option { padding: 16px 18px; gap: 12px; }
+      .option .opt-icon { width: 38px; height: 38px; font-size: 18px; }
+      .result-card { flex-direction: column; padding: 24px 20px; padding-top: 32px; }
+      .nl-form { flex-direction: column; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark">বা</span>
+        <span class="brand-name">বাংলা AI গাইড</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/#toolsSection">টুলস</a>
+        <a href="/blog/">ব্লগ</a>
+        <a href="/compare/">তুলনা</a>
+        <a href="/quiz/" style="color: var(--accent);">কুইজ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="quiz-wrap container">
+
+    <!-- INTRO SCREEN -->
+    <section class="intro" id="intro">
+      <div class="eyebrow"><span class="dot"></span> ৬০ সেকেন্ডের কুইজ</div>
+      <h1>আপনার জন্য<br><span class="grad">পারফেক্ট AI টুল</span><br>কোনটি?</h1>
+      <p>৫টি সহজ প্রশ্নের উত্তর দিন — আপনার কাজ, বাজেট, পেমেন্ট পদ্ধতি ও ভাষা অনুযায়ী AI আপনাকে সাজেস্ট করবে সেরা ৩টি টুল।</p>
+      <div class="intro-stats">
+        <div class="intro-stat"><span class="num">৫</span><span class="label">প্রশ্ন</span></div>
+        <div class="intro-stat"><span class="num">৬০s</span><span class="label">সময়</span></div>
+        <div class="intro-stat"><span class="num">৩৭+</span><span class="label">টুলস</span></div>
+        <div class="intro-stat"><span class="num">১০০%</span><span class="label">ফ্রি</span></div>
+      </div>
+      <button type="button" class="btn btn-primary" id="startBtn">শুরু করুন →</button>
+    </section>
+
+    <!-- PROGRESS BAR -->
+    <div class="progress" id="progress">
+      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+      <div class="progress-meta">
+        <span><span class="step" id="stepNum">1</span> / 5</span>
+        <span id="stepLabel">কী কাজে?</span>
+      </div>
+    </div>
+
+    <!-- QUESTIONS — populated by JS -->
+    <div id="questions"></div>
+
+    <!-- RESULT -->
+    <section class="result" id="result">
+      <div class="result-head">
+        <h2>আপনার জন্য সেরা<br><span class="grad">৩টি AI টুল</span></h2>
+        <p>আপনার উত্তর অনুযায়ী কিউরেটেড সাজেশন</p>
+      </div>
+      <div class="results-grid" id="resultsGrid"></div>
+
+      <div class="nl-capture">
+        <h3>আরও AI সাজেশন চান?</h3>
+        <p>প্রতি সপ্তাহে নতুন AI টুলস ও গাইড — শুধু বাংলায়, ইনবক্সে।</p>
+        <form class="nl-form newsletter-form newsletter-form--mailchimp" action="https://banglaaiguide.us15.list-manage.com/subscribe/post?u=d389c0647878724daecc58fc6&amp;id=aaca6896d2&amp;f_id=007c9ae1f0" method="post" target="mailchimp-subscribe-frame" accept-charset="UTF-8" data-mailchimp-form="true">
+          <input type="email" name="EMAIL" placeholder="আপনার ইমেইল" required>
+          <button type="submit" class="btn btn-primary">সাবস্ক্রাইব</button>
+        </form>
+      </div>
+
+      <div class="result-footer">
+        <button type="button" class="btn btn-ghost" id="restartBtn">আবার করুন</button>
+        <button type="button" class="btn btn-ghost" id="shareBtn">ফলাফল শেয়ার করুন</button>
+        <a href="/#toolsSection" class="btn btn-ghost">সব টুলস দেখুন →</a>
+      </div>
+    </section>
+  <!-- PILLAR-LINKS:START -->
+<section class="container pillar-links-section" aria-label="জনপ্রিয় গাইড">
+  <h2 class="pillar-links-heading">আরও পড়ুন — বাংলাদেশের AI গাইড</h2>
+  <nav class="pillar-links-nav">
+      <a class="pillar-link" href="/bangla-ai-guide/">বাংলা AI গাইড (পিলার)</a>
+      <a class="pillar-link" href="/ai-tools-bangladesh-bengali/">বাংলাদেশের সেরা AI টুলস</a>
+      <a class="pillar-link" href="/bkash-diye-ai-tools-kena-jay/">bKash দিয়ে AI tools কেনা</a>
+      <a class="pillar-link" href="/vpn-chara-ai-tools-bangladesh/">VPN ছাড়া AI tools</a>
+      <a class="pillar-link" href="/ai-tools-bdt-price-2026-bangladesh/">AI tools BDT দাম</a>
+      <a class="pillar-link" href="/free-ai-tools-2026-bangladesh/">ফ্রি AI tools</a>
+  </nav>
+</section>
+<!-- PILLAR-LINKS:END -->
+</main>
+
+  <iframe name="mailchimp-subscribe-frame" style="display:none" tabindex="-1" aria-hidden="true"></iframe>
+
+  <script>
+    // ---------- quiz config ----------
+    var QUESTIONS = [
+      {
+        label: 'কী কাজে?',
+        h: 'কোন কাজে AI দরকার?',
+        sub: 'আপনার প্রধান use case কী?',
+        multi: false,
+        options: [
+          { id: 'writing', icon: '✍️', label: 'লেখালেখি ও কন্টেন্ট', desc: 'ব্লগ, ইমেইল, কপি', tags: ['writing', 'chatbot', 'content'] },
+          { id: 'image', icon: '🎨', label: 'ছবি ও ডিজাইন', desc: 'AI image, illustration', tags: ['image', 'design', 'art'] },
+          { id: 'video', icon: '🎬', label: 'ভিডিও তৈরি', desc: 'YouTube, Reels, edit', tags: ['video'] },
+          { id: 'voice', icon: '🎙️', label: 'অডিও ও voice', desc: 'TTS, podcast, narration', tags: ['voice', 'audio', 'tts'] },
+          { id: 'coding', icon: '💻', label: 'কোডিং ও ডেভেলপমেন্ট', desc: 'কোড লেখা, debug', tags: ['coding', 'developer'] },
+          { id: 'research', icon: '🔬', label: 'রিসার্চ ও পড়াশোনা', desc: 'paper, study, fact', tags: ['research', 'chatbot'] },
+          { id: 'productivity', icon: '⚡', label: 'প্রোডাক্টিভিটি ও workflow', desc: 'notes, automation, meetings', tags: ['productivity', 'automation'] },
+        ],
+      },
+      {
+        label: 'বাজেট?',
+        h: 'মাসে কতো খরচ করতে পারবেন?',
+        sub: 'সাবস্ক্রিপশন বাজেট',
+        multi: false,
+        options: [
+          { id: 'free', icon: '🎁', label: 'শুধু ফ্রি', desc: '$০ — কিছু খরচ না', maxUsd: 0 },
+          { id: 'low', icon: '💵', label: 'কম বাজেট', desc: '< $১০/মাস', maxUsd: 10 },
+          { id: 'mid', icon: '💰', label: 'মাঝারি বাজেট', desc: '$১০–$২০/মাস', maxUsd: 20 },
+          { id: 'high', icon: '💎', label: 'প্রিমিয়াম OK', desc: '$২০+/মাস', maxUsd: 999 },
+        ],
+      },
+      {
+        label: 'পেমেন্ট?',
+        h: 'কীভাবে পেমেন্ট করতে চান?',
+        sub: 'বাংলাদেশ থেকে ব্যবহার করছেন',
+        multi: false,
+        options: [
+          { id: 'bkash', icon: '📱', label: 'bKash / Nagad', desc: 'লোকাল পেমেন্ট প্রয়োজন', payment: 'bkash' },
+          { id: 'card', icon: '💳', label: 'International Card', desc: 'Visa / Mastercard আছে', payment: 'card' },
+          { id: 'any', icon: '🤷', label: 'যেকোনো', desc: 'কোনো সমস্যা নেই', payment: 'any' },
+        ],
+      },
+      {
+        label: 'অভিজ্ঞতা?',
+        h: 'AI ব্যবহারে কতোটা অভিজ্ঞ?',
+        sub: 'আপনার লেভেল',
+        multi: false,
+        options: [
+          { id: 'beginner', icon: '🌱', label: 'নতুন', desc: 'এই প্রথম শুরু করছি', level: 'সহজ' },
+          { id: 'intermediate', icon: '🌿', label: 'মাঝামাঝি', desc: 'ChatGPT/Claude ব্যবহার করি', level: 'মাঝারি' },
+          { id: 'advanced', icon: '🌳', label: 'অভিজ্ঞ', desc: 'API, advanced workflow', level: 'উন্নত' },
+        ],
+      },
+      {
+        label: 'ভাষা?',
+        h: 'প্রধানত কোন ভাষায় কাজ করেন?',
+        sub: 'AI আউটপুটের ভাষা',
+        multi: false,
+        options: [
+          { id: 'bangla', icon: '🇧🇩', label: 'প্রধানত বাংলা', desc: 'বাংলা সাপোর্ট জরুরি', wantBangla: true },
+          { id: 'english', icon: '🇬🇧', label: 'প্রধানত English', desc: 'ইংরেজি যথেষ্ট', wantBangla: false },
+          { id: 'both', icon: '🌐', label: 'দুটোই সমান', desc: 'Mixed ব্যবহার', wantBangla: 'both' },
+        ],
+      },
+    ];
+
+    var answers = {}; // qIdx → option id
+    var currentQ = 0;
+    var allTools = [];
+
+    function $(id) { return document.getElementById(id); }
+    function escapeHtml(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+    function slugify(s){return String(s||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'');}
+
+    // ---------- render questions ----------
+    function renderQuestions() {
+      var c = $('questions');
+      c.innerHTML = QUESTIONS.map(function(q, i){
+        return '<section class="question" data-q="' + i + '">'
+          + '<h2>' + escapeHtml(q.h) + '</h2>'
+          + '<p class="q-sub">' + escapeHtml(q.sub) + '</p>'
+          + '<div class="options">'
+          + q.options.map(function(o){
+            return '<button type="button" class="option" data-q="' + i + '" data-opt="' + escapeHtml(o.id) + '">'
+              + '<span class="opt-icon">' + o.icon + '</span>'
+              + '<span class="opt-text"><span class="opt-label">' + escapeHtml(o.label) + '</span>'
+              + '<span class="opt-desc">' + escapeHtml(o.desc) + '</span></span>'
+              + '<span class="opt-check"></span>'
+              + '</button>';
+          }).join('')
+          + '</div>'
+          + '<div class="q-actions">'
+          + (i > 0 ? '<button type="button" class="btn btn-ghost btn-sm" data-back>← আগের</button>' : '<span></span>')
+          + '<button type="button" class="btn btn-primary btn-sm" data-next disabled>পরের প্রশ্ন →</button>'
+          + '</div>'
+          + '</section>';
+      }).join('');
+    }
+
+    // ---------- navigation ----------
+    function showStep(idx) {
+      currentQ = idx;
+      $('intro').style.display = idx === -1 ? '' : 'none';
+      $('progress').classList.toggle('active', idx >= 0 && idx < QUESTIONS.length);
+      $('result').classList.toggle('active', idx === QUESTIONS.length);
+      document.querySelectorAll('.question').forEach(function(q){
+        q.classList.toggle('active', parseInt(q.dataset.q, 10) === idx);
+      });
+      if (idx >= 0 && idx < QUESTIONS.length) {
+        $('progressFill').style.width = ((idx + 1) / QUESTIONS.length * 100) + '%';
+        $('stepNum').textContent = idx + 1;
+        $('stepLabel').textContent = QUESTIONS[idx].label;
+        // restore selection if previously answered
+        var qEl = document.querySelector('.question[data-q="' + idx + '"]');
+        var prev = answers[idx];
+        qEl.querySelectorAll('.option').forEach(function(o){
+          o.classList.toggle('selected', o.dataset.opt === prev);
+        });
+        qEl.querySelector('[data-next]').disabled = !prev;
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // ---------- recommendation engine ----------
+    function loadTools(cb) {
+      if (typeof tools !== 'undefined' && Array.isArray(tools)) { allTools = tools.slice(); return cb(); }
+      setTimeout(function(){ loadTools(cb); }, 50);
+    }
+
+    function getOpt(qIdx, optId) {
+      return QUESTIONS[qIdx].options.find(function(o){ return o.id === optId; });
+    }
+
+    function scoreTool(t) {
+      var s = 0;
+      // Q0: use case → tag match
+      var useCase = getOpt(0, answers[0]);
+      if (useCase && useCase.tags && t.tags) {
+        for (var i = 0; i < useCase.tags.length; i++) {
+          if (t.tags.indexOf(useCase.tags[i]) > -1) s += 25;
+          if (String(t.category||'').indexOf(useCase.tags[i]) > -1) s += 15;
+        }
+      }
+      // Q1: budget
+      var budget = getOpt(1, answers[1]);
+      if (budget) {
+        var price = parsePrice(t.usdPrice);
+        if (budget.id === 'free') {
+          if (t.freePlanAvailable || t.pricing === 'free' || t.pricing === 'freemium') s += 20;
+          else s -= 30;
+        } else {
+          if (price <= budget.maxUsd) s += 10;
+          else if (price <= budget.maxUsd + 10) s -= 5;
+          else s -= 15;
+        }
+      }
+      // Q2: payment
+      var pay = getOpt(2, answers[2]);
+      if (pay) {
+        if (pay.id === 'bkash' && t.payment === 'card') s -= 12;
+        if (pay.id === 'card' && t.payment === 'card') s += 5;
+      }
+      // Q3: experience
+      var exp = getOpt(3, answers[3]);
+      if (exp) {
+        if (exp.id === 'beginner' && t.beginnerFriendly) s += 12;
+        if (exp.id === 'advanced' && !t.beginnerFriendly) s += 5; // power-user
+      }
+      // Q4: language
+      var lang = getOpt(4, answers[4]);
+      if (lang) {
+        if (lang.id === 'bangla' && t.supportsBangla) s += 20;
+        if (lang.id === 'bangla' && !t.supportsBangla) s -= 15;
+        if (lang.id === 'both' && t.supportsBangla) s += 10;
+      }
+      // BD-essentials
+      if (t.works_in_bd) s += 5;
+      if (t.no_vpn) s += 5;
+      if (t.featured) s += 3;
+      // rating tie-break
+      s += (t.rating || 0) * 1.5;
+      return s;
+    }
+
+    function parsePrice(s) {
+      if (!s) return 0;
+      if (/free/i.test(s)) return 0;
+      var m = String(s).match(/\$([0-9]+(?:\.[0-9]+)?)/);
+      return m ? parseFloat(m[1]) : 0;
+    }
+
+    function computeResults() {
+      if (!allTools.length) return [];
+      return allTools
+        .map(function(t){ return { t: t, s: scoreTool(t) }; })
+        .sort(function(a, b){ return b.s - a.s; })
+        .slice(0, 3)
+        .map(function(x){ return x.t; });
+    }
+
+    function renderResults() {
+      var top = computeResults();
+      var grid = $('resultsGrid');
+      grid.innerHTML = top.map(function(t, i){
+        var rank = i + 1;
+        var pills = [];
+        if (t.works_in_bd) pills.push('<span class="meta-pill good">✓ BD থেকে কাজ করে</span>');
+        if (t.no_vpn) pills.push('<span class="meta-pill good">✓ VPN লাগে না</span>');
+        if (t.supportsBangla) pills.push('<span class="meta-pill good">✓ বাংলা সাপোর্ট</span>');
+        if (t.freePlanAvailable) pills.push('<span class="meta-pill good">✓ ফ্রি tier</span>');
+        if (t.payment === 'card') pills.push('<span class="meta-pill warn">কার্ড লাগবে</span>');
+        return '<article class="result-card rank-' + rank + '">'
+          + '<span class="rank">' + (rank === 1 ? '⭐ TOP PICK' : '#' + rank) + '</span>'
+          + '<img class="logo" src="' + escapeHtml(t.logo || '') + '" alt="' + escapeHtml(t.name) + '" onerror="this.style.display=\'none\'">'
+          + '<div class="body">'
+          + '<h3>' + escapeHtml(t.name) + '</h3>'
+          + '<p class="desc">' + escapeHtml(t.description_bn || '') + '</p>'
+          + '<div class="meta-row">' + pills.join('') + '</div>'
+          + '<div class="actions">'
+          + '<a href="/' + slugify(t.name) + '/" class="btn btn-primary">পেজ দেখুন →</a>'
+          + (t.direct_url ? '<a href="' + escapeHtml(t.direct_url) + '" target="_blank" rel="noopener" class="btn btn-ghost">টুলে যান ↗</a>' : '')
+          + '</div>'
+          + '</div></article>';
+      }).join('');
+    }
+
+    // ---------- events ----------
+    document.addEventListener('click', function(e){
+      var start = e.target.closest('#startBtn');
+      if (start) { e.preventDefault(); showStep(0); return; }
+
+      var opt = e.target.closest('.option');
+      if (opt) {
+        var q = parseInt(opt.dataset.q, 10);
+        var optId = opt.dataset.opt;
+        answers[q] = optId;
+        var qEl = opt.closest('.question');
+        qEl.querySelectorAll('.option').forEach(function(o){ o.classList.toggle('selected', o === opt); });
+        qEl.querySelector('[data-next]').disabled = false;
+        // auto-advance after small delay
+        setTimeout(function(){
+          if (q < QUESTIONS.length - 1) showStep(q + 1);
+          else { loadTools(function(){ renderResults(); showStep(QUESTIONS.length); }); }
+        }, 280);
+        return;
+      }
+
+      var next = e.target.closest('[data-next]');
+      if (next && !next.disabled) {
+        if (currentQ < QUESTIONS.length - 1) showStep(currentQ + 1);
+        else { loadTools(function(){ renderResults(); showStep(QUESTIONS.length); }); }
+        return;
+      }
+
+      var back = e.target.closest('[data-back]');
+      if (back) { showStep(Math.max(0, currentQ - 1)); return; }
+
+      var restart = e.target.closest('#restartBtn');
+      if (restart) { answers = {}; showStep(-1); return; }
+
+      var share = e.target.closest('#shareBtn');
+      if (share) {
+        if (navigator.share) navigator.share({ title: 'আমার পারফেক্ট AI টুল', text: 'আমি কুইজে আমার সেরা AI টুল পেয়েছি!', url: 'https://banglaaiguide.com/quiz/' });
+        else {
+          navigator.clipboard.writeText('https://banglaaiguide.com/quiz/');
+          share.textContent = '✓ Copied!';
+          setTimeout(function(){ share.textContent = 'ফলাফল শেয়ার করুন'; }, 2000);
+        }
+        return;
+      }
+    });
+
+    // init
+    renderQuestions();
+    showStep(-1);
+  </script>
+</body>
+</html>

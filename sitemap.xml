@@ -1219,6 +1219,12 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://banglaaiguide.com/quiz/</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://banglaaiguide.com/remove-bg/</loc>
     <lastmod>2026-05-26</lastmod>
     <changefreq>weekly</changefreq>
