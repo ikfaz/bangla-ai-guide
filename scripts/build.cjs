@@ -14,6 +14,7 @@ const steps = [
   "generate-blog-covers.cjs",
   "inject-related-posts.cjs",
   "inject-faq-schema.cjs",
+  "generate-comparison-pages.cjs",
   "regenerate-blog-listing.cjs",
   "generate-search-index.cjs",
   "generate-feed.cjs",
