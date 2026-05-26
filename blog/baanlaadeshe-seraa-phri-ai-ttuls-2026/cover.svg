@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="বাংলাদেশে সেরা ফ্রি AI টুলস ২০২৬: আপনার ডিজিটাল যাত্রার সঙ্গী">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F0FDF9"/>
+      <stop offset="55%" stop-color="#FAFBFC"/>
+      <stop offset="100%" stop-color="#FFFFFF"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#16A34A"/>
+      <stop offset="100%" stop-color="#22C55E"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.85" cy="0.15" r="0.7">
+      <stop offset="0%" stop-color="#22C55E" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#22C55E" stop-opacity="0"/>
+    </radialGradient>
+    <style>
+      <![CDATA[
+      @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@600;700;800&family=Syne:wght@700;800&display=swap');
+      .title { font-family: 'Hind Siliguri', 'Noto Sans Bengali', 'SolaimanLipi', sans-serif; font-weight: 800; fill: #0F172A; }
+      .badge { font-family: 'Syne', 'Hind Siliguri', sans-serif; font-weight: 800; letter-spacing: 2px; fill: #FFFFFF; }
+      .brand { font-family: 'Syne', 'Hind Siliguri', sans-serif; font-weight: 700; fill: #475569; }
+      .brand-strong { font-family: 'Hind Siliguri', 'Noto Sans Bengali', sans-serif; font-weight: 700; fill: #0F172A; }
+      .url { font-family: 'Syne', sans-serif; font-weight: 600; fill: #16A34A; letter-spacing: 1px; }
+      ]]>
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <!-- Left accent bar -->
+  <rect x="0" y="0" width="12" height="630" fill="url(#bar)"/>
+
+  <!-- Decorative dots top-right -->
+  <g fill="#16A34A" opacity="0.18">
+    <circle cx="1130" cy="60" r="6"/>
+    <circle cx="1100" cy="60" r="4"/>
+    <circle cx="1070" cy="60" r="3"/>
+    <circle cx="1130" cy="90" r="3"/>
+    <circle cx="1100" cy="90" r="2"/>
+  </g>
+
+  <!-- Category badge -->
+  <g transform="translate(100, 80)">
+    <rect x="0" y="0" rx="18" ry="18" width="96" height="36" fill="#16A34A"/>
+    <text x="48" y="24" font-size="15" text-anchor="middle" class="badge">GUIDE</text>
+  </g>
+
+  <!-- Title -->
+  <text class="title" font-size="56"><tspan x="100" y="229">বাংলাদেশে সেরা ফ্রি AI</tspan><tspan x="100" y="297">টুলস ২০২৬: আপনার ডিজিটাল</tspan><tspan x="100" y="365">যাত্রার সঙ্গী</tspan></text>
+
+  <!-- Bottom divider -->
+  <line x1="100" y1="540" x2="1100" y2="540" stroke="#E2E8F0" stroke-width="2"/>
+
+  <!-- Brand block -->
+  <g transform="translate(100, 565)">
+    <!-- Logo mark -->
+    <circle cx="22" cy="22" r="22" fill="url(#bar)"/>
+    <text x="22" y="30" font-size="24" text-anchor="middle" font-family="Syne, sans-serif" font-weight="800" fill="#FFFFFF">B</text>
+    <!-- Wordmark -->
+    <text x="60" y="20" font-size="20" class="brand-strong">বাংলা AI গাইড</text>
+    <text x="60" y="42" font-size="14" class="brand">BANGLADESH&apos;S AI TOOLS DIRECTORY</text>
+  </g>
+
+  <!-- URL bottom-right -->
+  <text x="1100" y="595" font-size="16" text-anchor="end" class="url">banglaaiguide.com</text>
+</svg>

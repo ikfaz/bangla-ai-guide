@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI দিয়ে Image থেকে Video বানানো — Kling, Pika, Runway গাইড</title>
+    <meta name="description" content="একটি static ছবি থেকে কীভাবে AI দিয়ে animated video বানাবেন? Kling AI, Pika Labs, Runway ML, Luma — সব ইমেজ-টু-ভিডিও টুলের তুলনা ও বাংলায় টিউটোরিয়াল।">
+    <meta name="keywords" content="image to video AI, Kling AI bangla, Pika Labs, Runway ML, AI video bangla, photo to video AI">
+    <meta name="author" content="BanglaAIGuide">
+    <meta property="og:title" content="AI দিয়ে Image থেকে Video বানানো — Kling, Pika, Runway গাইড">
+    <meta property="og:description" content="একটি static ছবি থেকে কীভাবে AI দিয়ে animated video বানাবেন? Kling AI, Pika Labs, Runway ML, Luma — সব ইমেজ-টু-ভিডিও টুলের তুলনা ও বাংলায় টিউটোরিয়াল।">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://banglaaiguide.com/blog/ai-diye-image-to-video-banano-bangla-guide/">
+    <meta property="og:image" content="https://banglaaiguide.com/blog/ai-diye-image-to-video-banano-bangla-guide/cover.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/svg+xml">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI দিয়ে Image থেকে Video বানানো — Kling, Pika, Runway গাইড">
+    <meta name="twitter:description" content="একটি static ছবি থেকে কীভাবে AI দিয়ে animated video বানাবেন? Kling AI, Pika Labs, Runway ML, Luma — সব ইমেজ-টু-ভিডিও টুলের তুলনা ও বাংলায় টিউটোরিয়াল।">
+    <meta name="twitter:image" content="https://banglaaiguide.com/blog/ai-diye-image-to-video-banano-bangla-guide/cover.svg">
+    <link rel="canonical" href="https://banglaaiguide.com/blog/ai-diye-image-to-video-banano-bangla-guide/">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "AI দিয়ে Image থেকে Video বানানো — Kling, Pika, Runway গাইড",
+  "description": "একটি static ছবি থেকে কীভাবে AI দিয়ে animated video বানাবেন? Kling AI, Pika Labs, Runway ML, Luma — সব ইমেজ-টু-ভিডিও টুলের তুলনা ও বাংলায় টিউটোরিয়াল।",
+  "image": "https://banglaaiguide.com/blog/ai-diye-image-to-video-banano-bangla-guide/cover.svg",
+  "author": {
+    "@type": "Organization",
+    "name": "BanglaAIGuide"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "বাংলা AI গাইড",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://banglaaiguide.com/web-app-manifest-512x512.png"
+    }
+  },
+  "datePublished": "2026-05-26",
+  "dateModified": "2026-05-26"
+}
+    </script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"বাংলা AI গাইড","item":"https://banglaaiguide.com/"},{"@type":"ListItem","position":2,"name":"ব্লগ","item":"https://banglaaiguide.com/blog/"},{"@type":"ListItem","position":3,"name":"AI দিয়ে Image থেকে Video বানানো — Kling, Pika, Runway গাইড","item":"https://banglaaiguide.com/blog/ai-diye-image-to-video-banano-bangla-guide/"}]}</script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
+    <style>:root{--bg-gradient:linear-gradient(180deg,#F0FDF9 0%,#FAFBFC 50%,#FFFFFF 100%);--accent:#16A34A;--accent-hover:#15803D;--accent-light:#22C55E;--accent-soft:#DCFCE7;--text:#0F172A;--text-muted:#475569;--border:#E2E8F0;--shadow-sm:0 4px 12px rgba(15,23,42,.06);--shadow-md:0 10px 30px rgba(15,23,42,.08);--radius-lg:24px;--radius-md:18px}body{font-family:'Hind Siliguri',sans-serif;line-height:1.8;margin:0;padding:0;background:var(--bg-gradient);color:var(--text);-webkit-font-smoothing:antialiased}.container{max-width:820px;margin:60px auto 80px;background:#fff;padding:60px 70px;border-radius:var(--radius-lg);box-shadow:var(--shadow-md);position:relative}.container::before{content:'';position:absolute;top:0;left:0;width:6px;height:100%;background:linear-gradient(135deg,#16A34A 0%,#22C55E 100%);border-radius:var(--radius-lg) 0 0 var(--radius-lg)}h1{font-family:'Syne',sans-serif;color:var(--text);font-size:2.75rem;font-weight:800;line-height:1.2;margin:0 0 32px 0;padding-bottom:24px;border-bottom:3px solid var(--border);position:relative}h1::after{content:'';position:absolute;bottom:-3px;left:0;width:80px;height:3px;background:linear-gradient(135deg,#16A34A 0%,#22C55E 100%)}h2{font-family:'Syne',sans-serif;color:var(--text);font-size:2rem;font-weight:700;line-height:1.3;margin:48px 0 20px 0;padding-left:20px;border-left:4px solid var(--accent)}h3{font-family:'Syne',sans-serif;color:var(--text);font-size:1.5rem;font-weight:600;line-height:1.4;margin:32px 0 16px 0}p{margin-bottom:1.5em;font-size:1.125rem;color:var(--text-muted);line-height:1.8}ul{list-style:none;margin:24px 0;padding:0}ul li{position:relative;padding:14px 20px 14px 50px;margin-bottom:14px;background:linear-gradient(135deg,#F9FAFB 0%,#F0FDF4 100%);border-radius:var(--radius-md);border:1px solid var(--border);font-size:1.0625rem;line-height:1.7;color:var(--text-muted);transition:all .2s ease}ul li:hover{background:linear-gradient(135deg,#FFFFFF 0%,#F0FDF4 100%);border-color:rgba(22,163,74,.3);transform:translateX(4px);box-shadow:var(--shadow-sm)}ul li::before{content:'\2713';position:absolute;left:18px;top:50%;transform:translateY(-50%);width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#16A34A 0%,#22C55E 100%);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px}b{font-weight:600;color:var(--text)}a{color:var(--accent);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;font-weight:500;transition:all .2s ease}a:hover{color:var(--accent-hover);text-decoration-thickness:3px}@media (max-width:768px){.container{margin:30px 20px;padding:40px 30px}h1{font-size:2rem}h2{font-size:1.5rem}h3{font-size:1.25rem}p,ul li{font-size:1rem}}</style>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/blog-premium.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container navbar-inner">
+            <a href="/" class="logo">
+                <img class="logo-mark" src="/favicon.svg" alt="বাংলা AI গাইড লোগো" width="28" height="28" decoding="async" />
+                <span class="logo-text">বাংলা AI গাইড</span>
+            </a>
+            <nav class="nav-links">
+                <a href="/#toolsSection">টুলস দেখুন</a>
+                <a href="/blog/">ব্লগ</a>
+                <a href="/bangla-ai-guide/">বাংলা AI গাইড</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>AI দিয়ে Image থেকে Video বানানো — Kling, Pika, Runway গাইড</h1>
+
+        <h2>ভূমিকা — Image-to-Video কী?</h2>
+        <p>একটি স্থির ছবি (still image) দিন, AI সেটিকে ৪-১০ সেকেন্ডের ভিডিওতে রূপান্তর করবে — মুভমেন্ট, ক্যামেরা angle, এমনকি character animation সহ। এটিই ২০২৫-২০২৬ এর সবচেয়ে দ্রুত-বর্ধমান AI category।</p>
+        <p>YouTube creator, marketer, brand owner — সবার জন্য এটি ছোট ভিডিও content বানানোর সবচেয়ে সহজ পথ।</p>
+
+        <h2>সেরা ৫টি Image-to-Video টুল</h2>
+
+        <h3>১. Kling AI — চীনা origin, সবচেয়ে natural motion</h3>
+        <p>Kling-এর motion physics realistic — যা Sora-এর সাথে compare করা হয়। কিছু shot-এ মানুষ আলাদা করতে পারবে না AI vs real।</p>
+        <ul>
+            <li><b>দাম:</b> Free tier আছে (limited); Pro $৬.৯৯/মাস থেকে</li>
+            <li><b>Output:</b> 5-10s, 720p/1080p</li>
+            <li><b>BD অ্যাক্সেস:</b> klingai.com — সরাসরি কাজ করে</li>
+        </ul>
+
+        <h3>২. Pika Labs — creator-friendly</h3>
+        <p>Discord-based ছিল, এখন web app আছে। Lip-sync, special effects (Pikaffects) — মজার additions।</p>
+        <ul>
+            <li><b>দাম:</b> Free 30 credits/day; Standard $৮/মাস</li>
+            <li><b>Special:</b> "Inflate", "Explode", "Cake-ify" — viral effects</li>
+        </ul>
+
+        <h3>৩. Runway Gen-3 / Gen-4</h3>
+        <p>Industry-standard, professional video editor-দের favorite। 10s+ video, 4K upscaling।</p>
+        <ul>
+            <li><b>দাম:</b> Free trial; Standard $১৫/মাস</li>
+            <li><b>Best for:</b> commercial-quality, agency কাজ</li>
+        </ul>
+
+        <h3>৪. Luma Dream Machine</h3>
+        <p>Photorealism-এ Kling-এর প্রতিদ্বন্দ্বী; দ্রুত, free tier generous।</p>
+
+        <h3>৫. Hailuo AI (MiniMax)</h3>
+        <p>Free, no signup ছোট ক্লিপের জন্য চমৎকার; বাংলা prompt accept করে।</p>
+
+        <h2>প্রথম video বানানোর ধাপ (Kling AI উদাহরণে)</h2>
+        <ul>
+            <li>klingai.com → "Image to Video"</li>
+            <li>ছবি upload করুন (1024×1024 অথবা landscape — quality যত বেশি, output তত ভালো)</li>
+            <li>Motion prompt লিখুন: "Camera slowly zooms in, person looks up and smiles, soft wind blowing"</li>
+            <li>Settings: Duration 5s, Mode Standard/Pro</li>
+            <li>"Generate" → ২-৫ মিনিট wait</li>
+            <li>Download MP4</li>
+        </ul>
+
+        <h2>ভালো output পেতে prompt লেখার ৭টি নিয়ম</h2>
+        <ul>
+            <li><b>Camera motion specify করুন:</b> "zoom in", "pan left", "dolly forward"</li>
+            <li><b>Subject action আলাদা বলুন:</b> "person walks", "leaves rustle"</li>
+            <li><b>Environment detail:</b> "soft sunlight", "rain drops falling"</li>
+            <li><b>Avoid কী বলবেন:</b> "no morphing", "stable face" — distortion কমে</li>
+            <li><b>Short prompt better:</b> ২০-৪০ শব্দে রাখুন</li>
+            <li><b>Image quality:</b> blurry image input → blurry output; high-res দিন</li>
+            <li><b>Aspect ratio:</b> ছবি 16:9 হলে video-ও 16:9</li>
+        </ul>
+
+        <h2>কী কাজে ব্যবহার করবেন?</h2>
+        <ul>
+            <li><b>প্রোডাক্ট মার্কেটিং:</b> static product photo → 5s animation for Instagram Reels</li>
+            <li><b>YouTube thumbnail animation:</b> বুদ্ধিমান touch</li>
+            <li><b>Personal portrait:</b> wedding photo animation</li>
+            <li><b>স্টোরিটেলিং:</b> কাহিনীর প্রতিটি scene-এর ছবি → video sequence</li>
+            <li><b>মিউজিক ভিডিও:</b> Suno দিয়ে গান + Kling দিয়ে visual</li>
+            <li><b>Real estate:</b> property photo animation</li>
+        </ul>
+
+        <h2>কোন টুল কোন কাজে?</h2>
+        <ul>
+            <li><b>Realism:</b> Kling AI ≥ Luma</li>
+            <li><b>Fun effects:</b> Pika Labs</li>
+            <li><b>Commercial quality:</b> Runway Gen-4</li>
+            <li><b>একদম ফ্রি দ্রুত:</b> Hailuo AI</li>
+            <li><b>Lip-sync (avatar):</b> Pika or HeyGen</li>
+        </ul>
+
+        <h2>সীমাবদ্ধতা</h2>
+        <ul>
+            <li>মানুষের চেহারায় কখনো distortion (especially long shot)</li>
+            <li>লেখা/text image-এ rendering সমস্যা</li>
+            <li>Hand motion এখনো imperfect</li>
+            <li>Long-form video (১+ মিনিট) এখনো না — multiple clip stitch করতে হয়</li>
+        </ul>
+
+        <h2>উপসংহার</h2>
+        <p>Image-to-Video প্রযুক্তি গত ১২ মাসে ১০০× উন্নত হয়েছে। আজ একটি ফ্রি ক্লিপ বানিয়ে দেখুন (Kling বা Hailuo)। ৬ মাস পর এই টুলগুলো আরও powerful হবে — যিনি এখন থেকে practice করছেন, তিনি অনেক এগিয়ে থাকবেন।</p>
+
+        <h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
+        <ul>
+            <li><a href="/kling-ai/">Kling AI টুল পেজ</a></li>
+            <li><a href="/pika-labs/">Pika Labs</a></li>
+            <li><a href="/runway-ml/">Runway ML</a></li>
+            <li><a href="/blog/best-ai-video-generators-2026-bangladesh/">সেরা AI ভিডিও জেনারেটর</a></li>
+        </ul>
+
+<section class="seo-newsletter-block" style="margin-top:2.5rem;padding:2rem;background:#f0fdf4;border-radius:12px;text-align:center;">
+  <h2 style="color:#16a34a;margin-bottom:0.5rem;">AI আপডেট পেতে চান?</h2>
+  <p style="margin-bottom:1rem;">প্রতি সপ্তাহে নতুন AI টুলস ও টিউটোরিয়াল বাংলায় পান।</p>
+  <form class="newsletter-form newsletter-form--mailchimp" action="https://banglaaiguide.us15.list-manage.com/subscribe/post?u=d389c0647878724daecc58fc6&amp;id=aaca6896d2&amp;f_id=007c9ae1f0" method="post" target="mailchimp-subscribe-frame" accept-charset="UTF-8" data-mailchimp-form="true" style="display:flex;gap:8px;max-width:440px;margin:0 auto;">
+    <input type="email" name="EMAIL" placeholder="আপনার ইমেইল লিখুন" required style="flex:1;padding:10px 14px;border:1px solid #e5e7eb;border-radius:8px;font-size:15px;">
+    <button type="submit" style="padding:10px 20px;background:#16a34a;color:#fff;border:none;border-radius:8px;font-weight:600;cursor:pointer;">সাবস্ক্রাইব</button>
+  </form>
+  <p style="font-size:12px;color:#64748b;margin-top:0.75rem;">ফ্রি নিউজলেটার। যেকোনো সময় আনসাবস্ক্রাইব করতে পারবেন।</p>
+</section>
+
+    </div>
+
+    <!-- PILLAR-LINKS:START -->
+<section class="container pillar-links-section" aria-label="জনপ্রিয় গাইড">
+  <h2 class="pillar-links-heading">আরও পড়ুন — বাংলাদেশের AI গাইড</h2>
+  <nav class="pillar-links-nav">
+      <a class="pillar-link" href="/bangla-ai-guide/">বাংলা AI গাইড (পিলার)</a>
+      <a class="pillar-link" href="/ai-tools-bangladesh-bengali/">বাংলাদেশের সেরা AI টুলস</a>
+      <a class="pillar-link" href="/bkash-diye-ai-tools-kena-jay/">bKash দিয়ে AI tools কেনা</a>
+      <a class="pillar-link" href="/vpn-chara-ai-tools-bangladesh/">VPN ছাড়া AI tools</a>
+      <a class="pillar-link" href="/ai-tools-bdt-price-2026-bangladesh/">AI tools BDT দাম</a>
+      <a class="pillar-link" href="/free-ai-tools-2026-bangladesh/">ফ্রি AI tools</a>
+  </nav>
+</section>
+<!-- PILLAR-LINKS:END -->
+<footer class="footer">
+        <div class="container footer-inner">
+            <p class="footer-brand">
+                <img class="logo-mark" src="/favicon.svg" alt="বাংলা AI গাইড লোগো" width="20" height="20" decoding="async" />
+                <span>বাংলা AI গাইড</span>
+            </p>
+            <p>© ২০২৬ বাংলা AI গাইড · বাংলাদেশের জন্য তৈরি</p>
+            <p class="footer-links">
+                <a href="/privacy/">গোপনীয়তা</a> ·
+                <a href="/terms/">শর্তাবলী</a> ·
+                <a href="/contact/">যোগাযোগ</a> ·
+                <a href="/bangla-ai-guide/">বাংলা AI গাইড</a>
+            </p>
+        </div>
+    </footer>
+<script src="/js/mailchimp.js" defer></script>
+</body>
+</html>

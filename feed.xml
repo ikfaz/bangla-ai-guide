@@ -6,27 +6,517 @@
   <atom:link href="https://banglaaiguide.com/feed.xml" rel="self" type="application/rss+xml" />
   <description>বাংলাদেশের জন্য AI টুলস গাইড, রিভিউ ও টিউটোরিয়াল।</description>
   <language>bn-BD</language>
-  <lastBuildDate>Tue, 12 May 2026 17:54:11 GMT</lastBuildDate>
+  <lastBuildDate>Tue, 26 May 2026 16:40:35 GMT</lastBuildDate>
+  <item>
+    <title>Adobe Firefly বাংলা গাইড — Commercial-Safe AI Image Generation</title>
+    <link>https://banglaaiguide.com/blog/adobe-firefly-bangla-image-generation-tutorial/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/adobe-firefly-bangla-image-generation-tutorial/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>Adobe Firefly কীভাবে ব্যবহার করবেন? Photoshop Generative Fill, Illustrator AI, text-to-image — commercial use-এর জন্য সবচেয়ে নিরাপদ AI image টুলের সম্পূর্ণ টিউটোরিয়াল।</description>
+  </item>
+  <item>
+    <title>Adobe Podcast AI বাংলা গাইড — Audio Enhance &amp;amp; Studio-Quality Voice</title>
+    <link>https://banglaaiguide.com/blog/adobe-podcast-bangla-audio-enhance-guide/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/adobe-podcast-bangla-audio-enhance-guide/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>Adobe Podcast Enhance Speech দিয়ে কীভাবে যেকোনো recording-কে studio-quality বানাবেন? Podcaster, YouTuber, content creator-দের জন্য ফ্রি AI টুলের সম্পূর্ণ গাইড।</description>
+  </item>
+  <item>
+    <title>AI দিয়ে বাংলা Voice Over — সেরা TTS টুলস ও সম্পূর্ণ গাইড ২০২৬</title>
+    <link>https://banglaaiguide.com/blog/ai-bangla-voice-over-tts-guide/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/ai-bangla-voice-over-tts-guide/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>AI দিয়ে বাংলা voice over কীভাবে বানাবেন? ElevenLabs, Murf, Google, Suno — সেরা বাংলা TTS টুলগুলোর তুলনা এবং YouTube/explainer ভিডিওর জন্য practical টিউটোরিয়াল।</description>
+  </item>
+  <item>
+    <title>AI Content Detector বাংলা গাইড — ChatGPT-এর লেখা ধরা পড়ে কীভাবে?</title>
+    <link>https://banglaaiguide.com/blog/ai-content-detector-bangla-bachte-paren-ki/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/ai-content-detector-bangla-bachte-paren-ki/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>AI-জেনারেটেড content কীভাবে detect হয়? GPTZero, Turnitin, Originality.ai কতটা accurate? AI-লেখা content humanize করার নৈতিক উপায় ও সীমাবদ্ধতা — সম্পূর্ণ বাংলা গাইড।</description>
+  </item>
+  <item>
+    <title>AI দিয়ে Accounting ও Bookkeeping — বাংলাদেশি Accountant-দের জন্য গাইড</title>
+    <link>https://banglaaiguide.com/blog/ai-diye-accounting-bookkeeping-bangla-guide/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/ai-diye-accounting-bookkeeping-bangla-guide/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>বাংলাদেশি accounting professional ও SME-এর জন্য AI tools — bookkeeping, VAT calculation, financial analysis, audit prep, tax planning। QuickBooks, Tally, ChatGPT integration।</description>
+  </item>
+  <item>
+    <title>AI দিয়ে বাংলা লেখা উন্নত করুন — Writer-দের জন্য সম্পূর্ণ গাইড</title>
+    <link>https://banglaaiguide.com/blog/ai-diye-bangla-likha-improve-guide/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/ai-diye-bangla-likha-improve-guide/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>বাংলা লেখার দুর্বলতা — ব্যাকরণ, বানান, structure, style — কীভাবে AI দিয়ে কাটিয়ে উঠবেন? Writer, blogger, journalist, student-দের জন্য practical workflow।</description>
+  </item>
+  <item>
+    <title>AI দিয়ে বাংলা Translation — Google, ChatGPT, DeepL কোনটি ভালো? (২০২৬)</title>
+    <link>https://banglaaiguide.com/blog/ai-diye-bangla-translation-konti-bhalo-comparison/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/ai-diye-bangla-translation-konti-bhalo-comparison/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>বাংলা থেকে ইংরেজি বা ইংরেজি থেকে বাংলা translation-এর জন্য সেরা AI টুল কোনটি? Google Translate, ChatGPT, Claude, DeepL — সব টুলের accuracy টেস্ট, দাম ও use case।</description>
+  </item>
+  <item>
+    <title>AI দিয়ে BCS প্রস্তুতি — Preliminary, Written, Viva সম্পূর্ণ গাইড</title>
+    <link>https://banglaaiguide.com/blog/ai-diye-bcs-preparation-sompurno-bangla-guide/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/ai-diye-bcs-preparation-sompurno-bangla-guide/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>BCS Cadre হতে চান? ChatGPT, NotebookLM, Perplexity দিয়ে BCS Preliminary (MCQ), Written ও Viva প্রস্তুতি কীভাবে নেবেন? Practical study workflow ও tool selection।</description>
+  </item>
+  <item>
+    <title>AI দিয়ে Data Visualization — বাংলায় Chart, Infographic, Dashboard</title>
+    <link>https://banglaaiguide.com/blog/ai-diye-data-visualization-bangla-guide/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/ai-diye-data-visualization-bangla-guide/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>কোনো design skill ছাড়াই AI দিয়ে কীভাবে professional chart, infographic, dashboard বানাবেন? ChatGPT Data Analyst, Flourish, Napkin AI — analyst ও marketer-দের জন্য সম্পূর্ণ গাইড।</description>
+  </item>
+  <item>
+    <title>AI দিয়ে Doctor ও Medical Practice — বাংলাদেশি চিকিৎসকদের জন্য গাইড</title>
+    <link>https://banglaaiguide.com/blog/ai-diye-doctor-medical-practice-bangla/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/ai-diye-doctor-medical-practice-bangla/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>চিকিৎসক ও medical professional-দের জন্য AI tools — ডায়াগনোসিস support, patient note, research, prescription, telemedicine। বাংলাদেশের প্রেক্ষাপটে practical applications।</description>
+  </item>
+  <item>
+    <title>AI দিয়ে DSE Stock Market Research — বাংলাদেশি বিনিয়োগকারীদের জন্য</title>
+    <link>https://banglaaiguide.com/blog/ai-diye-dse-stock-market-research-bangla-guide/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/ai-diye-dse-stock-market-research-bangla-guide/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>Dhaka Stock Exchange-এ বিনিয়োগ করার জন্য AI tools কীভাবে ব্যবহার করবেন? Fundamental analysis, news monitoring, technical screening — practical bangla গাইড।</description>
+  </item>
+  <item>
+    <title>AI দিয়ে Excel কাজ — সূত্র, ডেটা বিশ্লেষণ ও রিপোর্ট (বাংলা গাইড)</title>
+    <link>https://banglaaiguide.com/blog/ai-diye-excel-kaj-bangla-guide/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/ai-diye-excel-kaj-bangla-guide/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>Excel-এ AI কীভাবে ব্যবহার করবেন? ChatGPT, Microsoft Copilot, Excelformulabot দিয়ে formula লেখা, data analysis, chart তৈরি — বাংলাদেশি অফিসকর্মী ও ফ্রিল্যান্সারদের জন্য সম্পূর্ণ গাইড।</description>
+  </item>
+  <item>
+    <title>AI দিয়ে Facebook পেজ চালানো — পোস্ট, রিচ ও এনগেজমেন্ট গাইড</title>
+    <link>https://banglaaiguide.com/blog/ai-diye-facebook-page-chalano-bangla/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/ai-diye-facebook-page-chalano-bangla/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>AI ব্যবহার করে বাংলাদেশি Facebook পেজ কীভাবে আরও দ্রুত ও কার্যকরভাবে চালাবেন? পোস্ট লেখা, ছবি তৈরি, কমেন্ট রিপ্লাই, audience targeting — সম্পূর্ণ practical গাইড।</description>
+  </item>
+  <item>
+    <title>AI দিয়ে IELTS প্রস্তুতি — সব ৪ Module-এ Band 7+ পাওয়ার গাইড</title>
+    <link>https://banglaaiguide.com/blog/ai-diye-ielts-preparation-bangla-guide/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/ai-diye-ielts-preparation-bangla-guide/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>IELTS Listening, Reading, Writing, Speaking সব module-এ AI কীভাবে আপনার score বাড়াবে? ChatGPT, ElevenLabs, Speeko — বাংলাদেশি IELTS candidate-দের জন্য সম্পূর্ণ workflow।</description>
+  </item>
+  <item>
+    <title>AI দিয়ে Image থেকে Video বানানো — Kling, Pika, Runway গাইড</title>
+    <link>https://banglaaiguide.com/blog/ai-diye-image-to-video-banano-bangla-guide/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/ai-diye-image-to-video-banano-bangla-guide/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>একটি static ছবি থেকে কীভাবে AI দিয়ে animated video বানাবেন? Kling AI, Pika Labs, Runway ML, Luma — সব ইমেজ-টু-ভিডিও টুলের তুলনা ও বাংলায় টিউটোরিয়াল।</description>
+  </item>
+  <item>
+    <title>AI দিয়ে কৃষি ও Farming — বাংলাদেশি কৃষকদের জন্য Practical গাইড</title>
+    <link>https://banglaaiguide.com/blog/ai-diye-krishi-farmer-bangladesh-guide/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/ai-diye-krishi-farmer-bangladesh-guide/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>বাংলাদেশি কৃষকদের জন্য AI কীভাবে ফসল পরিকল্পনা, রোগ শনাক্তকরণ, আবহাওয়া পূর্বাভাস, বাজার মূল্য ও কৃষি ঋণে সাহায্য করতে পারে? Mobile-first practical গাইড।</description>
+  </item>
+  <item>
+    <title>AI দিয়ে Law Firm ও Legal Practice — বাংলাদেশি Lawyer-দের গাইড</title>
+    <link>https://banglaaiguide.com/blog/ai-diye-law-firm-legal-research-bangla-bangladesh/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/ai-diye-law-firm-legal-research-bangla-bangladesh/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>বাংলাদেশি আইনজীবীদের জন্য AI — case research, contract review, document drafting, client communication। Bangladesh Legal Practice Rule অনুযায়ী practical adoption guide।</description>
+  </item>
+  <item>
+    <title>AI দিয়ে Mock Interview — চাকরির ইন্টারভিউ প্রস্তুতি বাংলা গাইড</title>
+    <link>https://banglaaiguide.com/blog/ai-diye-mock-interview-job-prostuti-bangla/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/ai-diye-mock-interview-job-prostuti-bangla/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>চাকরির ইন্টারভিউয়ের জন্য AI দিয়ে কীভাবে practice করবেন? ChatGPT, Interview Warmup, Yoodli — বাংলা ও ইংরেজি mock interview, behavioral question, salary negotiation।</description>
+  </item>
+  <item>
+    <title>AI দিয়ে Personal Brand গড়ুন — LinkedIn, X, YouTube বাংলা গাইড</title>
+    <link>https://banglaaiguide.com/blog/ai-diye-personal-brand-banano-bangla/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/ai-diye-personal-brand-banano-bangla/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>বাংলাদেশি প্রফেশনালদের জন্য AI ব্যবহার করে LinkedIn, X (Twitter), YouTube-এ personal brand গড়ার সম্পূর্ণ workflow। Niche, content, consistency, monetization।</description>
+  </item>
+  <item>
+    <title>AI দিয়ে Real Estate ও Property Listing — বাংলাদেশের জন্য গাইড</title>
+    <link>https://banglaaiguide.com/blog/ai-diye-real-estate-bproperty-listing-bangla/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/ai-diye-real-estate-bproperty-listing-bangla/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>বাংলাদেশি real estate professional-দের জন্য AI — listing description, virtual tour, lead nurture, market analysis। Bproperty, Bikroy ও নিজস্ব site-এ implement করার practical গাইড।</description>
+  </item>
+  <item>
+    <title>AI দিয়ে Restaurant Business — বাংলাদেশি রেস্তোরাঁ মালিকদের জন্য গাইড</title>
+    <link>https://banglaaiguide.com/blog/ai-diye-restaurant-business-bangla-guide/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/ai-diye-restaurant-business-bangla-guide/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>বাংলাদেশের রেস্তোরাঁ ব্যবসায় AI কীভাবে menu design, marketing, customer service, inventory ও review management-কে boost করবে? Foodpanda/Pathao সহ practical workflow।</description>
+  </item>
+  <item>
+    <title>AI দিয়ে RMG ও Garments Industry — বাংলাদেশের জন্য সম্পূর্ণ গাইড</title>
+    <link>https://banglaaiguide.com/blog/ai-diye-rmg-garments-industry-bangladesh-guide/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/ai-diye-rmg-garments-industry-bangladesh-guide/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>বাংলাদেশের পোশাক শিল্পে AI কীভাবে production, design, supply chain, quality control-কে transform করছে? Factory owner, merchandiser ও designer-দের জন্য practical গাইড।</description>
+  </item>
+  <item>
+    <title>AI দিয়ে SSC ও HSC প্রস্তুতি — সম্পূর্ণ বাংলা গাইড ২০২৬</title>
+    <link>https://banglaaiguide.com/blog/ai-diye-ssc-hsc-preparation-bangla-guide/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/ai-diye-ssc-hsc-preparation-bangla-guide/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>SSC ও HSC পরীক্ষার্থীদের জন্য AI tool কীভাবে study, MCQ practice, math solve, essay writing-এ সাহায্য করবে? Subject-wise practical workflow।</description>
+  </item>
+  <item>
+    <title>AI দিয়ে টাকা ইনকাম ২০২৬ — বাংলাদেশ থেকে ১০টি বাস্তব উপায়</title>
+    <link>https://banglaaiguide.com/blog/ai-diye-taka-income-2026-bangladesh/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/ai-diye-taka-income-2026-bangladesh/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>বাংলাদেশ থেকে AI দিয়ে কীভাবে অনলাইনে আয় করবেন? ChatGPT, Midjourney, ElevenLabs ইত্যাদি টুলস ব্যবহার করে ১০টি প্রমাণিত ইনকাম পদ্ধতি — ফ্রিল্যান্সিং, কনটেন্ট, প্রিন্ট-অন-ডিমান্ড, ই-বুক, কনসাল্টিং।</description>
+  </item>
+  <item>
+    <title>AI দিয়ে Travel Agency Business — বাংলাদেশি ভ্রমণ ব্যবসার জন্য গাইড</title>
+    <link>https://banglaaiguide.com/blog/ai-diye-travel-agency-bangladesh-guide/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/ai-diye-travel-agency-bangladesh-guide/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>বাংলাদেশি travel agency-র জন্য AI কীভাবে itinerary design, customer inquiry, hotel booking, visa documentation-কে স্বয়ংক্রিয় করতে পারে? Practical workflow ও tool selection।</description>
+  </item>
+  <item>
+    <title>AI দিয়ে University Admission প্রস্তুতি — ভর্তি পরীক্ষার বাংলা গাইড</title>
+    <link>https://banglaaiguide.com/blog/ai-diye-university-admission-prostuti-bangla/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/ai-diye-university-admission-prostuti-bangla/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>বাংলাদেশের পাবলিক ও প্রাইভেট ভার্সিটির ভর্তি পরীক্ষার জন্য AI কীভাবে practice, MCQ, time management-এ সাহায্য করবে? DU, BUET, IBA, MIST সহ practical strategy।</description>
+  </item>
+  <item>
+    <title>AI দিয়ে Website বানানো — Bolt, v0, Lovable (No-Code বাংলা গাইড)</title>
+    <link>https://banglaaiguide.com/blog/ai-diye-website-banano-no-code-bangla-guide/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/ai-diye-website-banano-no-code-bangla-guide/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>কোনো কোডিং না জেনে কীভাবে AI দিয়ে professional website বানাবেন? Bolt.new, v0 by Vercel, Lovable, Replit Agent — সব no-code AI tool-এর তুলনা ও practical tutorial।</description>
+  </item>
+  <item>
+    <title>AI দিয়ে YouTube Thumbnail বানানো — CTR বাড়ানোর সম্পূর্ণ গাইড</title>
+    <link>https://banglaaiguide.com/blog/ai-diye-youtube-thumbnail-banano-ctr-baranor-guide/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/ai-diye-youtube-thumbnail-banano-ctr-baranor-guide/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>YouTube-এ click-through rate (CTR) বাড়ানোর জন্য কীভাবে AI দিয়ে আকর্ষণীয় thumbnail বানাবেন? Canva AI, Midjourney, Photoshop AI — বাংলা creator-দের জন্য practical টিউটোরিয়াল।</description>
+  </item>
+  <item>
+    <title>AI দিয়ে Product Photography — E-commerce ব্যবসার জন্য বাংলা গাইড</title>
+    <link>https://banglaaiguide.com/blog/ai-product-photography-ecommerce-bangla-guide/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/ai-product-photography-ecommerce-bangla-guide/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>ছোট ব্যবসার জন্য costly studio photoshoot ছাড়াই professional product ছবি কীভাবে বানাবেন? Photoroom, FluxAI, Pebblely — AI product photography টুলগুলোর সম্পূর্ণ tutorial।</description>
+  </item>
   <item>
     <title>ফ্রিল্যান্সারদের আয় বাড়াতে সেরা ৫টি AI টুলস ২০২৬ | বাংলা AI গাইড</title>
     <link>https://banglaaiguide.com/blog/ai-tools-for-freelancers-income-bangladesh/</link>
     <guid isPermaLink="true">https://banglaaiguide.com/blog/ai-tools-for-freelancers-income-bangladesh/</guid>
-    <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
     <description>২০২৬ সালে ফ্রিল্যান্সিংয়ে আয় বাড়াতে এবং কাজ দ্রুত করতে সেরা ৫টি AI টুলস নিয়ে বিস্তারিত আলোচনা। ChatGPT, Claude, এবং Midjourney এর ব্যবহার জানুন।</description>
   </item>
   <item>
     <title>বাংলাদেশি শিক্ষার্থীদের জন্য সেরা ৫টি AI টুলস ২০২৬ | বাংলা AI গাইড</title>
     <link>https://banglaaiguide.com/blog/best-ai-tools-for-students-bangladesh/</link>
     <guid isPermaLink="true">https://banglaaiguide.com/blog/best-ai-tools-for-students-bangladesh/</guid>
-    <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
     <description>২০২৬ সালে বাংলাদেশি শিক্ষার্থীদের পড়াশোনা সহজ করতে সেরা ৫টি AI টুলস নিয়ে বিস্তারিত আলোচনা। NotebookLM, ChatGPT, এবং Notion AI এর ব্যবহার জানুন।</description>
+  </item>
+  <item>
+    <title>শিক্ষকদের জন্য সেরা AI টুলস — বাংলাদেশি শিক্ষকদের সম্পূর্ণ গাইড</title>
+    <link>https://banglaaiguide.com/blog/best-ai-tools-for-teachers-bangladesh/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/best-ai-tools-for-teachers-bangladesh/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>বাংলাদেশের স্কুল-কলেজ-ভার্সিটির শিক্ষকদের জন্য সেরা AI টুলস কোনগুলো? Lesson plan, quiz, worksheet, presentation, grading — সব কাজ AI দিয়ে দ্রুত করার practical গাইড।</description>
   </item>
   <item>
     <title>সেরা ৫টি AI ভিডিও জেনারেটর ২০২৬ | বাংলা AI গাইড</title>
     <link>https://banglaaiguide.com/blog/best-ai-video-generators-2026-bangladesh/</link>
     <guid isPermaLink="true">https://banglaaiguide.com/blog/best-ai-video-generators-2026-bangladesh/</guid>
-    <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
     <description>২০২৬ সালে ভিডিও তৈরিতে সেরা ৫টি AI ভিডিও জেনারেটর নিয়ে বিস্তারিত আলোচনা। Kling AI, Runway, এবং HeyGen এর ব্যবহার জানুন।</description>
+  </item>
+  <item>
+    <title>CapCut AI বাংলা গাইড — মোবাইলে Pro Level Video Edit ২০২৬</title>
+    <link>https://banglaaiguide.com/blog/capcut-ai-bangla-video-edit-tutorial/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/capcut-ai-bangla-video-edit-tutorial/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>CapCut-এর AI ফিচার (auto caption, background remove, magic motion, AI script) কীভাবে ব্যবহার করবেন? বাংলা YouTuber, TikToker, Reels creator-দের জন্য সম্পূর্ণ tutorial।</description>
+  </item>
+  <item>
+    <title>ChatGPT-এর সেরা ৫০টি প্রম্পট বাংলায় — কপি-পেস্ট রেডি (২০২৬)</title>
+    <link>https://banglaaiguide.com/blog/chatgpt-prompt-bangla-50-collection/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/chatgpt-prompt-bangla-50-collection/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>ChatGPT-এর জন্য সেরা ৫০টি ready-made বাংলা প্রম্পট — কনটেন্ট রাইটিং, পড়াশোনা, ব্যবসা, প্রোডাক্টিভিটি, কোডিং, ইমেইল। সরাসরি কপি করে ব্যবহার করুন।</description>
+  </item>
+  <item>
+    <title>Claude Code বাংলা গাইড — Terminal-Based AI Developer Tool</title>
+    <link>https://banglaaiguide.com/blog/claude-code-bangla-developer-guide/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/claude-code-bangla-developer-guide/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>Claude Code কী এবং কেন এটি Cursor/Copilot থেকে আলাদা? Terminal-based AI coding agent, MCP, file system access — বাংলাদেশি developer-দের জন্য সম্পূর্ণ tutorial।</description>
+  </item>
+  <item>
+    <title>ClipDrop বাংলা গাইড — All-in-One AI Image Editing Suite</title>
+    <link>https://banglaaiguide.com/blog/clipdrop-ai-bangla-image-edit-tutorial/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/clipdrop-ai-bangla-image-edit-tutorial/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>ClipDrop-এর ১২+ AI image tool (Cleanup, Uncrop, Relight, Replace Background) কীভাবে ব্যবহার করবেন? দাম, web/mobile workflow ও বাংলাদেশি designer-দের জন্য সম্পূর্ণ গাইড।</description>
+  </item>
+  <item>
+    <title>Codeium বাংলা গাইড — GitHub Copilot-এর ফ্রি বিকল্প (২০২৬)</title>
+    <link>https://banglaaiguide.com/blog/codeium-bangla-free-github-copilot-bikolpo/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/codeium-bangla-free-github-copilot-bikolpo/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>Codeium কী এবং কেন এটি GitHub Copilot-এর সেরা ফ্রি বিকল্প? VS Code/JetBrains setup, autocomplete, AI chat — বাংলাদেশি developer-দের জন্য সম্পূর্ণ গাইড।</description>
+  </item>
+  <item>
+    <title>Cursor vs GitHub Copilot vs Windsurf — কোন AI Coding Tool ভালো?</title>
+    <link>https://banglaaiguide.com/blog/cursor-vs-github-copilot-vs-windsurf-konti-bhalo-bangla/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/cursor-vs-github-copilot-vs-windsurf-konti-bhalo-bangla/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>AI coding-এর ৩টি top tool: Cursor, GitHub Copilot, Windsurf। দাম, ফিচার, IDE experience, free tier — বাংলাদেশি developer-দের জন্য decision guide।</description>
+  </item>
+  <item>
+    <title>D-ID বাংলা গাইড — যেকোনো ছবিকে Talking Avatar বানানো</title>
+    <link>https://banglaaiguide.com/blog/d-id-ai-bangla-talking-avatar-tutorial/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/d-id-ai-bangla-talking-avatar-tutorial/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>D-ID দিয়ে কীভাবে একটি static ছবিকে কথা বলা video-তে রূপান্তর করবেন? Photo + script → talking head video — বাংলাদেশি educator, marketer-দের জন্য সম্পূর্ণ tutorial।</description>
+  </item>
+  <item>
+    <title>DeepSeek vs ChatGPT বাংলাদেশে কোনটি ভালো? — সম্পূর্ণ তুলনা ২০২৬</title>
+    <link>https://banglaaiguide.com/blog/deepseek-vs-chatgpt-bangladesh-konti-bhalo/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/deepseek-vs-chatgpt-bangladesh-konti-bhalo/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>DeepSeek R1 vs ChatGPT GPT-4o — কোন AI বাংলাদেশের ব্যবহারকারীদের জন্য ভালো? দাম, পারফরম্যান্স, বাংলা ভাষার সাপোর্ট, কোডিং, রিজনিং — সব দিক থেকে পূর্ণাঙ্গ তুলনা।</description>
+  </item>
+  <item>
+    <title>Descript বাংলা গাইড — Text-Editing Style-এ Audio/Video Edit</title>
+    <link>https://banglaaiguide.com/blog/descript-bangla-podcast-edit-guide/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/descript-bangla-podcast-edit-guide/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>Descript-এ কীভাবে text edit করার মতো audio/video edit করবেন? Studio Sound, Overdub, Filler Word Removal — podcaster ও creator-দের জন্য complete tutorial।</description>
+  </item>
+  <item>
+    <title>ElevenLabs Voice Clone — নিজের কণ্ঠস্বর AI দিয়ে Clone করার বাংলা গাইড</title>
+    <link>https://banglaaiguide.com/blog/elevenlabs-voice-clone-bangla-tutorial/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/elevenlabs-voice-clone-bangla-tutorial/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>ElevenLabs দিয়ে নিজের voice clone কীভাবে বানাবেন? ৩-৫ মিনিট sample দিয়ে professional AI voice — বাংলা YouTuber, podcaster, audiobook narrator-দের জন্য সম্পূর্ণ টিউটোরিয়াল।</description>
+  </item>
+  <item>
+    <title>ElevenLabs vs Murf — Bangla Voice Over-এ কোনটি ভালো?</title>
+    <link>https://banglaaiguide.com/blog/elevenlabs-vs-murf-bangla-voice-comparison/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/elevenlabs-vs-murf-bangla-voice-comparison/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>ElevenLabs এবং Murf AI — দুই top voice synthesis tool। বাংলা accent, voice variety, দাম, voice cloning — content creator ও podcaster-দের জন্য decision guide।</description>
+  </item>
+  <item>
+    <title>Elicit AI বাংলা গাইড — Academic Research Paper খোঁজা ও Analyze</title>
+    <link>https://banglaaiguide.com/blog/elicit-ai-bangla-research-paper-guide/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/elicit-ai-bangla-research-paper-guide/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>Elicit AI দিয়ে কীভাবে academic paper search, summarize ও meta-analysis করবেন? ছাত্র, গবেষক ও PhD aspirant-দের জন্য Google Scholar-এর AI-বিকল্প সম্পূর্ণ গাইড।</description>
+  </item>
+  <item>
+    <title>Fireflies AI বাংলা গাইড — Meeting Notes, CRM Sync ও Analytics</title>
+    <link>https://banglaaiguide.com/blog/fireflies-ai-bangla-meeting-notes-guide/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/fireflies-ai-bangla-meeting-notes-guide/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>Fireflies AI দিয়ে meeting auto-record, transcribe, CRM-এ sync কীভাবে করবেন? Sales team, HR, founder-দের জন্য সম্পূর্ণ workflow ও দাম-features বিশ্লেষণ।</description>
+  </item>
+  <item>
+    <title>Gamma AI দিয়ে প্রেজেন্টেশন বানানো — ১ মিনিটে প্রফেশনাল স্লাইড</title>
+    <link>https://banglaaiguide.com/blog/gamma-ai-diye-presentation-banano-tutorial/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/gamma-ai-diye-presentation-banano-tutorial/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>Gamma AI দিয়ে বাংলায় প্রফেশনাল প্রেজেন্টেশন কীভাবে বানাবেন? এক প্রম্পটে স্লাইড, ডিজাইন, ছবি — সব AI করে দেবে। ধাপে ধাপে টিউটোরিয়াল ও টিপস।</description>
+  </item>
+  <item>
+    <title>Gemini vs ChatGPT — ২০২৬-এ কোনটি ভালো? (বাংলা Comparison)</title>
+    <link>https://banglaaiguide.com/blog/gemini-vs-chatgpt-konti-bhalo-bangla-comparison-2026/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/gemini-vs-chatgpt-konti-bhalo-bangla-comparison-2026/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>Google Gemini 2 এবং OpenAI ChatGPT (GPT-4o, o1) — দুই top AI। দাম, কোয়ালিটি, coding, multimodal, Bangla — সব দিক থেকে সম্পূর্ণ তুলনা।</description>
+  </item>
+  <item>
+    <title>Grok AI বাংলা গাইড — X-এর Real-Time Knowledge AI</title>
+    <link>https://banglaaiguide.com/blog/grok-ai-bangla-twitter-x-guide/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/grok-ai-bangla-twitter-x-guide/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>X (Twitter)-এর Grok AI কী, ChatGPT থেকে কীভাবে আলাদা? Real-time data access, image generation, বাংলাদেশ থেকে অ্যাক্সেস — সম্পূর্ণ গাইড।</description>
+  </item>
+  <item>
+    <title>HeyGen বাংলা গাইড — AI Avatar দিয়ে ভিডিও তৈরির সম্পূর্ণ টিউটোরিয়াল</title>
+    <link>https://banglaaiguide.com/blog/heygen-ai-bangla-avatar-video-tutorial/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/heygen-ai-bangla-avatar-video-tutorial/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>HeyGen-এ AI avatar দিয়ে কীভাবে professional ভিডিও বানাবেন? নিজের avatar clone, ১২০+ ভাষায় voice over, টেমপ্লেট ব্যবহার — বাংলা থেকে ইংরেজি video তৈরির সম্পূর্ণ tutorial।</description>
+  </item>
+  <item>
+    <title>Ideogram AI বাংলা গাইড — ছবিতে Text সঠিকভাবে Generate করার AI</title>
+    <link>https://banglaaiguide.com/blog/ideogram-ai-bangla-text-in-image-guide/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/ideogram-ai-bangla-text-in-image-guide/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>Ideogram AI কেন text-heavy poster, logo, billboard image-এ Midjourney-এর চেয়ে ভালো? Use case, prompt tips, ও বাংলাদেশি designer-দের জন্য সম্পূর্ণ গাইড।</description>
+  </item>
+  <item>
+    <title>Jasper AI বাংলা গাইড — Marketing Content-এর জন্য Enterprise-Grade AI</title>
+    <link>https://banglaaiguide.com/blog/jasper-ai-bangla-marketing-content-guide/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/jasper-ai-bangla-marketing-content-guide/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>Jasper AI কেন agency/enterprise marketer-দের favorite? Brand Voice, Templates, Workflows — বাংলাদেশি digital marketer-দের জন্য সম্পূর্ণ tutorial ও ROI বিশ্লেষণ।</description>
+  </item>
+  <item>
+    <title>Jasper vs Copy.ai vs Writesonic — AI Copywriter কোনটি বেস্ট?</title>
+    <link>https://banglaaiguide.com/blog/jasper-vs-copy-ai-vs-writesonic-bangla-comparison/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/jasper-vs-copy-ai-vs-writesonic-bangla-comparison/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>AI marketing copy-এর তিন top tool — Jasper, Copy.ai, Writesonic। দাম, ফিচার, brand voice, SEO, বাংলা সাপোর্ট — agency ও marketer-দের জন্য decision guide।</description>
+  </item>
+  <item>
+    <title>Make.com বাংলা গাইড — No-Code Automation দিয়ে ১০× Productivity</title>
+    <link>https://banglaaiguide.com/blog/make-com-bangla-automation-tutorial/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/make-com-bangla-automation-tutorial/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>Make.com (পূর্বে Integromat) দিয়ে কীভাবে Gmail, Sheets, ChatGPT, Slack এর মধ্যে workflow automate করবেন? বাংলাদেশি ফ্রিল্যান্সার ও ব্যবসার জন্য practical scenario।</description>
+  </item>
+  <item>
+    <title>Manus AI বাংলা গাইড — অটোনোমাস AI এজেন্ট কী, কীভাবে কাজ করে?</title>
+    <link>https://banglaaiguide.com/blog/manus-ai-bangla-guide/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/manus-ai-bangla-guide/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>Manus AI কী? কীভাবে এই autonomous AI agent কাজ করে — research, coding, automation? বাংলাদেশ থেকে ব্যবহার পদ্ধতি, দাম ও practical use case-এর সম্পূর্ণ গাইড।</description>
+  </item>
+  <item>
+    <title>Midjourney vs Flux — কোনটি ভালো AI Image Generator? (বাংলা ২০২৬)</title>
+    <link>https://banglaaiguide.com/blog/midjourney-vs-flux-konti-bhalo-bangla-comparison/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/midjourney-vs-flux-konti-bhalo-bangla-comparison/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>Midjourney v6 এবং Flux 1.1 Pro — দুই top-tier image AI। দাম, কোয়ালিটি, prompt adherence, text rendering, license — সব দিক থেকে পূর্ণাঙ্গ comparison।</description>
+  </item>
+  <item>
+    <title>NotebookLM দিয়ে পড়াশোনা — শিক্ষার্থীদের জন্য সম্পূর্ণ বাংলা গাইড</title>
+    <link>https://banglaaiguide.com/blog/notebooklm-diye-porashona-students-bangla-guide/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/notebooklm-diye-porashona-students-bangla-guide/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>Google-এর NotebookLM দিয়ে পড়াশোনা কীভাবে সহজ হবে? PDF থেকে নোট, audio overview, quiz তৈরি — বাংলাদেশের HSC, ভার্সিটি ও চাকরির প্রস্তুতির জন্য পূর্ণ গাইড।</description>
+  </item>
+  <item>
+    <title>Notion AI vs ClickUp AI — Productivity-তে কোন AI ভালো?</title>
+    <link>https://banglaaiguide.com/blog/notion-ai-vs-clickup-ai-bangla-productivity-comparison/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/notion-ai-vs-clickup-ai-bangla-productivity-comparison/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>Notion AI ও ClickUp AI — দুই top productivity platform-এর AI feature। Project management, writing, task automation — বাংলাদেশি team-এর জন্য decision guide।</description>
+  </item>
+  <item>
+    <title>Opus Clip বাংলা গাইড — Long Video থেকে Viral Shorts বানানো</title>
+    <link>https://banglaaiguide.com/blog/opus-clip-bangla-shorts-banano-tutorial/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/opus-clip-bangla-shorts-banano-tutorial/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>Opus Clip দিয়ে কীভাবে এক ক্লিকে long YouTube ভিডিও থেকে viral shorts/reels বানাবেন? Bangla creator-দের জন্য workflow, দাম, alternatives সম্পূর্ণ গাইড।</description>
+  </item>
+  <item>
+    <title>Otter AI বাংলা গাইড — Meeting Auto-Transcribe ও Summary</title>
+    <link>https://banglaaiguide.com/blog/otter-ai-bangla-meeting-transcript-guide/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/otter-ai-bangla-meeting-transcript-guide/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>Otter AI দিয়ে কীভাবে meeting auto-transcribe, summary, action items বের করবেন? Zoom/Google Meet/Teams integration ও বাংলাদেশি team-এর জন্য practical গাইড।</description>
+  </item>
+  <item>
+    <title>Perplexity vs ChatGPT বাংলা — Research-এর জন্য কোনটি ভালো? (২০২৬)</title>
+    <link>https://banglaaiguide.com/blog/perplexity-vs-chatgpt-bangla-research-konti-bhalo/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/perplexity-vs-chatgpt-bangla-research-konti-bhalo/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>Perplexity AI এবং ChatGPT — দুটোই powerful। কিন্তু research, fact-finding ও citation-এর জন্য কোনটি ভালো? Bangla user-এর প্রেক্ষাপটে দাম, accuracy, source quality-এর সম্পূর্ণ তুলনা।</description>
+  </item>
+  <item>
+    <title>Prompt Engineering সম্পূর্ণ বাংলা গাইড — ChatGPT/Claude থেকে Best Output</title>
+    <link>https://banglaaiguide.com/blog/prompt-engineering-bangla-sompurno-guide/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/prompt-engineering-bangla-sompurno-guide/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>AI থেকে অসাধারণ output পাওয়ার রহস্য — prompt engineering। নিয়ম, framework (RACE, CO-STAR), advanced technique, ও বাংলায় practical উদাহরণ।</description>
+  </item>
+  <item>
+    <title>Replit AI বাংলা গাইড — Browser-এ Full-Stack App তৈরি ২০২৬</title>
+    <link>https://banglaaiguide.com/blog/replit-ai-bangla-coding-tutorial/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/replit-ai-bangla-coding-tutorial/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>Replit AI Agent দিয়ে কীভাবে browser-এই full-stack app বানাবেন? Setup, Ghostwriter, Agent, deployment — কোডিং না জেনে শুরু করার সম্পূর্ণ tutorial।</description>
+  </item>
+  <item>
+    <title>Runway vs Pika vs Kling — সেরা AI Video Generator কোনটি?</title>
+    <link>https://banglaaiguide.com/blog/runway-vs-pika-vs-kling-bangla-video-ai-comparison/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/runway-vs-pika-vs-kling-bangla-video-ai-comparison/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>Runway ML, Pika Labs, Kling AI — ২০২৬-এর তিন top video AI। কোয়ালিটি, দাম, বাংলাদেশ থেকে অ্যাক্সেস, use case — সম্পূর্ণ comparison।</description>
+  </item>
+  <item>
+    <title>Rytr বাংলা গাইড — সবচেয়ে সস্তা AI Writer ($৯/মাস)</title>
+    <link>https://banglaaiguide.com/blog/rytr-bangla-affordable-writer-guide/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/rytr-bangla-affordable-writer-guide/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>Rytr কেন budget-conscious content creator-দের জন্য সেরা? ৪০+ template, ৩০+ language, $৯/মাস — বাংলাদেশি ছোট ব্যবসা, ফ্রিল্যান্সার ও blogger-দের জন্য সম্পূর্ণ গাইড।</description>
+  </item>
+  <item>
+    <title>Stable Diffusion বাংলা ইনস্টল গাইড — নিজের কম্পিউটারে Local AI Image</title>
+    <link>https://banglaaiguide.com/blog/stable-diffusion-bangla-install-local-guide/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/stable-diffusion-bangla-install-local-guide/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>Stable Diffusion কীভাবে নিজের কম্পিউটারে install করবেন (Windows/Mac)? Automatic1111, ComfyUI, ফ্রি model — unlimited image generation-এর সম্পূর্ণ বাংলা গাইড।</description>
+  </item>
+  <item>
+    <title>Suno AI দিয়ে বাংলা গান বানানো — সম্পূর্ণ টিউটোরিয়াল ২০২৬</title>
+    <link>https://banglaaiguide.com/blog/suno-ai-diye-bangla-gaan-banano-tutorial/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/suno-ai-diye-bangla-gaan-banano-tutorial/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>Suno AI দিয়ে বাংলা ভাষায় গান কীভাবে বানাবেন? Lyrics, vocal style, music genre সেট করে প্রফেশনাল গান তৈরির ধাপে ধাপে গাইড — বাংলাদেশ থেকে ব্যবহার পদ্ধতি সহ।</description>
+  </item>
+  <item>
+    <title>Synthesia বাংলা গাইড — Corporate Training Video বানানোর সম্পূর্ণ পদ্ধতি</title>
+    <link>https://banglaaiguide.com/blog/synthesia-bangla-corporate-training-video-guide/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/synthesia-bangla-corporate-training-video-guide/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>Synthesia-তে AI avatar এবং multilingual voice দিয়ে কীভাবে corporate training video বানাবেন? বাংলাদেশি কোম্পানির HR, L&amp;amp;D ও marketing-এর জন্য practical গাইড।</description>
+  </item>
+  <item>
+    <title>Synthesia vs HeyGen — AI Avatar Video Tool-এ কোনটি ভালো?</title>
+    <link>https://banglaaiguide.com/blog/synthesia-vs-heygen-konti-bhalo-bangla-comparison/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/synthesia-vs-heygen-konti-bhalo-bangla-comparison/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>Synthesia এবং HeyGen — দুই top AI avatar platform। দাম, avatar quality, language support, enterprise feature — বাংলাদেশি কোম্পানি ও creator-দের জন্য decision guide।</description>
+  </item>
+  <item>
+    <title>Veo 3 vs Sora 2 বাংলা গাইড — ২০২৬-এর সেরা AI Video Model</title>
+    <link>https://banglaaiguide.com/blog/veo-3-sora-2-bangla-guide-best-ai-video-models/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/veo-3-sora-2-bangla-guide-best-ai-video-models/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>Google Veo 3 এবং OpenAI Sora 2 — দুই সবচেয়ে শক্তিশালী AI video model। কোনটি ভালো? দাম, কোয়ালিটি, বাংলাদেশ থেকে অ্যাক্সেস ও practical demo।</description>
+  </item>
+  <item>
+    <title>Warp AI Terminal বাংলা গাইড — AI-চালিত Modern Terminal</title>
+    <link>https://banglaaiguide.com/blog/warp-ai-terminal-bangla-tutorial/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/warp-ai-terminal-bangla-tutorial/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>Warp Terminal-এ AI কীভাবে আপনার command-line কাজ ১০× faster করে? Block-based interface, AI command suggestion, workflows — developer/sysadmin-দের জন্য সম্পূর্ণ গাইড।</description>
+  </item>
+  <item>
+    <title>Windsurf IDE বাংলা গাইড — Codeium-এর AI-First Code Editor</title>
+    <link>https://banglaaiguide.com/blog/windsurf-ide-bangla-coding-tutorial/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/windsurf-ide-bangla-coding-tutorial/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>Windsurf IDE কী এবং কেন এটি Cursor-এর সবচেয়ে বড় প্রতিদ্বন্দ্বী? AI Flow, Cascade agent, multi-file edit — বাংলাদেশি developer-দের জন্য সম্পূর্ণ টিউটোরিয়াল।</description>
+  </item>
+  <item>
+    <title>Writesonic বাংলা গাইড — SEO ব্লগ ও Marketing Copy-এর জন্য AI</title>
+    <link>https://banglaaiguide.com/blog/writesonic-bangla-content-tool-guide/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/writesonic-bangla-content-tool-guide/</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>Writesonic-এ Chatsonic, Article Writer, Botsonic কীভাবে ব্যবহার করবেন? Real-time data, SEO-optimized output ও দাম comparison — বাংলাদেশি content creator-দের জন্য সম্পূর্ণ গাইড।</description>
   </item>
   <item>
     <title>বাংলাদেশে AI শিক্ষা — কোথায় শিখবেন, কী শিখবেন ২০২৬ | বাংলা AI গাইড</title>
