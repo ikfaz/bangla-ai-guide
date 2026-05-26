@@ -11,6 +11,8 @@ const steps = [
   "meta-lint.cjs",
   "prerender-homepage.cjs",
   "inject-pillar-links.cjs",
+  "generate-blog-covers.cjs",
+  "regenerate-blog-listing.cjs",
   "generate-feed.cjs",
   "generate-sitemap.cjs",
 ];
