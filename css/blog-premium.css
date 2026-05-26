@@ -495,3 +495,173 @@ html {
   .article-toc { padding: 16px; }
   .toc-item { font-size: 0.85rem; }
 }
+
+/* ============================================================
+   Deep-article components (Path A — narrative depth rewrites)
+   Used in 2,500+ word feature articles
+   ============================================================ */
+
+.lede {
+  font-size: 1.25rem;
+  line-height: 1.7;
+  color: #1E293B;
+  margin: 0 0 40px;
+  font-weight: 500;
+  padding-bottom: 32px;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.deep-blockquote {
+  margin: 32px 0;
+  padding: 24px 28px;
+  background: #F0FDF4;
+  border-left: 4px solid #16A34A;
+  border-radius: 0 12px 12px 0;
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  font-style: italic;
+  color: #1E293B;
+  list-style: none;
+}
+.deep-blockquote::before { display: none; }
+.deep-blockquote p { margin: 0 0 12px; font-size: inherit; }
+.deep-blockquote cite { display: block; margin-top: 8px; font-style: normal; font-size: 0.875rem; color: #475569; font-weight: 600; }
+
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 16px;
+  margin: 32px 0;
+  padding: 24px;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 16px;
+  list-style: none;
+}
+.stat-row::before { display: none; }
+.stat-row > .stat {
+  text-align: center;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0;
+}
+.stat-row > .stat::before { display: none; }
+.stat-row .num {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #16A34A;
+  display: block;
+  line-height: 1.1;
+}
+.stat-row .label {
+  font-size: 0.75rem;
+  color: #64748B;
+  margin-top: 6px;
+  display: block;
+}
+
+.callout {
+  margin: 32px 0;
+  padding: 24px 28px;
+  background: #FFFBEB;
+  border: 1px solid #FCD34D;
+  border-radius: 12px;
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  list-style: none;
+}
+.callout::before { display: none; }
+.callout > strong:first-child {
+  display: block;
+  color: #78350F;
+  margin-bottom: 8px;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+}
+.callout p { color: #92400E; margin: 0; }
+
+.case-study {
+  margin: 48px 0;
+  padding: 32px;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 16px;
+  list-style: none;
+}
+.case-study::before { display: none; }
+.case-study .person {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #E2E8F0;
+}
+.case-study .person .avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #7C3AED, #A78BFA);
+  display: grid;
+  place-items: center;
+  color: white;
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 1.125rem;
+  flex-shrink: 0;
+}
+.case-study .person.green .avatar { background: linear-gradient(135deg, #059669, #10B981); }
+.case-study .person.pink .avatar { background: linear-gradient(135deg, #EC4899, #F472B6); }
+.case-study .person.amber .avatar { background: linear-gradient(135deg, #F59E0B, #FB923C); }
+.case-study .person.blue .avatar { background: linear-gradient(135deg, #0EA5E9, #38BDF8); }
+.case-study .person.red .avatar { background: linear-gradient(135deg, #EF4444, #F87171); }
+.case-study .name { font-weight: 700; font-size: 1.25rem; color: #0F172A; }
+.case-study .desc { font-size: 0.875rem; color: #64748B; margin-top: 2px; }
+.case-study > h3:first-of-type { margin-top: 0 !important; }
+
+.deep-author-line {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 0;
+  margin: 24px 0 48px;
+  border-top: 1px solid #E2E8F0;
+  border-bottom: 1px solid #E2E8F0;
+}
+.deep-author-line .avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #16A34A, #22C55E);
+  display: grid;
+  place-items: center;
+  color: white;
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 1.125rem;
+  flex-shrink: 0;
+}
+.deep-author-line .info { display: flex; flex-direction: column; }
+.deep-author-line .name { font-weight: 700; color: #0F172A; font-size: 1rem; }
+.deep-author-line .role { font-size: 0.8125rem; color: #475569; }
+
+.deep-meta-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #64748B;
+  font-size: 0.875rem;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.deep-meta-top .dot { width: 4px; height: 4px; background: #94A3B8; border-radius: 50%; flex-shrink: 0; }
+
+@media (max-width: 640px) {
+  .lede { font-size: 1.0625rem; }
+  .case-study { padding: 24px 18px; }
+  .stat-row { padding: 16px; }
+}
