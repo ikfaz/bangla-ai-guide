@@ -12,7 +12,9 @@ const steps = [
   "prerender-homepage.cjs",
   "inject-pillar-links.cjs",
   "generate-blog-covers.cjs",
+  "inject-related-posts.cjs",
   "regenerate-blog-listing.cjs",
+  "generate-search-index.cjs",
   "generate-feed.cjs",
   "generate-sitemap.cjs",
 ];

@@ -57,12 +57,19 @@
   </script>
   <script src="js/tools-data.js?v=2026-05-26" defer></script>
   <script src="js/main.js?v=2026-05-26" defer></script>
+  <script src="js/search-overlay.js?v=2026-05-26" defer></script>
   <script src="js/consent.js" defer></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-DMM6V53DKC"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date()); gtag('config', 'G-DMM6V53DKC');
+    // PWA service worker registration
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js').catch(function(){});
+      });
+    }
   </script>
 
   <style>
@@ -448,6 +455,11 @@
       </nav>
 
       <div class="nav-actions">
+        <button type="button" class="bag-search-trigger" data-bag-search aria-label="সাইট সার্চ">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <span>খুঁজুন</span>
+          <span class="kbd"><kbd>⌘</kbd><kbd>K</kbd></span>
+        </button>
         <div class="lang-pill" aria-label="ভাষা">
           <button type="button" class="active" data-language-toggle="bn">বাংলা</button>
           <button type="button" data-language-toggle="en">EN</button>
