@@ -17,11 +17,14 @@
   <meta name="robots" content="index, follow" />
   <meta name="language" content="Bengali" />
   <link rel="canonical" href="https://banglaaiguide.com/" />
+  <link rel="alternate" hreflang="bn-BD" href="https://banglaaiguide.com/" />
+  <link rel="alternate" hreflang="x-default" href="https://banglaaiguide.com/" />
+  <link rel="alternate" type="application/rss+xml" title="বাংলা AI গাইড — ব্লগ ফিড" href="https://banglaaiguide.com/feed.xml" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://banglaaiguide.com/" />
   <meta property="og:title" content="বাংলা AI গাইড — বাংলাদেশের সেরা AI টুলস" />
   <meta property="og:description" content="কিউরেটেড AI টুলস — বাংলায় রিভিউ, BDT প্রাইস, VPN লাগবে কিনা সব জানুন।" />
-  <meta property="og:image" content="https://banglaaiguide.com/og-image.png" />
+  <meta property="og:image" content="https://banglaaiguide.com/web-app-manifest-512x512.png" />
   <meta property="og:locale" content="bn_BD" />
   <meta property="og:site_name" content="বাংলা AI গাইড" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -136,6 +139,33 @@
       ]
     }
   </script>
+  <script>
+    // Dynamic ItemList schema — auto-generates from tools-data.js
+    document.addEventListener("DOMContentLoaded", function() {
+      var toolsArr = window.tools || (typeof tools !== "undefined" && Array.isArray(tools) ? tools : []);
+      if (!toolsArr.length) return;
+      var schema = {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "সেরা AI টুলস বাংলাদেশ ২০২৬",
+        "description": "বাংলাদেশের জন্য কিউরেটেড AI টুলস লিস্ট",
+        "numberOfItems": toolsArr.length,
+        "itemListElement": toolsArr.map(function(t, i) {
+          return {
+            "@type": "ListItem",
+            "position": i + 1,
+            "name": t.name,
+            "url": t.direct_url,
+            "description": t.description_bn
+          };
+        })
+      };
+      var el = document.createElement("script");
+      el.type = "application/ld+json";
+      el.textContent = JSON.stringify(schema);
+      document.head.appendChild(el);
+    });
+  </script>
   <style>
     /* CLS prevention: min-height for JS-populated containers */
     #heroFeatured { min-height: 280px; }
@@ -144,8 +174,8 @@
     #trendingGrid { min-height: 300px; }
     #categorySpotlightGrid { min-height: 200px; }
   </style>
-  <script src="js/tools-data.js?v=2026-03-08" defer></script>
-  <script src="js/main.js?v=2026-03-10-1" defer></script>
+  <script src="js/tools-data.js?v=2026-03-29" defer></script>
+  <script src="js/main.js?v=2026-03-29" defer></script>
   <script src="js/consent.js" defer></script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-DMM6V53DKC"></script>
@@ -241,7 +271,40 @@
                 <h2 data-i18n="hero_curated_title">সবচেয়ে দরকারি AI টুলস এক নজরে</h2>
                 <p class="hero-curation-copy" data-i18n="hero_curated_copy">Futurepedia-এর editorial discovery vibe ধরে, কিন্তু বাংলাদেশি ব্যবহারকারীর দরকার মাথায় রেখে কিউরেটেড পিকস দেখুন।</p>
               </div>
-              <div class="hero-feature-grid" id="heroFeatured" aria-live="polite"></div>
+              <div class="hero-feature-grid" id="heroFeatured" aria-live="polite"><!-- PRERENDER:HERO:START -->
+<a class="hero-feature-card" href="/claude/">
+  <img class="hero-feature-logo" src="https://logo.clearbit.com/anthropic.com" alt="Claude logo" width="40" height="40" loading="lazy" decoding="async" />
+  <div class="hero-feature-body">
+    <h3>Claude</h3>
+    <p class="hero-feature-cat">LLM</p>
+    <p class="hero-feature-desc">Anthropic-এর AI — বাংলায় কথা বলে, লম্বা ডকুমেন্ট বিশ্লেষণ করে, কোড লেখে।</p>
+  </div>
+</a>
+<a class="hero-feature-card" href="/midjourney/">
+  <img class="hero-feature-logo" src="https://logo.clearbit.com/midjourney.com" alt="Midjourney logo" width="40" height="40" loading="lazy" decoding="async" />
+  <div class="hero-feature-body">
+    <h3>Midjourney</h3>
+    <p class="hero-feature-cat">ইমেজ</p>
+    <p class="hero-feature-desc">বিশ্বের সেরা AI আর্ট জেনারেটর। Discord-এর মাধ্যমে ব্যবহার।</p>
+  </div>
+</a>
+<a class="hero-feature-card" href="/cursor/">
+  <img class="hero-feature-logo" src="https://logo.clearbit.com/cursor.com" alt="Cursor logo" width="40" height="40" loading="lazy" decoding="async" />
+  <div class="hero-feature-body">
+    <h3>Cursor</h3>
+    <p class="hero-feature-cat">কোডিং</p>
+    <p class="hero-feature-desc">AI-ফার্স্ট কোড এডিটর। স্বাভাবিক ভাষায় কোড লিখুন, এডিট করুন, ডিবাগ করুন।</p>
+  </div>
+</a>
+<a class="hero-feature-card" href="/chatgpt/">
+  <img class="hero-feature-logo" src="https://logo.clearbit.com/chatgpt.com" alt="ChatGPT logo" width="40" height="40" loading="lazy" decoding="async" />
+  <div class="hero-feature-body">
+    <h3>ChatGPT</h3>
+    <p class="hero-feature-cat">LLM</p>
+    <p class="hero-feature-desc">OpenAI-এর সবচেয়ে জনপ্রিয় AI চ্যাটবট। লেখা, বিশ্লেষণ, কোড — সব কাজে দারুণ।</p>
+  </div>
+</a>
+<!-- PRERENDER:HERO:END --></div>
             </div>
           </div>
           <div class="hero-proof">
@@ -347,7 +410,232 @@
         </aside>
 
         <div class="showcase-list-shell">
-          <div class="showcase-list" id="trendingGrid" aria-live="polite"></div>
+          <div class="showcase-list" id="trendingGrid" aria-live="polite"><!-- PRERENDER:TRENDING:START -->
+<article class="tool-card" itemscope itemtype="https://schema.org/SoftwareApplication" data-category="llm" data-pricing="freemium">
+  <div class="tool-card-topline">
+    <span class="category-tag">LLM</span>
+    <div class="tool-card-topline-right"><span class="tool-rating-chip">★ 4.9</span></div>
+  </div>
+  <div class="tool-header tool-header-modern">
+    <div class="tool-title-wrap tool-title-wrap-modern">
+      <div class="tool-logo-shell">
+        <img class="tool-logo" src="https://logo.clearbit.com/anthropic.com" alt="Claude logo" width="48" height="48" loading="lazy" decoding="async" />
+      </div>
+      <div class="tool-name-block">
+        <h3 class="tool-title" itemprop="name"><a href="/claude/">Claude</a></h3>
+        <p class="tool-subtitle">LLM</p>
+      </div>
+    </div>
+  </div>
+  <meta itemprop="applicationCategory" content="llm" />
+  <meta itemprop="operatingSystem" content="Web" />
+  <p class="tool-desc" itemprop="description">Anthropic-এর AI — বাংলায় কথা বলে, লম্বা ডকুমেন্ট বিশ্লেষণ করে, কোড লেখে।</p>
+  <div class="tool-insight-grid">
+    <div class="tool-insight-card"><span>মূল্য</span><strong>ফ্রি / ৳২,৪৪০/মাস</strong></div>
+    <div class="tool-insight-card"><span>অ্যাক্সেস</span><strong>VPN লাগে না</strong></div>
+  </div>
+  <div class="tool-card-footer">
+    <a class="btn btn-ghost" href="/claude/">বিস্তারিত দেখুন</a>
+    <a class="btn btn-primary" href="https://claude.ai" target="_blank" rel="noopener noreferrer">টুল ব্যবহার করুন</a>
+  </div>
+</article>
+<article class="tool-card" itemscope itemtype="https://schema.org/SoftwareApplication" data-category="image" data-pricing="paid">
+  <div class="tool-card-topline">
+    <span class="category-tag">ইমেজ</span>
+    <div class="tool-card-topline-right"><span class="tool-rating-chip">★ 4.9</span></div>
+  </div>
+  <div class="tool-header tool-header-modern">
+    <div class="tool-title-wrap tool-title-wrap-modern">
+      <div class="tool-logo-shell">
+        <img class="tool-logo" src="https://logo.clearbit.com/midjourney.com" alt="Midjourney logo" width="48" height="48" loading="lazy" decoding="async" />
+      </div>
+      <div class="tool-name-block">
+        <h3 class="tool-title" itemprop="name"><a href="/midjourney/">Midjourney</a></h3>
+        <p class="tool-subtitle">ইমেজ</p>
+      </div>
+    </div>
+  </div>
+  <meta itemprop="applicationCategory" content="image" />
+  <meta itemprop="operatingSystem" content="Web" />
+  <p class="tool-desc" itemprop="description">বিশ্বের সেরা AI আর্ট জেনারেটর। Discord-এর মাধ্যমে ব্যবহার।</p>
+  <div class="tool-insight-grid">
+    <div class="tool-insight-card"><span>মূল্য</span><strong>ফ্রি / ৳১,২২০/মাস</strong></div>
+    <div class="tool-insight-card"><span>অ্যাক্সেস</span><strong>VPN লাগে না</strong></div>
+  </div>
+  <div class="tool-card-footer">
+    <a class="btn btn-ghost" href="/midjourney/">বিস্তারিত দেখুন</a>
+    <a class="btn btn-primary" href="https://www.midjourney.com" target="_blank" rel="noopener noreferrer">টুল ব্যবহার করুন</a>
+  </div>
+</article>
+<article class="tool-card" itemscope itemtype="https://schema.org/SoftwareApplication" data-category="coding" data-pricing="freemium">
+  <div class="tool-card-topline">
+    <span class="category-tag">কোডিং</span>
+    <div class="tool-card-topline-right"><span class="tool-rating-chip">★ 4.9</span></div>
+  </div>
+  <div class="tool-header tool-header-modern">
+    <div class="tool-title-wrap tool-title-wrap-modern">
+      <div class="tool-logo-shell">
+        <img class="tool-logo" src="https://logo.clearbit.com/cursor.com" alt="Cursor logo" width="48" height="48" loading="lazy" decoding="async" />
+      </div>
+      <div class="tool-name-block">
+        <h3 class="tool-title" itemprop="name"><a href="/cursor/">Cursor</a></h3>
+        <p class="tool-subtitle">কোডিং</p>
+      </div>
+    </div>
+  </div>
+  <meta itemprop="applicationCategory" content="coding" />
+  <meta itemprop="operatingSystem" content="Web" />
+  <p class="tool-desc" itemprop="description">AI-ফার্স্ট কোড এডিটর। স্বাভাবিক ভাষায় কোড লিখুন, এডিট করুন, ডিবাগ করুন।</p>
+  <div class="tool-insight-grid">
+    <div class="tool-insight-card"><span>মূল্য</span><strong>ফ্রি / ৳২,৪৪০/মাস</strong></div>
+    <div class="tool-insight-card"><span>অ্যাক্সেস</span><strong>VPN লাগে না</strong></div>
+  </div>
+  <div class="tool-card-footer">
+    <a class="btn btn-ghost" href="/cursor/">বিস্তারিত দেখুন</a>
+    <a class="btn btn-primary" href="https://cursor.com" target="_blank" rel="noopener noreferrer">টুল ব্যবহার করুন</a>
+  </div>
+</article>
+<article class="tool-card" itemscope itemtype="https://schema.org/SoftwareApplication" data-category="llm" data-pricing="freemium">
+  <div class="tool-card-topline">
+    <span class="category-tag">LLM</span>
+    <div class="tool-card-topline-right"><span class="tool-rating-chip">★ 4.8</span></div>
+  </div>
+  <div class="tool-header tool-header-modern">
+    <div class="tool-title-wrap tool-title-wrap-modern">
+      <div class="tool-logo-shell">
+        <img class="tool-logo" src="https://logo.clearbit.com/chatgpt.com" alt="ChatGPT logo" width="48" height="48" loading="lazy" decoding="async" />
+      </div>
+      <div class="tool-name-block">
+        <h3 class="tool-title" itemprop="name"><a href="/chatgpt/">ChatGPT</a></h3>
+        <p class="tool-subtitle">LLM</p>
+      </div>
+    </div>
+  </div>
+  <meta itemprop="applicationCategory" content="llm" />
+  <meta itemprop="operatingSystem" content="Web" />
+  <p class="tool-desc" itemprop="description">OpenAI-এর সবচেয়ে জনপ্রিয় AI চ্যাটবট। লেখা, বিশ্লেষণ, কোড — সব কাজে দারুণ।</p>
+  <div class="tool-insight-grid">
+    <div class="tool-insight-card"><span>মূল্য</span><strong>ফ্রি / ৳৯৭৬/মাস</strong></div>
+    <div class="tool-insight-card"><span>অ্যাক্সেস</span><strong>VPN লাগে না</strong></div>
+  </div>
+  <div class="tool-card-footer">
+    <a class="btn btn-ghost" href="/chatgpt/">বিস্তারিত দেখুন</a>
+    <a class="btn btn-primary" href="https://chatgpt.com" target="_blank" rel="noopener noreferrer">টুল ব্যবহার করুন</a>
+  </div>
+</article>
+<article class="tool-card" itemscope itemtype="https://schema.org/SoftwareApplication" data-category="llm" data-pricing="free">
+  <div class="tool-card-topline">
+    <span class="category-tag">LLM</span>
+    <div class="tool-card-topline-right"><span class="tool-rating-chip">★ 4.7</span></div>
+  </div>
+  <div class="tool-header tool-header-modern">
+    <div class="tool-title-wrap tool-title-wrap-modern">
+      <div class="tool-logo-shell">
+        <img class="tool-logo" src="https://logo.clearbit.com/deepseek.com" alt="DeepSeek logo" width="48" height="48" loading="lazy" decoding="async" />
+      </div>
+      <div class="tool-name-block">
+        <h3 class="tool-title" itemprop="name"><a href="/deepseek/">DeepSeek</a></h3>
+        <p class="tool-subtitle">LLM</p>
+      </div>
+    </div>
+  </div>
+  <meta itemprop="applicationCategory" content="llm" />
+  <meta itemprop="operatingSystem" content="Web" />
+  <p class="tool-desc" itemprop="description">চীনের DeepSeek — কোডিং ও ম্যাথে ChatGPT-4 এর চেয়ে ভালো। রিজনিং মডেল সম্পূর্ণ ফ্রি।</p>
+  <div class="tool-insight-grid">
+    <div class="tool-insight-card"><span>মূল্য</span><strong>৳০ — ফ্রি</strong></div>
+    <div class="tool-insight-card"><span>অ্যাক্সেস</span><strong>VPN লাগে না</strong></div>
+  </div>
+  <div class="tool-card-footer">
+    <a class="btn btn-ghost" href="/deepseek/">বিস্তারিত দেখুন</a>
+    <a class="btn btn-primary" href="https://chat.deepseek.com" target="_blank" rel="noopener noreferrer">টুল ব্যবহার করুন</a>
+  </div>
+</article>
+<article class="tool-card" itemscope itemtype="https://schema.org/SoftwareApplication" data-category="productivity" data-pricing="ফ্রি / ৳৭৩২">
+  <div class="tool-card-topline">
+    <span class="category-tag">প্রোডাক্টিভিটি</span>
+    <div class="tool-card-topline-right"><span class="tool-rating-chip">★ 4.7</span></div>
+  </div>
+  <div class="tool-header tool-header-modern">
+    <div class="tool-title-wrap tool-title-wrap-modern">
+      <div class="tool-logo-shell">
+        <img class="tool-logo" src="https://logo.clearbit.com/capcut.com" alt="CapCut AI logo" width="48" height="48" loading="lazy" decoding="async" />
+      </div>
+      <div class="tool-name-block">
+        <h3 class="tool-title" itemprop="name"><a href="/capcut-ai/">CapCut AI</a></h3>
+        <p class="tool-subtitle">প্রোডাক্টিভিটি</p>
+      </div>
+    </div>
+  </div>
+  <meta itemprop="applicationCategory" content="productivity" />
+  <meta itemprop="operatingSystem" content="Web" />
+  <p class="tool-desc" itemprop="description">বাংলাদেশে সবচেয়ে জনপ্রিয় ভিডিও এডিটিং অ্যাপ — AI ক্যাপশন, ব্যাকগ্রাউন্ড রিমুভাল ও অটো সাবটাইটেল ফিচার।</p>
+  <div class="tool-insight-grid">
+    <div class="tool-insight-card"><span>মূল্য</span><strong>চাহিদাভিত্তিক</strong></div>
+    <div class="tool-insight-card"><span>অ্যাক্সেস</span><strong>VPN লাগে না</strong></div>
+  </div>
+  <div class="tool-card-footer">
+    <a class="btn btn-ghost" href="/capcut-ai/">বিস্তারিত দেখুন</a>
+    <a class="btn btn-primary" href="https://www.capcut.com" target="_blank" rel="noopener noreferrer">টুল ব্যবহার করুন</a>
+  </div>
+</article>
+<article class="tool-card" itemscope itemtype="https://schema.org/SoftwareApplication" data-category="image" data-pricing="ফ্রি / ৳১,০৯৮">
+  <div class="tool-card-topline">
+    <span class="category-tag">ইমেজ</span>
+    <div class="tool-card-topline-right"><span class="tool-rating-chip">★ 4.7</span></div>
+  </div>
+  <div class="tool-header tool-header-modern">
+    <div class="tool-title-wrap tool-title-wrap-modern">
+      <div class="tool-logo-shell">
+        <img class="tool-logo" src="https://logo.clearbit.com/remove.bg" alt="Remove.bg logo" width="48" height="48" loading="lazy" decoding="async" />
+      </div>
+      <div class="tool-name-block">
+        <h3 class="tool-title" itemprop="name"><a href="/removebg/">Remove.bg</a></h3>
+        <p class="tool-subtitle">ইমেজ</p>
+      </div>
+    </div>
+  </div>
+  <meta itemprop="applicationCategory" content="image" />
+  <meta itemprop="operatingSystem" content="Web" />
+  <p class="tool-desc" itemprop="description">এক ক্লিকে ছবির ব্যাকগ্রাউন্ড রিমুভ করুন — পণ্যের ছবি, প্রোফাইল ফটো ও ই-কমার্সের জন্য বাংলাদেশে সবচেয়ে বেশি ব্যবহৃত।</p>
+  <div class="tool-insight-grid">
+    <div class="tool-insight-card"><span>মূল্য</span><strong>চাহিদাভিত্তিক</strong></div>
+    <div class="tool-insight-card"><span>অ্যাক্সেস</span><strong>VPN লাগে না</strong></div>
+  </div>
+  <div class="tool-card-footer">
+    <a class="btn btn-ghost" href="/removebg/">বিস্তারিত দেখুন</a>
+    <a class="btn btn-primary" href="https://www.remove.bg" target="_blank" rel="noopener noreferrer">টুল ব্যবহার করুন</a>
+  </div>
+</article>
+<article class="tool-card" itemscope itemtype="https://schema.org/SoftwareApplication" data-category="image" data-pricing="ফ্রি / ৳১,৪৬৪">
+  <div class="tool-card-topline">
+    <span class="category-tag">ইমেজ</span>
+    <div class="tool-card-topline-right"><span class="tool-rating-chip">★ 4.7</span></div>
+  </div>
+  <div class="tool-header tool-header-modern">
+    <div class="tool-title-wrap tool-title-wrap-modern">
+      <div class="tool-logo-shell">
+        <img class="tool-logo" src="https://logo.clearbit.com/canva.com" alt="Canva AI logo" width="48" height="48" loading="lazy" decoding="async" />
+      </div>
+      <div class="tool-name-block">
+        <h3 class="tool-title" itemprop="name"><a href="/canva-ai/">Canva AI</a></h3>
+        <p class="tool-subtitle">ইমেজ</p>
+      </div>
+    </div>
+  </div>
+  <meta itemprop="applicationCategory" content="image" />
+  <meta itemprop="operatingSystem" content="Web" />
+  <p class="tool-desc" itemprop="description">Canva-র AI ইমেজ জেনারেটর — টেক্সট থেকে ছবি বানান, ব্যাকগ্রাউন্ড রিমুভ করুন, ডিজাইন অটো-জেনারেট করুন। বাংলাদেশে সবচেয়ে পরিচিত ডিজাইন টুল।</p>
+  <div class="tool-insight-grid">
+    <div class="tool-insight-card"><span>মূল্য</span><strong>চাহিদাভিত্তিক</strong></div>
+    <div class="tool-insight-card"><span>অ্যাক্সেস</span><strong>VPN লাগে না</strong></div>
+  </div>
+  <div class="tool-card-footer">
+    <a class="btn btn-ghost" href="/canva-ai/">বিস্তারিত দেখুন</a>
+    <a class="btn btn-primary" href="https://canva.com" target="_blank" rel="noopener noreferrer">টুল ব্যবহার করুন</a>
+  </div>
+</article>
+<!-- PRERENDER:TRENDING:END --></div>
         </div>
       </div>
     </section>
@@ -384,7 +672,22 @@
               <div class="review-metric-row">
                 <span class="review-metric-label">মূল্যমান</span>
                 <div class="review-metric-bar"><div class="review-metric-fill" style="width:85%"></div></div>
-                <span class="review-metric-score">85</span>
+                <span class="review-metric-score">85 / 90</span>
+              </div>
+              <div class="review-metric-row">
+                <span class="review-metric-label">বাংলা সাপোর্ট</span>
+                <div class="review-metric-bar"><div class="review-metric-fill" style="width:75%"></div></div>
+                <span class="review-metric-score">75 / 80</span>
+              </div>
+              <div class="review-metric-row">
+                <span class="review-metric-label">মূল্য (BDT)</span>
+                <div class="review-metric-bar"><div class="review-metric-fill" style="width:70%"></div></div>
+                <span class="review-metric-score">70 / 85</span>
+              </div>
+              <div class="review-metric-row">
+                <span class="review-metric-label">কোডিং</span>
+                <div class="review-metric-bar"><div class="review-metric-fill" style="width:88%"></div></div>
+                <span class="review-metric-score">88 / 92</span>
               </div>
             </div>
             <div class="review-card-footer">
@@ -431,6 +734,13 @@
     <section class="container tools-layout tools-layout-polish" id="toolsSection">
       <aside class="sidebar" aria-label="ফিল্টার সাইডবার">
         <div class="filter-box">
+          <h3>পছন্দের টুলস</h3>
+          <div class="filter-group" data-filter-group="favorites">
+            <button class="filter-chip fav-filter-chip" data-fav-filter="true">&#10084; পছন্দের টুলস<span class="fav-filter-count"></span></button>
+          </div>
+        </div>
+
+        <div class="filter-box">
           <h3 data-i18n="filter_payment_title">পেমেন্ট পদ্ধতি</h3>
           <div class="filter-group" data-filter-group="payment">
             <button class="filter-chip active" data-payment="all" data-i18n="filter_all">সব</button>
@@ -463,7 +773,7 @@
 
         <div class="sponsor-card">
           <h3 data-i18n="sponsor_title">এখানে বিজ্ঞাপন দিন</h3>
-          <p data-i18n="sponsor_copy">প্রতি মাসে ৫০,০০০+ বাংলাদেশি AI ব্যবহারকারীর কাছে পৌঁছান।</p>
+          <p data-i18n="sponsor_copy">বাংলাদেশের কিউরেটেড AI দর্শকের কাছে পৌঁছান — দ্রুত বাড়ছে এমন একটি নিশ অডিয়েন্স।</p>
           <a href="contact/#advertising" class="btn btn-primary" data-i18n="sponsor_cta">যোগাযোগ করুন →</a>
         </div>
       </aside>
@@ -477,6 +787,9 @@
           <p class="directory-copy" data-i18n="directory_copy">সার্চ-ফার্স্ট ডিসকভারি, পরিষ্কার আধুনিক কার্ড, আর বাংলাদেশ-ফ্রেন্ডলি ফিল্টারিং।</p>
         </div>
         <div class="mobile-filters" aria-label="মোবাইল ফিল্টার">
+          <div class="mobile-filter-row" data-filter-group="favorites">
+            <button class="filter-chip fav-filter-chip" data-fav-filter="true">&#10084; পছন্দের<span class="fav-filter-count"></span></button>
+          </div>
           <div class="mobile-filter-row" data-filter-group="payment">
             <button class="filter-chip active" data-payment="all" data-i18n="filter_all">সব</button>
             <button class="filter-chip" data-payment="bkash" data-i18n="filter_payment_bkash_short">bKash</button>
@@ -592,29 +905,29 @@
     <div class="container">
       <div class="news-community-grid">
         <div class="news-column">
-          <h2>বাংলাদেশী এআই নিউজ এবং ক্যারিয়ার ট্রেন্ডস</h2>
+          <h2>সাম্প্রতিক গাইড ও টিউটোরিয়াল</h2>
           <div class="news-articles-grid">
-            <a href="/ai-tools-bangladesh-bengali/" class="news-article-card">
+            <a href="/blog/chatgpt-kivabe-bebohar-korben-bangla-guide/" class="news-article-card">
               <div class="news-article-thumb">
-                <span>🇧🇩</span>
+                <span>🤖</span>
               </div>
               <div class="news-article-body">
                 <h4 class="news-article-title">বাংলাদেশ জাতীয় এআই পলিসি ২০২৬, হাতে বাংলাদেশি প্ল্যান এআই...</h4>
                 <p class="news-article-meta">মার্চ ২০২৬</p>
               </div>
             </a>
-            <a href="/best-ai-tools-for-content-creators-bangladesh/" class="news-article-card">
+            <a href="/blog/midjourney-bangladesh-theke-kivabe-bebohar-korben-sompurno-guide/" class="news-article-card">
               <div class="news-article-thumb">
-                <span>📱</span>
+                <span>🎨</span>
               </div>
               <div class="news-article-body">
                 <h4 class="news-article-title">৫টি দেশীয় এআই অ্যাপ বিষয়ে আপনার জানার অবশ্যই প্রয়োজন...</h4>
                 <p class="news-article-meta">মার্চ ২০২৬</p>
               </div>
             </a>
-            <a href="/ai-tools-for-freelancers-bangladesh/" class="news-article-card">
+            <a href="/blog/cursor-ai-bangla-tutorial-codingye-biplob-anun/" class="news-article-card">
               <div class="news-article-thumb">
-                <span>💼</span>
+                <span>💻</span>
               </div>
               <div class="news-article-body">
                 <h4 class="news-article-title">এআই ক্যারিয়ার বেতন ২০২৬ — বাংলাদেশে জবের বাজার কেমন...</h4>
@@ -651,7 +964,7 @@
     <div class="container submit-cta-inner">
       <div class="submit-cta-text">
         <h2>আপনার এআই টুল সাবমিট করুন</h2>
-        <p>বাংলাদেশি ৫০,০০০+ AI ব্যবহারকারীর কাছে আপনার টুল পৌঁছে দিন।</p>
+        <p>বাংলাদেশের AI ব্যবহারকারীদের কাছে আপনার টুল পরিচয় করিয়ে দিন।</p>
       </div>
       <a href="submit/" class="submit-cta-btn">সাবমিট করুন</a>
     </div>
@@ -764,6 +1077,20 @@
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
     fadeEls.forEach(el => observer.observe(el));
+  </script>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" aria-label="উপরে যান" title="উপরে যান">↑</button>
+  <script>
+    (function(){
+      var btn = document.getElementById('backToTop');
+      window.addEventListener('scroll', function(){
+        btn.classList.toggle('is-visible', window.scrollY > 600);
+      }, {passive:true});
+      btn.addEventListener('click', function(){
+        window.scrollTo({top:0, behavior:'smooth'});
+      });
+    })();
   </script>
 </body>
 </html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt Engineering সম্পূর্ণ বাংলা গাইড — ChatGPT/Claude থেকে Best Output</title>
+    <meta name="description" content="AI থেকে অসাধারণ output পাওয়ার রহস্য — prompt engineering। নিয়ম, framework (RACE, CO-STAR), advanced technique, ও বাংলায় practical উদাহরণ।">
+    <meta name="keywords" content="prompt engineering bangla, ChatGPT prompt tips, AI prompt guide, prompt framework, advanced prompting">
+    <meta name="author" content="BanglaAIGuide">
+    <meta property="og:title" content="Prompt Engineering সম্পূর্ণ বাংলা গাইড — ChatGPT/Claude থেকে Best Output">
+    <meta property="og:description" content="AI থেকে অসাধারণ output পাওয়ার রহস্য — prompt engineering। নিয়ম, framework (RACE, CO-STAR), advanced technique, ও বাংলায় practical উদাহরণ।">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://banglaaiguide.com/blog/prompt-engineering-bangla-sompurno-guide/">
+    <meta property="og:image" content="https://banglaaiguide.com/blog/prompt-engineering-bangla-sompurno-guide/cover.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/svg+xml">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Prompt Engineering সম্পূর্ণ বাংলা গাইড — ChatGPT/Claude থেকে Best Output">
+    <meta name="twitter:description" content="AI থেকে অসাধারণ output পাওয়ার রহস্য — prompt engineering। নিয়ম, framework (RACE, CO-STAR), advanced technique, ও বাংলায় practical উদাহরণ।">
+    <meta name="twitter:image" content="https://banglaaiguide.com/blog/prompt-engineering-bangla-sompurno-guide/cover.svg">
+    <link rel="canonical" href="https://banglaaiguide.com/blog/prompt-engineering-bangla-sompurno-guide/">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Prompt Engineering সম্পূর্ণ বাংলা গাইড — ChatGPT/Claude থেকে Best Output",
+  "description": "AI থেকে অসাধারণ output পাওয়ার রহস্য — prompt engineering। নিয়ম, framework (RACE, CO-STAR), advanced technique, ও বাংলায় practical উদাহরণ।",
+  "image": "https://banglaaiguide.com/blog/prompt-engineering-bangla-sompurno-guide/cover.svg",
+  "author": {
+    "@type": "Organization",
+    "name": "BanglaAIGuide"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "বাংলা AI গাইড",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://banglaaiguide.com/web-app-manifest-512x512.png"
+    }
+  },
+  "datePublished": "2026-05-26",
+  "dateModified": "2026-05-26"
+}
+    </script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"বাংলা AI গাইড","item":"https://banglaaiguide.com/"},{"@type":"ListItem","position":2,"name":"ব্লগ","item":"https://banglaaiguide.com/blog/"},{"@type":"ListItem","position":3,"name":"Prompt Engineering সম্পূর্ণ বাংলা গাইড — ChatGPT/Claude থেকে Best Output","item":"https://banglaaiguide.com/blog/prompt-engineering-bangla-sompurno-guide/"}]}</script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
+    <style>:root{--bg-gradient:linear-gradient(180deg,#F0FDF9 0%,#FAFBFC 50%,#FFFFFF 100%);--accent:#16A34A;--accent-hover:#15803D;--accent-light:#22C55E;--accent-soft:#DCFCE7;--text:#0F172A;--text-muted:#475569;--border:#E2E8F0;--shadow-sm:0 4px 12px rgba(15,23,42,.06);--shadow-md:0 10px 30px rgba(15,23,42,.08);--radius-lg:24px;--radius-md:18px}body{font-family:'Hind Siliguri',sans-serif;line-height:1.8;margin:0;padding:0;background:var(--bg-gradient);color:var(--text);-webkit-font-smoothing:antialiased}.container{max-width:820px;margin:60px auto 80px;background:#fff;padding:60px 70px;border-radius:var(--radius-lg);box-shadow:var(--shadow-md);position:relative}.container::before{content:'';position:absolute;top:0;left:0;width:6px;height:100%;background:linear-gradient(135deg,#16A34A 0%,#22C55E 100%);border-radius:var(--radius-lg) 0 0 var(--radius-lg)}h1{font-family:'Syne',sans-serif;color:var(--text);font-size:2.75rem;font-weight:800;line-height:1.2;margin:0 0 32px 0;padding-bottom:24px;border-bottom:3px solid var(--border);position:relative}h1::after{content:'';position:absolute;bottom:-3px;left:0;width:80px;height:3px;background:linear-gradient(135deg,#16A34A 0%,#22C55E 100%)}h2{font-family:'Syne',sans-serif;color:var(--text);font-size:2rem;font-weight:700;line-height:1.3;margin:48px 0 20px 0;padding-left:20px;border-left:4px solid var(--accent)}h3{font-family:'Syne',sans-serif;color:var(--text);font-size:1.5rem;font-weight:600;line-height:1.4;margin:32px 0 16px 0}p{margin-bottom:1.5em;font-size:1.125rem;color:var(--text-muted);line-height:1.8}ul{list-style:none;margin:24px 0;padding:0}ul li{position:relative;padding:14px 20px 14px 50px;margin-bottom:14px;background:linear-gradient(135deg,#F9FAFB 0%,#F0FDF4 100%);border-radius:var(--radius-md);border:1px solid var(--border);font-size:1.0625rem;line-height:1.7;color:var(--text-muted);transition:all .2s ease}ul li:hover{background:linear-gradient(135deg,#FFFFFF 0%,#F0FDF4 100%);border-color:rgba(22,163,74,.3);transform:translateX(4px);box-shadow:var(--shadow-sm)}ul li::before{content:'\2713';position:absolute;left:18px;top:50%;transform:translateY(-50%);width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#16A34A 0%,#22C55E 100%);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px}b{font-weight:600;color:var(--text)}a{color:var(--accent);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;font-weight:500;transition:all .2s ease}a:hover{color:var(--accent-hover);text-decoration-thickness:3px}@media (max-width:768px){.container{margin:30px 20px;padding:40px 30px}h1{font-size:2rem}h2{font-size:1.5rem}h3{font-size:1.25rem}p,ul li{font-size:1rem}}</style>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/blog-premium.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container navbar-inner">
+            <a href="/" class="logo">
+                <img class="logo-mark" src="/favicon.svg" alt="বাংলা AI গাইড লোগো" width="28" height="28" decoding="async" />
+                <span class="logo-text">বাংলা AI গাইড</span>
+            </a>
+            <nav class="nav-links">
+                <a href="/#toolsSection">টুলস দেখুন</a>
+                <a href="/blog/">ব্লগ</a>
+                <a href="/bangla-ai-guide/">বাংলা AI গাইড</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Prompt Engineering সম্পূর্ণ বাংলা গাইড — ChatGPT/Claude থেকে Best Output</h1>
+
+        <h2>Prompt Engineering কী?</h2>
+        <p>একই AI tool — একজনের output ভালো, অন্যজনের সাধারণ। পার্থক্য prompt-এ। Prompt Engineering হলো AI-কে সঠিকভাবে instruct করার বিজ্ঞান (এবং কিছুটা শিল্প)। এই গাইডে শিখবেন — কীভাবে এক prompt আপনার output ১০× ভালো করে।</p>
+
+        <h2>মৌলিক ৬ Element-এর prompt</h2>
+        <ul>
+            <li><b>Role:</b> "তুমি একজন senior copywriter..."</li>
+            <li><b>Task:</b> "একটি Facebook ad copy লেখো..."</li>
+            <li><b>Context:</b> "আমার product একটি bangla learning app..."</li>
+            <li><b>Format:</b> "৬০ শব্দে, emotional hook দিয়ে শুরু..."</li>
+            <li><b>Examples:</b> "যেমন: 'Don't learn English. Master it.'..."</li>
+            <li><b>Constraints:</b> "এড়াও cliché, no emoji"</li>
+        </ul>
+
+        <h2>জনপ্রিয় Framework</h2>
+
+        <h3>RACE Framework</h3>
+        <ul>
+            <li><b>R</b>ole — AI-কে কী হতে বলছেন</li>
+            <li><b>A</b>ction — কী করতে</li>
+            <li><b>C</b>ontext — পরিস্থিতি</li>
+            <li><b>E</b>xample/Expectation — output sample</li>
+        </ul>
+
+        <h3>CO-STAR Framework</h3>
+        <ul>
+            <li><b>C</b>ontext</li>
+            <li><b>O</b>bjective</li>
+            <li><b>S</b>tyle</li>
+            <li><b>T</b>one</li>
+            <li><b>A</b>udience</li>
+            <li><b>R</b>esponse format</li>
+        </ul>
+
+        <h2>Advanced Techniques</h2>
+        <ul>
+            <li><b>Chain-of-Thought:</b> "ধাপে ধাপে চিন্তা করো, প্রতিটি ধাপ ব্যাখ্যা সহ"</li>
+            <li><b>Few-shot learning:</b> ২-৩টা example দিয়ে pattern শেখান</li>
+            <li><b>Role-play:</b> "তুমি একজন interviewer, আমি candidate..."</li>
+            <li><b>Self-critique:</b> "এই answer-এর দুর্বলতা চিহ্নিত করো এবং উন্নত version দাও"</li>
+            <li><b>Persona:</b> "একজন ৬৫ বছর বয়সী cardiologist হিসেবে উত্তর দাও"</li>
+            <li><b>Tree of thought:</b> "৩টি সম্ভাব্য approach সমান বিচার করো"</li>
+        </ul>
+
+        <h2>Common ভুল</h2>
+        <ul>
+            <li>খুব ছোট prompt ("এই বিষয়ে কিছু লেখো")</li>
+            <li>Format specify না করা</li>
+            <li>উদাহরণ না দেওয়া</li>
+            <li>Context skip</li>
+            <li>Iterate না করা</li>
+            <li>এক prompt-এ অনেক কাজ</li>
+        </ul>
+
+        <h2>Bangla prompting tips</h2>
+        <ul>
+            <li>বাংলা context + English instruction mix সবচেয়ে effective</li>
+            <li>উদাহরণ: "Write in Bangla. ৪০০ word blog post on [topic]"</li>
+            <li>বাংলা output চাইলে output ভাষা specify</li>
+            <li>Technical term ইংরেজি রাখুন (translation awkward)</li>
+            <li>বাংলা style: "চলিত" vs "সাধু" specify</li>
+        </ul>
+
+        <h2>Iterative prompting</h2>
+        <ul>
+            <li>First output → "এটাকে আরো emotional করো"</li>
+            <li>"৩০% সংক্ষিপ্ত করো"</li>
+            <li>"আরও specific example যোগ করো"</li>
+            <li>"Tone professional-এ change করো"</li>
+            <li>"Critique এই output-এর সাথে"</li>
+        </ul>
+
+        <h2>Best prompt library তৈরি</h2>
+        <ul>
+            <li>Notion/Google Doc-এ আপনার সেরা prompt save</li>
+            <li>Use-case-ভিত্তিক organize</li>
+            <li>Result note (কোন AI-এ কেমন)</li>
+            <li>Team-এর সাথে share</li>
+            <li>নিজের custom GPT তৈরি repetitive কাজে</li>
+        </ul>
+
+        <h2>Model-specific tips</h2>
+        <ul>
+            <li><b>ChatGPT:</b> Structured prompt লাভ</li>
+            <li><b>Claude:</b> XML tag use করে কাজ specify কার্যকর</li>
+            <li><b>Gemini:</b> Long context-এ best</li>
+            <li><b>Perplexity:</b> Query-style direct</li>
+        </ul>
+
+        <h2>উপসংহার</h2>
+        <p>AI-এর সাথে কাজ করা = AI-কে শেখানো কীভাবে কাজ করতে হবে। Prompt engineering শিখলে — আপনি AI dependent নন, AI আপনার শক্তিশালী সহকারী। আজকের একটি কাজে এই framework apply করে দেখুন।</p>
+
+        <h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
+        <ul>
+            <li><a href="/blog/chatgpt-prompt-bangla-50-collection/">৫০ Bangla Prompts</a></li>
+            <li><a href="/chatgpt/">ChatGPT</a></li>
+            <li><a href="/claude/">Claude AI</a></li>
+            <li><a href="/gemini/">Gemini</a></li>
+        </ul>
+
+<section class="seo-newsletter-block" style="margin-top:2.5rem;padding:2rem;background:#f0fdf4;border-radius:12px;text-align:center;">
+  <h2 style="color:#16a34a;margin-bottom:0.5rem;">AI আপডেট পেতে চান?</h2>
+  <p style="margin-bottom:1rem;">প্রতি সপ্তাহে নতুন AI টুলস ও টিউটোরিয়াল বাংলায় পান।</p>
+  <form class="newsletter-form newsletter-form--mailchimp" action="https://banglaaiguide.us15.list-manage.com/subscribe/post?u=d389c0647878724daecc58fc6&amp;id=aaca6896d2&amp;f_id=007c9ae1f0" method="post" target="mailchimp-subscribe-frame" accept-charset="UTF-8" data-mailchimp-form="true" style="display:flex;gap:8px;max-width:440px;margin:0 auto;">
+    <input type="email" name="EMAIL" placeholder="আপনার ইমেইল লিখুন" required style="flex:1;padding:10px 14px;border:1px solid #e5e7eb;border-radius:8px;font-size:15px;">
+    <button type="submit" style="padding:10px 20px;background:#16a34a;color:#fff;border:none;border-radius:8px;font-weight:600;cursor:pointer;">সাবস্ক্রাইব</button>
+  </form>
+  <p style="font-size:12px;color:#64748b;margin-top:0.75rem;">ফ্রি নিউজলেটার। যেকোনো সময় আনসাবস্ক্রাইব করতে পারবেন।</p>
+</section>
+
+    </div>
+
+    <!-- PILLAR-LINKS:START -->
+<section class="container pillar-links-section" aria-label="জনপ্রিয় গাইড">
+  <h2 class="pillar-links-heading">আরও পড়ুন — বাংলাদেশের AI গাইড</h2>
+  <nav class="pillar-links-nav">
+      <a class="pillar-link" href="/bangla-ai-guide/">বাংলা AI গাইড (পিলার)</a>
+      <a class="pillar-link" href="/ai-tools-bangladesh-bengali/">বাংলাদেশের সেরা AI টুলস</a>
+      <a class="pillar-link" href="/bkash-diye-ai-tools-kena-jay/">bKash দিয়ে AI tools কেনা</a>
+      <a class="pillar-link" href="/vpn-chara-ai-tools-bangladesh/">VPN ছাড়া AI tools</a>
+      <a class="pillar-link" href="/ai-tools-bdt-price-2026-bangladesh/">AI tools BDT দাম</a>
+      <a class="pillar-link" href="/free-ai-tools-2026-bangladesh/">ফ্রি AI tools</a>
+  </nav>
+</section>
+<!-- PILLAR-LINKS:END -->
+<footer class="footer">
+        <div class="container footer-inner">
+            <p class="footer-brand">
+                <img class="logo-mark" src="/favicon.svg" alt="বাংলা AI গাইড লোগো" width="20" height="20" decoding="async" />
+                <span>বাংলা AI গাইড</span>
+            </p>
+            <p>© ২০২৬ বাংলা AI গাইড · বাংলাদেশের জন্য তৈরি</p>
+            <p class="footer-links">
+                <a href="/privacy/">গোপনীয়তা</a> ·
+                <a href="/terms/">শর্তাবলী</a> ·
+                <a href="/contact/">যোগাযোগ</a> ·
+                <a href="/bangla-ai-guide/">বাংলা AI গাইড</a>
+            </p>
+        </div>
+    </footer>
+<script src="/js/mailchimp.js" defer></script>
+</body>
+</html>
