@@ -607,7 +607,19 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://banglaaiguide.com/blog/claude-opus-4-7-bangla-guide/</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://banglaaiguide.com/blog/claude-sonnet-4-5-bangla-guide/</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://banglaaiguide.com/blog/claude-sonnet-4-6-bangla-guide/</loc>
     <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -710,6 +722,12 @@
   </url>
   <url>
     <loc>https://banglaaiguide.com/blog/gemini-2-5-pro-bangla-guide/</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://banglaaiguide.com/blog/gemini-3-5-bangla-guide/</loc>
     <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
