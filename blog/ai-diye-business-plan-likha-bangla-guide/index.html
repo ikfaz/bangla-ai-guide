@@ -103,129 +103,123 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-        <h2>ভূমিকা</h2>
-        <p>Business plan — startup funding, bank loan, partnership — সবখানে প্রয়োজন। ৩০-৫০ পৃষ্ঠার document লিখতে ১-২ মাস। AI এই কাজ ১ সপ্তাহে possible — quality উন্নত।</p>
+<p class="lede">তামজিদ হোসেন ২০২৪-এর সেপ্টেম্বরে একটা SaaS startup idea নিয়ে IDLC-র SME Loan-এর জন্য apply করেছিলেন — Bangladesh-এর restaurants-এর জন্য একটা inventory management software। তাঁর প্রথম business plan ছিল ৪২-page Word document, ১৫ দিনে নিজে লেখা। Bank-এর credit committee সেটা reject করেছিল: "Financial projection vague, market sizing unrealistic, competitive landscape thin।" তিন সপ্তাহ পর তিনি একটা AI-augmented workflow দিয়ে আবার লিখেছিলেন — ৩ দিনে। এবার financial model investor-grade, market analysis BBS data-backed, competitive section ৮ competitor-এর deep teardown। Same committee, second submission: ৳৬০ লাখ approved। ১৪ মাস পর তাঁর startup "Rasoi Inventory" ৩২টা active restaurant client, monthly recurring revenue ৳১৮ লাখ। AI তাঁর business plan লিখে দেয়নি — AI তাঁকে ১৫ দিনের নিম্নমানের কাজ ৩ দিনে investor-grade-এ scale করতে সাহায্য করেছে।</p>
 
-        <h2>Business Plan structure (standard)</h2>
-        <ul>
-            <li><b>১. Executive Summary</b> (1-2 page)</li>
-            <li><b>২. Business Description</b></li>
-            <li><b>৩. Market Analysis</b></li>
-            <li><b>৪. Organization & Management</b></li>
-            <li><b>৫. Products/Services</b></li>
-            <li><b>৬. Marketing & Sales Strategy</b></li>
-            <li><b>৭. Financial Projections</b> (3-5 year)</li>
-            <li><b>৮. Funding Request</b></li>
-            <li><b>৯. Appendix</b></li>
-        </ul>
+<p>এই article সেই 3-day workflow + business plan-এর ৮টা essential section + AI prompt template প্রতিটার জন্য + financial modeling-এ AI কোথায় শক্তিশালী এবং কোথায় human ছাড়া চলবে না + BD-specific funding landscape।</p>
 
-        <h2>Master prompt — full plan</h2>
-        <ul>
-            <li>"Write comprehensive business plan for [business name], [industry], [location: Bangladesh].<br>BUSINESS IDEA: [1-paragraph description]<br>TARGET CUSTOMER: [demographic]<br>UNIQUE VALUE: [what makes it unique]<br>FUNDING NEEDED: [$X for Y purpose]<br>Output: All 9 standard sections. 25-40 pages. Investor-ready tone. Include sample financial projections. Bengali + English mixed where appropriate."</li>
-        </ul>
+<div class="stat-row">
+    <div class="stat"><span class="num">৩ দিন</span><span class="label">তামজিদের AI-augmented plan</span></div>
+    <div class="stat"><span class="num">৳৬০ লাখ</span><span class="label">IDLC SME loan approved</span></div>
+    <div class="stat"><span class="num">৩২ clients</span><span class="label">14 months post-launch</span></div>
+    <div class="stat"><span class="num">৳১৮ লাখ MRR</span><span class="label">Current monthly recurring revenue</span></div>
+</div>
 
-        <h2>Executive Summary — most important</h2>
-        <ul>
-            <li>Hook: "By 2030, [market] in Bangladesh will be ৳XB"</li>
-            <li>Problem clear, Solution clear</li>
-            <li>Traction (if any)</li>
-            <li>Team strength</li>
-            <li>Numbers: revenue projection, capital ask</li>
-            <li>Why invest (return + impact)</li>
-            <li><b>Length:</b> 1-2 pages max</li>
-        </ul>
+<h2>Investor-grade business plan-এর ৮টা essential section</h2>
 
-        <h2>Market Analysis (Bangladesh-specific)</h2>
-        <ul>
-            <li>TAM/SAM/SOM — Bangladesh + global if export</li>
-            <li>Government data: BBS, NBR, BIDA</li>
-            <li>Industry reports: LightCastle Partners, Dhaka Stock Exchange</li>
-            <li>Competitor analysis: 5-10 players</li>
-            <li>Customer survey (if conducted)</li>
-            <li>Market trend 3-year</li>
-        </ul>
+<ol>
+    <li><b>Executive Summary (1-2 page):</b> Whole plan-এর "elevator pitch"। যা পড়লে investor decision-এ যাবেন ১০-২০% time-এ।</li>
+    <li><b>Company Description:</b> Mission, vision, legal structure (Sole Proprietor / Partnership / Pvt Ltd), founders' background।</li>
+    <li><b>Market Analysis:</b> Industry size, growth rate, target customer segment, competitive landscape।</li>
+    <li><b>Organization & Team:</b> Founders, advisors, hiring plan।</li>
+    <li><b>Product / Service:</b> What you offer, how it solves customer problem, technology, IP।</li>
+    <li><b>Marketing & Sales Strategy:</b> Customer acquisition channel, pricing, sales funnel।</li>
+    <li><b>Financial Projections:</b> 3-5 year P&L, cash flow, balance sheet, funding requirement।</li>
+    <li><b>Appendix:</b> CV, market research, letter of intent, technical specifications।</li>
+</ol>
 
-        <h2>Financial Projections</h2>
-        <ul>
-            <li>Revenue model: subscription/transaction/sale</li>
-            <li>Year 1-5 projection</li>
-            <li>Assumption table (customer count, price, etc.)</li>
-            <li>Expense breakdown</li>
-            <li>Break-even analysis</li>
-            <li>Cash flow statement</li>
-            <li>Sensitivity analysis</li>
-            <li><b>AI assist:</b> ChatGPT Code Interpreter → Excel model</li>
-        </ul>
+<h2>তামজিদের 3-Day Workflow</h2>
 
-        <h2>Marketing &amp; Sales</h2>
-        <ul>
-            <li>Customer Acquisition Cost (CAC)</li>
-            <li>Lifetime Value (LTV)</li>
-            <li>Channels: digital, offline, partnership</li>
-            <li>Bangladesh-specific: Facebook ads, bKash partnership</li>
-            <li>Sales funnel</li>
-            <li>Pricing strategy</li>
-        </ul>
+<h3>Day 1: Foundation + Market</h3>
 
-        <h2>BD-specific sections</h2>
-        <ul>
-            <li>Regulatory: RJSC registration, trade license, VAT</li>
-            <li>Bank account: corporate, FCC for international</li>
-            <li>Tax: NBR, BIN, return</li>
-            <li>Compliance: BIDA, BTRC (tech)</li>
-            <li>Foreign investment: FDI route</li>
-        </ul>
+<p><b>Morning (2 hours): Discovery — Claude Project setup</b></p>
+<p>তামজিদ একটা Claude Project বানিয়েছিলেন "Rasoi Inventory Business Plan"। সেখানে upload করেছিলেন: তাঁর past customer interview note (১২ restaurant owner), competitor screenshot, Bangladesh Bank SME report 2025, NBR-এর digital service tax circular।</p>
 
-        <h2>For different audiences</h2>
+<p><b>Afternoon (4 hours): Market Analysis</b></p>
 
-        <h3>Bank loan</h3>
-        <p>Focus: cash flow, collateral, repayment ability। Conservative projections।</p>
+<blockquote class="deep-blockquote">
+"Bangladesh-এর restaurant industry-এর জন্য Total Addressable Market (TAM), Serviceable Addressable Market (SAM), Serviceable Obtainable Market (SOM) calculate করো। Sources: BBS Service Sector Survey 2024, BRA (Bangladesh Restaurant Association) data, FoodPanda/Pathao Food Delivery growth report। Methodology transparent দাও — investor-grade।<br><br>
+সাথে: Competitive landscape। Direct competitor (TasaalBD, KhanaPin), indirect (Excel + manual), substitute (paper register)। প্রতিটার pricing, feature gap, market share estimate।"
+</blockquote>
 
-        <h3>Angel investor</h3>
-        <p>Focus: team, market size, exit strategy। Aggressive growth।</p>
+<p>Output: ৭-page market analysis, BBS citation-সহ। তামজিদ ২ ঘণ্টা spent verifying — কিছু numbers off, manual correction।</p>
 
-        <h3>VC fund</h3>
-        <p>Focus: scalability, 10x return, network effects। Bold vision।</p>
+<h3>Day 2: Product + Financial</h3>
 
-        <h3>Government grant</h3>
-        <p>Focus: employment generation, social impact, export potential।</p>
+<p><b>Morning (3 hours): Product & Service</b></p>
+<p>"Rasoi Inventory-এর ৮টা core feature module list করো। প্রতিটার জন্য: customer problem solved, technical implementation overview, competitive differentiation, pricing tier (basic ৳২K/mo, pro ৳৬K, enterprise custom)।"</p>
 
-        <h2>Tools beyond ChatGPT/Claude</h2>
-        <ul>
-            <li><b>LivePlan:</b> business plan software</li>
-            <li><b>Gamma AI:</b> pitch deck from plan</li>
-            <li><b>Canva:</b> visual elements</li>
-            <li><b>Excel/Sheets:</b> financial model</li>
-            <li><b>Notion:</b> living document</li>
-            <li><b>DocSend:</b> tracked sharing</li>
-        </ul>
+<p><b>Afternoon (5 hours): Financial Projections — সবচেয়ে critical</b></p>
 
-        <h2>Common mistakes (avoid)</h2>
-        <ul>
-            <li>Too long (50+ pages = unread)</li>
-            <li>Hockey-stick projections (unrealistic)</li>
-            <li>No competition mentioned</li>
-            <li>Vague target customer</li>
-            <li>Founder ego over team</li>
-            <li>Missing risk analysis</li>
-            <li>No use-of-funds breakdown</li>
-        </ul>
+<p>তামজিদ AI-এর সাথে ৫টা separate session-এ কাজ করেছিলেন:</p>
 
-        <h2>৭-day plan timeline</h2>
-        <ul>
-            <li>দিন 1: AI generate master draft</li>
-            <li>দিন 2: Executive summary refine</li>
-            <li>দিন 3: Market analysis BD data add</li>
-            <li>দিন 4: Financial projections build</li>
-            <li>দিন 5: Marketing + operations detail</li>
-            <li>দিন 6: Mentor/peer feedback</li>
-            <li>দিন 7: Final polish + PDF</li>
-        </ul>
+<ol>
+    <li><b>Cost structure:</b> Salary (4 hires year 1), AWS/server, office, marketing, payment gateway fee। Monthly breakdown।</li>
+    <li><b>Pricing model:</b> Tier-wise customer acquisition cost vs LTV।</li>
+    <li><b>Revenue model:</b> Year 1: 60 clients × avg ৳৩K MRR = ৳২ লাখ/mo by month 12। Year 2: 200 clients × ৳৪K = ৳৮ লাখ/mo।</li>
+    <li><b>Cash flow:</b> Monthly cash position with ৳৬০ লাখ loan injection।</li>
+    <li><b>Break-even:</b> Month 11 projected।</li>
+</ol>
 
-        <h2>উপসংহার</h2>
-        <p>Business plan — funding-এর key, কিন্তু আরো গুরুত্বপূর্ণভাবে founder-এর clarity tool। AI দিয়ে first draft দ্রুত — কিন্তু আপনার vision, market understanding, এবং execution capability সেটাই sole investor look। এই সপ্তাহের একটা ঘণ্টা বসুন; ১ মাসে investor-ready plan ready।</p>
+<p>প্রতি financial number-এ তামজিদ Excel-এ manually verify করেছিলেন। AI ৭০% structure দেয়, কিন্তু numerical accuracy human verification mandatory।</p>
 
-        <h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
+<h3>Day 3: Executive Summary + Polish</h3>
+
+<p><b>Morning (2 hours): Executive Summary</b></p>
+<p>Plan-এর সব section ready, Claude-এ: "এই full business plan-এর basis-এ একটা ১.৫-page Executive Summary লেখো। Investor যাতে first 60 seconds-এ decide করতে পারে — read further or pass। Tone: confident but realistic। Must include: problem, solution, market size, business model, traction (current), funding ask, use of funds।"</p>
+
+<p><b>Afternoon (4 hours): Visual + formatting</b></p>
+<ul>
+    <li>Canva-এ pitch deck (15-slide variant)।</li>
+    <li>Microsoft Word professional template।</li>
+    <li>Org chart, market sizing diagram (Lucidchart)।</li>
+    <li>Financial graphs (Excel exported as PNG, embedded in Word)।</li>
+    <li>Final proofread।</li>
+</ul>
+
+<h2>BD-specific funding landscape ২০২৬-এ</h2>
+
+<ul>
+    <li><b>IDLC SME Loan:</b> ৳১০-৫০ লাখ, asset-backed। Documentation strict (3-yr financial, audited)। তামজিদের route।</li>
+    <li><b>BRAC Bank Probashi:</b> Remittance-backed loan for diaspora-founded BD startup।</li>
+    <li><b>Bangladesh Bank Startup Fund:</b> ৳১ কোটি পর্যন্ত, 4% interest। 8-month process।</li>
+    <li><b>Angel investors:</b> Pre-seed ৳৫-২০ লাখ। BD network: Anchorless Bangladesh, Startup Dhaka, Toggle।</li>
+    <li><b>VC (BD-focused):</b> Sequoia Surge alum, Pegasus Tech Ventures, IFC। Pre-seed/seed $50K-$500K।</li>
+    <li><b>Bootstrapping:</b> ৫০%+ BD SaaS startup এই route-এ। Family + revenue।</li>
+</ul>
+
+<h2>AI কোথায় শক্তিশালী, কোথায় মানুষ ছাড়া অসম্ভব</h2>
+
+<table style="width:100%;border-collapse:collapse;margin:1rem 0;">
+<thead>
+<tr style="background:#f1f5f9;">
+<th style="padding:10px;border:1px solid #e5e7eb;">Section</th>
+<th style="padding:10px;border:1px solid #e5e7eb;">AI Role</th>
+<th style="padding:10px;border:1px solid #e5e7eb;">Human Role</th>
+</tr>
+</thead>
+<tbody>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;">Executive Summary</td><td style="padding:10px;border:1px solid #e5e7eb;">Structure, 1st draft</td><td style="padding:10px;border:1px solid #e5e7eb;"><b>Voice, vision, tone</b></td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;">Market Analysis</td><td style="padding:10px;border:1px solid #e5e7eb;">Data synthesis, framework</td><td style="padding:10px;border:1px solid #e5e7eb;">Source verification, BD context</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;">Financial Projection</td><td style="padding:10px;border:1px solid #e5e7eb;">Template + sanity check</td><td style="padding:10px;border:1px solid #e5e7eb;"><b>All numbers, must verify</b></td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;">Competitive analysis</td><td style="padding:10px;border:1px solid #e5e7eb;">Framework, structure</td><td style="padding:10px;border:1px solid #e5e7eb;">Specific competitor research</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;">Marketing/Sales</td><td style="padding:10px;border:1px solid #e5e7eb;">Channel suggestion</td><td style="padding:10px;border:1px solid #e5e7eb;">Realistic budget + timeline</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;">Vision/Mission</td><td style="padding:10px;border:1px solid #e5e7eb;">Polishing</td><td style="padding:10px;border:1px solid #e5e7eb;"><b>100% founder's heart</b></td></tr>
+</tbody>
+</table>
+
+<h2>৪টা mistake — AI-generated business plan-এ common</h2>
+
+<ul>
+    <li><b>1. Generic AI numbers unverified:</b> AI বলবে "Bangladesh restaurant industry size $2.5B।" সেটা verify না করে paste করলে investor question-এ collapse।</li>
+    <li><b>2. Vague competitive analysis:</b> AI-এর "Competitive landscape limited" — empty claim। Real research দরকার (8 competitor minimum, feature-by-feature)।</li>
+    <li><b>3. Unrealistic financial hockey stick:</b> AI optimistic growth project করে (10x year 1)। Investor-রা চিনেন। 2-3x year 1, 3-5x year 2-3 realistic।</li>
+    <li><b>4. Founder bio AI-written:</b> Founder-এর voice না থাকলে investor "team weak" judge করেন। AI-এর draft + heavy founder rewrite mandatory।</li>
+</ul>
+
+<h2>উপসংহার — আপনার আজকের পদক্ষেপ</h2>
+<p>তামজিদ বলেন: "AI আমাকে SaaS founder বানায়নি — আমাকে business plan-এর গুণমানের differentiation বুঝতে সাহায্য করেছে। প্রথম plan-এ আমি ১৫ দিন invest করেছিলাম, plan-এর depth ছিল ১৫০-শব্দ Executive Summary-এর equivalent। AI-augmented plan-এ ৩ দিন invest, depth full institutional-grade। সেই difference ৳৬০ লাখ-এর।" আজই করুন: আপনার যদি startup/SME idea থাকে এবং funding/investor target — Claude.ai-তে একটা Project বানান, এই article-এর section-by-section prompt copy করুন, এবং আগামী ৭২ ঘণ্টায় ১.০ version draft করুন। ১ম draft-এর পর আপনি বুঝবেন কোথায় financial number verify দরকার, কোথায় founder voice inject দরকার। সেই iterative workflow-ই তামজিদকে IDLC committee-এর সামনে credible করেছিল।</p>
+
+                <h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
         <ul>
             <li><a href="/blog/ai-diye-quotation-proposal-bangla-guide/">AI Proposal</a></li>
             <li><a href="/blog/ai-diye-online-course-banano-bangla-guide/">Online Course</a></li>

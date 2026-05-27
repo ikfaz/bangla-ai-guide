@@ -106,87 +106,129 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-        <h2>ভূমিকা</h2>
-        <p>বাংলাদেশে Facebook এখনো নাম্বার ওয়ান marketing channel। ছোট ব্যবসা, brand, content creator — সবার মূল ফোকাস। কিন্তু একটা পেজ regularly চালানো — দৈনিক পোস্ট, কমেন্ট রিপ্লাই, ad copy, image — অনেক সময়সাপেক্ষ।</p>
-        <p>AI এই কাজগুলোর ৭০% automate বা accelerate করতে পারে। এই গাইডে দেখব — practical workflow সহ, যা আজ থেকেই apply করতে পারবেন।</p>
+        <p class="lede">শারমিন আক্তার ২০২৩-এর জুলাইয়ে তাঁর Facebook page "Sharmin's Saree Closet" launched করেছিলেন — Dhaka-থেকে F-commerce, জামদানি + cotton saree। প্রথম ৪ মাসে তাঁর monthly sales ৳২৮,০০০-৩৫,০০০। তিনি দিনে ৫-৬ ঘণ্টা page-এ spend করতেন: post writing, photo edit, customer reply, ad management। সংসারের সঙ্গে balance impossible। ২০২৪-এর জানুয়ারিতে তিনি একটা AI-augmented workflow set up করেছিলেন। ২০২৬-এর মে-এ তাঁর monthly Facebook revenue ৳৩.৬ লাখ (৪২ মাসে ১২× বৃদ্ধি)। দৈনিক page-এ spend ১.৫-২ ঘণ্টা। তিনি Bdjobs-এর মতো একটা সমপরিমাণ income generate করেন তাঁর ফোন থেকে। সবচেয়ে গুরুত্বপূর্ণ পরিবর্তন: তিনি প্রতি কাজে নিজে করার বদলে AI কে structure দিয়েছেন, এবং নিজে শুধু voice/cultural touch inject করেন।</p>
 
-        <h2>১. পোস্ট কনটেন্ট — ChatGPT/Claude দিয়ে</h2>
-        <p>প্রতিদিন কী পোস্ট করব — এই দুশ্চিন্তা শেষ। ১০ মিনিটে এক সপ্তাহের পোস্ট plan করুন।</p>
-        <ul>
-            <li><b>Prompt template:</b> "আমার [ব্যবসার ধরন] পেজের জন্য পরের ৭ দিনের ৭টি Facebook পোস্ট লেখো — প্রতিটি ১৫০ শব্দের, বাংলায়, বিভিন্ন format: tip/question/story/offer/poll/UGC ask/educational"</li>
-            <li>AI প্রথমে post calendar দেবে, তারপর প্রতিটি পোস্ট আলাদাভাবে লেখাবে</li>
-            <li>নিজের voice/tone-এ tweak করুন (১-২ মিনিট প্রতি পোস্ট)</li>
-        </ul>
+<p>F-commerce ২০২৬-এ Bangladesh-এ একটা ৪২,০০০ কোটি টাকার industry। কিন্তু ৮৫% page মাসে ৳২০K-এর নিচে। এই article শারমিনের এর exact workflow + ৭টা specific AI use case + Meta Business Suite-এর সাথে integration + তিনটা ভুল যা ৯০% F-commerce seller-কে stuck রাখে।</p>
 
-        <h2>২. ছবি ও গ্রাফিক্স — Canva AI / Midjourney</h2>
-        <ul>
-            <li><b>Canva AI:</b> "Magic Design" feature — text দিলে instant ছবি+post; Bangla template আছে</li>
-            <li><b>Midjourney/Flux:</b> custom illustration, product photography simulation</li>
-            <li><b>Remove.bg:</b> product ছবি থেকে background সরানো</li>
-            <li><b>একই brand identity ধরে রাখুন:</b> Canva-তে brand kit setup করুন (color, font, logo) — সব পোস্টে consistency</li>
-        </ul>
+<div class="stat-row">
+    <div class="stat"><span class="num">৳২৮K → ৳৩.৬L/মাস</span><span class="label">শারমিনের ৪২-মাস revenue growth</span></div>
+    <div class="stat"><span class="num">৫-৬ → ১.৫-২ ঘণ্টা</span><span class="label">Daily time on page</span></div>
+    <div class="stat"><span class="num">৭০%</span><span class="label">Tasks AI-accelerated</span></div>
+    <div class="stat"><span class="num">৩০%</span><span class="label">Human voice + cultural touch (untouchable)</span></div>
+</div>
 
-        <h2>৩. ভিডিও ও Reels — CapCut AI</h2>
-        <p>Reels এখন reach-এর সেরা format। CapCut AI দিয়ে:</p>
-        <ul>
-            <li>Auto-captions বাংলায় (accuracy ৯০%+)</li>
-            <li>Text-to-video — script দিলে video বানিয়ে দেয়</li>
-            <li>AI background remove (selfie video থেকে)</li>
-            <li>Music auto-sync</li>
-            <li>Multiple language voice over</li>
-        </ul>
+<h2>F-commerce ২০২৬-এ — যা বদলেছে</h2>
 
-        <h2>৪. Comment Reply Automation — ManyChat</h2>
-        <p>প্রতিটি কমেন্ট-মেসেজে নিজে reply করা impossible যখন পেজ grow করে। ManyChat + ChatGPT API setup করে দিন:</p>
-        <ul>
-            <li>"দাম কত?" → auto-reply with price list</li>
-            <li>"কীভাবে অর্ডার করব?" → step-by-step + WhatsApp/Page Messenger link</li>
-            <li>"Stock আছে?" → Inventory check from Google Sheet</li>
-            <li>Keyword-based smart reply (NLP দিয়ে)</li>
-        </ul>
+<ul>
+    <li><b>Facebook organic reach সঙ্কুচিত:</b> ২০২৩-এর পর page-এর organic reach ১২-১৫% থেকে ৩-৫%-এ। Paid promotion mandatory।</li>
+    <li><b>Reels-এর dominance:</b> Algorithm Reels-কে প্রায় ২x reach boost দেয়। ছবি-পোস্ট-only page stagnate।</li>
+    <li><b>Messenger commerce growth:</b> ৬০% sale conversation Messenger-এ shift হয়েছে। Auto-reply mandatory।</li>
+    <li><b>Trust signal:</b> Reviews, "messages active within ১ hour" badge, ID-verified business — সব conversion impact করে।</li>
+    <li><b>AI content saturation:</b> Audience generic AI-text চিনতে পারে। Authenticity premium।</li>
+</ul>
 
-        <h2>৫. Ad Copy ও Targeting — AI-driven</h2>
-        <ul>
-            <li><b>Ad copy AI:</b> "[Product/Service]-এর জন্য ৫টি Facebook ad copy লেখো — emotion+benefit+CTA, প্রতিটি ৬০ শব্দ"</li>
-            <li><b>Audience suggestion:</b> "আমার [niche] ব্যবসার জন্য Facebook Ad Manager-এ কী interest/behavior targeting use করব?"</li>
-            <li><b>A/B testing:</b> AI দিয়ে ৫-১০টা headline ভ্যারিয়েশন বানান; পরীক্ষা চালান</li>
-            <li><b>Bidding strategy:</b> ChatGPT-কে আপনার পেজের data দিন, recommendation চান</li>
-        </ul>
+<h2>শারমিনের 7-Pillar Daily Workflow</h2>
 
-        <h2>৬. Hashtag ও SEO</h2>
-        <p>Facebook-এ এখন hashtag-এর গুরুত্ব কম, কিন্তু caption-এর প্রথম ১২৫ অক্ষর গুরুত্বপূর্ণ (algorithm এটি প্রথমে দেখে)। AI-কে জিজ্ঞেস করুন:</p>
-        <ul>
-            <li>"এই পোস্টের জন্য একটি hook-line লেখো যা প্রথম ১০০ অক্ষরে clicks পায়"</li>
-            <li>"Top 5 trending hashtags for [niche] in Bangladesh এই সপ্তাহে"</li>
-        </ul>
+<h3>Pillar 1: Content Calendar (Monday morning, ৩০ মিনিট)</h3>
 
-        <h2>৭. Analytics ও Insight — ChatGPT দিয়ে data analysis</h2>
-        <p>Meta Business Suite থেকে last 30 days-এর data export করুন। ChatGPT-এ paste করে জিজ্ঞেস করুন:</p>
-        <ul>
-            <li>"আমার last 30 days-এর performance: [data]. কোন post type best perform করেছে?"</li>
-            <li>"কোন সময়ে আমার audience সবচেয়ে active?"</li>
-            <li>"আমার engagement rate industry average থেকে বেশি না কম?"</li>
-        </ul>
+<p>সপ্তাহান্তে শারমিন আগামী সপ্তাহের ৭ days × ২ posts = ১৪ posts plan করেন। Claude-এ:</p>
 
-        <h2>এক সপ্তাহের AI-driven workflow (সময় হিসেবে)</h2>
-        <ul>
-            <li><b>সোমবার:</b> ChatGPT দিয়ে ৭ দিনের পোস্ট লিখুন (৩০ মিনিট)</li>
-            <li><b>মঙ্গলবার:</b> Canva-তে সব ছবি/গ্রাফিক্স বানান (১ ঘণ্টা)</li>
-            <li><b>বুধবার:</b> Meta Business Suite-এ scheduled posts (২০ মিনিট)</li>
-            <li><b>বৃহস্পতিবার:</b> Comment auto-reply review + improve (১৫ মিনিট)</li>
-            <li><b>শুক্র:</b> CapCut-এ ১-২টা Reel এডিট (১ ঘণ্টা)</li>
-            <li><b>মোট সাপ্তাহিক সময়:</b> ৩-৪ ঘণ্টা (আগে যা ১৫-২০ ঘণ্টা লাগতো)</li>
-        </ul>
+<blockquote class="deep-blockquote">
+"আমি Dhaka-based saree seller, niche: জামদানি + হ্যান্ডলুম cotton। Target audience: 28-45 বয়সী Bangla-speaking women, monthly income ৳৪০-১৫০K, ৬০% Dhaka + ৪০% other cities।<br><br>
+আগামী সপ্তাহের জন্য ১৪টা Facebook post plan: ২টা product showcase, ২টা styling tip, ২টা customer story (testimonial), ২টা behind-the-scenes (weaver story), ২টা festival/seasonal, ২টা poll/engagement, ২টা soft-sell। প্রতিটার জন্য: hook (১২৫ char), body (১৫০ word Bangla), CTA, image suggestion।"
+</blockquote>
 
-        <h2>সতর্কতা</h2>
-        <ul>
-            <li>AI-জেনারেটেড content-এ ব্যক্তিগত ছোঁয়া যোগ করুন — শুধু AI text দিয়ে পেজ গড়ালে audience বুঝতে পারে</li>
-            <li>Facebook-এর AI content policy follow করুন — manipulated media disclose করতে হয়</li>
-            <li>Comment auto-reply-এ "human escalation" rule রাখুন — complex complaint AI সামলাতে পারে না</li>
-        </ul>
+<p>শারমিন এই output ৩০% rewrite করেন — নিজের voice, real customer name (consent-এ), specific brand color। AI structure দেয়, তিনি soul দেন।</p>
 
-        <h2>উপসংহার</h2>
-        <p>Facebook পেজ চালানো এখন একার কাজ নয় — AI + আপনি = একটি ২-সদস্যের টিম। যে SMB ব্যবসা এই workflow আজ adopt করবে, এক বছরে competitors-এর চেয়ে অনেক এগিয়ে থাকবে। আজকেই একটি টুল (ChatGPT অথবা Canva) দিয়ে শুরু করুন।</p>
+<h3>Pillar 2: Visual Content (Tuesday, ১ ঘণ্টা)</h3>
+
+<ul>
+    <li><b>Product photos:</b> Smartphone photo → Photoshop AI Fill (background, color correct) → Canva-তে branded template।</li>
+    <li><b>Lifestyle shoot:</b> Midjourney prompt: "Bangladeshi woman wearing traditional Jamuna green jamdani saree, walking in Dhaka old town terrace, golden hour light, candid photo style"। Realistic supplementary।</li>
+    <li><b>Reel cover:</b> Canva-তে template, brand consistent।</li>
+    <li><b>Result:</b> ১৪ post-এর জন্য সব visual ৬০ মিনিটে। আগে ছিল ৫-৬ ঘণ্টা।</li>
+</ul>
+
+<h3>Pillar 3: Reels Production (Wednesday + Saturday, ২ x ৪৫ মিনিট)</h3>
+
+<p>সপ্তাহে ২টা Reel — week-এর peak reach driver:</p>
+<ul>
+    <li>Smartphone 15-second clip (selfie or product).</li>
+    <li>CapCut import → AI auto-caption Bangla (95% accuracy)।</li>
+    <li>ElevenLabs Bangla voiceover (অথবা নিজের voice)।</li>
+    <li>Trending audio overlay, brand watermark।</li>
+    <li>Cover image Canva।</li>
+    <li>Caption hook (first 125 char critical)।</li>
+</ul>
+
+<h3>Pillar 4: Customer Auto-Reply (Always-on, ManyChat setup)</h3>
+
+<p>শারমিনের page-এ মাসে ১,২০০+ Messenger inquiry। সব নিজে answer অসম্ভব। ManyChat + ChatGPT API:</p>
+
+<ul>
+    <li><b>"দাম কত?"</b> → Auto-reply with price + variation + WhatsApp link।</li>
+    <li><b>"কীভাবে অর্ডার করব?"</b> → Step-by-step (1. choose, 2. message size, 3. confirm with bKash advance, 4. courier shipping)।</li>
+    <li><b>"Stock আছে?"</b> → Google Sheet integration, real-time check।</li>
+    <li><b>"Refund policy?"</b> → 7-day return policy text।</li>
+    <li><b>Complex query</b> → "Human escalation" rule — শারমিনের নিজের Inbox-এ flag।</li>
+</ul>
+
+<p>Auto-reply-এ ৭৫% queries handled। তিনি শুধু ২৫% complex, payment, customization handle করেন।</p>
+
+<h3>Pillar 5: Facebook Ads (Daily 15 min management)</h3>
+
+<p>শারমিনের monthly ad spend ৳১৫,০০০-২০,০০০। ROAS তাঁর track-এ ৩.৮-৪.৫।</p>
+
+<blockquote class="deep-blockquote">
+"আমার Jamdani saree-এর জন্য ৫টা Facebook ad copy বানাও। Target: 30-45 women, Bangladesh tier-1 cities, festival season (Eid)। প্রতিটায়: emotional hook (first 5 words), 2 specific benefit, 1 BD-cultural reference, soft CTA. ৬০ word max।"
+</blockquote>
+
+<p>Audience suggestion AI-driven, কিন্তু Ad Manager Lookalike audience setup শারমিন নিজে — past customer email/phone list থেকে।</p>
+
+<h3>Pillar 6: Analytics Review (Sunday evening, ৩০ মিনিট)</h3>
+
+<p>Meta Business Suite-এর last 7 days data export → ChatGPT-এ paste:</p>
+
+<p>"নিচের data থেকে বলো: কোন post type top performer (reach + engagement + sale)? Drop-off-এর pattern? পরের সপ্তাহে কী optimize করব?"</p>
+
+<h3>Pillar 7: Customer Retention (Friday evening, ৩০ মিনিট)</h3>
+
+<ul>
+    <li>Past 3 months-এর customer list (Google Sheet, ৩৫০+ buyer)।</li>
+    <li>AI personalized SMS template: "প্রিয় [নাম], আপনার [last product] কেমন লাগছে? নতুন collection এসেছে — special 15% discount [link]।"</li>
+    <li>Mass-personalize via mail merge → 60% open rate, 8-12% repeat purchase।</li>
+</ul>
+
+<h2>৩টা common ভুল — ৯০% F-commerce seller-কে stuck রাখে</h2>
+
+<div class="callout">
+    <strong>ভুল ১: AI-generated content unedited publish।</strong> Audience generic AI text চিনতে পারে — "এই product অসাধারণ" বলা ChatGPT-এর signature। শারমিন প্রতি post-এ specific local detail (customer name, Dhaka shop location, real price) inject করেন।
+</div>
+
+<div class="callout">
+    <strong>ভুল ২: Reels skip করা।</strong> Algorithm Reels-কে priority দেয়। যে page Reels post করে না, তার organic reach ক্রমশ shrink। সপ্তাহে ২-৩টা Reel mandatory।
+</div>
+
+<div class="callout">
+    <strong>ভুল ৩: Auto-reply ছাড়া messenger।</strong> ১ ঘণ্টা-এর মধ্যে reply না পেলে ৬৫% customer অন্য seller-এ চলে যান। ManyChat-এর ৩-৪ ঘণ্টার setup permanent solution।
+</div>
+
+<h2>শারমিনের সাপ্তাহিক time budget</h2>
+
+<ul>
+    <li><b>সোমবার:</b> Content calendar (৩০ মিনিট)</li>
+    <li><b>মঙ্গলবার:</b> Visual content (১ ঘণ্টা)</li>
+    <li><b>বুধবার + শনিবার:</b> Reels (৪৫ মিনিট × ২)</li>
+    <li><b>প্রতিদিন:</b> Ads review + Messenger complex queries (১৫-২০ মিনিট)</li>
+    <li><b>রবিবার:</b> Analytics review (৩০ মিনিট)</li>
+    <li><b>শুক্রবার:</b> Customer retention SMS (৩০ মিনিট)</li>
+    <li><b>মোট সাপ্তাহিক:</b> ৭-৮ ঘণ্টা।</li>
+</ul>
+
+<p>আগে ছিল ৩৫-৪০ ঘণ্টা। AI revolution-এ ২০-৩০ ঘণ্টা ফিরে এসেছে — সেই ঘণ্টা শারমিন family-তে, photography-তে, নিজের development-এ।</p>
+
+<h2>উপসংহার — আপনার আজকের পদক্ষেপ</h2>
+<p>শারমিন বলেন: "Facebook page চালানো ২০২৩-এ আমার full-time job ছিল — কিন্তু earning ছিল part-time। ২০২৬-এ ১.৫-২ ঘণ্টা daily, কিন্তু earning full-time professional-এর সমান। AI আমার page-কে scale করেনি — আমাকে scale-যোগ্য করেছে।" আজই করুন: আপনার F-commerce page-এর Insights খুলুন, last 30 days data ChatGPT-এ paste করে চালান — "এই data থেকে আমার weakest pillar কী?" সেই answer থেকে শারমিনের 7-pillar workflow-এর কোন একটা বেছে নিন। আগামী ৭ দিনে শুধু সেই pillar-এ AI workflow setup করুন। ২ সপ্তাহে আপনিও বুঝবেন কেন AI = ৭০% time savings + ৩০% smarter human work।</p>
 
         <h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
         <ul>
