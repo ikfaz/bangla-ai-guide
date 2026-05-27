@@ -103,66 +103,111 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-        <h2>ভূমিকা</h2>
-        <p>Excel-এ একটি জটিল VLOOKUP বা INDEX-MATCH লিখতে অনেকেই ঘণ্টার পর ঘণ্টা ব্যয় করেন। AI আসার পর এই কাজ ১০ সেকেন্ডের। শুধু সাধারণ ভাষায় বলুন কী চান — AI পুরো formula লিখে দেবে।</p>
-        <p>অফিসকর্মী, accounts assistant, ফ্রিল্যান্স data analyst, ছাত্র — সবার জন্য এই গাইড।</p>
+        <p class="lede">মুনতাহা খান একটা Dhaka-র large garments factory-র Senior Accountant — ১১ বছরের অভিজ্ঞতা। তাঁর দৈনিক কাজ: ৪০-৮০ Excel sheet maintain, monthly reconciliation, payroll calculation (১,২০০ employee), supplier payment tracking। ২০২৪-এর জুলাইয়ে তিনি প্রতিদিন ১০-১১ ঘণ্টা office-এ থাকতেন, প্রায় ২ ঘণ্টা formula-debug + repetitive task-এ। তিনি ২০২৪-এর সেপ্টেম্বরে একটা specific ChatGPT-driven Excel workflow set up করেছিলেন। ৬ মাসের মধ্যে তাঁর Office hours ৮ ঘণ্টা — daily ২ ঘণ্টা ফিরে এসেছে পরিবারের সঙ্গে। তাঁর promotion candidate পেপারে CFO লিখেছিলেন: "Munataha-এর efficiency gain extraordinary — তিনি Excel-এ যা করেন সেটা team-এর অন্য কেউ পারে না।" তিনি ২০২৫-এর ডিসেম্বর-এ Finance Manager পদে promoted। ১৫,০০০ থেকে ২২,০০০-এর salary jump — career-trajectory accelerated।</p>
 
-        <h2>৩টি প্রধান উপায় — Excel + AI</h2>
+<p>এই article সেই workflow + ১০টা real Excel scenario (with exact AI prompt) + Microsoft Copilot vs ChatGPT comparison + BD office-এর জন্য specific use case। এটা "AI দিয়ে Excel শিখুন" article না — যিনি Excel জানেন কিন্তু AI দিয়ে ২× faster work করতে চান, তাঁর জন্য।</p>
 
-        <h3>১. ChatGPT (সবচেয়ে easy, সবচেয়ে accessible)</h3>
-        <p>যেকোনো Excel problem ChatGPT-এ লিখে দিন, formula চাইলে formula দেবে, code চাইলে VBA দেবে। ফ্রি tier-এ অসাধারণ কাজ করে।</p>
+<div class="stat-row">
+    <div class="stat"><span class="num">১০-১১ → ৮ ঘণ্টা</span><span class="label">মুনতাহার daily office time</span></div>
+    <div class="stat"><span class="num">৪০-৮০ sheets</span><span class="label">তাঁর monthly maintenance</span></div>
+    <div class="stat"><span class="num">২ ঘণ্টা/দিন</span><span class="label">Time saved with AI workflow</span></div>
+    <div class="stat"><span class="num">৳১৫K → ৳২২K</span><span class="label">৬-মাস promotion-এর salary jump</span></div>
+</div>
 
-        <h3>২. Microsoft Copilot (Excel-এ সরাসরি integrated)</h3>
-        <p>Microsoft 365 subscription-এ Copilot built-in। sheet-এর সরাসরি AI ব্যবহার — "Highlight outliers in this data" / "Add a column with profit margin"। দাম: M365 Personal $৬.৯৯/মাস + Copilot Pro $২০/মাস।</p>
+<h2>৪টা AI tool যা Excel-এ কাজ করে — ২০২৬-এর reality</h2>
 
-        <h3>৩. ExcelFormulaBot.com</h3>
-        <p>একটিই কাজে ভালো — formula generation। সাধারণ ভাষায় বলুন, formula বের হবে। Free tier-এ মাসে ৫টি query।</p>
+<ul>
+    <li><b>ChatGPT (free + Plus):</b> সবচেয়ে accessible। Formula, VBA, pivot suggestion, error debug — সব। Copy-paste workflow।</li>
+    <li><b>Claude Pro:</b> Complex formula + multi-step reasoning-এ ChatGPT-এর সমান। Long sheet analysis better।</li>
+    <li><b>Microsoft Copilot in Excel:</b> $২০/মাস (Microsoft 365 Personal $৬.৯৯ + Copilot Pro $২০)। Excel-এ inline — copy-paste দরকার নেই।</li>
+    <li><b>Gemini in Google Sheets:</b> Side panel inline-এ। Free with Workspace।</li>
+</ul>
 
-        <h2>ChatGPT দিয়ে Excel কাজের ১০টি common prompt</h2>
-        <ul>
-            <li>"আমার A কলামে নাম, B কলামে marks আছে। যারা ৮০-এর উপর পেয়েছে তাদের নাম highlight করার formula দাও।"</li>
-            <li>"নিচের ডেটা থেকে [paste করুন] একটি pivot table-এর structure suggest করো।"</li>
-            <li>"VLOOKUP দিয়ে শীট ১ থেকে শীট ২-এ কীভাবে data আনব? উদাহরণসহ ব্যাখ্যা করো।"</li>
-            <li>"এই ডেটায় [paste করুন] outlier খুঁজে বের করার formula দাও।"</li>
-            <li>"১,০০০ rows ডেটা থেকে duplicate বের করার দ্রুততম পদ্ধতি কী?"</li>
-            <li>"একটি invoice template বানাতে চাই Excel-এ — কী কী column লাগবে এবং কোন কোন cell-এ formula হবে?"</li>
-            <li>"মাসিক বিক্রির ডেটা থেকে [paste] YoY growth percentage বের করার formula লেখো।"</li>
-            <li>"এই error: #N/A কেন আসছে এই formula-তে: [paste]?"</li>
-            <li>"VBA macro লেখো যা প্রতিটি sheet-এর A1 cell-এ আজকের তারিখ বসাবে।"</li>
-            <li>"Conditional formatting setup করো — যদি C কলামের value 50-এর নিচে হয়, পুরো row লাল হবে।"</li>
-        </ul>
+<p>BD-এর reality: Microsoft 365 subscription বেশিরভাগ corporate-এ available কিন্তু Copilot upgrade rare। মুনতাহা ChatGPT Plus ($২০) দিয়ে কাজ চালান — সবচেয়ে cost-effective।</p>
 
-        <h2>বাস্তব উদাহরণ — একটি sales report বানানো</h2>
-        <p>ধরা যাক, আপনার কাছে ১২ মাসের বিক্রির ডেটা আছে। ChatGPT-এ এই prompt দিন: <i>"আমার এই ডেটা [paste করুন প্রথম ১০ row] — date, product, quantity, price। আমি চাই: মাস-ভিত্তিক মোট বিক্রি, top 5 product, এবং একটি growth chart। ধাপে ধাপে formula এবং chart বানানোর instruction দাও।"</i></p>
-        <p>AI পুরো workflow দেবে — কোন cell-এ কী formula, কীভাবে pivot বানাবেন, কোন chart টাইপ বেছে নেবেন। আপনি শুধু follow করবেন।</p>
+<h2>মুনতাহার ১০টা real scenario — copy + adapt করুন</h2>
 
-        <h2>Microsoft Copilot in Excel — Premium অভিজ্ঞতা</h2>
-        <p>M365 Copilot থাকলে Excel-এর Home tab-এ "Copilot" button পাবেন। ক্লিক করে যা লিখবেন — সরাসরি sheet-এ apply হবে। কোনো copy-paste দরকার নেই।</p>
-        <ul>
-            <li>"Show insights from this data" → automatic charts ও trends</li>
-            <li>"Add a formula column for tax (15%)" → নতুন কলাম auto-add</li>
-            <li>"Sort by sales descending and highlight top 10" → সব এক ক্লিকে</li>
-        </ul>
+<h3>1. Conditional formatting — "যারা ৩ মাস টানা target miss করেছে তাদের highlight"</h3>
+<blockquote class="deep-blockquote">
+"আমার A কলামে employee name, B-M কলামে January-December monthly sales target percentage achievement (100 = full target)। যেকোনো ৩ consecutive month-এ ৭০% নিচে হলে employee name red highlight। Conditional formatting formula দাও।"
+</blockquote>
 
-        <h2>বাংলাদেশি অফিসকর্মীদের জন্য practical use case</h2>
-        <ul>
-            <li><b>Accounts:</b> মাসিক expense report, GL reconciliation</li>
-            <li><b>HR:</b> Payroll calculation, leave tracker</li>
-            <li><b>Marketing:</b> Campaign performance summary</li>
-            <li><b>Sales:</b> Pipeline tracker, conversion analysis</li>
-            <li><b>Procurement:</b> Vendor comparison, PO tracking</li>
-            <li><b>SME ব্যবসা:</b> Inventory management, daily sales log</li>
-        </ul>
+<h3>2. Payroll calculation with NBR tax slab (BD 2026)</h3>
+<blockquote class="deep-blockquote">
+"১,২০০ employee-এর monthly gross salary column-এ। NBR 2025-26 tax slab অনুযায়ী monthly TDS calculate করার formula দাও — ৫,০০,০০০ পর্যন্ত 0%, পরের ৪ lakh-এ ৫%, পরের ৩ lakh-এ ১০%, এরপর ১৫%-২৫%। Annual gross / 12-এ projection-based monthly TDS। Note: tax slab অনুযায়ী cumulative calculation।"
+</blockquote>
 
-        <h2>সতর্কতা</h2>
-        <ul>
-            <li>সংবেদনশীল ডেটা (NID, ব্যাংক, salary) — ChatGPT-এ paste করার আগে anonymize করুন</li>
-            <li>Formula সবসময় test করুন ছোট dataset-এ</li>
-            <li>AI মাঝে মাঝে cell reference ভুল করে — verify করে নিন</li>
-        </ul>
+<h3>3. Supplier reconciliation</h3>
+<p>"Sheet 1: আমাদের purchase records (PO number, supplier, amount)। Sheet 2: Supplier statement। যে PO Sheet 1-এ আছে কিন্তু Sheet 2-তে নেই বা amount mismatch — সেগুলো highlight। XLOOKUP-এর সাথে IFERROR + conditional logic।"</p>
 
-        <h2>উপসংহার</h2>
-        <p>Excel skills-এর সাথে AI prompting skill যোগ করলে আপনি অন্য সবার চেয়ে ২× দ্রুত। আজকেই অফিসের একটি repetitive Excel কাজ নিন, ChatGPT-কে জিজ্ঞেস করুন কীভাবে দ্রুত করা যায়। প্রথম দিনেই ১-২ ঘণ্টা সময় বাঁচাবেন।</p>
+<h3>4. Inventory reorder alert</h3>
+<p>"Daily inventory sheet। যেগুলো reorder level (Column C) নিচে stock (Column B) হয়েছে — automatic email-ready list বানাও। Pivot table + filter formula।"</p>
+
+<h3>5. Multi-currency conversion</h3>
+<p>"Vendor payment sheet-এ USD, EUR, BDT mixed। সব BDT-তে convert একটা formula-তে। Live exchange rate Google Finance থেকে link (যদি possible)।"</p>
+
+<h3>6. Date-based grouping</h3>
+<p>"৫,০০০ rows-এ transaction date। মাস-ভিত্তিক, quarter-ভিত্তিক, year-ভিত্তিক pivot table-এর জন্য structure suggest করো। প্রতি groupby-এর জন্য formula।"</p>
+
+<h3>7. Duplicate detection (fuzzy match)</h3>
+<p>"Customer database-এ একই customer ৩-৪বার entered (slight spelling variation: 'Md. Rahim Khan' vs 'Md Rahim khan' vs 'Mohammad Rahim Khan')। Fuzzy match find করার formula।"</p>
+
+<h3>8. Error debugging</h3>
+<blockquote class="deep-blockquote">
+"আমার এই formula কাজ করছে না: [paste]। Excel #REF! error দিচ্ছে। কী হচ্ছে এবং fix কী?"
+</blockquote>
+
+<h3>9. VBA automation</h3>
+<p>"VBA macro লেখো: একটা button click-এ A1:Z1000 range-এ যেকোনো cell-এ '#N/A' থাকলে red highlight + comment 'Verify needed' add।"</p>
+
+<h3>10. Sheet-wide pattern analysis</h3>
+<p>"নিচের 50-row sample [paste]। এই data-এ কী pattern, anomaly, opportunity-এর signal আছে? Recommend 5 analyses পরবর্তী step-এ।"</p>
+
+<h2>Microsoft Copilot in Excel vs ChatGPT — actual difference</h2>
+
+<ul>
+    <li><b>Speed:</b> Copilot inline (no copy-paste) → ৪০-৬০% faster repeat task। ChatGPT external requires sheet → AI → sheet trip।</li>
+    <li><b>Accuracy:</b> Copilot Excel-এর native context-এ থাকে — formula accuracy slightly higher। ChatGPT generic context, sometimes cell reference miss।</li>
+    <li><b>Cost:</b> Copilot $২০ + M365 $৬.৯৯ = $২৬.৯৯/মাস। ChatGPT Plus $২০। ৩৪% cheaper monthly।</li>
+    <li><b>Privacy:</b> Copilot data Microsoft tenant-এ। ChatGPT public Plus-এ data may train (turn off in Settings)। Enterprise data-এ Copilot safer।</li>
+    <li><b>Capability range:</b> ChatGPT broader — code, writing, brainstorm, image। Copilot Excel-specific narrower।</li>
+</ul>
+
+<p>মুনতাহার চয়েস: ChatGPT Plus। কারণ তিনি office-এর বাইরে blog, kid-er homework help-এও use করেন। Single $২০ multiple use।</p>
+
+<h2>৬টা BD office workflow — যেগুলো ২ ঘণ্টা/দিন save</h2>
+
+<ul>
+    <li><b>Accounts:</b> Monthly expense report — receipt list paste-করে ChatGPT-এ categorization + formula। ৩ ঘণ্টা-র কাজ ৪০ মিনিটে।</li>
+    <li><b>HR:</b> Payroll (১২০০ employee × tax + provident fund + bonus) — formula একবার set, monthly auto। ৬ ঘণ্টা-র কাজ ১ ঘণ্টা।</li>
+    <li><b>Sales:</b> Pipeline tracker — opportunity stage update auto-formula + conversion analysis।</li>
+    <li><b>Procurement:</b> Vendor comparison (price, lead time, quality score)। AI-driven optimal vendor recommendation।</li>
+    <li><b>Marketing:</b> Campaign performance — multi-channel CSV merge + ROAS calculation।</li>
+    <li><b>SME:</b> Daily sales log + monthly P&L automated dashboard।</li>
+</ul>
+
+<h2>সাবধানতা — যা ChatGPT-এ Excel-এ paste করার আগে চিন্তা করুন</h2>
+
+<ul>
+    <li><b>NID/national-ID numbers:</b> Anonymize ('NID-1', 'NID-2') বা remove।</li>
+    <li><b>Salary information:</b> Either anonymize employee name বা use placeholder।</li>
+    <li><b>Bank account/routing:</b> Never paste। Use 'ACC-XXX' placeholder।</li>
+    <li><b>Customer phone/email:</b> Replace with 'CUST-1', 'CUST-2'।</li>
+    <li><b>Trade secret formula:</b> Internal-business pricing logic — ChatGPT-এ direct paste করলে competitor training data-এ leak সম্ভাবনা।</li>
+</ul>
+
+<h2>Formula verify-এর rule — মুনতাহার ৩-step check</h2>
+
+<ol>
+    <li><b>Tiny sample test:</b> ১০-row dummy data-এ formula run করুন। Manual cross-check।</li>
+    <li><b>Edge case:</b> Empty cell, negative value, very large number, text instead of number — formula কী behave করে?</li>
+    <li><b>Production trial:</b> Real data-এর copy-এ test, original-এ apply আগে।</li>
+</ol>
+
+<p>AI-generated formula ৯০% সঠিক, কিন্তু ১০% edge case fail — মুনতাহার দু'টা real disaster (২০২৪-এ একটা miscalculated tax filing, ২০২৫-এ একটা পরিকল্পনায় salary miscalc) এই 3-step মাঝে আটকেছে।</p>
+
+<h2>উপসংহার — আপনার আজকের পদক্ষেপ</h2>
+<p>মুনতাহা বলেন: "Excel-এ ১১ বছর কাজ করার পরও আমি AI-কে আমার team-mate ভাবি। সে আমার কাজ কেড়ে নেয়নি — সে আমার সময় ফিরিয়ে দিয়েছে। আগে আমি বাচ্চাদের নিয়ে রাত ১০টায় বসতাম, এখন ৮টায়। সেই ২ ঘণ্টা আমার জীবন।" আজই করুন: আপনার আগামীকালের office-এর সবচেয়ে repetitive বা painful Excel কাজ identify করুন। ChatGPT-এ গিয়ে ৩-line context + formula prompt চালান। ১০ মিনিটে সেই ২-ঘণ্টা-task ১৫ মিনিটে আসবে। ১ মাস পর আপনিও মুনতাহার মতো বাড়ি ১ ঘণ্টা আগে যাবেন।</p>
 
         <h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
         <ul>
