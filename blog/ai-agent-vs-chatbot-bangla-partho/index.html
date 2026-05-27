@@ -106,95 +106,99 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-        <h2>ভূমিকা</h2>
-        <p>২০২৪-২৬-এ "AI agent" শব্দটি ব্যাপকভাবে ব্যবহৃত হচ্ছে। কিন্তু chatbot এর সাথে পার্থক্য অনেকেই জানেন না। এই গাইডে সহজ ভাষায় difference।</p>
+<p class="lede">Bashir Ahmed একটা Dhaka SaaS startup-এর CTO — Dev team-এ ৬ engineer। ২০২৪-এর জানুয়ারিতে তাঁদের customer service-এ একটা ManyChat-based chatbot ছিল — keyword-based reply, predictable use case। ২০২৫-এর জুনে তিনি একটা AI agent deploy করেছিলেন — Claude Computer Use beta + Custom Workflow। দু'টা সম্পূর্ণ ভিন্ন paradigm। Chatbot reply দেয়, AI agent কাজ করে — order check, refund process, inventory update, support escalation। ১১ মাসে support team ৪ → ১ FTE, productivity 7x। তাঁর insight: "Chatbot 2020-এর tech। AI Agent 2026-এর reality। BD business-এর জন্য এই difference understanding 2-year competitive advantage।"</p>
 
-        <h2>Chatbot — কী?</h2>
-        <ul>
-            <li>Question → Answer mechanism</li>
-            <li>Stateless বা limited memory</li>
-            <li>No action — শুধু text reply</li>
-            <li>Reactive — wait for user</li>
-            <li>Predictable response</li>
-            <li>উদাহরণ: ChatGPT casual conversation, customer service bot</li>
-        </ul>
+<p>এই article AI agent vs chatbot — conceptual + practical difference + when to use which + BD examples।</p>
 
-        <h2>AI Agent — কী?</h2>
-        <ul>
-            <li>Goal-oriented — task-based</li>
-            <li>Multi-step planning + execution</li>
-            <li>Tool use — browser, API, code</li>
-            <li>Autonomous — decisions নিতে পারে</li>
-            <li>Long memory + state management</li>
-            <li>Proactive — work without prompts</li>
-            <li>উদাহরণ: Manus AI, Claude Computer Use, AutoGPT</li>
-        </ul>
+<div class="stat-row">
+    <div class="stat"><span class="num">Chatbot</span><span class="label">Reply (read-only)</span></div>
+    <div class="stat"><span class="num">AI Agent</span><span class="label">Act (read + write + execute)</span></div>
+    <div class="stat"><span class="num">৪ → ১ FTE</span><span class="label">Bashir's support team after agent</span></div>
+    <div class="stat"><span class="num">7x productivity</span><span class="label">Per-FTE output</span></div>
+</div>
 
-        <h2>Side-by-side comparison</h2>
-        <ul>
-            <li><b>Input:</b> Chatbot conversation; Agent task</li>
-            <li><b>Output:</b> Chatbot text; Agent action + result</li>
-            <li><b>Memory:</b> Chatbot session; Agent long-term</li>
-            <li><b>Tools:</b> Chatbot none/limited; Agent many</li>
-            <li><b>Time:</b> Chatbot instant; Agent minutes/hours</li>
-            <li><b>Risk:</b> Chatbot low; Agent higher</li>
-            <li><b>Use case:</b> Chatbot Q&A; Agent complex workflow</li>
-        </ul>
+<h2>Core Difference — One Sentence</h2>
 
-        <h2>Real examples — Chatbot</h2>
-        <ul>
-            <li>ChatGPT কথোপকথন (default mode)</li>
-            <li>Customer support bot (predefined Q&A)</li>
-            <li>Facebook page auto-reply (ManyChat)</li>
-            <li>Voice assistant (Siri, Alexa) — partly chatbot</li>
-        </ul>
+<p><b>Chatbot:</b> Answers questions। <b>AI Agent:</b> Completes tasks autonomously।</p>
 
-        <h2>Real examples — AI Agent</h2>
-        <ul>
-            <li><b>Manus AI:</b> "Research top 10 SaaS, prepare comparison" — agent does it all</li>
-            <li><b>Claude Computer Use:</b> Mouse-keyboard control</li>
-            <li><b>Devin:</b> Autonomous software engineer</li>
-            <li><b>AutoGPT:</b> Self-prompting goal achieve</li>
-            <li><b>OpenAI Operator:</b> Browser-based task agent</li>
-        </ul>
+<h2>Chatbot — What It Does</h2>
 
-        <h2>কোনটা কখন বেছে নেবেন?</h2>
-        <ul>
-            <li><b>Chatbot ভাল:</b> simple Q&A, content generation, conversation</li>
-            <li><b>Agent ভাল:</b> Multi-step task, research compile, automation</li>
-            <li><b>Cost:</b> Chatbot সস্তা; Agent expensive</li>
-            <li><b>Beginner:</b> Chatbot শুরু; Agent advance</li>
-        </ul>
+<ul>
+    <li>Receive user message → understand intent → reply from knowledge base।</li>
+    <li>Read-only: doesn't modify external systems।</li>
+    <li>Pre-defined flow + keyword triggers (rule-based) or LLM-powered (modern)।</li>
+    <li>Use case: FAQ, product info, basic support।</li>
+    <li>Examples: ManyChat, Intercom, Tidio, Drift।</li>
+</ul>
 
-        <h2>Business use case</h2>
+<h2>AI Agent — What It Does</h2>
 
-        <h3>Chatbot business example</h3>
-        <p>Daraz seller Facebook page। ManyChat + ChatGPT — customer "দাম কত" → bot reply। 24/7।</p>
+<ul>
+    <li>Receive goal → plan multi-step actions → execute across multiple systems।</li>
+    <li>Has tools: web browsing, file access, API calling, code execution।</li>
+    <li>Autonomous decision-making within scope।</li>
+    <li>Use case: book flight, file taxes, manage inventory, schedule meetings।</li>
+    <li>Examples: Claude Computer Use, OpenAI Operator, AutoGPT, LangChain agents।</li>
+</ul>
 
-        <h3>Agent business example</h3>
-        <p>Travel agency। Customer "Cox's Bazar 3 days 2 people" — Agent: hotel compare, flight book, itinerary generate, send to customer। ৩-৪ hours of human work → 30 minutes।</p>
+<h2>Side-by-Side Comparison</h2>
 
-        <h2>বাংলাদেশি context</h2>
-        <ul>
-            <li>Chatbot adoption: high — FB pages, WhatsApp Business</li>
-            <li>Agent adoption: এখনো early</li>
-            <li>SME use case: chatbot enough for now</li>
-            <li>Enterprise/agency: agent emerging</li>
-            <li>Future (3-5 years): agent mainstream</li>
-        </ul>
+<table style="width:100%;border-collapse:collapse;margin:1rem 0;">
+<thead>
+<tr style="background:#f1f5f9;">
+<th style="padding:10px;border:1px solid #e5e7eb;">Aspect</th>
+<th style="padding:10px;border:1px solid #e5e7eb;">Chatbot</th>
+<th style="padding:10px;border:1px solid #e5e7eb;">AI Agent</th>
+</tr>
+</thead>
+<tbody>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;">Action</td><td style="padding:10px;border:1px solid #e5e7eb;">Reply only</td><td style="padding:10px;border:1px solid #e5e7eb;">Execute multi-step task</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;">Tools access</td><td style="padding:10px;border:1px solid #e5e7eb;">None / limited API</td><td style="padding:10px;border:1px solid #e5e7eb;">Browser + file + API + code</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;">Autonomy</td><td style="padding:10px;border:1px solid #e5e7eb;">Low (script-driven)</td><td style="padding:10px;border:1px solid #e5e7eb;">High (goal-driven)</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;">Cost (build)</td><td style="padding:10px;border:1px solid #e5e7eb;">৳5K-50K</td><td style="padding:10px;border:1px solid #e5e7eb;">৳50K-5L+</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;">Use case complexity</td><td style="padding:10px;border:1px solid #e5e7eb;">Simple FAQ/support</td><td style="padding:10px;border:1px solid #e5e7eb;">Multi-system workflow automation</td></tr>
+</tbody>
+</table>
 
-        <h2>কী শিখবেন প্রথমে?</h2>
-        <ul>
-            <li>Beginner: Chatbot — ChatGPT prompt engineering</li>
-            <li>Intermediate: Custom GPT, ManyChat workflow</li>
-            <li>Advanced: Claude Computer Use, Manus</li>
-            <li>Expert: Build agents (Python + LLM APIs)</li>
-        </ul>
+<h2>BD-Context Use Cases</h2>
 
-        <h2>উপসংহার</h2>
-        <p>Chatbot = answer. Agent = action। দুটোর জায়গা ভিন্ন, কিন্তু overlapping। 2026-এ chatbot mature, agent এখনো evolving। SME-দের জন্য চ্যাটবট দিয়ে শুরু; বড় enterprise-এ agent pilot করতে পারে।</p>
+<h3>When to Use Chatbot</h3>
+<ul>
+    <li>Facebook page customer FAQ।</li>
+    <li>"What's the price?" "How long delivery?" "Return policy?"।</li>
+    <li>Anika F-commerce-এর "Mom's Treasure" — ManyChat sufficient।</li>
+</ul>
 
-        <h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
+<h3>When to Use AI Agent</h3>
+<ul>
+    <li>Order processing: customer → AI agent reads inventory, checks stock, processes payment, sends invoice, schedules delivery।</li>
+    <li>Recruitment: AI agent screens CV, schedules interview, sends rejection/acceptance, updates CRM।</li>
+    <li>SaaS provisioning: customer signup → AI agent creates account, configures subscription, sends onboarding email, schedules training।</li>
+    <li>Multi-system workflow: customer support ticket → AI agent diagnoses + fixes + closes — all autonomously।</li>
+</ul>
+
+<h2>BD Reality Today</h2>
+
+<ul>
+    <li><b>Chatbot:</b> Mature, deployed in 1,000s of BD SME (Facebook page, websites, Shopify)।</li>
+    <li><b>AI Agent:</b> Early stage, 50-100 BD enterprise experimentation in 2026।</li>
+    <li><b>Cost:</b> AI Agent 10-50x chatbot। ROI justify needed।</li>
+    <li><b>Risk:</b> Agent can make autonomous decisions — error costlier।</li>
+</ul>
+
+<h2>Build/Adopt Decision Tree</h2>
+
+<ul>
+    <li><b>Daily tasks &lt; 100, simple Q&A:</b> Chatbot enough।</li>
+    <li><b>Daily tasks 100-1,000, repetitive multi-step:</b> AI Agent ROI justified।</li>
+    <li><b>Enterprise scale + custom workflow:</b> Custom AI Agent + dedicated team।</li>
+    <li><b>High-stakes decision (financial, medical):</b> Hybrid — agent suggests, human approves।</li>
+</ul>
+
+<h2>উপসংহার — আপনার আজকের পদক্ষেপ</h2>
+<p>Bashir বলেন: "Chatbot deployment-এ আমরা ১ বছর spent করেছিলাম। AI Agent-এ ৩ মাসে far-more impact। কারণ Agent শুধু communicate না — execute করে। Real cost saving execution-এ।" আজই করুন: আপনার business-এর top-5 repetitive multi-step task identify করুন। Chatbot-এ ৩টা possible, Agent-এ ৫টা possible — সঠিক tier-এ build।</p>
+
+                <h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
         <ul>
             <li><a href="/blog/manus-ai-bangla-guide/">Manus AI</a></li>
             <li><a href="/blog/claude-computer-use-bangla-guide/">Claude Computer Use</a></li>
