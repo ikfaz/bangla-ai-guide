@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cline AI বাংলা গাইড — VS Code-এর Open Source Cursor Alternative ২০২৬</title>
+    <meta name="description" content="Cline AI — VS Code extension যেটা Cursor-এর বিকল্প, কোনো subscription ছাড়া নিজের API key দিয়ে চলে। বাংলাদেশী dev-দের জন্য full গাইড।">
+    <meta name="keywords" content="Cline AI, Cline bangla, Cursor alternative, VS Code AI, Claude Dev, BYOK AI, MCP integration, Bangladesh developer">
+    <meta name="author" content="BanglaAIGuide">
+    <meta property="og:title" content="Cline AI বাংলা গাইড — VS Code-এর Open Source Cursor Alternative ২০২৬">
+    <meta property="og:description" content="Cline AI — VS Code extension যেটা Cursor-এর বিকল্প, কোনো subscription ছাড়া নিজের API key দিয়ে চলে। বাংলাদেশী dev-দের জন্য full গাইড।">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://banglaaiguide.com/blog/cline-ai-bangla-coding-tutorial/">
+    <meta property="og:image" content="https://banglaaiguide.com/blog/cline-ai-bangla-coding-tutorial/cover.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/svg+xml">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cline AI বাংলা গাইড — VS Code-এর Open Source Cursor Alternative ২০২৬">
+    <meta name="twitter:description" content="Cline AI — VS Code extension যেটা Cursor-এর বিকল্প, কোনো subscription ছাড়া নিজের API key দিয়ে চলে। বাংলাদেশী dev-দের জন্য full গাইড।">
+    <meta name="twitter:image" content="https://banglaaiguide.com/blog/cline-ai-bangla-coding-tutorial/cover.svg">
+    <link rel="canonical" href="https://banglaaiguide.com/blog/cline-ai-bangla-coding-tutorial/">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Cline AI বাংলা গাইড — VS Code-এর Open Source Cursor Alternative ২০২৬",
+  "description": "Cline AI — VS Code extension যেটা Cursor-এর বিকল্প, কোনো subscription ছাড়া নিজের API key দিয়ে চলে। বাংলাদেশী dev-দের জন্য full গাইড।",
+  "image": "https://banglaaiguide.com/blog/cline-ai-bangla-coding-tutorial/cover.svg",
+  "author":{"@type":"Person","name":"ইকফাজ","url":"https://banglaaiguide.com/about/"},
+  "publisher": {
+    "@type": "Organization",
+    "name": "বাংলা AI গাইড",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://banglaaiguide.com/web-app-manifest-512x512.png"
+    }
+  },
+  "datePublished": "2026-05-27",
+  "dateModified": "2026-05-27"
+}
+    </script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"বাংলা AI গাইড","item":"https://banglaaiguide.com/"},{"@type":"ListItem","position":2,"name":"ব্লগ","item":"https://banglaaiguide.com/blog/"},{"@type":"ListItem","position":3,"name":"Cline AI বাংলা গাইড — VS Code-এর Open Source Cursor Alternative ২০২৬","item":"https://banglaaiguide.com/blog/cline-ai-bangla-coding-tutorial/"}]}</script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
+    <style>:root{--bg-gradient:linear-gradient(180deg,#F0FDF9 0%,#FAFBFC 50%,#FFFFFF 100%);--accent:#16A34A;--accent-hover:#15803D;--accent-light:#22C55E;--accent-soft:#DCFCE7;--text:#0F172A;--text-muted:#475569;--border:#E2E8F0;--shadow-sm:0 4px 12px rgba(15,23,42,.06);--shadow-md:0 10px 30px rgba(15,23,42,.08);--radius-lg:24px;--radius-md:18px}body{font-family:'Hind Siliguri',sans-serif;line-height:1.8;margin:0;padding:0;background:var(--bg-gradient);color:var(--text);-webkit-font-smoothing:antialiased}.container{max-width:820px;margin:60px auto 80px;background:#fff;padding:60px 70px;border-radius:var(--radius-lg);box-shadow:var(--shadow-md);position:relative}.container::before{content:'';position:absolute;top:0;left:0;width:6px;height:100%;background:linear-gradient(135deg,#16A34A 0%,#22C55E 100%);border-radius:var(--radius-lg) 0 0 var(--radius-lg)}h1{font-family:'Syne',sans-serif;color:var(--text);font-size:2.75rem;font-weight:800;line-height:1.2;margin:0 0 32px 0;padding-bottom:24px;border-bottom:3px solid var(--border);position:relative}h1::after{content:'';position:absolute;bottom:-3px;left:0;width:80px;height:3px;background:linear-gradient(135deg,#16A34A 0%,#22C55E 100%)}h2{font-family:'Syne',sans-serif;color:var(--text);font-size:2rem;font-weight:700;line-height:1.3;margin:48px 0 20px 0;padding-left:20px;border-left:4px solid var(--accent)}h3{font-family:'Syne',sans-serif;color:var(--text);font-size:1.5rem;font-weight:600;line-height:1.4;margin:32px 0 16px 0}p{margin-bottom:1.5em;font-size:1.125rem;color:var(--text-muted);line-height:1.8}ul{list-style:none;margin:24px 0;padding:0}ul li{position:relative;padding:14px 20px 14px 50px;margin-bottom:14px;background:linear-gradient(135deg,#F9FAFB 0%,#F0FDF4 100%);border-radius:var(--radius-md);border:1px solid var(--border);font-size:1.0625rem;line-height:1.7;color:var(--text-muted);transition:all .2s ease}ul li:hover{background:linear-gradient(135deg,#FFFFFF 0%,#F0FDF4 100%);border-color:rgba(22,163,74,.3);transform:translateX(4px);box-shadow:var(--shadow-sm)}ul li::before{content:'\2713';position:absolute;left:18px;top:50%;transform:translateY(-50%);width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#16A34A 0%,#22C55E 100%);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px}b{font-weight:600;color:var(--text)}a{color:var(--accent);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;font-weight:500;transition:all .2s ease}a:hover{color:var(--accent-hover);text-decoration-thickness:3px}@media (max-width:768px){.container{margin:30px 20px;padding:40px 30px}h1{font-size:2rem}h2{font-size:1.5rem}h3{font-size:1.25rem}p,ul li{font-size:1rem}}</style>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/blog-premium.css">
+  <!-- PERSON-SCHEMA:START -->
+<!-- PERSON-SCHEMA:END -->
+  <!-- FAQ-SCHEMA:START -->
+<!-- FAQ-SCHEMA:END -->
+</head>
+<body>
+    <header class="navbar">
+        <div class="container navbar-inner">
+            <a href="/" class="logo">
+                <img class="logo-mark" src="/favicon.svg" alt="বাংলা AI গাইড লোগো" width="28" height="28" decoding="async" />
+                <span class="logo-text">বাংলা AI গাইড</span>
+            </a>
+            <nav class="nav-links">
+                <a href="/#toolsSection">টুলস দেখুন</a>
+                <a href="/blog/">ব্লগ</a>
+                <a href="/bangla-ai-guide/">বাংলা AI গাইড</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Cline AI বাংলা গাইড — VS Code-এর Open Source Cursor Alternative ২০২৬</h1>
+        <!-- AUTHOR-BLOCK:START -->
+<!-- AUTHOR-BLOCK:END -->
+
+<p class="lede">মাহিন হোসেন — ২৫, SUST CSE-এর ২০২২ batch, সিলেট-ভিত্তিক freelance full-stack developer। Upwork-এ React + Node.js project করেন। ২০২৪ থেকে ২০২৬-এর শুরু পর্যন্ত তিনি Cursor Pro user ছিলেন — মাসে $20 (৳2,400 BD-তে), এটা তাঁর monthly grocery budget-এর প্রায় এক-তৃতীয়াংশ। ২০২৬-এর ফেব্রুয়ারিতে এক বন্ধু একটা GitHub repo share করলেন: "এটা try কর — Cline। Open source, তোর Cursor-এর সব কিছু করে, কিন্তু subscription নেই। শুধু Claude-এর API key লাগাবি।" মাহিন প্রথমে suspicious ছিলেন — "free বললেই hidden cost আসে।" দুই সপ্তাহ test করার পর তাঁর February-এর Claude API bill এলো $7.40 — Cursor-এর তুলনায় ৬৩% কম, এবং MCP integration-এর কারণে productivity বেশি। আজ তিনি Cursor uninstall করেছেন।</p>
+
+<p>এই article মাহিন-এর migration story-এর আলোকে Cline-এর full picture — কী, কেন, কীভাবে install, কোন API choose, MCP integration কী জিনিস, এবং BD developer-এর জন্য actual cost numbers।</p>
+
+<div class="stat-row">
+    <div class="stat"><span class="num">৳2,400/mo</span><span class="label">Cursor Pro পুরোনো খরচ</span></div>
+    <div class="stat"><span class="num">৳600-1,000/mo</span><span class="label">Cline + Claude API নতুন খরচ</span></div>
+    <div class="stat"><span class="num">~৳18,000</span><span class="label">বাৎসরিক সাশ্রয়</span></div>
+    <div class="stat"><span class="num">MIT License</span><span class="label">100% open source</span></div>
+</div>
+
+<h2>১. ভূমিকা — মাহিনের Cursor → Cline migration story</h2>
+
+<p>মাহিন-এর কাজের pattern: সপ্তাহে ৪-৫ দিন, দিনে ৬-৮ ঘণ্টা coding। ২০২৪-এ Cursor launch হওয়ার পর তিনি অনেক enthusiast ছিলেন — "AI pair programmer" idea-টা তাঁর কাছে game-changing লাগে। Cursor Pro $20/mo subscribe করে ২০২৪-এর মাঝামাঝি থেকে use করেন। প্রথম দিকে fine ছিল — Tab autocomplete, Cmd+K edit, Composer mode — সবই কাজের।</p>
+
+<p>২০২৫-এর শেষে দুটো জিনিস ঘটল। প্রথম, Cursor তাদের pricing model change করল — "fast requests" limit এসে গেল, heavy day-এ slow mode-এ drop হতে শুরু করল। দ্বিতীয়, তাঁর rent বাড়ল ৳3,000 — হঠাৎ $20/মাস "luxury" feel হতে লাগল। তিনি ChatGPT subscription cancel করেছেন আগেই, কিন্তু Cursor — কাজের tool বলে চালিয়ে যাচ্ছিলেন।</p>
+
+<p>তারপর Cline এলো। বন্ধু বলল: "তুই Claude-এর pay-as-you-go API use করবি। যত use করবি, ততই pay করবি। কম use করলে কম bill।" মাহিন-এর হিসাব: তিনি weekdays কাজ করেন, weekends পরিবারের সাথে। ফলে actual API usage মাসে ~$5-8-এর বেশি না — Cursor-এর flat $20-এর তুলনায় অনেক কম।</p>
+
+<div class="callout">
+<b>মাহিনের verdict (May 2026):</b> "Cursor-এ আমি ৳2,400 দিতাম unlimited capacity-এর জন্য, যেটা আমি কখনোই full use করতাম না। Cline-এ আমি actual usage-এর hisab-এ pay করি। গত তিন মাসে আমি ৳5,400 save করেছি — যা দিয়ে এক মাসের electricity bill।"
+</div>
+
+<h2>২. Cline AI কী + কেন developer-দের choice হচ্ছে</h2>
+
+<p>Cline (আগের নাম "Claude Dev") একটা open-source VS Code extension — MIT license-এর under, GitHub-এ source code public। এটা শুধু autocomplete tool না — একটা <b>autonomous coding agent</b>। আপনি বলবেন "এই API endpoint-এ pagination add কর, tests update কর, README-তে document কর" — Cline নিজেই multi-step plan তৈরি করবে, files পড়বে, edits propose করবে, terminal commands run করবে, এবং প্রতি step-এ আপনার approval নেবে।</p>
+
+<p>Cursor-এর সাথে fundamental পার্থক্য: Cursor একটা <b>product</b> — তারা model কেনে (Anthropic, OpenAI থেকে), markup add করে আপনার কাছে subscription হিসেবে sell করে। Cline একটা <b>tool</b> — আপনি নিজে model provider-এর সাথে direct account খুলবেন, নিজের API key দেবেন, এবং Cline সেই key দিয়ে calls করবে। কোনো middleman নেই, কোনো markup নেই।</p>
+
+<p>এই model-এর নাম <b>BYOK — Bring Your Own (API) Key</b>। ২০২৬-এ open source developer community-তে এটা trending — কারণ AI subscription-এর pricing increasingly aggressive হচ্ছে, যখন underlying API direct cost তুলনায় কম।</p>
+
+<h3>Cline-এর core features</h3>
+
+<ul>
+    <li><b>Open source, MIT license:</b> GitHub-এ full source — fork করতে পারবেন, audit করতে পারবেন।</li>
+    <li><b>Multi-provider support:</b> Claude, GPT, Gemini, DeepSeek, Groq, Ollama — সব support।</li>
+    <li><b>Autonomous agent mode:</b> Multi-step task execution, file system access, terminal access।</li>
+    <li><b>Plan + Act mode separation:</b> প্রথমে discussion-এর জন্য Plan mode, তারপর execute-এর জন্য Act mode।</li>
+    <li><b>MCP (Model Context Protocol) support:</b> Notion, GitHub, Slack, custom tools — direct integrate।</li>
+    <li><b>Diff-based edits:</b> File overwrite না, exact diff দেখে approve।</li>
+    <li><b>Cost transparency:</b> প্রতি task-এ কত token, কত $ — UI-তে clearly visible।</li>
+</ul>
+
+<h2>৩. Cursor-এর সাথে পার্থক্য (detailed comparison)</h2>
+
+<p>মাহিন তিন মাস side-by-side use করেছেন দুটো — এই table তাঁর actual experience-এর সারাংশ:</p>
+
+<table style="width:100%;border-collapse:collapse;margin:1rem 0;">
+<thead>
+<tr style="background:#f1f5f9;">
+<th style="padding:10px;border:1px solid #e5e7eb;">Aspect</th>
+<th style="padding:10px;border:1px solid #e5e7eb;">Cursor Pro</th>
+<th style="padding:10px;border:1px solid #e5e7eb;">Cline + Claude API</th>
+</tr>
+</thead>
+<tbody>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;">License</td><td style="padding:10px;border:1px solid #e5e7eb;">Proprietary, closed</td><td style="padding:10px;border:1px solid #e5e7eb;"><b>MIT open source</b></td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;">Pricing</td><td style="padding:10px;border:1px solid #e5e7eb;">$20/mo flat (৳2,400)</td><td style="padding:10px;border:1px solid #e5e7eb;"><b>Pay-per-use, ~$5-8/mo</b></td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;">Editor</td><td style="padding:10px;border:1px solid #e5e7eb;">VS Code fork (separate install)</td><td style="padding:10px;border:1px solid #e5e7eb;"><b>VS Code extension (no fork)</b></td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;">Models</td><td style="padding:10px;border:1px solid #e5e7eb;">Cursor-curated, limited choice</td><td style="padding:10px;border:1px solid #e5e7eb;"><b>Any provider, your choice</b></td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;">Tab autocomplete</td><td style="padding:10px;border:1px solid #e5e7eb;"><b>Excellent (Cursor's strength)</b></td><td style="padding:10px;border:1px solid #e5e7eb;">Not the focus (use Copilot/Codeium parallel)</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;">Agent mode</td><td style="padding:10px;border:1px solid #e5e7eb;">Composer (good)</td><td style="padding:10px;border:1px solid #e5e7eb;"><b>Full autonomous agent (better)</b></td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;">MCP integration</td><td style="padding:10px;border:1px solid #e5e7eb;">Limited</td><td style="padding:10px;border:1px solid #e5e7eb;"><b>Native, deep</b></td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;">Rate limits</td><td style="padding:10px;border:1px solid #e5e7eb;">Fast/slow tiers, throttle</td><td style="padding:10px;border:1px solid #e5e7eb;"><b>Provider-direct, no Cursor throttle</b></td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;">Privacy</td><td style="padding:10px;border:1px solid #e5e7eb;">Cursor server proxy</td><td style="padding:10px;border:1px solid #e5e7eb;"><b>Direct to provider (or local with Ollama)</b></td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;">BD payment</td><td style="padding:10px;border:1px solid #e5e7eb;">Single subscription card</td><td style="padding:10px;border:1px solid #e5e7eb;">Claude API direct card setup</td></tr>
+</tbody>
+</table>
+
+<p>সংক্ষেপে: <b>autocomplete-এ Cursor এখনও ভালো</b>, কিন্তু serious task — যেখানে আপনি বলবেন "এই feature build কর" — সেখানে Cline-এর agent capability + MCP + cost transparency Cursor-কে behind করে দিয়েছে।</p>
+
+<h2>৪. Install + setup (VS Code extension, API key configuration)</h2>
+
+<p>মাহিন প্রথমবার Cline install করতে ১৫ মিনিট লেগেছে। Step-by-step:</p>
+
+<h3>Step 1 — VS Code-এ Extension Install</h3>
+
+<ul>
+    <li>VS Code খুলুন (যদি না থাকে, code.visualstudio.com থেকে free download)।</li>
+    <li>Extensions tab (Ctrl+Shift+X) → search box-এ <b>"Cline"</b> টাইপ।</li>
+    <li>Publisher: <b>saoudrizwan</b> (original) বা latest "Cline" official entry — Install ক্লিক।</li>
+    <li>JetBrains IDE user হলে JetBrains Marketplace-এ "Cline" search — same extension।</li>
+</ul>
+
+<h3>Step 2 — Provider account + API key</h3>
+
+<p>মাহিন Claude API choose করেছেন (quality-cost balance-এর জন্য):</p>
+
+<ul>
+    <li><b>console.anthropic.com</b>-এ account খুলুন (Google login-এ ১ মিনিট)।</li>
+    <li>Billing-এ একটা USD card link করুন — bKash USD card, Wise, Payoneer, বা international debit card।</li>
+    <li>Minimum $5 credit add করুন (first-time)।</li>
+    <li>"API Keys" tab → "Create Key" → key copy করুন (একবারই দেখা যাবে)।</li>
+    <li>VS Code-এ Cline extension খুলুন (sidebar icon) → Settings → API Provider: Anthropic → Paste key।</li>
+    <li>Model select: <b>claude-sonnet-4-6</b> (daily driver) বা <b>claude-opus-4-7</b> (complex task)।</li>
+</ul>
+
+<h3>Step 3 — First task test</h3>
+
+<p>Cline sidebar-এ একটা task লিখুন: <i>"Create a simple Express.js server with a /health endpoint that returns JSON status"</i>। Cline plan show করবে, file create-এর approve চাইবে, code লিখবে, এবং চাইলে terminal-এ run করেও দেখাবে। প্রতি step-এ আপনি approve/reject বোতাম দেখবেন।</p>
+
+<h2>৫. সাপোর্টেড API — Claude, GPT, Gemini, DeepSeek, Groq, Ollama</h2>
+
+<p>Cline-এর সবচেয়ে বড় শক্তি — multi-provider। মাহিন বিভিন্ন task-এ বিভিন্ন provider try করেছেন:</p>
+
+<ul>
+    <li><b>Claude (Anthropic):</b> Sonnet 4.6 — best balance। Complex refactor-এ Opus 4.7। মাহিন-এর daily driver।</li>
+    <li><b>GPT (OpenAI):</b> GPT-5, GPT-5 mini — alternative। Pricing similar।</li>
+    <li><b>Gemini (Google):</b> Gemini 3.5 Pro — long context (2M tokens) needed হলে, যেমন বড় codebase scan।</li>
+    <li><b>DeepSeek:</b> DeepSeek-V3, R1 — extremely cheap (~$0.27/M tokens)। মাহিন boilerplate-এ এটা use করেন।</li>
+    <li><b>Groq:</b> Llama, Mixtral hosted — fastest inference (token/sec)। Quick queries-এ ভালো।</li>
+    <li><b>Ollama (local):</b> নিজের laptop-এ Llama 3.3, Qwen 2.5 Coder run — internet ছাড়া, $0 cost। Privacy-critical task।</li>
+</ul>
+
+<p>মাহিন-এর pattern: 70% Claude Sonnet 4.6 (production), 20% DeepSeek (boilerplate/simple), 10% local Ollama (private client data)।</p>
+
+<h2>৬. MCP (Model Context Protocol) integration — game changer</h2>
+
+<p>MCP — Anthropic-এর তৈরি open standard, ২০২৫-এ release। AI tool-কে external service-এর সাথে connect করার একটা universal protocol। Cline-এ MCP native — মানে Cline-এর agent শুধু code না, আপনার পুরো workflow-এর সাথে interact করতে পারে।</p>
+
+<p>মাহিন-এর active MCP servers:</p>
+
+<ul>
+    <li><b>GitHub MCP:</b> "এই issue read কর, related code analyze কর, fix PR-এ ready কর" — সব এক command-এ।</li>
+    <li><b>Filesystem MCP:</b> Project boundary-এর বাইরে controlled file access।</li>
+    <li><b>Notion MCP:</b> Client-এর Notion page থেকে spec পড়ে code লিখা।</li>
+    <li><b>Slack MCP (optional):</b> Client-এর Slack message থেকে context নিয়ে কাজ।</li>
+    <li><b>Postgres MCP:</b> Database schema directly query করে migration লিখা।</li>
+</ul>
+
+<div class="callout">
+<b>মাহিনের real example:</b> "Upwork client একটা Notion doc-এ feature spec দিয়েছিলেন। আগে আমাকে Notion থেকে copy-paste করে Cursor-এ দিতে হতো। এখন Cline-কে বলি: 'Notion doc XYZ read করে এই feature implement কর।' সে নিজেই Notion থেকে spec pull করে, related GitHub issue check করে, code লিখে। ২০ মিনিট-এর কাজ ৫ মিনিটে।"
+</div>
+
+<h2>৭. মাহিনের real workflow — ৫ cases</h2>
+
+<h3>Case 1 — Full-stack feature build (E-commerce wishlist)</h3>
+
+<p>Task: React frontend-এ "Add to Wishlist" button + Node.js API + Postgres table। Cline-কে Plan mode-এ context দেওয়া হলো — existing schema, components। Plan এলো ৭-step। Act mode-এ Cline migration লিখল, API route বানাল, React component তৈরি করল, tests update করল। মাহিন-এর কাজ — শুধু প্রতি step approve। মোট সময়: ৩৫ মিনিট, cost: $0.42।</p>
+
+<h3>Case 2 — Bug debugging (intermittent 500 error)</h3>
+
+<p>Production-এ একটা endpoint মাঝে মাঝে 500 throw করছিল। মাহিন logs paste করে দিলেন। Cline three hypothesis দিল, terminal-এ test command run করল, একটা race condition identify করল connection pool-এ, fix proposed করল diff-এ। সময়: ১৮ মিনিট, cost: $0.21।</p>
+
+<h3>Case 3 — Legacy refactor (class component → hooks)</h3>
+
+<p>একটা ২০১৯-এর React class component (৪৮০ lines) আধুনিক hooks-এ migrate। Cline পুরো file scan করল, plan-এ ৪টা hook proposed করল, একে একে refactor করল প্রতিটা feature preserve করে। মাহিন প্রতি diff review করেছেন। সময়: ৪০ মিনিট, cost: $0.65।</p>
+
+<h3>Case 4 — Documentation generation (API → OpenAPI spec)</h3>
+
+<p>Express.js API থেকে OpenAPI 3.0 YAML spec generate। Cline routes folder scan করল, প্রতিটা endpoint-এর signature read করল, complete spec লিখল, এবং README-তে usage example add করল। সময়: ১২ মিনিট, cost: $0.18।</p>
+
+<h3>Case 5 — Code review (PR-এর review note)</h3>
+
+<p>Junior collaborator-এর PR — মাহিন Cline-কে diff পড়তে বলেন এবং security/performance issue flag করতে। Cline ৩টা legit concern identify করল — SQL injection risk, missing rate limit, race condition। সময়: ৮ মিনিট, cost: $0.11।</p>
+
+<h2>৮. Cost comparison — actual numbers</h2>
+
+<p>মাহিন-এর এপ্রিল ২০২৬-এর full month-এর actual data:</p>
+
+<table style="width:100%;border-collapse:collapse;margin:1rem 0;">
+<thead>
+<tr style="background:#f1f5f9;">
+<th style="padding:10px;border:1px solid #e5e7eb;">Setup</th>
+<th style="padding:10px;border:1px solid #e5e7eb;">Monthly Cost (USD)</th>
+<th style="padding:10px;border:1px solid #e5e7eb;">BDT (~120 rate)</th>
+<th style="padding:10px;border:1px solid #e5e7eb;">Note</th>
+</tr>
+</thead>
+<tbody>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;">Cursor Pro</td><td style="padding:10px;border:1px solid #e5e7eb;">$20.00 flat</td><td style="padding:10px;border:1px solid #e5e7eb;">৳2,400</td><td style="padding:10px;border:1px solid #e5e7eb;">Limited fast requests</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;">Cline + Claude Sonnet 4.6</td><td style="padding:10px;border:1px solid #e5e7eb;"><b>$6.80 actual</b></td><td style="padding:10px;border:1px solid #e5e7eb;"><b>৳816</b></td><td style="padding:10px;border:1px solid #e5e7eb;">মাহিনের actual April bill</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;">Cline + Claude (heavy month)</td><td style="padding:10px;border:1px solid #e5e7eb;">~$12-15</td><td style="padding:10px;border:1px solid #e5e7eb;">৳1,440-1,800</td><td style="padding:10px;border:1px solid #e5e7eb;">Still cheaper than Cursor</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;">Cline + DeepSeek-V3</td><td style="padding:10px;border:1px solid #e5e7eb;">~$1.50-2.50</td><td style="padding:10px;border:1px solid #e5e7eb;">৳180-300</td><td style="padding:10px;border:1px solid #e5e7eb;">Boilerplate দারুণ, complex-এ weaker</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;">Cline + Ollama (local)</td><td style="padding:10px;border:1px solid #e5e7eb;"><b>$0</b></td><td style="padding:10px;border:1px solid #e5e7eb;"><b>৳0</b></td><td style="padding:10px;border:1px solid #e5e7eb;">Laptop-এ 16GB+ RAM লাগবে, speed slower</td></tr>
+</tbody>
+</table>
+
+<p><b>মাহিনের annual সাশ্রয়:</b> Cursor ৳28,800/year → Cline+Claude ৳10,800/year — পার্থক্য <b>~৳18,000/year</b>। এই টাকা দিয়ে তিনি একটা external SSD + এক বছরের domain renewals + কিছু book কিনতে পারছেন।</p>
+
+<h2>৯. Security + privacy considerations</h2>
+
+<p>BD developer-এর জন্য কিছু পয়েন্ট মনে রাখা জরুরি:</p>
+
+<ul>
+    <li><b>API key local থাকে:</b> Cline আপনার key VS Code-এর secure settings-এ store করে, কোনো remote server-এ যায় না।</li>
+    <li><b>Direct provider call:</b> Cursor-এর মতো proxy server নেই — আপনার code direct Anthropic/OpenAI-তে যাচ্ছে, middleware ছাড়া।</li>
+    <li><b>Client NDA work:</b> Client agreement-এ "no third-party AI" থাকলে Ollama local mode use করুন — কোডের কোনো byte internet-এ যাবে না।</li>
+    <li><b>Approval gate:</b> Cline-এর "always ask" mode on রাখুন প্রথম দিকে — কোনো file write/command run-এ approve বাধ্যতামূলক।</li>
+    <li><b>.clineignore file:</b> Sensitive folders (.env, secrets/, private/) ignore list-এ রাখুন।</li>
+    <li><b>API budget cap:</b> Anthropic console-এ monthly spending limit set করুন (যেমন $20) — accidental overspend নয়।</li>
+</ul>
+
+<h2>১০. উপসংহার — Cursor user-এর জন্য যা ভাবা উচিত</h2>
+
+<p>Cline সবার জন্য না। যদি আপনি Tab autocomplete-এ heavily depend করেন এবং agent mode কম use করেন — Cursor এখনও ভালো। কিন্তু যদি আপনি মাহিন-এর মতো hourly billing-এ কাজ করেন, monthly subscription cost থেকে actual usage cost-এ নামতে চান, এবং MCP integration যেটা Notion/GitHub/Slack-কে সরাসরি workflow-এ আনে — তাহলে Cline একবার test না করলে আপনি টাকা literally পুড়াচ্ছেন।</p>
+
+<p>Migration cost প্রায় শূন্য — Cline VS Code extension, Cursor uninstall করতে হয় না, side-by-side test করতে পারবেন। Anthropic console-এ $5 credit দিয়ে দুই সপ্তাহ try করুন। মাহিন-এর মতো আপনি দেখবেন — usage অনেক সময় subscription-এর তুলনায় কম। সিদ্ধান্ত data-এর হাতে ছেড়ে দিন, marketing claim-এর হাতে নয়।</p>
+
+<p>২০২৬-এ open source AI tooling fast-moving — Cline-এর active fork <b>Roo Code</b> ইতিমধ্যে কিছু feature-এ আগে। দু'টোই MIT, side-by-side চলে। যেটা আপনার ভালো লাগবে, সেটাই use করুন — কোনো vendor lock-in নেই।</p>
+
+                <h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
+        <ul>
+            <li><a href="/claude/">Claude</a></li>
+            <li><a href="/blog/claude-sonnet-4-6-bangla-guide/">Claude Sonnet 4.6</a></li>
+            <li><a href="/blog/claude-opus-4-7-bangla-guide/">Claude Opus 4.7</a></li>
+            <li><a href="/blog/claude-vs-chatgpt-bangladeshe-konti-bhalo/">Claude vs ChatGPT</a></li>
+        </ul>
+
+<section class="seo-newsletter-block" style="margin-top:2.5rem;padding:2rem;background:#f0fdf4;border-radius:12px;text-align:center;">
+  <h2 style="color:#16a34a;margin-bottom:0.5rem;">AI আপডেট পেতে চান?</h2>
+  <p style="margin-bottom:1rem;">প্রতি সপ্তাহে নতুন AI টুলস ও টিউটোরিয়াল বাংলায় পান।</p>
+  <form class="newsletter-form newsletter-form--mailchimp" action="https://banglaaiguide.us15.list-manage.com/subscribe/post?u=d389c0647878724daecc58fc6&amp;id=aaca6896d2&amp;f_id=007c9ae1f0" method="post" target="mailchimp-subscribe-frame" accept-charset="UTF-8" data-mailchimp-form="true" style="display:flex;gap:8px;max-width:440px;margin:0 auto;">
+    <input type="email" name="EMAIL" placeholder="আপনার ইমেইল লিখুন" required style="flex:1;padding:10px 14px;border:1px solid #e5e7eb;border-radius:8px;font-size:15px;">
+    <button type="submit" style="padding:10px 20px;background:#16a34a;color:#fff;border:none;border-radius:8px;font-weight:600;cursor:pointer;">সাবস্ক্রাইব</button>
+  </form>
+  <p style="font-size:12px;color:#64748b;margin-top:0.75rem;">ফ্রি নিউজলেটার। যেকোনো সময় আনসাবস্ক্রাইব করতে পারবেন।</p>
+</section>
+
+    </div>
+
+<footer class="footer">
+        <div class="container footer-inner">
+            <p class="footer-brand">
+                <img class="logo-mark" src="/favicon.svg" alt="বাংলা AI গাইড লোগো" width="20" height="20" decoding="async" />
+                <span>বাংলা AI গাইড</span>
+            </p>
+            <p>© ২০২৬ বাংলা AI গাইড · বাংলাদেশের জন্য তৈরি</p>
+            <p class="footer-links">
+                <a href="/privacy/">গোপনীয়তা</a> ·
+                <a href="/terms/">শর্তাবলী</a> ·
+                <a href="/contact/">যোগাযোগ</a> ·
+                <a href="/bangla-ai-guide/">বাংলা AI গাইড</a>
+            </p>
+        </div>
+    </footer>
+<script src="/js/mailchimp.js" defer></script>
+</body>
+</html>
