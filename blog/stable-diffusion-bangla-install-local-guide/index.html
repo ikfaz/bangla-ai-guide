@@ -104,69 +104,113 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-        <h2>কেন Local Stable Diffusion?</h2>
-        <ul>
-            <li><b>Unlimited generation</b> — Midjourney/DALL-E subscription bypass</li>
-            <li><b>Privacy</b> — ছবি cloud-এ যায় না</li>
-            <li><b>Custom model</b> — Civitai থেকে হাজারো checkpoint</li>
-            <li><b>NSFW filter free</b> — শিল্পচর্চার সীমাহীনতা</li>
-            <li><b>Offline ব্যবহার</b> — internet ছাড়া কাজ করে</li>
-        </ul>
+<h2>ভূমিকা — Mirpur-এর এক game artist-এর local SD setup</h2>
+<p class="lede">মিরপুর ১০-এর এক freelance 3D/game artist শাহরিয়ার রহমান — ২৬ বছর, IUT CSE ২০২২ batch, ৩ বছর Unity game development experience। ২০২৪-এ একটা US-based indie game studio-র contract পেলেন: ৭০০+ concept art deliverable, ৬ মাস deadline, $৪,২০০ total। Midjourney monthly $৩০ পরিকল্পনা ছিল, কিন্তু complex variants + style consistency-এ Midjourney limited (paid tier-এ commercial use OK, কিন্তু per-image control low)। বন্ধু Tausif suggest করল local Stable Diffusion + ComfyUI। শাহরিয়ারের desktop: RTX 3060 12GB + 32GB RAM + i5-12400। ৩ দিন setup, learning curve ২ সপ্তাহ। পরে: per image generation cost effectively ০ taka (electricity ৳১২/দিন), unlimited iterations, ControlNet + LoRA দিয়ে precise style control। ৬ মাসে contract delivered + extra clients onboard। এই গাইড সেই workflow।</p>
 
-        <h2>হার্ডওয়্যার minimum</h2>
-        <ul>
-            <li><b>GPU:</b> NVIDIA RTX 3060 (১২GB VRAM) বা better; AMD সম্ভব কিন্তু slow</li>
-            <li><b>RAM:</b> ১৬GB+</li>
-            <li><b>Disk:</b> ৫০GB+ free (model files বড়)</li>
-            <li><b>Mac:</b> M1/M2/M3 চলে কিন্তু slower</li>
-        </ul>
+<div class="callout">
+<strong>এই গাইডে যা থাকবে:</strong> কেন local Stable Diffusion, hardware minimum requirements, Automatic1111 (Windows install), ComfyUI (advanced workflow), Civitai থেকে model download, BD users-এর জন্য practical tips, সাধারণ সমস্যা + সমাধান।
+</div>
 
-        <h2>Automatic1111 (সবচেয়ে popular) — Windows-এ install</h2>
-        <ul>
-            <li>Python 3.10.6 install (anaconda না — clean install)</li>
-            <li>Git install</li>
-            <li>CMD: <code>git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui</code></li>
-            <li>Folder-এ যান, <code>webui-user.bat</code> double-click — auto-install শুরু</li>
-            <li>প্রথম run-এ ২-৩GB model download</li>
-            <li>Browser-এ http://127.0.0.1:7860 open</li>
-            <li>Prompt লিখুন, "Generate" — হয়ে গেছে!</li>
-        </ul>
+<h2>কেন Local Stable Diffusion?</h2>
+<ul>
+<li><strong>Free forever:</strong> Once setup, per-image cost ০। Electricity-ই ব্যয়।</li>
+<li><strong>Unlimited iterations:</strong> Cloud tools-এ daily/monthly limit। Local-এ infinite।</li>
+<li><strong>Privacy:</strong> Client data/concept art cloud-এ যায় না। NDA-protected work-এ critical।</li>
+<li><strong>Custom models:</strong> Civitai-তে ৩০,০০০+ community models। Niche style (anime, photorealism, architecture) — pretrained available।</li>
+<li><strong>ControlNet + LoRA:</strong> Precise control — pose, depth, edge, style — cloud tools-এ limited।</li>
+<li><strong>Offline:</strong> Internet ছাড়া কাজ চলে। Power outage backup-এ valuable।</li>
+<li><strong>Commercial:</strong> Most SD models commercial use allowed (license check)।</li>
+</ul>
 
-        <h2>ComfyUI (advanced workflow)</h2>
-        <ul>
-            <li>Node-based interface — power user-দের জন্য</li>
-            <li>Automatic1111-এর চেয়ে দ্রুত এবং memory-efficient</li>
-            <li>GitHub: comfyanonymous/ComfyUI</li>
-            <li>Custom workflow JSON share করা যায়</li>
-        </ul>
+<h2>হার্ডওয়্যার minimum</h2>
 
-        <h2>Model download — Civitai</h2>
-        <ul>
-            <li>civitai.com — হাজারো community model (anime, realistic, art style)</li>
-            <li>Top picks: SDXL, Realistic Vision, DreamShaper, AnimagineXL</li>
-            <li>.safetensors ফাইল ডাউনলোড করে models/Stable-diffusion folder-এ paste</li>
-            <li>Refresh — Web UI-তে দেখাবে</li>
-        </ul>
+<div class="stat-row">
+<div><strong>Minimum (entry)</strong><br>NVIDIA GTX 1660 6GB<br>16GB RAM<br>SD 1.5 only</div>
+<div><strong>Comfortable (recommended)</strong><br>NVIDIA RTX 3060 12GB<br>32GB RAM<br>SDXL + LoRA</div>
+<div><strong>Best (pro)</strong><br>NVIDIA RTX 4090 24GB<br>64GB RAM<br>SDXL + multi-LoRA + Flux</div>
+<div><strong>Storage</strong><br>SSD 500GB+ (models heavy)<br>Models 5-15GB each</div>
+</div>
 
-        <h2>বাংলাদেশি ব্যবহারকারীদের জন্য টিপস</h2>
-        <ul>
-            <li>GPU না থাকলে — Google Colab-এ free run করা যায় (limited)</li>
-            <li>Daraz-এ used RTX 3060/3070 ৪০-৬০ হাজার টাকার মধ্যে পাওয়া যায়</li>
-            <li>বাংলা prompt না — ইংরেজিতে লিখুন (SD বাংলা train না)</li>
-            <li>Negative prompt গুরুত্বপূর্ণ: "blurry, low quality, bad anatomy"</li>
-        </ul>
+<ul>
+<li><strong>AMD GPU:</strong> Possible via ROCm/DirectML, performance ~৭০% of NVIDIA। NVIDIA recommended।</li>
+<li><strong>Apple Silicon (M1/M2/M3):</strong> Works via DiffusionBee app। Slower than NVIDIA but functional।</li>
+<li><strong>BD pricing reality (২০২৬):</strong> RTX 3060 12GB ~৳৪২,০০০ (used)। RTX 4060 16GB ~৳৬০,০০০। RTX 4070 ৳৮৫,০০০+।</li>
+</ul>
 
-        <h2>সাধারণ সমস্যা</h2>
-        <ul>
-            <li>"CUDA out of memory" → batch size কমান, resolution কমান</li>
-            <li>"Black image" → VAE check, half precision setting</li>
-            <li>Slow generation → --xformers flag enable</li>
-        </ul>
+<h2>Automatic1111 (সবচেয়ে popular) — Windows-এ install</h2>
 
-        <h2>উপসংহার</h2>
-        <p>Local Stable Diffusion একবার setup করলে আপনার AI image budget শূন্যে নামবে। GPU থাকলে — এই সপ্তাহান্তে install করুন। প্রথমে frustrating মনে হবে, কিন্তু এক মাস practice-এ Midjourney quality output পাবেন।</p>
+<h3>Step 1: Prerequisites</h3>
+<ol>
+<li>Python 3.10.6 download (specific version, latest doesn't work) — python.org</li>
+<li>Git download — git-scm.com</li>
+<li>"Add Python to PATH" check করুন install-এ</li>
+</ol>
 
-        <h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
+<h3>Step 2: Download Automatic1111</h3>
+<ol>
+<li>github.com/AUTOMATIC1111/stable-diffusion-webui</li>
+<li>Open folder you want (e.g., C:\AI\SD)</li>
+<li>Right-click → "Git Bash Here" → command: <code>git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git</code></li>
+</ol>
+
+<h3>Step 3: First run</h3>
+<ol>
+<li>Folder-এ <code>webui-user.bat</code> double-click</li>
+<li>First run: ১০-৩০ minutes (dependencies + base model download)</li>
+<li>Browser auto-opens: localhost:7860</li>
+<li>"txt2img" tab → prompt → "Generate"</li>
+</ol>
+
+<h2>ComfyUI (advanced workflow)</h2>
+<p>Automatic1111-এর alternative — node-based visual workflow। Power users-এর জন্য better।</p>
+<ul>
+<li>github.com/comfyanonymous/ComfyUI</li>
+<li>Node-based: each step (model load, sampler, decoder) আলাদা node</li>
+<li>Complex workflows save + share possible</li>
+<li>SDXL + Flux + advanced LoRA stacking</li>
+<li>Shahriar's choice: ComfyUI (precision-এর জন্য)</li>
+</ul>
+
+<h2>Model download — Civitai</h2>
+<p>civitai.com — Stable Diffusion community-র model hub।</p>
+<ul>
+<li><strong>Base models:</strong> SD 1.5, SDXL, FLUX dev</li>
+<li><strong>Style models (LoRA):</strong> Photorealistic, anime, architectural, vintage</li>
+<li><strong>Subject models:</strong> Specific character, brand style</li>
+<li><strong>ControlNet:</strong> Pose, depth, edge guidance models</li>
+</ul>
+<p>Shahriar-এর favorite models:</p>
+<ul>
+<li>Juggernaut XL (photorealistic)</li>
+<li>RealVis XL (humans + portraits)</li>
+<li>Animagine XL (anime/2D style)</li>
+<li>Architectural Designs LoRA (buildings, interiors)</li>
+</ul>
+
+<h2>বাংলাদেশি ব্যবহারকারীদের জন্য টিপস</h2>
+<ul>
+<li><strong>Internet bandwidth:</strong> Model download 5-15GB each। Robi/GP unlimited night plan ব্যবহার করুন।</li>
+<li><strong>Electricity:</strong> ১ generation ~৫-১৫ seconds @ 200-300W। Daily ৫০ generations = ০.৫-১ kWh = ৳৬-১২।</li>
+<li><strong>Cooling:</strong> Summer-এ GPU temp 80°C+ হতে পারে। Case fan + thermal paste check।</li>
+<li><strong>Storage:</strong> Models + outputs দ্রুত accumulate। 2TB SSD recommended।</li>
+<li><strong>Backup:</strong> Important LoRA/workflows external drive-এ backup।</li>
+</ul>
+
+<h2>সাধারণ সমস্যা</h2>
+<ul>
+<li><strong>"CUDA out of memory":</strong> --medvram or --lowvram flag webui-user.bat-এ add।</li>
+<li><strong>Slow generation:</strong> xformers install (<code>pip install xformers</code>) — 30% speed up।</li>
+<li><strong>Bangla prompt doesn't work:</strong> SD-এ Bangla prompt support নেই — English-এ describe।</li>
+<li><strong>Output blurry/low-quality:</strong> Steps 20+, Sampler "DPM++ 2M Karras", CFG 7-9 try।</li>
+<li><strong>Hands deformed:</strong> Negative prompt-এ "bad hands, extra fingers" + use "ADetailer" extension।</li>
+</ul>
+
+<h2>উপসংহার</h2>
+<p>Shahriar বলেন: "Local SD-এর learning curve steep — ২ সপ্তাহ struggle। কিন্তু একবার set up + master হলে, cloud tools-এর চেয়ে ১০০x flexibility। Per image cost ০, NDA-protected client work safe, unlimited experimentation।"</p>
+<p>BD-র creative professional-দের জন্য local Stable Diffusion একটা long-term investment। GPU ৳৪০-৬০K initial cost, কিন্তু ROI ৬-১২ মাসে। আপনি যদি serious creator/designer/game artist — local SD শুরু করুন। প্রথমে Automatic1111, পরে ComfyUI।</p>
+
+
+<h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
         <ul>
             <li><a href="/stable-diffusion/">Stable Diffusion টুল পেজ</a></li>
             <li><a href="/flux/">Flux AI</a></li>
