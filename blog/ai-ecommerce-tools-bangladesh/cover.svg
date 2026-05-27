@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="ই-কমার্সের জন্য AI টুলস — বাংলাদেশি উদ্যোক্তাদের গাইড ২০২৬ | বাংলা AI গাইড">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="ই-কমার্সের জন্য AI টুলস — বাংলাদেশি উদ্যোক্তাদের গাইড ২০২৬">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#F59E0B"/>
@@ -59,7 +59,7 @@
     <text x="62" y="27" font-size="14" text-anchor="middle" class="badge">BUSINESS</text>
   </g>
 
-  <text class="title" font-size="46"><tspan x="70" y="211">ই-কমার্সের জন্য AI</tspan><tspan x="70" y="267">টুলস — বাংলাদেশি</tspan><tspan x="70" y="323">উদ্যোক্তাদের গাইড ২০২৬</tspan><tspan x="70" y="379">| বাংলা AI গাইড</tspan></text>
+  <text class="title" font-size="46"><tspan x="70" y="239">ই-কমার্সের জন্য AI</tspan><tspan x="70" y="295">টুলস — বাংলাদেশি</tspan><tspan x="70" y="351">উদ্যোক্তাদের গাইড ২০২৬</tspan></text>
 
   <circle cx="70" cy="555" r="4" fill="#FB7185"/>
   <circle cx="86" cy="555" r="4" fill="#FFFFFF" opacity="0.6"/>

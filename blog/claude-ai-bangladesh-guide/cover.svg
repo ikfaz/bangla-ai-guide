@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Claude AI বাংলাদেশ গাইড — Anthropic এর AI ব্যবহার ২০২৬ | বাংলা AI গাইড">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Claude AI বাংলাদেশ গাইড — Anthropic এর AI ব্যবহার ২০২৬">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#6366F1"/>
@@ -64,7 +64,7 @@
     <text x="56.5" y="27" font-size="14" text-anchor="middle" class="badge">AI TOOL</text>
   </g>
 
-  <text class="title" font-size="46"><tspan x="70" y="211">Claude AI বাংলাদেশ</tspan><tspan x="70" y="267">গাইড — Anthropic এর AI</tspan><tspan x="70" y="323">ব্যবহার ২০২৬ | বাংলা</tspan><tspan x="70" y="379">AI গাইড</tspan></text>
+  <text class="title" font-size="54"><tspan x="70" y="230">Claude AI বাংলাদেশ</tspan><tspan x="70" y="296">গাইড — Anthropic এর</tspan><tspan x="70" y="362">AI ব্যবহার ২০২৬</tspan></text>
 
   <circle cx="70" cy="555" r="4" fill="#22D3EE"/>
   <circle cx="86" cy="555" r="4" fill="#FFFFFF" opacity="0.6"/>
