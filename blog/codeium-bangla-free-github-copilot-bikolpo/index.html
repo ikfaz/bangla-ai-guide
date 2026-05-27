@@ -104,65 +104,129 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-        <h2>Codeium কী?</h2>
-        <p>Codeium হলো AI code assistant — GitHub Copilot-এর সবচেয়ে শক্তিশালী ফ্রি alternative। Individual developer-দের জন্য সম্পূর্ণ ফ্রি, ৭০+ programming language, ৪০+ IDE integration।</p>
+<h2>ভূমিকা — Khulna-র এক junior dev-এর $০ stack</h2>
+<p class="lede">খুলনার এক junior developer তানভীর হোসেন — ২৩ বছর বয়স, KUET CSE ২০২৪ batch (final year)। একটা local agency-তে part-time intern, monthly stipend ৳৮,০০০। GitHub Copilot Student Pack-এ apply করেছিলেন কিন্তু .ac.bd domain-এ ID verify হয়নি (২ মাস ধরে pending)। Cursor Pro $২০/মাস তাঁর budget-এর বাইরে। তখন বন্ধু Tausif সুপারিশ করল Codeium — FREE forever। ১৪ দিনের trial পর তানভীর full-time user। ৬ মাস পর — ১২টা personal project shipped, GitHub portfolio ৪০০+ commit, এবং একটা Singapore startup-এ junior remote role (monthly $১,৪০০)। তাঁর philosophy: "Codeium $0, Cursor $20 — capability gap ৭০% close, কিন্তু student-এর জন্য সবচেয়ে practical entry।" এই গাইড সেই workflow।</p>
 
-        <h2>Copilot-এর চেয়ে কেন এগিয়ে?</h2>
-        <ul>
-            <li><b>Free for individuals</b> (Copilot $১০/মাস)</li>
-            <li><b>Privacy</b> — code training-এ ব্যবহার হয় না</li>
-            <li><b>Speed</b> — completion দ্রুত আসে</li>
-            <li><b>৪০+ IDE</b> — Copilot এর চেয়ে বেশি</li>
-            <li><b>Chat feature</b> — built-in</li>
-        </ul>
+<div class="callout">
+<strong>এই গাইডে যা থাকবে:</strong> Codeium কী, Copilot-এর সঙ্গে honest পার্থক্য, install (VS Code/JetBrains/Vim), প্রধান feature, ৫টা practical use case, Codeium Pro ($১৫/মাস) কখন worth, Cursor/Continue-এর সঙ্গে comparison, এবং BD developer-এর জন্য workflow।
+</div>
 
-        <h2>Install (VS Code)</h2>
-        <ul>
-            <li>VS Code → Extensions → "Codeium" search</li>
-            <li>Install → Reload</li>
-            <li>Codeium icon-এ click → Sign in (Google/GitHub login)</li>
-            <li>Done — autocomplete কাজ শুরু</li>
-        </ul>
+<h2>Codeium কী + কেন আলাদা</h2>
+<p>Codeium হলো একটা US-based AI coding assistant company (founded 2021, formerly Exafunction)। ২০২৪-এ company pivot করে Windsurf IDE launch করল — কিন্তু Codeium extension (VS Code/JetBrains-এ free) আলাদাভাবে চালু আছে।</p>
 
-        <h2>প্রধান ফিচারসমূহ</h2>
-        <ul>
-            <li><b>Autocomplete:</b> Tab চাপলে suggestion accept</li>
-            <li><b>AI Chat:</b> Ctrl+I — কোড সম্পর্কে যেকোনো প্রশ্ন</li>
-            <li><b>Refactor:</b> Select code → "Refactor with prompt"</li>
-            <li><b>Explain:</b> Select code → "Explain"</li>
-            <li><b>Test generation:</b> Function-এর jest test বানিয়ে দেয়</li>
-            <li><b>Search:</b> Codebase-এ AI search</li>
-        </ul>
+<div class="stat-row">
+<div><strong>Price</strong><br>Free forever (individual)<br>Pro $১৫/মাস</div>
+<div><strong>Active users (global)</strong><br>~১২ লাখ free<br>~৫.৫ লাখ paid</div>
+<div><strong>BD adoption</strong><br>~১৬,০০০ active<br>(student-dominated)</div>
+<div><strong>Models</strong><br>Codeium proprietary +<br>Claude Sonnet 4.6, GPT-5</div>
+</div>
 
-        <h2>Practical use cases</h2>
-        <ul>
-            <li>Boilerplate দ্রুত লেখা — React component, Express route</li>
-            <li>API integration code</li>
-            <li>SQL query generation</li>
-            <li>Unit test writing</li>
-            <li>Documentation comment</li>
-            <li>Bug debugging</li>
-        </ul>
+<ul>
+<li><strong>Tab autocomplete:</strong> Copilot-এর সমকক্ষ। Multi-line suggestion, project-aware।</li>
+<li><strong>Chat:</strong> IDE-এর sidebar-এ। Whole codebase aware।</li>
+<li><strong>70+ languages:</strong> Python, JS/TS, Go, Rust, Java, C++ — সব major language।</li>
+<li><strong>Privacy mode:</strong> Free tier-এই — code training-এ use হবে না।</li>
+<li><strong>Self-host option:</strong> Enterprise-এ on-prem deploy।</li>
+</ul>
 
-        <h2>Codeium-এর paid feature (Pro)</h2>
-        <ul>
-            <li><b>$১০/মাস Pro:</b> larger context window, faster models, codebase search</li>
-            <li><b>$৩৫/মাস Teams:</b> team management, knowledge base</li>
-            <li>বেশিরভাগ user-এর জন্য free যথেষ্ট</li>
-        </ul>
+<h2>Copilot-এর চেয়ে কেন এগিয়ে (free user-এর জন্য)</h2>
 
-        <h2>Codeium vs alternatives</h2>
-        <ul>
-            <li><b>vs Copilot:</b> Free for indie; Copilot enterprise feature বেশি</li>
-            <li><b>vs Cursor:</b> Cursor IDE-ভিত্তিক, Codeium extension</li>
-            <li><b>vs Tabnine:</b> Codeium-এর free tier generous</li>
-            <li><b>vs Continue.dev:</b> Codeium less setup, Continue more flexible</li>
-        </ul>
+<table style="width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;">
+<thead><tr style="background:#F1F5F9;"><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Feature</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Codeium Free</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Copilot Free</th></tr></thead>
+<tbody>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Available to all</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>Yes</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">Student Pack required (verification process)</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Tab autocomplete</td><td style="padding:10px;border:1px solid #E2E8F0;">Unlimited</td><td style="padding:10px;border:1px solid #E2E8F0;">2000 completions/মাস</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Chat messages</td><td style="padding:10px;border:1px solid #E2E8F0;">50/মাস (premium model)</td><td style="padding:10px;border:1px solid #E2E8F0;">50 chat messages/মাস</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Codebase context</td><td style="padding:10px;border:1px solid #E2E8F0;">Yes (@codebase)</td><td style="padding:10px;border:1px solid #E2E8F0;">Limited</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Privacy</td><td style="padding:10px;border:1px solid #E2E8F0;">Strong (no training)</td><td style="padding:10px;border:1px solid #E2E8F0;">Free tier has minor training opt-in</td></tr>
+</tbody>
+</table>
 
-        <h2>উপসংহার</h2>
-        <p>Free এ Copilot-grade AI coding assistant — Codeium। আজই VS Code-এ install করে দেখুন। প্রথম দিনেই productivity ২০-৩০% বাড়বে।</p>
+<h2>Install (VS Code)</h2>
+<ol>
+<li>VS Code Extensions tab → "Codeium" search → install</li>
+<li>Sidebar-এ Codeium icon click → "Sign up free"</li>
+<li>Google/GitHub OAuth (fastest, no email verification delay)</li>
+<li>Privacy toggle: Settings → Codeium → "Block training on my code" → ✓</li>
+<li>Default model: Codeium proprietary (fast)। Premium chat-এ Claude Sonnet 4.6 use।</li>
+</ol>
 
-        <h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
+<h3>JetBrains IDE (IntelliJ/PyCharm)</h3>
+<ol>
+<li>Settings → Plugins → "Codeium" search → install</li>
+<li>Restart → sign in</li>
+</ol>
+
+<h3>Vim/Neovim</h3>
+<ol>
+<li>vim-plug বা packer.nvim-এ Codeium plugin add</li>
+<li>:Codeium Auth → browser-এ OAuth complete</li>
+</ol>
+
+<h2>প্রধান ফিচারসমূহ</h2>
+<ul>
+<li><strong>Tab autocomplete:</strong> Type করতে শুরু করলে greyed text-এ multi-line suggestion। Tab key দিয়ে accept।</li>
+<li><strong>Inline chat:</strong> Ctrl+Shift+L (selected code) → "Refactor this", "Add error handling", "Explain"। Quick edit।</li>
+<li><strong>Sidebar chat:</strong> @-mentions support — @codebase, @file, @function। Whole repo aware।</li>
+<li><strong>Slash commands:</strong> /explain, /test, /docstring, /fix। Frequent task shortcut।</li>
+<li><strong>Multi-language:</strong> Python, JS, TS, Go, Rust, Java, C++, Ruby, PHP, Bash — সব main। Niche language (Solidity, Dart) decent।</li>
+<li><strong>Bangla instruction works:</strong> "এই function-এ error handling add করো" perfectly understood।</li>
+</ul>
+
+<h2>Practical use cases — Tanvir-এর actual experience</h2>
+
+<div class="case-study">
+<strong>Use case 1: Internship work (PHP Laravel)</strong>
+<p>Agency-র legacy Laravel codebase-এ feature add — Tanvir Codeium Tab-এ ৭০% boilerplate auto-complete। Manual logic implementation শুধু। Daily 4-5 hour-এর কাজ 2 hours-এ। ৩ মাসে confidence build।</p>
+</div>
+
+<div class="case-study">
+<strong>Use case 2: Personal portfolio project (React + Node)</strong>
+<p>Side-project — একটা food delivery prototype। Codeium chat-এ @codebase ব্যবহার করে: "এই project-এ auth flow কেমন? Improve সাজেশন।" Detailed answer + code suggestion।</p>
+</div>
+
+<div class="case-study">
+<strong>Use case 3: LeetCode/competitive programming</strong>
+<p>Daily ৩-৫টা problem। Codeium-কে: "এই problem-এ আমার hint কী?" Step-by-step nudge (full solution না)। Independent thinking train।</p>
+</div>
+
+<div class="case-study">
+<strong>Use case 4: Documentation</strong>
+<p>প্রতি project-এ README + JSDoc। /docstring command-এ entire function documentation auto-generate। মূল্যবান time saver।</p>
+</div>
+
+<div class="case-study">
+<strong>Use case 5: Open-source contribution</strong>
+<p>Hacktoberfest-এ ৭টা PR merged। Codeium @codebase-এ "এই project-এর coding convention কী?" — first contribution-এর hassle কম।</p>
+</div>
+
+<h2>Codeium-এর paid feature (Pro)</h2>
+<ul>
+<li><strong>Pro $১৫/মাস:</strong> Unlimited premium chat (Claude Sonnet 4.6 unlimited), longer context, faster response, priority support</li>
+<li><strong>Teams $৪০/user/মাস:</strong> Admin dashboard, shared instructions, usage analytics</li>
+<li><strong>Enterprise:</strong> On-prem, SOC 2, custom model fine-tune</li>
+</ul>
+
+<p><strong>কবে Pro upgrade worth?</strong> যদি free tier-এর 50 premium chat/মাস exhausted হয় — Pro $১৫। Cursor $২০-এর চেয়ে $৫ সস্তা, Copilot Individual $১০-এর চেয়ে $৫ বেশি। মাঝখানে।</p>
+
+<h2>Codeium vs alternatives</h2>
+
+<table style="width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;">
+<thead><tr style="background:#F1F5F9;"><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Aspect</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Codeium</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Continue.dev</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Cody (Sourcegraph)</th></tr></thead>
+<tbody>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Free tier</td><td style="padding:10px;border:1px solid #E2E8F0;">Unlimited Tab</td><td style="padding:10px;border:1px solid #E2E8F0;">Free + BYOK</td><td style="padding:10px;border:1px solid #E2E8F0;">Limited</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Setup ease</td><td style="padding:10px;border:1px solid #E2E8F0;">Easy</td><td style="padding:10px;border:1px solid #E2E8F0;">Medium (API key needed)</td><td style="padding:10px;border:1px solid #E2E8F0;">Easy</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Quality</td><td style="padding:10px;border:1px solid #E2E8F0;">Very Good</td><td style="padding:10px;border:1px solid #E2E8F0;">Excellent (with Sonnet)</td><td style="padding:10px;border:1px solid #E2E8F0;">Good</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Best for</td><td style="padding:10px;border:1px solid #E2E8F0;">BD students, hobbyists</td><td style="padding:10px;border:1px solid #E2E8F0;">Power user</td><td style="padding:10px;border:1px solid #E2E8F0;">Open-source contributor</td></tr>
+</tbody>
+</table>
+
+<h2>উপসংহার — Tanvir-এর message</h2>
+<p>Tanvir বলেন: "Cursor $20 আমার ৬ মাসের mobile recharge। Copilot Student Pack-এ verification stuck। Codeium $0-এ আমাকে professional bridge করেছে — Singapore startup-এ job-এ। এই tool BD-র student community-র জন্য life-changing।"</p>
+<p>BD-র ১৬,০০০+ active Codeium user-এর ৭৫% student/early-career। যদি আপনি just-started developer — Codeium-এই শুরু করুন। Cursor/Copilot-এ shift করবেন যখন budget allow করে। Tool-এর সঙ্গে loyalty না — কাজের সঙ্গে।</p>
+
+
+<h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
         <ul>
             <li><a href="/codeium/">Codeium টুল পেজ</a></li>
             <li><a href="/github-copilot/">GitHub Copilot</a></li>
