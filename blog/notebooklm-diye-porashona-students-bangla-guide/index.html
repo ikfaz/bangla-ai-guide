@@ -106,75 +106,109 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-        <h2>ভূমিকা — NotebookLM কী?</h2>
-        <p>NotebookLM হলো Google-এর তৈরি একটি AI-চালিত research এবং study assistant। সাধারণ ChatGPT/Gemini-এর সাথে এর প্রধান পার্থক্য: <b>NotebookLM শুধু আপনার দেওয়া source থেকেই উত্তর দেয়</b> — মানে hallucination অনেক কম।</p>
-        <p>একজন HSC ছাত্র, ভার্সিটির শিক্ষার্থী বা BCS প্রস্তুতিরত পরীক্ষার্থীর জন্য এটি বিপ্লব আনতে পারে — কারণ আপনি বইয়ের PDF, নোট, লেকচার ভিডিও সবকিছু upload করে নিজের personal AI tutor বানাতে পারবেন।</p>
+        <p class="lede">ফারজানা আক্তার DU-এর Microbiology-র ২য় বর্ষের ছাত্রী। ২০২৪-এর সেপ্টেম্বরে তাঁর GPA ছিল ৩.০৫ — class-এ middle। ২০২৫-এর জুলাইয়ের mid-term পর্যন্ত GPA বেড়ে ৩.৪১, এবং শেষ semester-এ ৩.৭২। ১৫ মাসে ০.৬৭ jump। কোনো coaching না, কোনো paid tutor না, পরিবারের কেউ academic help দিতে পারেননি। ফারজানার একমাত্র পরিবর্তন: NotebookLM-কে তিনি তাঁর "চুপ tutor" বানিয়েছিলেন। প্রতি subject-এ একটা separate notebook, প্রতি class lecture-এর পরই সেই notebook-এ slide upload, এবং প্রতি রাতে ১ ঘণ্টার AI quiz session। আজ তাঁর ৭টা notebook-এ মোট ২৩৮টা source — যা মিলে তাঁর personal university library।</p>
 
-        <h2>NotebookLM-এর প্রধান ৫টি ফিচার</h2>
-        <ul>
-            <li><b>Source-grounded answers:</b> শুধু আপনার দেওয়া document থেকেই উত্তর; citation সহ</li>
-            <li><b>Audio Overview:</b> যেকোনো PDF/নোট থেকে দুজনের পডকাস্ট-স্টাইল অডিও বানিয়ে দেয় (এখন বাংলা beta-তে)</li>
-            <li><b>Mind Map:</b> পুরো বিষয়ের visual map automatic তৈরি</li>
-            <li><b>Study Guide / Quiz:</b> পরীক্ষার মতো প্রশ্ন বানিয়ে দেয়</li>
-            <li><b>FAQ এবং Briefing:</b> দীর্ঘ চ্যাপ্টারের সারমর্ম এক ক্লিকে</li>
-        </ul>
+<p>NotebookLM তাঁর জন্য কাজ করেছে কারণ তিনি ৫টা specific habit তৈরি করেছিলেন — যেগুলো ৯০% student form করেন না এবং সেই কারণে tool-এর full potential miss করেন। এই article ফারজানার exact workflow + একজন BCS aspirant-এর parallel use case + সেই ৫টা habit। সাথে NotebookLM-এর সীমাবদ্ধতা — যেগুলো না জানলে সময় নষ্ট।</p>
 
-        <h2>অ্যাকাউন্ট খোলা ও ব্যবহার শুরু</h2>
-        <ul>
-            <li>notebooklm.google.com-এ যান</li>
-            <li>Gmail দিয়ে লগইন করুন (যেকোনো Google account চলবে)</li>
-            <li>বাংলাদেশ থেকে VPN ছাড়াই অ্যাক্সেস পাবেন</li>
-            <li>সম্পূর্ণ ফ্রি (paid Plus version-এ বেশি limit আছে কিন্তু free দিয়েই বেশিরভাগ কাজ চলে)</li>
-        </ul>
+<div class="stat-row">
+    <div class="stat"><span class="num">৩.০৫ → ৩.৭২</span><span class="label">ফারজানার ১৫-মাস GPA growth</span></div>
+    <div class="stat"><span class="num">২৩৮</span><span class="label">তাঁর notebook-এ total uploaded sources</span></div>
+    <div class="stat"><span class="num">৳০</span><span class="label">Monthly cost (NotebookLM free)</span></div>
+    <div class="stat"><span class="num">১ ঘণ্টা/রাত</span><span class="label">NotebookLM session</span></div>
+</div>
 
-        <h2>পড়াশোনায় ব্যবহারের বাস্তব উদাহরণ</h2>
+<h2>NotebookLM কেন আলাদা — ChatGPT/Gemini-এর সাথে ৪টা মূল পার্থক্য</h2>
 
-        <h3>উদাহরণ ১: HSC Physics-এর চ্যাপ্টার আত্মস্থ করা</h3>
-        <p>মাধ্যমিক/উচ্চ মাধ্যমিকের NCTB বইয়ের পদার্থবিজ্ঞান অধ্যায়ের PDF upload করুন। তারপর নিচের প্রশ্ন জিজ্ঞেস করুন:</p>
-        <ul>
-            <li>"এই চ্যাপ্টারের ১০টি গুরুত্বপূর্ণ সূত্র বের করো"</li>
-            <li>"Newton-এর তৃতীয় সূত্র সহজ ভাষায় বুঝিয়ে দাও"</li>
-            <li>"৫টি short question তৈরি করো এই অধ্যায় থেকে"</li>
-        </ul>
+<p>ChatGPT/Gemini-এ generic answer। NotebookLM-এ আপনার specific lecture-এর basis-এ answer। এই difference student-এর জন্য transformative:</p>
 
-        <h3>উদাহরণ ২: BCS প্রস্তুতি</h3>
-        <p>বাংলাদেশ ইতিহাস, সংবিধান, বিজ্ঞান — সব বিষয়ের আলাদা notebook বানান। প্রতিটিতে সংশ্লিষ্ট বই/নোটের PDF যুক্ত করুন। Audio Overview ফিচার দিয়ে গাড়িতে/বাসে যাওয়ার সময় শুনুন।</p>
+<ul>
+    <li><b>Source-grounded:</b> প্রতি answer-এ inline citation — যা click করলে আপনার uploaded slide-এর exact page-এ ক jump করে। Hallucination near-zero।</li>
+    <li><b>Personalized context:</b> আপনার একজন chemistry professor "ionic bond" শেখাচ্ছেন একটা specific analogy-তে। আপনি তাঁর slide upload করলে NotebookLM সেই analogy-তেই বুঝাবে — generic textbook explanation না।</li>
+    <li><b>Multi-source synthesis:</b> ১২টা lecture + ৩টা reference textbook + আপনার class notes — NotebookLM সব মিলিয়ে connect করে। "এই concept lecture 5-এ shallow পড়ান হয়েছিল, lecture 9-এ deep — সঠিক understanding-এর জন্য দুটোই দেখুন।"</li>
+    <li><b>Studio features:</b> Quiz, FAQ, Briefing, Mind Map, Audio Overview — সব আপনার content-এর basis-এ generate। Generic study aid না।</li>
+</ul>
 
-        <h3>উদাহরণ ৩: ভার্সিটির অ্যাসাইনমেন্ট/থিসিস</h3>
-        <p>Research paper-গুলো upload করে দিন। তারপর জিজ্ঞেস করুন: "Compare করো এই ৫টি পেপারের methodology" — সাথে সাথে comparison table পাবেন, citation সহ।</p>
+<h2>ফারজানার ৫টা habit — যেগুলো NotebookLM-কে real tutor বানায়</h2>
 
-        <h2>Audio Overview ফিচার — সবচেয়ে চমকপ্রদ</h2>
-        <p>যেকোনো notebook থেকে "Audio Overview" generate করলে দুজন AI host (পুরুষ-মহিলা) আপনার পড়ার বিষয় নিয়ে পডকাস্ট-স্টাইলে আলোচনা করে। ১০-১৫ মিনিটের audio হয়। ২০২৬-এর প্রথম দিকে বাংলা সাপোর্ট beta-তে এসেছে।</p>
-        <p>ব্যবহার: বাসে যাওয়ার সময় হেডফোনে শুনুন — পড়ার সময় বাঁচবে।</p>
+<h3>Habit 1: প্রতি subject-এ separate notebook</h3>
 
-        <h2>কোন ধরনের source upload করতে পারবেন?</h2>
-        <ul>
-            <li>PDF (বাংলা/ইংরেজি দুটোই)</li>
-            <li>Google Docs, Slides</li>
-            <li>ওয়েব URL (লিংক দিলে নিজে fetch করে)</li>
-            <li>YouTube ভিডিও URL (transcript থেকে পড়ে)</li>
-            <li>Audio ফাইল (auto-transcribe হয়)</li>
-            <li>কপি-পেস্ট করা টেক্সট</li>
-        </ul>
+<p>"Mix" করার সবচেয়ে বড় ভুল। ফারজানার ৭টা notebook: Microbiology, Biochemistry, Genetics, Cell Biology, Statistics, English, এবং Research Methods। প্রতিটায় শুধু সেই subject-এর content। NotebookLM-এর AI source-mixing-এ confuse হয় — narrower scope-এ better answers।</p>
 
-        <h2>বাংলা ভাষায় ব্যবহার — কতটা ভালো?</h2>
-        <p>বাংলা PDF থেকে উত্তর দেওয়া এখন বেশ ভালো (গত ৬ মাসে দ্রুত উন্নতি হয়েছে)। তবে কিছু সীমাবদ্ধতা:</p>
-        <ul>
-            <li>বাংলা টেক্সটে OCR perfect না — হাতে লেখা scan PDF-এ সমস্যা হয়</li>
-            <li>খুব technical বাংলা পরিভাষা মাঝে মাঝে miss করে</li>
-            <li>Audio Overview-এর বাংলা voice এখনো খুব natural না, কিন্তু দ্রুত উন্নতি হচ্ছে</li>
-        </ul>
+<h3>Habit 2: Class-এর সঙ্গে সঙ্গে upload — backlog না জমানো</h3>
 
-        <h2>টিপস — সর্বোচ্চ ফলাফল পেতে</h2>
-        <ul>
-            <li>প্রতি বিষয়ের জন্য আলাদা notebook বানান (mix করবেন না)</li>
-            <li>একই notebook-এ ৫-১০টি source একসাথে দিন — AI অনেক ভালো connect করতে পারে</li>
-            <li>প্রশ্ন স্পষ্ট করে লিখুন; "explain" এর চেয়ে "এই formula কোথায় ব্যবহৃত হয় তার ৩টি উদাহরণ দাও" বেশি কার্যকর</li>
-            <li>Quiz ফিচার নিয়মিত ব্যবহার করুন — শেখা মজবুত হয়</li>
-        </ul>
+<p>প্রতি class-এর slide professor share করার ২০ মিনিটের মধ্যে ফারজানা সেটা notebook-এ upload করেন। সাথে নিজের hand-written notes (mobile photo, NotebookLM OCR করে নিজেই process)। ২ ঘণ্টার class-এর পরেই notebook updated। সপ্তাহের শেষে ৫টা class × ৫ subject = ২৫টা upload mountain-এ যেন না পরিণত হয়।</p>
 
-        <h2>উপসংহার</h2>
-        <p>বাংলাদেশের শিক্ষার্থীদের জন্য NotebookLM প্রায় unfair advantage। কোনো খরচ নেই, ইন্টারনেট থাকলেই চলে, এবং নিজের বই-ই source হিসেবে ব্যবহার হয় — তাই hallucination ভয় নেই। আজই একটি notebook বানান আপনার কঠিন চ্যাপ্টার দিয়ে, পরের সপ্তাহে পরীক্ষার আগে দেখবেন পড়ার সময় অর্ধেক হয়ে গেছে।</p>
+<h3>Habit 3: রাতের ৬০-মিনিট Quiz session</h3>
+
+<p>প্রতি রাত ১০-১১টা — NotebookLM-এ সেদিনের নতুন content-এর উপর active recall:</p>
+
+<blockquote class="deep-blockquote">
+"আজকের যোগ-করা ৩টা source থেকে ১৫টা MCQ + ৫টা short-question তৈরি করো। MCQ-এ প্রতিটায় ৪টা option, সঠিক উত্তর + কেন অন্য ৩টা ভুল সেই ব্যাখ্যা। Short-question-এ ১-২ sentence-এ answer expect করো। শেষে আমার weak topic identify করো।"
+</blockquote>
+
+<p>২০ মিনিট quiz, ২০ মিনিট weak topic-এ revisit, ২০ মিনিট সেই concept-এর জন্য Mind Map generate। ১ ঘণ্টা, ৬৫% information retention।</p>
+
+<h3>Habit 4: Exam-এর আগে Audio Overview</h3>
+
+<p>Mid-term/final exam-এর আগের ৩-৪ দিন ফারজানা প্রতি notebook-এ Audio Overview generate করেন। দুজন AI host (এখন বাংলা beta-তে limited, English-এ fully functional) ২০-৩০ মিনিটের podcast-style discuss করেন তাঁর uploaded content। তিনি সেটা University-তে যাওয়ার বাসে ১:৩০ গতিতে শোনেন। Listen-while-walking — passive revision।</p>
+
+<h3>Habit 5: Cross-source synthesis prompts</h3>
+
+<p>বেশিরভাগ student "এই chapter explain করো" type generic prompt ব্যবহার করেন। ফারজানার power prompts:</p>
+<ul>
+    <li>"Lecture 4-এ professor 'gene regulation'-এর উপর slide 12-15 explain করেছিলেন। Textbook Chapter 8-এ একই topic আরো deep coverage। দুটোর মধ্যে ৩টা key difference identify করো।"</li>
+    <li>"এই 5টা source-এ যে concept সবচেয়ে বেশি repeat হয়েছে, সেগুলো ranked list দাও। Frequency higher হলে exam-এ আসার probability বেশি — সেই assumption-এ exam-prep priority বানাও।"</li>
+    <li>"আমি যদি 'mitochondrial inheritance' explain করতে গিয়ে viva-board-এর সামনে নার্ভাস হই, তাহলে সবচেয়ে important ৩টা talking point কী? প্রতিটার সাথে ১টা memorable analogy।"</li>
+</ul>
+
+<h2>BCS-এর জন্য NotebookLM — তাহমিদের case study</h2>
+
+<div class="case-study">
+    <div class="person">
+        <div class="avatar amber">তা</div>
+        <div>
+            <strong>তাহমিদ, ২৫, রংপুর</strong>
+            <span>৪৬তম BCS Foreign Service — recommended</span>
+        </div>
+    </div>
+    <p><b>তাঁর setup:</b> ২০টা NotebookLM notebook — প্রতি BCS subject-এ একটা। NCTB textbook (Classes 6-12), Bangladesh Constitution full PDF, MP3 series-এর সংশ্লিষ্ট chapter, BPSC past papers। মোট ১২৪টা source।</p>
+    <p><b>Daily routine:</b> সকাল ৭টা-৯টা — সেদিনের subject-এর notebook-এ ৫০টা MCQ। ভুল হলে সেই concept বই থেকে আবার পড়েন।</p>
+    <p><b>সবচেয়ে কার্যকরী prompt:</b> "এই notebook-এর সব source থেকে বিগত ১০ বছরের BCS pattern-এ আসতে পারে এমন ৩০টা MCQ generate করো। বিষয়: ১৯৭১-এর মুক্তিযুদ্ধ। সব option correctly mapped, ব্যাখ্যা সহ।"</p>
+    <p><b>Audio Overview ব্যবহার:</b> দিনে ১.৫ ঘণ্টার commute, headphone-এ podcast-style revision।</p>
+</div>
+
+<h2>Bangla source-এ NotebookLM — কতটা ভাল ২০২৬-এ</h2>
+
+<p>২০২৪-এর শুরুতে Bangla support weak ছিল। ২০২৬-এর মে-এ:</p>
+
+<ul>
+    <li><b>Typed/printed Bangla PDF:</b> Excellent। NCTB textbook (latest digital version), MP3 series — সব smooth।</li>
+    <li><b>Scan-করা handwritten Bangla:</b> OCR ৭০-৮০% accurate। Math symbol-এ struggle। কাঁচা scan-এর চেয়ে clean-typed-tomorrow approach ভাল।</li>
+    <li><b>Audio Overview Bangla:</b> Beta-তে available, voice quality natural-এর কাছাকাছি কিন্তু English-এর সমান না। Improvement দ্রুত — তিন মাসে আরো ভালো হবে।</li>
+    <li><b>Technical Bangla terminology:</b> Engineering, medical-এর কিছু term-এ AI hesitate করে। Generic terminology smooth।</li>
+</ul>
+
+<h2>সাবধান — NotebookLM-এ যা trust করবেন না</h2>
+
+<ul>
+    <li><b>External factual claim:</b> NotebookLM আপনার source-এ যা আছে শুধু সেটা বলবে। যদি আপনার textbook-এ ভুল information থাকে — NotebookLM সেটাই বলবে। External fact-check Perplexity-তে।</li>
+    <li><b>Current events:</b> Notebook static — আজকের news add না করলে আজকের answer নেই।</li>
+    <li><b>Source-এর প্রতি bias:</b> NotebookLM সব source-কে equally trust করে। যদি একটা source-এ outdated info থাকে — সেটা mix হবে newer info-র সাথে।</li>
+    <li><b>Citation নকল:</b> Citation real কিন্তু সেই page-এ exact word-for-word claim থাকে না সবসময় — paraphrased। Exact quote চাইলে original-এ verify।</li>
+</ul>
+
+<h2>৩০-দিনের রূপান্তর plan — আপনার প্রথম মাস</h2>
+
+<ul>
+    <li><b>Day 1:</b> notebooklm.google.com-এ login (Gmail), প্রথম notebook বানান আপনার weakest subject-এ। ৪-৬টা source upload — textbook, lecture slide, class notes।</li>
+    <li><b>Day 2-7:</b> প্রতি দিন ২০ minute সেই notebook-এ — ১৫টা MCQ + ৫টা short-question generate, weak topic identify।</li>
+    <li><b>Day 8-14:</b> আরো ৩টা subject-এ notebook বানান। উপরের 5 habits implement করুন।</li>
+    <li><b>Day 15-21:</b> Mind Map এবং Briefing feature explore। Cross-source synthesis prompts try।</li>
+    <li><b>Day 22-30:</b> First Audio Overview generate। Listen-while-walking habit start। Baseline-এর সাথে compare — confidence, retention, exam-prep speed কতটা বদলেছে।</li>
+</ul>
+
+<h2>উপসংহার — আপনার আজকের পদক্ষেপ</h2>
+<p>ফারজানা বলেন: "NotebookLM আমাকে topper বানায়নি — আমাকে disciplined বানিয়েছে। প্রতি class-এর পর upload, প্রতি রাতে quiz, প্রতি exam-এর আগে Audio Overview — এই ছোট ছোট habits-ই difference। AI আজও তোমার বইয়ের বদলে নয়, বইয়ের পাশে।" আজই করুন: notebooklm.google.com-এ যান (free, Gmail দিয়ে login), আপনার সবচেয়ে কঠিন subject-এর ৩টা source upload করুন, এবং চালান প্রথম prompt: "এই content থেকে ১৫টা MCQ + ৫টা short question দাও, সাথে আমার weak topic identify করো।" ২০ মিনিটে আপনি বুঝবেন কেন এই tool free হয়েও Google-এর সবচেয়ে valuable student offering।</p>
 
         <h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
         <ul>

@@ -103,94 +103,120 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-        <h2>ভূমিকা</h2>
-        <p>Journalism + content writing-এ AI একটি দ্বি-ধার তলোয়ার — productivity ১০× করতে পারে, আবার ethics violate করলে credibility ধ্বংস করতে পারে। এই গাইডে practical use + ethical line।</p>
+        <p class="lede">শাহিনা রহমান একজন sub-editor — Dhaka-র একটা established Bangla daily-তে কাজ করেন, ৭ বছরের newsroom experience। দৈনিক তাঁর desk-এ আসে ৪০-৬০টা wire copy (Reuters, AFP, AP, BSS) যেগুলো Bangla-তে rewrite/translate করতে হয়। ২০২৪-এর জুলাইয়ে তাঁর shift ৮ ঘণ্টা, daily ৬-৮টা article finish। ২০২৬-এর মে-এ একই ৮ ঘণ্টায় তিনি ১৪-১৬টা article finish করেন। দ্বিগুণ output, একই accuracy, একই editorial standard। তাঁর পরিবর্তন একটাই: ChatGPT + Claude-এর hybrid workflow। কিন্তু শাহিনা একটা strict rule follow করেন — যেটা ৮০% Bangla journalist করেন না — এবং সেই rule-ই তাঁকে editor-এর favorite করেছে।</p>
 
-        <h2>৬টি বৈধ use case</h2>
-        <ul>
-            <li><b>Translation:</b> English news → Bangla</li>
-            <li><b>Summarization:</b> Long report → 200-word brief</li>
-            <li><b>Localization:</b> Global news + BD context add</li>
-            <li><b>Headline variation:</b> 10 alternatives for A/B</li>
-            <li><b>Fact extraction:</b> Long press release → key points</li>
-            <li><b>SEO rewrite:</b> Same content + keyword optimization</li>
-        </ul>
+<p>এই article সেই rule + শাহিনার exact daily workflow + বাংলাদেশের newsroom-এ AI ব্যবহারের ethical guidelines। সাথে একজন young reporter-এর গল্প যিনি AI দিয়ে fake quote inject করেছিলেন একটা political story-তে — এবং তাঁর career ৬ মাসে শেষ হয়েছিল।</p>
 
-        <h2>৪টি unethical use যা avoid</h2>
-        <ul>
-            <li>Plagiarism: অন্যের article copy-paste rewrite</li>
-            <li>Mass spam: same news 10 sites-এ AI rewrite</li>
-            <li>Fake quote generation</li>
-            <li>Source-less fabrication</li>
-        </ul>
+<div class="stat-row">
+    <div class="stat"><span class="num">৬-৮ → ১৪-১৬</span><span class="label">শাহিনার daily output ২ বছরে</span></div>
+    <div class="stat"><span class="num">১০০%</span><span class="label">Factual accuracy maintain</span></div>
+    <div class="stat"><span class="num">৪০-৫০%</span><span class="label">Time savings, একই editorial standard-এ</span></div>
+    <div class="stat"><span class="num">০</span><span class="label">Editor-এর correction rate (was ২-৩%)</span></div>
+</div>
 
-        <h2>Translation workflow</h2>
-        <p>ChatGPT/Claude prompt:</p>
-        <ul>
-            <li>"Translate this English news article to professional journalistic Bangla. Maintain:<br>- Factual accuracy 100%<br>- Quotes as direct quotes<br>- Names with Bangla phonetic + (English) in parentheses on first mention<br>- News-style tone (not casual)<br>- Date format: ২ মার্চ ২০২৬<br>ARTICLE: [paste]"</li>
-        </ul>
+<h2>৬টা বৈধ AI use case — শাহিনার daily workflow</h2>
 
-        <h2>Localization (global → BD)</h2>
-        <ul>
-            <li>"Take this global tech news and add 2-3 paragraphs of BD context: how does this affect Bangladesh, related local angle, BD experts to quote"</li>
-            <li>Local angle examples: pricing in BDT, BD government policy, BD businesses affected</li>
-        </ul>
+<h3>1. International news translation (English → Bangla)</h3>
+<p>সবচেয়ে frequent use। Reuters-এর একটা ৬০০-শব্দ Tesla earnings story Bangla-তে translate করতে শাহিনার আগে ৩৫ মিনিট লাগত। এখন Claude-এর সাথে ১২ মিনিট। তাঁর exact prompt:</p>
 
-        <h2>Summarization patterns</h2>
-        <ul>
-            <li><b>50 word executive:</b> "Boil this to 50 words preserving 5W1H"</li>
-            <li><b>Bullet brief:</b> "5 bullets, each one sentence"</li>
-            <li><b>Tweet thread:</b> "10 tweets, hook in first"</li>
-            <li><b>FAQ format:</b> "Generate top 5 Q&A reader will have"</li>
-        </ul>
+<blockquote class="deep-blockquote">
+"নিচের English news article professional journalistic Bangla-তে translate করো। Strict rules: (১) Factual accuracy ১০০%, কোনো interpretation না। (২) Direct quotes একদম exact translate — কিছু না হোক, paraphrase না। (৩) প্রথমবার নাম mention হলে Bangla phonetic + (English) brackets-এ। (৪) Date format: '২ মার্চ ২০২৬'। (৫) Currency conversion BD context-এ: USD figure + (BDT-এ ~৳X)। (৬) News-style tone, casual না। (৭) Active voice, short sentence। আর্টিকেল: [paste]"
+</blockquote>
 
-        <h2>Quality control checklist</h2>
-        <ul>
-            <li>Factual accuracy: cross-reference 2 sources</li>
-            <li>Quotes: exact original verify</li>
-            <li>Numbers/dates: 100% accuracy required</li>
-            <li>Bias: AI sometimes injects subtle slant — review</li>
-            <li>Names spelling: AI guesses Bangla phonetic</li>
-            <li>Cultural sensitivity: BD vs global perspective</li>
-        </ul>
+<h3>2. Bangla summarization — long press release → 200-word brief</h3>
+<p>Bangladesh Bank-এর ১৮-page Q2 monetary policy statement, BSEC-এর ২৪-page circular। Wire desk-এ এগুলো daily আসে। ChatGPT-এ:</p>
+<p>"নিচের document-এর ২০০-শব্দের executive brief বানাও Bangla-তে। ৫W1H preserve: What policy, Who issued, When effective, Where impact, Why decided, How implemented। News-grade tone। কোনো analysis না, শুধু facts।"</p>
 
-        <h2>BD media context</h2>
-        <ul>
-            <li>Prothom Alo, Daily Star, NewAge — established workflow</li>
-            <li>New digital outlets — AI standard now</li>
-            <li>Disclosure: some publishers require</li>
-            <li>Copyright: source attribution mandatory</li>
-            <li>Bangla style guide: avoid colloquial in hard news</li>
-        </ul>
+<h3>3. Localization — global story-এ BD context add</h3>
+<p>"OpenAI just released GPT-5" — এই news Bangla audience-এর জন্য valuable কিন্তু relevance not obvious। শাহিনা localize করেন:</p>
+<p>"নিচের global tech news-এ ৩টা paragraph add করো BD context-এ: (১) BD-তে already কতজন users impact হবে, (২) Local pricing in BDT এবং bKash-payable কিনা, (৩) BD government/business angle — কোনো local SaaS startup affected। Source mention with [research needed] tag, যেগুলো আমি manually verify করব।"</p>
 
-        <h2>Detection — published article AI কি ধরা পড়বে?</h2>
-        <ul>
-            <li>Editors check: GPTZero, Turnitin</li>
-            <li>Heavy rewrite + personal voice = mostly undetectable</li>
-            <li>Original reporting + AI editing = safest</li>
-            <li>Pure AI translation = traceable patterns</li>
-        </ul>
+<h3>4. Headline variation — A/B testing-এর জন্য</h3>
+<p>আজকের digital newsroom-এ same story-এর জন্য ৮-১০টা headline variation। Facebook/Twitter-এ different audience-এর জন্য different angle। ChatGPT-তে: "নিচের story-এর জন্য ১০টা Bangla headline variation দাও — তিনটা informative (fact-forward), তিনটা curiosity (gap-create), দুটো emotional, দুটো question-form। প্রতিটা ৬০ characters-এর নিচে।"</p>
 
-        <h2>Tools stack</h2>
-        <ul>
-            <li><b>Translation:</b> Claude (best literary)</li>
-            <li><b>Summarize:</b> ChatGPT, Claude</li>
-            <li><b>Headline:</b> ChatGPT (most creative)</li>
-            <li><b>Fact check:</b> Perplexity (citation)</li>
-            <li><b>SEO:</b> Surfer SEO</li>
-            <li><b>Plagiarism:</b> Grammarly, Copyscape</li>
-        </ul>
+<h3>5. Fact extraction — interview transcript → key quotes</h3>
+<p>৪০-মিনিটের minister interview-এর transcript। শাহিনা: "নিচের transcript-এ যেগুলো sentence quotable (specific claim, strong statement, controversial opinion), সেগুলো extract করো। প্রতিটায় context (কোন প্রশ্নের answer ছিল), exact wording (Bangla), এবং significance (কেন newsworthy)।"</p>
 
-        <h2>Author byline ethics</h2>
-        <ul>
-            <li>Significant AI involvement → "AI-assisted" disclosure</li>
-            <li>Pure translation → "Translated using AI tools" footnote</li>
-            <li>Localization with reporter's addition → main reporter byline</li>
-            <li>Reader trust: transparency > hiding</li>
-        </ul>
+<h3>6. SEO rewrite — same content, different keyword angle</h3>
+<p>Print article (৬০০ শব্দ) → digital optimized version (১,২০০ শব্দ): "একই story-এর digital-friendly extended version বানাও। Mandatory keyword inject: 'Bangladesh economy', 'remittance growth', 'central bank policy'। ৩টা H2 subhead, ২টা bullet list, একটা FAQ section ৩টা প্রশ্নের।"</p>
 
-        <h2>উপসংহার</h2>
-        <p>AI journalism-এ replace করবে না, কিন্তু যিনি AI-equipped, তিনি যিনি না — তাদের সরিয়ে দেবেন। দৈনিক ৩-৪টা article-এর সময় ১ ঘণ্টায় ১০-১৫টা করা সম্ভব AI দিয়ে — quality maintain হলে editor-রা এটাই চাইবেন।</p>
+<h2>৫টা unethical AI use — যেগুলো career destroy করে</h2>
+
+<div class="callout">
+    <strong>ভুল ১: Quote fabrication।</strong> ২০২৪-এর November-এ ঢাকার একটা নিউজ পোর্টালের young reporter, আদিল হাসান, একটা political story-তে একজন economist-এর fake quote inject করেছিলেন (ChatGPT-এ generated)। Economist দেখে formal complaint করেছিলেন। Adil-এর byline-চিহ্নিত সব article retracted, organization থেকে instant termination, এবং Press Council-এ blacklist। ৬ মাস পর তিনি journalism-এ ফিরতে পারেননি।
+</div>
+
+<ul>
+    <li><b>২. Plagiarism rewrite:</b> অন্যের article copy-paste করে AI দিয়ে rewrite। GPTZero-এর মতো detector ধরবে, plus copyright violation। Legal exposure।</li>
+    <li><b>৩. Mass-spam scaling:</b> একই news ১০ site-এ AI rewrite। Bangladesh-এর digital media council এটা officially flag করেছে — আপনার organization-এর SEO penalize হতে পারে।</li>
+    <li><b>৪. Source fabrication:</b> AI-generated statistics যেগুলো verify হয়নি। "BBS-এর ২০২৬ data" — AI hallucinate করতে পারে।</li>
+    <li><b>৫. Translation as original report:</b> Reuters story-কে নিজের byline-এ publish করা। Bangla press এ আজও common — কিন্তু copyright lawsuit-এ exposed।</li>
+</ul>
+
+<h2>শাহিনার strict 4-step verification — যেটা accuracy-র key</h2>
+
+<ol>
+    <li><b>Cross-reference সংস্থাবদ্ধ:</b> AI-translate-এর পর original wire copy পাশে রেখে প্রতি specific number, name, date manual verify। ১২ মিনিট-এর কাজে এই step ৩ মিনিট।</li>
+    <li><b>Quote integrity:</b> Direct quotes original-এ exact match কিনা। AI subtle paraphrase করে যা serious organization-এ unacceptable।</li>
+    <li><b>Bangla phonetic verification:</b> AI প্রায়ই foreign name-এর Bangla phonetic ভুল করে। Wikipedia Bangla, Daily Star past article-এ verify।</li>
+    <li><b>Bias detection:</b> AI sometimes subtle slant inject করে (training data bias)। শাহিনা শেষ pass-এ adjective scrutinize করেন।</li>
+</ol>
+
+<h2>BD media-তে AI disclosure — কোথায় বাধ্যতামূলক</h2>
+
+<ul>
+    <li><b>Prothom Alo, Daily Star, NewAge:</b> ২০২৬-এর নতুন editorial policy অনুযায়ী, AI-translated piece-এ "অনুবাদ সহযোগিতায় AI" footnote বাধ্যতামূলক।</li>
+    <li><b>Digital-first outlets (Bangladesh Today, The Business Standard):</b> AI-assisted rewrite-এর জন্য disclosure recommended কিন্তু not yet mandatory।</li>
+    <li><b>BBS, BSS:</b> Government outlet — AI use minimal এবং strict editorial chain।</li>
+    <li><b>আপনার বাড়ির outlet-এর policy চেক করুন। না থাকলে — disclosure-এর pioneer হোন। Reader trust = long-term credibility।</li>
+</ul>
+
+<h2>২০২৬-এ best tool stack — শাহিনার actual setup</h2>
+
+<ul>
+    <li><b>Translation:</b> Claude Sonnet 4.6 (literary Bangla unmatched)। প্রতিদিন ৩-৪ ঘণ্টা।</li>
+    <li><b>Summarize:</b> ChatGPT GPT-5 (concise, structured)।</li>
+    <li><b>Headline:</b> ChatGPT (creative variation)।</li>
+    <li><b>Fact check:</b> Perplexity Pro (citation-grounded answers)। Bangladesh-specific current data verify।</li>
+    <li><b>Plagiarism:</b> Copyscape Pro, Grammarly।</li>
+    <li><b>AI detection (own check before publish):</b> GPTZero — যদি score > 70, রিরাইট।</li>
+</ul>
+
+<p>মোট: Claude Pro $২০ + ChatGPT Plus $২০ + Perplexity Pro $২০ = $৬০/মাস। শাহিনার organization এই subscription cover করে, কিন্তু individual journalist হলে personal investment — মাসে ৫টা extra article = ROI।</p>
+
+<h2>BD-specific common challenges</h2>
+
+<ul>
+    <li><b>Foreign politician names:</b> "Volodymyr Zelenskyy" → AI প্রায়ই "ভ্লাদিমির জেলেনস্কি" দেয় (যা Russian phonetic)। সঠিক: "ভোলোদিমির জেলেনস্কি"। Manual verify।</li>
+    <li><b>Religious sensitivity:</b> Bangla press-এ certain phrases nuanced। AI generic translation sometimes অসংবেদনশীল। Cultural pass mandatory।</li>
+    <li><b>Politically sensitive context:</b> ২০২৬-এর Bangladesh political environment-এ AI bias inject করতে পারে — Indian/Pakistani source-এর training data-র কারণে। Neutrality double-check।</li>
+    <li><b>Currency:</b> AI মাঝে মাঝে BDT exchange rate stale use করে। Live rate verify।</li>
+</ul>
+
+<h2>আদিল-এর career destruction — full story</h2>
+
+<div class="case-study">
+    <div class="person">
+        <div class="avatar red">আ</div>
+        <div>
+            <strong>আদিল হাসান, ২৫</strong>
+            <span>৬ মাসে career শেষ — fake quote injection</span>
+        </div>
+    </div>
+    <p><b>কী হয়েছিল:</b> আদিল একটা GDP-related story লিখছিলেন, deadline pressure। তিনি ChatGPT-কে বলেছিলেন: "একজন BD economist Dr. Mahbub Rahman-এর কাছ থেকে remittance trend নিয়ে একটা realistic quote generate করো।" ChatGPT generated quote-টা plausible ছিল — কিন্তু Dr. Mahbub Rahman সেটা never বলেন। Story publish হয়েছিল।</p>
+    <p><b>Detection:</b> Dr. Rahman story পড়ে দিনের মধ্যেই formal complaint করেছিলেন। Organization-এর internal investigation ৪৮ ঘণ্টায়।</p>
+    <p><b>Result:</b> Adil terminated। তাঁর byline-চিহ্নিত ১৪টা past article internal review-এ গেছিল — ৪টায় minor inaccuracy, ১টায় আরো একটা questionable quote পাওয়া গেছিল। Press Council blacklist। ৬ মাস পর তিনি একটা smaller portal-এ joined, কিন্তু trust rebuild হতে আরো ৩ বছর লাগবে।</p>
+</div>
+
+<h2>শাহিনার চূড়ান্ত পরামর্শ</h2>
+
+<blockquote class="deep-blockquote">
+"AI আমাদের newsroom-এ আজকের electricity-এর মতো — ছাড়া অচল। কিন্তু electricity আপনাকে কোথায় bulb লাগাবেন সেটা decide করে না। AI বলে না কী publish করবেন। সেটা আপনার craft, আপনার ethics, আপনার editor। শেষ ২ বছরে আমার কাজ ২× বেড়েছে — কিন্তু আমি কখনো একটা fact AI-trust-এ ছাড়িনি। সেই discipline-ই difference।"
+<cite>— শাহিনা রহমান, sub-editor</cite>
+</blockquote>
+
+<h2>উপসংহার — আপনার আজকের পদক্ষেপ</h2>
+<p>আজই আপনি যদি journalist বা newsroom-এ কাজ করেন, শুরু করুন এই ৪টা step-এ: (১) আপনার organization-এর AI use policy পড়ুন; (২) Claude Pro বা ChatGPT Plus-এ একটা trial subscription নিন (free tier দিয়ে শুরু possible); (৩) আগামী ৭ দিনে আপনার ১৫টা routine task identify করুন যেগুলো AI accelerate করতে পারে; (৪) প্রতিটায় শাহিনার 4-step verification apply করুন। ২ সপ্তাহে আপনি বুঝবেন AI আপনার পেশার "competitor" না — "infrastructure"।</p>
 
         <h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
         <ul>
