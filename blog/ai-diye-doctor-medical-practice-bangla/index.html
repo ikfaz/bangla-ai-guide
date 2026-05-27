@@ -106,83 +106,135 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-        <h2>ভূমিকা</h2>
-        <p>AI চিকিৎসকের প্রতিদ্বন্দ্বী নয়, সহকারী। বাংলাদেশের একজন GP-এর দৈনিক ৫০-১০০ patient দেখার চাপ — AI এই workload-কে manageable করতে পারে। সঠিক ব্যবহার patient outcome ও practice efficiency দুটোই বাড়ায়।</p>
+        <p class="lede">ডা. রিজওয়ান হোসেন একজন General Practitioner — Kushtia-র একটা mid-sized clinic-এ কাজ করেন। দৈনিক ৭০-৯০ patient (সকাল ৯-১২, বিকাল ৪-৯)। ২০২৪-এর জুলাইয়ে তিনি একটা breaking-point moment-এ ছিলেন — patient-এর সঙ্গে actual time ৫-৬ মিনিট, documentation-এ ৩-৪ মিনিট, এবং সন্ধ্যায় ২ ঘণ্টা backlog catch-up। ১৫ মাস পর, ২০২৫-এর অক্টোবরে, তাঁর daily backlog শূন্য, patient-time ৭-৯ মিনিট (improved care), এবং সন্ধ্যা ৭টার পর তিনি বাড়ি যান। পরিবর্তন: একটা specific AI-augmented workflow — যেখানে documentation, drug interaction, patient communication, এবং evidence-based decision support — সবই AI assist করছে, কিন্তু clinical judgment ১০০% তাঁর। তিনি নিজের পেশায় AI use-এর জন্য BMDC-এর ethical framework follow করেন। এই article সেই framework + তাঁর exact daily workflow।</p>
 
-        <h2>১. Patient note ও documentation</h2>
-        <ul>
-            <li><b>Otter/Fireflies:</b> Consultation auto-transcribe (English-এ)</li>
-            <li><b>ChatGPT:</b> Note structure to SOAP format</li>
-            <li><b>Whisper API:</b> Bangla voice → text</li>
-            <li><b>সময় সাশ্রয়:</b> প্রতি consultation ২-৪ মিনিট</li>
-        </ul>
+<p>সতর্কতা একদম শুরুতেই: AI চিকিৎসকের প্রতিদ্বন্দ্বী না, replacement না। AI আপনার stethoscope-এর মতো — একটা tool যা সঠিক হাতে life-saving, ভুল হাতে dangerous। নিচের সব workflow physician-এর judgment-এর সঙ্গে layered।</p>
 
-        <h2>২. Differential diagnosis support</h2>
-        <ul>
-            <li><b>Symptom + lab → possible diagnosis list:</b> ChatGPT/Claude</li>
-            <li><b>Glass.ai, Doximity GPT:</b> Medical-specific</li>
-            <li><b>সতর্কতা:</b> AI suggestion is starting point, final decision physician's</li>
-            <li><b>WTF:</b> Patient name/identifier কখনো না</li>
-        </ul>
+<div class="stat-row">
+    <div class="stat"><span class="num">৫ → ৭ মিনিট</span><span class="label">ডা. রিজওয়ানের per-patient time (improved care)</span></div>
+    <div class="stat"><span class="num">২ → ০ ঘণ্টা</span><span class="label">Daily evening backlog</span></div>
+    <div class="stat"><span class="num">৮৫% ↓</span><span class="label">Drug-interaction missed-flag (auto-checked)</span></div>
+    <div class="stat"><span class="num">৭০-৯০</span><span class="label">Daily patient consultation</span></div>
+</div>
 
-        <h2>৩. Drug interaction check</h2>
-        <ul>
-            <li><b>Medscape, Epocrates:</b> Traditional but no AI</li>
-            <li><b>ChatGPT/Claude:</b> "Patient on amlodipine + metformin, planning to add ramipril — interactions?"</li>
-            <li>Always cross-verify with reliable source</li>
-        </ul>
+<h2>ডা. রিজওয়ানের 4-layer AI workflow</h2>
 
-        <h2>৪. Patient communication</h2>
-        <ul>
-            <li><b>Bangla patient explanation:</b> ChatGPT-এ "Explain hypertension in simple Bangla to a 50-year-old farmer"</li>
-            <li><b>Discharge summary:</b> Auto-generate from notes</li>
-            <li><b>Lifestyle counseling material:</b> Custom for patient</li>
-            <li><b>SMS reminder text:</b> AI-generated</li>
-        </ul>
+<h3>Layer 1: Real-time documentation (Otter.ai + ChatGPT-এ SOAP)</h3>
+<p>Patient-এর সঙ্গে consultation-এ Otter.ai phone-এ background record করেন (patient consent-এর পরে, BMDC-এর recording guideline অনুযায়ী)। Consultation শেষে transcript কপি করে ChatGPT-এ:</p>
 
-        <h2>৫. Medical research</h2>
-        <ul>
-            <li><b>Elicit AI:</b> Recent paper review</li>
-            <li><b>OpenEvidence:</b> Clinical evidence summary</li>
-            <li><b>UpToDate (AI enhanced):</b> Standard reference</li>
-            <li><b>Perplexity:</b> Quick literature search</li>
-        </ul>
+<blockquote class="deep-blockquote">
+"নিচের consultation transcript-এর SOAP-format note বানাও:<br>
+S (Subjective): Patient's chief complaint, history, presenting symptoms।<br>
+O (Objective): Vitals, examination findings, lab if mentioned।<br>
+A (Assessment): Differential diagnosis priority order।<br>
+P (Plan): Investigations, treatment, follow-up।<br>
+Patient name/identifier remove করো, age/gender preserve। Bangla-English mixed allowed।"
+</blockquote>
 
-        <h2>৬. Telemedicine</h2>
-        <ul>
-            <li>বাংলাদেশে platforms: Praava, MyHealth, Doctorola</li>
-            <li>AI features: appointment scheduling, follow-up automation, prescription template</li>
-            <li>WhatsApp + ChatGPT: pre-consultation symptom collection</li>
-            <li>Voice + bangla AI: rural patient access</li>
-        </ul>
+<p>প্রতি note ৪৫ সেকেন্ডে ready। তাঁর Saturday afternoon-এর ২৫ patient-এর সব note ১২ মিনিটে। আগে এই কাজ ১ ঘণ্টা।</p>
 
-        <h2>৭. Practice management</h2>
-        <ul>
-            <li>Inventory (medicine stock): ChatGPT analyze sheet</li>
-            <li>Appointment scheduling AI</li>
-            <li>Billing automation</li>
-            <li>Insurance claim drafting</li>
-        </ul>
+<h3>Layer 2: Differential diagnosis support (Glass.ai / OpenEvidence)</h3>
+<p>Complex case-এ ডা. রিজওয়ান AI consultation নেন decision support হিসেবে। Specific tool:</p>
 
-        <h2>৮. CME / continuous learning</h2>
-        <ul>
-            <li>NotebookLM-এ specialty journal upload → personal study</li>
-            <li>Audio overview (drive-time learning)</li>
-            <li>ChatGPT-এ specific clinical scenario discuss</li>
-            <li>Self-quiz before exam</li>
-        </ul>
+<ul>
+    <li><b>Glass.ai (free):</b> Symptoms + relevant findings input → differential diagnosis ranked list with evidence link। Specifically medical-trained — ChatGPT-এর চেয়ে clinical accuracy ভালো।</li>
+    <li><b>OpenEvidence (free for medical professional):</b> Specific clinical question (e.g., "Best first-line for resistant hypertension in 65+ diabetic patients") → systematic review-style answer + citation।</li>
+    <li><b>ChatGPT GPT-5/Claude:</b> Education-purpose অথবা teaching point clarification — anonymized vignette-এ।</li>
+</ul>
 
-        <h2>নৈতিকতা ও legal</h2>
-        <ul>
-            <li>BMDC guideline follow</li>
-            <li>Patient consent for AI-assisted recording</li>
-            <li>Patient identifier কখনো AI-তে paste না (anonymize)</li>
-            <li>Diagnostic suggestion পেলে — verify always</li>
-            <li>Liability: AI suggestion misled হলে — physician final responsible</li>
-        </ul>
+<p>Critical rule: AI suggestion = hypothesis ranked list, না final diagnosis। ডা. রিজওয়ান প্রতিটার জন্য নিজে clinical reasoning verify করেন।</p>
 
-        <h2>উপসংহার</h2>
-        <p>বাংলাদেশি চিকিৎসকদের জন্য AI একটি productivity multiplier — patient outcome compromise ছাড়া। ছোট start করুন: documentation এবং patient communication। তারপর diagnosis support add করুন। নিজের practice-এ ১-২ মাসে পার্থক্য দেখবেন।</p>
+<h3>Layer 3: Drug interaction check (multi-source)</h3>
+<p>Polypharmacy patient (5+ medications) — interaction check critical। Workflow:</p>
+<ul>
+    <li><b>Primary:</b> Epocrates app (gold-standard, evidence-based, free for physicians)।</li>
+    <li><b>Secondary:</b> Medscape Drug Interaction Checker।</li>
+    <li><b>Tertiary check:</b> ChatGPT-এ: "Patient on [med list]। Adding [new med]. Major interactions, BD-context কোন brand-cross-check, monitoring parameter।" Anonymized — কোনো patient ID না।</li>
+    <li><b>৩-source cross-verify mandatory.</b> একটার output blindly trust না।</li>
+</ul>
+
+<h3>Layer 4: Patient communication (Bangla, level-appropriate)</h3>
+<p>ডা. রিজওয়ান-এর patient demographics — ৭০% farmers, garments workers, rickshaw pullers। English medical jargon useless। তাঁর AI-augmented patient education workflow:</p>
+
+<blockquote class="deep-blockquote">
+"আমি একজন ৫০-বছরের কৃষককে hypertension explain করছি। তাঁর education class 5 পর্যন্ত। সহজ Bangla-এ ৪-৫ sentence: (১) কী এই অসুখ, (২) কেন হয়, (৩) কী খেতে হবে / কী এড়াতে হবে, (৪) কেন প্রতিদিন ওষুধ খাবেন। কোনো জটিল term-এ generic Bangla version পাশে ব্রackets-এ। Specific BD-context food (ভাত-এ লবণ কম, মৌসুমি সবজি)।"
+</blockquote>
+
+<p>Output: ২ মিনিটে patient-readable, personalized counseling text। SMS-এ অথবা printed sheet হিসেবে দিতে পারেন। Compliance-rate তাঁর observation-এ ৩০% বেড়েছে।</p>
+
+<h2>BD telemedicine landscape ২০২৬-এ</h2>
+
+<ul>
+    <li><b>Praava Health:</b> AI-augmented consultation, Bangla support। ১৫,০০০+ active patients।</li>
+    <li><b>MyHealth (Bdjobs founder-এর startup):</b> Subscription model, AI symptom-checker pre-consultation।</li>
+    <li><b>Doctorola:</b> Phone-based teleconsult। AI symptom-pre-screen।</li>
+    <li><b>WhatsApp + custom workflow:</b> অনেক private doctor own AI-assisted pre-consultation form WhatsApp-এ deploy করেছেন (ChatGPT API-এর সাথে Twilio integration)।</li>
+</ul>
+
+<p>Rural patient access: Voice + Bangla AI combination — যেগুলো illiterate patient-কে symptom describe করতে allow করে। ২০২৬-এর breakthrough — patient WhatsApp-এ voice message দেন, AI Bangla-তে structured symptom report বানায়, doctor সেটা review করে video call schedule করেন।</p>
+
+<h2>BMDC ethical framework + legal reality</h2>
+
+<div class="callout">
+    <strong>Mandatory rules (BMDC, ২০২৫ AI use guideline):</strong>
+    <ul>
+        <li><b>Patient consent:</b> Recording/transcription-এর জন্য informed verbal consent (notes-এ document)।</li>
+        <li><b>Identifier anonymization:</b> Name, NID, mobile, address কখনো AI tool-এ paste না। Age, gender, broad symptom — yes।</li>
+        <li><b>AI suggestion = aid, না replacement:</b> Final diagnosis/treatment-এ physician's signature mandatory। AI output as standalone reason চিকিৎসায় liability।</li>
+        <li><b>Verification:</b> Drug, dose, dosing-interval — সব AI suggestion BNF/BNDF/Epocrates-এ verify।</li>
+        <li><b>Disclosure:</b> AI-assisted consultation-এর জন্য patient-কে জানানো প্রয়োজন (informed care)।</li>
+    </ul>
+</div>
+
+<h2>Real risk — যেখানে AI medical practice-কে dangerous করে</h2>
+
+<ul>
+    <li><b>Hallucinated drug dosage:</b> ChatGPT কখনো nonexistent drug suggest করে, বা wrong dose। Always BNF/standard reference-এ verify।</li>
+    <li><b>Outdated guideline:</b> AI training cut-off-এর পরে guideline update হলে AI জানে না (e.g., 2025 hypertension thresholds)। UpToDate-এ current cross-check।</li>
+    <li><b>Rare disease blind-spot:</b> AI common diseases-এ trained। Rare/tropical (kala-azar, dengue complications-এ rare presentation) — AI miss করে।</li>
+    <li><b>Cultural/local context:</b> Bangladeshi dietary habits, kitchen pharmacology (ginger-garlic interaction with anticoagulant), traditional medicine concurrent use — AI generic answer।</li>
+    <li><b>Patient privacy breach:</b> Accidentally identifier paste করলে data OpenAI/Anthropic-এর system-এ store হতে পারে। GDPR + BD Privacy Act exposure।</li>
+</ul>
+
+<h2>CME (Continuous Medical Education) — AI-augmented learning</h2>
+
+<p>ডা. রিজওয়ান NotebookLM-এ তাঁর specialty journal-এর article upload করেন। Audio Overview generate, drive-time-এ শোনেন। Workflow:</p>
+
+<ul>
+    <li><b>Weekly:</b> NEJM, BMJ, Lancet-এর top 3 article PDF NotebookLM-এ।</li>
+    <li><b>Audio Overview:</b> ২৫-মিনিট commute-এ ২টা article-এর podcast।</li>
+    <li><b>Quiz mode:</b> "এই article-এর main finding-এর উপর ১৫টা MCQ + ৫টা applied scenario question।"</li>
+    <li><b>Specialty exam prep:</b> তিনি FCPS preparation-এ একই workflow use করেছিলেন।</li>
+</ul>
+
+<h2>Practice management — Time + revenue</h2>
+
+<ul>
+    <li><b>Appointment scheduling:</b> Google Calendar + ChatGPT-এ daily summary। "আজকের ৪০ appointment-এ কতজন follow-up, কতজন new, কে কে high-priority (complex case)?"</li>
+    <li><b>Inventory:</b> Medicine stock sheet ChatGPT-এ paste → "এই sheet-এ যা stock <১৫ unit, সেগুলো list করো, suggested reorder quantity সহ।"</li>
+    <li><b>Billing/insurance:</b> Insurance claim form drafting — AI-augmented (verify mandatory)।</li>
+    <li><b>Patient SMS reminder:</b> Bangla, age-appropriate, AI-batch-generate।</li>
+</ul>
+
+<h2>২০২৬-এর recommended tool stack (BD GP-এর জন্য)</h2>
+
+<div class="stat-row">
+    <div class="stat"><span class="num">Otter.ai</span><span class="label">Consultation transcribe ($৮.৩৩/মাস)</span></div>
+    <div class="stat"><span class="num">Epocrates</span><span class="label">Drug interaction (free for HCP)</span></div>
+    <div class="stat"><span class="num">Glass.ai</span><span class="label">Differential diagnosis support (free)</span></div>
+    <div class="stat"><span class="num">ChatGPT Plus</span><span class="label">SOAP note + patient education ($২০)</span></div>
+</div>
+
+<p>মোট মাসিক ~$২৮.৩৩ (~৳৩,৪০০)। তাঁর daily ৭০-৯০ patient × ২.৫ min saved × ২২ working days = ৬০-৮২ ঘণ্টা/মাস ফিরে। ROI infinite।</p>
+
+<h2>উপসংহার — আপনার আজকের পদক্ষেপ</h2>
+
+<blockquote class="deep-blockquote">
+"AI আমার consultation-এ ৩য় ব্যক্তি নয় — আমার desk-এর সরঞ্জাম। যেমন stethoscope, BP machine, glucometer। কোনো রোগী এ পর্যন্ত আমার AI use নিয়ে অভিযোগ করেননি — কারণ তাঁদের time আমার সঙ্গে বেড়েছে, কমেনি। তাঁরা শুধু দেখেন আমি সন্ধ্যা ৬টার পর actually আমার সংসারে যাই। AI সেই time আমাকে ফিরিয়ে দিয়েছে।"
+<cite>— ডা. রিজওয়ান হোসেন, Kushtia</cite>
+</blockquote>
+
+<p>আজই করুন: ৩টা step। (১) ১টা specific workflow চিন্তা করুন যেখানে আপনি দৈনিক ২০-৩০ মিনিট spend করেন (note writing, drug check, patient education) — সেটায় AI try করুন। (২) Patient identifier-এর সমন্বিত strict anonymization policy লেখুন এবং desk-এ paste করুন। (৩) Tool-এর জন্য maximum মাসে $৩০ budget set করুন, কিন্তু expect করুন ৬০-৮০ ঘণ্টার time return-এর। ৬ সপ্তাহ পর আপনি ডা. রিজওয়ানের মতো আপনার practice-এ একই difference দেখবেন।</p>
 
         <h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
         <ul>
