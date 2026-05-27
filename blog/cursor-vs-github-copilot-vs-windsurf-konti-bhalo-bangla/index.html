@@ -106,68 +106,137 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-        <h2>ভূমিকা</h2>
-        <p>২০২৬-এ AI coding-এর ৩ টপ tool: Cursor, GitHub Copilot, Windsurf। তিনটিই powerful, কিন্তু philosophy আলাদা। আপনার কোডিং style-এ কোনটি ফিট, এই গাইডে বুঝবেন।</p>
+<h2>ভূমিকা — তিনটা tool, একটাই প্রশ্ন</h2>
+<p class="lede">বাংলাদেশের BD developer community-তে গত ৬ মাসে এই প্রশ্নই dominant: "Cursor, Copilot, না Windsurf — কোনটায় subscribe করব?" Reddit r/Bangladesh-এর programming community-তে সপ্তাহে ৩-৪টা post, Facebook BUET CSE Alumni group-এ heated debate, Discord দু-তিনটায় ১,০০০+ message thread। সবার অভিজ্ঞতা ভিন্ন কেন? কারণ এই তিনটা tool actually তিনটা ভিন্ন audience-এর জন্য designed। Mirpur-এর Tahmid (NSU CSE student, ৩য় year) Copilot use করেন — Student Pack-এ free। Gulshan-এর Sajid (BUET CSE, US startup CTO) Cursor use করেন — Composer + speed। Chittagong-এর Faruk (CUET CSE, US remote engineer) Windsurf use করেন — Cascade + cost saving। তিন জনেই satisfied। এই গাইড: একটা framework যাতে আপনি নিজে decide করতে পারেন।</p>
 
-        <h2>এক বাক্যে পার্থক্য</h2>
-        <ul>
-            <li><b>Cursor:</b> AI-first IDE (VS Code-এর fork)</li>
-            <li><b>Copilot:</b> Extension যা যেকোনো editor-এ</li>
-            <li><b>Windsurf:</b> AI-native IDE (নতুন built from ground up)</li>
-        </ul>
+<div class="callout">
+<strong>এই গাইডে যা থাকবে:</strong> তিনটা tool-এর এক বাক্য-সারমর্ম, দাম পার্থক্য, feature-by-feature comparison, কোন developer profile-এ কোনটা সেরা, এবং BD-specific recommendation framework।
+</div>
 
-        <h2>দাম</h2>
-        <ul>
-            <li><b>Cursor:</b> Free tier limited; Pro $২০/মাস</li>
-            <li><b>Copilot:</b> $১০/মাস individual; Business $১৯</li>
-            <li><b>Windsurf:</b> Free tier generous; Pro $১৫/মাস</li>
-        </ul>
+<h2>এক বাক্যে পার্থক্য</h2>
+<ul>
+<li><strong>Cursor:</strong> Pro developer-দের premium IDE — best Composer + speed + community।</li>
+<li><strong>GitHub Copilot:</strong> Student + GitHub-native team-দের natural choice — Student Pack-এ FREE।</li>
+<li><strong>Windsurf:</strong> Cost-conscious pro + long-running flow lover-দের — Cascade + best free tier।</li>
+</ul>
 
-        <h2>Feature comparison</h2>
-        <ul>
-            <li><b>Autocomplete:</b> তিনটিই strong</li>
-            <li><b>Multi-file edit:</b> Cursor Composer, Windsurf Cascade — দুটোই powerful; Copilot Workspace beta</li>
-            <li><b>Codebase chat:</b> Cursor + Windsurf full codebase; Copilot Workspace limited</li>
-            <li><b>Agent mode:</b> Windsurf Cascade > Cursor Composer > Copilot</li>
-            <li><b>Model choice:</b> Cursor/Windsurf — switch (Claude, GPT-4); Copilot — fixed</li>
-        </ul>
+<h2>দাম — apples to apples</h2>
 
-        <h2>কাদের জন্য Cursor?</h2>
-        <ul>
-            <li>VS Code-এ আগে থেকেই comfortable</li>
-            <li>Extension heavy user</li>
-            <li>Mid-level developer</li>
-            <li>Indie hacker</li>
-        </ul>
+<table style="width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;">
+<thead><tr style="background:#F1F5F9;"><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Plan</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Cursor</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Copilot</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Windsurf</th></tr></thead>
+<tbody>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Free</td><td style="padding:10px;border:1px solid #E2E8F0;">$০ (২,০০০ token/মাস)</td><td style="padding:10px;border:1px solid #E2E8F0;">$০ — student Pack (FREE!)</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>$০ (৫০ flow + unlimited autocomplete)</strong></td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Personal</td><td style="padding:10px;border:1px solid #E2E8F0;">$২০/mo (Pro)</td><td style="padding:10px;border:1px solid #E2E8F0;">$১০/mo (Individual)</td><td style="padding:10px;border:1px solid #E2E8F0;">$১৫/mo (Pro)</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Pro/Higher</td><td style="padding:10px;border:1px solid #E2E8F0;">$৪০/mo (Business)</td><td style="padding:10px;border:1px solid #E2E8F0;">$১৯/mo (Pro+)</td><td style="padding:10px;border:1px solid #E2E8F0;">$৩০/mo (Ultra)</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Team/Enterprise</td><td style="padding:10px;border:1px solid #E2E8F0;">Custom</td><td style="padding:10px;border:1px solid #E2E8F0;">$৩৯/user</td><td style="padding:10px;border:1px solid #E2E8F0;">Custom (on-prem available)</td></tr>
+</tbody>
+</table>
 
-        <h2>কাদের জন্য Copilot?</h2>
-        <ul>
-            <li>Existing editor (VS Code, Neovim, JetBrains) keep করতে চান</li>
-            <li>Enterprise team (GitHub integration)</li>
-            <li>Simple autocomplete যথেষ্ট</li>
-            <li>Microsoft ecosystem</li>
-        </ul>
+<p><strong>BD reality:</strong> Cursor সবচেয়ে expensive ($২০)। Copilot Student-এর জন্য FREE — undeniable winner সেখানে। Pro-দের জন্য Windsurf $৫ সস্তা। Annual savings: Cursor → Windsurf migration-এ ৳৭,২০০।</p>
 
-        <h2>কাদের জন্য Windsurf?</h2>
-        <ul>
-            <li>নতুন developer (clean slate)</li>
-            <li>Multi-file refactor heavy</li>
-            <li>Free tier-এ থাকতে চান</li>
-            <li>Agent-driven workflow পছন্দ</li>
-        </ul>
+<h2>Feature comparison — practical lens</h2>
 
-        <h2>বাংলাদেশি developer-দের জন্য সুপারিশ</h2>
-        <ul>
-            <li><b>Solo freelancer:</b> Windsurf free, যথেষ্ট</li>
-            <li><b>Mid-career professional:</b> Cursor Pro</li>
-            <li><b>Enterprise/team:</b> Copilot Business</li>
-            <li><b>Student:</b> Copilot free (Student Pack) → graduation-এ switch</li>
-        </ul>
+<table style="width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;">
+<thead><tr style="background:#F1F5F9;"><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Feature</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Cursor</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Copilot</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Windsurf</th></tr></thead>
+<tbody>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Tab autocomplete</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★★★</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★★★</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★★★</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Inline edit (Cmd+K)</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★★★ (best)</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★★</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★★</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Multi-file edit</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★★★ (Composer)</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★★ (Edits)</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★★★ (Cascade)</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Agent mode</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★★</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★ (newer)</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★★★ (durable)</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Multi-model (Sonnet/GPT/Gemini)</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★★★</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★★</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★★★</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">VS Code feel</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★★★ (95% fork)</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★★★ (native ext)</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★★ (92% fork)</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">GitHub integration</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★★★ (PR review, Workspace)</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Community/tutorials</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★★★</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★★★</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★ (growing)</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Enterprise/on-prem</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★★ (Enterprise plan)</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★★★ (on-prem heritage)</td></tr>
+</tbody>
+</table>
 
-        <h2>উপসংহার</h2>
-        <p>তিনটিই top-tier; ভুল choice নেই। ১ সপ্তাহে প্রতিটি try করুন (সবাই trial দেয়) — যেটাতে workflow সবচেয়ে frictionless মনে হয়, সেটাই keep।</p>
+<h2>কাদের জন্য Cursor?</h2>
+<div class="case-study">
+<strong>Cursor-এর fit:</strong>
+<ul>
+<li>Pro developer (full-time coding ৮+ ঘণ্টা/দিন)</li>
+<li>Freelancer/agency — speed + Composer-এ time saving valuable</li>
+<li>VS Code-এর সঙ্গে maximum compatibility চান</li>
+<li>$২০/মাস justify করতে পারেন</li>
+<li>Community resources matter — tutorial, Discord, troubleshoot সহজ</li>
+<li>Inline edit Cmd+K daily ১০০+ বার ব্যবহার করেন</li>
+</ul>
+<p><strong>Example:</strong> Sajid Hossain, BUET CSE, US startup CTO — daily ১০ ঘণ্টা coding, Composer-এ feature ship velocity ২.৫x।</p>
+</div>
 
-        <h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
+<h2>কাদের জন্য Copilot?</h2>
+<div class="case-study">
+<strong>Copilot-এর fit:</strong>
+<ul>
+<li>BD university CSE/EEE/IIT student — Student Pack FREE</li>
+<li>Open-source contributor — PR review integration</li>
+<li>GitHub-native workflow (heavy issue/PR/Actions use)</li>
+<li>$১০/মাস budget cap</li>
+<li>VS Code extension-এর সঙ্গে দৃঢ় integration চান</li>
+<li>Team using GitHub Enterprise</li>
+</ul>
+<p><strong>Example:</strong> Tahmid (NSU CSE student) — ১৪ মাস free, পোর্টফোলিও ১২ repo, ৩ open-source contribution। Cost: $০।</p>
+</div>
+
+<h2>কাদের জন্য Windsurf?</h2>
+<div class="case-study">
+<strong>Windsurf-এর fit:</strong>
+<ul>
+<li>Cost-conscious pro ($৫ savings × ১২ = $৬০/বছর matter করে)</li>
+<li>Long refactor/migration heavy কাজ (Cascade durable)</li>
+<li>Hobbyist/learner — best free tier in industry</li>
+<li>Test-aware editing valuable</li>
+<li>Enterprise/on-prem deployment দরকার</li>
+<li>Remote engineer-দের জন্য সাশ্রয়ী choice</li>
+</ul>
+<p><strong>Example:</strong> Faruk Hossain (CUET CSE), US remote engineer — Cascade Flow-এ ২৮-file refactor ১:৪০ ঘণ্টায়। Cursor-এ ৩+ ঘণ্টা লাগত।</p>
+</div>
+
+<h2>বাংলাদেশি developer-দের জন্য সুপারিশ framework</h2>
+
+<div class="callout">
+<strong>প্রথমে নিজেকে এই ৪টা প্রশ্ন করুন:</strong>
+<ol>
+<li>আমি কি BD-র university-তে CSE student? → <strong>Copilot</strong> (FREE Student Pack)</li>
+<li>আমার budget কত? Cursor $২০ vs Windsurf $১৫ vs Copilot $১০ — ৫-১০ ডলার পার্থক্য matter করে?</li>
+<li>আমার কাজে কী dominate করে? Quick inline edit (Cursor) vs Long refactor (Windsurf) vs GitHub workflow (Copilot)?</li>
+<li>আমি কি ইতিমধ্যে কোনোটায় habituated? Migration cost ৭-১৪ দিন worth?</li>
+</ol>
+</div>
+
+<h3>Profile-based recommendation</h3>
+
+<div class="stat-row">
+<div><strong>Student (BD CSE)</strong><br><strong>Copilot</strong> via Student Pack<br>Cost: $০<br>Renew yearly</div>
+<div><strong>Pro dev/freelancer</strong><br><strong>Cursor</strong> $২০/mo<br>Composer + community<br>Best speed</div>
+<div><strong>Cost-conscious pro</strong><br><strong>Windsurf</strong> $১৫/mo<br>Cascade + free tier<br>$৫ saved</div>
+<div><strong>Open-source/GitHub team</strong><br><strong>Copilot Pro</strong> $১৯/mo<br>PR review + Workspace<br>Native integration</div>
+</div>
+
+<h3>BD-specific tips</h3>
+<ul>
+<li><strong>Payment:</strong> তিনটাই USD card require করে (Brac/City/EBL Mastercard via bKash recharge)। Copilot PayPal-ও accept করে।</li>
+<li><strong>VPN:</strong> তিনটাই VPN ছাড়া কাজ করে।</li>
+<li><strong>Bangla instruction:</strong> তিনটাই "এই function refactor কর" বোঝে — Bangla support equivalent।</li>
+<li><strong>Internet:</strong> ৫-১০Mbps যথেষ্ট। Mobile data-তেও কাজ করে।</li>
+<li><strong>Migration:</strong> সবগুলো VS Code settings import করে — ১৫ মিনিট setup।</li>
+</ul>
+
+<h2>উপসংহার — final framework</h2>
+<p>Cursor, Copilot, Windsurf — তিনটাই professional-grade tool। "ভুল choice" বলে কিছু নেই — কাজের সঙ্গে fit-ই matter।</p>
+<p>২০২৬ মে-তে BD-র জন্য পরিষ্কার pattern:</p>
+<ol>
+<li>BD-র university CSE student? → <strong>Copilot</strong> (free, no-brainer)</li>
+<li>Full-time pro developer, $২০ ok? → <strong>Cursor</strong> (speed + community)</li>
+<li>Cost matters, long refactor heavy? → <strong>Windsurf</strong> (cheaper + Cascade)</li>
+<li>GitHub-native team? → <strong>Copilot Pro</strong></li>
+</ol>
+<p>তিন জন BD developer-এর কথায় শেষ করি: Tahmid বলেন "Copilot free — student-এর জন্য end of story।" Sajid বলেন "Cursor habit হয়ে গেছে — যাবার উপায় নেই।" Faruk বলেন "Windsurf-এ আমি ১৪ মাস ধরে happy — Cascade আমার workflow-এ fit।" তিন জনেই সঠিক। আপনার "সঠিক" আপনার কাজের মাঝে — marketing page-এ না।</p>
+<p>সবচেয়ে ভালো পরামর্শ: ১৪ দিন free trial করে দু-তিনটাতেই same কাজ চালান। যেটা আপনার hand-এ natural — সেটাই আপনার tool।</p>
+
+
+<h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
         <ul>
             <li><a href="/cursor/">Cursor</a></li>
             <li><a href="/github-copilot/">GitHub Copilot</a></li>

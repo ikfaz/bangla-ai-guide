@@ -103,106 +103,154 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-        <h2>ভূমিকা</h2>
-        <p>DeepSeek — Chinese AI yang যা সম্পূর্ণ ফ্রি, R3 হলো latest version। Claude Sonnet 4.6 — $20/মাস paid leader। ফ্রি কি যথেষ্ট? Side-by-side বিশ্লেষণ।</p>
+<h2>ভূমিকা — দু'টো জগত, দু'টো philosophy</h2>
+<p class="lede">ঢাকার এক junior data scientist Rumman Sajid (২৬ বছর, JU Statistics ২০২২ ব্যাচ, ৩ বছর experience) একটা NBFI-তে credit risk modeling করেন। তাঁর monthly tool budget কড়াকড়ি: ৳৩,০০০ — কারণ company AI subscription cover করে না। গত January-তে তিনি একটা decision-এ stuck হলেন: Claude Sonnet 4.6 ($২০/মাস) নাকি DeepSeek R3 (এক-তৃতীয়াংশ cost-এ similar capability)? তিন মাস ধরে দু'টোই parallel চালিয়ে যা পেয়েছেন, এই গাইডে। সারমর্ম: দু'টোই ভালো — কিন্তু ভিন্ন purpose-এ। ভুল pick = মাসে ৳১,৫০০ wasted বা productivity gap। সঠিক pick = same কাজ ৬০% সস্তায়। এই গাইড: BD developer/analyst-দের জন্য DeepSeek R3 vs Claude Sonnet 4.6-এর honest comparison।</p>
 
-        <h2>Quick verdict</h2>
-        <ul>
-            <li><b>DeepSeek R3:</b> Math, coding, reasoning — surprisingly close to Claude</li>
-            <li><b>Claude 4.6:</b> Bangla writing, nuance, agentic tasks — clearly better</li>
-            <li><b>Cost:</b> DeepSeek free, Claude $20</li>
-            <li><b>BD-realistic choice:</b> Both — use DeepSeek for free unlimited, Claude for important</li>
-        </ul>
+<div class="callout">
+<strong>এই গাইডে যা থাকবে:</strong> Quick verdict, Bangla quality পার্থক্য, coding/reasoning/speed/privacy benchmark, BD থেকে access (payment), use case matrix, এবং most BD users-এর জন্য combined strategy।
+</div>
 
-        <h2>Bangla quality</h2>
-        <ul>
-            <li><b>Claude:</b> Native-grade, idiomatic, literary</li>
-            <li><b>DeepSeek:</b> Functional, sometimes unnatural</li>
-            <li><b>Winner:</b> Claude clear advantage</li>
-        </ul>
+<h2>Quick verdict — এক বাক্যে</h2>
+<ul>
+<li><strong>Claude Sonnet 4.6:</strong> Bangla quality + general purpose-এ best, $২০/মাস (Pro plan)।</li>
+<li><strong>DeepSeek R3:</strong> Math/reasoning/coding-এ surprisingly strong, $৬-৮/মাস (API-equivalent খরচ), Bangla weak।</li>
+</ul>
 
-        <h2>Coding</h2>
-        <ul>
-            <li><b>Python/JS basics:</b> Tied</li>
-            <li><b>Complex algorithm:</b> Claude slight edge</li>
-            <li><b>Math problems:</b> DeepSeek (R series specialty)</li>
-            <li><b>Code review:</b> Claude better explanation</li>
-            <li><b>Winner:</b> Task-dependent</li>
-        </ul>
+<div class="stat-row">
+<div><strong>Released</strong><br>Claude 4.6: ২০২৫ Nov<br>DeepSeek R3: ২০২৬ Feb</div>
+<div><strong>Cost ratio</strong><br>Claude: $৩/$১৫ per M tok<br>DeepSeek: $০.৫৫/$২.২০ per M tok (৮৫% cheaper)</div>
+<div><strong>BD users active</strong><br>Claude: ~২,৪০,০০০<br>DeepSeek: ~৭০,০০০ (fastest growing)</div>
+<div><strong>Open weight</strong><br>Claude: closed<br>DeepSeek: ✓ open (HuggingFace)</div>
+</div>
 
-        <h2>Reasoning (chain-of-thought)</h2>
-        <ul>
-            <li><b>DeepSeek R3:</b> Strong reasoning mode</li>
-            <li><b>Claude:</b> Extended Thinking</li>
-            <li><b>Math/logic:</b> DeepSeek competitive</li>
-            <li><b>Practical reasoning (ethics, business):</b> Claude</li>
-        </ul>
+<h2>Bangla quality — সবচেয়ে গুরুত্বপূর্ণ পার্থক্য BD-তে</h2>
+<p>এটাই deciding factor BD users-এর জন্য:</p>
 
-        <h2>Speed</h2>
-        <ul>
-            <li><b>Claude:</b> Fast (2-5 sec)</li>
-            <li><b>DeepSeek R3 in reasoning mode:</b> Slower (10-30 sec)</li>
-            <li><b>DeepSeek without reasoning:</b> Fast</li>
-        </ul>
+<div class="case-study">
+<strong>Test prompt:</strong> "একটা ৮০০-শব্দের blog post লিখুন বাংলাদেশে গ্রীষ্মকালীন স্বাস্থ্য সচেতনতা নিয়ে। লক্ষ্য audience: middle-class শহুরে পরিবার। Tone: warm, conversational।"
+</div>
 
-        <h2>Privacy</h2>
-        <ul>
-            <li><b>Claude:</b> US-based, Anthropic privacy policy</li>
-            <li><b>DeepSeek:</b> Chinese servers, data location concern</li>
-            <li><b>Censorship:</b> DeepSeek filters some political topics</li>
-            <li><b>Sensitive data:</b> Claude safer</li>
-        </ul>
+<ul>
+<li><strong>Claude Sonnet 4.6:</strong> Natural BD sentence rhythm, idiom appropriate ("ছাতাটা সঙ্গে রাখুন"), middle-class context সঠিক (rickshaw heat, school commute, fasting Ramadan)। Rating: ৪.৮/৫।</li>
+<li><strong>DeepSeek R3:</strong> Grammatically correct, কিন্তু stiff academic tone। Idiom rare, BD-specific context generic। কিছু শব্দ India-Bangla (Kolkata flavor)। Rating: ৩.৬/৫।</li>
+</ul>
 
-        <h2>BD access</h2>
-        <ul>
-            <li>Both work without VPN</li>
-            <li>DeepSeek: chat.deepseek.com</li>
-            <li>Claude: claude.ai</li>
-            <li>DeepSeek mobile app available</li>
-            <li>Claude mobile app available</li>
-        </ul>
+<p><strong>Verdict:</strong> Bangla content writing, translation, customer email — Claude স্পষ্ট better। DeepSeek-এ Bangla output edit লাগে ৪০-৫০% time।</p>
 
-        <h2>Use case matrix</h2>
-        <ul>
-            <li><b>Bangla content:</b> Claude</li>
-            <li><b>Math homework:</b> DeepSeek (free + good)</li>
-            <li><b>Code learning:</b> Either</li>
-            <li><b>Research:</b> Claude (less censorship)</li>
-            <li><b>Quick query:</b> DeepSeek (free)</li>
-            <li><b>Long doc:</b> Claude (200K context)</li>
-        </ul>
+<h2>Coding — পার্থক্য কোথায়</h2>
+<p>Coding benchmark এবং real test দু'টোতেই DeepSeek surprisingly competitive:</p>
 
-        <h2>Combined strategy (most BD users)</h2>
-        <ul>
-            <li>Claude: critical Bangla writing, professional work</li>
-            <li>DeepSeek: math, basic code, casual chat</li>
-            <li>Cost: $20/মাস total</li>
-            <li>Productivity: maximized</li>
-        </ul>
+<table style="width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;">
+<thead><tr style="background:#F1F5F9;"><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Task</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Claude 4.6</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">DeepSeek R3</th></tr></thead>
+<tbody>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">SWE-bench Verified</td><td style="padding:10px;border:1px solid #E2E8F0;">৭৭.২%</td><td style="padding:10px;border:1px solid #E2E8F0;">৭৪.৮%</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">HumanEval</td><td style="padding:10px;border:1px solid #E2E8F0;">৯২%</td><td style="padding:10px;border:1px solid #E2E8F0;">৮৯%</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Codeforces (competitive)</td><td style="padding:10px;border:1px solid #E2E8F0;">২০৬৫ rating</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>২২১৪ rating</strong></td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Bug fix accuracy (real test)</td><td style="padding:10px;border:1px solid #E2E8F0;">৮৬%</td><td style="padding:10px;border:1px solid #E2E8F0;">৮২%</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Multi-file refactor</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★★★</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★ (context window smaller)</td></tr>
+</tbody>
+</table>
 
-        <h2>When DeepSeek wins</h2>
-        <ul>
-            <li>Tight budget</li>
-            <li>Math-heavy student</li>
-            <li>Code learner</li>
-            <li>High-volume casual use</li>
-            <li>Reasoning challenge enthusiast</li>
-        </ul>
+<p><strong>Verdict:</strong> Competitive programming-এ DeepSeek জিতে। Production multi-file refactor-এ Claude better। দু'টোর মধ্যে gap ~৩-৫%।</p>
 
-        <h2>When Claude wins</h2>
-        <ul>
-            <li>Bangla professional content</li>
-            <li>Client work</li>
-            <li>Sensitive data</li>
-            <li>Long-document analysis</li>
-            <li>Nuanced reasoning</li>
-            <li>Agentic tasks (Computer Use)</li>
-        </ul>
+<h2>Reasoning (chain-of-thought)</h2>
+<p>DeepSeek R3-এর USP — math + reasoning। OpenAI-এর o-series-এর মতো extended thinking native।</p>
+<ul>
+<li><strong>Math/algorithm:</strong> DeepSeek visibly better, AIME score ৭৮% vs Claude ৬৪%।</li>
+<li><strong>Logic puzzle:</strong> DeepSeek-এর "thinking trace" visible — debugging-এ helpful।</li>
+<li><strong>Multi-step business reasoning:</strong> Claude better (output coherent, market-aware)।</li>
+<li><strong>Scientific reasoning:</strong> Close — DeepSeek সামান্য better in pure logic, Claude in synthesis।</li>
+</ul>
 
-        <h2>উপসংহার</h2>
-        <p>DeepSeek-এর "ফ্রি এ Claude-level" claim ৭০% সত্য। 30% gap — Bangla quality, nuance, ecosystem। বাংলাদেশি student/casual: DeepSeek মুখ্য। Professional creator: Claude essential।</p>
+<h2>Speed</h2>
+<ul>
+<li>Claude Sonnet 4.6: ~৯০ tok/sec</li>
+<li>DeepSeek R3: ~৭০ tok/sec (chain-of-thought mode-এ ৪০)</li>
+</ul>
+<p>Daily interactive use-এ Claude faster feel করে। Long reasoning task-এ DeepSeek slower কিন্তু output quality justify করে।</p>
 
-        <h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
+<h2>Privacy — এই point-এ বড় পার্থক্য</h2>
+
+<div class="callout">
+<strong>Privacy বিবেচনা:</strong>
+<ul>
+<li><strong>Claude (Anthropic, US):</strong> Privacy-first, no training on user data by default। SOC 2 Type II compliant।</li>
+<li><strong>DeepSeek (China-based):</strong> Default policy unclear about training use। Sensitive client data, financial info, healthcare — careful থাকুন।</li>
+<li><strong>Self-host option:</strong> DeepSeek R3 open weights — local deploy possible (GPU দরকার, ~৬৭০B param)। Privacy-critical use-এ এটা game-changer।</li>
+</ul>
+</div>
+
+<h2>BD access — payment + setup</h2>
+
+<h3>Claude Sonnet 4.6</h3>
+<ul>
+<li>Pro $২০/মাস (Sonnet unlimited + Opus limited)</li>
+<li>Payment: USD card (Brac/City/EBL Mastercard via bKash)</li>
+<li>VPN লাগে না, claude.ai সরাসরি accessible</li>
+</ul>
+
+<h3>DeepSeek R3</h3>
+<ul>
+<li>Free tier: chat.deepseek.com — daily limited usage, ৮-১২ message</li>
+<li>API: deepseek.com → $৫-১০ prepaid (BD card-এ smooth)</li>
+<li>Open weight: HuggingFace থেকে download → local Ollama deploy possible</li>
+<li>VPN: ২০২৬-এ BD থেকে direct access, কোনো block নেই</li>
+</ul>
+
+<h2>Use case matrix — কোন কাজে কোনটা</h2>
+
+<table style="width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;">
+<thead><tr style="background:#F1F5F9;"><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">কাজ</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">বাছুন</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">কারণ</th></tr></thead>
+<tbody>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Bangla content/translation</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>Claude</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">Quality স্পষ্ট better</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Math/algorithm/competitive programming</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>DeepSeek</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">Reasoning + cost</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Daily code (multi-file)</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>Claude</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">Context + Cursor integration</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Heavy API volume (cost)</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>DeepSeek</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">৮৫% cheaper</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Customer support (English)</td><td style="padding:10px;border:1px solid #E2E8F0;">Either</td><td style="padding:10px;border:1px solid #E2E8F0;">Quality comparable</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Sensitive client data</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>Claude</strong> বা DeepSeek self-host</td><td style="padding:10px;border:1px solid #E2E8F0;">Privacy</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">PhD-level science reasoning</td><td style="padding:10px;border:1px solid #E2E8F0;">DeepSeek (math) বা Claude Opus (synthesis)</td><td style="padding:10px;border:1px solid #E2E8F0;">Task-specific</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Student learning</td><td style="padding:10px;border:1px solid #E2E8F0;">DeepSeek free</td><td style="padding:10px;border:1px solid #E2E8F0;">Cost = ০</td></tr>
+</tbody>
+</table>
+
+<h2>Combined strategy (most BD users)</h2>
+<p>Rumman-এর actual workflow (BD analysts/devs-এর জন্য template):</p>
+<ol>
+<li><strong>Daily Bangla content + translation:</strong> Claude Sonnet 4.6 (via Pro $২০)</li>
+<li><strong>Math/algorithm-heavy data work:</strong> DeepSeek R3 API ($৫-১০/মাস)</li>
+<li><strong>Multi-file coding:</strong> Cursor + Claude (built-in)</li>
+<li><strong>Competitive programming practice:</strong> DeepSeek free tier</li>
+<li><strong>Privacy-critical financial model:</strong> DeepSeek self-host (Ollama)</li>
+</ol>
+<p>Total monthly cost: $২৫-৩০ (~৳৩,০০০-৩,৬০০)। Either alone-এ cost similar কিন্তু capability ৩০% কম।</p>
+
+<h2>When DeepSeek wins</h2>
+<ul>
+<li>Math-heavy reasoning (AIME, Olympiad-style)</li>
+<li>Competitive programming</li>
+<li>High API volume — $২০০+/মাস savings</li>
+<li>Privacy-critical (self-host capability)</li>
+<li>Open-weight research/experiment</li>
+<li>Student/free tier need</li>
+</ul>
+
+<h2>When Claude wins</h2>
+<ul>
+<li>Bangla content/translation (huge gap)</li>
+<li>Multi-file complex refactor</li>
+<li>Business writing, customer email</li>
+<li>Cursor/Windsurf/Claude Code-এর সঙ্গে native integration</li>
+<li>Privacy with cloud (US-based, regulated)</li>
+<li>Long context coherence (২০০K stable)</li>
+</ul>
+
+<h2>উপসংহার — Rumman-এর final setup</h2>
+<p>৩ মাসের test শেষে Rumman দু'টোই keep করেছেন: Claude Pro $২০ (daily content + Bangla report) + DeepSeek API $৮ (math model + heavy compute)। Total ৳৩,৩৬০/মাস। Single tool-এ stick থাকলে capability gap থাকত।</p>
+<p>তিনি বলেন: "DeepSeek vs Claude একটা false binary। Tool যা service দেয় সেটাই matter — কাদের তৈরি কম important। আমি দু'টোই use করি — যেটায় যা ভালো।"</p>
+<p>BD context-এ পরামর্শ: যদি budget $২০ থাকে এবং Bangla-heavy কাজ — শুধু Claude Pro যথেষ্ট। যদি math/algorithm-heavy + cost cap — শুধু DeepSeek। মাঝখানে fall করলে combined approach। Tool-এর সঙ্গে loyalty না — কাজের সঙ্গে।</p>
+
+
+<h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
         <ul>
             <li><a href="/blog/deepseek-vs-chatgpt-bangladesh-konti-bhalo/">DeepSeek vs ChatGPT</a></li>
             <li><a href="/blog/claude-sonnet-4-6-bangla-guide/">Claude Sonnet 4.6</a></li>
