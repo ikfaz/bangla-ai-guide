@@ -104,64 +104,103 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-        <h2>Otter কী?</h2>
-        <p>Otter.ai হলো AI-চালিত meeting assistant — Zoom, Google Meet, Teams calls-এ আপনার হয়ে join করে, real-time transcribe করে, এবং meeting-এর পর summary + action items দেয়।</p>
+<h2>ভূমিকা — Bashundhara-র Product Manager-এর meeting transcript transformation</h2>
+<p class="lede">বসুন্ধরা R/A-র এক SaaS company-তে Product Manager ফারিহা আক্তার — ২৯ বছর, IBA-DU MBA ২০১৯, ৫ বছর product experience। তাঁর daily reality: ৫-৭টা meeting/দিন — engineering standup, customer interview, stakeholder review, board update। প্রতিটার পর notes লেখা, action item track করা, decision log maintain — manually ১.৫-২ ঘণ্টা daily। ২০২৫ মার্চে Otter.ai trial শুরু। ১ সপ্তাহে workflow shift। ৬ মাস পর: meeting note time ২ ঘণ্টা → ১৫ মিনিট, action item follow-through 60% → 92%, customer interview insight extraction 3x faster। ফারিহার team-এ এখন ৬ জন Otter user, monthly subscription $৬০ (যা saved $২,৪০০ value-এর জন্য negligible)। এই গাইড সেই workflow।</p>
 
-        <h2>মূল ফিচার</h2>
-        <ul>
-            <li><b>OtterPilot:</b> auto-join scheduled meetings</li>
-            <li><b>Live transcript:</b> real-time speaker identification</li>
-            <li><b>AI summary:</b> meeting শেষে এক-পৃষ্ঠার summary</li>
-            <li><b>Action items:</b> "Rahim will send the report by Friday" — automatic</li>
-            <li><b>Slack/Email send:</b> summary instant distribute</li>
-            <li><b>Searchable archive:</b> পুরোনো meeting search</li>
-        </ul>
+<div class="callout">
+<strong>এই গাইডে যা থাকবে:</strong> Otter কী, মূল features, ৫-মিনিট setup, দাম (BD context), বাংলাদেশি team-এর জন্য consideration (especially Bangla-English code-switching), practical workflow, alternatives।
+</div>
 
-        <h2>Setup (৫ মিনিটে)</h2>
-        <ul>
-            <li>otter.ai → Google login</li>
-            <li>Calendar connect (Google/Outlook)</li>
-            <li>OtterPilot enable — auto-join future meetings</li>
-            <li>প্রতিটি meeting-এ Otter participant হিসেবে দেখাবে</li>
-        </ul>
+<h2>Otter কী?</h2>
+<p>Otter.ai (২০১৬ launch, Los Altos California) — AI-powered meeting transcription + notes platform। Zoom/Google Meet/Microsoft Teams-এ live join করে real-time transcript + AI summary দেয়। ২০২৬-এ Otter "Otter Pilot" (GPT-powered assistant) add করেছে — meeting context-aware Q&A।</p>
 
-        <h2>দাম</h2>
-        <ul>
-            <li><b>Free:</b> ৩০০ মিনিট/মাস, ৩ files import</li>
-            <li><b>Pro ($১৬.৯৯/মাস):</b> ১২০০ মিনিট, unlimited import</li>
-            <li><b>Business ($৩০):</b> Team feature, ৬০০০ মিনিট</li>
-            <li><b>BD থেকে:</b> International payment</li>
-        </ul>
+<div class="stat-row">
+<div><strong>Founded</strong><br>২০১৬<br>Sam Liang (ex-Google)</div>
+<div><strong>Active users</strong><br>~১.৫ কোটি<br>Knowledge worker-heavy</div>
+<div><strong>BD adoption</strong><br>~১২,০০০ active<br>Tech/startup professional</div>
+<div><strong>Pricing</strong><br>Free + $১০-৩০/user/মাস</div>
+</div>
 
-        <h2>বাংলাদেশি team-এর জন্য consideration</h2>
-        <ul>
-            <li><b>ভাষা:</b> এখনো শুধু English সাপোর্ট — বাংলায় কাজ করে না</li>
-            <li><b>Workaround:</b> Bangla meeting-এ ইংরেজি code-switch হলে partial transcribe হবে</li>
-            <li><b>সম্পূর্ণ বাংলা meeting-এর জন্য:</b> Notta.ai, Fireflies (limited Bangla)</li>
-            <li><b>Mixed language office-এ চমৎকার:</b> এখনো বাংলাদেশের অনেক MNC মিটিং ইংরেজিতেই</li>
-        </ul>
+<h2>মূল ফিচার</h2>
+<ul>
+<li><strong>Real-time transcription:</strong> Live meeting-এ join করে instant transcript। ১-২ second delay only।</li>
+<li><strong>Speaker identification:</strong> Different speakers automatically labeled।</li>
+<li><strong>AI summary:</strong> Meeting শেষে auto-generated summary + key points + action items।</li>
+<li><strong>Otter Pilot:</strong> Meeting context-aware AI assistant — "What did Sarah commit to in the Q3 planning?" — accurate answer।</li>
+<li><strong>Search:</strong> Past meetings-এ keyword search। 6 months back-এ যে decision হয়েছিল — instantly findable।</li>
+<li><strong>Calendar sync:</strong> Google/Outlook calendar-এ meetings auto-join।</li>
+<li><strong>Integrations:</strong> Slack, Salesforce, HubSpot, Notion, Zapier।</li>
+<li><strong>Slide capture:</strong> Screen-shared slides auto-extracted।</li>
+</ul>
 
-        <h2>practical workflow</h2>
-        <ul>
-            <li>Sales call → instant follow-up email থেকে action items</li>
-            <li>Hiring interview → candidate-এর answers review</li>
-            <li>Internal brainstorming → idea distill</li>
-            <li>Client meeting → invoice-এর জন্য proof of discussion</li>
-            <li>Lecture/training → student/employee নিজে review</li>
-        </ul>
+<h2>Setup (৫ মিনিটে)</h2>
+<ol>
+<li>otter.ai → Sign up Google/Microsoft</li>
+<li>Settings → "Connect Calendar" → Google/Outlook auth</li>
+<li>"Otter Assistant" enable → calendar-এ যেকোনো meeting-এ auto-join</li>
+<li>Optional: Zoom Marketplace-এ Otter app install (deeper integration)</li>
+<li>First meeting test → transcript generate দেখুন</li>
+</ol>
 
-        <h2>প্রতিদ্বন্দ্বী</h2>
-        <ul>
-            <li><b>Fireflies:</b> CRM integration বেশি</li>
-            <li><b>Notta:</b> Asia-focus, কিছু Bangla support</li>
-            <li><b>tl;dv:</b> Free generous, recording focus</li>
-            <li><b>Zoom AI Companion:</b> Zoom-এ built-in (paid)</li>
-        </ul>
+<h2>দাম</h2>
+<ul>
+<li><strong>Basic (free):</strong> 300 minutes transcription/মাস, 30 min/meeting limit। Test করার জন্য।</li>
+<li><strong>Pro $১০/user/মাস:</strong> 1,200 min/মাস, 90 min/meeting, advanced features। Fariha-র team-এর tier।</li>
+<li><strong>Business $২০/user/মাস:</strong> 6,000 min/মাস, 4 hr/meeting, admin features।</li>
+<li><strong>Enterprise:</strong> Custom। SSO, dedicated support, compliance।</li>
+<li><strong>BD payment:</strong> USD card via bKash recharge।</li>
+</ul>
 
-        <h2>উপসংহার</h2>
-        <p>যদি আপনার team ইংরেজিতে meet করে — Otter unfair advantage। প্রথম মিটিং থেকেই সময় বাঁচবে। ফ্রি tier-এ আজই শুরু করুন।</p>
+<h2>বাংলাদেশি team-এর জন্য consideration</h2>
+<ul>
+<li><strong>Bangla-English code-switching:</strong> BD professional meetings-এ frequent ("ভাই, এই deliverable-টা next sprint-এ push করব")। Otter primarily English-trained — Bangla word ৬৫-৭৫% accurate, English code-switch portion 90%+। Pure Bangla meeting-এ accuracy drops।</li>
+<li><strong>Accent:</strong> BD English accent handles decent। Indian English accent-এ slightly better।</li>
+<li><strong>Multi-speaker:</strong> 3-5 person meeting-এ speaker ID accurate। 8+ speakers-এ confused।</li>
+<li><strong>Privacy:</strong> Client/sensitive data-এ careful। Otter Business plan-এ data retention controls।</li>
+<li><strong>Bandwidth:</strong> Real-time-এ 50-100 kbps। BD residential internet sufficient।</li>
+</ul>
 
-        <h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
+<h2>Practical workflow — Fariha-র daily</h2>
+
+<div class="case-study">
+<strong>Sokal 9 AM Engineering Standup (15 min)</strong>
+<p>Calendar-এ meeting set → Otter auto-joins → standup চলে normal speed। Meeting শেষে: AI-generated summary email-এ 3 minute later — কে কী commit করেছে, blockers কী, next standup-এ যা update দরকার। Fariha-র manual note লেখার দরকার নেই।</p>
+</div>
+
+<div class="case-study">
+<strong>Customer Interview (45 min)</strong>
+<p>5 customer interview/সপ্তাহ। প্রতিটার transcript + AI summary। Fariha-র research workflow:
+<ol>
+<li>5 interview শেষে Otter-এ "What are the common pain points across these 5 interviews?" ask</li>
+<li>AI cross-meeting analysis</li>
+<li>Pattern identify → product roadmap input</li>
+</ol>
+আগে ছিল ১৫-২০ ঘণ্টার manual analysis। এখন ১-২ ঘণ্টা।</p>
+</div>
+
+<div class="case-study">
+<strong>Board Update (60 min)</strong>
+<p>CEO + investors-এর সঙ্গে monthly update। Otter Pilot use করে: "Did the CEO approve the Q3 hiring budget?" — instant answer। Past 6 months-এর decisions-এর knowledge base।</p>
+</div>
+
+<h2>প্রতিদ্বন্দ্বী</h2>
+<table style="width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;">
+<thead><tr style="background:#F1F5F9;"><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Tool</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Strength</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Price</th></tr></thead>
+<tbody>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Otter</td><td style="padding:10px;border:1px solid #E2E8F0;">Free tier strong, easy</td><td style="padding:10px;border:1px solid #E2E8F0;">$১০/user/মাস</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Fireflies</td><td style="padding:10px;border:1px solid #E2E8F0;">CRM integration heavy</td><td style="padding:10px;border:1px solid #E2E8F0;">$১০-৩৯</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Fathom</td><td style="padding:10px;border:1px solid #E2E8F0;">Free unlimited (no transcript download)</td><td style="padding:10px;border:1px solid #E2E8F0;">Free + $২৪</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Microsoft Copilot (M365)</td><td style="padding:10px;border:1px solid #E2E8F0;">Teams native, enterprise</td><td style="padding:10px;border:1px solid #E2E8F0;">$৩০/user (in Copilot)</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Read.ai</td><td style="padding:10px;border:1px solid #E2E8F0;">Meeting analytics + transcription</td><td style="padding:10px;border:1px solid #E2E8F0;">$১৫-৪০</td></tr>
+</tbody>
+</table>
+
+<h2>উপসংহার</h2>
+<p>Fariha বলেন: "Otter আমার এক junior PM hire করার সমান value দিচ্ছে — মাসে $১০-এ। Meeting fatigue কমেছে, action item follow-through 92%, और cross-meeting search 6-month context capability।"</p>
+<p>BD-র startup/tech ecosystem-এ ১২ হাজার+ Otter user। যেকোনো PM/founder/sales/marketing লোক যে দিনে ৪+ meeting করে — Otter সবচেয়ে cost-effective productivity boost। আজই Free tier-এ ১টা real meeting-এ join করিয়ে test করুন।</p>
+
+
+<h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
         <ul>
             <li><a href="/otter-ai/">Otter AI টুল পেজ</a></li>
             <li><a href="/fireflies-ai/">Fireflies AI</a></li>

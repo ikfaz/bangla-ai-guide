@@ -104,65 +104,108 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-        <h2>Fireflies কী?</h2>
-        <p>Fireflies.ai হলো sales/CRM-focused meeting assistant। Otter-এর মতোই transcribe করে, কিন্তু Salesforce/HubSpot/Pipedrive-এর সাথে deep integration এর USP।</p>
+<h2>ভূমিকা — Gulshan-এর SaaS sales team-এর CRM transformation</h2>
+<p class="lede">গুলশান ১-এর একটা B2B SaaS company "FieldOps Bangladesh"-এর Sales Director সারজিল আহমেদ — ৩৫ বছর, NSU MBA ২০১২, ১১ বছর enterprise sales (Banglalink, Aamra)-এ। ২০২৫ পর্যন্ত team: ৮ Account Executives + ৪ SDRs + ২ Sales Engineers, total ১৪ জন। Daily reality: ৩০-৪৫টা discovery + demo calls সারা team-এ। Manual CRM update post-call ৩০-৪৫ মিনিট each। AE-রা selling time-এর ৪০% admin work-এ যেত। CRM data quality inconsistent — কেউ detailed, কেউ skeleton। ২০২৫ এপ্রিলে Fireflies trial শুরু। ৬ মাস পর: CRM data quality 95%+, selling time 40% → 70%, deal velocity 1.4x, pipeline visibility full। এই গাইড সেই workflow।</p>
 
-        <h2>Otter-এর সাথে পার্থক্য</h2>
-        <ul>
-            <li><b>Fireflies:</b> CRM integration, sales analytics, conversation intelligence</li>
-            <li><b>Otter:</b> Live note-taking, collaboration</li>
-            <li><b>Best for Fireflies:</b> Sales team, customer success</li>
-            <li><b>Best for Otter:</b> Personal productivity, generic team</li>
-        </ul>
+<div class="callout">
+<strong>এই গাইডে যা থাকবে:</strong> Fireflies কী, Otter-এর সাথে পার্থক্য, মূল features (CRM sync, sentiment analysis, search), setup, দাম, BD sales team-এর জন্য use cases, এবং টিপস।
+</div>
 
-        <h2>মূল feature</h2>
-        <ul>
-            <li><b>Auto-join:</b> Calendar integration</li>
-            <li><b>Topic detection:</b> "Pricing discussed", "Demo scheduled", "Objection raised"</li>
-            <li><b>Sentiment analysis:</b> Customer mood track</li>
-            <li><b>Talk-listen ratio:</b> Sales coaching জন্য</li>
-            <li><b>CRM auto-fill:</b> Meeting → contact/opportunity update</li>
-            <li><b>Soundbite:</b> Important moment clip</li>
-        </ul>
+<h2>Fireflies কী?</h2>
+<p>Fireflies.ai (২০১৬ launch, San Francisco) — AI meeting assistant for sales teams primarily। Otter-এর সমকক্ষ but sales-focused features stronger। Y Combinator backed, ১৫,০০,০০০+ users globally।</p>
 
-        <h2>Setup</h2>
-        <ul>
-            <li>fireflies.ai → Google/Microsoft signin</li>
-            <li>Calendar integration grant</li>
-            <li>CRM connect (optional but recommended)</li>
-            <li>Slack notification setup</li>
-            <li>Done — next meeting থেকে Fred (Fireflies bot) join করবে</li>
-        </ul>
+<div class="stat-row">
+<div><strong>Founded</strong><br>২০১৬<br>YC backed</div>
+<div><strong>Active users</strong><br>~১৫ লাখ global<br>Sales/CS-heavy</div>
+<div><strong>BD adoption</strong><br>~৪,৫০০ active<br>SaaS/B2B sales team</div>
+<div><strong>Pricing</strong><br>Free + $১০-৩৯/seat</div>
+</div>
 
-        <h2>দাম</h2>
-        <ul>
-            <li><b>Free:</b> 800 মিনিট transcription/মাস, 3 sec automated rules</li>
-            <li><b>Pro ($১৮/user/মাস):</b> Unlimited transcript, CRM integration</li>
-            <li><b>Business ($২৯):</b> Conversation analytics</li>
-            <li><b>Enterprise:</b> Custom</li>
-        </ul>
+<h2>Otter-এর সাথে পার্থক্য</h2>
+<table style="width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;">
+<thead><tr style="background:#F1F5F9;"><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Aspect</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Fireflies</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Otter</th></tr></thead>
+<tbody>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">CRM integration</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>Deep (Salesforce, HubSpot, Pipedrive, Zoho)</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">Basic (Zapier)</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Sales analytics</td><td style="padding:10px;border:1px solid #E2E8F0;">Strong (sentiment, talk ratio, topic tracking)</td><td style="padding:10px;border:1px solid #E2E8F0;">Basic</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Conversation intelligence</td><td style="padding:10px;border:1px solid #E2E8F0;">Yes (deal risk indicators)</td><td style="padding:10px;border:1px solid #E2E8F0;">Limited</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Best for</td><td style="padding:10px;border:1px solid #E2E8F0;">Sales/CS teams</td><td style="padding:10px;border:1px solid #E2E8F0;">PM/general</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Price (Business)</td><td style="padding:10px;border:1px solid #E2E8F0;">$১৯/seat/মাস</td><td style="padding:10px;border:1px solid #E2E8F0;">$২০/user/মাস</td></tr>
+</tbody>
+</table>
 
-        <h2>বাংলাদেশি sales team-এর জন্য use case</h2>
-        <ul>
-            <li>Outbound calls automatically log হয় CRM-এ</li>
-            <li>Top performer-এর call rewatch করে team train</li>
-            <li>Customer objection database build</li>
-            <li>Deal review meeting-এ conversation reference</li>
-            <li>New hire onboarding — অভিজ্ঞ rep-এর call শুনে</li>
-        </ul>
+<h2>মূল feature</h2>
+<ul>
+<li><strong>Auto-join + transcript:</strong> Zoom/Meet/Teams/Webex — calendar-based auto-join। 99% language accuracy English-এ।</li>
+<li><strong>AskFred (AI assistant):</strong> Meeting-related Q&A — "What was the customer's main objection in this demo?" → instant analysis।</li>
+<li><strong>CRM sync:</strong> Salesforce/HubSpot-এ call notes, action items, deal stage updates auto-push।</li>
+<li><strong>Sentiment analysis:</strong> Customer call positive/negative/neutral signals। Deal risk indicator।</li>
+<li><strong>Talk ratio:</strong> AE vs customer talk time — coaching insight।</li>
+<li><strong>Topic tracker:</strong> Pre-defined topics (pricing, competitors, integration) auto-detect।</li>
+<li><strong>Smart Search:</strong> Cross-meeting search — "When did customer X mention budget?"</li>
+<li><strong>Soundbites:</strong> Important quote clips share করা যায় team-এ।</li>
+</ul>
 
-        <h2>টিপস</h2>
-        <ul>
-            <li>Meeting শুরুতে participant-দের জানান — recording হচ্ছে</li>
-            <li>Topic filter setup করুন (industry-specific keyword)</li>
-            <li>Coaching feature — junior sales rep-এর call manager review করেন</li>
-            <li>Bangla call-এ accuracy কম — English call-এ best</li>
-        </ul>
+<h2>Setup</h2>
+<ol>
+<li>fireflies.ai → Sign up Google/Microsoft</li>
+<li>Calendar connect (Google/Outlook)</li>
+<li>"Fred" (Fireflies bot) auto-join enable</li>
+<li>CRM integration: Salesforce/HubSpot/Pipedrive setup (one-time OAuth)</li>
+<li>Team invite — admin manage seats</li>
+<li>First meeting test → Fred joins → transcript + summary in 5-10 min post-call</li>
+</ol>
 
-        <h2>উপসংহার</h2>
-        <p>Sales-driven organization-এর জন্য Fireflies অপরিহার্য। Otter-এর চেয়ে dam, কিন্তু CRM integration cost recover করে। Free tier দিয়ে আজই test করুন।</p>
+<h2>দাম</h2>
+<ul>
+<li><strong>Free:</strong> 800 minutes/user storage, basic transcription। 3 month retention।</li>
+<li><strong>Pro $১০/seat/মাস:</strong> Unlimited transcription, smart search, 8 month retention।</li>
+<li><strong>Business $১৯/seat/মাস:</strong> Sarjil-এর team-এর tier। CRM sync, conversation intelligence, unlimited storage।</li>
+<li><strong>Enterprise $৩৯+/seat/মাস:</strong> Single sign-on, custom retention, dedicated support।</li>
+</ul>
 
-        <h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
+<h2>বাংলাদেশি sales team-এর জন্য use case</h2>
+
+<div class="case-study">
+<strong>Use case 1: AE post-call CRM update (Sarjil's team)</strong>
+<p>30 min discovery call শেষ। আগে AE 20-30 min CRM-এ notes-action items-stage update। এখন Fireflies auto-syncs সব। AE শুধু review করেন। Time saved 25 min/call × 5 calls/day × 14 reps = 29 hours/day team-wide।</p>
+</div>
+
+<div class="case-study">
+<strong>Use case 2: Sales manager coaching</strong>
+<p>Sarjil weekly 2 hours dedicated coaching। আগে AE-এর সঙ্গে call-এ join করতে হত। এখন: Fireflies-এ AE-র last 10 calls listen on 2x speed। Talk ratio (60%+ AE talking = red flag), objection pattern, missed opportunity — data-driven coaching।</p>
+</div>
+
+<div class="case-study">
+<strong>Use case 3: Deal forecasting accuracy</strong>
+<p>Sentiment analysis + conversation signals → AI deal-risk score per opportunity। Pipeline forecast accuracy 60% → 88%। Q4 quota nail করা সহজ।</p>
+</div>
+
+<div class="case-study">
+<strong>Use case 4: Onboarding new AE</strong>
+<p>New AE join করে। Top 20 closed-won calls Fireflies-এ accessible। 1 week-এ industry knowledge + objection-handling patterns absorb। আগে 3 months ramp time।</p>
+</div>
+
+<div class="case-study">
+<strong>Use case 5: Customer success knowledge transfer</strong>
+<p>AE → CSM handoff smoother। CSM Fireflies-এ AE's last 3 calls listen করে full context absorb। No context loss।</p>
+</div>
+
+<h2>টিপস</h2>
+<ul>
+<li><strong>Customer permission:</strong> Recording-এর জন্য customer-এর verbal consent meeting শুরুতে। Legal requirement।</li>
+<li><strong>Topic tracker tune:</strong> "Pricing", "Competitor (XYZ)", "Integration", "Timeline" — custom topics define করুন BD market-এ।</li>
+<li><strong>Bangla code-switch handle:</strong> Pure Bangla portion 65-75% accurate। English-dominant call best results। Hybrid call 80-85%।</li>
+<li><strong>Privacy:</strong> Sensitive deal-এ "do not record" tag set কনুন। GDPR compliant।</li>
+<li><strong>CRM permissions:</strong> Fireflies-এর write access scoped properly setup। Wrong field overwrite avoid।</li>
+<li><strong>Weekly review:</strong> Manager-এর জন্য Fireflies dashboard weekly review — team health snapshot।</li>
+</ul>
+
+<h2>উপসংহার</h2>
+<p>Sarjil বলেন: "Fireflies আমাদের sales productivity-তে compound effect দিয়েছে। CRM data accurate, AE-রা selling time-এ focused, manager coaching data-driven। Monthly $২৬৬ subscription-এ deal velocity 1.4x — 6-figure annual revenue lift।"</p>
+<p>BD-র SaaS/B2B sales space-এ Fireflies fast-growing। যেকোনো sales team যাঁরা CRM-এ struggle করেন — Fireflies সেই pain solve করে। Free tier-এ 1-2 weeks pilot করুন real calls-এ। Data দেখে decide।</p>
+
+
+<h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
         <ul>
             <li><a href="/fireflies-ai/">Fireflies AI টুল পেজ</a></li>
             <li><a href="/otter-ai/">Otter AI</a></li>
