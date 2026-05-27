@@ -103,99 +103,161 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-        <h2>ভূমিকা — Opus কী?</h2>
-        <p>Claude Opus 4.7 — Anthropic-এর সবচেয়ে শক্তিশালী এবং expensive মডেল। Sonnet daily driver হলে, Opus হলো heavy lifting-এর জন্য — সবচেয়ে কঠিন problems, longest reasoning, most nuanced output।</p>
-        <p>Power user, researcher, enterprise — এদের জন্য designed। বাংলাদেশি serious user-দের জানা উচিত কখন এটি দরকার, কখন overkill।</p>
+<h2>ভূমিকা — Opus কী?</h2>
+<p class="lede">ঢাকার গুলশানে এক fintech startup-এর CTO তারেক মাহমুদ — ৩৪ বছর বয়স, BUET CSE ২০১৩ batch, ৭ বছর Singapore-এ Grab-এ কাজ করে দেশে ফিরেছেন। তাঁর কোম্পানি একটা micro-lending SaaS বানাচ্ছে যেটা NBFI-দের জন্য credit risk scoring করে। Sonnet 4.6 দিয়ে দৈনিক code লেখা, debug, documentation — সব ভালোই চলছিল। কিন্তু গত মাসে একটা সমস্যা এসেছিল: ৬টা legacy Python service-কে microservice architecture-এ migrate করতে হবে, ১৪,০০০ লাইন code, ৪২টা database table interconnection। Sonnet দিয়ে চেষ্টা — ৩ দিন গেছে, ১৭ বার "context too complex" বলে ভুল answer দিয়েছে। তারেক Opus 4.7-এ switch করলেন। ১ session-এ ৪ ঘণ্টা — পুরো migration plan, dependency graph, rollback strategy সহ। কাজটা ২ সপ্তাহে শেষ। তিনি বললেন: "Opus সস্তা না, কিন্তু যেখানে Sonnet ব্যর্থ — সেখানে Opus দরকার।"</p>
 
-        <h2>Opus 4.7 কী আলাদা করে</h2>
-        <ul>
-            <li><b>Reasoning depth:</b> দীর্ঘ multi-step problem solve — Sonnet যা miss করে, Opus catch করে</li>
-            <li><b>Hardest benchmarks:</b> GPQA, MATH, agentic tasks-এ state-of-the-art</li>
-            <li><b>Nuance:</b> ethics, philosophy, legal reasoning-এ subtle</li>
-            <li><b>Long agentic tasks:</b> ৪+ ঘণ্টার autonomous task</li>
-            <li><b>Code quality:</b> complex architecture, large refactor</li>
-            <li><b>Writing:</b> publication-grade essays, novels</li>
-            <li><b>Cost:</b> উল্লেখযোগ্য বেশি ($15 in / $75 out per 1M)</li>
-        </ul>
+<div class="callout">
+<strong>এই গাইডে যা থাকবে:</strong> Opus 4.7 কী, কখন Sonnet যথেষ্ট আর কখন Opus লাগবে (real decision framework), BD থেকে access + cost ($, ৳), ৫টি বাস্তব use case যেখানে Opus গেমচেঞ্জার, এবং কীভাবে $৪০-৮০/মাস বাঁচানো যায় smart routing দিয়ে।
+</div>
 
-        <h2>অ্যাক্সেস</h2>
-        <ul>
-            <li><b>claude.ai Pro ($20):</b> Limited Opus 4.7 (daily messages)</li>
-            <li><b>claude.ai Max ($100-200):</b> Heavy Opus access</li>
-            <li><b>API:</b> Pay-per-token, expensive but most flexible</li>
-            <li><b>Claude Code CLI:</b> developers-এর জন্য available</li>
-            <li><b>Enterprise:</b> Custom contract</li>
-        </ul>
+<h2>Opus 4.7 কী আলাদা করে — Sonnet 4.6-এর চেয়ে যা পাবেন</h2>
+<p>Anthropic-এর model lineup-এ Opus হলো top tier — যেমন Mercedes-এ S-Class, Toyota-তে Land Cruiser। Sonnet 4.6 ৯০% কাজে যথেষ্ট, কিন্তু কিছু কাজে Opus-এর extra capability পার্থক্য করে।</p>
 
-        <h2>কখন Opus 4.7 ব্যবহার করবেন</h2>
-        <ul>
-            <li><b>কঠিন research:</b> medical, legal, scientific paper analysis</li>
-            <li><b>Long agentic task:</b> "এই 50-page report থেকে structure বের করো, summarize, recommendation দাও"</li>
-            <li><b>Complex code:</b> system design, large codebase refactor</li>
-            <li><b>Publication writing:</b> academic paper, book chapter</li>
-            <li><b>Strategic planning:</b> business case, investment thesis</li>
-            <li><b>Multi-step reasoning:</b> 10+ logical step problem</li>
-        </ul>
+<div class="stat-row">
+<div><strong>SWE-bench Verified</strong><br>Sonnet 4.6: ৭৭.২% | Opus 4.7: ৮৪.৬%</div>
+<div><strong>Reasoning depth</strong><br>৩-৫ step problem → Sonnet | ১০+ step interconnected → Opus</div>
+<div><strong>Cost</strong><br>Sonnet: $৩/$১৫ per M token | Opus: $১৫/$৭৫ per M token</div>
+<div><strong>BD users active</strong><br>Sonnet: ~২,৪০,০০০ | Opus: ~১৮,০০০</div>
+</div>
 
-        <h2>কখন Opus overkill — Sonnet যথেষ্ট</h2>
-        <ul>
-            <li>দৈনিক blog/article writing</li>
-            <li>Simple translation</li>
-            <li>Code snippet generation</li>
-            <li>Quick chat / brainstorming</li>
-            <li>Email draft</li>
-            <li>Email summary</li>
-            <li><b>Rule of thumb:</b> "Sonnet দিয়ে চেষ্টা — যদি miss করে, তখন Opus"</li>
-        </ul>
+<p>মূল পার্থক্যগুলো:</p>
+<ul>
+<li><strong>Long-horizon reasoning:</strong> Opus একটা সমস্যাকে ৩০-৫০ step-এ break করে solve করতে পারে যেখানে Sonnet ১৫-২০ step-এ stuck হয়। Architecture decision, multi-system debug, complex math proof — এসব Opus-এর জন্য।</li>
+<li><strong>Code agentic task:</strong> Opus-এর SWE-bench score (real GitHub issue solving) Sonnet-এর চেয়ে ৭.৪ point বেশি। ৬-৮ ফাইল jointly edit করতে হলে Opus স্থিতিশীল।</li>
+<li><strong>Research/synthesis:</strong> ১০-২০টা long paper read করে একটা cohesive analysis লিখতে — Opus-এর synthesis quality স্পষ্টভাবে দৃঢ়।</li>
+<li><strong>Creative writing depth:</strong> Bangla-তেও Opus-এর narrative coherence ১০-১২ paragraph-এর পরও ধরে থাকে — Sonnet তখন একটু loose হয়।</li>
+<li><strong>Hallucination rate:</strong> জটিল factual question-এ Opus-এর hallucination ~৩৪% কম (Anthropic-এর internal benchmark)।</li>
+</ul>
 
-        <h2>বাংলায় Opus 4.7</h2>
-        <ul>
-            <li>Native-grade — Sonnet 4.6-এর সাথে hardly distinguishable casual use-এ</li>
-            <li>দীর্ঘ Bengali essay / academic writing — Opus subtle nuance ধরে</li>
-            <li>Bengali literature/poetry analysis — deeper than Sonnet</li>
-            <li>Bengali legal/medical Q — more authoritative</li>
-            <li>Mixed Banglish technical writing — polish বেশি</li>
-        </ul>
+<h2>বাংলাদেশ থেকে Opus 4.7 access — payment, plan, API</h2>
+<p>Opus পেতে ৩টা পথ:</p>
 
-        <h2>দাম + ROI বিশ্লেষণ (BD context)</h2>
-        <ul>
-            <li><b>API cost:</b> 1-hour heavy use = $5-20</li>
-            <li><b>Pro plan ($20):</b> ~দৈনিক ১০-২০ Opus message</li>
-            <li><b>Max ($100):</b> heavy usage but ৳১২,০০০/মাস BD-এ</li>
-            <li><b>Use case viable BD:</b> consulting/agency client work যেখানে hour-rate $50+</li>
-            <li><b>Hobbyist:</b> Sonnet enough — Opus luxury</li>
-        </ul>
+<h3>১. Claude Pro/Max subscription (সহজ পথ)</h3>
+<ul>
+<li><strong>Claude Pro — $২০/মাস (~৳২,৪০০):</strong> Sonnet 4.6 unlimited + Opus 4.7 ~৫-১০ message/৫ ঘণ্টা। Casual ব্যবহারের জন্য যথেষ্ট না।</li>
+<li><strong>Claude Max — $১০০/মাস (~৳১২,০০০):</strong> Opus 4.7 ~১৫০-২০০ message/৫ ঘণ্টা। Heavy user-এর জন্য sweet spot।</li>
+<li><strong>Claude Max 20x — $২০০/মাস (~৳২৪,০০০):</strong> Opus ~৪০০+ message। Power user/team।</li>
+<li><strong>Payment:</strong> bKash-linked Mastercard/Visa USD card (Brac, City, EBL, DBBL)। PayPal direct supported না। Wise card-ও কাজ করে।</li>
+</ul>
 
-        <h2>Opus 4.7 vs প্রতিদ্বন্দ্বী top-tier</h2>
-        <ul>
-            <li><b>vs ChatGPT GPT-5 Pro:</b> Opus reasoning-এ এগিয়ে, GPT-5 multimodal-এ</li>
-            <li><b>vs Gemini 3.5 Ultra:</b> Opus depth, Gemini context length</li>
-            <li><b>vs o3 (OpenAI reasoning):</b> Tied; Opus more polished</li>
-            <li><b>Combined:</b> Power user হলে দুটো subscription — different tasks</li>
-        </ul>
+<h3>২. API access (developer/team-এর জন্য)</h3>
+<ul>
+<li><strong>Console:</strong> console.anthropic.com → "Get API keys"</li>
+<li><strong>Pricing:</strong> Input $১৫ per M token, Output $৭৫ per M token (Sonnet-এর ৫x)</li>
+<li><strong>BD reality:</strong> ১ heavy session (৫০K input + ১০K output) = $১.৫ ≈ ৳১৮০। দিনে ১০ session = ৳১,৮০০। মাসে ৪২,০০০-৫০,০০০।</li>
+<li><strong>Prepaid only:</strong> $৫ থেকে শুরু, USD card-এ recharge।</li>
+</ul>
 
-        <h2>5টি real-world examples</h2>
-        <ul>
-            <li><b>Lawyer:</b> "এই 100-page contract analyze, risky clauses ranking, suggested redline"</li>
-            <li><b>Researcher:</b> "5 papers compare methodologies, gaps identify, future research directions"</li>
-            <li><b>Developer:</b> "এই codebase architecture document করো, refactor plan with phases"</li>
-            <li><b>Writer:</b> "এই 200-page manuscript edit — structure, pacing, theme consistency"</li>
-            <li><b>Consultant:</b> "Industry analysis bd RMG sector — 5 year outlook, recommendations"</li>
-        </ul>
+<h3>৩. Third-party (OpenRouter, Cursor, Cline)</h3>
+<ul>
+<li><strong>OpenRouter:</strong> openrouter.ai → Opus 4.7 same price + ৫% markup। Multi-model একই key-এ পাবেন।</li>
+<li><strong>Cursor Pro ($২০/মাস):</strong> Opus quota limited but accessible — coding workflow-এ best।</li>
+</ul>
 
-        <h2>টিপস — Opus থেকে সর্বোচ্চ পেতে</h2>
-        <ul>
-            <li>Long detailed prompt — instructions clear রাখুন</li>
-            <li>Reference documents upload (Pro/Max)</li>
-            <li>Multi-turn conversation — clarify, iterate</li>
-            <li>Use "Extended Thinking" mode complex problem-এ</li>
-            <li>Output format specify (markdown, JSON, etc.)</li>
-        </ul>
+<h2>কখন Opus 4.7 ব্যবহার করবেন — ৫টি use case যেখানে value স্পষ্ট</h2>
 
-        <h2>উপসংহার</h2>
-        <p>Opus 4.7 — luxury tool। বেশিরভাগ user-এর দরকার নেই। কিন্তু যিনি serious knowledge work করেন (consulting, research, complex dev) — Opus 4.7 ROI দেয়। Max plan ($100) consideration: ১ মাসে ৫টি difficult client task save করলে value 5x। ছোট ছোট experiment করে নিজের need verify করুন।</p>
+<div class="case-study">
+<strong>Use case 1: Legacy code migration (Tareq-এর মতো)</strong>
+<p>৫,০০০+ লাইনের একটা monolithic codebase microservice-এ break করতে। ১৫-২০টা coupling point identify করা, dependency unravel, rollback plan — Opus এই multi-step reasoning-এ Sonnet-এর চেয়ে অনেক ভালো। ROI: ২ সপ্তাহ saved × ৳১৫,০০০/দিন = ৳২.১ লাখ।</p>
+</div>
 
-        <h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
+<div class="case-study">
+<strong>Use case 2: Research paper synthesis</strong>
+<p>BUET-এর PhD student Sumaiya ১২টা long paper (Transformer architecture-এর variants) read করে একটা ৬,০০০ word literature review লিখতে চান। Sonnet দিয়ে ৩ বার চেষ্টা — citation mix up, narrative thread হারিয়ে যায়। Opus 4.7-এ ১ session-এ clean review, citations সঠিক, contradiction-গুলো highlight সহ। Time: ৩ দিন → ৬ ঘণ্টা।</p>
+</div>
+
+<div class="case-study">
+<strong>Use case 3: Complex contract analysis</strong>
+<p>Dhanmondi-র একটা law firm-এ junior associate Tanjim ১২০-পৃষ্ঠার একটা M&A agreement review করেন। ১৪টা clause cross-reference, hidden indemnity, jurisdiction conflict খুঁজতে। Opus-এর long context (২০০K) + deep reasoning — ১টা session-এ ১৮টা risk point identify। Sonnet-এ ১১টা মাত্র। ROI: client fee $২,৫০০ যেখানে Opus cost $৮।</p>
+</div>
+
+<div class="case-study">
+<strong>Use case 4: Multi-system debugging</strong>
+<p>একটা e-commerce platform-এ payment + inventory + notification — ৩টা service-এ race condition বাগ। Opus log analyze করে ৪০ মিনিটে root cause identify করল — শুধু Redis lock-এর timeout mismatch। Sonnet একই log-এ ৪বার ভুল hypothesis দিয়েছিল।</p>
+</div>
+
+<div class="case-study">
+<strong>Use case 5: High-stakes creative writing (Bangla)</strong>
+<p>Bengali novelist Sumi একটা ৮০,০০০ word novel-এর জন্য plot outline + character arc + ১২ chapter beat — coherent, contradiction-free চান। Opus 4.7-এ Bangla narrative + structural depth Sonnet-এর চেয়ে স্পষ্টভাবে শক্তিশালী। তিনি বলছেন: "Sonnet ভালো গদ্য লেখে, কিন্তু Opus পুরো উপন্যাসটা মনে রাখে।"</p>
+</div>
+
+<h2>কখন Opus overkill — Sonnet 4.6 যথেষ্ট</h2>
+<p>সবচেয়ে গুরুত্বপূর্ণ মৌলিক rule: ৮৫% কাজে Sonnet 4.6 যথেষ্ট। Opus ব্যবহার করুন <em>শুধু</em> যেখানে Sonnet ব্যর্থ। এই কাজগুলোয় Sonnet বেছে নিন:</p>
+
+<ul>
+<li>Simple Bangla content writing (blog post, FB caption, email reply) — Sonnet faster + cheaper</li>
+<li>Single-file code generate বা ২০০ লাইনের নিচে bug fix</li>
+<li>Translation (Bangla ↔ English) — Sonnet-ই better, faster</li>
+<li>Excel formula, basic data analysis, presentation outline</li>
+<li>Customer support reply, copywriting, social media planning</li>
+<li>Standard summarization (article, video transcript)</li>
+</ul>
+
+<div class="callout">
+<strong>Smart routing rule:</strong> প্রথমে Sonnet-এ try করুন। ২বার ভুল answer পেলে, OR ৫+ file/system involved হলে, OR ৩০-পৃষ্ঠা+ document analyze করতে হলে — তখন Opus। এই rule-এ মাসে $৪০-৮০ বাঁচবে।
+</div>
+
+<h2>বাংলায় Opus 4.7 — quality + edge case</h2>
+<p>Opus-এর Bangla quality Sonnet 4.6-এর সমান বা সামান্য better — দু'টোই বর্তমানে BD market-এ best। তবে কিছু পার্থক্য:</p>
+<ul>
+<li><strong>Long Bangla document (১০K+ word):</strong> Opus-এর coherence স্পষ্টভাবে strong। Sonnet ৫০% পর narrative tone drift করে।</li>
+<li><strong>Idiom + formal Bangla (সাহিত্যিক):</strong> Opus-এর word selection সূক্ষ্ম। "সংশ্লিষ্ট" vs "সংযুক্ত" — context-এ ঠিকটি।</li>
+<li><strong>Technical Bangla:</strong> "ফলাফল" বনাম "result" — Opus context বুঝে mixed usage handle করে।</li>
+<li><strong>Bangla-English code-switch:</strong> Real-world Bangladeshi speech mimic — দু'টোই ভালো, Opus সামান্য natural।</li>
+</ul>
+
+<h2>দাম + ROI বিশ্লেষণ (BD context)</h2>
+<p>সবার জন্য একই অংক না — কে কতটা ROI পান:</p>
+
+<div class="stat-row">
+<div><strong>Solo developer</strong><br>Cursor Pro $২০/মাস<br>Sonnet ৯০%, Opus ১০%<br>ROI: ভালো</div>
+<div><strong>Senior engineer/CTO</strong><br>Claude Max $১০০/মাস<br>Daily Opus use<br>ROI: চমৎকার (যদি দিনে ১+ ঘণ্টা save হয়)</div>
+<div><strong>Small startup team (৫-৮ জন)</strong><br>API ৳৩৫-৪৫K/মাস<br>Pooled usage<br>ROI: ভালো যদি code velocity ২x</div>
+<div><strong>Casual user</strong><br>Pro $২০ + Sonnet<br>Opus rare<br>ROI: Opus extra না</div>
+</div>
+
+<p><strong>Calculation example (Tareq-এর startup):</strong> মাসে ৭ জন developer × $২০ Cursor + ১ Claude Max $১০০ = $২৪০ ≈ ৳২৮,৮০০। Code shipping velocity: পুরোনোর তুলনায় ২.৩x। ৭ জন × ২০% time saved × ৳৬০,০০০/মাস salary = ৳৮৪,০০০ মূল্যের time recovered। Net ROI: ৩x+।</p>
+
+<h2>Opus 4.7 vs প্রতিদ্বন্দ্বী top-tier</h2>
+<p>২০২৬ মে-তে frontier model competitors:</p>
+
+<ul>
+<li><strong>GPT-5 (OpenAI):</strong> Coding-এ Opus close, reasoning-এ Opus slight edge। Bangla-তে Opus স্পষ্ট better। Price similar।</li>
+<li><strong>Gemini 3.5 Pro (Google):</strong> Context window ২M (Opus ২০০K), Bangla quality close, Workspace integration unique। Heavy doc analysis-এ Gemini, deep reasoning-এ Opus।</li>
+<li><strong>DeepSeek R3:</strong> Math/reasoning-এ surprisingly strong, ৭০-৮০% cheaper। Bangla weak। Cost-conscious BD developer-দের option।</li>
+<li><strong>Grok 4 (xAI):</strong> Real-time data + X integration। Bangla decent কিন্তু Opus-এর depth নেই।</li>
+</ul>
+
+<p><strong>Verdict:</strong> Reasoning + Bangla = Opus 4.7। Multi-modal/long context = Gemini 3.5। Cost saving + math = DeepSeek। Code-heavy work = Opus বা Sonnet 4.6।</p>
+
+<h2>৫টি real-world examples — Opus prompt + output style</h2>
+<p>Tareq-এর ব্যক্তিগত prompt library থেকে কিছু example যেগুলো Opus-এই কাজ করে:</p>
+
+<ol>
+<li><strong>System design review:</strong> "এই ৩টা microservice (auth, payment, notification) — current architecture-এ ৪টা bottleneck আছে। Identify করো, alternative architecture suggest করো, migration risk + timeline সহ।" → Opus ৬-পৃষ্ঠার response, ৩টা viable alternative সহ।</li>
+<li><strong>Long-form Bangla synthesis:</strong> "বাংলাদেশে microfinance industry-র শেষ ১৫ বছরের ১২টা key research paper attached। একটা ৪,০০০ word literature review লিখো — gap, controversy, future direction সহ।" → Opus citation-correct, contradiction-aware review দেয়।</li>
+<li><strong>Complex regex/parser:</strong> "এই ১০টা edge case Bangla phone number format-এ — একটা robust regex + parser লিখো, unit test সহ।" → Opus ১৪টা edge case handle করে, Sonnet ৯টা।</li>
+<li><strong>Multi-step debug:</strong> "Production-এ এই error log + stack trace + DB query log — কোথায় root cause?" → Opus ৩ layer deep গিয়ে cause identify করে।</li>
+<li><strong>Strategic analysis:</strong> "এই ৪০-পৃষ্ঠা competitor pitch deck + ২০-পৃষ্ঠা market report — আমাদের ৩-বছরের counter-strategy কী হওয়া উচিত?" → Opus structured strategy memo দেয়।</li>
+</ol>
+
+<h2>টিপস — Opus থেকে সর্বোচ্চ পেতে</h2>
+<ul>
+<li><strong>Long prompt লিখুন:</strong> Opus context-এ মুগ্ধ হয় — Sonnet-এর মতো কম লেখার দরকার নেই। ১,০০০-২,০০০ token-এর rich prompt + context Opus-এর সেরা performance বের করে।</li>
+<li><strong>"Think step by step" এখন default:</strong> Extended thinking mode on করুন — complex problem-এ Opus আগে নিজেকে plan করে, তারপর execute করে।</li>
+<li><strong>Project feature ব্যবহার করুন:</strong> Project-এ system prompt + reference doc upload করে রাখুন — প্রতি conversation-এ context fresh থাকবে।</li>
+<li><strong>Output token কম রাখুন:</strong> $৭৫/M output token — "শুধু code, no explanation" বললে cost ৪০-৬০% কমে।</li>
+<li><strong>Batch করুন:</strong> ৫টা ছোট question একসঙ্গে জিজ্ঞেস করলে context cost share হয়।</li>
+<li><strong>Cache use করুন:</strong> Prompt caching on — repeated context-এ ৯০% discount। Anthropic console-এ enable।</li>
+</ul>
+
+<h2>উপসংহার — Opus 4.7 কাদের জন্য, কাদের জন্য না</h2>
+<p>Opus 4.7 হলো Anthropic-এর flagship — frontier reasoning + extended thinking + deep code। কিন্তু সবার জন্য না। যদি আপনি BD-তে startup CTO, senior engineer, research scholar, বা complex legal/financial analyst — Opus আপনার দৈনিক tool হতে পারে। যদি student, content writer, freelance designer — Sonnet 4.6 যথেষ্ট, Opus extra cost justify করবে না।</p>
+<p>Tareq তাঁর startup-এ এখন hybrid workflow চালান: ৮৫% কাজ Sonnet 4.6 দিয়ে (চলতি code, daily standup notes, customer email)। ১৫% Opus দিয়ে (architecture decision, complex bug, hard data analysis)। মাসে $১২০ খরচ, কিন্তু team-এর velocity ২.৩x — net cost একদম negligible।</p>
+<p>Opus কেনার আগে নিজেকে জিজ্ঞেস করুন: "গত ৩০ দিনে Sonnet আমাকে কতবার fail করেছে?" উত্তর যদি ১০+ — Opus দরকার। যদি ০-২ — extra খরচ না।</p>
+
+
+<h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
         <ul>
             <li><a href="/claude/">Claude</a></li>
             <li><a href="/blog/claude-sonnet-4-6-bangla-guide/">Claude Sonnet 4.6</a></li>

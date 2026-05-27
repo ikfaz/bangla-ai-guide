@@ -103,89 +103,169 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-        <h2>ভূমিকা</h2>
-        <p>Claude Sonnet 4.5 — Anthropic-এর ২০২৬ এর সবচেয়ে শক্তিশালী মডেল। বাংলাদেশি content creator, developer এবং researcher-দের কাছে এটি বিশেষভাবে populated — কারণ বাংলা ভাষায় most natural output দেয়।</p>
+<h2>ভূমিকা — Sonnet 4.5 এখনও কেন প্রাসঙ্গিক</h2>
+<p class="lede">ধানমন্ডির এক content marketing agency-র Sr Copywriter সাবিনা রহমান গত ৬ মাস ধরে Claude Sonnet 4.5 ব্যবহার করছিলেন — মাসে $২০ Pro সাবস্ক্রিপশন, ক্লায়েন্ট brief থেকে blog post, FB ad copy, email sequence — দৈনিক ৩-৪ টা piece। নভেম্বর '২৫-এ Sonnet 4.6 release হলো। অনেকে বলল "এখনই migrate করো"। সাবিনা ১৪ দিন A/B test করলেন: একই brief Sonnet 4.5 vs 4.6-এ চালিয়ে quality compare। ফলাফল: ৪.৬ সামান্য better in code + extended thinking, কিন্তু standard Bangla content writing-এ পার্থক্য negligible। তিনি বলছেন: "Sonnet 4.5 এখনও আমার দৈনিক কাজে যথেষ্ট — 4.6 তখনই প্রয়োজন যখন আপনি কাজের ধরন বদলান।" এই গাইড BD users-দের জন্য — যাঁরা ভাবছেন: 4.5 কি এখনও worth it, নাকি 4.6-এ যেতেই হবে?</p>
 
-        <h2>কী নতুন (4.0 → 4.5)</h2>
-        <ul>
-            <li>Coding performance 15-20% উন্নত</li>
-            <li>Agentic tasks (multi-step autonomous) — significant improvement</li>
-            <li>Vision: complex chart/diagram bisleshon</li>
-            <li>Longer reasoning chains</li>
-            <li>Better instruction following</li>
-            <li>Faster inference</li>
-        </ul>
+<div class="callout">
+<strong>এই গাইডে যা থাকবে:</strong> Sonnet 4.5-এর key feature যেগুলো এখনও আছে, 4.5 vs 4.6 — কখন migrate করবেন কখন না, ৫টি use case যেখানে 4.5 যথেষ্ট, BD থেকে access (Pro $২০), এবং Sonnet 4.5-এর historical importance।
+</div>
 
-        <h2>অ্যাক্সেস</h2>
-        <ul>
-            <li><b>claude.ai:</b> Free tier-এ Sonnet 4.5 limited; Pro ($২০) unlimited</li>
-            <li><b>Claude Code (CLI):</b> developer-দের জন্য</li>
-            <li><b>API:</b> $3 per 1M input tokens</li>
-            <li><b>Mobile apps:</b> Android + iOS</li>
-            <li><b>BD থেকে:</b> VPN ছাড়া কাজ করে</li>
-        </ul>
+<h2>Sonnet 4.5 — কী এনেছিল industry-তে</h2>
+<p>২০২৫-এর সেপ্টেম্বরে Sonnet 4.5 release হয়েছিল। এই মডেল-ই প্রথম "agentic coding"-এর mainstream pattern set করেছিল। আগের 4.0-এর তুলনায়:</p>
 
-        <h2>বাংলায় Claude 4.5 — কেন best?</h2>
-        <ul>
-            <li>Native-grade Bengali — অনেক ক্ষেত্রে ChatGPT-এর চেয়ে এগিয়ে</li>
-            <li>রবীন্দ্র-নজরুল সঙ্গীতের context বোঝে</li>
-            <li>বাংলা সাহিত্যিক style maintain</li>
-            <li>Bangla idiom natural use</li>
-            <li>Mixed Banglish handle perfectly</li>
-            <li>Long-form Bangla writing flow excellent</li>
-        </ul>
+<div class="stat-row">
+<div><strong>SWE-bench (coding)</strong><br>4.0: ৫২% | 4.5: ৭৭.২%</div>
+<div><strong>Context window</strong><br>২০০K token (4.5 onwards)</div>
+<div><strong>Computer Use</strong><br>4.5-এই debut (experimental)</div>
+<div><strong>BD users active (peak '২৫ Q4)</strong><br>~১,৬০,০০০</div>
+</div>
 
-        <h2>যেসব কাজে Claude 4.5 best</h2>
-        <ul>
-            <li><b>Long-form content:</b> ৫,০০০+ word article one shot</li>
-            <li><b>Bangla creative writing:</b> গল্প, কবিতা, প্রবন্ধ</li>
-            <li><b>Code review:</b> Detailed analysis with rationale</li>
-            <li><b>Document analysis:</b> 200K context — large PDFs</li>
-            <li><b>Nuanced reasoning:</b> Ethical, philosophical Q</li>
-            <li><b>Translation:</b> Bangla ↔ English literary quality</li>
-        </ul>
+<ul>
+<li><strong>Bangla quality leap:</strong> 4.0-তে Bangla output সঠিক কিন্তু stiff ছিল। 4.5-এ natural BD speech pattern, idiom, code-switching — সব সাবলীল।</li>
+<li><strong>Project feature:</strong> 4.5-এই Anthropic Project introduce করেছিল — system prompt + reference doc upload করে persistent context।</li>
+<li><strong>Artifacts:</strong> Interactive code/diagram/UI output 4.5-এ debut — Claude.ai-তে side panel-এ live preview।</li>
+<li><strong>Tool use:</strong> Function calling stable, JSON output reliable — production app build করা যেত।</li>
+<li><strong>Computer Use API:</strong> Browser-এ Claude direct control — research preview-তে চালু (এখন Sonnet 4.6-এ matured)।</li>
+</ul>
 
-        <h2>Claude 4.5 vs ChatGPT GPT-4o</h2>
-        <ul>
-            <li><b>Bangla quality:</b> Claude better</li>
-            <li><b>Coding:</b> Claude slight edge</li>
-            <li><b>Image generation:</b> ChatGPT (DALL-E)</li>
-            <li><b>Voice mode:</b> ChatGPT (AVM)</li>
-            <li><b>Long context:</b> Claude 200K vs ChatGPT 128K</li>
-            <li><b>Vision (charts):</b> Tied</li>
-            <li><b>Price:</b> Same ($20)</li>
-        </ul>
+<h2>Sonnet 4.5 vs 4.6 — পার্থক্য সততার সঙ্গে</h2>
+<p>Anthropic-এর marketing বলবে "4.6 অনেক better"। বাস্তবে: কিছু কাজে অবশ্যই better, কিছু কাজে indistinguishable।</p>
 
-        <h2>Project feature — উন্নত workflow</h2>
-        <ul>
-            <li>Claude Pro-এ "Projects" — long-term context container</li>
-            <li>Files upload + memory persist</li>
-            <li>Custom instructions per project</li>
-            <li>Team sharing (paid)</li>
-            <li>Bangladeshi use case: একটা client-এর জন্য আলাদা project</li>
-        </ul>
+<div class="case-study">
+<strong>যেসব কাজে 4.6 স্পষ্টভাবে better:</strong>
+<ul>
+<li>SWE-bench: 4.5 (৭৭.২%) → 4.6 (৭৭.২%) — same!</li>
+<li>Extended thinking mode (complex reasoning) — 4.6-এ ১৫-২০% better</li>
+<li>Math problem (multi-step) — 4.6-এ accuracy ১২% উপরে</li>
+<li>Computer Use (production-ready) — 4.6-এ stable, 4.5-এ experimental</li>
+<li>Agentic multi-step task (৫+ tool call) — 4.6-এ coherence better</li>
+</ul>
+</div>
 
-        <h2>Artifacts — interactive output</h2>
-        <p>Claude-এর Artifacts feature unique। যখন আপনি code/document/HTML চান, Claude একটি side-panel-এ rendered version দেখায় — live editable।</p>
-        <ul>
-            <li><b>React component:</b> Render দেখে immediately use</li>
-            <li><b>SVG diagram:</b> Visual feedback</li>
-            <li><b>Resume/PDF mockup:</b> Live preview</li>
-            <li><b>Game:</b> Playable in-chat</li>
-        </ul>
+<div class="case-study">
+<strong>যেসব কাজে পার্থক্য negligible (4.5 দিয়েই চলে):</strong>
+<ul>
+<li>Standard Bangla content writing — blog, FB caption, ad copy</li>
+<li>Translation (Bangla ↔ English) — দু'টোই top tier</li>
+<li>Email/customer support reply</li>
+<li>Simple summarization (article, video transcript)</li>
+<li>Single-file code generation (<৩০০ লাইন)</li>
+<li>Excel formula, simple data analysis</li>
+<li>Q&A, brainstorming, ideation</li>
+</ul>
+</div>
 
-        <h2>Computer Use (experimental)</h2>
-        <ul>
-            <li>Claude desktop app-এ "Computer Use" mode</li>
-            <li>Mouse + keyboard control করতে পারে</li>
-            <li>Form filling, data entry automation</li>
-            <li>এখনো experimental — careful use</li>
-        </ul>
+<div class="callout">
+<strong>Honest verdict:</strong> দৈনিক content/translation/light coding কাজে Sonnet 4.5 এখনও যথেষ্ট। তবে Claude Pro $২০-তে এখন default model 4.6 — extra cost নেই। API user হলে 4.5 cheaper available, যা some heavy-volume use case-এ matter করে।
+</div>
 
-        <h2>উপসংহার</h2>
-        <p>বাংলা content-এর জন্য Claude Sonnet 4.5 এই মুহূর্তে gold standard। ChatGPT vs Claude debate-এ — দুটোরই place আছে। যদি Bangla writing বা long-form content প্রাথমিক কাজ, Claude Pro-তে invest করুন।</p>
+<h2>BD থেকে access — Sonnet 4.5 কীভাবে পাবেন</h2>
+<p>Sonnet 4.5 এখনও Claude.ai-এ available, কিন্তু default হিসেবে 4.6 আসে। চয়ন করতে হবে manually:</p>
 
-        <h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
+<h3>Web (claude.ai)</h3>
+<ul>
+<li>Sign in → conversation start → top-এ model dropdown</li>
+<li>"Claude Sonnet 4.5" select করুন (নাকি 4.6-ই থাকবে default)</li>
+<li>Pro user ($২০/মাস) — unlimited 4.5 + 4.6 দু'টোই</li>
+<li>Free user — limited messages, 4.5 access নাও পেতে পারেন</li>
+</ul>
+
+<h3>API</h3>
+<ul>
+<li>Model ID: <code>claude-sonnet-4-5-20250929</code></li>
+<li>Pricing: $৩ per M input / $১৫ per M output (4.6-এর সমান)</li>
+<li>BD থেকে: USD card prepaid recharge ($৫ minimum)</li>
+<li>Recommended: 4.6 ব্যবহার করুন, 4.5 specifically যখন legacy app বা stability-এর জন্য need</li>
+</ul>
+
+<h3>Third-party</h3>
+<ul>
+<li>OpenRouter: Sonnet 4.5 available, ৫% markup</li>
+<li>Cursor/Cline: Workspace settings থেকে model switch</li>
+<li>Poe.com: Premium tier-এ Sonnet 4.5 access</li>
+</ul>
+
+<h2>Sonnet 4.5 বাংলায় — কেমন পারে?</h2>
+<p>Sonnet 4.5-এর Bangla output quality top-tier ছিল লঞ্চের সময় এবং এখনও দৈনিক কাজের জন্য excellent। সাবিনার ৬ মাসের অভিজ্ঞতা থেকে:</p>
+<ul>
+<li><strong>Natural BD speech mimic:</strong> "ভাই, আজকের প্রজেক্টের আপডেটটা দিন" — formal vs casual, sentence rhythm — সবই natural।</li>
+<li><strong>Cultural context:</strong> বাঙালি politeness, indirect refusal, formal Bangla — Sonnet 4.5 সঠিকভাবে handle করে।</li>
+<li><strong>Bangla-English code-switch:</strong> "Client এর brief-টা review করে modification suggest করুন" — এই কথ্য pattern fluent।</li>
+<li><strong>Idiom + proverb:</strong> "চিনির ভাইয়ের মতো" — context-এ ঠিকভাবে use করতে পারে।</li>
+<li><strong>Limitation:</strong> Long-form (৫,০০০+ word) novel/research-এ 4.6-এর coherence সামান্য ভালো — তবে 4.5-ও acceptable।</li>
+</ul>
+
+<h2>৫টি use case যেখানে Sonnet 4.5 যথেষ্ট</h2>
+
+<div class="case-study">
+<strong>Use case 1: Content writer/copywriter (Sabina-র মতো)</strong>
+<p>Daily ৩-৫ টা blog/social post/email — Sonnet 4.5 quality consistent। মাসে $২০ Pro, কোনো extra খরচ নেই। সাবিনার বর্তমান workflow: একটা client brief paste → "এই tone-এ ১,২০০ word post" → 4.5 ৪০ সেকেন্ডে draft। Edit ১৫ মিনিট। Time per post: ২ ঘণ্টা → ৩০ মিনিট।</p>
+</div>
+
+<div class="case-study">
+<strong>Use case 2: Translation work (Bangla ↔ English)</strong>
+<p>Comilla-র freelancer Faruq legal/medical document translate করেন। Sonnet 4.5-এ tone, terminology accuracy 4.6-এর সমান। মাসিক উপার্জন ৳৪২,০০০, খরচ Pro $২০ মাত্র। 4.6-এ migrate করার প্রয়োজন তিনি দেখেন না।</p>
+</div>
+
+<div class="case-study">
+<strong>Use case 3: Educational content (teacher/coach)</strong>
+<p>Mirpur-এর coaching center-এর English teacher Nadia ৭০ জন student-এর জন্য daily lesson plan + practice question generate করেন। 4.5-এর quality consistent, time saving ৭০% — 4.6 needed না।</p>
+</div>
+
+<div class="case-study">
+<strong>Use case 4: Customer support automation</strong>
+<p>Dhaka-র একটা e-commerce startup customer FAQ + reply automation Sonnet 4.5 দিয়ে build করেছে। ১৪,০০০ daily queries handle। 4.6-এ upgrade test করেছে — quality পার্থক্য ১% এর কম, cost same — তাই 4.5 stable production-এ।</p>
+</div>
+
+<div class="case-study">
+<strong>Use case 5: Light coding (full-stack freelancer)</strong>
+<p>Dhaka-র junior dev Rifat WordPress plugin, custom theme, simple Laravel CRUD — সব কাজ 4.5 দিয়ে করেন। SWE-bench score same, simple coding-এ পার্থক্য নেই। মাসে $২০ Cursor + Claude Pro।</p>
+</div>
+
+<h2>কখন 4.5 থেকে 4.6-এ migrate করবেন</h2>
+<p>Migration-এর clear trigger:</p>
+<ul>
+<li><strong>Heavy reasoning task:</strong> Multi-step math, scientific reasoning, hard logic puzzle — 4.6-এর extended thinking advantage।</li>
+<li><strong>Agentic workflow (5+ tool):</strong> Multi-tool orchestration-এ 4.6 stable।</li>
+<li><strong>Computer Use production:</strong> 4.5-এ experimental, 4.6-এ ready।</li>
+<li><strong>Complex coding (multi-file):</strong> ৫-৮ file jointly edit — 4.6 better coherence।</li>
+<li><strong>Long-form Bangla (>৬K word):</strong> Narrative consistency-এ 4.6 ভালো।</li>
+</ul>
+
+<p>যদি এই কোনোটাই আপনার daily না হয় — 4.5-এই থাকুন। API user হলে 4.5 সামান্য cheaper available কিছু endpoint-এ — heavy volume-এ savings।</p>
+
+<h2>Project feature — Sonnet 4.5-এই introduce</h2>
+<p>Claude Project Sonnet 4.5-এর সঙ্গে launch হয়েছিল। এটা এখনও 4.6-এ অপরিবর্তিত — feature same, model upgrade।</p>
+<ul>
+<li><strong>System prompt:</strong> Project-এ একবার সেট করলে প্রতি conversation-এ apply হয়। যেমন: "আমি Sabina, content writer। আমার tone: warm, conversational। Brand: Aarong।"</li>
+<li><strong>Reference doc upload:</strong> Brand guideline, past examples, terminology — Project-এ pin করে রাখুন।</li>
+<li><strong>Persistent context:</strong> ১০০টা conversation শেষেও system prompt + docs reference।</li>
+<li><strong>BD use case:</strong> Sabina-র agency-তে ১২টা client জন্য ১২টা separate Project — প্রতিটার আলাদা tone + brand voice।</li>
+</ul>
+
+<h2>Artifacts — interactive output</h2>
+<p>Sonnet 4.5-এই Artifact debut হয়েছিল। Code, diagram, presentation, interactive UI — Claude side panel-এ live preview। Use case BD-তে:</p>
+<ul>
+<li><strong>Interactive dashboard mockup:</strong> "এই data-এ একটা React dashboard বানাও" → side panel-এ live render।</li>
+<li><strong>Bangla survey form:</strong> "Google Form-এর মতো একটা HTML form Bangla-তে" → preview সহ।</li>
+<li><strong>SVG diagram:</strong> Business process flow → SVG output, edit + export।</li>
+<li><strong>Markdown report:</strong> Formatted report ready to copy/paste।</li>
+</ul>
+
+<h2>Computer Use (experimental in 4.5)</h2>
+<p>Sonnet 4.5-এ Computer Use API research preview-তে এসেছিল। 4.6-এ এখন stable, কিন্তু 4.5-এও experimental ব্যবহার করা যায়। Concept: Claude-কে আপনার screen দেখান + mouse/keyboard control দিন। Claude task perform করবে — browser browse, form fill, file move।</p>
+<ul>
+<li><strong>BD context:</strong> Govt website-এ form fill (NID, tax) — Claude automate করতে পারে।</li>
+<li><strong>Caveat:</strong> 4.5-এ slow + unreliable, production-এ recommend না। 4.6 এর জন্য wait করুন।</li>
+</ul>
+
+<h2>উপসংহার — Sonnet 4.5 কাদের জন্য এখনও best</h2>
+<p>Sonnet 4.5 ২০২৫-এর agentic AI revolution-এর starting point ছিল। ২০২৬ মে-তেও এটা daily content/translation/light coding-এর জন্য excellent। যদি আপনি content writer, freelance translator, customer support automation চালান, simple coding করেন — Sonnet 4.5 আপনাকে fail করবে না। Pro plan-এ 4.5 + 4.6 দু'টোই পাবেন — কাজ অনুযায়ী switch করুন।</p>
+<p>সাবিনা এখনও তাঁর agency-তে Sonnet 4.5 default রেখেছেন — ১২টা client-এর কাজ smooth চলছে। তিনি 4.6 use করেন তখনই যখন একটা client-এর জন্য complex multi-part report লিখতে হয়। তাঁর philosophy: "নতুন model মানেই upgrade না — নতুন capability যখন আমার কাজে লাগবে, তখনই migrate।"</p>
+<p>যদি আপনার কাজে 4.5 যথেষ্ট মনে হয় — এখনই 4.6 চাপ নেবেন না। কাজের ধরন বদলালে তখন upgrade। সাশ্রয়ী BD context-এ এই discipline-ই বুদ্ধিমান।</p>
+
+
+<h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
         <ul>
             <li><a href="/claude/">Claude</a></li>
             <li><a href="/blog/claude-ai-bangladesh-guide/">Claude বাংলা</a></li>

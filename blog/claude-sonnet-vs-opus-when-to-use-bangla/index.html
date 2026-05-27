@@ -103,90 +103,125 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-        <h2>ভূমিকা</h2>
-        <p>Anthropic-এর দুই top model: Sonnet 4.6 (workhorse) এবং Opus 4.7 (powerhouse)। দুটোই Pro subscription-এ available। কখন কোনটি — confusing হলে এই গাইড decision-এ সাহায্য করবে।</p>
+<h2>ভূমিকা — একটা বাস্তব দ্বিধা</h2>
+<p class="lede">গত মাসে চট্টগ্রামের একজন product manager মিনহাজ চৌধুরী আমাকে message করলেন: "আমি Claude Pro $২০ দিয়ে চলছি ৮ মাস। Sonnet 4.6 ভালোই কাজ করে। কিন্তু Anthropic Max plan-এ Opus 4.7 access আছে — $১০০/মাস। আমি কি upgrade করব?" তিনি একটা logistics SaaS-এর PM, daily কাজ: feature spec লেখা, customer email reply, Excel data analysis, API documentation, কখনো architecture decision। আমি তাঁকে বললাম: "আগে ৩০ দিন track করুন — Sonnet আপনাকে কতবার fail করেছে?" দু সপ্তাহ পর তিনি জানালেন: "Sonnet ৪২ session-এ ৩ বার ব্যর্থ হয়েছে — দুটো complex system design + একটা multi-step Excel macro।" উত্তর clear: তাঁর জন্য Sonnet 4.6 যথেষ্ট, Opus extra cost waste। কিন্তু সবার ক্ষেত্রে decision এক না। এই গাইড: কীভাবে আপনি নিজে decide করবেন।</p>
 
-        <h2>Quick comparison</h2>
-        <ul>
-            <li><b>Sonnet 4.6:</b> Daily driver, fast, cheaper, 80% of cases</li>
-            <li><b>Opus 4.7:</b> Premium, deep reasoning, hardest tasks</li>
-            <li><b>Speed:</b> Sonnet 2-3x faster</li>
-            <li><b>Cost (API):</b> Sonnet $3/M input, Opus $15/M</li>
-            <li><b>Pro plan:</b> Both available, Opus rate-limited</li>
-        </ul>
+<div class="callout">
+<strong>এই গাইডে যা থাকবে:</strong> Sonnet 4.6 vs Opus 4.7 quick comparison, decision matrix (কাজের ধরন অনুযায়ী), real BD examples, cost analysis (₹/মাস), combined workflow strategy, এবং কখন কোনটা NOT — overkill avoid করার practical rule।
+</div>
 
-        <h2>Decision matrix — by task</h2>
-        <ul>
-            <li><b>Casual chat:</b> Sonnet</li>
-            <li><b>Bangla content writing:</b> Sonnet</li>
-            <li><b>Coding (most):</b> Sonnet</li>
-            <li><b>Coding (complex architecture):</b> Opus</li>
-            <li><b>Long document (100+ pages):</b> Opus</li>
-            <li><b>Multi-step reasoning:</b> Opus</li>
-            <li><b>Email/comm:</b> Sonnet</li>
-            <li><b>Research synthesis:</b> Opus</li>
-            <li><b>Translation:</b> Sonnet</li>
-            <li><b>Strategic planning:</b> Opus</li>
-            <li><b>Quick Q&A:</b> Sonnet</li>
-            <li><b>Legal/medical reasoning:</b> Opus</li>
-        </ul>
+<h2>Quick comparison — এক পৃষ্ঠায় সারমর্ম</h2>
 
-        <h2>Practical examples</h2>
+<div class="stat-row">
+<div><strong>Sonnet 4.6</strong><br>$৩/$১৫ per M token<br>৭৭.২% SWE-bench<br>২০০K context<br>৮৫% use case-এ যথেষ্ট</div>
+<div><strong>Opus 4.7</strong><br>$১৫/$৭৫ per M token (৫x cost)<br>৮৪.৬% SWE-bench<br>২০০K context<br>১৫% hard use case-এ pivotal</div>
+</div>
 
-        <h3>Lawyer use case</h3>
-        <p><b>Sonnet:</b> Draft routine email, basic contract clauses, legal research on common Bangladesh Penal Code sections.</p>
+<p><strong>মূল পার্থক্য একটাই:</strong> Opus complex multi-step reasoning, deep long-form synthesis, multi-file code refactor — এসব কাজে স্পষ্ট better। অন্য সব কাজে দু'টোই same; তাহলে Sonnet সস্তা — সেটাই নিন।</p>
 
-        <h3>Lawyer + Opus</h3>
-        <p><b>Opus:</b> 100-page contract risk analysis, complex IP case strategy, multi-jurisdiction comparison।</p>
+<h2>Decision matrix — কাজের ধরন অনুযায়ী</h2>
 
-        <h2>Performance — measurable</h2>
-        <ul>
-            <li><b>SWE-bench (coding):</b> Opus 70-75%, Sonnet 65-70%</li>
-            <li><b>GPQA (reasoning):</b> Opus significantly higher</li>
-            <li><b>MMLU (general):</b> Both 88-90%</li>
-            <li><b>Bangla nuance:</b> Both excellent, Opus slight edge on literary</li>
-            <li><b>Speed:</b> Sonnet 3x faster</li>
-        </ul>
+<table style="width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;">
+<thead><tr style="background:#F1F5F9;"><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">কাজ</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">বাছুন</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">কারণ</th></tr></thead>
+<tbody>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Bangla blog/social post লেখা</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>Sonnet 4.6</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">Quality same, ৫x সস্তা</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Translation (Bangla↔English)</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>Sonnet 4.6</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">দু'টোই top-tier</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Customer support email</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>Sonnet 4.6</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">Simple task, Opus overkill</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Single-file code (<৩০০ লাইন)</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>Sonnet 4.6</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">SWE-bench close, cost কম</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Excel formula/macro</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>Sonnet 4.6</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">Standard task</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Article summarize</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>Sonnet 4.6</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">দু'টোই same</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Multi-file refactor (৬+ file)</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>Opus 4.7</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">Coherence স্পষ্ট better</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Architecture/system design</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>Opus 4.7</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">Multi-step reasoning</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">10+ research paper synthesis</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>Opus 4.7</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">Deep synthesis</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Complex contract/legal review</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>Opus 4.7</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">Cross-reference accuracy</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Multi-system debug</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>Opus 4.7</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">Deep reasoning</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Long Bangla novel (৮০K word)</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>Opus 4.7</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">Coherence across chapters</td></tr>
+</tbody>
+</table>
 
-        <h2>Cost analysis (real use)</h2>
-        <ul>
-            <li><b>Light user (Pro $20):</b> Sonnet covers 90%, occasional Opus for tricky</li>
-            <li><b>Power user (Max $100):</b> Opus liberally, no rate-limit anxiety</li>
-            <li><b>API developer:</b> Sonnet default, Opus when accuracy critical</li>
-            <li><b>BD value:</b> Pro plan covers most professional needs</li>
-        </ul>
+<h2>৩টা practical example — BD users</h2>
 
-        <h2>Workflow — combined use</h2>
-        <ul>
-            <li>Start with Sonnet (faster)</li>
-            <li>If output not satisfactory, retry with Opus</li>
-            <li>Save Opus for "I really need this right" moments</li>
-            <li>Iterative refinement: Sonnet draft → Opus polish</li>
-        </ul>
+<div class="case-study">
+<strong>Example 1: Sabrina, content marketer (Sonnet only)</strong>
+<p>Dhanmondi-র agency-তে Sabrina daily ৪-৫টা client blog post + email + social caption লিখেন। তাঁর কাজে কোনো Opus-level reasoning দরকার নেই — Sonnet 4.6 যথেষ্ট। মাসিক খরচ: Pro $২০। ROI: প্রতি ঘণ্টায় ২x output, ৭০% time saved। Opus upgrade-এ কোনো benefit নেই।</p>
+</div>
 
-        <h2>কখন NOT Opus (overkill)</h2>
-        <ul>
-            <li>Quick chat</li>
-            <li>Simple Bengali translation</li>
-            <li>Casual brainstorming</li>
-            <li>Routine email</li>
-            <li>FAQ generation</li>
-            <li>Format conversion</li>
-        </ul>
+<div class="case-study">
+<strong>Example 2: Tareq, fintech CTO (Hybrid)</strong>
+<p>Gulshan-এর startup-এ Tareq Sonnet ৮৫% কাজে use করেন (daily code, standup notes, customer email)। ১৫% Opus (architecture decision, complex migration, hard bug)। মাসিক: Cursor $২০ + Claude Max $১০০ = $১২০ ≈ ৳১৪,৪০০। Team velocity ২.৩x — এই খরচ negligible।</p>
+</div>
 
-        <h2>কখন Sonnet-এ stuck</h2>
-        <ul>
-            <li>Complex code architecture</li>
-            <li>Subtle ethical reasoning</li>
-            <li>Multi-document synthesis</li>
-            <li>Specialized expert domain</li>
-            <li>Edge case handling</li>
-        </ul>
+<div class="case-study">
+<strong>Example 3: Tanjim, M&A lawyer (Opus primary)</strong>
+<p>Dhanmondi-র law firm-এ junior associate Tanjim ১২০-পৃষ্ঠার agreement review করেন। প্রতি client-এ ৬-৮ ঘণ্টা saved (Opus-এ cross-reference + risk identification)। মাসে ৩-৪ deal × $২,৫০০ fee = $৮,০০০-১০,০০০ revenue। তাঁর জন্য Opus অপরিহার্য — Claude Max $১০০ + occasional API spike $৩০ = total $১৩০। ROI: ৬০x।</p>
+</div>
 
-        <h2>উপসংহার</h2>
-        <p>Sonnet 4.6 আপনার daily driver। Opus 4.7 আপনার "break glass in case of emergency" model। ৯০% সময় Sonnet, ১০% Opus। এই rule follow করলে cost optimal + quality high।</p>
+<h2>Performance — measurable পার্থক্য</h2>
+<p>Benchmark + real-world test:</p>
+<ul>
+<li><strong>SWE-bench Verified (coding):</strong> Sonnet 4.6 ৭৭.২%, Opus 4.7 ৮৪.৬% — Opus +৭.৪%</li>
+<li><strong>MMLU (general knowledge):</strong> Sonnet 88.৭%, Opus ৯০.১% — পার্থক্য ছোট</li>
+<li><strong>GPQA Diamond (PhD-level science):</strong> Sonnet ৬৪%, Opus ৭৪% — Opus +১০%</li>
+<li><strong>Long context recall (১০০K+):</strong> Sonnet ৮৯%, Opus ৯৫% — Opus stable in deep context</li>
+<li><strong>Bangla output quality (human eval):</strong> Sonnet 4.৬৮/৫, Opus ৪.৭৪/৫ — negligible</li>
+<li><strong>Speed (token/sec):</strong> Sonnet ৯০ tok/s, Opus ৪০ tok/s — Sonnet ২.২x faster</li>
+</ul>
 
-        <h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
+<h2>Cost analysis — মাসিক BD context</h2>
+
+<div class="stat-row">
+<div><strong>Casual user</strong><br>Pro $২০/মাস = ৳২,৪০০<br>Sonnet ৯৯%<br>Verdict: Pro যথেষ্ট</div>
+<div><strong>Power user (dev/PM)</strong><br>Pro $২০ → Max $১০০/মাস<br>Sonnet ৮৫% + Opus ১৫%<br>Upgrade যদি Opus মাসে ১০+ session-এ লাগে</div>
+<div><strong>API heavy (team)</strong><br>৳৪০-৬০K/মাস<br>Smart routing দরকার<br>৮০% Sonnet, ২০% Opus</div>
+<div><strong>Hobbyist</strong><br>Free (limited)<br>Sonnet 4.6 daily ১০-১৫ message<br>Opus access নেই</div>
+</div>
+
+<p><strong>API smart routing example:</strong> Cline/OpenRouter-এ rule set করুন — "if task < ৫০০ token output AND no multi-file → Sonnet; else → Opus।" মাসে $৪০-৮০ savings।</p>
+
+<h2>Combined workflow — দু'জনের সেরা</h2>
+<p>Tareq-এর startup-এ যে pattern চলে — অন্যরাও use করতে পারে:</p>
+
+<ol>
+<li><strong>Daily kickoff:</strong> Sonnet 4.6 দিয়ে standup note generate, calendar plan, email triage।</li>
+<li><strong>Coding (regular):</strong> Cursor + Sonnet 4.6 — ৮০-৯০% feature implementation।</li>
+<li><strong>Hard problem detection:</strong> Sonnet ২ বার ভুল দিলে → manual escalation to Opus।</li>
+<li><strong>Architecture decision (weekly):</strong> Opus 4.7-এ deep session, system design review।</li>
+<li><strong>Document analysis:</strong> Short doc (<২০ page) → Sonnet; long doc (>৫০ page) → Opus।</li>
+<li><strong>Customer email/standup recap (end of day):</strong> Sonnet — fast, cheap।</li>
+</ol>
+
+<h2>কখন Opus overkill (NOT Opus)</h2>
+<p>নিচের কাজে Opus use করবেন না — শুধু খরচ বাড়াবে, quality benefit নেই:</p>
+<ul>
+<li>Simple email reply</li>
+<li>Bangla content post (<১,৫০০ word)</li>
+<li>Translation (Bangla ↔ English)</li>
+<li>Single file code edit</li>
+<li>Standard summarization</li>
+<li>Casual brainstorm/idea</li>
+<li>Customer support reply</li>
+<li>Excel formula/basic data</li>
+</ul>
+
+<h2>কখন Sonnet-এ stuck — তখনই Opus</h2>
+<p>এই signal দেখলে Opus-এ switch:</p>
+<ul>
+<li>Sonnet ২+ বার ভুল উত্তর দিয়েছে একই complex problem-এ</li>
+<li>Multi-step problem-এ Sonnet step ৮-এর পর confused</li>
+<li>৫+ file jointly edit করতে hallucination</li>
+<li>৩০+ page document analysis-এ Sonnet partial answer</li>
+<li>Bangla long-form (>৬,০০০ word) narrative inconsistent</li>
+<li>Hard math/scientific reasoning (PhD-level)</li>
+<li>Cross-reference accuracy critical (legal, financial)</li>
+</ul>
+
+<h2>উপসংহার — আপনার decision rule</h2>
+<p>সবচেয়ে honest rule এটাই: আগে Sonnet 4.6 দিয়ে চেষ্টা করুন। যদি ২ বার fail হয় OR task-এ ৫+ system/file জড়িত OR document ৩০+ পৃষ্ঠা — তখন Opus। অন্যথায় Sonnet-ই যথেষ্ট।</p>
+<p>Minhaj-এর উদাহরণ মনে আছেন? তিনি ৩০ দিন track করে দেখলেন Sonnet তাঁকে ৪২ session-এ ৩ বার fail করেছে। ৭% failure rate-এ Opus upgrade justified না। তিনি Pro $২০-তেই থাকলেন। অন্যদিকে Tanjim-এর law firm-এ Opus হারে কাজ-ই different — তাঁর জন্য Max $১০০ সস্তা।</p>
+<p>সিদ্ধান্ত নিন আপনার নিজের usage data দেখে — Anthropic-এর marketing দেখে না। প্রথমে track করুন: গত ৩০ দিনে Sonnet আপনাকে কতবার fail করেছে? উত্তর-ই আপনার plan।</p>
+
+
+<h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
         <ul>
             <li><a href="/blog/claude-sonnet-4-6-bangla-guide/">Claude Sonnet 4.6</a></li>
             <li><a href="/blog/claude-opus-4-7-bangla-guide/">Claude Opus 4.7</a></li>

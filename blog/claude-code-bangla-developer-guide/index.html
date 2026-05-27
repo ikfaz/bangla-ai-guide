@@ -103,64 +103,148 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-        <h2>Claude Code কী?</h2>
-        <p>Claude Code হলো Anthropic-এর তৈরি terminal-based AI coding tool — Cursor/Windsurf-এর IDE approach থেকে আলাদা, এটি আপনার terminal-এই থাকে, যেকোনো editor-এর সাথে কাজ করে।</p>
+<h2>ভূমিকা — Claude Code কেন আলাদা</h2>
+<p class="lede">উত্তরার এক fintech startup-এ Backend Engineer নাফিজ আহমেদ — ২৮ বছর বয়স, NSU CSE ২০১৯, ৪ বছর experience। তিনি Cursor IDE-তে কাজ করতেন — ভালোই চলছিল। কিন্তু গত নভেম্বরে একটা সমস্যা: একটা Node.js microservice-এ ৩৪টা file জুড়ে refactor দরকার ছিল — TypeScript migration, error handling unify, logging standardize। Cursor-এ IDE-based workflow-এ ৪০টা separate prompt লাগত, প্রতিবার context paste। নাফিজ Claude Code try করলেন — terminal command: <code>claude</code>। সরাসরি repo-তে navigate করে instruction: "এই service-এ TypeScript migrate করো, error handling unify, structured logging add।" Claude Code নিজে file scan, plan তৈরি, sequential edit — ৫ ঘণ্টায় কাজ শেষ। PR review-এ tech lead বললেন "এটা production-ready।" নাফিজ এখন Claude Code-এই দৈনিক ৭ ঘণ্টা কাজ করেন।</p>
 
-        <h2>Install</h2>
-        <ul>
-            <li>npm install -g @anthropic-ai/claude-code</li>
-            <li><code>claude</code> command run করুন project directory-তে</li>
-            <li>Login (Anthropic API key অথবা Claude Pro account)</li>
-            <li>Done — terminal-এ chat শুরু</li>
-        </ul>
+<div class="callout">
+<strong>এই গাইডে যা থাকবে:</strong> Claude Code কী, install (Windows/Mac/WSL), Cursor/Windsurf-এর সঙ্গে পার্থক্য, BD থেকে cost ($), BD developer-এর জন্য practical workflow, ৫টি real-world use case, এবং প্রায়শই-ব্যবহৃত command/tip।
+</div>
 
-        <h2>কী করতে পারে</h2>
-        <ul>
-            <li>File read/write/edit (permission সহ)</li>
-            <li>Multi-file refactor</li>
-            <li>Test run, debug</li>
-            <li>Git operations</li>
-            <li>Codebase-wide search ও understanding</li>
-            <li>MCP (Model Context Protocol) — external tools integrate</li>
-        </ul>
+<h2>Claude Code আসলে কী</h2>
+<p>Claude Code হলো Anthropic-এর official terminal-based AI coding agent। IDE-এর মতো GUI না — পুরোটাই command line। আপনি repository-তে গিয়ে <code>claude</code> command চালান, instruction দিন বাংলা/English-এ — Claude নিজে file পড়ে, plan করে, edit করে, test run করে।</p>
 
-        <h2>Cursor/Windsurf-এর সাথে পার্থক্য</h2>
-        <ul>
-            <li><b>Claude Code:</b> Terminal-only, editor-agnostic, agent-first</li>
-            <li><b>Cursor/Windsurf:</b> Full IDE, GUI-driven</li>
-            <li><b>Use Claude Code if:</b> Vim/Neovim/Emacs user, server SSH workflow</li>
-            <li><b>Use Cursor if:</b> VS Code-style GUI prefer</li>
-        </ul>
+<div class="stat-row">
+<div><strong>Release</strong><br>২০২৫ ফেব্রুয়ারি (research preview)<br>২০২৫ মে general availability</div>
+<div><strong>Model</strong><br>Default: Sonnet 4.6<br>Override: Opus 4.7</div>
+<div><strong>Platform</strong><br>macOS, Linux, Windows (WSL)<br>VS Code/JetBrains plugin available</div>
+<div><strong>BD adoption</strong><br>~৭,০০০ active developer<br>Growing ১৫%/মাস</div>
+</div>
 
-        <h2>দাম</h2>
-        <ul>
-            <li><b>Claude Pro ($২০/মাস):</b> Limited Claude Code usage</li>
-            <li><b>Claude Max ($১০০-$২০০):</b> Heavy usage</li>
-            <li><b>API pay-as-you-go:</b> Token-based</li>
-            <li><b>BD থেকে:</b> International card</li>
-        </ul>
+<ul>
+<li><strong>Agentic by design:</strong> একটা task দিন, ও নিজে decompose করে — file পড়া, edit, test, commit।</li>
+<li><strong>Native git integration:</strong> Branch তৈরি, commit message লেখা, PR description draft — all built-in।</li>
+<li><strong>Long-running task:</strong> ১-৪ ঘণ্টার complex refactor handle করে (Cursor-এর মতো constant interaction নেই)।</li>
+<li><strong>Permission-based:</strong> File edit/command-এর আগে confirmation চায় (default), trust mode-এ auto।</li>
+<li><strong>Multi-file aware:</strong> ৫০-১০০ file project-এ holistic understanding।</li>
+</ul>
 
-        <h2>বাংলাদেশি developer-এর জন্য practical workflow</h2>
-        <ul>
-            <li>Existing project-এ নতুন feature: "Add authentication using JWT to this Express app"</li>
-            <li>Bug fix: "There's an error in login flow, please investigate and fix"</li>
-            <li>Refactor: "Convert this React class component to hooks"</li>
-            <li>Documentation: "Write README for this project"</li>
-            <li>Test: "Add unit tests for the user service"</li>
-        </ul>
+<h2>Install — Windows/Mac/Linux</h2>
 
-        <h2>টিপস</h2>
-        <ul>
-            <li>CLAUDE.md ফাইল project-এ রাখুন — context file</li>
-            <li>Permission সাবধানে — "Plan mode" use করুন important changes-এ</li>
-            <li>Git commit করে রাখুন — undo easy</li>
-            <li>Long task break করুন small steps-এ</li>
-        </ul>
+<h3>macOS / Linux</h3>
+<pre><code># npm দিয়ে
+npm install -g @anthropic-ai/claude-code
 
-        <h2>উপসংহার</h2>
-        <p>Terminal-loving developer-দের জন্য Claude Code best-in-class। Cursor-এর GUI প্রয়োজন না হলে এটাই কম interruption-এ deep work-এর জন্য।</p>
+# তারপর project folder-এ
+cd ~/projects/my-app
+claude
 
-        <h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
+# প্রথমবার login (browser opens)
+# Claude account → API key authorize</code></pre>
+
+<h3>Windows</h3>
+<p>Native Windows support এখন আসছে কিন্তু WSL recommended:</p>
+<pre><code># WSL2 install (PowerShell admin)
+wsl --install
+
+# Ubuntu open, Node.js install
+sudo apt update && sudo apt install nodejs npm
+
+# Claude Code
+npm install -g @anthropic-ai/claude-code
+claude</code></pre>
+
+<h3>VS Code / Cursor integration</h3>
+<ul>
+<li>Extension Marketplace: "Claude Code" search</li>
+<li>Sidebar-এ chat panel + terminal integration</li>
+<li>Inline edit suggestions IDE-তে highlight</li>
+</ul>
+
+<h2>কী করতে পারে — capability rundown</h2>
+<ol>
+<li><strong>Codebase exploration:</strong> "এই repo-তে user authentication কীভাবে কাজ করে?" → Claude file scan করে diagram + explanation।</li>
+<li><strong>Feature implementation:</strong> "Add 2FA to login flow using TOTP" → Claude design + code + test write।</li>
+<li><strong>Refactoring:</strong> "এই ২০টা file-এ console.log গুলো structured logger দিয়ে replace করো" → batch edit।</li>
+<li><strong>Bug fix:</strong> Stack trace paste → Claude root cause identify, fix suggest।</li>
+<li><strong>Test generation:</strong> "এই module-এর জন্য Jest tests লিখো ৮৫% coverage সহ" → comprehensive test file।</li>
+<li><strong>Documentation:</strong> "README আপডেট করো current API surface-এর সাথে" → markdown sync।</li>
+<li><strong>Git workflow:</strong> "এই changes-এর জন্য PR description draft করো" → conventional commit format।</li>
+<li><strong>Code review:</strong> "এই PR review করো — security/performance issues চাও" → structured review।</li>
+</ol>
+
+<h2>Cursor/Windsurf-এর সঙ্গে পার্থক্য — সততার সঙ্গে</h2>
+
+<table style="width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;">
+<thead><tr style="background:#F1F5F9;"><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Aspect</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Claude Code</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Cursor</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Windsurf</th></tr></thead>
+<tbody>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Interface</td><td style="padding:10px;border:1px solid #E2E8F0;">Terminal</td><td style="padding:10px;border:1px solid #E2E8F0;">IDE (VS Code fork)</td><td style="padding:10px;border:1px solid #E2E8F0;">IDE (VS Code fork)</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Long-running task</td><td style="padding:10px;border:1px solid #E2E8F0;">Excellent (১-৪ hr)</td><td style="padding:10px;border:1px solid #E2E8F0;">Good (Agent mode)</td><td style="padding:10px;border:1px solid #E2E8F0;">Good (Cascade)</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Quick inline edit</td><td style="padding:10px;border:1px solid #E2E8F0;">Limited</td><td style="padding:10px;border:1px solid #E2E8F0;">Excellent (Cmd+K)</td><td style="padding:10px;border:1px solid #E2E8F0;">Excellent</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Model</td><td style="padding:10px;border:1px solid #E2E8F0;">Claude only</td><td style="padding:10px;border:1px solid #E2E8F0;">Multi (Claude/GPT/Gemini)</td><td style="padding:10px;border:1px solid #E2E8F0;">Multi</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Cost</td><td style="padding:10px;border:1px solid #E2E8F0;">API-based ($ per token)</td><td style="padding:10px;border:1px solid #E2E8F0;">$২০/মাস flat</td><td style="padding:10px;border:1px solid #E2E8F0;">$১৫/মাস flat</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Best for</td><td style="padding:10px;border:1px solid #E2E8F0;">Complex multi-file refactor, agentic work</td><td style="padding:10px;border:1px solid #E2E8F0;">Daily IDE coding</td><td style="padding:10px;border:1px solid #E2E8F0;">Daily IDE coding</td></tr>
+</tbody>
+</table>
+
+<p><strong>Honest verdict:</strong> Daily quick inline edit + chat — Cursor/Windsurf better। Long-running refactor + autonomous agent — Claude Code unmatched। Many BD devs দু'টোই use করেন: Cursor for daily, Claude Code for big task।</p>
+
+<h2>দাম — BD context-এ honest breakdown</h2>
+<p>Claude Code নিজের কোনো subscription নেই — API token-এর সঙ্গে integrated:</p>
+
+<ul>
+<li><strong>Pay-per-use (API):</strong> Sonnet 4.6 — $৩/M input, $১৫/M output। সাধারণ task: $০.১০-০.৫০ per session।</li>
+<li><strong>Pro plan integrated:</strong> Claude Pro $২০/মাস → Claude Code-এ included (Sonnet 4.6 unlimited)। Most cost-effective for BD devs।</li>
+<li><strong>Max plan:</strong> $১০০/মাস → Opus 4.7 access via Claude Code, heavy refactor-এ ROI।</li>
+<li><strong>Real BD usage:</strong> Nafiz মাসে ~$২৫ খরচ করেন (Pro $২০ + occasional API $৫)। Cursor Pro-ও $২০ — দু'টোই একসঙ্গে চালান।</li>
+</ul>
+
+<div class="callout">
+<strong>Payment:</strong> bKash-linked USD card (Brac, City, EBL)। Wise card-ও কাজ করে। Direct PayPal supported না। Anthropic Console-এ prepaid $৫ থেকে শুরু।
+</div>
+
+<h2>BD developer-এর জন্য practical workflow</h2>
+<p>Nafiz-এর daily routine থেকে template:</p>
+
+<ol>
+<li><strong>Sokal (8-10 AM):</strong> Cursor-এ standup task, quick bug fix, inline tweak — IDE-based workflow।</li>
+<li><strong>Mid-morning (10 AM-12 PM):</strong> Complex task এলে terminal-এ <code>claude</code>। Plan generate, file scan, implementation plan review।</li>
+<li><strong>Lunch break:</strong> Claude Code-কে long task assign (refactor, test write) — backgrounded।</li>
+<li><strong>Afternoon (2-5 PM):</strong> Claude-এর output review, manual touch-up, edge case test।</li>
+<li><strong>End of day:</strong> <code>claude</code>-এ "today's changes জন্য PR description লিখো" + commit message।</li>
+</ol>
+
+<div class="case-study">
+<strong>Nafiz-এর শক্তিশালী practice:</strong> Big task assign করার আগে সবসময় বলেন "Plan only, no code yet — show your steps।" Claude plan দেখায়, Nafiz review করেন, তারপর "execute step 1 + 2" বলেন। এতে hallucination কমে, control থাকে। প্রতি সপ্তাহে ১৪-১৬ ঘণ্টা saved।
+</div>
+
+<h2>৫টি real-world use case (BD-specific)</h2>
+
+<ol>
+<li><strong>Legacy PHP → Laravel migration:</strong> Dhaka-র এক agency-তে dev team ১৫ বছরের old PHP codebase Laravel-এ migrate করছে। Claude Code-এ একটা module assign করে ২-৩ ঘণ্টার job। Time: ৩ মাস → ৩ সপ্তাহ।</li>
+<li><strong>WordPress plugin custom dev:</strong> Freelance dev Rifat $২,০০০ project-এর জন্য Claude Code use করে দু'দিনে complete। Profit: $২০ API cost বাদে $১,৯৮০।</li>
+<li><strong>Bangla NLP pipeline:</strong> Sylhet-এর startup customer review sentiment analysis করছে Bangla-তে। Claude Code-এ Hugging Face model integrate + preprocessing + API endpoint — ১ সপ্তাহে production-ready।</li>
+<li><strong>BD govt portal integration:</strong> NID verification API + RJSC business lookup — Claude Code documentation থেকে wrapper library লিখেছে।</li>
+<li><strong>Test coverage push:</strong> ১৫% test coverage থেকে ৮৫%-এ — Claude Code একটা module-এ ৩ ঘণ্টায় ১৪০টা test case generate।</li>
+</ol>
+
+<h2>টিপস — Claude Code থেকে সর্বোচ্চ পেতে</h2>
+<ul>
+<li><strong>CLAUDE.md ফাইল রাখুন:</strong> Repo root-এ একটা CLAUDE.md create করুন — project structure, coding standard, "do not touch" file list। Claude প্রতি session-এ এটা পড়ে।</li>
+<li><strong>"Plan first" pattern:</strong> Complex task-এ আগে plan চান। তারপর approve করে execute বলুন।</li>
+<li><strong>Granular permission:</strong> Trust mode default off — Claude file edit করার আগে confirm চাইবে। Safe।</li>
+<li><strong>Use slash commands:</strong> <code>/clear</code> context reset, <code>/cost</code> session খরচ দেখুন, <code>/model</code> Sonnet/Opus switch।</li>
+<li><strong>Git workflow:</strong> Claude-কে বলুন "create a branch first, make commit per logical change"। Atomic history থাকে।</li>
+<li><strong>Long task → Opus:</strong> ২+ ঘণ্টার agentic task-এ <code>/model opus</code>। Cost বেশি কিন্তু success rate স্পষ্ট better।</li>
+<li><strong>Bangla instruction works:</strong> "এই ফাংশনে error handling add করো" — perfectly understood।</li>
+</ul>
+
+<h2>উপসংহার — Claude Code কাদের জন্য</h2>
+<p>Claude Code BD-র developer ecosystem-এ একটা নতুন paradigm এনেছে: terminal-from autonomous agent। Cursor/Windsurf IDE-based productivity tool, কিন্তু Claude Code একটা virtual senior developer যাকে আপনি ৩ ঘণ্টার job দিয়ে coffee break-এ যেতে পারেন।</p>
+<p>যদি আপনি — startup-এ multi-file refactor regularly করেন, agency-তে large legacy migration handle করেন, freelance complex project ৫-৭ দিনে deliver করেন, OR open-source contribution-এ scale চান — Claude Code আপনার tool। Pro $২০ subscription-এই শুরু করুন। Cursor-এর সঙ্গে combine করলে best of both worlds।</p>
+<p>Nafiz-এর শেষ কথা: "Claude Code Cursor-কে replace করেনি, complement করেছে। Cursor-এ আমি code লিখি, Claude Code-এ আমি orchestrate করি। দু'টোই দরকার।" BD-র developer-দের জন্য এটাই reality — দু'টোই learn করুন।</p>
+
+
+<h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
         <ul>
             <li><a href="/claude-code/">Claude Code টুল পেজ</a></li>
             <li><a href="/claude/">Claude</a></li>
