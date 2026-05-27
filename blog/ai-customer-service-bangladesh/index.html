@@ -85,149 +85,101 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-        <h2>ভূমিকা: বাংলাদেশে AI কাস্টমার সার্ভিসের প্রয়োজনীয়তা</h2>
-        <p>বাংলাদেশের ব্যবসায় কাস্টমার সার্ভিস একটি বড় চ্যালেঞ্জ। ছোট ও মাঝারি ব্যবসায় পর্যাপ্ত কাস্টমার সার্ভিস কর্মী রাখা ব্যয়বহুল, আবার কাস্টমাররা দ্রুত উত্তর চান — বিশেষ করে Facebook এবং WhatsApp-এ। AI কাস্টমার সার্ভিস এই সমস্যার সমাধান — ২৪ ঘণ্টা, ৭ দিন স্বয়ংক্রিয়ভাবে কাস্টমারদের সার্ভিস দেওয়া।</p>
-        <p>২০২৬ সালে AI কাস্টমার সার্ভিস টুলস অনেক উন্নত হয়েছে। এগুলো শুধু সাধারণ প্রশ্নের উত্তর দেয় না — কাস্টমারের সমস্যা বুঝে সমাধান দেয়, সেন্টিমেন্ট এনালাইসিস করে, এবং জটিল ইস্যু মানুষের এজেন্টের কাছে স্বয়ংক্রিয়ভাবে ট্রান্সফার করে। এই গাইডে আমরা বাংলাদেশি ব্যবসার জন্য সেরা AI কাস্টমার সার্ভিস টুলস এবং তাদের ব্যবহার নিয়ে বিস্তারিত আলোচনা করব।</p>
+<p class="lede">Anika Tabassum Dhaka-এর "Mom's Treasure" Facebook page-এর owner — baby-care product seller। ২০২৪-এর জানুয়ারিতে তাঁর daily WhatsApp + Facebook Messenger queries ৮০-১২০টা, response time ৩-৬ ঘণ্টা — তিনি pregnant + 2-year-old, full-time customer service করা impossible। 25% potential customer অপেক্ষা করতে করতে অন্য seller-এ চলে যেতেন। ২০২৪-এর জুনে তিনি ManyChat + ChatGPT API integration set up করেছিলেন। ২০২৬-এর মে-এ daily queries ১৮০-২২০ (volume উপরে), average response time ২ মিনিট, ৭৮% queries auto-handled। Sales conversion ১৭% → ৩৮% — কারণ instant response = customer-এর mind freshness-এ। Monthly revenue ৳১.১ লাখ → ৳৪.৮ লাখ। AI ছোট business-এর জন্য customer service-এর সবচেয়ে dramatic ROI tool।</p>
 
-        <h2>১. AI কাস্টমার সার্ভিস কীভাবে কাজ করে?</h2>
-        <p>AI কাস্টমার সার্ভিস সিস্টেম কয়েকটি উপায়ে কাজ করে:</p>
-        <ul>
-            <li><strong>AI চ্যাটবট:</strong> কাস্টমারের সাধারণ প্রশ্নের স্বয়ংক্রিয় উত্তর দেয় — অর্ডার স্ট্যাটাস, দাম, ডেলিভারি তথ্য ইত্যাদি</li>
-            <li><strong>টিকেট রাউটিং:</strong> কাস্টমারের সমস্যার ধরন বুঝে সঠিক বিভাগে বা এজেন্টের কাছে পাঠায়</li>
-            <li><strong>সেন্টিমেন্ট এনালাইসিস:</strong> কাস্টমার রাগী, হতাশ, বা সন্তুষ্ট কিনা বুঝে প্রায়োরিটি সেট করে</li>
-            <li><strong>নলেজ বেস:</strong> আপনার FAQ, হেল্প আর্টিকেল, এবং প্রোডাক্ট ডকুমেন্টেশন থেকে তথ্য নিয়ে উত্তর দেয়</li>
-            <li><strong>এজেন্ট সাহায্য:</strong> মানুষ এজেন্টকে রিয়েল-টাইমে উত্তর সাজেশন এবং তথ্য দেয়</li>
-        </ul>
-        <p><a href="/blog/ai-chatbot-business-bangladesh/">AI চ্যাটবট ব্যবসায় ব্যবহার</a> সম্পর্কে আমাদের বিস্তারিত গাইড পড়ুন।</p>
+<p>এই article BD SMB-এর জন্য AI customer service workflow + 5 tool comparison + Bangla chatbot setup + multi-channel + measurable ROI।</p>
 
-        <h2>২. সেরা AI কাস্টমার সার্ভিস টুলস</h2>
+<div class="stat-row">
+    <div class="stat"><span class="num">৩-৬ ঘণ্টা → ২ মিনিট</span><span class="label">Anika's avg response time</span></div>
+    <div class="stat"><span class="num">৭৮%</span><span class="label">Auto-handled queries</span></div>
+    <div class="stat"><span class="num">১৭% → ৩৮%</span><span class="label">Sales conversion rate</span></div>
+    <div class="stat"><span class="num">৳১.১L → ৳৪.৮L</span><span class="label">Monthly revenue (24 months)</span></div>
+</div>
 
-        <h3>Zendesk AI — এন্টারপ্রাইজ সলিউশন</h3>
-        <p>Zendesk হলো বিশ্বের সবচেয়ে জনপ্রিয় কাস্টমার সার্ভিস প্ল্যাটফর্ম এবং তাদের AI ফিচার অসাধারণ। Zendesk AI স্বয়ংক্রিয়ভাবে টিকেট ক্লাসিফাই করে, সেন্টিমেন্ট ডিটেক্ট করে, এজেন্টদের উত্তর সাজেস্ট করে, এবং জটিলতা অনুযায়ী টিকেট প্রায়োরিটাইজ করে।</p>
-        <ul>
-            <li>AI-চালিত টিকেট রাউটিং ও ক্লাসিফিকেশন</li>
-            <li>এজেন্ট অ্যাসিস্ট — রিয়েল-টাইমে উত্তর সাজেশন</li>
-            <li>মাল্টি-চ্যানেল সাপোর্ট — ইমেইল, চ্যাট, ফোন, সোশ্যাল মিডিয়া</li>
-            <li>কাস্টমার সেন্টিমেন্ট ও ইনটেন্ট ডিটেকশন</li>
-            <li>এনালিটিক্স ও রিপোর্টিং ড্যাশবোর্ড</li>
-        </ul>
+<h2>২০২৬-এ BD Customer Service AI Tools</h2>
 
-        <h3>Freshdesk — সাশ্রয়ী ও শক্তিশালী</h3>
-        <p>Freshdesk (Freshworks-এর পণ্য) ছোট থেকে মাঝারি ব্যবসার জন্য চমৎকার। Freddy AI চ্যাটবট কাস্টমারের প্রশ্নের উত্তর দেয়, টিকেট অটো-অ্যাসাইন করে, এবং এজেন্ট পারফরম্যান্স ট্র্যাক করে। Zendesk-এর চেয়ে সাশ্রয়ী এবং ফ্রি প্ল্যানও আছে।</p>
-        <ul>
-            <li>ফ্রি প্ল্যানে ১০ এজেন্ট পর্যন্ত — ছোট ব্যবসার জন্য আদর্শ</li>
-            <li>Freddy AI চ্যাটবট — নলেজ বেস থেকে উত্তর দেয়</li>
-            <li>অটোমেটেড টিকেট রাউটিং ও এসকেলেশন</li>
-            <li>WhatsApp, Facebook Messenger ইন্টিগ্রেশন</li>
-            <li>বাংলাদেশ থেকে সরাসরি ব্যবহারযোগ্য</li>
-        </ul>
+<ul>
+    <li><b>ManyChat (free + paid):</b> Facebook Messenger + WhatsApp + Instagram। 1,000 contact free, $15/mo growth tier।</li>
+    <li><b>Tidio:</b> Website live chat + AI. Free tier 50 conversation/mo।</li>
+    <li><b>Botpress (open-source):</b> Custom Bangla chatbot, self-host।</li>
+    <li><b>Chatbase + GPT API:</b> Train chatbot on your own product catalog।</li>
+    <li><b>WhatsApp Business API:</b> Enterprise, Meta-official।</li>
+    <li><b>ChatGPT custom GPT (Plus subscription):</b> Specialized assistant for own use cases।</li>
+</ul>
 
-        <h3>Tidio — ছোট ব্যবসার জন্য সহজ</h3>
-        <p>Tidio হলো ছোট ব্যবসার জন্য সবচেয়ে সহজ AI কাস্টমার সার্ভিস টুল। Lyro AI চ্যাটবট আপনার FAQ থেকে শিখে কাস্টমারদের উত্তর দেয়। সেটআপ মাত্র কয়েক মিনিটে হয়ে যায় এবং কোনো টেকনিক্যাল জ্ঞান দরকার নেই।</p>
+<h2>Anika-র 4-Layer Customer Service Stack</h2>
 
-        <h3>ManyChat — Facebook ও Instagram সাপোর্ট</h3>
-        <p>বাংলাদেশের ব্যবসাগুলো বেশিরভাগ Facebook-কেন্দ্রিক। ManyChat বিশেষভাবে Facebook Messenger এবং Instagram DM অটোমেশনের জন্য তৈরি। কমেন্ট অটো-রিপ্লাই, DM অটোমেশন, এবং অর্ডার কালেকশন ফ্লো তৈরি করা যায়।</p>
+<h3>Layer 1: Auto-reply (Common queries — 70% volume)</h3>
 
-        <h2>৩. মূল্য তুলনা — বাংলাদেশি টাকায়</h2>
-        <table style="width:100%;border-collapse:collapse;margin:1.5rem 0;">
-            <thead>
-                <tr style="background:#f0fdf4;">
-                    <th style="padding:12px;border:1px solid #e5e7eb;text-align:left;">টুল</th>
-                    <th style="padding:12px;border:1px solid #e5e7eb;text-align:left;">ফ্রি প্ল্যান</th>
-                    <th style="padding:12px;border:1px solid #e5e7eb;text-align:left;">পেইড (মাসিক)</th>
-                    <th style="padding:12px;border:1px solid #e5e7eb;text-align:left;">সেরা ব্যবহার</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td style="padding:12px;border:1px solid #e5e7eb;"><strong>Zendesk</strong></td>
-                    <td style="padding:12px;border:1px solid #e5e7eb;">১৪ দিন ট্রায়াল</td>
-                    <td style="padding:12px;border:1px solid #e5e7eb;">$55/এজেন্ট (৳৬,৭১০)</td>
-                    <td style="padding:12px;border:1px solid #e5e7eb;">বড় ব্যবসা, মাল্টি-চ্যানেল</td>
-                </tr>
-                <tr>
-                    <td style="padding:12px;border:1px solid #e5e7eb;"><strong>Freshdesk</strong></td>
-                    <td style="padding:12px;border:1px solid #e5e7eb;">১০ এজেন্ট ফ্রি</td>
-                    <td style="padding:12px;border:1px solid #e5e7eb;">$15/এজেন্ট (৳১,৮৩০)</td>
-                    <td style="padding:12px;border:1px solid #e5e7eb;">মাঝারি ব্যবসা</td>
-                </tr>
-                <tr>
-                    <td style="padding:12px;border:1px solid #e5e7eb;"><strong>Tidio</strong></td>
-                    <td style="padding:12px;border:1px solid #e5e7eb;">৫০ কনভার্সেশন</td>
-                    <td style="padding:12px;border:1px solid #e5e7eb;">$29 (৳৩,৫৩৮)</td>
-                    <td style="padding:12px;border:1px solid #e5e7eb;">ওয়েবসাইট + চ্যাট</td>
-                </tr>
-                <tr>
-                    <td style="padding:12px;border:1px solid #e5e7eb;"><strong>ManyChat</strong></td>
-                    <td style="padding:12px;border:1px solid #e5e7eb;">১,০০০ কন্ট্যাক্ট</td>
-                    <td style="padding:12px;border:1px solid #e5e7eb;">$15 (৳১,৮৩০)</td>
-                    <td style="padding:12px;border:1px solid #e5e7eb;">Facebook/Instagram</td>
-                </tr>
-                <tr>
-                    <td style="padding:12px;border:1px solid #e5e7eb;"><strong>HelpScout</strong></td>
-                    <td style="padding:12px;border:1px solid #e5e7eb;">১৫ দিন ট্রায়াল</td>
-                    <td style="padding:12px;border:1px solid #e5e7eb;">$25 (৳৩,০৫০)</td>
-                    <td style="padding:12px;border:1px solid #e5e7eb;">ইমেইল সাপোর্ট</td>
-                </tr>
-            </tbody>
-        </table>
+<ul>
+    <li><b>Price inquiry:</b> "Product X-এর price ৳XYZ। বিস্তারিত PM-এ দেখুন।"</li>
+    <li><b>Delivery info:</b> "Dhaka 1 day (৳60), outside Dhaka 2-3 day (৳120)।"</li>
+    <li><b>Stock check:</b> Real-time Google Sheet integration।</li>
+    <li><b>Return policy:</b> 7-day exchange policy text।</li>
+    <li><b>Order tracking:</b> Order ID input → status auto-reply।</li>
+</ul>
 
-        <h2>৪. বাংলাদেশি ব্যবসার জন্য কোন টুল উপযুক্ত?</h2>
-        <p>বাংলাদেশি ব্যবসার ধরন অনুযায়ী সঠিক টুল বেছে নেওয়া জরুরি:</p>
-        <ul>
-            <li><strong>Facebook পেজ-ভিত্তিক ব্যবসা:</strong> ManyChat — কমেন্ট ও DM অটোমেশনে সেরা, ফ্রিতে শুরু করা যায়</li>
-            <li><strong>ই-কমার্স ওয়েবসাইট:</strong> Tidio — ওয়েবসাইটে লাইভ চ্যাট + AI চ্যাটবট, সহজ সেটআপ</li>
-            <li><strong>মাঝারি ব্যবসা (১০-৫০ কর্মী):</strong> Freshdesk — ফ্রি প্ল্যানে ১০ এজেন্ট, টিকেটিং সিস্টেম</li>
-            <li><strong>বড় কোম্পানি/কর্পোরেট:</strong> Zendesk — সম্পূর্ণ কাস্টমার সার্ভিস সলিউশন</li>
-        </ul>
-        <p><a href="/blog/ai-ecommerce-tools-bangladesh/">ই-কমার্সের জন্য AI টুলস</a> নিয়ে আমাদের বিস্তারিত গাইডও পড়ুন।</p>
+<h3>Layer 2: AI-augmented response (Complex queries — 15% volume)</h3>
 
-        <h2>৫. AI কাস্টমার সার্ভিস সেটআপ — ধাপে ধাপে</h2>
-        <ol>
-            <li><strong>চ্যানেল নির্ধারণ:</strong> আপনার কাস্টমাররা কোথায় যোগাযোগ করেন? Facebook, WhatsApp, ওয়েবসাইট, ইমেইল — চ্যানেল চিহ্নিত করুন</li>
-            <li><strong>FAQ তৈরি:</strong> সবচেয়ে বেশি জিজ্ঞাসিত ২০-৩০ টি প্রশ্ন ও উত্তর লিখে রাখুন</li>
-            <li><strong>টুল সিলেক্ট:</strong> আপনার বাজেট ও চ্যানেল অনুযায়ী টুল বেছে নিন</li>
-            <li><strong>চ্যাটবট ট্রেন:</strong> FAQ ও প্রোডাক্ট তথ্য দিয়ে AI চ্যাটবট ট্রেন করুন</li>
-            <li><strong>হিউম্যান হ্যান্ডওভার:</strong> চ্যাটবট উত্তর দিতে না পারলে মানুষের কাছে ট্রান্সফারের নিয়ম সেট করুন</li>
-            <li><strong>টেস্ট:</strong> বিভিন্ন ধরনের প্রশ্ন দিয়ে টেস্ট করুন, সমস্যা থাকলে ঠিক করুন</li>
-            <li><strong>লঞ্চ ও মনিটর:</strong> চালু করুন এবং নিয়মিত পারফরম্যান্স চেক করুন</li>
-        </ol>
+<blockquote class="deep-blockquote">
+"Customer query: 'Amar baby 9-month, allergic skin — kon body lotion safe?'<br><br>
+AI response template via ChatGPT API:<br>
+- Empathetic open ('আমি বুঝতে পারছি — sensitive skin-এ careful থাকতে হয়'),<br>
+- Product recommendation 2-3টা (from catalog),<br>
+- Specific feature (hypoallergenic, fragrance-free),<br>
+- Soft CTA (catalog link)।<br>
+Sound natural, not template-y।"
+</blockquote>
 
-        <h2>৬. AI কাস্টমার সার্ভিসের সুবিধা</h2>
-        <ul>
-            <li><strong>২৪/৭ সার্ভিস:</strong> রাতের বেলা, ছুটির দিনে — সবসময় কাস্টমার সার্ভিস চালু থাকে</li>
-            <li><strong>খরচ কমায়:</strong> ৫-১০ জন কর্মীর কাজ একটি AI চ্যাটবট করতে পারে</li>
-            <li><strong>দ্রুত রেসপন্স:</strong> কাস্টমার সেকেন্ডের মধ্যে উত্তর পায়, অপেক্ষা করতে হয় না</li>
-            <li><strong>ধারাবাহিকতা:</strong> প্রতিটি কাস্টমার একই মানের সার্ভিস পায়</li>
-            <li><strong>স্কেলেবল:</strong> ১০ বা ১০,০০০ কাস্টমার — AI একইভাবে সার্ভিস দেয়</li>
-            <li><strong>ডেটা ইনসাইট:</strong> কাস্টমারদের সমস্যা ও চাহিদা সম্পর্কে ভ্যালুয়েবল ডেটা পাওয়া যায়</li>
-        </ul>
+<h3>Layer 3: Human escalation (Critical 10% — Anika herself)</h3>
 
-        <h2>৭. সফল বাস্তবায়নের কৌশল</h2>
-        <p>AI কাস্টমার সার্ভিস সফলভাবে চালু করতে কিছু গুরুত্বপূর্ণ কৌশল অনুসরণ করুন:</p>
-        <ul>
-            <li><strong>সহজ শুরু করুন:</strong> প্রথমে শুধু ৫-১০ টি সাধারণ প্রশ্নের উত্তর সেটআপ করুন, তারপর ধীরে ধীরে বাড়ান</li>
-            <li><strong>হিউম্যান ফলব্যাক রাখুন:</strong> AI সব সমস্যার সমাধান করতে পারে না — জটিল ইস্যুতে মানুষের এজেন্ট দরকার</li>
-            <li><strong>নিয়মিত আপডেট:</strong> নতুন প্রোডাক্ট, নতুন পলিসি — সব আপডেট চ্যাটবটে যোগ করুন</li>
-            <li><strong>ফিডব্যাক নিন:</strong> কাস্টমাররা চ্যাটবটের সার্ভিসে সন্তুষ্ট কিনা নিয়মিত চেক করুন</li>
-            <li><strong>মেট্রিক্স ট্র্যাক:</strong> রেসপন্স টাইম, রেজোলিউশন রেট, কাস্টমার স্যাটিসফ্যাকশন — এই মেট্রিক্স নিয়মিত দেখুন</li>
-        </ul>
+<ul>
+    <li>Complaint, return request, customization order।</li>
+    <li>Bot detects keyword → flags Anika-র WhatsApp।</li>
+    <li>SLA: respond within 30 min।</li>
+</ul>
 
-        <h2>৮. ফ্রিল্যান্সারদের জন্য সুযোগ</h2>
-        <p>AI কাস্টমার সার্ভিস সেটআপ একটি নতুন ফ্রিল্যান্সিং সার্ভিস হিসেবে দ্রুত বাড়ছে। <a href="/ai-tools-for-freelancers-bangladesh/">ফ্রিল্যান্সারদের জন্য AI টুলস</a> শিখে আপনি আন্তর্জাতিক ক্লায়েন্টদের জন্য চ্যাটবট সেটআপ, কাস্টমার সার্ভিস অটোমেশন, এবং হেল্পডেস্ক কনফিগারেশনের কাজ করতে পারেন। Fiverr এবং Upwork-এ এই সার্ভিসের চাহিদা বাড়ছে এবং প্রতি প্রজেক্টে $100-$500 (৳১২,২০০-৳৬১,০০০) আয় করা সম্ভব।</p>
+<h3>Layer 4: Post-sale follow-up (5%)</h3>
 
-        <h2>৯. সীমাবদ্ধতা ও সতর্কতা</h2>
-        <ul>
-            <li><strong>বাংলা ভাষা:</strong> বেশিরভাগ AI টুল ইংরেজিতে ভালো কাজ করে। বাংলায় সেবা দিতে চাইলে বাংলায় প্রি-সেট উত্তর তৈরি রাখুন</li>
-            <li><strong>জটিল সমস্যা:</strong> রিফান্ড, টেকনিক্যাল ইস্যু, বা অভিযোগের জন্য মানুষের এজেন্ট রাখুন</li>
-            <li><strong>ওভার-অটোমেশন:</strong> সবকিছু AI দিয়ে করতে গেলে কাস্টমাররা হতাশ হতে পারেন — ব্যালেন্স রাখুন</li>
-            <li><strong>ডেটা প্রাইভেসি:</strong> কাস্টমারের ব্যক্তিগত তথ্য সুরক্ষিত রাখুন, বিশ্বাসযোগ্য টুল ব্যবহার করুন</li>
-        </ul>
+<ul>
+    <li>Delivery confirmed → 3 days later "kemon laglo?" message।</li>
+    <li>Review request।</li>
+    <li>Repeat-purchase reminder।</li>
+</ul>
 
-        <h2>১০. ভবিষ্যতে AI কাস্টমার সার্ভিস</h2>
-        <p>AI কাস্টমার সার্ভিস প্রতিদিন উন্নত হচ্ছে। ভয়েস AI, ভিডিও সাপোর্ট, এবং প্রেডিক্টিভ সার্ভিস (সমস্যা হওয়ার আগেই সমাধান) — এই প্রযুক্তিগুলো দ্রুত আসছে। বাংলাদেশি ব্যবসায়ীদের এখনই AI কাস্টমার সার্ভিস শুরু করা উচিত — কারণ যত আগে শুরু করবেন, তত বেশি প্রতিযোগিতামূলক সুবিধা পাবেন।</p>
+<h2>BD-Specific Bangla Chatbot Setup</h2>
 
-        <h2>প্রায়শই জিজ্ঞাসিত প্রশ্ন (FAQ)</h2>
+<ol>
+    <li><b>ManyChat free tier signup:</b> Facebook Business Manager linked।</li>
+    <li><b>Flow design:</b> Welcome message → Menu (price/delivery/stock/order/contact)।</li>
+    <li><b>Keyword trigger:</b> "দাম" → price reply। "delivery" → delivery info।</li>
+    <li><b>OpenAI API connection ($5-15/মাস):</b> ManyChat-এর Dynamic Content for AI responses।</li>
+    <li><b>Test thoroughly:</b> 50+ sample queries।</li>
+    <li><b>Launch + iterate:</b> Weekly analytics review, refine response।</li>
+</ol>
+
+<h2>Measurable ROI</h2>
+
+<ul>
+    <li><b>Response time saved:</b> 3 ঘণ্টা/দিন × ৩০ days = 90 ঘণ্টা/মাস founder time।</li>
+    <li><b>Customer satisfaction:</b> Instant response → 30% higher CSAT score।</li>
+    <li><b>Sales conversion:</b> 17% → 38% (Anika's measured)।</li>
+    <li><b>Tool cost:</b> $15-30/মাস (~৳২-৪K)।</li>
+    <li><b>Net ROI:</b> Monthly ~৳৩.৭L additional revenue from same client base।</li>
+</ul>
+
+<h2>৩টা Critical Mistake</h2>
+
+<ul>
+    <li><b>1. Generic bot responses:</b> "Hi, how can I help?" — feels cold। Personalized + brand-voice essential।</li>
+    <li><b>2. No human escalation rule:</b> Complex complaint AI-trying-to-handle = customer frustration। Clear escalation rules।</li>
+    <li><b>3. Set-and-forget:</b> Weekly analytics + bot improvement otherwise — performance plateau।</li>
+</ul>
+
+<h2>উপসংহার — আপনার আজকের পদক্ষেপ</h2>
+<p>Anika বলেন: "Pregnant + toddler-এর সাথে full-time customer service possible না। AI সেই reality — আমার business survived এবং grow করলো শুধু চ্যাট-bot এর কারণে। ৭৮% queries auto-handle = আমার ৩-৪ ঘণ্টা/দিন family-এর কাছে ফিরে এসেছে। সেটাই ছোট business owner-এর জন্য AI-এর সবচেয়ে precious gift।" আজই করুন: ManyChat-এ free signup, আপনার Facebook page link, একটা basic auto-reply flow (3 common query) ৬০ মিনিটে set up করুন। আগামী সপ্তাহে আপনি customer response speed-এ instantly difference দেখবেন।</p>
+
+                <h2>প্রায়শই জিজ্ঞাসিত প্রশ্ন (FAQ)</h2>
 
         <div class="faq-item" style="margin-bottom:1rem;padding:1rem;border:1px solid #e5e7eb;border-radius:8px;">
             <h3 style="margin-top:0;">বাংলাদেশের ছোট ব্যবসার জন্য কোন AI কাস্টমার সার্ভিস টুল সেরা?</h3>
