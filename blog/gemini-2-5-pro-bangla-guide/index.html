@@ -106,92 +106,78 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-        <h2>ভূমিকা — Gemini 2.5 Pro কী আলাদা?</h2>
-        <p>২০২৬ এর মাঝামাঝি Google Gemini 2.5 Pro release করল — এই মুহূর্তে market-এর সবচেয়ে দীর্ঘ context (1M-2M tokens), built-in thinking mode (reasoning), এবং Workspace ecosystem-এ নির্বিঘ্ন integration।</p>
-        <p>ChatGPT-এর প্রধান প্রতিদ্বন্দ্বী — কিছু ক্ষেত্রে এগিয়ে।</p>
+<p class="lede">Gemini 2.5 Pro — Google-এর AI lineup-এ pre-3.5 flagship, ২০২৫-এর শুরুতে released। ২০২৬-এর মে-এ Gemini 3.5 Pro released হয়েছে, 2.5 Pro mid-tier হিসেবে continue। তবু 2.5 Pro সম্পূর্ণ বাতিল না — Google AI Studio + Gemini 2.5 Pro for developers + free tier-এ extended access available। অনেক BD developer + researcher এখনো 2.5 Pro use করেন: API cost lower, performance still strong, extensive ecosystem। Reza Karim ICDDR,B research developer — তিনি Gemini 2.5 Pro API দিয়ে multi-language health survey analysis pipeline চালান। Monthly API spend ~$30 (~৳3,600), 3.5 Pro-এ ~$80 — same throughput-এ 2.5 Pro যথেষ্ট। তাঁর insight: "Flagship-চেয়ে fit-for-purpose বেছে নেওয়া experienced developer-এর কাজ।"</p>
 
-        <h2>মূল ফিচারসমূহ</h2>
-        <ul>
-            <li><b>1M-2M token context:</b> পুরো বই/ঘণ্টার ভিডিও একবারে process</li>
-            <li><b>Thinking mode:</b> Complex প্রশ্নে chain-of-thought দেখায়</li>
-            <li><b>Multimodal native:</b> Text, image, audio, video — একই session-এ</li>
-            <li><b>Workspace integration:</b> Gmail, Docs, Drive, Sheets, Slides</li>
-            <li><b>Live video:</b> Camera দিয়ে real-time conversation</li>
-            <li><b>Code generation:</b> GPT-4 level</li>
-            <li><b>Bangla:</b> Native-quality</li>
-        </ul>
+<p>এই article Gemini 2.5 Pro features + when still relevant + access + use cases।</p>
 
-        <h2>অ্যাক্সেস</h2>
-        <ul>
-            <li><b>gemini.google.com</b> — basic free</li>
-            <li><b>Google One AI Premium:</b> $19.99/মাস — Gemini Advanced (2.5 Pro full)</li>
-            <li><b>Workspace:</b> Business plan-এ included</li>
-            <li><b>AI Studio (developer):</b> ai.studio.google.com — free tier generous</li>
-            <li><b>BD থেকে:</b> Google account দিয়ে সরাসরি, VPN ছাড়া</li>
-        </ul>
+<div class="stat-row">
+    <div class="stat"><span class="num">1M tokens</span><span class="label">2.5 Pro context window</span></div>
+    <div class="stat"><span class="num">Thinking mode</span><span class="label">Extended reasoning</span></div>
+    <div class="stat"><span class="num">$0.30/M tokens</span><span class="label">API input cost (cheaper than 3.5)</span></div>
+    <div class="stat"><span class="num">Google AI Studio</span><span class="label">Free developer access</span></div>
+</div>
 
-        <h2>1M context — কী করতে পারবেন?</h2>
-        <ul>
-            <li>পুরো বই (৫০০ পৃষ্ঠা) upload → "এই বইয়ের তিনটি মূল argument কী?"</li>
-            <li>এক ঘণ্টার YouTube ভিডিও → "summarize in 10 bullet points"</li>
-            <li>GitHub repo (100+ file) → "explain this codebase architecture"</li>
-            <li>১০টি research paper একসাথে → "compare methodologies"</li>
-            <li>পুরো legal contract → "flag risky clauses"</li>
-        </ul>
+<h2>Gemini 2.5 Pro Key Features</h2>
 
-        <h2>Thinking Mode — কখন ব্যবহার?</h2>
-        <p>2.5 Pro-তে built-in "thinking" toggle। On করলে AI চিন্তা করে দেখায় উত্তর দেওয়ার আগে। ধীর কিন্তু complex কাজে চমৎকার।</p>
-        <ul>
-            <li><b>Math/logic problem:</b> Step-by-step solve</li>
-            <li><b>Code debug:</b> বিভিন্ন hypothesis test</li>
-            <li><b>Strategic planning:</b> Pros/cons বিশ্লেষণ</li>
-            <li><b>Research summary:</b> Cross-reference</li>
-            <li>Off রাখুন: quick chat, casual Q&A</li>
-        </ul>
+<ul>
+    <li><b>Context window:</b> 1M tokens (2M with extended).</li>
+    <li><b>Thinking mode:</b> Step-by-step reasoning for complex problems.</li>
+    <li><b>Multimodal:</b> Image + audio + video understanding.</li>
+    <li><b>Code Execution:</b> Python code run within AI Studio.</li>
+    <li><b>Function Calling:</b> Connect to external API.</li>
+    <li><b>Workspace integration:</b> Gemini Advanced subscription।</li>
+</ul>
 
-        <h2>Workspace integration — Bangladesh productivity-তে</h2>
-        <ul>
-            <li><b>Gmail:</b> "এই email-এর Bangla draft reply লেখো"</li>
-            <li><b>Docs:</b> Sidebar-এ "help me write..." → real-time AI</li>
-            <li><b>Sheets:</b> "Q3-এর sales trend বিশ্লেষণ করো"</li>
-            <li><b>Slides:</b> Topic দিন → presentation auto-generate</li>
-            <li><b>Meet:</b> Live transcription + summary</li>
-        </ul>
+<h2>When 2.5 Pro Still Relevant (2026)</h2>
 
-        <h2>বাংলায় Gemini 2.5 — কেমন কাজ করে?</h2>
-        <ul>
-            <li>Native-quality Bangla output — natural, idiomatic</li>
-            <li>Mixed Banglish handle perfect</li>
-            <li>Bengali poetry/সাহিত্য understand + create</li>
-            <li>Pronunciation: voice mode-এ accent ভালো</li>
-            <li>OCR Bangla document: 95%+ accuracy</li>
-        </ul>
+<ul>
+    <li><b>API cost-sensitive projects:</b> 2.5 Pro API significantly cheaper than 3.5।</li>
+    <li><b>Free tier developer:</b> Google AI Studio-এ extensive free quota।</li>
+    <li><b>Existing pipeline:</b> Production systems built on 2.5 — no urgent migration।</li>
+    <li><b>1M context sufficient:</b> Most real-world need 1M not 2M।</li>
+    <li><b>Educational use:</b> Students learning Gemini API — start with 2.5।</li>
+</ul>
 
-        <h2>Gemini 2.5 Pro vs ChatGPT (GPT-4o)</h2>
-        <ul>
-            <li><b>Long context:</b> Gemini wins (1M vs 128K)</li>
-            <li><b>Multimodal:</b> Gemini native, GPT add-on</li>
-            <li><b>Coding:</b> Tied</li>
-            <li><b>Creative writing:</b> ChatGPT slight edge</li>
-            <li><b>Workspace integration:</b> Gemini</li>
-            <li><b>Sora video:</b> ChatGPT only</li>
-            <li><b>Voice quality:</b> ChatGPT AVM more natural</li>
-            <li><b>Best workflow:</b> উভয়ই — different jobs</li>
-        </ul>
+<h2>Access for BD Users</h2>
 
-        <h2>কাদের জন্য Gemini Advanced worth it?</h2>
-        <ul>
-            <li>Workspace heavy user (Docs/Sheets/Slides)</li>
-            <li>Long document analysis নিয়মিত</li>
-            <li>Researcher / academic</li>
-            <li>Student (Drive-এ class material)</li>
-            <li>Multi-modal creator (image + audio + video)</li>
-        </ul>
+<ul>
+    <li><b>Google AI Studio (aistudio.google.com):</b> Free tier, generous quota।</li>
+    <li><b>Gemini Advanced subscription:</b> 2.5 Pro included, $20/mo।</li>
+    <li><b>Vertex AI (Google Cloud):</b> Enterprise/production deployment।</li>
+    <li><b>API key:</b> Free tier 1,500 requests/day, enough for many applications।</li>
+</ul>
 
-        <h2>উপসংহার</h2>
-        <p>২০২৬ এ এসে AI choice আর "ChatGPT-ই সেরা" না — context-specific। Gemini 2.5 Pro long-document + Google ecosystem-এ unbeatable। ফ্রি tier দিয়ে শুরু করুন; Workspace user হলে Advanced বিবেচনা করুন।</p>
+<h2>1M Context — Practical Capacity</h2>
 
-        <h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
+<ul>
+    <li><b>~700-page book:</b> Full novel analysis।</li>
+    <li><b>~50 PDF report:</b> Government/corporate document bundle।</li>
+    <li><b>10 hours of audio transcript:</b> Long meeting analysis।</li>
+    <li><b>1-hour video understanding:</b> Lecture, interview, conference।</li>
+    <li><b>Large codebase:</b> 30,000+ line of code।</li>
+</ul>
+
+<h2>Gemini 2.5 vs 3.5 (When to Upgrade?)</h2>
+
+<ul>
+    <li><b>Stay on 2.5:</b> Cost-sensitive, existing pipeline, 1M context enough।</li>
+    <li><b>Upgrade to 3.5:</b> Need 2M context, Deep Research mode, latest improvements।</li>
+    <li><b>Free user:</b> Gemini 3.5 Flash unlimited — usually no reason to stay on 2.5।</li>
+</ul>
+
+<h2>BD Use Cases (2.5 Pro Specific)</h2>
+
+<ul>
+    <li><b>Academic research:</b> Affordable API for thesis work।</li>
+    <li><b>Student projects:</b> Free tier sufficient।</li>
+    <li><b>Small SaaS app:</b> Cost-effective AI integration।</li>
+    <li><b>BD-context data analysis:</b> Long-document processing।</li>
+</ul>
+
+<h2>উপসংহার — আপনার আজকের পদক্ষেপ</h2>
+<p>Reza বলেন: "Newest model fascinating, but production-এ stability + cost matter। 2.5 Pro stable, cheap, sufficient — সেটাই pragmatic choice for many projects।" আজই করুন: aistudio.google.com-এ যান (free), একটা long PDF upload করে 2.5 Pro experience করুন। 1M context-এ comprehensive analysis।</p>
+
+                <h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
         <ul>
             <li><a href="/gemini/">Gemini</a></li>
             <li><a href="/blog/gemini-ai-bangladesh-guide/">Gemini বাংলা</a></li>

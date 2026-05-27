@@ -103,93 +103,106 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-        <h2>ভূমিকা</h2>
-        <p>Claude Sonnet 4.6 — Anthropic-এর Sonnet line-এর সর্বশেষ রিলিজ। 4.5-এর successor হিসেবে coding, agentic tasks, এবং long-form reasoning-এ significant improvement এনেছে।</p>
-        <p>বাংলা ভাষায় Claude-এর dominance বরাবরের মতো — 4.6-এ আরো polished। বাংলাদেশি content creator, developer, researcher-দের জন্য সবচেয়ে relevant model।</p>
+<p class="lede">Claude Sonnet 4.6 — Anthropic-এর daily-driver flagship model, ২০২৬-এর মার্চ-এ released। ২০২৪-এর Sonnet 4.5-এর successor। BD content writer Sharmin Akter ২০২৫-এর জুন-এ Claude Pro-তে moved (article: claude-ai-bangladesh-guide-এ details)। ২০২৬-এর মে-এ তিনি বলেন: "Sonnet 4.6-এর Bangla creative writing — competitor-এর সাথে comparable নয়। Per-word rate $0.18 → $0.35 এই tool-এ দাঁড়ানো। ২০২৬-এ Claude আমার বাড়ি ভাড়া।" BD-এর জন্য Sonnet 4.6 specific reasons-এ unmatched: Bangla literary tone, 200K context window, Projects feature, code quality, computer use।</p>
 
-        <h2>4.5 থেকে কী নতুন</h2>
-        <ul>
-            <li><b>Coding:</b> SWE-bench score আরো উন্নত, real-world task সলভ best-in-class</li>
-            <li><b>Agentic tasks:</b> long multi-step autonomous কাজে আরো reliable</li>
-            <li><b>Computer Use:</b> beta থেকে production-grade</li>
-            <li><b>Tool use:</b> parallel function calling, error recovery</li>
-            <li><b>Long context:</b> 200K consistency improved (no "lost in middle")</li>
-            <li><b>Refusal calibration:</b> over-cautious behavior কমেছে</li>
-            <li><b>Speed:</b> faster inference, lower latency</li>
-        </ul>
+<p>এই article Sonnet 4.6-এর key features + access + use cases + comparison + when to use।</p>
 
-        <h2>অ্যাক্সেস</h2>
-        <ul>
-            <li><b>claude.ai</b> — Free tier limited usage; Pro ($20/মাস) full</li>
-            <li><b>Claude Code CLI:</b> developer terminal-এ</li>
-            <li><b>Claude API:</b> $3 / 1M input tokens</li>
-            <li><b>Cursor, Replit, others-এ embedded</b></li>
-            <li><b>Mobile:</b> Android + iOS apps</li>
-            <li><b>BD থেকে:</b> VPN ছাড়া; phone verification needed signup-এ</li>
-        </ul>
+<div class="stat-row">
+    <div class="stat"><span class="num">200K tokens</span><span class="label">Context window</span></div>
+    <div class="stat"><span class="num">$20/mo</span><span class="label">Claude Pro</span></div>
+    <div class="stat"><span class="num">Best Bangla</span><span class="label">Creative writing in industry</span></div>
+    <div class="stat"><span class="num">SWE-bench leader</span><span class="label">Coding benchmark</span></div>
+</div>
 
-        <h2>বাংলায় Claude 4.6 — গুণমান</h2>
-        <ul>
-            <li>Native-grade Bengali — বাজারে সবচেয়ে natural output</li>
-            <li>রবীন্দ্রনাথ, নজরুল style replicate করতে পারে</li>
-            <li>বাংলা poetry generation — meter সংরক্ষণ</li>
-            <li>Mixed Banglish handle perfectly</li>
-            <li>Bengali idiom appropriate context-এ</li>
-            <li>Long Bengali document analysis precision</li>
-        </ul>
+<h2>What's New in 4.6 (from 4.5)</h2>
 
-        <h2>নতুন ক্ষমতা — practical examples</h2>
+<ul>
+    <li><b>Improved Bangla:</b> Native-quality literary writing.</li>
+    <li><b>Extended Thinking:</b> Optional reasoning mode for complex problems।</li>
+    <li><b>Tool use:</b> Multi-step task execution with code+file access।</li>
+    <li><b>Computer Use (beta):</b> Click + type + navigate browser/desktop।</li>
+    <li><b>Projects feature:</b> Context-preserved workspace।</li>
+    <li><b>200K context unchanged:</b> But better utilization।</li>
+</ul>
 
-        <h3>Computer Use (production-ready)</h3>
-        <p>Claude নিজে মাউস + কীবোর্ড control করতে পারে। Form fill, data entry, multi-app workflow automate — desktop app-এ available।</p>
+<h2>Access from BD</h2>
 
-        <h3>Artifacts v2</h3>
-        <p>Code preview, React component, SVG diagram, document — sidebar-এ live render। React, HTML/CSS, Mermaid — সব support।</p>
+<ul>
+    <li><b>claude.ai (web):</b> VPN ছাড়া accessible।</li>
+    <li><b>Mobile app:</b> iOS + Android।</li>
+    <li><b>Free tier:</b> Sonnet 4.6 limited daily (10-20 messages)।</li>
+    <li><b>Pro ($20/mo):</b> Unlimited Sonnet 4.6 + limited Opus 4.7।</li>
+    <li><b>Max ($100-200/mo):</b> Opus unlimited + higher rate limits।</li>
+    <li><b>API:</b> Anthropic API + Amazon Bedrock + Google Vertex।</li>
+    <li><b>Payment:</b> bKash USD card, Wise, Payoneer।</li>
+</ul>
 
-        <h3>Project Long Context</h3>
-        <p>Pro-এ "Projects" — files persist, context maintain across conversations। 200K token-এ pristine recall।</p>
+<h2>Bangla Quality — Sonnet 4.6's Strongest Edge</h2>
 
-        <h2>Claude Sonnet 4.6 vs প্রতিদ্বন্দ্বী</h2>
-        <ul>
-            <li><b>vs ChatGPT GPT-5:</b> Claude bangla এবং long-form-এ এগিয়ে; ChatGPT image gen, voice mode-এ</li>
-            <li><b>vs Gemini 3.5:</b> Claude reasoning এবং writing; Gemini multimodal এবং long-context</li>
-            <li><b>vs Claude Opus 4.7:</b> Sonnet দ্রুত + সস্তা; Opus deep reasoning + complex</li>
-            <li><b>সেরা workflow:</b> দৈনিক কাজে Sonnet, hardest problem-এ Opus</li>
-        </ul>
+<p>BD content writer-এর জন্য Sonnet 4.6-এর Bangla quality industry-leader:</p>
 
-        <h2>দাম (BD context)</h2>
-        <ul>
-            <li><b>Free tier:</b> Claude.ai-তে দৈনিক ~১০ message Sonnet 4.6</li>
-            <li><b>Pro ($20 ≈ ৳২,৪০০/মাস):</b> 5x usage, all features</li>
-            <li><b>Max ($100-200):</b> heavy usage tiers</li>
-            <li><b>API:</b> $3 in / $15 out per 1M tokens</li>
-            <li><b>BD পেমেন্ট:</b> International card / Wise / virtual card</li>
-        </ul>
+<ul>
+    <li><b>Literary tone:</b> Rabindranath-style classical থেকে modern conversational — adaptive।</li>
+    <li><b>Idiom + cultural reference:</b> Native-grade fluency।</li>
+    <li><b>Emotional pacing:</b> Mother's Day ad, retirement letter — emotion preserved।</li>
+    <li><b>Bangla-English code-switching:</b> Natural, not forced।</li>
+    <li><b>সাধু-চলিত:</b> Context-aware switching।</li>
+</ul>
 
-        <h2>কখন Sonnet 4.6 বেছে নেবেন</h2>
-        <ul>
-            <li>Bangla long-form content (blog, article, story)</li>
-            <li>Coding/development (best free model)</li>
-            <li>Document analysis (PDF, contract, paper)</li>
-            <li>Sensitive/nuanced reasoning (ethics, philosophy)</li>
-            <li>Bangla-English translation (literary quality)</li>
-            <li>Code Review</li>
-            <li>Tutoring (deep explanation)</li>
-        </ul>
+<h2>Practical BD Use Cases</h2>
 
-        <h2>যখন অন্যদিকে যাবেন</h2>
-        <ul>
-            <li>Image generation দরকার → ChatGPT (DALL-E)</li>
-            <li>Sora-style video → ChatGPT Pro</li>
-            <li>Voice mode-এ AVM → ChatGPT</li>
-            <li>Google Workspace integration → Gemini</li>
-            <li>একদম ফ্রি unlimited → DeepSeek</li>
-        </ul>
+<ul>
+    <li><b>Bangla content writer:</b> Sharmin-এর use case।</li>
+    <li><b>Long-form essay/research:</b> Coherence across 5,000+ words।</li>
+    <li><b>Code development:</b> Claude Code (CLI), Cursor IDE integration।</li>
+    <li><b>Long PDF analysis:</b> 200K context (vs Gemini's 2M — sufficient for most)।</li>
+    <li><b>Customer service complex query:</b> Nuanced understanding।</li>
+    <li><b>Academic thesis writing:</b> Long-context consistency।</li>
+    <li><b>Brand storytelling:</b> Voice authenticity।</li>
+</ul>
 
-        <h2>উপসংহার</h2>
-        <p>Claude Sonnet 4.6 — বাংলা content + serious কাজের জন্য most reliable AI। যিনি 4.5 ব্যবহার করছেন, upgrade automatic হয়ে গেছে (claude.ai-তে)। আজকের আপনার এক difficult কাজে Sonnet 4.6-এ try করে দেখুন — fluency-এ পার্থক্য টের পাবেন।</p>
+<h2>Sonnet 4.6 vs Competitors</h2>
 
-        <h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
+<table style="width:100%;border-collapse:collapse;margin:1rem 0;">
+<thead>
+<tr style="background:#f1f5f9;">
+<th style="padding:10px;border:1px solid #e5e7eb;">Task</th>
+<th style="padding:10px;border:1px solid #e5e7eb;">Winner</th>
+</tr>
+</thead>
+<tbody>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;">Bangla creative writing</td><td style="padding:10px;border:1px solid #e5e7eb;"><b>Claude Sonnet 4.6</b></td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;">Long-form essay</td><td style="padding:10px;border:1px solid #e5e7eb;"><b>Claude Sonnet 4.6</b></td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;">Coding</td><td style="padding:10px;border:1px solid #e5e7eb;"><b>Claude Sonnet 4.6</b></td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;">Voice conversation</td><td style="padding:10px;border:1px solid #e5e7eb;">ChatGPT GPT-5</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;">Image generation</td><td style="padding:10px;border:1px solid #e5e7eb;">ChatGPT/Gemini</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;">Workspace integration</td><td style="padding:10px;border:1px solid #e5e7eb;">Gemini 3.5</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;">Long context (500+ pages)</td><td style="padding:10px;border:1px solid #e5e7eb;">Gemini 3.5 Pro</td></tr>
+</tbody>
+</table>
+
+<h2>When Sonnet 4.6 Worth It</h2>
+
+<ul>
+    <li>Bangla content writer/journalist/copywriter।</li>
+    <li>Full-stack developer (Claude Code/Cursor)।</li>
+    <li>Long-form essay writer (academic, novelist)।</li>
+    <li>Brand storytelling-focused marketer।</li>
+</ul>
+
+<h2>When to Use Alternatives</h2>
+
+<ul>
+    <li><b>Voice mode primary:</b> ChatGPT।</li>
+    <li><b>Image gen:</b> DALL-E (ChatGPT) or Imagen (Gemini)।</li>
+    <li><b>Workspace user:</b> Gemini Advanced।</li>
+    <li><b>Long PDF (500+ pages):</b> Gemini 3.5 Pro (2M context)।</li>
+</ul>
+
+<h2>উপসংহার — আপনার আজকের পদক্ষেপ</h2>
+<p>Sonnet 4.6 BD content + code-heavy user-এর জন্য top choice 2026-এ। Free tier-এ daily limited messages-ই অনেক power user-এর জন্য sufficient। Pro $20-এ unlimited + Projects feature — serious writer/developer-এর জন্য highest-ROI tool। আজই claude.ai-এ free account, Bangla creative writing task try। অন্য কোনো model থেকে আসলে — quality jump immediately noticeable।</p>
+
+                <h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
         <ul>
             <li><a href="/claude/">Claude</a></li>
             <li><a href="/blog/claude-sonnet-4-5-bangla-guide/">Claude Sonnet 4.5</a></li>
