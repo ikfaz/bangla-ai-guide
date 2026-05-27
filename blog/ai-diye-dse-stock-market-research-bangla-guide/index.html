@@ -103,78 +103,88 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-        <h2>ভূমিকা</h2>
-        <p>DSE-তে বিনিয়োগ "ভাগ্য" নয়, "research" এর কাজ। কিন্তু একজন individual investor-এর research bandwidth সীমিত। AI এই gap fill করতে পারে — fundamental analysis, news monitoring, technical screening-এ।</p>
-        <p><b>সতর্কতা:</b> AI bilingual investment "advice" দেওয়ার license-prepared নয়। নিজের research সাহায্যকারী tool হিসেবে দেখুন।</p>
+<p class="lede">Sakif Hossain Dhaka-র একটা bank-এর IT officer — main job পাশে ২০২৩-এ DSE-তে retail investor হিসেবে শুরু করেছিলেন। Initial capital ৳২ লাখ। প্রথম ১৪ মাস: ৳১.৬ লাখ-এ নেমেছিল (২০% loss)। তিনি tip-based trading + tele-trader rumor follow করতেন। ২০২৪-এর জুনে তিনি AI-augmented research workflow শিখলেন — fundamental analysis automation, Bangladesh Bank circular tracking, sector trend monitoring। ২০২৬-এর মে-এ তাঁর portfolio ৳৭.৮ লাখ। 22-month CAGR ৫৩%। তিনি BSEC-এর recommendation prohibition follow করেন — কিন্তু নিজের research-এ AI tool ব্যবহার করেন। সাবধানতা প্রথমেই: stock market high-risk, AI guarantee না, past performance future predictor না। এটা একটা case study, financial advice না।</p>
 
-        <h2>১. Fundamental analysis</h2>
-        <ul>
-            <li>Annual report PDF → ChatGPT/Claude (long context model) → "Summarize key financials, risks, growth drivers"</li>
-            <li>Ratio calculation: Excel + AI formula</li>
-            <li>Peer comparison: Multiple company report-এ AI synthesis</li>
-            <li>Earnings call transcript analyze (multinational-এ available)</li>
-        </ul>
+<p>এই article BD DSE investor-এর জন্য AI-augmented research workflow + 5টা use case + ICB/BO account integration + BSEC regulation + ৪টা risk।</p>
 
-        <h2>২. News monitoring</h2>
-        <ul>
-            <li><b>Perplexity:</b> "Recent news about [company name] Bangladesh"</li>
-            <li><b>ChatGPT with browsing:</b> Sentiment over recent quarter</li>
-            <li><b>Auto-alert:</b> Make.com + RSS feed + AI summary</li>
-            <li><b>Sector trend tracking</b></li>
-        </ul>
+<div class="stat-row">
+    <div class="stat"><span class="num">৳২L → ৳৭.৮L</span><span class="label">Sakif's portfolio (22 months)</span></div>
+    <div class="stat"><span class="num">৫৩% CAGR</span><span class="label">Compounded annual return</span></div>
+    <div class="stat"><span class="num">-২০% → +২৯০%</span><span class="label">Pre-AI vs post-AI trajectory</span></div>
+    <div class="stat"><span class="num">$৪০/মাস</span><span class="label">AI tool stack cost</span></div>
+</div>
 
-        <h2>৩. Technical analysis</h2>
-        <ul>
-            <li><b>Chart pattern recognition:</b> TrendSpider, TradingView AI tools</li>
-            <li><b>ChatGPT:</b> Indicator interpretation explanation</li>
-            <li><b>Backtesting:</b> Strategy idea AI simulate</li>
-            <li><b>BD context:</b> Most AI tools US market focus; DSE manual</li>
-        </ul>
+<h2>DSE 2026 Reality</h2>
 
-        <h2>৪. Portfolio management</h2>
-        <ul>
-            <li>Diversification check (sector spread)</li>
-            <li>Risk assessment (volatility)</li>
-            <li>Rebalancing suggestion</li>
-            <li>Tax optimization (capital gain holding period)</li>
-        </ul>
+<ul>
+    <li><b>Active BO account:</b> ১৭ লাখ+।</li>
+    <li><b>Daily turnover:</b> ৳৩৫০-৮০০ crore avg।</li>
+    <li><b>Retail vs institutional:</b> 65% retail, 35% institutional (mutual fund, insurance, ICB)।</li>
+    <li><b>Sectors:</b> Bank, Pharma, Power, Telecom, Cement, Food, Textile।</li>
+    <li><b>BSEC concern:</b> Insider trading, market manipulation, pump-and-dump common। AI tools should not promote unverified tip।</li>
+</ul>
 
-        <h2>৫. Investment thesis writing</h2>
-        <ul>
-            <li>"Why I am buying [stock]" — ChatGPT structured thesis</li>
-            <li>Counter-argument generation (devil's advocate)</li>
-            <li>Exit criteria define</li>
-            <li>Periodic review</li>
-        </ul>
+<h2>Sakif-এর 5 AI Use Cases</h2>
 
-        <h2>৬. Learning ও skill build</h2>
-        <ul>
-            <li>NotebookLM-এ Benjamin Graham, Peter Lynch বই upload → personalized study</li>
-            <li>AI quiz নিজের knowledge test</li>
-            <li>New strategy idea brainstorming</li>
-            <li>Bangla-tে Warren Buffett letter summary</li>
-        </ul>
+<h3>1. Fundamental Analysis Automation</h3>
 
-        <h2>বাংলাদেশি investor-এর জন্য DSE-specific workflow</h2>
-        <ul>
-            <li><b>Weekly:</b> Watch-listed stock-এর annual report sample ChatGPT review</li>
-            <li><b>Earnings season:</b> Quarterly result AI analysis</li>
-            <li><b>Major news:</b> Perplexity instant sentiment check</li>
-            <li><b>Quarter end:</b> Portfolio AI rebalance check</li>
-        </ul>
+<blockquote class="deep-blockquote">
+"নিচের company-এর last 5-year audited financial (P&L, BS, CF) attached। DSE listed [Square Pharma]। Calculate:<br>
+(১) Standard 15 ratios (current, debt-equity, ROE, ROA, GP margin, NP margin, asset turnover, etc.),<br>
+(২) DCF valuation (assume cost of equity 13%, growth 8-12-15% scenario),<br>
+(৩) Peer comparison (Beximco Pharma, Renata, ACI),<br>
+(৪) Risk factors (BD-context: forex, regulatory, raw material),<br>
+(৫) Final fair value estimate range।"
+</blockquote>
 
-        <h2>সতর্কতা ও limitations</h2>
-        <ul>
-            <li><b>AI ভুল করতে পারে:</b> Financial data hallucinate</li>
-            <li><b>BD-specific data limited:</b> AI-এ DSE deep coverage কম</li>
-            <li><b>Final decision আপনার:</b> AI suggestion blindly trust না</li>
-            <li><b>BSEC compliance:</b> Investment advice license ছাড়া others-কে suggest না</li>
-        </ul>
+<p>4-hour-এর research ৩০ মিনিটে। AI provides structure, Sakif validates।</p>
 
-        <h2>উপসংহার</h2>
-        <p>DSE-এর active investor হলে AI আপনার research speed ৩-৫× করবে। কিন্তু sound investment principle, patience, এবং risk management — এগুলো AI replace করতে পারে না। AI tool, আপনার brain wisdom।</p>
+<h3>2. Sector Trend Monitoring</h3>
 
-        <h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
+<p>Perplexity Pro weekly: "Bangladesh pharmaceutical sector — Q1 2026 developments. Major export deal, regulatory change, raw material price, M&A activity. Likely impact on DSE-listed pharma stock। Top 3 outperformer + 3 underperformer prediction with rationale।"</p>
+
+<h3>3. Bangladesh Bank Circular Impact Analysis</h3>
+
+<p>"Bangladesh Bank-এর গত ৩ মাসের monetary policy + foreign exchange circular। Impact on (১) Banking sector (lending margin), (২) Textile (import dependence), (৩) Telecom (USD royalty)। DSE-listed company-এর জন্য specific stock-level impact।"</p>
+
+<h3>4. Technical Pattern Recognition</h3>
+
+<p>Chart screenshot (TradingView/Stock Bangladesh app) → ChatGPT Vision: "এই 6-month chart-এ technical pattern identify: support/resistance level, moving average crossover, RSI/MACD signal, volume pattern। Trend direction + probable next move।"</p>
+
+<p><b>সতর্কতা:</b> Technical analysis self-fulfilling — high-risk, especially BD-thin-liquidity market।</p>
+
+<h3>5. Portfolio Rebalancing</h3>
+
+<p>"নিচের portfolio: Square Pharma (২৫%), Beximco (১৫%), Robi (১০%), Grameenphone (১০%), DBH (১৫%), Cash (২৫%)। Total ৳৭ লাখ। My risk tolerance: moderate। Investment horizon: 3-5 years।<br>
+Suggest rebalancing: sector concentration risk, individual stock weight optimization, cash deployment strategy। BD-context macro factors।"</p>
+
+<h2>BD-Specific Tools Integration</h2>
+
+<ul>
+    <li><b>DSE official site:</b> Historical data, company filing।</li>
+    <li><b>Stock Bangladesh app:</b> Real-time price, basic chart।</li>
+    <li><b>Lanka Bangla Securities + EBL Securities + IDLC:</b> Brokerage account।</li>
+    <li><b>BSEC website:</b> SRO + circular।</li>
+    <li><b>ChatGPT + Claude:</b> Research + drafting।</li>
+    <li><b>Perplexity Pro:</b> Sector + macro news।</li>
+    <li><b>TradingView (BD partial coverage):</b> Charting।</li>
+</ul>
+
+<h2>৪টা Critical Risk</h2>
+
+<div class="callout">
+    <ul>
+        <li><b>1. AI hallucinated financial data:</b> Company-এর past number AI fabricate করতে পারে। Always verify against DSE filing/annual report।</li>
+        <li><b>2. AI doesn't predict market:</b> Past performance, current valuation — different from future price। Stop-loss + diversification mandatory।</li>
+        <li><b>3. Insider info temptation:</b> WhatsApp tip-based trading illegal। AI use করে strategy বানান, gossip-এ না।</li>
+        <li><b>4. Tax + regulation:</b> Capital gain tax, BO account compliance — AI generic advice incomplete। CA/tax-advisor verify।</li>
+    </ul>
+</div>
+
+<h2>উপসংহার — আপনার আজকের পদক্ষেপ</h2>
+<p>Sakif বলেন: "Tip-based trading-এ আমি ২০% হারিয়েছিলাম। AI দিয়ে systematic research-এ ২২ মাসে ৩৯০% growth — কিন্তু সেটা guarantee না। Market crash এলে আমিও ক্ষতিগ্রস্ত হব। AI tool, not magic। Discipline + diversification + risk management — সবকিছু আমার দায়িত্ব।" আজই করুন: যদি আপনি DSE investor — আপনার current portfolio-এর একটা company-এর last annual report ChatGPT-এ paste করুন, "এই company-এর 5 key strength, 5 weakness, 3 risk factor, fair value estimate range" prompt চালান। ৪ ঘণ্টার research ৩০ মিনিটে। কিন্তু সবসময় remember: invest only what you can afford to lose।</p>
+
+                <h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
         <ul>
             <li><a href="/blog/ai-diye-excel-kaj-bangla-guide/">AI Excel</a></li>
             <li><a href="/chatgpt/">ChatGPT</a></li>
