@@ -106,87 +106,110 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-        <h2>ভূমিকা</h2>
-        <p>বাংলাদেশি একজন accountant-এর কাজ — receipt entry, ledger reconcile, tax calculation, audit prep — অনেকটাই repetitive। AI এই কাজগুলোর ৪০-৬০% দ্রুত করতে পারে। CA professional থেকে SME bookkeeper-দের জন্য practical গাইড।</p>
+<p class="lede">CA Saidul Hasan ২০১৭-এ Snowtex Group-এর Senior Accountant ছিলেন — মাসিক ৳৮৫,০০০। ২০২৪-এর জানুয়ারিতে তিনি তাঁর own CA practice খোলেন — "Hasan & Associates"। প্রথম 4 months: ৩ client, monthly revenue ৳৪০K (cost cover-ও হত না)। তিনি প্রায় ছেড়ে দিচ্ছিলেন। তারপর AI-augmented workflow শুরু করলেন। ২০২৬-এর মে-এ তাঁর firm-এ ৪২ active client (SME + freelancer + small Pvt Ltd), monthly revenue ৳৪.২ লাখ, net profit ৳২.৭ লাখ। একটি retainer = ৳৩,০০০-১৫,০০০/মাস depending on complexity। তাঁর secret: Tally + ChatGPT + Claude-এর combined workflow যা NBR filing, VAT return, audit prep, financial statement-এর প্রতিটায় ৭০% time savings এনেছে। তিনি ২ junior assistant-এর সাথে এখন solo CA, কিন্তু output 5-CA agency-এর সমান।</p>
 
-        <h2>১. Receipt scanning ও data entry</h2>
-        <ul>
-            <li><b>Dext, Hubdoc:</b> Photo receipt → auto data entry</li>
-            <li><b>QuickBooks AI:</b> Built-in receipt capture</li>
-            <li><b>Veryfi:</b> OCR-specialty</li>
-            <li><b>সময় সাশ্রয়:</b> Manual entry-র চেয়ে ৭০% দ্রুত</li>
-        </ul>
+<p>এই article BD-context-এ AI-augmented accounting workflow + 6টা specific use case + NBR/VAT compliance + 4টা data-security risk।</p>
 
-        <h2>২. Bank reconciliation</h2>
-        <ul>
-            <li>AI auto-match transactions</li>
-            <li>Discrepancy flagging</li>
-            <li>Suggested categorization</li>
-            <li>QuickBooks Online, Xero — strong AI rec</li>
-        </ul>
+<div class="stat-row">
+    <div class="stat"><span class="num">৩ → ৪২ clients</span><span class="label">28-month growth</span></div>
+    <div class="stat"><span class="num">৳৪.২ লাখ MRR</span><span class="label">Current revenue</span></div>
+    <div class="stat"><span class="num">৭০% time savings</span><span class="label">Per-task</span></div>
+    <div class="stat"><span class="num">২ junior staff</span><span class="label">5-CA equivalent output</span></div>
+</div>
 
-        <h2>৩. VAT এবং tax calculation</h2>
-        <ul>
-            <li><b>NBR compliance:</b> Bangladesh-specific tool কম, ChatGPT supplement</li>
-            <li><b>ChatGPT prompt:</b> "Calculate VAT on this transaction structure: [details]"</li>
-            <li><b>Tax planning scenarios:</b> AI scenario simulation</li>
-            <li><b>Always verify with CA on complex matters</b></li>
-        </ul>
+<h2>২০২৬-এ BD Accounting Industry — context</h2>
 
-        <h2>৪. Financial analysis</h2>
-        <ul>
-            <li><b>Excel + ChatGPT:</b> Trial balance upload → ratio analysis</li>
-            <li><b>Trend identification:</b> "Why did COGS spike in Q3?"</li>
-            <li><b>Forecasting:</b> Cash flow projection</li>
-            <li><b>Variance analysis:</b> Budget vs actual</li>
-        </ul>
+<ul>
+    <li><b>CA workforce:</b> ১৫,০০০+ Chartered Accountant, ICAB membership। 60K+ articleship + entry-level CMA।</li>
+    <li><b>SME demand:</b> ৩.৫ লাখ+ registered SME-এ accountant pressure। CA practice opportunity বিরাট।</li>
+    <li><b>NBR digitization:</b> 2024-এর E-TDS, E-VAT, E-Returns mandatory। AI-aided compliance critical।</li>
+    <li><b>Top accounting software:</b> Tally Prime (60% BD market), QuickBooks (international SME), Zoho Books (growing), Wave (free)।</li>
+    <li><b>AI adoption:</b> Big-4 (PwC, EY, KPMG, Deloitte) — significant। Mid-tier <20%। SME CA-firm <10%।</li>
+</ul>
 
-        <h2>৫. Audit preparation</h2>
-        <ul>
-            <li>Workpaper organization</li>
-            <li>Sample selection AI-driven</li>
-            <li>Anomaly detection (Benford's law + AI)</li>
-            <li>Audit response draft</li>
-            <li>Document checklist generation</li>
-        </ul>
+<h2>Saidul-এর 6 Use Cases</h2>
 
-        <h2>৬. Report generation</h2>
-        <ul>
-            <li><b>Management report draft:</b> ChatGPT in Bangla</li>
-            <li><b>Board presentation:</b> Gamma AI</li>
-            <li><b>Investor update:</b> Customized AI</li>
-            <li><b>MIS report automation</b></li>
-        </ul>
+<h3>1. Tally Voucher Bulk Entry</h3>
 
-        <h2>৭. Client communication</h2>
-        <ul>
-            <li>Tax advisory email draft</li>
-            <li>Deadline reminder</li>
-            <li>Document request automation</li>
-            <li>Bangla-English bilingual</li>
-        </ul>
+<p>Client-এর কাছ থেকে CSV/Excel ভাঙাচোরা data পেলে — date, party, narration, amount। Saidul ChatGPT-এ:</p>
 
-        <h2>বাংলাদেশি SME-এর জন্য practical AI accounting workflow</h2>
-        <ul>
-            <li><b>Daily:</b> Receipt scan via Dext/Hubdoc</li>
-            <li><b>Weekly:</b> Bank rec (QB AI assist)</li>
-            <li><b>Monthly:</b> Trial balance ChatGPT analysis</li>
-            <li><b>Quarterly:</b> VAT return automation</li>
-            <li><b>Annual:</b> Audit prep with AI workpaper</li>
-        </ul>
+<blockquote class="deep-blockquote">
+"নিচের ২০০-row CSV transactions দেওয়া আছে। Tally Prime XML import format-এ convert করো। প্রতিটার জন্য: Date format (DD-MM-YYYY), Voucher Type (Receipt/Payment/Journal), Party Ledger, Amount (debit/credit), Narration। Output ready-to-import XML।"
+</blockquote>
 
-        <h2>সতর্কতা</h2>
-        <ul>
-            <li>Client financial data — privacy critical</li>
-            <li>NBR/IFRS compliance — primary source verify</li>
-            <li>AI calculation cross-check</li>
-            <li>Professional judgment AI replace করতে পারে না</li>
-        </ul>
+<p>২০০ entry manual data-entry — ৪ ঘণ্টা। AI-converted XML import — ১২ মিনিট।</p>
 
-        <h2>উপসংহার</h2>
-        <p>Routine accounting task automate করে আপনি advisory work-এ বেশি focus দিতে পারবেন — যেখানে আপনার expertise মূল্যবান। CA হলে বা bookkeeper হলে — আজই ChatGPT + QuickBooks combination explore করুন।</p>
+<h3>2. NBR Annual Return (BIR)</h3>
 
-        <h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
+<p>Individual taxpayer return — IT-11GA। Saidul AI-এ client-এর salary slip, bank statement, investment certificate paste (anonymized) — AI suggests:</p>
+<ul>
+    <li>Tax computation per NBR slab।</li>
+    <li>Allowed deduction (life insurance, DPS, MPS)।</li>
+    <li>Section 44, 82-৮৪ benefits।</li>
+    <li>Final tax liability + advance tax + filing fee।</li>
+</ul>
+
+<p>1.5 hour-এর কাজ ২০ মিনিটে। AI 90% accurate, Saidul-এর verification 5% adjustment।</p>
+
+<h3>3. VAT Return Preparation (Mushak-9.1)</h3>
+
+<p>VAT-registered SME client-এর monthly mushak-9.1 — input/output VAT calculation, treasury challan match, supplier verification।</p>
+
+<p>"নিচের monthly sales-purchase data থেকে Mushak-9.1 format-এ output VAT, input VAT, net payable/refundable calculate করো। Treasury challan-এ যা already paid সেটা reconcile করো। Missing supplier mention।"</p>
+
+<h3>4. Financial Statement (FS) Drafting</h3>
+
+<p>Pvt Ltd company year-end FS — Statement of Financial Position, Statement of Comprehensive Income, Cash Flow, Notes to Financial Statement।</p>
+
+<p>Trial balance → Claude-এ paste → IAS/IFRS-compliant FS draft। Saidul note-to-FS narrative add করেন, audit-ready।</p>
+
+<h3>5. Audit Working Paper Generation</h3>
+
+<ul>
+    <li>Audit checklist (ISA-compliant) auto-generate।</li>
+    <li>Per-section testing memo template।</li>
+    <li>Risk assessment matrix।</li>
+    <li>Management representation letter draft।</li>
+</ul>
+
+<h3>6. Client Communication</h3>
+
+<ul>
+    <li>Bangla professional email — payment reminder, document request, tax update news।</li>
+    <li>WhatsApp message template per client category।</li>
+    <li>NBR notice response draft।</li>
+</ul>
+
+<h2>BD-Accounting AI Tool Stack — Saidul-এর actual</h2>
+
+<ul>
+    <li><b>Tally Prime ($425 one-time):</b> Industry standard, NBR-compliant।</li>
+    <li><b>ChatGPT Plus ($20/mo):</b> Voucher conversion, narration writing।</li>
+    <li><b>Claude Pro ($20/mo):</b> Long-form FS narrative, complex tax computation।</li>
+    <li><b>Perplexity Pro ($20/mo):</b> NBR/SRO recent circular research।</li>
+    <li><b>Excel + Copilot:</b> Reconciliation, sheet automation।</li>
+    <li><b>Total monthly AI cost:</b> $60 (~৳৭,২০০)। ROI: 100x।</li>
+</ul>
+
+<h2>NBR-এর Latest Circular — AI helps stay current</h2>
+
+<p>NBR ২০২৪-২৫ FY-এ ৪২টা new SRO/Circular issue করেছে। Manual track impossible। Saidul Perplexity-এ weekly: "NBR এই সপ্তাহের নতুন SRO/Circular কী কী? Tax + VAT + Customs। প্রতিটার summary + effective date + my SME client portfolio-তে impact।"</p>
+
+<h2>৪টা Data Security Risk</h2>
+
+<div class="callout">
+    <ul>
+        <li><b>Client NID, TIN, business secret:</b> Never paste। Always anonymize (Client-A, NID-1)।</li>
+        <li><b>Financial statement (P&L, BS, CF):</b> Confidential — AI training data leak risk। Use abstract numbers।</li>
+        <li><b>Audit working paper:</b> Privileged information। On-premise AI better for highly sensitive audits।</li>
+        <li><b>ICAB ethics:</b> Confidentiality clause-violation possible if AI service stores data। Read AI provider's data retention policy।</li>
+    </ul>
+</div>
+
+<h2>উপসংহার — আপনার আজকের পদক্ষেপ</h2>
+<p>Saidul বলেন: "Accounting profession-এ AI adoption slow — কারণ সবাই confidentiality-এ আতঙ্কিত। কিন্তু সঠিকভাবে anonymize করে, AI আমার কাজ ৭০% accelerate করেছে। আমার alone practice-এ ৪২ client manageable — আগে ১২-এ চাপ ছিল।" আজই করুন: যদি আপনি accountant/CA/auditor — আপনার next monthly closing-এ ChatGPT-এ Tally voucher conversion try করুন (anonymized data)। একটা client-এর VAT return manually কত সময় লাগে — সেটা compare করুন AI-augmented workflow-এর সাথে। ১ মাসে আপনি বুঝবেন কেন Saidul ২৮ মাসে 14x grow করেছেন।</p>
+
+                <h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
         <ul>
             <li><a href="/blog/ai-diye-excel-kaj-bangla-guide/">AI Excel গাইড</a></li>
             <li><a href="/chatgpt/">ChatGPT</a></li>
