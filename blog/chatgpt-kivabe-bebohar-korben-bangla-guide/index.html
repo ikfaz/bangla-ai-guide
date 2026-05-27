@@ -102,6 +102,7 @@
   <!-- PERSON-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-author-block">{"@context":"https://schema.org","@type":"Person","name":"ইকফাজ","alternateName":"Ikfaz","jobTitle":"প্রতিষ্ঠাতা ও সম্পাদক","url":"https://banglaaiguide.com/about/","sameAs":["https://github.com/ikfaz"],"worksFor":{"@type":"Organization","name":"বাংলা AI গাইড","url":"https://banglaaiguide.com"},"knowsAbout":["Artificial Intelligence","AI Tools","Bangladesh Tech","বাংলা AI"],"description":"বাংলা AI গাইডের প্রতিষ্ঠাতা। বাংলাদেশি ব্যবহারকারীদের জন্য AI টুলস কিউরেট ও বিশ্লেষণ করেন — কোনটা BD থেকে কাজ করে, কোনটায় bKash চলে, কোনটা আসলে দৈনন্দিন কাজে লাগে।"}</script>
 <!-- PERSON-SCHEMA:END -->
+        <script type="application/ld+json" data-injected-by="extend-faq-coverage">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"আনিকার ৬টা pattern — কী জানা দরকার?","acceptedAnswer":{"@type":"Answer","text":"Pattern 1: Context সেট না করে শুরু করা — সবচেয়ে common ভুল আনিকার প্রথম attempt: \"AI কী?\" — generic 800-word lecture পেয়েছিলেন। তিনি বুঝেননি। সংশোধিত: \"আমি একজন B.A. ১ম বর্ষের ছাত্রী, কম্পিউটার background নেই। 'AI কী' আমাকে এমনভাবে বুঝাও যেন আমি ১০ বছরের। ৩টা real-life Bangladeshi example দাও।\" — same model, completely different output। মূল মন্ত্র: ChatGPT কোনো mind-reader না। আপনার background, audience, intended output format — সব আপনি বলে দিতে হবে। প্রথম sentence-এ context, দ্বিতীয় sentence-এ task। এই ২-sentence rule আপনার output quality ৩-৪× উন্নত করবে। Pattern 2: Prompt-এ \"চাই\", task-এ \"কী\" Beginner: \"Marketing plan লেখো।\" — Generic 5-paragraph result। Confident user: \"আমার Daraz-এ…"}},{"@type":"Question","name":"৫টা প্রথম-দিন practice prompt — কী জানা দরকার?","acceptedAnswer":{"@type":"Answer","text":"Self-introduction calibration: \"তুমি আজ থেকে আমার AI assistant। আমি [your background]। তোমার response-এর style: [Bangla/English/mixed], length: [short/medium/long], tone: [formal/casual]। বুঝেছ?\" Today's plan: \"আজকের সকাল ৯টা থেকে রাত ৯টার মধ্যে আমার এই কাজগুলো করতে হবে: [list ৫-৮টা task]। সবচেয়ে efficient order এবং প্রতি task-এ realistic time allocation দাও।\" Concept explanation test: \"[Any concept যা আপনি বুঝতে চান] আমাকে ৪ step-এ শেখাও: physical intuition → simple analogy → mathematical formalism → real-world Bangladesh example।\" Writing refinement: \"[আপনার লেখা যেকোনো paragraph paste করুন]\" + \"এই paragraph-এর tone improve করো — আরও confident, less hedge phrases ('I think', 'maybe')।\"…"}},{"@type":"Question","name":"বাংলাদেশ থেকে ChatGPT প্রম্পট লেখার কৌশল ও উপার্জনের উপায় কীভাবে access করব?","acceptedAnswer":{"@type":"Answer","text":"ChatGPT হল OpenAI-এর তৈরি একটা Large Language Model — যেটা মানুষের লেখা billions of words থেকে training নিয়ে natural language conversation করতে পারে। ২০২২-এর nov-এ launch, ২০২৬-এ flagship model GPT-5, plus o3 reasoning model। বাংলাদেশ থেকে VPN ছাড়া fully accessible। BD-specific signup ও setup — ৪ মিনিটে Browser-এ যান: chat.openai.com । Mobile app-এ Android/iOS দুটোই available — App Store/Play Store-এ \"ChatGPT\" search। Sign up: Google account (recommended — ২ সেকেন্ড), Microsoft, Apple, বা email। BD numbers OTP support করে। Free tier: Signup-এর সাথে সাথে GPT-4o mini unlimited, GPT-5 limited (daily cap), Voice mode (basic), image generation কিছু free। প্রথম message: উপরে input box-এ…"}},{"@type":"Question","name":"ChatGPT কী কী করতে পারে — কী জানা দরকার?","acceptedAnswer":{"@type":"Answer","text":"Academic: Class notes summarize, MCQ practice, essay outline, English-Bangla translation, thesis idea brainstorm। Professional: CV/cover letter, email draft, meeting notes, presentation outline, performance review। Business: Marketing plan, content calendar, customer service script, market research synthesis। Personal: Letter to landlord, complaint email, financial budget plan, travel itinerary। Creative: Bangla story/poem/blog, lyrics, joke generation, character development। Technical: Code generation, bug debug, regex explanation, API integration help। Learning: Language practice (English/Hindi/Arabic), concept explanation, study plan। Life advice: Difficult conversation script,…"}}]}</script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">মূল কন্টেন্টে যান</a>
@@ -355,7 +356,41 @@
     </article>
 
     <!-- Footer -->
-    <!-- RELATED-POSTS:START -->
+    <!-- TEMPLATED-FAQ:START -->
+<section class="article-faq" aria-labelledby="faq-heading">
+  <style>
+    .article-faq { max-width: 880px; margin: 56px auto 16px; padding: 0 20px; font-family: 'Hind Siliguri', sans-serif; }
+    .article-faq h2 { font-family: 'Syne', 'Hind Siliguri', sans-serif; font-size: 28px; font-weight: 800; letter-spacing: -0.02em; color: #0F172A; margin: 0 0 18px; }
+    .article-faq .faq-item { border: 1px solid #E2E8F0; border-radius: 14px; padding: 14px 18px; margin-bottom: 12px; background: #FFFFFF; }
+    .article-faq .faq-item[open] { border-color: #16A34A; box-shadow: 0 8px 24px rgba(15,23,42,.06); }
+    .article-faq .faq-q { font-weight: 700; font-size: 16px; line-height: 1.5; color: #0F172A; cursor: pointer; list-style: none; }
+    .article-faq .faq-q::-webkit-details-marker { display: none; }
+    .article-faq .faq-q::after { content: '+'; float: right; color: #16A34A; font-size: 22px; line-height: 1; transition: transform .2s; }
+    .article-faq .faq-item[open] .faq-q::after { content: '−'; }
+    .article-faq .faq-a { margin-top: 10px; color: #334155; font-size: 15px; line-height: 1.7; }
+    .article-faq .faq-a p { margin: 0; }
+  </style>
+  <h2 id="faq-heading">সচরাচর জিজ্ঞাসা (FAQ)</h2>
+    <details class="faq-item" open>
+      <summary class="faq-q">আনিকার ৬টা pattern — কী জানা দরকার?</summary>
+      <div class="faq-a"><p>Pattern 1: Context সেট না করে শুরু করা — সবচেয়ে common ভুল আনিকার প্রথম attempt: &quot;AI কী?&quot; — generic 800-word lecture পেয়েছিলেন। তিনি বুঝেননি। সংশোধিত: &quot;আমি একজন B.A. ১ম বর্ষের ছাত্রী, কম্পিউটার background নেই। &#39;AI কী&#39; আমাকে এমনভাবে বুঝাও যেন আমি ১০ বছরের। ৩টা real-life Bangladeshi example দাও।&quot; — same model, completely different output। মূল মন্ত্র: ChatGPT কোনো mind-reader না। আপনার background, audience, intended output format — সব আপনি বলে দিতে হবে। প্রথম sentence-এ context, দ্বিতীয় sentence-এ task। এই ২-sentence rule আপনার output quality ৩-৪× উন্নত করবে। Pattern 2: Prompt-এ &quot;চাই&quot;, task-এ &quot;কী&quot; Beginner: &quot;Marketing plan লেখো।&quot; — Generic 5-paragraph result। Confident user: &quot;আমার Daraz-এ…</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">৫টা প্রথম-দিন practice prompt — কী জানা দরকার?</summary>
+      <div class="faq-a"><p>Self-introduction calibration: &quot;তুমি আজ থেকে আমার AI assistant। আমি [your background]। তোমার response-এর style: [Bangla/English/mixed], length: [short/medium/long], tone: [formal/casual]। বুঝেছ?&quot; Today&#39;s plan: &quot;আজকের সকাল ৯টা থেকে রাত ৯টার মধ্যে আমার এই কাজগুলো করতে হবে: [list ৫-৮টা task]। সবচেয়ে efficient order এবং প্রতি task-এ realistic time allocation দাও।&quot; Concept explanation test: &quot;[Any concept যা আপনি বুঝতে চান] আমাকে ৪ step-এ শেখাও: physical intuition → simple analogy → mathematical formalism → real-world Bangladesh example।&quot; Writing refinement: &quot;[আপনার লেখা যেকোনো paragraph paste করুন]&quot; + &quot;এই paragraph-এর tone improve করো — আরও confident, less hedge phrases (&#39;I think&#39;, &#39;maybe&#39;)।&quot;…</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">বাংলাদেশ থেকে ChatGPT প্রম্পট লেখার কৌশল ও উপার্জনের উপায় কীভাবে access করব?</summary>
+      <div class="faq-a"><p>ChatGPT হল OpenAI-এর তৈরি একটা Large Language Model — যেটা মানুষের লেখা billions of words থেকে training নিয়ে natural language conversation করতে পারে। ২০২২-এর nov-এ launch, ২০২৬-এ flagship model GPT-5, plus o3 reasoning model। বাংলাদেশ থেকে VPN ছাড়া fully accessible। BD-specific signup ও setup — ৪ মিনিটে Browser-এ যান: chat.openai.com । Mobile app-এ Android/iOS দুটোই available — App Store/Play Store-এ &quot;ChatGPT&quot; search। Sign up: Google account (recommended — ২ সেকেন্ড), Microsoft, Apple, বা email। BD numbers OTP support করে। Free tier: Signup-এর সাথে সাথে GPT-4o mini unlimited, GPT-5 limited (daily cap), Voice mode (basic), image generation কিছু free। প্রথম message: উপরে input box-এ…</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">ChatGPT কী কী করতে পারে — কী জানা দরকার?</summary>
+      <div class="faq-a"><p>Academic: Class notes summarize, MCQ practice, essay outline, English-Bangla translation, thesis idea brainstorm। Professional: CV/cover letter, email draft, meeting notes, presentation outline, performance review। Business: Marketing plan, content calendar, customer service script, market research synthesis। Personal: Letter to landlord, complaint email, financial budget plan, travel itinerary। Creative: Bangla story/poem/blog, lyrics, joke generation, character development। Technical: Code generation, bug debug, regex explanation, API integration help। Learning: Language practice (English/Hindi/Arabic), concept explanation, study plan। Life advice: Difficult conversation script,…</p></div>
+    </details>
+</section>
+<!-- TEMPLATED-FAQ:END -->
+
+<!-- RELATED-POSTS:START -->
 <section class="related-posts" aria-label="সম্পর্কিত গাইড">
   <style>
     .related-posts { max-width: 1100px; margin: 56px auto; padding: 0 20px; font-family: 'Hind Siliguri', sans-serif; }

@@ -52,6 +52,7 @@
   <!-- PERSON-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-author-block">{"@context":"https://schema.org","@type":"Person","name":"ইকফাজ","alternateName":"Ikfaz","jobTitle":"প্রতিষ্ঠাতা ও সম্পাদক","url":"https://banglaaiguide.com/about/","sameAs":["https://github.com/ikfaz"],"worksFor":{"@type":"Organization","name":"বাংলা AI গাইড","url":"https://banglaaiguide.com"},"knowsAbout":["Artificial Intelligence","AI Tools","Bangladesh Tech","বাংলা AI"],"description":"বাংলা AI গাইডের প্রতিষ্ঠাতা। বাংলাদেশি ব্যবহারকারীদের জন্য AI টুলস কিউরেট ও বিশ্লেষণ করেন — কোনটা BD থেকে কাজ করে, কোনটায় bKash চলে, কোনটা আসলে দৈনন্দিন কাজে লাগে।"}</script>
 <!-- PERSON-SCHEMA:END -->
+        <script type="application/ld+json" data-injected-by="extend-faq-coverage">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"নাহিদুলের 11-Day Roadmap — কী জানা দরকার?","acceptedAnswer":{"@type":"Answer","text":"Day 1: Niche + topic validation নাহিদুল 3 candidate niche brainstorm করেছিলেন: (১) \"Money management for BD bankers\" (নিজের domain expertise), (২) \"Productivity for working parents\" (generic), (৩) \"Stock market for beginners in BD\" (regulatory risk)। ChatGPT-এ প্রতিটার validation: \"এই niche-এর জন্য বলো: (১) Amazon KDP-এ existing competitor count + top 5 titles' review count, (২) Target audience size (Bangladesh + diaspora US/UK), (৩) Buy-intent — এই audience কি $5-15 spend করবে এই type-এর content-এ? (৪) আমার BD banking background এই niche-এ unique angle দেয় কিনা।\" Result: Niche 1 won। Specific domain authority + buy-intent audience + low competition। Day 2: Outline (Claude Opus)…"}},{"@type":"Question","name":"২০২৬-এ eBook market reality — কী জানা দরকার?","acceptedAnswer":{"@type":"Answer","text":"Amazon KDP saturation: \"AI-generated\" eBook flood-এ Amazon ২০২৪ থেকে quality filter strict। Pure AI book demote/removed। Hybrid approach essential। Niche dominates: Generic topic (\"productivity\", \"happiness\") — ১০ লাখ competitor। Hyper-specific niche (\"Personal finance for BD bankers in their 30s\") — ২৪০ competitor। Recurring sales-এর জন্য email list critical: Single-eBook author income capped। ৩-৫ book + email list = sustainable। Audiobook bonus revenue: Same content, ElevenLabs voice clone — $২-৩ extra per sale। BD market emerging: Rokomari, 10MS, Bibhag — Bangla eBook platform growing।"}},{"@type":"Question","name":"বাংলাদেশ থেকে AI দিয়ে eBook লেখা কীভাবে access করব?","acceptedAnswer":{"@type":"Answer","text":"Amazon KDP: Royalty 35-70% (depending on price tier)। Tax: US W-8BEN form mandatory (15% withholding avoid করতে Bangladesh-US tax treaty invoke)। Payout: Direct bank wire to Bangladesh ($100 minimum)। Gumroad: 10% platform fee। Payment: Stripe → bank/Wise। BD-তে সব smooth। Rokomari (BD): Bangla eBook-এর জন্য optimal। 30-40% royalty, BDT payout। নাহিদুল future-এ Bangla version-এ plan। 10 Minute School: Course-style content market-এ better, pure eBook-এ traction কম।"}},{"@type":"Question","name":"Income progression — কী জানা দরকার?","acceptedAnswer":{"@type":"Answer","text":"Month 1: ৩৮ copies × $৫.৯৯ × ৭০% royalty = $১৫৯ Month 2-3: ১০৪ copies/month avg = $৪৩৬/month Month 4-6: ১৬০ copies/month (organic growth + reviews compound) = $৬৭০/month Month 7-12: ২২০ copies/month sustained = $৯২০/month Year 2: Plateau around $৯০০-১,১০০/month নাহিদুলের পরিকল্পনা: ৪টা eBook-এর library হলে monthly $৩,৫০০-৫,০০০ income sustainable। দ্বিতীয় book July 2026, তৃতীয় End-of-year।"}}]}</script>
 </head>
 <body>
     <header class="navbar">
@@ -239,7 +240,41 @@
 
     </div>
 
-    <!-- RELATED-POSTS:START -->
+    <!-- TEMPLATED-FAQ:START -->
+<section class="article-faq" aria-labelledby="faq-heading">
+  <style>
+    .article-faq { max-width: 880px; margin: 56px auto 16px; padding: 0 20px; font-family: 'Hind Siliguri', sans-serif; }
+    .article-faq h2 { font-family: 'Syne', 'Hind Siliguri', sans-serif; font-size: 28px; font-weight: 800; letter-spacing: -0.02em; color: #0F172A; margin: 0 0 18px; }
+    .article-faq .faq-item { border: 1px solid #E2E8F0; border-radius: 14px; padding: 14px 18px; margin-bottom: 12px; background: #FFFFFF; }
+    .article-faq .faq-item[open] { border-color: #16A34A; box-shadow: 0 8px 24px rgba(15,23,42,.06); }
+    .article-faq .faq-q { font-weight: 700; font-size: 16px; line-height: 1.5; color: #0F172A; cursor: pointer; list-style: none; }
+    .article-faq .faq-q::-webkit-details-marker { display: none; }
+    .article-faq .faq-q::after { content: '+'; float: right; color: #16A34A; font-size: 22px; line-height: 1; transition: transform .2s; }
+    .article-faq .faq-item[open] .faq-q::after { content: '−'; }
+    .article-faq .faq-a { margin-top: 10px; color: #334155; font-size: 15px; line-height: 1.7; }
+    .article-faq .faq-a p { margin: 0; }
+  </style>
+  <h2 id="faq-heading">সচরাচর জিজ্ঞাসা (FAQ)</h2>
+    <details class="faq-item" open>
+      <summary class="faq-q">নাহিদুলের 11-Day Roadmap — কী জানা দরকার?</summary>
+      <div class="faq-a"><p>Day 1: Niche + topic validation নাহিদুল 3 candidate niche brainstorm করেছিলেন: (১) &quot;Money management for BD bankers&quot; (নিজের domain expertise), (২) &quot;Productivity for working parents&quot; (generic), (৩) &quot;Stock market for beginners in BD&quot; (regulatory risk)। ChatGPT-এ প্রতিটার validation: &quot;এই niche-এর জন্য বলো: (১) Amazon KDP-এ existing competitor count + top 5 titles&#39; review count, (২) Target audience size (Bangladesh + diaspora US/UK), (৩) Buy-intent — এই audience কি $5-15 spend করবে এই type-এর content-এ? (৪) আমার BD banking background এই niche-এ unique angle দেয় কিনা।&quot; Result: Niche 1 won। Specific domain authority + buy-intent audience + low competition। Day 2: Outline (Claude Opus)…</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">২০২৬-এ eBook market reality — কী জানা দরকার?</summary>
+      <div class="faq-a"><p>Amazon KDP saturation: &quot;AI-generated&quot; eBook flood-এ Amazon ২০২৪ থেকে quality filter strict। Pure AI book demote/removed। Hybrid approach essential। Niche dominates: Generic topic (&quot;productivity&quot;, &quot;happiness&quot;) — ১০ লাখ competitor। Hyper-specific niche (&quot;Personal finance for BD bankers in their 30s&quot;) — ২৪০ competitor। Recurring sales-এর জন্য email list critical: Single-eBook author income capped। ৩-৫ book + email list = sustainable। Audiobook bonus revenue: Same content, ElevenLabs voice clone — $২-৩ extra per sale। BD market emerging: Rokomari, 10MS, Bibhag — Bangla eBook platform growing।</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">বাংলাদেশ থেকে AI দিয়ে eBook লেখা কীভাবে access করব?</summary>
+      <div class="faq-a"><p>Amazon KDP: Royalty 35-70% (depending on price tier)। Tax: US W-8BEN form mandatory (15% withholding avoid করতে Bangladesh-US tax treaty invoke)। Payout: Direct bank wire to Bangladesh ($100 minimum)। Gumroad: 10% platform fee। Payment: Stripe → bank/Wise। BD-তে সব smooth। Rokomari (BD): Bangla eBook-এর জন্য optimal। 30-40% royalty, BDT payout। নাহিদুল future-এ Bangla version-এ plan। 10 Minute School: Course-style content market-এ better, pure eBook-এ traction কম।</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Income progression — কী জানা দরকার?</summary>
+      <div class="faq-a"><p>Month 1: ৩৮ copies × $৫.৯৯ × ৭০% royalty = $১৫৯ Month 2-3: ১০৪ copies/month avg = $৪৩৬/month Month 4-6: ১৬০ copies/month (organic growth + reviews compound) = $৬৭০/month Month 7-12: ২২০ copies/month sustained = $৯২০/month Year 2: Plateau around $৯০০-১,১০০/month নাহিদুলের পরিকল্পনা: ৪টা eBook-এর library হলে monthly $৩,৫০০-৫,০০০ income sustainable। দ্বিতীয় book July 2026, তৃতীয় End-of-year।</p></div>
+    </details>
+</section>
+<!-- TEMPLATED-FAQ:END -->
+
+<!-- RELATED-POSTS:START -->
 <section class="related-posts" aria-label="সম্পর্কিত গাইড">
   <style>
     .related-posts { max-width: 1100px; margin: 56px auto; padding: 0 20px; font-family: 'Hind Siliguri', sans-serif; }

@@ -44,6 +44,7 @@
   <!-- PERSON-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-author-block">{"@context":"https://schema.org","@type":"Person","name":"ইকফাজ","alternateName":"Ikfaz","jobTitle":"প্রতিষ্ঠাতা ও সম্পাদক","url":"https://banglaaiguide.com/about/","sameAs":["https://github.com/ikfaz"],"worksFor":{"@type":"Organization","name":"বাংলা AI গাইড","url":"https://banglaaiguide.com"},"knowsAbout":["Artificial Intelligence","AI Tools","Bangladesh Tech","বাংলা AI"],"description":"বাংলা AI গাইডের প্রতিষ্ঠাতা। বাংলাদেশি ব্যবহারকারীদের জন্য AI টুলস কিউরেট ও বিশ্লেষণ করেন — কোনটা BD থেকে কাজ করে, কোনটায় bKash চলে, কোনটা আসলে দৈনন্দিন কাজে লাগে।"}</script>
 <!-- PERSON-SCHEMA:END -->
+      <script type="application/ld+json" data-injected-by="extend-faq-coverage">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"আদনানের ১৪-দিন pivot — কী জানা দরকার?","acceptedAnswer":{"@type":"Answer","text":"Day 1-2: Job description audit আদনান target করছিলেন Software Engineer trainee positions। ১৫টা actual recent JD (Bdjobs, LinkedIn) collect করে ChatGPT-এ: \"নিচের ১৫টা BD Software Engineer trainee JD-তে যেগুলো keyword সবচেয়ে বেশি repeat হয়েছে, সেগুলোর frequency-sorted list দাও। Generic terms (communication, teamwork) skip, technical specific (Python, SQL, REST API, Git, Agile) priority। Top 30 keywords।\" Result: তাঁর target keyword cluster — যেগুলো তাঁর CV-তে অবধারিত থাকতে হবে। তাঁর old CV-তে ৩০ এর মধ্যে ৩টা ছিল। Day 3-5: Master CV rebuild Tool: Claude Sonnet 4.6 (writing quality), Google Docs (final formatting)। Single column, Arial 10pt body / 12pt heading, no graphics, no photo। আদনানের…"}},{"@type":"Question","name":"ATS reality — কী জানা দরকার?","acceptedAnswer":{"@type":"Answer","text":"Applicant Tracking System একটা software যা ১,০০০+ application-এর CV scan করে keyword + structure-এর basis-এ rank করে। মানব recruiter দেখার আগে CV ATS-এর gauntlet পার হয়। বাংলাদেশের ২০২৬-এর reality: Deployed at: Grameenphone, Robi, Banglalink, Unilever, BAT, Nestlé, BRAC Bank, City Bank, Eastern Bank, ICCB Bank, Square, Beximco, Pathao, Chaldal, bKash। Most-used ATS platforms: Workday, Greenhouse, Lever, Bdjobs internal ATS। Top 30% applications-এ recruiter spend দেয় ~৬ সেকেন্ড। বাকি ৭০% manually দেখাও হয় না। Common ATS-killing CV elements: Tables, columns, graphics, photos, fancy fonts (anything non-Arial/Calibri/Times), header-footer text, watermark।"}},{"@type":"Question","name":"৫টা common mistake — কী জানা দরকার?","acceptedAnswer":{"@type":"Answer","text":"1. Photo on CV: বাংলাদেশের traditional CV-তে photo standard, কিন্তু MNC ATS-এ instant disadvantage। MNC apply-এ photo skip। 2. Same CV for every job: 1 master CV → tailored variants per application। Mass-apply-এ tailored CV ১৫ মিনিট, কিন্তু response rate ৪×। 3. Generic \"objective\": \"Looking for a challenging position...\" instant skip। Replace with specific Professional Summary tied to JD। 4. Action verb missing: \"Was responsible for marketing campaigns\" → \"Led marketing campaigns generating ৳৮ লাখ revenue in Q2 FY25\"। 5. No measurable result: Every bullet should have a number, %, currency, time-saved, or scale (team of N, X countries, Y users)।"}},{"@type":"Question","name":"BD job categories-এ specific CV strategy — কী জানা দরকার?","acceptedAnswer":{"@type":"Answer","text":"Banking/Finance MT (BRAC, Eastern, City): CGPA strict (≥3.50)। Math/aptitude-friendly background highlight। CA articleship/CFA Level-1 mention। Tech (bKash, Pathao, Chaldal): GitHub link mandatory। Real projects > certificates। Stack proficiency specific (React, Node, PostgreSQL, AWS)। MNC (Unilever, BAT, Nestlé): Aptitude + GD round। CV-তে leadership signal critical। RMG (Beximco, Square, DBL): Buyer communication experience, fabric/costing technical। NGO (BRAC, CARE): Mission alignment signal। Volunteer + donor-language familiarity। Government (BCS/non-cadre): Separate strict format। BPSC-এর format mandatory।"}}]}</script>
 </head>
 <body>
     <header class="navbar">
@@ -268,7 +269,41 @@
 
     </div>
 
-    <!-- RELATED-POSTS:START -->
+    <!-- TEMPLATED-FAQ:START -->
+<section class="article-faq" aria-labelledby="faq-heading">
+  <style>
+    .article-faq { max-width: 880px; margin: 56px auto 16px; padding: 0 20px; font-family: 'Hind Siliguri', sans-serif; }
+    .article-faq h2 { font-family: 'Syne', 'Hind Siliguri', sans-serif; font-size: 28px; font-weight: 800; letter-spacing: -0.02em; color: #0F172A; margin: 0 0 18px; }
+    .article-faq .faq-item { border: 1px solid #E2E8F0; border-radius: 14px; padding: 14px 18px; margin-bottom: 12px; background: #FFFFFF; }
+    .article-faq .faq-item[open] { border-color: #16A34A; box-shadow: 0 8px 24px rgba(15,23,42,.06); }
+    .article-faq .faq-q { font-weight: 700; font-size: 16px; line-height: 1.5; color: #0F172A; cursor: pointer; list-style: none; }
+    .article-faq .faq-q::-webkit-details-marker { display: none; }
+    .article-faq .faq-q::after { content: '+'; float: right; color: #16A34A; font-size: 22px; line-height: 1; transition: transform .2s; }
+    .article-faq .faq-item[open] .faq-q::after { content: '−'; }
+    .article-faq .faq-a { margin-top: 10px; color: #334155; font-size: 15px; line-height: 1.7; }
+    .article-faq .faq-a p { margin: 0; }
+  </style>
+  <h2 id="faq-heading">সচরাচর জিজ্ঞাসা (FAQ)</h2>
+    <details class="faq-item" open>
+      <summary class="faq-q">আদনানের ১৪-দিন pivot — কী জানা দরকার?</summary>
+      <div class="faq-a"><p>Day 1-2: Job description audit আদনান target করছিলেন Software Engineer trainee positions। ১৫টা actual recent JD (Bdjobs, LinkedIn) collect করে ChatGPT-এ: &quot;নিচের ১৫টা BD Software Engineer trainee JD-তে যেগুলো keyword সবচেয়ে বেশি repeat হয়েছে, সেগুলোর frequency-sorted list দাও। Generic terms (communication, teamwork) skip, technical specific (Python, SQL, REST API, Git, Agile) priority। Top 30 keywords।&quot; Result: তাঁর target keyword cluster — যেগুলো তাঁর CV-তে অবধারিত থাকতে হবে। তাঁর old CV-তে ৩০ এর মধ্যে ৩টা ছিল। Day 3-5: Master CV rebuild Tool: Claude Sonnet 4.6 (writing quality), Google Docs (final formatting)। Single column, Arial 10pt body / 12pt heading, no graphics, no photo। আদনানের…</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">ATS reality — কী জানা দরকার?</summary>
+      <div class="faq-a"><p>Applicant Tracking System একটা software যা ১,০০০+ application-এর CV scan করে keyword + structure-এর basis-এ rank করে। মানব recruiter দেখার আগে CV ATS-এর gauntlet পার হয়। বাংলাদেশের ২০২৬-এর reality: Deployed at: Grameenphone, Robi, Banglalink, Unilever, BAT, Nestlé, BRAC Bank, City Bank, Eastern Bank, ICCB Bank, Square, Beximco, Pathao, Chaldal, bKash। Most-used ATS platforms: Workday, Greenhouse, Lever, Bdjobs internal ATS। Top 30% applications-এ recruiter spend দেয় ~৬ সেকেন্ড। বাকি ৭০% manually দেখাও হয় না। Common ATS-killing CV elements: Tables, columns, graphics, photos, fancy fonts (anything non-Arial/Calibri/Times), header-footer text, watermark।</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">৫টা common mistake — কী জানা দরকার?</summary>
+      <div class="faq-a"><p>1. Photo on CV: বাংলাদেশের traditional CV-তে photo standard, কিন্তু MNC ATS-এ instant disadvantage। MNC apply-এ photo skip। 2. Same CV for every job: 1 master CV → tailored variants per application। Mass-apply-এ tailored CV ১৫ মিনিট, কিন্তু response rate ৪×। 3. Generic &quot;objective&quot;: &quot;Looking for a challenging position...&quot; instant skip। Replace with specific Professional Summary tied to JD। 4. Action verb missing: &quot;Was responsible for marketing campaigns&quot; → &quot;Led marketing campaigns generating ৳৮ লাখ revenue in Q2 FY25&quot;। 5. No measurable result: Every bullet should have a number, %, currency, time-saved, or scale (team of N, X countries, Y users)।</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">BD job categories-এ specific CV strategy — কী জানা দরকার?</summary>
+      <div class="faq-a"><p>Banking/Finance MT (BRAC, Eastern, City): CGPA strict (≥3.50)। Math/aptitude-friendly background highlight। CA articleship/CFA Level-1 mention। Tech (bKash, Pathao, Chaldal): GitHub link mandatory। Real projects &gt; certificates। Stack proficiency specific (React, Node, PostgreSQL, AWS)। MNC (Unilever, BAT, Nestlé): Aptitude + GD round। CV-তে leadership signal critical। RMG (Beximco, Square, DBL): Buyer communication experience, fabric/costing technical। NGO (BRAC, CARE): Mission alignment signal। Volunteer + donor-language familiarity। Government (BCS/non-cadre): Separate strict format। BPSC-এর format mandatory।</p></div>
+    </details>
+</section>
+<!-- TEMPLATED-FAQ:END -->
+
+<!-- RELATED-POSTS:START -->
 <section class="related-posts" aria-label="সম্পর্কিত গাইড">
   <style>
     .related-posts { max-width: 1100px; margin: 56px auto; padding: 0 20px; font-family: 'Hind Siliguri', sans-serif; }

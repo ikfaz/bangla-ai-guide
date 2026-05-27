@@ -46,6 +46,7 @@
   <!-- PERSON-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-author-block">{"@context":"https://schema.org","@type":"Person","name":"ইকফাজ","alternateName":"Ikfaz","jobTitle":"প্রতিষ্ঠাতা ও সম্পাদক","url":"https://banglaaiguide.com/about/","sameAs":["https://github.com/ikfaz"],"worksFor":{"@type":"Organization","name":"বাংলা AI গাইড","url":"https://banglaaiguide.com"},"knowsAbout":["Artificial Intelligence","AI Tools","Bangladesh Tech","বাংলা AI"],"description":"বাংলা AI গাইডের প্রতিষ্ঠাতা। বাংলাদেশি ব্যবহারকারীদের জন্য AI টুলস কিউরেট ও বিশ্লেষণ করেন — কোনটা BD থেকে কাজ করে, কোনটায় bKash চলে, কোনটা আসলে দৈনন্দিন কাজে লাগে।"}</script>
 <!-- PERSON-SCHEMA:END -->
+      <script type="application/ld+json" data-injected-by="extend-faq-coverage">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"GitHub Copilot-এর মূল features কী কী?","acceptedAnswer":{"@type":"Answer","text":"Feature 1: Tab autocomplete (daily workhorse) Sumon-এর VS Code-এ Copilot সবসময় active। JavaScript function লিখতে শুরু করলেই complete suggestion। তিনি দিনে ৮-১০ ঘণ্টা coding করলে ৭০-৮০% কাজ Tab দিয়ে hoye যায়। হাত মাত্র edge case + business logic-এ লাগে। Feature 2: Inline chat (Cmd+I / Alt+I) Code select করে inline edit। \"Convert to async/await\", \"Add error handling\", \"Optimize\" — Cursor-এর Cmd+K-এর equivalent। Feature 3: @workspace context Chat-এ \"@workspace\" mention করলে whole repo aware। \"এই project-এ auth flow কোথায় define?\" — সঠিক file path + explanation। Feature 4: Slash commands /fix, /test, /doc, /explain — pre-defined action। Quick + consistent। Sumon /test দিয়ে weekly ৪০-৫০টা…"}},{"@type":"Question","name":"Copilot কীভাবে কাজ করে — কী জানা দরকার?","acceptedAnswer":{"@type":"Answer","text":"১. Tab autocomplete (Ghost Text) Cursor-এর Tab-এর সমকক্ষ। Type করার সঙ্গে সঙ্গে multi-line suggestion। ২০২২-এ এটাই Copilot-এর primary feature ছিল, এখন additional capabilities এসেছে। ২. Copilot Chat (sidebar) VS Code/JetBrains-এ sidebar চ্যাট। \"এই function explain করো\", \"test লিখো\", \"bug খুঁজো\" — সব accessible। ৩. Copilot Edits (multi-file) Cursor Composer-এর সমতুল্য। একটা task দিন, ৫-১০ file জুড়ে edit। ২০২৫-এ launch। ৪. Copilot Agent ২০২৫ Q4-এ launch — autonomous task। File create, terminal command, package install — all chained। ৫. Copilot Workspace GitHub.com-এই (IDE বাইরে) — issue থেকে PR পর্যন্ত full automated workflow। Issue describe → Copilot spec lekhe → code generate → PR raise।"}},{"@type":"Question","name":"GitHub Copilot কীভাবে install বা setup করব?","acceptedAnswer":{"@type":"Answer","text":"Path 1: Student Pack (FREE — recommended for BD students) GitHub-এ sign up (.edu email বা student ID upload) education.github.com/pack-এ apply BD university হলে DU/BUET/NSU/AIUB/AUST/DIU/JU — সব accepted Approval ২-৭ দিন Approval-এর পর \"GitHub Copilot\" automatically enabled Free for ১২ মাস, renewable while student BD student-দের জন্য practical tip: .edu email থাকে না (আমাদের universities .ac.bd domain)। তাই apply-এ student ID card scan + admission letter upload করুন। Sumon-এর JU ID card-এ ২ দিনে approve হয়েছিল। Path 2: Paid subscription Copilot Individual — $১০/মাস (~৳১,২০০): Tab + Chat + Edits + Agent। Personal use। Copilot Pro — $১৯/মাস: Higher quota, premium models, faster response।…"}},{"@type":"Question","name":"Copilot ব্যবহারের সেরা টিপস — কী জানা দরকার?","acceptedAnswer":{"@type":"Answer","text":"Comment-as-prompt: Code-এর উপরে comment-এ describe করুন কী চান — Copilot ভালো suggest করে। উদাহরণ: \"// fetch user orders by date range, sort newest first\" → পুরো function suggest। Multi-model use করুন: Chat panel-এ model dropdown। Sonnet 4.6 (default daily), GPT-5 (complex reasoning), o4 (math/algorithm)। @workspace mandatory: Chat-এ context চাইলে অবশ্যই @workspace add — তাহলে whole repo aware answer। Slash command memorize করুন: /explain, /fix, /test, /doc — daily ৩০-৪০% time save। Copilot Edits-এ \"Plan first\": Complex change-এ আগে plan চান, তারপর approve করে execute। PR review enable করুন: Repo settings → \"Allow Copilot to review PR\" — open-source contribution-এ time-saving। Privacy:…"}}]}</script>
 </head>
 <body>
     <header class="navbar">
@@ -322,7 +323,41 @@
 
     </div>
 
-    <!-- RELATED-POSTS:START -->
+    <!-- TEMPLATED-FAQ:START -->
+<section class="article-faq" aria-labelledby="faq-heading">
+  <style>
+    .article-faq { max-width: 880px; margin: 56px auto 16px; padding: 0 20px; font-family: 'Hind Siliguri', sans-serif; }
+    .article-faq h2 { font-family: 'Syne', 'Hind Siliguri', sans-serif; font-size: 28px; font-weight: 800; letter-spacing: -0.02em; color: #0F172A; margin: 0 0 18px; }
+    .article-faq .faq-item { border: 1px solid #E2E8F0; border-radius: 14px; padding: 14px 18px; margin-bottom: 12px; background: #FFFFFF; }
+    .article-faq .faq-item[open] { border-color: #16A34A; box-shadow: 0 8px 24px rgba(15,23,42,.06); }
+    .article-faq .faq-q { font-weight: 700; font-size: 16px; line-height: 1.5; color: #0F172A; cursor: pointer; list-style: none; }
+    .article-faq .faq-q::-webkit-details-marker { display: none; }
+    .article-faq .faq-q::after { content: '+'; float: right; color: #16A34A; font-size: 22px; line-height: 1; transition: transform .2s; }
+    .article-faq .faq-item[open] .faq-q::after { content: '−'; }
+    .article-faq .faq-a { margin-top: 10px; color: #334155; font-size: 15px; line-height: 1.7; }
+    .article-faq .faq-a p { margin: 0; }
+  </style>
+  <h2 id="faq-heading">সচরাচর জিজ্ঞাসা (FAQ)</h2>
+    <details class="faq-item" open>
+      <summary class="faq-q">GitHub Copilot-এর মূল features কী কী?</summary>
+      <div class="faq-a"><p>Feature 1: Tab autocomplete (daily workhorse) Sumon-এর VS Code-এ Copilot সবসময় active। JavaScript function লিখতে শুরু করলেই complete suggestion। তিনি দিনে ৮-১০ ঘণ্টা coding করলে ৭০-৮০% কাজ Tab দিয়ে hoye যায়। হাত মাত্র edge case + business logic-এ লাগে। Feature 2: Inline chat (Cmd+I / Alt+I) Code select করে inline edit। &quot;Convert to async/await&quot;, &quot;Add error handling&quot;, &quot;Optimize&quot; — Cursor-এর Cmd+K-এর equivalent। Feature 3: @workspace context Chat-এ &quot;@workspace&quot; mention করলে whole repo aware। &quot;এই project-এ auth flow কোথায় define?&quot; — সঠিক file path + explanation। Feature 4: Slash commands /fix, /test, /doc, /explain — pre-defined action। Quick + consistent। Sumon /test দিয়ে weekly ৪০-৫০টা…</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Copilot কীভাবে কাজ করে — কী জানা দরকার?</summary>
+      <div class="faq-a"><p>১. Tab autocomplete (Ghost Text) Cursor-এর Tab-এর সমকক্ষ। Type করার সঙ্গে সঙ্গে multi-line suggestion। ২০২২-এ এটাই Copilot-এর primary feature ছিল, এখন additional capabilities এসেছে। ২. Copilot Chat (sidebar) VS Code/JetBrains-এ sidebar চ্যাট। &quot;এই function explain করো&quot;, &quot;test লিখো&quot;, &quot;bug খুঁজো&quot; — সব accessible। ৩. Copilot Edits (multi-file) Cursor Composer-এর সমতুল্য। একটা task দিন, ৫-১০ file জুড়ে edit। ২০২৫-এ launch। ৪. Copilot Agent ২০২৫ Q4-এ launch — autonomous task। File create, terminal command, package install — all chained। ৫. Copilot Workspace GitHub.com-এই (IDE বাইরে) — issue থেকে PR পর্যন্ত full automated workflow। Issue describe → Copilot spec lekhe → code generate → PR raise।</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">GitHub Copilot কীভাবে install বা setup করব?</summary>
+      <div class="faq-a"><p>Path 1: Student Pack (FREE — recommended for BD students) GitHub-এ sign up (.edu email বা student ID upload) education.github.com/pack-এ apply BD university হলে DU/BUET/NSU/AIUB/AUST/DIU/JU — সব accepted Approval ২-৭ দিন Approval-এর পর &quot;GitHub Copilot&quot; automatically enabled Free for ১২ মাস, renewable while student BD student-দের জন্য practical tip: .edu email থাকে না (আমাদের universities .ac.bd domain)। তাই apply-এ student ID card scan + admission letter upload করুন। Sumon-এর JU ID card-এ ২ দিনে approve হয়েছিল। Path 2: Paid subscription Copilot Individual — $১০/মাস (~৳১,২০০): Tab + Chat + Edits + Agent। Personal use। Copilot Pro — $১৯/মাস: Higher quota, premium models, faster response।…</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Copilot ব্যবহারের সেরা টিপস — কী জানা দরকার?</summary>
+      <div class="faq-a"><p>Comment-as-prompt: Code-এর উপরে comment-এ describe করুন কী চান — Copilot ভালো suggest করে। উদাহরণ: &quot;// fetch user orders by date range, sort newest first&quot; → পুরো function suggest। Multi-model use করুন: Chat panel-এ model dropdown। Sonnet 4.6 (default daily), GPT-5 (complex reasoning), o4 (math/algorithm)। @workspace mandatory: Chat-এ context চাইলে অবশ্যই @workspace add — তাহলে whole repo aware answer। Slash command memorize করুন: /explain, /fix, /test, /doc — daily ৩০-৪০% time save। Copilot Edits-এ &quot;Plan first&quot;: Complex change-এ আগে plan চান, তারপর approve করে execute। PR review enable করুন: Repo settings → &quot;Allow Copilot to review PR&quot; — open-source contribution-এ time-saving। Privacy:…</p></div>
+    </details>
+</section>
+<!-- TEMPLATED-FAQ:END -->
+
+<!-- RELATED-POSTS:START -->
 <section class="related-posts" aria-label="সম্পর্কিত গাইড">
   <style>
     .related-posts { max-width: 1100px; margin: 56px auto; padding: 0 20px; font-family: 'Hind Siliguri', sans-serif; }

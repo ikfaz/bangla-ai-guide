@@ -52,6 +52,7 @@
   <!-- PERSON-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-author-block">{"@context":"https://schema.org","@type":"Person","name":"ইকফাজ","alternateName":"Ikfaz","jobTitle":"প্রতিষ্ঠাতা ও সম্পাদক","url":"https://banglaaiguide.com/about/","sameAs":["https://github.com/ikfaz"],"worksFor":{"@type":"Organization","name":"বাংলা AI গাইড","url":"https://banglaaiguide.com"},"knowsAbout":["Artificial Intelligence","AI Tools","Bangladesh Tech","বাংলা AI"],"description":"বাংলা AI গাইডের প্রতিষ্ঠাতা। বাংলাদেশি ব্যবহারকারীদের জন্য AI টুলস কিউরেট ও বিশ্লেষণ করেন — কোনটা BD থেকে কাজ করে, কোনটায় bKash চলে, কোনটা আসলে দৈনন্দিন কাজে লাগে।"}</script>
 <!-- PERSON-SCHEMA:END -->
+        <script type="application/ld+json" data-injected-by="extend-faq-coverage">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Advanced Techniques — কী জানা দরকার?","acceptedAnswer":{"@type":"Answer","text":"Chain-of-Thought: \"ধাপে ধাপে চিন্তা করো, প্রতিটি ধাপ ব্যাখ্যা সহ\" Few-shot learning: ২-৩টা example দিয়ে pattern শেখান Role-play: \"তুমি একজন interviewer, আমি candidate...\" Self-critique: \"এই answer-এর দুর্বলতা চিহ্নিত করো এবং উন্নত version দাও\" Persona: \"একজন ৬৫ বছর বয়সী cardiologist হিসেবে উত্তর দাও\" Tree of thought: \"৩টি সম্ভাব্য approach সমান বিচার করো\""}},{"@type":"Question","name":"মৌলিক ৬ Element-এর prompt — কী জানা দরকার?","acceptedAnswer":{"@type":"Answer","text":"Role: \"তুমি একজন senior copywriter...\" Task: \"একটি Facebook ad copy লেখো...\" Context: \"আমার product একটি bangla learning app...\" Format: \"৬০ শব্দে, emotional hook দিয়ে শুরু...\" Examples: \"যেমন: 'Don't learn English. Master it.'...\" Constraints: \"এড়াও cliché, no emoji\""}},{"@type":"Question","name":"Bangla prompting tips — কী জানা দরকার?","acceptedAnswer":{"@type":"Answer","text":"বাংলা context + English instruction mix সবচেয়ে effective উদাহরণ: \"Write in Bangla. ৪০০ word blog post on [topic]\" বাংলা output চাইলে output ভাষা specify Technical term ইংরেজি রাখুন (translation awkward) বাংলা style: \"চলিত\" vs \"সাধু\" specify"}},{"@type":"Question","name":"Prompt Engineering কী?","acceptedAnswer":{"@type":"Answer","text":"একই AI tool — একজনের output ভালো, অন্যজনের সাধারণ। পার্থক্য prompt-এ। Prompt Engineering হলো AI-কে সঠিকভাবে instruct করার বিজ্ঞান (এবং কিছুটা শিল্প)। এই গাইডে শিখবেন — কীভাবে এক prompt আপনার output ১০× ভালো করে।"}}]}</script>
 </head>
 <body>
     <header class="navbar">
@@ -214,7 +215,41 @@
 
     </div>
 
-    <!-- RELATED-POSTS:START -->
+    <!-- TEMPLATED-FAQ:START -->
+<section class="article-faq" aria-labelledby="faq-heading">
+  <style>
+    .article-faq { max-width: 880px; margin: 56px auto 16px; padding: 0 20px; font-family: 'Hind Siliguri', sans-serif; }
+    .article-faq h2 { font-family: 'Syne', 'Hind Siliguri', sans-serif; font-size: 28px; font-weight: 800; letter-spacing: -0.02em; color: #0F172A; margin: 0 0 18px; }
+    .article-faq .faq-item { border: 1px solid #E2E8F0; border-radius: 14px; padding: 14px 18px; margin-bottom: 12px; background: #FFFFFF; }
+    .article-faq .faq-item[open] { border-color: #16A34A; box-shadow: 0 8px 24px rgba(15,23,42,.06); }
+    .article-faq .faq-q { font-weight: 700; font-size: 16px; line-height: 1.5; color: #0F172A; cursor: pointer; list-style: none; }
+    .article-faq .faq-q::-webkit-details-marker { display: none; }
+    .article-faq .faq-q::after { content: '+'; float: right; color: #16A34A; font-size: 22px; line-height: 1; transition: transform .2s; }
+    .article-faq .faq-item[open] .faq-q::after { content: '−'; }
+    .article-faq .faq-a { margin-top: 10px; color: #334155; font-size: 15px; line-height: 1.7; }
+    .article-faq .faq-a p { margin: 0; }
+  </style>
+  <h2 id="faq-heading">সচরাচর জিজ্ঞাসা (FAQ)</h2>
+    <details class="faq-item" open>
+      <summary class="faq-q">Advanced Techniques — কী জানা দরকার?</summary>
+      <div class="faq-a"><p>Chain-of-Thought: &quot;ধাপে ধাপে চিন্তা করো, প্রতিটি ধাপ ব্যাখ্যা সহ&quot; Few-shot learning: ২-৩টা example দিয়ে pattern শেখান Role-play: &quot;তুমি একজন interviewer, আমি candidate...&quot; Self-critique: &quot;এই answer-এর দুর্বলতা চিহ্নিত করো এবং উন্নত version দাও&quot; Persona: &quot;একজন ৬৫ বছর বয়সী cardiologist হিসেবে উত্তর দাও&quot; Tree of thought: &quot;৩টি সম্ভাব্য approach সমান বিচার করো&quot;</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">মৌলিক ৬ Element-এর prompt — কী জানা দরকার?</summary>
+      <div class="faq-a"><p>Role: &quot;তুমি একজন senior copywriter...&quot; Task: &quot;একটি Facebook ad copy লেখো...&quot; Context: &quot;আমার product একটি bangla learning app...&quot; Format: &quot;৬০ শব্দে, emotional hook দিয়ে শুরু...&quot; Examples: &quot;যেমন: &#39;Don&#39;t learn English. Master it.&#39;...&quot; Constraints: &quot;এড়াও cliché, no emoji&quot;</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Bangla prompting tips — কী জানা দরকার?</summary>
+      <div class="faq-a"><p>বাংলা context + English instruction mix সবচেয়ে effective উদাহরণ: &quot;Write in Bangla. ৪০০ word blog post on [topic]&quot; বাংলা output চাইলে output ভাষা specify Technical term ইংরেজি রাখুন (translation awkward) বাংলা style: &quot;চলিত&quot; vs &quot;সাধু&quot; specify</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Prompt Engineering কী?</summary>
+      <div class="faq-a"><p>একই AI tool — একজনের output ভালো, অন্যজনের সাধারণ। পার্থক্য prompt-এ। Prompt Engineering হলো AI-কে সঠিকভাবে instruct করার বিজ্ঞান (এবং কিছুটা শিল্প)। এই গাইডে শিখবেন — কীভাবে এক prompt আপনার output ১০× ভালো করে।</p></div>
+    </details>
+</section>
+<!-- TEMPLATED-FAQ:END -->
+
+<!-- RELATED-POSTS:START -->
 <section class="related-posts" aria-label="সম্পর্কিত গাইড">
   <style>
     .related-posts { max-width: 1100px; margin: 56px auto; padding: 0 20px; font-family: 'Hind Siliguri', sans-serif; }

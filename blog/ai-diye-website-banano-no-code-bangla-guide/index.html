@@ -55,6 +55,7 @@
   <!-- PERSON-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-author-block">{"@context":"https://schema.org","@type":"Person","name":"ইকফাজ","alternateName":"Ikfaz","jobTitle":"প্রতিষ্ঠাতা ও সম্পাদক","url":"https://banglaaiguide.com/about/","sameAs":["https://github.com/ikfaz"],"worksFor":{"@type":"Organization","name":"বাংলা AI গাইড","url":"https://banglaaiguide.com"},"knowsAbout":["Artificial Intelligence","AI Tools","Bangladesh Tech","বাংলা AI"],"description":"বাংলা AI গাইডের প্রতিষ্ঠাতা। বাংলাদেশি ব্যবহারকারীদের জন্য AI টুলস কিউরেট ও বিশ্লেষণ করেন — কোনটা BD থেকে কাজ করে, কোনটায় bKash চলে, কোনটা আসলে দৈনন্দিন কাজে লাগে।"}</script>
 <!-- PERSON-SCHEMA:END -->
+        <script type="application/ld+json" data-injected-by="extend-faq-coverage">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"শীর্ষ ৫টি AI website builder — কী জানা দরকার?","acceptedAnswer":{"@type":"Answer","text":"১. Bolt.new — সবচেয়ে fast prototype StackBlitz-এর তৈরি; browser-এই full Node.js environment। বলুন \"একটি portfolio site বানাও\" — ৩০ সেকেন্ডে পুরো React app। Free tier: দৈনিক tokens limit Pro: $২০/মাস (unlimited) Output: Live preview + download ২. v0 by Vercel — component-level perfection Designer-দের favorite। কোনো UI উপাদান দরকার? একটি screenshot upload করুন, AI কোড generate করবে। Free credits প্রতিদিন Premium: $২০/মাস Vercel-এ এক ক্লিকে deploy ৩. Lovable — sleek, designer-friendly Bolt-এর alternative; UI এবং user experience-এ বেশি polished। database integration সহজ। ৪. Replit Agent Replit-এর built-in AI; বলুন \"একটি pizza ordering app বানাও\" — পুরো full-stack app। ৫. Cursor (advanced) Pure…"}},{"@type":"Question","name":"Bolt.new দিয়ে প্রথম site — কী জানা দরকার?","acceptedAnswer":{"@type":"Answer","text":"bolt.new-এ যান (signup না করেই কাজ করে) Prompt: \"Create a portfolio website for a Bangladeshi web developer. Sections: hero with name and tagline, about with bio, projects (3 cards), skills list, contact form. Use Tailwind, modern minimal design, blue accent.\" AI ১০-৩০ সেকেন্ডে পুরো site বানিয়ে preview দেখাবে যেকোনো অংশ change-এর জন্য আবার prompt দিন: \"Change accent color to green\" \"Deploy\" button → Netlify/Vercel-এ এক ক্লিকে live"}},{"@type":"Question","name":"Effective prompt লেখার ৭টি নিয়ম — কী জানা দরকার?","acceptedAnswer":{"@type":"Answer","text":"Goal স্পষ্ট: \"Build a [type] website for [audience]\" Section list দিন: hero, about, services, testimonials, footer Style hints: \"minimal\", \"playful\", \"corporate\", \"Apple-like\" Color palette specify: \"navy blue accent on white background\" Tech stack বলুন: \"React + Tailwind + shadcn/ui\" Sample content: \"Use placeholder Bangladeshi names like Rahim, Karim\" Iterate: Initial output পেলে — refine (\"make hero bigger, add CTA button\")"}},{"@type":"Question","name":"AI দিয়ে Website বানানো কোন কাজে সবচেয়ে ভালো?","acceptedAnswer":{"@type":"Answer","text":"ব্যক্তিগত portfolio — চাকরি/clientship জন্য Restaurant landing page — menu, reservation form Online tuition page — শিক্ষকদের জন্য E-commerce single-product — Dropshipping পরীক্ষায় Event RSVP page — বিয়ে, conference Local NGO website SaaS MVP landing page — investor-pitch ব্যবহারে"}}]}</script>
 </head>
 <body>
     <header class="navbar">
@@ -217,7 +218,41 @@
 
     </div>
 
-    <!-- RELATED-POSTS:START -->
+    <!-- TEMPLATED-FAQ:START -->
+<section class="article-faq" aria-labelledby="faq-heading">
+  <style>
+    .article-faq { max-width: 880px; margin: 56px auto 16px; padding: 0 20px; font-family: 'Hind Siliguri', sans-serif; }
+    .article-faq h2 { font-family: 'Syne', 'Hind Siliguri', sans-serif; font-size: 28px; font-weight: 800; letter-spacing: -0.02em; color: #0F172A; margin: 0 0 18px; }
+    .article-faq .faq-item { border: 1px solid #E2E8F0; border-radius: 14px; padding: 14px 18px; margin-bottom: 12px; background: #FFFFFF; }
+    .article-faq .faq-item[open] { border-color: #16A34A; box-shadow: 0 8px 24px rgba(15,23,42,.06); }
+    .article-faq .faq-q { font-weight: 700; font-size: 16px; line-height: 1.5; color: #0F172A; cursor: pointer; list-style: none; }
+    .article-faq .faq-q::-webkit-details-marker { display: none; }
+    .article-faq .faq-q::after { content: '+'; float: right; color: #16A34A; font-size: 22px; line-height: 1; transition: transform .2s; }
+    .article-faq .faq-item[open] .faq-q::after { content: '−'; }
+    .article-faq .faq-a { margin-top: 10px; color: #334155; font-size: 15px; line-height: 1.7; }
+    .article-faq .faq-a p { margin: 0; }
+  </style>
+  <h2 id="faq-heading">সচরাচর জিজ্ঞাসা (FAQ)</h2>
+    <details class="faq-item" open>
+      <summary class="faq-q">শীর্ষ ৫টি AI website builder — কী জানা দরকার?</summary>
+      <div class="faq-a"><p>১. Bolt.new — সবচেয়ে fast prototype StackBlitz-এর তৈরি; browser-এই full Node.js environment। বলুন &quot;একটি portfolio site বানাও&quot; — ৩০ সেকেন্ডে পুরো React app। Free tier: দৈনিক tokens limit Pro: $২০/মাস (unlimited) Output: Live preview + download ২. v0 by Vercel — component-level perfection Designer-দের favorite। কোনো UI উপাদান দরকার? একটি screenshot upload করুন, AI কোড generate করবে। Free credits প্রতিদিন Premium: $২০/মাস Vercel-এ এক ক্লিকে deploy ৩. Lovable — sleek, designer-friendly Bolt-এর alternative; UI এবং user experience-এ বেশি polished। database integration সহজ। ৪. Replit Agent Replit-এর built-in AI; বলুন &quot;একটি pizza ordering app বানাও&quot; — পুরো full-stack app। ৫. Cursor (advanced) Pure…</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Bolt.new দিয়ে প্রথম site — কী জানা দরকার?</summary>
+      <div class="faq-a"><p>bolt.new-এ যান (signup না করেই কাজ করে) Prompt: &quot;Create a portfolio website for a Bangladeshi web developer. Sections: hero with name and tagline, about with bio, projects (3 cards), skills list, contact form. Use Tailwind, modern minimal design, blue accent.&quot; AI ১০-৩০ সেকেন্ডে পুরো site বানিয়ে preview দেখাবে যেকোনো অংশ change-এর জন্য আবার prompt দিন: &quot;Change accent color to green&quot; &quot;Deploy&quot; button → Netlify/Vercel-এ এক ক্লিকে live</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Effective prompt লেখার ৭টি নিয়ম — কী জানা দরকার?</summary>
+      <div class="faq-a"><p>Goal স্পষ্ট: &quot;Build a [type] website for [audience]&quot; Section list দিন: hero, about, services, testimonials, footer Style hints: &quot;minimal&quot;, &quot;playful&quot;, &quot;corporate&quot;, &quot;Apple-like&quot; Color palette specify: &quot;navy blue accent on white background&quot; Tech stack বলুন: &quot;React + Tailwind + shadcn/ui&quot; Sample content: &quot;Use placeholder Bangladeshi names like Rahim, Karim&quot; Iterate: Initial output পেলে — refine (&quot;make hero bigger, add CTA button&quot;)</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">AI দিয়ে Website বানানো কোন কাজে সবচেয়ে ভালো?</summary>
+      <div class="faq-a"><p>ব্যক্তিগত portfolio — চাকরি/clientship জন্য Restaurant landing page — menu, reservation form Online tuition page — শিক্ষকদের জন্য E-commerce single-product — Dropshipping পরীক্ষায় Event RSVP page — বিয়ে, conference Local NGO website SaaS MVP landing page — investor-pitch ব্যবহারে</p></div>
+    </details>
+</section>
+<!-- TEMPLATED-FAQ:END -->
+
+<!-- RELATED-POSTS:START -->
 <section class="related-posts" aria-label="সম্পর্কিত গাইড">
   <style>
     .related-posts { max-width: 1100px; margin: 56px auto; padding: 0 20px; font-family: 'Hind Siliguri', sans-serif; }

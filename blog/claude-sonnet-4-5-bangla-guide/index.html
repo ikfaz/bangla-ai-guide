@@ -52,6 +52,7 @@
   <!-- PERSON-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-author-block">{"@context":"https://schema.org","@type":"Person","name":"ইকফাজ","alternateName":"Ikfaz","jobTitle":"প্রতিষ্ঠাতা ও সম্পাদক","url":"https://banglaaiguide.com/about/","sameAs":["https://github.com/ikfaz"],"worksFor":{"@type":"Organization","name":"বাংলা AI গাইড","url":"https://banglaaiguide.com"},"knowsAbout":["Artificial Intelligence","AI Tools","Bangladesh Tech","বাংলা AI"],"description":"বাংলা AI গাইডের প্রতিষ্ঠাতা। বাংলাদেশি ব্যবহারকারীদের জন্য AI টুলস কিউরেট ও বিশ্লেষণ করেন — কোনটা BD থেকে কাজ করে, কোনটায় bKash চলে, কোনটা আসলে দৈনন্দিন কাজে লাগে।"}</script>
 <!-- PERSON-SCHEMA:END -->
+        <script type="application/ld+json" data-injected-by="extend-faq-coverage">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Sonnet 4.5 — কী জানা দরকার?","acceptedAnswer":{"@type":"Answer","text":"২০২৫-এর সেপ্টেম্বরে Sonnet 4.5 release হয়েছিল। এই মডেল-ই প্রথম \"agentic coding\"-এর mainstream pattern set করেছিল। আগের 4.0-এর তুলনায়: SWE-bench (coding) 4.0: ৫২% | 4.5: ৭৭.২% Context window ২০০K token (4.5 onwards) Computer Use 4.5-এই debut (experimental) BD users active (peak '২৫ Q4) ~১,৬০,০০০ Bangla quality leap: 4.0-তে Bangla output সঠিক কিন্তু stiff ছিল। 4.5-এ natural BD speech pattern, idiom, code-switching — সব সাবলীল। Project feature: 4.5-এই Anthropic Project introduce করেছিল — system prompt + reference doc upload করে persistent context। Artifacts: Interactive code/diagram/UI output 4.5-এ debut — Claude.ai-তে side panel-এ live preview। Tool use: Function calling stable, JSON output…"}},{"@type":"Question","name":"Sonnet 4.5 vs 4.6 — কোনটা বেছে নেব?","acceptedAnswer":{"@type":"Answer","text":"Anthropic-এর marketing বলবে \"4.6 অনেক better\"। বাস্তবে: কিছু কাজে অবশ্যই better, কিছু কাজে indistinguishable। যেসব কাজে 4.6 স্পষ্টভাবে better: SWE-bench: 4.5 (৭৭.২%) → 4.6 (৭৭.২%) — same! Extended thinking mode (complex reasoning) — 4.6-এ ১৫-২০% better Math problem (multi-step) — 4.6-এ accuracy ১২% উপরে Computer Use (production-ready) — 4.6-এ stable, 4.5-এ experimental Agentic multi-step task (৫+ tool call) — 4.6-এ coherence better যেসব কাজে পার্থক্য negligible (4.5 দিয়েই চলে): Standard Bangla content writing — blog, FB caption, ad copy Translation (Bangla ↔ English) — দু'টোই top tier Email/customer support reply Simple summarization (article, video transcript) Single-file code generation…"}},{"@type":"Question","name":"বাংলাদেশ থেকে Claude Sonnet 4.5 কীভাবে access করব?","acceptedAnswer":{"@type":"Answer","text":"Sonnet 4.5 এখনও Claude.ai-এ available, কিন্তু default হিসেবে 4.6 আসে। চয়ন করতে হবে manually: Web (claude.ai) Sign in → conversation start → top-এ model dropdown \"Claude Sonnet 4.5\" select করুন (নাকি 4.6-ই থাকবে default) Pro user ($২০/মাস) — unlimited 4.5 + 4.6 দু'টোই Free user — limited messages, 4.5 access নাও পেতে পারেন API Model ID: claude-sonnet-4-5-20250929 Pricing: $৩ per M input / $১৫ per M output (4.6-এর সমান) BD থেকে: USD card prepaid recharge ($৫ minimum) Recommended: 4.6 ব্যবহার করুন, 4.5 specifically যখন legacy app বা stability-এর জন্য need Third-party OpenRouter: Sonnet 4.5 available, ৫% markup Cursor/Cline: Workspace settings থেকে model switch Poe.com: Premium tier-এ Sonnet…"}},{"@type":"Question","name":"Claude Sonnet 4.5 কোন কাজে সবচেয়ে ভালো?","acceptedAnswer":{"@type":"Answer","text":"Use case 1: Content writer/copywriter (Sabina-র মতো) Daily ৩-৫ টা blog/social post/email — Sonnet 4.5 quality consistent। মাসে $২০ Pro, কোনো extra খরচ নেই। সাবিনার বর্তমান workflow: একটা client brief paste → \"এই tone-এ ১,২০০ word post\" → 4.5 ৪০ সেকেন্ডে draft। Edit ১৫ মিনিট। Time per post: ২ ঘণ্টা → ৩০ মিনিট। Use case 2: Translation work (Bangla ↔ English) Comilla-র freelancer Faruq legal/medical document translate করেন। Sonnet 4.5-এ tone, terminology accuracy 4.6-এর সমান। মাসিক উপার্জন ৳৪২,০০০, খরচ Pro $২০ মাত্র। 4.6-এ migrate করার প্রয়োজন তিনি দেখেন না। Use case 3: Educational content (teacher/coach) Mirpur-এর coaching center-এর English teacher Nadia ৭০ জন student-এর জন্য daily lesson…"}}]}</script>
 </head>
 <body>
     <header class="navbar">
@@ -285,7 +286,41 @@
 
     </div>
 
-    <!-- RELATED-POSTS:START -->
+    <!-- TEMPLATED-FAQ:START -->
+<section class="article-faq" aria-labelledby="faq-heading">
+  <style>
+    .article-faq { max-width: 880px; margin: 56px auto 16px; padding: 0 20px; font-family: 'Hind Siliguri', sans-serif; }
+    .article-faq h2 { font-family: 'Syne', 'Hind Siliguri', sans-serif; font-size: 28px; font-weight: 800; letter-spacing: -0.02em; color: #0F172A; margin: 0 0 18px; }
+    .article-faq .faq-item { border: 1px solid #E2E8F0; border-radius: 14px; padding: 14px 18px; margin-bottom: 12px; background: #FFFFFF; }
+    .article-faq .faq-item[open] { border-color: #16A34A; box-shadow: 0 8px 24px rgba(15,23,42,.06); }
+    .article-faq .faq-q { font-weight: 700; font-size: 16px; line-height: 1.5; color: #0F172A; cursor: pointer; list-style: none; }
+    .article-faq .faq-q::-webkit-details-marker { display: none; }
+    .article-faq .faq-q::after { content: '+'; float: right; color: #16A34A; font-size: 22px; line-height: 1; transition: transform .2s; }
+    .article-faq .faq-item[open] .faq-q::after { content: '−'; }
+    .article-faq .faq-a { margin-top: 10px; color: #334155; font-size: 15px; line-height: 1.7; }
+    .article-faq .faq-a p { margin: 0; }
+  </style>
+  <h2 id="faq-heading">সচরাচর জিজ্ঞাসা (FAQ)</h2>
+    <details class="faq-item" open>
+      <summary class="faq-q">Sonnet 4.5 — কী জানা দরকার?</summary>
+      <div class="faq-a"><p>২০২৫-এর সেপ্টেম্বরে Sonnet 4.5 release হয়েছিল। এই মডেল-ই প্রথম &quot;agentic coding&quot;-এর mainstream pattern set করেছিল। আগের 4.0-এর তুলনায়: SWE-bench (coding) 4.0: ৫২% | 4.5: ৭৭.২% Context window ২০০K token (4.5 onwards) Computer Use 4.5-এই debut (experimental) BD users active (peak &#39;২৫ Q4) ~১,৬০,০০০ Bangla quality leap: 4.0-তে Bangla output সঠিক কিন্তু stiff ছিল। 4.5-এ natural BD speech pattern, idiom, code-switching — সব সাবলীল। Project feature: 4.5-এই Anthropic Project introduce করেছিল — system prompt + reference doc upload করে persistent context। Artifacts: Interactive code/diagram/UI output 4.5-এ debut — Claude.ai-তে side panel-এ live preview। Tool use: Function calling stable, JSON output…</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Sonnet 4.5 vs 4.6 — কোনটা বেছে নেব?</summary>
+      <div class="faq-a"><p>Anthropic-এর marketing বলবে &quot;4.6 অনেক better&quot;। বাস্তবে: কিছু কাজে অবশ্যই better, কিছু কাজে indistinguishable। যেসব কাজে 4.6 স্পষ্টভাবে better: SWE-bench: 4.5 (৭৭.২%) → 4.6 (৭৭.২%) — same! Extended thinking mode (complex reasoning) — 4.6-এ ১৫-২০% better Math problem (multi-step) — 4.6-এ accuracy ১২% উপরে Computer Use (production-ready) — 4.6-এ stable, 4.5-এ experimental Agentic multi-step task (৫+ tool call) — 4.6-এ coherence better যেসব কাজে পার্থক্য negligible (4.5 দিয়েই চলে): Standard Bangla content writing — blog, FB caption, ad copy Translation (Bangla ↔ English) — দু&#39;টোই top tier Email/customer support reply Simple summarization (article, video transcript) Single-file code generation…</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">বাংলাদেশ থেকে Claude Sonnet 4.5 কীভাবে access করব?</summary>
+      <div class="faq-a"><p>Sonnet 4.5 এখনও Claude.ai-এ available, কিন্তু default হিসেবে 4.6 আসে। চয়ন করতে হবে manually: Web (claude.ai) Sign in → conversation start → top-এ model dropdown &quot;Claude Sonnet 4.5&quot; select করুন (নাকি 4.6-ই থাকবে default) Pro user ($২০/মাস) — unlimited 4.5 + 4.6 দু&#39;টোই Free user — limited messages, 4.5 access নাও পেতে পারেন API Model ID: claude-sonnet-4-5-20250929 Pricing: $৩ per M input / $১৫ per M output (4.6-এর সমান) BD থেকে: USD card prepaid recharge ($৫ minimum) Recommended: 4.6 ব্যবহার করুন, 4.5 specifically যখন legacy app বা stability-এর জন্য need Third-party OpenRouter: Sonnet 4.5 available, ৫% markup Cursor/Cline: Workspace settings থেকে model switch Poe.com: Premium tier-এ Sonnet…</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Claude Sonnet 4.5 কোন কাজে সবচেয়ে ভালো?</summary>
+      <div class="faq-a"><p>Use case 1: Content writer/copywriter (Sabina-র মতো) Daily ৩-৫ টা blog/social post/email — Sonnet 4.5 quality consistent। মাসে $২০ Pro, কোনো extra খরচ নেই। সাবিনার বর্তমান workflow: একটা client brief paste → &quot;এই tone-এ ১,২০০ word post&quot; → 4.5 ৪০ সেকেন্ডে draft। Edit ১৫ মিনিট। Time per post: ২ ঘণ্টা → ৩০ মিনিট। Use case 2: Translation work (Bangla ↔ English) Comilla-র freelancer Faruq legal/medical document translate করেন। Sonnet 4.5-এ tone, terminology accuracy 4.6-এর সমান। মাসিক উপার্জন ৳৪২,০০০, খরচ Pro $২০ মাত্র। 4.6-এ migrate করার প্রয়োজন তিনি দেখেন না। Use case 3: Educational content (teacher/coach) Mirpur-এর coaching center-এর English teacher Nadia ৭০ জন student-এর জন্য daily lesson…</p></div>
+    </details>
+</section>
+<!-- TEMPLATED-FAQ:END -->
+
+<!-- RELATED-POSTS:START -->
 <section class="related-posts" aria-label="সম্পর্কিত গাইড">
   <style>
     .related-posts { max-width: 1100px; margin: 56px auto; padding: 0 20px; font-family: 'Hind Siliguri', sans-serif; }

@@ -52,6 +52,7 @@
   <!-- PERSON-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-author-block">{"@context":"https://schema.org","@type":"Person","name":"ইকফাজ","alternateName":"Ikfaz","jobTitle":"প্রতিষ্ঠাতা ও সম্পাদক","url":"https://banglaaiguide.com/about/","sameAs":["https://github.com/ikfaz"],"worksFor":{"@type":"Organization","name":"বাংলা AI গাইড","url":"https://banglaaiguide.com"},"knowsAbout":["Artificial Intelligence","AI Tools","Bangladesh Tech","বাংলা AI"],"description":"বাংলা AI গাইডের প্রতিষ্ঠাতা। বাংলাদেশি ব্যবহারকারীদের জন্য AI টুলস কিউরেট ও বিশ্লেষণ করেন — কোনটা BD থেকে কাজ করে, কোনটায় bKash চলে, কোনটা আসলে দৈনন্দিন কাজে লাগে।"}</script>
 <!-- PERSON-SCHEMA:END -->
+        <script type="application/ld+json" data-injected-by="extend-faq-coverage">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Top open-source models — কী জানা দরকার?","acceptedAnswer":{"@type":"Answer","text":"Llama 3.3 (Meta): Best general-purpose, 8B/70B variants Mistral Large 2: European, good code DeepSeek-R1 distilled: Reasoning, lighter Qwen 2.5: Chinese-led, multilingual (incl. Bangla) Phi-3 (Microsoft): Small but capable Gemma 2 (Google): Lightweight"}},{"@type":"Question","name":"Local AI vs Cloud AI কীভাবে install বা setup করব?","acceptedAnswer":{"@type":"Answer","text":"Step 1: ollama.com → download installer Step 2: Run installer Step 3: Open terminal/command prompt Step 4: ollama pull llama3.2:8b (download model, ~5GB) Step 5: ollama run llama3.2 Step 6: Chat в terminal! Step 7 (optional): Open WebUI for browser UI"}},{"@type":"Question","name":"Local AI vs Cloud AI বাংলায় কেমন কাজ করে?","acceptedAnswer":{"@type":"Answer","text":"Llama 3.3 70B: Decent Bangla Qwen 2.5: Good Bangla support Mistral: Limited Bangla Smaller models: Bangla weaker Verdict: Cloud (Claude/Gemini) still better, but local \"good enough\" for many tasks"}},{"@type":"Question","name":"Local AI — কী জানা দরকার?","acceptedAnswer":{"@type":"Answer","text":"Privacy: Data কম্পিউটার থেকে বের হয় না Free: No monthly subscription Offline: Internet ছাড়া কাজ করে Speed: Local network — fast Customization: Fine-tune possible Unlimited: No rate limit"}}]}</script>
 </head>
 <body>
     <header class="navbar">
@@ -232,7 +233,41 @@
 
     </div>
 
-    <!-- RELATED-POSTS:START -->
+    <!-- TEMPLATED-FAQ:START -->
+<section class="article-faq" aria-labelledby="faq-heading">
+  <style>
+    .article-faq { max-width: 880px; margin: 56px auto 16px; padding: 0 20px; font-family: 'Hind Siliguri', sans-serif; }
+    .article-faq h2 { font-family: 'Syne', 'Hind Siliguri', sans-serif; font-size: 28px; font-weight: 800; letter-spacing: -0.02em; color: #0F172A; margin: 0 0 18px; }
+    .article-faq .faq-item { border: 1px solid #E2E8F0; border-radius: 14px; padding: 14px 18px; margin-bottom: 12px; background: #FFFFFF; }
+    .article-faq .faq-item[open] { border-color: #16A34A; box-shadow: 0 8px 24px rgba(15,23,42,.06); }
+    .article-faq .faq-q { font-weight: 700; font-size: 16px; line-height: 1.5; color: #0F172A; cursor: pointer; list-style: none; }
+    .article-faq .faq-q::-webkit-details-marker { display: none; }
+    .article-faq .faq-q::after { content: '+'; float: right; color: #16A34A; font-size: 22px; line-height: 1; transition: transform .2s; }
+    .article-faq .faq-item[open] .faq-q::after { content: '−'; }
+    .article-faq .faq-a { margin-top: 10px; color: #334155; font-size: 15px; line-height: 1.7; }
+    .article-faq .faq-a p { margin: 0; }
+  </style>
+  <h2 id="faq-heading">সচরাচর জিজ্ঞাসা (FAQ)</h2>
+    <details class="faq-item" open>
+      <summary class="faq-q">Top open-source models — কী জানা দরকার?</summary>
+      <div class="faq-a"><p>Llama 3.3 (Meta): Best general-purpose, 8B/70B variants Mistral Large 2: European, good code DeepSeek-R1 distilled: Reasoning, lighter Qwen 2.5: Chinese-led, multilingual (incl. Bangla) Phi-3 (Microsoft): Small but capable Gemma 2 (Google): Lightweight</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Local AI vs Cloud AI কীভাবে install বা setup করব?</summary>
+      <div class="faq-a"><p>Step 1: ollama.com → download installer Step 2: Run installer Step 3: Open terminal/command prompt Step 4: ollama pull llama3.2:8b (download model, ~5GB) Step 5: ollama run llama3.2 Step 6: Chat в terminal! Step 7 (optional): Open WebUI for browser UI</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Local AI vs Cloud AI বাংলায় কেমন কাজ করে?</summary>
+      <div class="faq-a"><p>Llama 3.3 70B: Decent Bangla Qwen 2.5: Good Bangla support Mistral: Limited Bangla Smaller models: Bangla weaker Verdict: Cloud (Claude/Gemini) still better, but local &quot;good enough&quot; for many tasks</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Local AI — কী জানা দরকার?</summary>
+      <div class="faq-a"><p>Privacy: Data কম্পিউটার থেকে বের হয় না Free: No monthly subscription Offline: Internet ছাড়া কাজ করে Speed: Local network — fast Customization: Fine-tune possible Unlimited: No rate limit</p></div>
+    </details>
+</section>
+<!-- TEMPLATED-FAQ:END -->
+
+<!-- RELATED-POSTS:START -->
 <section class="related-posts" aria-label="সম্পর্কিত গাইড">
   <style>
     .related-posts { max-width: 1100px; margin: 56px auto; padding: 0 20px; font-family: 'Hind Siliguri', sans-serif; }

@@ -52,6 +52,7 @@
   <!-- PERSON-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-author-block">{"@context":"https://schema.org","@type":"Person","name":"ইকফাজ","alternateName":"Ikfaz","jobTitle":"প্রতিষ্ঠাতা ও সম্পাদক","url":"https://banglaaiguide.com/about/","sameAs":["https://github.com/ikfaz"],"worksFor":{"@type":"Organization","name":"বাংলা AI গাইড","url":"https://banglaaiguide.com"},"knowsAbout":["Artificial Intelligence","AI Tools","Bangladesh Tech","বাংলা AI"],"description":"বাংলা AI গাইডের প্রতিষ্ঠাতা। বাংলাদেশি ব্যবহারকারীদের জন্য AI টুলস কিউরেট ও বিশ্লেষণ করেন — কোনটা BD থেকে কাজ করে, কোনটায় bKash চলে, কোনটা আসলে দৈনন্দিন কাজে লাগে।"}</script>
 <!-- PERSON-SCHEMA:END -->
+        <script type="application/ld+json" data-injected-by="extend-faq-coverage">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"৫টা Bangla-specific challenge + solution — কী জানা দরকার?","acceptedAnswer":{"@type":"Answer","text":"যুক্তাক্ষর recognition: \"প্রতি\", \"ক্ষমা\", \"জ্ঞান\" — AI sometimes split। Solution: Manual verify-এ এদের priority। কার চিহ্ন position: \"কি\" vs \"কী\" — context-only decidable। Solution: Claude-এর context-aware OCR এই কাজে best। Author handwriting variation: পুরোনো generation-এর হস্তাক্ষর modern training data-তে under-represented। Solution: ৫টা page sample দিয়ে Claude-কে \"এই author-এর handwriting style বুঝে নাও\"। Faded/smudged ink: ৫০+ বছরের document-এ common। Solution: Photo edit (contrast + brightness)-এর পরে OCR। Adobe Photoshop AI Fill or Lightroom mobile। Mixed Bangla-English: Doctor prescription, recipe (\"250g চিনি\")। Solution: ChatGPT/Claude এই mixed best handle করে। Google Lens সবচেয়ে…"}},{"@type":"Question","name":"AI দিয়ে হাতের লেখা Bangla → Digital Text কোন কাজে সবচেয়ে ভালো?","acceptedAnswer":{"@type":"Answer","text":"Step 1: Capture (Day 1-3) Smartphone camera: iPhone 13/Samsung S22+ minimum (12 MP+ resolution)। Lighting: Natural daylight, no direct sun (shadow problem)। Outside-near-window-এ best। Position: Phone directly above page, flat surface, no curve। App: Microsoft Lens, CamScanner, বা Notes-এর built-in document scan। Auto edge-detect + tilt-correct। Speed: ১ page = ১৫-২০ সেকেন্ড। ২,৪০০ pages = ১২ ঘণ্টা over 3 days। Save format: Cloud-sync folder (Google Drive)। Step 2: OCR (Day 4-10) Triple-verify workflow — same page-এ ৩ AI parallel: Primary: Google Lens (mobile): Photo upload, \"Copy text\" → Google Doc-এ paste। 70-85% accuracy। Cross-verify: Claude Sonnet 4.6 Vision: Same photo, prompt: \"এই…"}},{"@type":"Question","name":"২০২৬-এ Bangla OCR-এর state — কী জানা দরকার?","acceptedAnswer":{"@type":"Answer","text":"২০২২-এ Bangla handwritten OCR ৪০-৫০% accuracy ছিল — practically unusable। ২০২৬-এর মাঝামাঝিতে major shift এসেছে: Google Lens: Bangla handwriting 70-85%, printed 95%+। Mobile-first, free, instant। Claude Sonnet 4.6 Vision: Best context-aware OCR। Handwriting 80-92%, printed 97%+। Limit: daily quota in free tier। ChatGPT Vision (GPT-5): Excellent printed, handwriting 75-88%। Context-aware cleanup unmatched। Gemini 3.5 Pro Vision: Handwriting 75-90%, particularly strong on old/faded document। Image-to-text plus structure preserving। Bangla-specific tools (BNLT, Bangla OCR by BUET): Improving but still trailing major model।"}},{"@type":"Question","name":"৪টা OCR tool — কী জানা দরকার?","acceptedAnswer":{"@type":"Answer","text":"Sample text: নাজনীন-এর মা'র ১৯৭৩-এর diary entry — Bangla cursive, ink slightly faded, ১২ লাইন। Google Lens: ১০ লাইন accurate, ২টায় minor error। ১২ সেকেন্ডে। Claude Sonnet 4.6 Vision: ১১ লাইন accurate, ১টায় [?] flag (uncertain)। ১৮ সেকেন্ডে। Context-aware cleanup শ্রেষ্ঠ। ChatGPT GPT-5 Vision: ১০-১১ accurate, faded ink সবচেয়ে ভালো decode। ১৫ সেকেন্ডে। Gemini 3.5 Pro Vision: ১১ accurate, structure preserve সেরা (paragraph break, list)। ১৪ সেকেন্ডে। Verdict: Triple-verify (Lens + Claude + ChatGPT) — ৯৩-৯৫% combined accuracy। Single tool — ৮০-৯০%।"}}]}</script>
 </head>
 <body>
     <header class="navbar">
@@ -230,7 +231,41 @@
 
     </div>
 
-    <!-- RELATED-POSTS:START -->
+    <!-- TEMPLATED-FAQ:START -->
+<section class="article-faq" aria-labelledby="faq-heading">
+  <style>
+    .article-faq { max-width: 880px; margin: 56px auto 16px; padding: 0 20px; font-family: 'Hind Siliguri', sans-serif; }
+    .article-faq h2 { font-family: 'Syne', 'Hind Siliguri', sans-serif; font-size: 28px; font-weight: 800; letter-spacing: -0.02em; color: #0F172A; margin: 0 0 18px; }
+    .article-faq .faq-item { border: 1px solid #E2E8F0; border-radius: 14px; padding: 14px 18px; margin-bottom: 12px; background: #FFFFFF; }
+    .article-faq .faq-item[open] { border-color: #16A34A; box-shadow: 0 8px 24px rgba(15,23,42,.06); }
+    .article-faq .faq-q { font-weight: 700; font-size: 16px; line-height: 1.5; color: #0F172A; cursor: pointer; list-style: none; }
+    .article-faq .faq-q::-webkit-details-marker { display: none; }
+    .article-faq .faq-q::after { content: '+'; float: right; color: #16A34A; font-size: 22px; line-height: 1; transition: transform .2s; }
+    .article-faq .faq-item[open] .faq-q::after { content: '−'; }
+    .article-faq .faq-a { margin-top: 10px; color: #334155; font-size: 15px; line-height: 1.7; }
+    .article-faq .faq-a p { margin: 0; }
+  </style>
+  <h2 id="faq-heading">সচরাচর জিজ্ঞাসা (FAQ)</h2>
+    <details class="faq-item" open>
+      <summary class="faq-q">৫টা Bangla-specific challenge + solution — কী জানা দরকার?</summary>
+      <div class="faq-a"><p>যুক্তাক্ষর recognition: &quot;প্রতি&quot;, &quot;ক্ষমা&quot;, &quot;জ্ঞান&quot; — AI sometimes split। Solution: Manual verify-এ এদের priority। কার চিহ্ন position: &quot;কি&quot; vs &quot;কী&quot; — context-only decidable। Solution: Claude-এর context-aware OCR এই কাজে best। Author handwriting variation: পুরোনো generation-এর হস্তাক্ষর modern training data-তে under-represented। Solution: ৫টা page sample দিয়ে Claude-কে &quot;এই author-এর handwriting style বুঝে নাও&quot;। Faded/smudged ink: ৫০+ বছরের document-এ common। Solution: Photo edit (contrast + brightness)-এর পরে OCR। Adobe Photoshop AI Fill or Lightroom mobile। Mixed Bangla-English: Doctor prescription, recipe (&quot;250g চিনি&quot;)। Solution: ChatGPT/Claude এই mixed best handle করে। Google Lens সবচেয়ে…</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">AI দিয়ে হাতের লেখা Bangla → Digital Text কোন কাজে সবচেয়ে ভালো?</summary>
+      <div class="faq-a"><p>Step 1: Capture (Day 1-3) Smartphone camera: iPhone 13/Samsung S22+ minimum (12 MP+ resolution)। Lighting: Natural daylight, no direct sun (shadow problem)। Outside-near-window-এ best। Position: Phone directly above page, flat surface, no curve। App: Microsoft Lens, CamScanner, বা Notes-এর built-in document scan। Auto edge-detect + tilt-correct। Speed: ১ page = ১৫-২০ সেকেন্ড। ২,৪০০ pages = ১২ ঘণ্টা over 3 days। Save format: Cloud-sync folder (Google Drive)। Step 2: OCR (Day 4-10) Triple-verify workflow — same page-এ ৩ AI parallel: Primary: Google Lens (mobile): Photo upload, &quot;Copy text&quot; → Google Doc-এ paste। 70-85% accuracy। Cross-verify: Claude Sonnet 4.6 Vision: Same photo, prompt: &quot;এই…</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">২০২৬-এ Bangla OCR-এর state — কী জানা দরকার?</summary>
+      <div class="faq-a"><p>২০২২-এ Bangla handwritten OCR ৪০-৫০% accuracy ছিল — practically unusable। ২০২৬-এর মাঝামাঝিতে major shift এসেছে: Google Lens: Bangla handwriting 70-85%, printed 95%+। Mobile-first, free, instant। Claude Sonnet 4.6 Vision: Best context-aware OCR। Handwriting 80-92%, printed 97%+। Limit: daily quota in free tier। ChatGPT Vision (GPT-5): Excellent printed, handwriting 75-88%। Context-aware cleanup unmatched। Gemini 3.5 Pro Vision: Handwriting 75-90%, particularly strong on old/faded document। Image-to-text plus structure preserving। Bangla-specific tools (BNLT, Bangla OCR by BUET): Improving but still trailing major model।</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">৪টা OCR tool — কী জানা দরকার?</summary>
+      <div class="faq-a"><p>Sample text: নাজনীন-এর মা&#39;র ১৯৭৩-এর diary entry — Bangla cursive, ink slightly faded, ১২ লাইন। Google Lens: ১০ লাইন accurate, ২টায় minor error। ১২ সেকেন্ডে। Claude Sonnet 4.6 Vision: ১১ লাইন accurate, ১টায় [?] flag (uncertain)। ১৮ সেকেন্ডে। Context-aware cleanup শ্রেষ্ঠ। ChatGPT GPT-5 Vision: ১০-১১ accurate, faded ink সবচেয়ে ভালো decode। ১৫ সেকেন্ডে। Gemini 3.5 Pro Vision: ১১ accurate, structure preserve সেরা (paragraph break, list)। ১৪ সেকেন্ডে। Verdict: Triple-verify (Lens + Claude + ChatGPT) — ৯৩-৯৫% combined accuracy। Single tool — ৮০-৯০%।</p></div>
+    </details>
+</section>
+<!-- TEMPLATED-FAQ:END -->
+
+<!-- RELATED-POSTS:START -->
 <section class="related-posts" aria-label="সম্পর্কিত গাইড">
   <style>
     .related-posts { max-width: 1100px; margin: 56px auto; padding: 0 20px; font-family: 'Hind Siliguri', sans-serif; }

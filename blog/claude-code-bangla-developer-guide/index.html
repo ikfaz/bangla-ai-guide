@@ -52,6 +52,7 @@
   <!-- PERSON-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-author-block">{"@context":"https://schema.org","@type":"Person","name":"ইকফাজ","alternateName":"Ikfaz","jobTitle":"প্রতিষ্ঠাতা ও সম্পাদক","url":"https://banglaaiguide.com/about/","sameAs":["https://github.com/ikfaz"],"worksFor":{"@type":"Organization","name":"বাংলা AI গাইড","url":"https://banglaaiguide.com"},"knowsAbout":["Artificial Intelligence","AI Tools","Bangladesh Tech","বাংলা AI"],"description":"বাংলা AI গাইডের প্রতিষ্ঠাতা। বাংলাদেশি ব্যবহারকারীদের জন্য AI টুলস কিউরেট ও বিশ্লেষণ করেন — কোনটা BD থেকে কাজ করে, কোনটায় bKash চলে, কোনটা আসলে দৈনন্দিন কাজে লাগে।"}</script>
 <!-- PERSON-SCHEMA:END -->
+        <script type="application/ld+json" data-injected-by="extend-faq-coverage">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Claude Code থেকে সর্বোচ্চ পেতে কী কী টিপস আছে?","acceptedAnswer":{"@type":"Answer","text":"CLAUDE.md ফাইল রাখুন: Repo root-এ একটা CLAUDE.md create করুন — project structure, coding standard, \"do not touch\" file list। Claude প্রতি session-এ এটা পড়ে। \"Plan first\" pattern: Complex task-এ আগে plan চান। তারপর approve করে execute বলুন। Granular permission: Trust mode default off — Claude file edit করার আগে confirm চাইবে। Safe। Use slash commands: /clear context reset, /cost session খরচ দেখুন, /model Sonnet/Opus switch। Git workflow: Claude-কে বলুন \"create a branch first, make commit per logical change\"। Atomic history থাকে। Long task → Opus: ২+ ঘণ্টার agentic task-এ /model opus । Cost বেশি কিন্তু success rate স্পষ্ট better। Bangla instruction works: \"এই ফাংশনে error handling add করো\" —…"}},{"@type":"Question","name":"কী করতে পারে?","acceptedAnswer":{"@type":"Answer","text":"Codebase exploration: \"এই repo-তে user authentication কীভাবে কাজ করে?\" → Claude file scan করে diagram + explanation। Feature implementation: \"Add 2FA to login flow using TOTP\" → Claude design + code + test write। Refactoring: \"এই ২০টা file-এ console.log গুলো structured logger দিয়ে replace করো\" → batch edit। Bug fix: Stack trace paste → Claude root cause identify, fix suggest। Test generation: \"এই module-এর জন্য Jest tests লিখো ৮৫% coverage সহ\" → comprehensive test file। Documentation: \"README আপডেট করো current API surface-এর সাথে\" → markdown sync। Git workflow: \"এই changes-এর জন্য PR description draft করো\" → conventional commit format। Code review: \"এই PR review করো — security/performance…"}},{"@type":"Question","name":"Claude Code আসলে কী — কী জানা দরকার?","acceptedAnswer":{"@type":"Answer","text":"Claude Code হলো Anthropic-এর official terminal-based AI coding agent। IDE-এর মতো GUI না — পুরোটাই command line। আপনি repository-তে গিয়ে claude command চালান, instruction দিন বাংলা/English-এ — Claude নিজে file পড়ে, plan করে, edit করে, test run করে। Release ২০২৫ ফেব্রুয়ারি (research preview) ২০২৫ মে general availability Model Default: Sonnet 4.6 Override: Opus 4.7 Platform macOS, Linux, Windows (WSL) VS Code/JetBrains plugin available BD adoption ~৭,০০০ active developer Growing ১৫%/মাস Agentic by design: একটা task দিন, ও নিজে decompose করে — file পড়া, edit, test, commit। Native git integration: Branch তৈরি, commit message লেখা, PR description draft — all built-in। Long-running task: ১-৪…"}},{"@type":"Question","name":"Claude Code কোন কাজে সবচেয়ে ভালো?","acceptedAnswer":{"@type":"Answer","text":"Nafiz-এর daily routine থেকে template: Sokal (8-10 AM): Cursor-এ standup task, quick bug fix, inline tweak — IDE-based workflow। Mid-morning (10 AM-12 PM): Complex task এলে terminal-এ claude । Plan generate, file scan, implementation plan review। Lunch break: Claude Code-কে long task assign (refactor, test write) — backgrounded। Afternoon (2-5 PM): Claude-এর output review, manual touch-up, edge case test। End of day: claude -এ \"today's changes জন্য PR description লিখো\" + commit message। Nafiz-এর শক্তিশালী practice: Big task assign করার আগে সবসময় বলেন \"Plan only, no code yet — show your steps।\" Claude plan দেখায়, Nafiz review করেন, তারপর \"execute step 1 + 2\" বলেন। এতে hallucination কমে,…"}}]}</script>
 </head>
 <body>
     <header class="navbar">
@@ -264,7 +265,41 @@ claude</code></pre>
 
     </div>
 
-    <!-- RELATED-POSTS:START -->
+    <!-- TEMPLATED-FAQ:START -->
+<section class="article-faq" aria-labelledby="faq-heading">
+  <style>
+    .article-faq { max-width: 880px; margin: 56px auto 16px; padding: 0 20px; font-family: 'Hind Siliguri', sans-serif; }
+    .article-faq h2 { font-family: 'Syne', 'Hind Siliguri', sans-serif; font-size: 28px; font-weight: 800; letter-spacing: -0.02em; color: #0F172A; margin: 0 0 18px; }
+    .article-faq .faq-item { border: 1px solid #E2E8F0; border-radius: 14px; padding: 14px 18px; margin-bottom: 12px; background: #FFFFFF; }
+    .article-faq .faq-item[open] { border-color: #16A34A; box-shadow: 0 8px 24px rgba(15,23,42,.06); }
+    .article-faq .faq-q { font-weight: 700; font-size: 16px; line-height: 1.5; color: #0F172A; cursor: pointer; list-style: none; }
+    .article-faq .faq-q::-webkit-details-marker { display: none; }
+    .article-faq .faq-q::after { content: '+'; float: right; color: #16A34A; font-size: 22px; line-height: 1; transition: transform .2s; }
+    .article-faq .faq-item[open] .faq-q::after { content: '−'; }
+    .article-faq .faq-a { margin-top: 10px; color: #334155; font-size: 15px; line-height: 1.7; }
+    .article-faq .faq-a p { margin: 0; }
+  </style>
+  <h2 id="faq-heading">সচরাচর জিজ্ঞাসা (FAQ)</h2>
+    <details class="faq-item" open>
+      <summary class="faq-q">Claude Code থেকে সর্বোচ্চ পেতে কী কী টিপস আছে?</summary>
+      <div class="faq-a"><p>CLAUDE.md ফাইল রাখুন: Repo root-এ একটা CLAUDE.md create করুন — project structure, coding standard, &quot;do not touch&quot; file list। Claude প্রতি session-এ এটা পড়ে। &quot;Plan first&quot; pattern: Complex task-এ আগে plan চান। তারপর approve করে execute বলুন। Granular permission: Trust mode default off — Claude file edit করার আগে confirm চাইবে। Safe। Use slash commands: /clear context reset, /cost session খরচ দেখুন, /model Sonnet/Opus switch। Git workflow: Claude-কে বলুন &quot;create a branch first, make commit per logical change&quot;। Atomic history থাকে। Long task → Opus: ২+ ঘণ্টার agentic task-এ /model opus । Cost বেশি কিন্তু success rate স্পষ্ট better। Bangla instruction works: &quot;এই ফাংশনে error handling add করো&quot; —…</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">কী করতে পারে?</summary>
+      <div class="faq-a"><p>Codebase exploration: &quot;এই repo-তে user authentication কীভাবে কাজ করে?&quot; → Claude file scan করে diagram + explanation। Feature implementation: &quot;Add 2FA to login flow using TOTP&quot; → Claude design + code + test write। Refactoring: &quot;এই ২০টা file-এ console.log গুলো structured logger দিয়ে replace করো&quot; → batch edit। Bug fix: Stack trace paste → Claude root cause identify, fix suggest। Test generation: &quot;এই module-এর জন্য Jest tests লিখো ৮৫% coverage সহ&quot; → comprehensive test file। Documentation: &quot;README আপডেট করো current API surface-এর সাথে&quot; → markdown sync। Git workflow: &quot;এই changes-এর জন্য PR description draft করো&quot; → conventional commit format। Code review: &quot;এই PR review করো — security/performance…</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Claude Code আসলে কী — কী জানা দরকার?</summary>
+      <div class="faq-a"><p>Claude Code হলো Anthropic-এর official terminal-based AI coding agent। IDE-এর মতো GUI না — পুরোটাই command line। আপনি repository-তে গিয়ে claude command চালান, instruction দিন বাংলা/English-এ — Claude নিজে file পড়ে, plan করে, edit করে, test run করে। Release ২০২৫ ফেব্রুয়ারি (research preview) ২০২৫ মে general availability Model Default: Sonnet 4.6 Override: Opus 4.7 Platform macOS, Linux, Windows (WSL) VS Code/JetBrains plugin available BD adoption ~৭,০০০ active developer Growing ১৫%/মাস Agentic by design: একটা task দিন, ও নিজে decompose করে — file পড়া, edit, test, commit। Native git integration: Branch তৈরি, commit message লেখা, PR description draft — all built-in। Long-running task: ১-৪…</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Claude Code কোন কাজে সবচেয়ে ভালো?</summary>
+      <div class="faq-a"><p>Nafiz-এর daily routine থেকে template: Sokal (8-10 AM): Cursor-এ standup task, quick bug fix, inline tweak — IDE-based workflow। Mid-morning (10 AM-12 PM): Complex task এলে terminal-এ claude । Plan generate, file scan, implementation plan review। Lunch break: Claude Code-কে long task assign (refactor, test write) — backgrounded। Afternoon (2-5 PM): Claude-এর output review, manual touch-up, edge case test। End of day: claude -এ &quot;today&#39;s changes জন্য PR description লিখো&quot; + commit message। Nafiz-এর শক্তিশালী practice: Big task assign করার আগে সবসময় বলেন &quot;Plan only, no code yet — show your steps।&quot; Claude plan দেখায়, Nafiz review করেন, তারপর &quot;execute step 1 + 2&quot; বলেন। এতে hallucination কমে,…</p></div>
+    </details>
+</section>
+<!-- TEMPLATED-FAQ:END -->
+
+<!-- RELATED-POSTS:START -->
 <section class="related-posts" aria-label="সম্পর্কিত গাইড">
   <style>
     .related-posts { max-width: 1100px; margin: 56px auto; padding: 0 20px; font-family: 'Hind Siliguri', sans-serif; }

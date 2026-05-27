@@ -55,6 +55,7 @@
   <!-- PERSON-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-author-block">{"@context":"https://schema.org","@type":"Person","name":"ইকফাজ","alternateName":"Ikfaz","jobTitle":"প্রতিষ্ঠাতা ও সম্পাদক","url":"https://banglaaiguide.com/about/","sameAs":["https://github.com/ikfaz"],"worksFor":{"@type":"Organization","name":"বাংলা AI গাইড","url":"https://banglaaiguide.com"},"knowsAbout":["Artificial Intelligence","AI Tools","Bangladesh Tech","বাংলা AI"],"description":"বাংলা AI গাইডের প্রতিষ্ঠাতা। বাংলাদেশি ব্যবহারকারীদের জন্য AI টুলস কিউরেট ও বিশ্লেষণ করেন — কোনটা BD থেকে কাজ করে, কোনটায় bKash চলে, কোনটা আসলে দৈনন্দিন কাজে লাগে।"}</script>
 <!-- PERSON-SCHEMA:END -->
+      <script type="application/ld+json" data-injected-by="extend-faq-coverage">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"বাংলাদেশি developer-দের জন্য সুপারিশ framework — কী জানা দরকার?","acceptedAnswer":{"@type":"Answer","text":"প্রথমে নিজেকে এই ৪টা প্রশ্ন করুন: আমি কি BD-র university-তে CSE student? → Copilot (FREE Student Pack) আমার budget কত? Cursor $২০ vs Windsurf $১৫ vs Copilot $১০ — ৫-১০ ডলার পার্থক্য matter করে? আমার কাজে কী dominate করে? Quick inline edit (Cursor) vs Long refactor (Windsurf) vs GitHub workflow (Copilot)? আমি কি ইতিমধ্যে কোনোটায় habituated? Migration cost ৭-১৪ দিন worth? Profile-based recommendation Student (BD CSE) Copilot via Student Pack Cost: $০ Renew yearly Pro dev/freelancer Cursor $২০/mo Composer + community Best speed Cost-conscious pro Windsurf $১৫/mo Cascade + free tier $৫ saved Open-source/GitHub team Copilot Pro $১৯/mo PR review + Workspace Native integration BD-specific tips…"}},{"@type":"Question","name":"Feature comparison — কোনটা বেছে নেব?","acceptedAnswer":{"@type":"Answer","text":"Feature Cursor Copilot Windsurf Tab autocomplete ★★★★★ ★★★★★ ★★★★★ Inline edit (Cmd+K) ★★★★★ (best) ★★★★ ★★★★ Multi-file edit ★★★★★ (Composer) ★★★★ (Edits) ★★★★★ (Cascade) Agent mode ★★★★ ★★★ (newer) ★★★★★ (durable) Multi-model (Sonnet/GPT/Gemini) ★★★★★ ★★★★ ★★★★★ VS Code feel ★★★★★ (95% fork) ★★★★★ (native ext) ★★★★ (92% fork) GitHub integration ★★★ ★★★★★ (PR review, Workspace) ★★★ Community/tutorials ★★★★★ ★★★★★ ★★★ (growing) Enterprise/on-prem ★★★ ★★★★ (Enterprise plan) ★★★★★ (on-prem heritage)"}},{"@type":"Question","name":"Cursor vs GitHub Copilot vs Windsurf-এর দাম কত এবং BD-তে এর ROI কেমন?","acceptedAnswer":{"@type":"Answer","text":"Plan Cursor Copilot Windsurf Free $০ (২,০০০ token/মাস) $০ — student Pack (FREE!) $০ (৫০ flow + unlimited autocomplete) Personal $২০/mo (Pro) $১০/mo (Individual) $১৫/mo (Pro) Pro/Higher $৪০/mo (Business) $১৯/mo (Pro+) $৩০/mo (Ultra) Team/Enterprise Custom $৩৯/user Custom (on-prem available) BD reality: Cursor সবচেয়ে expensive ($২০)। Copilot Student-এর জন্য FREE — undeniable winner সেখানে। Pro-দের জন্য Windsurf $৫ সস্তা। Annual savings: Cursor → Windsurf migration-এ ৳৭,২০০।"}},{"@type":"Question","name":"কাদের জন্য Cursor?","acceptedAnswer":{"@type":"Answer","text":"Cursor-এর fit: Pro developer (full-time coding ৮+ ঘণ্টা/দিন) Freelancer/agency — speed + Composer-এ time saving valuable VS Code-এর সঙ্গে maximum compatibility চান $২০/মাস justify করতে পারেন Community resources matter — tutorial, Discord, troubleshoot সহজ Inline edit Cmd+K daily ১০০+ বার ব্যবহার করেন Example: Sajid Hossain, BUET CSE, US startup CTO — daily ১০ ঘণ্টা coding, Composer-এ feature ship velocity ২.৫x।"}}]}</script>
 </head>
 <body>
     <header class="navbar">
@@ -256,7 +257,41 @@
 
     </div>
 
-    <!-- RELATED-POSTS:START -->
+    <!-- TEMPLATED-FAQ:START -->
+<section class="article-faq" aria-labelledby="faq-heading">
+  <style>
+    .article-faq { max-width: 880px; margin: 56px auto 16px; padding: 0 20px; font-family: 'Hind Siliguri', sans-serif; }
+    .article-faq h2 { font-family: 'Syne', 'Hind Siliguri', sans-serif; font-size: 28px; font-weight: 800; letter-spacing: -0.02em; color: #0F172A; margin: 0 0 18px; }
+    .article-faq .faq-item { border: 1px solid #E2E8F0; border-radius: 14px; padding: 14px 18px; margin-bottom: 12px; background: #FFFFFF; }
+    .article-faq .faq-item[open] { border-color: #16A34A; box-shadow: 0 8px 24px rgba(15,23,42,.06); }
+    .article-faq .faq-q { font-weight: 700; font-size: 16px; line-height: 1.5; color: #0F172A; cursor: pointer; list-style: none; }
+    .article-faq .faq-q::-webkit-details-marker { display: none; }
+    .article-faq .faq-q::after { content: '+'; float: right; color: #16A34A; font-size: 22px; line-height: 1; transition: transform .2s; }
+    .article-faq .faq-item[open] .faq-q::after { content: '−'; }
+    .article-faq .faq-a { margin-top: 10px; color: #334155; font-size: 15px; line-height: 1.7; }
+    .article-faq .faq-a p { margin: 0; }
+  </style>
+  <h2 id="faq-heading">সচরাচর জিজ্ঞাসা (FAQ)</h2>
+    <details class="faq-item" open>
+      <summary class="faq-q">বাংলাদেশি developer-দের জন্য সুপারিশ framework — কী জানা দরকার?</summary>
+      <div class="faq-a"><p>প্রথমে নিজেকে এই ৪টা প্রশ্ন করুন: আমি কি BD-র university-তে CSE student? → Copilot (FREE Student Pack) আমার budget কত? Cursor $২০ vs Windsurf $১৫ vs Copilot $১০ — ৫-১০ ডলার পার্থক্য matter করে? আমার কাজে কী dominate করে? Quick inline edit (Cursor) vs Long refactor (Windsurf) vs GitHub workflow (Copilot)? আমি কি ইতিমধ্যে কোনোটায় habituated? Migration cost ৭-১৪ দিন worth? Profile-based recommendation Student (BD CSE) Copilot via Student Pack Cost: $০ Renew yearly Pro dev/freelancer Cursor $২০/mo Composer + community Best speed Cost-conscious pro Windsurf $১৫/mo Cascade + free tier $৫ saved Open-source/GitHub team Copilot Pro $১৯/mo PR review + Workspace Native integration BD-specific tips…</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Feature comparison — কোনটা বেছে নেব?</summary>
+      <div class="faq-a"><p>Feature Cursor Copilot Windsurf Tab autocomplete ★★★★★ ★★★★★ ★★★★★ Inline edit (Cmd+K) ★★★★★ (best) ★★★★ ★★★★ Multi-file edit ★★★★★ (Composer) ★★★★ (Edits) ★★★★★ (Cascade) Agent mode ★★★★ ★★★ (newer) ★★★★★ (durable) Multi-model (Sonnet/GPT/Gemini) ★★★★★ ★★★★ ★★★★★ VS Code feel ★★★★★ (95% fork) ★★★★★ (native ext) ★★★★ (92% fork) GitHub integration ★★★ ★★★★★ (PR review, Workspace) ★★★ Community/tutorials ★★★★★ ★★★★★ ★★★ (growing) Enterprise/on-prem ★★★ ★★★★ (Enterprise plan) ★★★★★ (on-prem heritage)</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Cursor vs GitHub Copilot vs Windsurf-এর দাম কত এবং BD-তে এর ROI কেমন?</summary>
+      <div class="faq-a"><p>Plan Cursor Copilot Windsurf Free $০ (২,০০০ token/মাস) $০ — student Pack (FREE!) $০ (৫০ flow + unlimited autocomplete) Personal $২০/mo (Pro) $১০/mo (Individual) $১৫/mo (Pro) Pro/Higher $৪০/mo (Business) $১৯/mo (Pro+) $৩০/mo (Ultra) Team/Enterprise Custom $৩৯/user Custom (on-prem available) BD reality: Cursor সবচেয়ে expensive ($২০)। Copilot Student-এর জন্য FREE — undeniable winner সেখানে। Pro-দের জন্য Windsurf $৫ সস্তা। Annual savings: Cursor → Windsurf migration-এ ৳৭,২০০।</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">কাদের জন্য Cursor?</summary>
+      <div class="faq-a"><p>Cursor-এর fit: Pro developer (full-time coding ৮+ ঘণ্টা/দিন) Freelancer/agency — speed + Composer-এ time saving valuable VS Code-এর সঙ্গে maximum compatibility চান $২০/মাস justify করতে পারেন Community resources matter — tutorial, Discord, troubleshoot সহজ Inline edit Cmd+K daily ১০০+ বার ব্যবহার করেন Example: Sajid Hossain, BUET CSE, US startup CTO — daily ১০ ঘণ্টা coding, Composer-এ feature ship velocity ২.৫x।</p></div>
+    </details>
+</section>
+<!-- TEMPLATED-FAQ:END -->
+
+<!-- RELATED-POSTS:START -->
 <section class="related-posts" aria-label="সম্পর্কিত গাইড">
   <style>
     .related-posts { max-width: 1100px; margin: 56px auto; padding: 0 20px; font-family: 'Hind Siliguri', sans-serif; }
