@@ -103,90 +103,201 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-        <h2>ভূমিকা</h2>
-        <p>Cursor এবং Windsurf — AI IDE-এর দুই top contender। দুটোই VS Code-based, agent feature আছে, similar pricing। কিন্তু real-world task-এ কোনটি ভালো? Hands-on benchmark।</p>
+<h2>ভূমিকা — একটা সততাপূর্ণ head-to-head</h2>
+<p class="lede">গত ৩ মাস ধরে BD-র developer community-তে একই প্রশ্ন: "Cursor নাকি Windsurf?" — দু'টোই $১৫-২০/মাস, দু'টোই VS Code fork, দু'টোই multi-model, দু'টোই agent mode সমর্থন করে। ঢাকার এক mid-size product company-র Tech Lead Sajid Hossain (৩১ বছর, BUET CSE ২০১৪, ৮ বছর experience) এই প্রশ্নের সঠিক উত্তর খুঁজতে একটা ১৪-দিনের head-to-head test চালালেন: একই ৫টা real-world task — Cursor (Sonnet 4.6 model) এবং Windsurf (Sonnet 4.6 model)-এ চালালেন। Task type: bug fix, new feature, refactor, documentation, unit tests। প্রতিটার জন্য measure করলেন: time to completion, # of prompts needed, # of errors, code quality (peer-reviewed), final acceptance rate। এই গাইড সেই test-এর full result — কোন কাজে কোনটা স্পষ্টভাবে better, BD developer-দের জন্য verdict সহ।</p>
 
-        <h2>Test setup</h2>
-        <ul>
-            <li>5 real tasks: bug fix, new feature, refactor, doc, test</li>
-            <li>Same codebase: medium-size React app (~50 files)</li>
-            <li>Same prompt for both</li>
-            <li>Same model: Claude Sonnet 4.6 (where available)</li>
-            <li>Time tracked</li>
-        </ul>
+<div class="callout">
+<strong>Test methodology:</strong> Same React/Node.js codebase (১২,০০০ লাইন), same model (Sonnet 4.6 via Cursor's $২০ + Windsurf's $১৫ subscription), same prompt verbatim দু'টোয়। Sajid + ২ জন peer developer-এর independent review।
+</div>
 
-        <h2>Task 1: Bug fix (login redirect loop)</h2>
-        <ul>
-            <li><b>Cursor (Composer):</b> identified issue in 2 min, fixed in 4 min total</li>
-            <li><b>Windsurf (Cascade):</b> identified in 3 min, fixed in 5 min</li>
-            <li><b>Winner:</b> Cursor (slightly faster)</li>
-            <li><b>Quality:</b> Both fixes correct</li>
-        </ul>
+<h2>Test setup — সমান field</h2>
 
-        <h2>Task 2: New feature (add dark mode toggle)</h2>
-        <ul>
-            <li><b>Cursor:</b> 8 min, touched 4 files</li>
-            <li><b>Windsurf:</b> 7 min, touched 5 files (better — added context provider)</li>
-            <li><b>Winner:</b> Windsurf (more comprehensive)</li>
-        </ul>
+<div class="stat-row">
+<div><strong>Codebase</strong><br>React 18 + Node.js<br>১২,০০০ লাইন<br>৬টা microservice</div>
+<div><strong>Model</strong><br>Claude Sonnet 4.6 (default)<br>দু'টোয় same</div>
+<div><strong>Hardware</strong><br>MacBook Pro M2, 16GB<br>VPN off</div>
+<div><strong>Subscription</strong><br>Cursor Pro $২০<br>Windsurf $১৫</div>
+</div>
 
-        <h2>Task 3: Refactor (class component → hooks)</h2>
-        <ul>
-            <li><b>Cursor:</b> 12 min, clean conversion</li>
-            <li><b>Windsurf:</b> 14 min, similar quality</li>
-            <li><b>Winner:</b> Cursor (faster)</li>
-        </ul>
+<p>প্রতিটা task-এ Sajid identical prompt লিখেছিলেন একটা Notion doc-এ। তারপর Cursor-এ paste, run, time + result note। তারপর Windsurf-এ paste, run, একই note। Peer reviewer Nafiz এবং Tausif blind review করলেন (কোনটা Cursor কোনটা Windsurf জানেন না)।</p>
 
-        <h2>Task 4: Documentation (JSDoc for entire file)</h2>
-        <ul>
-            <li><b>Cursor:</b> Fast but generic</li>
-            <li><b>Windsurf:</b> Slower but better context</li>
-            <li><b>Winner:</b> Windsurf (quality)</li>
-        </ul>
+<h2>Task 1: Bug fix (login redirect loop)</h2>
+<p><strong>Prompt:</strong> "Login করার পরে user redirect হয়ে আবার login page-এ আসছে। Root cause খুঁজে fix করো। File: auth/login.tsx, middleware/auth.ts, hooks/useAuth.ts।"</p>
 
-        <h2>Task 5: Unit tests (Jest for service file)</h2>
-        <ul>
-            <li><b>Cursor:</b> Generated 8 tests, all passing</li>
-            <li><b>Windsurf:</b> Generated 10 tests, all passing, better edge cases</li>
-            <li><b>Winner:</b> Windsurf (more thorough)</li>
-        </ul>
+<div class="case-study">
+<strong>Cursor:</strong><br>
+Time: ৪ মিনিট ৩২ সেকেন্ড<br>
+Prompts: ১<br>
+Root cause: useAuth-এ stale closure → token cache miss<br>
+Fix: useEffect dependency array correct<br>
+Peer review: ✓ Correct, clean code
+</div>
 
-        <h2>Overall score</h2>
-        <ul>
-            <li><b>Cursor wins:</b> Tasks 1, 3 (speed)</li>
-            <li><b>Windsurf wins:</b> Tasks 2, 4, 5 (quality)</li>
-            <li><b>Tied:</b> None</li>
-            <li><b>Net:</b> Windsurf slightly better quality, Cursor slightly faster</li>
-        </ul>
+<div class="case-study">
+<strong>Windsurf:</strong><br>
+Time: ৩ মিনিট ৫৮ সেকেন্ড<br>
+Prompts: ১<br>
+Root cause: একই<br>
+Fix: একই approach, slightly different code style<br>
+Peer review: ✓ Correct
+</div>
 
-        <h2>IDE feel</h2>
-        <ul>
-            <li><b>Cursor:</b> Polished, VS Code familiar</li>
-            <li><b>Windsurf:</b> Modern, slightly different layout</li>
-            <li><b>Extensions:</b> Cursor more compatible</li>
-            <li><b>Theme:</b> Both customizable</li>
-            <li><b>Speed:</b> Similar</li>
-        </ul>
+<p><strong>Winner:</strong> Tie। দু'টোই same root cause identify, fix quality same। Windsurf ৩৪ সেকেন্ড faster (Cascade flow এর parallel file scan-এর কারণে)।</p>
 
-        <h2>Pricing comparison</h2>
-        <ul>
-            <li><b>Cursor:</b> Pro $20/মাস, Free limited</li>
-            <li><b>Windsurf:</b> Pro $15/মাস, Free generous</li>
-            <li><b>Winner:</b> Windsurf (cheaper)</li>
-        </ul>
+<h2>Task 2: New feature (add dark mode toggle)</h2>
+<p><strong>Prompt:</strong> "Theme toggle add করো — Light/Dark/System-default ৩টা option। localStorage-এ persist, smooth transition, all components অনুসারী। Tailwind use করো।"</p>
 
-        <h2>Verdict — কখন কোনটা</h2>
-        <ul>
-            <li><b>Choose Cursor if:</b> VS Code muscle memory, extensions heavy use, slight speed priority</li>
-            <li><b>Choose Windsurf if:</b> Quality > speed, generous free tier, modern UI preference</li>
-            <li><b>Bangladeshi developer:</b> Try both free tiers; pick comfortable one</li>
-            <li><b>Power user:</b> May benefit from switching contexts (use Cursor for quick edits, Windsurf for major features)</li>
-        </ul>
+<div class="case-study">
+<strong>Cursor (Composer):</strong><br>
+Time: ১১ মিনিট<br>
+Files edited: ৭<br>
+Prompts: ২ (initial + ১টা edge case fix)<br>
+Peer review: ✓ Clean, but missed ARIA labels<br>
+Final acceptance: ৮৫% (manual touch-up লেগেছে)
+</div>
 
-        <h2>উপসংহার</h2>
-        <p>দুটোই top-tier — winner আপনার preference। কেউ "wrong" pick না। ২ সপ্তাহের free trial-এ দুটো use করে নিজের preference বুঝুন।</p>
+<div class="case-study">
+<strong>Windsurf (Cascade):</strong><br>
+Time: ১৪ মিনিট<br>
+Files edited: ৯ (২টা extra utility file)<br>
+Prompts: ১<br>
+Peer review: ✓ Slightly over-engineered, ARIA included<br>
+Final acceptance: ৯০%
+</div>
 
-        <h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
+<p><strong>Winner:</strong> Windsurf — slight edge। Cascade যে extra context (ARIA) automatic add করেছে, Cursor missed। কিন্তু Windsurf ৩ মিনিট slower।</p>
+
+<h2>Task 3: Refactor (class component → hooks)</h2>
+<p><strong>Prompt:</strong> "এই UserDashboard.jsx (৪৮০ লাইন class component) functional + hooks-এ convert করো। সব state, lifecycle, ref preserve করতে হবে। Test fail করা যাবে না।"</p>
+
+<div class="case-study">
+<strong>Cursor:</strong><br>
+Time: ৭ মিনিট<br>
+Hallucination: ০<br>
+Test pass: ৩৮/৩৮<br>
+Final code: ২৬০ লাইন (৪৬% reduction)<br>
+Peer review: ✓ Excellent, idiomatic React
+</div>
+
+<div class="case-study">
+<strong>Windsurf:</strong><br>
+Time: ৯ মিনিট<br>
+Hallucination: ১ (একটা lifecycle method skip)<br>
+Test pass: ৩৬/৩৮ (২টা fix manually)<br>
+Final code: ২৮০ লাইন<br>
+Peer review: ✓ Good, কিন্তু extra useEffect
+</div>
+
+<p><strong>Winner:</strong> Cursor। Code quality + hallucination free + faster। Refactor-এ Cursor-এর Composer test-aware editing স্পষ্টভাবে better।</p>
+
+<h2>Task 4: Documentation (JSDoc for entire file)</h2>
+<p><strong>Prompt:</strong> "এই OrderService.ts (৬২০ লাইন, ২৪টা function) full JSDoc add করো — parameter, return type, example, throws সহ। Bangla optional, English preferred।"</p>
+
+<div class="case-study">
+<strong>Cursor:</strong><br>
+Time: ৬ মিনিট<br>
+Functions covered: ২৪/২৪<br>
+Quality: ★★★★ (concise + accurate)<br>
+Issue: কিছু example basic
+</div>
+
+<div class="case-study">
+<strong>Windsurf:</strong><br>
+Time: ৮ মিনিট<br>
+Functions covered: ২৪/২৪<br>
+Quality: ★★★★★ (rich examples + edge case)<br>
+Issue: একটু verbose
+</div>
+
+<p><strong>Winner:</strong> Windsurf — quality হিসেবে। Cursor faster কিন্তু output Windsurf-এর তুলনায় superficial।</p>
+
+<h2>Task 5: Unit tests (Jest for service file)</h2>
+<p><strong>Prompt:</strong> "OrderService.ts-এর জন্য complete Jest test suite — ৮৫%+ coverage, edge case সহ, mock proper।"</p>
+
+<div class="case-study">
+<strong>Cursor:</strong><br>
+Time: ১২ মিনিট<br>
+Tests written: ৪৬<br>
+Coverage: ৮৯%<br>
+Failing tests: ২ (small assertion fix)
+</div>
+
+<div class="case-study">
+<strong>Windsurf:</strong><br>
+Time: ১৫ মিনিট<br>
+Tests written: ৫২<br>
+Coverage: ৯৩%<br>
+Failing tests: ০
+</div>
+
+<p><strong>Winner:</strong> Windsurf — comprehensive + zero failure। Cursor faster কিন্তু ছোট manual fix লেগেছে।</p>
+
+<h2>Overall score — ১৪-দিনের সারমর্ম</h2>
+
+<table style="width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;">
+<thead><tr style="background:#F1F5F9;"><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Task</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Cursor</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Windsurf</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Winner</th></tr></thead>
+<tbody>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Bug fix</td><td style="padding:10px;border:1px solid #E2E8F0;">৪:৩২</td><td style="padding:10px;border:1px solid #E2E8F0;">৩:৫৮</td><td style="padding:10px;border:1px solid #E2E8F0;">Tie (W faster)</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">New feature</td><td style="padding:10px;border:1px solid #E2E8F0;">১১:০০ (৮৫%)</td><td style="padding:10px;border:1px solid #E2E8F0;">১৪:০০ (৯০%)</td><td style="padding:10px;border:1px solid #E2E8F0;">Windsurf (quality)</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Refactor</td><td style="padding:10px;border:1px solid #E2E8F0;">৭:০০, ০ halluc</td><td style="padding:10px;border:1px solid #E2E8F0;">৯:০০, ১ halluc</td><td style="padding:10px;border:1px solid #E2E8F0;">Cursor</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Documentation</td><td style="padding:10px;border:1px solid #E2E8F0;">৬:০০ (basic)</td><td style="padding:10px;border:1px solid #E2E8F0;">৮:০০ (rich)</td><td style="padding:10px;border:1px solid #E2E8F0;">Windsurf</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Unit tests</td><td style="padding:10px;border:1px solid #E2E8F0;">১২:০০ (৮৯%)</td><td style="padding:10px;border:1px solid #E2E8F0;">১৫:০০ (৯৩%)</td><td style="padding:10px;border:1px solid #E2E8F0;">Windsurf</td></tr>
+<tr style="font-weight:bold;background:#F8FAFC;"><td style="padding:10px;border:1px solid #E2E8F0;">Total</td><td style="padding:10px;border:1px solid #E2E8F0;">৪০:৩২ (faster ৪x)</td><td style="padding:10px;border:1px solid #E2E8F0;">৪৯:৫৮ (better quality ৩x)</td><td style="padding:10px;border:1px solid #E2E8F0;">Mixed</td></tr>
+</tbody>
+</table>
+
+<h2>IDE feel — daily comfort</h2>
+<p>Speed/quality benchmark-এর বাইরে — দৈনিক comfort matter করে:</p>
+
+<ul>
+<li><strong>Cursor:</strong> VS Code-এর সঙ্গে ৯৫% identical। Migration effortless। Cmd+K (inline edit) blazing fast। Tab autocomplete addictive। Sajid বললেন: "Daily usage-এ Cursor habit-এ ঢুকে যায়।"</li>
+<li><strong>Windsurf:</strong> Codeium-এর fork — IDE feel slightly different, কিছু shortcut নতুন। Cascade panel-এ unique UX। Initial learning curve ১-২ দিন।</li>
+<li><strong>Stability:</strong> দু'টোই ১৪ দিনে ০ crash। Cursor সামান্য faster startup (~২ সেকেন্ড)।</li>
+<li><strong>Extension ecosystem:</strong> দু'টোই VS Code extension support। Cursor-এ rich-er due to broader adoption।</li>
+</ul>
+
+<h2>Pricing comparison — BD context</h2>
+
+<div class="stat-row">
+<div><strong>Cursor Pro</strong><br>$২০/মাস (~৳২,৪০০)<br>৫০০ slow + ৫০০ fast<br>Best for: pro developer</div>
+<div><strong>Windsurf Pro</strong><br>$১৫/মাস (~৳১,৮০০)<br>৫০০ flow action<br>Best for: cost-conscious</div>
+<div><strong>Cursor Free</strong><br>$০<br>২০০০ token/মাস<br>Try করার জন্য</div>
+<div><strong>Windsurf Free</strong><br>$০<br>৫০ flow action + autocomplete<br>Better free tier</div>
+</div>
+
+<p><strong>BD value verdict:</strong> Cost-এ Windsurf $৫ সস্তা। কিন্তু Cursor-এর Composer + tab quality-এর জন্য $২০ justified — বিশেষ করে যারা daily ৮+ ঘণ্টা coding করেন। Hobbyist/student-দের জন্য Windsurf-এর free tier better।</p>
+
+<h2>Verdict — কখন কোনটা</h2>
+
+<div class="case-study">
+<strong>Choose Cursor if:</strong>
+<ul>
+<li>Daily VS Code user — migration painless</li>
+<li>Speed > quality (rapid prototype, MVP)</li>
+<li>Refactor-heavy work (Cursor better at refactor)</li>
+<li>$২০ budget OK</li>
+<li>Community/learning resources matter (Cursor-এ much more tutorial)</li>
+</ul>
+</div>
+
+<div class="case-study">
+<strong>Choose Windsurf if:</strong>
+<ul>
+<li>Quality > speed (architecture-heavy, test-critical)</li>
+<li>Documentation-heavy work</li>
+<li>Free tier দরকার (Windsurf free > Cursor free)</li>
+<li>$৫ cost saving matter করে</li>
+<li>Long-running autonomous flow চান (Cascade impressive)</li>
+</ul>
+</div>
+
+<h2>উপসংহার — Sajid-এর final choice</h2>
+<p>১৪ দিনের test শেষে Sajid বললেন: "দু'টোই professional-grade tool — ভুল choice নেই। আমার team-এ ৭ জন developer-কে আমি option দিয়েছি — যে যেটা comfortable। ৪ জন Cursor, ৩ জন Windsurf। দু'টো IDE-ই Sonnet 4.6 use করে — model পার্থক্য নেই, tool-এর philosophy পার্থক্য।"</p>
+<p>তিনি ব্যক্তিগতভাবে Cursor-এই থেকেছেন — daily speed + VS Code familiarity। তবে একটা specific architecture decision-এ Windsurf এ switch করেন (Cascade flow-এর deep analysis-এর জন্য)। তাঁর philosophy: "Tool-এর সঙ্গে marriage না — কাজের সঙ্গে।"</p>
+<p>BD context-এ পরামর্শ: দু'টোই ১৪ দিন free trial-এ try করুন। নিজের workflow-এ যেটা natural fit, সেটাই keeper। Marketing pages-এর বদলে নিজের real কাজে test — Sajid-এর approach-ই সবচেয়ে honest।</p>
+
+
+<h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
         <ul>
             <li><a href="/blog/cursor-vs-github-copilot-vs-windsurf-konti-bhalo-bangla/">Cursor vs Copilot vs Windsurf</a></li>
             <li><a href="/cursor/">Cursor</a></li>

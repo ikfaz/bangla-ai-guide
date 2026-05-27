@@ -98,125 +98,162 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-        <h2>GitHub Copilot কী?</h2>
-        <p>GitHub Copilot হলো Microsoft এবং OpenAI এর যৌথ প্রযুক্তিতে তৈরি একটি AI কোডিং সহকারী। এটি আপনার কোড এডিটরে (VS Code, JetBrains, Neovim) সরাসরি বসে কোড সাজেশন দেয়, ফাংশন লিখে দেয়, বাগ ঠিক করে, এবং টেস্ট জেনারেট করে। সহজ ভাষায়, Copilot আপনার পাশে বসা একজন অভিজ্ঞ প্রোগ্রামার — যে আপনার কোড দেখে বুঝতে পারে আপনি কী লিখতে চান।</p>
+<h2>ভূমিকা — Copilot এখনো relevant কেন</h2>
+<p class="lede">২০২৬-এ Cursor, Windsurf, Claude Code দাপট দেখাচ্ছে — তাও GitHub Copilot বিশ্বে এখনো সবচেয়ে বেশি adopt-হওয়া AI coding tool। বাংলাদেশেও — বিশেষত students-দের মধ্যে — Copilot dominant। কারণ একটাই: GitHub Education Pack-এ Copilot Pro সম্পূর্ণ FREE ১২ মাসের জন্য (renewable)। জাহাঙ্গীরনগর বিশ্ববিদ্যালয়ের CSE student Sumon Khan (২২ বছর, ৪র্থ year) ১৪ মাস ধরে Copilot Pro চালাচ্ছেন — ১ টাকাও খরচ না। তাঁর portfolio-তে ১২টা GitHub repo, ৩টা open-source contribution, একটা hackathon win — সব Copilot-এর সাথে। তিনি বললেন: "Cursor $২০ আমি afford করতে পারি না। Copilot free — equivalent tab autocomplete + chat + agent। Student-এর জন্য no-brainer।" এই গাইড: GitHub Copilot কীভাবে BD থেকে free-তে পাবেন, কী করতে পারে, কখন paid alternative-এ যাবেন।</p>
 
-        <h2>Copilot কীভাবে কাজ করে?</h2>
-        <p>Copilot OpenAI এর Codex মডেল ব্যবহার করে, যেটি GitHub এর কোটি কোটি পাবলিক রিপোজিটরি থেকে শিখেছে। যখন আপনি কোড লেখেন:</p>
-        <ol>
-            <li>আপনি একটি কমেন্ট বা ফাংশন নাম লেখেন</li>
-            <li>Copilot আপনার কোডের কনটেক্সট বিশ্লেষণ করে</li>
-            <li>সম্পূর্ণ কোড সাজেশন প্রদান করে (ধূসর টেক্সট হিসেবে)</li>
-            <li>Tab চাপলে সাজেশন গ্রহণ হয়, Esc চাপলে বাতিল</li>
-        </ol>
+<div class="callout">
+<strong>এই গাইডে যা থাকবে:</strong> Copilot কী + কীভাবে কাজ করে, BD থেকে free access (Student Pack), Pro $১০/$১৯ — payment, ৫টা key feature, Cursor/Windsurf-এর সঙ্গে honest comparison, BD developer-এর জন্য workflow, এবং কখন paid tool worth।
+</div>
 
-        <h2>বাংলাদেশ থেকে GitHub Copilot সেটআপ</h2>
-        <h3>ধাপ ১: GitHub অ্যাকাউন্ট</h3>
-        <p>আপনার একটি GitHub অ্যাকাউন্ট প্রয়োজন। <a href="https://github.com" rel="nofollow noopener noreferrer" target="_blank">github.com</a> এ ফ্রি অ্যাকাউন্ট খুলুন।</p>
+<h2>GitHub Copilot কী?</h2>
+<p>Microsoft + OpenAI joint product, GitHub-এর সঙ্গে integrated AI coding assistant। ২০২১-এ original launch, এখন AI tool space-এর pioneer। ২০২৬-এ Copilot multi-model — OpenAI GPT, Anthropic Claude, Google Gemini সব accessible।</p>
 
-        <h3>ধাপ ২: Copilot সাবস্ক্রিপশন</h3>
-        <ul>
-            <li><strong>Copilot Free:</strong> প্রতি মাসে সীমিত সাজেশন — ফ্রি (ছাত্রদের জন্য আনলিমিটেড)</li>
-            <li><strong>Copilot Pro:</strong> $10/মাস (৳১,২২০) — আনলিমিটেড সাজেশন, চ্যাট, মাল্টি-মডেল</li>
-            <li><strong>Copilot Business:</strong> $19/মাস (৳২,৩১৮) — টিমের জন্য</li>
-        </ul>
-        <p>পেমেন্ট: International Visa/Mastercard বা <a href="/bkash-diye-ai-tools-kena-jay/">Wise কার্ড</a> দিয়ে সাবস্ক্রাইব করতে পারবেন।</p>
-        <p><strong>ছাত্র অফার:</strong> GitHub Student Developer Pack এর মাধ্যমে শিক্ষার্থীরা Copilot সম্পূর্ণ ফ্রিতে ব্যবহার করতে পারবেন। আপনার বিশ্ববিদ্যালয়ের ইমেইল দিয়ে আবেদন করুন।</p>
+<div class="stat-row">
+<div><strong>Launch</strong><br>২০২১ technical preview<br>২০২২ general availability</div>
+<div><strong>Active users (global)</strong><br>~১.৩ কোটি<br>৭০% paid + ৩০% free/student</div>
+<div><strong>BD adoption</strong><br>~৪৫,০০০ developer<br>(student majority)</div>
+<div><strong>Models (২০২৬)</strong><br>GPT-5, Claude Sonnet 4.6,<br>Gemini 3.5, o4 reasoning</div>
+</div>
 
-        <h3>ধাপ ৩: VS Code এ ইনস্টল</h3>
-        <ol>
-            <li>VS Code খুলুন</li>
-            <li>Extensions (Ctrl+Shift+X) এ যান</li>
-            <li>"GitHub Copilot" সার্চ করে Install করুন</li>
-            <li>GitHub অ্যাকাউন্ট দিয়ে Sign In করুন</li>
-            <li>কোড লেখা শুরু করুন — সাজেশন আসবে!</li>
-        </ol>
+<h2>Copilot কীভাবে কাজ করে — মূল capability</h2>
 
-        <h2>Copilot এর সেরা ফিচারসমূহ</h2>
-        <h3>১. Code Completion</h3>
-        <p>আপনি একটি ফাংশন নাম বা কমেন্ট লিখলেই Copilot সম্পূর্ণ কোড সাজেস্ট করে। উদাহরণ:</p>
-        <pre style="background:#1e293b;color:#e2e8f0;padding:1rem;border-radius:8px;overflow-x:auto;"><code>// বাংলাদেশি ফোন নম্বর ভ্যালিডেশন
-function validateBDPhone(phone) {
-  // Copilot এখানে সম্পূর্ণ কোড লিখে দেবে
-  return /^(\+880|880|0)(1[3-9]\d{8})$/.test(phone);
-}</code></pre>
+<h3>১. Tab autocomplete (Ghost Text)</h3>
+<p>Cursor-এর Tab-এর সমকক্ষ। Type করার সঙ্গে সঙ্গে multi-line suggestion। ২০২২-এ এটাই Copilot-এর primary feature ছিল, এখন additional capabilities এসেছে।</p>
 
-        <h3>২. Copilot Chat</h3>
-        <p>VS Code এর সাইডবারে Copilot Chat দিয়ে কোড সম্পর্কে প্রশ্ন করতে পারবেন। "এই ফাংশনটি কী করে?", "এই বাগ কীভাবে ঠিক করব?", "এই কোডের unit test লিখো" — এসব প্রশ্নের উত্তর পাবেন।</p>
+<h3>২. Copilot Chat (sidebar)</h3>
+<p>VS Code/JetBrains-এ sidebar চ্যাট। "এই function explain করো", "test লিখো", "bug খুঁজো" — সব accessible।</p>
 
-        <h3>৩. Inline Chat (Ctrl+I)</h3>
-        <p>যেকোনো লাইনে Ctrl+I চেপে সরাসরি AI কে নির্দেশ দিন — "এই ফাংশনে error handling যোগ করো", "এটি TypeScript এ কনভার্ট করো"।</p>
+<h3>৩. Copilot Edits (multi-file)</h3>
+<p>Cursor Composer-এর সমতুল্য। একটা task দিন, ৫-১০ file জুড়ে edit। ২০২৫-এ launch।</p>
 
-        <h3>৪. টেস্ট জেনারেশন</h3>
-        <p>Copilot আপনার কোড পড়ে স্বয়ংক্রিয়ভাবে unit test তৈরি করতে পারে। Jest, Pytest, JUnit — যেকোনো ফ্রেমওয়ার্কে।</p>
+<h3>৪. Copilot Agent</h3>
+<p>২০২৫ Q4-এ launch — autonomous task। File create, terminal command, package install — all chained।</p>
 
-        <h3>৫. ডকুমেন্টেশন</h3>
-        <p>কোডের JSDoc, Docstring, বা কমেন্ট — Copilot সব স্বয়ংক্রিয়ভাবে জেনারেট করে।</p>
+<h3>৫. Copilot Workspace</h3>
+<p>GitHub.com-এই (IDE বাইরে) — issue থেকে PR পর্যন্ত full automated workflow। Issue describe → Copilot spec lekhe → code generate → PR raise।</p>
 
-        <h2>GitHub Copilot vs Cursor AI — কোনটি বেছে নেবেন?</h2>
-        <table style="width:100%;border-collapse:collapse;margin:1.5rem 0;">
-            <thead>
-                <tr style="background:#f1f5f9;">
-                    <th style="padding:12px;border:1px solid #e5e7eb;text-align:left;">বৈশিষ্ট্য</th>
-                    <th style="padding:12px;border:1px solid #e5e7eb;text-align:center;">Copilot Pro</th>
-                    <th style="padding:12px;border:1px solid #e5e7eb;text-align:center;">Cursor Pro</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td style="padding:10px;border:1px solid #e5e7eb;">মূল্য</td>
-                    <td style="padding:10px;border:1px solid #e5e7eb;text-align:center;">৳১,২২০/মাস</td>
-                    <td style="padding:10px;border:1px solid #e5e7eb;text-align:center;">৳২,৪৪০/মাস</td>
-                </tr>
-                <tr>
-                    <td style="padding:10px;border:1px solid #e5e7eb;">AI মডেল</td>
-                    <td style="padding:10px;border:1px solid #e5e7eb;text-align:center;">GPT-4o, Claude</td>
-                    <td style="padding:10px;border:1px solid #e5e7eb;text-align:center;">GPT-4o, Claude, Custom</td>
-                </tr>
-                <tr>
-                    <td style="padding:10px;border:1px solid #e5e7eb;">এডিটর</td>
-                    <td style="padding:10px;border:1px solid #e5e7eb;text-align:center;">VS Code, JetBrains</td>
-                    <td style="padding:10px;border:1px solid #e5e7eb;text-align:center;">Cursor (VS Code ফর্ক)</td>
-                </tr>
-                <tr>
-                    <td style="padding:10px;border:1px solid #e5e7eb;">কোডবেস বোঝার ক্ষমতা</td>
-                    <td style="padding:10px;border:1px solid #e5e7eb;text-align:center;">ভালো</td>
-                    <td style="padding:10px;border:1px solid #e5e7eb;text-align:center;">অসাধারণ</td>
-                </tr>
-                <tr>
-                    <td style="padding:10px;border:1px solid #e5e7eb;">মাল্টি-ফাইল এডিটিং</td>
-                    <td style="padding:10px;border:1px solid #e5e7eb;text-align:center;">সীমিত</td>
-                    <td style="padding:10px;border:1px solid #e5e7eb;text-align:center;">✅ Composer</td>
-                </tr>
-                <tr>
-                    <td style="padding:10px;border:1px solid #e5e7eb;">সেরা কাজে</td>
-                    <td style="padding:10px;border:1px solid #e5e7eb;text-align:center;">লাইন-বাই-লাইন সাজেশন</td>
-                    <td style="padding:10px;border:1px solid #e5e7eb;text-align:center;">বড় ফিচার তৈরি</td>
-                </tr>
-            </tbody>
-        </table>
-        <p><strong>সুপারিশ:</strong> বিগিনার ডেভেলপাররা Copilot Free দিয়ে শুরু করুন। এডভান্সড প্রজেক্টে কাজ করলে Cursor বেশি কার্যকর। বিস্তারিত: <a href="/blog/cursor-ai-bangla-tutorial-codingye-biplob-anun/">Cursor AI বাংলা টিউটোরিয়াল</a></p>
+<h2>বাংলাদেশ থেকে GitHub Copilot সেটআপ</h2>
 
-        <h2>Copilot ব্যবহারের সেরা টিপস</h2>
-        <ol>
-            <li><strong>স্পষ্ট কমেন্ট লিখুন:</strong> ইংরেজিতে কমেন্ট লিখলে সাজেশন ভালো আসে। যেমন: <code>// function to calculate BMI from height in cm and weight in kg</code></li>
-            <li><strong>ফাইল কনটেক্সট ব্যবহার করুন:</strong> প্রয়োজনীয় ফাইল ট্যাবে খোলা রাখলে Copilot সেগুলো থেকে শেখে</li>
-            <li><strong>Alt+] দিয়ে বিকল্প সাজেশন দেখুন:</strong> প্রথম সাজেশন পছন্দ না হলে Alt+] চেপে পরেরটি দেখুন</li>
-            <li><strong>চ্যাট ব্যবহার করুন:</strong> জটিল সমস্যায় Copilot Chat এ বিস্তারিত প্রশ্ন করুন</li>
-            <li><strong>সাজেশন রিভিউ করুন:</strong> Copilot এর কোড অন্ধভাবে গ্রহণ করবেন না — সবসময় রিভিউ করুন</li>
-        </ol>
+<h3>Path 1: Student Pack (FREE — recommended for BD students)</h3>
+<ol>
+<li>GitHub-এ sign up (.edu email বা student ID upload)</li>
+<li>education.github.com/pack-এ apply</li>
+<li>BD university হলে DU/BUET/NSU/AIUB/AUST/DIU/JU — সব accepted</li>
+<li>Approval ২-৭ দিন</li>
+<li>Approval-এর পর "GitHub Copilot" automatically enabled</li>
+<li>Free for ১২ মাস, renewable while student</li>
+</ol>
 
-        <h2>Copilot কোন ভাষায় সেরা?</h2>
-        <ul>
-            <li><strong>JavaScript/TypeScript:</strong> সবচেয়ে ভালো সাপোর্ট — React, Next.js, Node.js</li>
-            <li><strong>Python:</strong> অত্যন্ত ভালো — Django, Flask, FastAPI, Data Science</li>
-            <li><strong>Java:</strong> ভালো — Spring Boot, Android</li>
-            <li><strong>C#/.NET:</strong> ভালো — ASP.NET, Unity</li>
-            <li><strong>Go, Rust, PHP:</strong> মোটামুটি ভালো সাপোর্ট</li>
-        </ul>
-        <p>বাংলাদেশি ফ্রিল্যান্সারদের মধ্যে যারা Fiverr বা Upwork এ ওয়েব ডেভেলপমেন্ট করেন, তাদের জন্য Copilot প্রোডাক্টিভিটি ৩০-৫০% বাড়াতে পারে। <a href="/ai-tools-for-freelancers-bangladesh/">ফ্রিল্যান্সারদের জন্য AI টুলস</a> গাইড দেখুন।</p>
+<div class="callout">
+<strong>BD student-দের জন্য practical tip:</strong> .edu email থাকে না (আমাদের universities .ac.bd domain)। তাই apply-এ student ID card scan + admission letter upload করুন। Sumon-এর JU ID card-এ ২ দিনে approve হয়েছিল।
+</div>
 
-        <h2>প্রায়শই জিজ্ঞাসিত প্রশ্ন (FAQ)</h2>
+<h3>Path 2: Paid subscription</h3>
+<ul>
+<li><strong>Copilot Individual — $১০/মাস (~৳১,২০০):</strong> Tab + Chat + Edits + Agent। Personal use।</li>
+<li><strong>Copilot Pro — $১৯/মাস:</strong> Higher quota, premium models, faster response।</li>
+<li><strong>Copilot Business — $১৯/user/মাস:</strong> Team admin, IP indemnity।</li>
+<li><strong>Copilot Enterprise — $৩৯/user/মাস:</strong> Custom model fine-tuning, ১০x rate।</li>
+</ul>
+
+<h3>Payment from BD</h3>
+<ul>
+<li>GitHub.com → Settings → Billing → "Add payment method"</li>
+<li>USD card (Brac/City/EBL Mastercard) — bKash-এ recharge করে subscribe</li>
+<li>PayPal supported (BD থেকে কাজ করে if Payoneer linked)</li>
+<li>Wise card-ও কাজ করে</li>
+</ul>
+
+<h2>Copilot এর সেরা feature — practical use</h2>
+
+<div class="case-study">
+<strong>Feature 1: Tab autocomplete (daily workhorse)</strong>
+<p>Sumon-এর VS Code-এ Copilot সবসময় active। JavaScript function লিখতে শুরু করলেই complete suggestion। তিনি দিনে ৮-১০ ঘণ্টা coding করলে ৭০-৮০% কাজ Tab দিয়ে hoye যায়। হাত মাত্র edge case + business logic-এ লাগে।</p>
+</div>
+
+<div class="case-study">
+<strong>Feature 2: Inline chat (Cmd+I / Alt+I)</strong>
+<p>Code select করে inline edit। "Convert to async/await", "Add error handling", "Optimize" — Cursor-এর Cmd+K-এর equivalent।</p>
+</div>
+
+<div class="case-study">
+<strong>Feature 3: @workspace context</strong>
+<p>Chat-এ "@workspace" mention করলে whole repo aware। "এই project-এ auth flow কোথায় define?" — সঠিক file path + explanation।</p>
+</div>
+
+<div class="case-study">
+<strong>Feature 4: Slash commands</strong>
+<p>/fix, /test, /doc, /explain — pre-defined action। Quick + consistent। Sumon /test দিয়ে weekly ৪০-৫০টা test case generate করেন।</p>
+</div>
+
+<div class="case-study">
+<strong>Feature 5: PR review (GitHub.com)</strong>
+<p>Pull request raise করলে Copilot automatic code review + suggestion দেয়। Open-source contribution-এ Sumon-এর reviewer Copilot-এর comment দেখে অনেক time save করে।</p>
+</div>
+
+<h2>GitHub Copilot vs Cursor vs Windsurf — honest comparison</h2>
+
+<table style="width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;">
+<thead><tr style="background:#F1F5F9;"><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Aspect</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Copilot</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Cursor</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Windsurf</th></tr></thead>
+<tbody>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Free for student</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>Yes ($০)</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">No (free tier limited)</td><td style="padding:10px;border:1px solid #E2E8F0;">No (free tier limited)</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Paid (mo)</td><td style="padding:10px;border:1px solid #E2E8F0;">$১০-১৯</td><td style="padding:10px;border:1px solid #E2E8F0;">$২০</td><td style="padding:10px;border:1px solid #E2E8F0;">$১৫</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Tab autocomplete</td><td style="padding:10px;border:1px solid #E2E8F0;">Excellent</td><td style="padding:10px;border:1px solid #E2E8F0;">Excellent</td><td style="padding:10px;border:1px solid #E2E8F0;">Excellent</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Multi-file edit</td><td style="padding:10px;border:1px solid #E2E8F0;">Good (Edits)</td><td style="padding:10px;border:1px solid #E2E8F0;">Excellent (Composer)</td><td style="padding:10px;border:1px solid #E2E8F0;">Excellent (Cascade)</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Agent mode</td><td style="padding:10px;border:1px solid #E2E8F0;">Yes (Agent)</td><td style="padding:10px;border:1px solid #E2E8F0;">Yes</td><td style="padding:10px;border:1px solid #E2E8F0;">Yes (Cascade Flow)</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">VS Code feel</td><td style="padding:10px;border:1px solid #E2E8F0;">Native extension</td><td style="padding:10px;border:1px solid #E2E8F0;">Fork (95%)</td><td style="padding:10px;border:1px solid #E2E8F0;">Fork</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">GitHub integration</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>Deep (PR review)</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">Standard</td><td style="padding:10px;border:1px solid #E2E8F0;">Standard</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Best for</td><td style="padding:10px;border:1px solid #E2E8F0;">Student, open-source, GitHub-native team</td><td style="padding:10px;border:1px solid #E2E8F0;">Pro developer, freelance</td><td style="padding:10px;border:1px solid #E2E8F0;">Cost-conscious pro</td></tr>
+</tbody>
+</table>
+
+<p><strong>Honest verdict:</strong> Student/learner — Copilot wins (free)। Professional with budget — Cursor (slightly better Composer)। Cost-conscious pro — Windsurf। Team using GitHub heavily — Copilot Business (PR review + Workspace)।</p>
+
+<h2>Copilot ব্যবহারের সেরা টিপস</h2>
+<ul>
+<li><strong>Comment-as-prompt:</strong> Code-এর উপরে comment-এ describe করুন কী চান — Copilot ভালো suggest করে। উদাহরণ: "// fetch user orders by date range, sort newest first" → পুরো function suggest।</li>
+<li><strong>Multi-model use করুন:</strong> Chat panel-এ model dropdown। Sonnet 4.6 (default daily), GPT-5 (complex reasoning), o4 (math/algorithm)।</li>
+<li><strong>@workspace mandatory:</strong> Chat-এ context চাইলে অবশ্যই @workspace add — তাহলে whole repo aware answer।</li>
+<li><strong>Slash command memorize করুন:</strong> /explain, /fix, /test, /doc — daily ৩০-৪০% time save।</li>
+<li><strong>Copilot Edits-এ "Plan first":</strong> Complex change-এ আগে plan চান, তারপর approve করে execute।</li>
+<li><strong>PR review enable করুন:</strong> Repo settings → "Allow Copilot to review PR" — open-source contribution-এ time-saving।</li>
+<li><strong>Privacy:</strong> Settings → Copilot → "Suggestions matching public code: block" — copyright risk এড়াতে।</li>
+</ul>
+
+<h2>Copilot কোন ভাষায় সেরা?</h2>
+<ul>
+<li><strong>Excellent:</strong> Python, JavaScript/TypeScript, Go, Java, C#, Ruby</li>
+<li><strong>Good:</strong> Rust, Kotlin, PHP, Swift, C++</li>
+<li><strong>Moderate:</strong> Solidity, R, Bash, Dart</li>
+<li><strong>Bangla instruction:</strong> ✓ Works — "এই function-এ error handling add কর" perfectly understood</li>
+<li><strong>Framework-specific:</strong> React, Next.js, Django, Laravel, Spring — সব smooth</li>
+</ul>
+
+<h2>BD developer-এর জন্য workflow (Sumon-এর daily)</h2>
+<ol>
+<li><strong>সকাল ৮-১০ AM:</strong> University-র assignment। Copilot Tab + slash commands — দ্রুত boilerplate generate।</li>
+<li><strong>Mid-morning:</strong> Personal project (portfolio repo)। Copilot Edits-এ feature implementation।</li>
+<li><strong>Afternoon:</strong> Open-source issue pick। Copilot Workspace-এ issue → spec → code → PR full automated draft।</li>
+<li><strong>Evening:</strong> LeetCode/competitive programming। Copilot Chat-এ "explain this algorithm step by step in Bangla।"</li>
+<li><strong>Weekly review:</strong> Copilot Chat-এ "@workspace এই project-এর code quality কেমন? Improvement suggest করো।"</li>
+</ol>
+
+<h2>কখন paid alternative-এ যাবেন</h2>
+<ul>
+<li><strong>Graduation/full-time job:</strong> Student Pack expire → Cursor/Windsurf-এ shift consider করুন।</li>
+<li><strong>Heavy refactor কাজ:</strong> Cursor Composer Copilot Edits-এর চেয়ে সামান্য better।</li>
+<li><strong>Multi-model heavy use:</strong> Cursor-এ Claude Opus 4.7 + GPT-5 + Gemini 3.5 একটাতে easier।</li>
+<li><strong>Bigger context window:</strong> Cursor/Windsurf-এ ২০০K context, Copilot-এ context smaller by default।</li>
+<li><strong>Privacy critical client work:</strong> Cursor/Windsurf-এর enterprise plan more flexible।</li>
+</ul>
+
+<h2>উপসংহার — Copilot BD-তে এখনো কাদের জন্য</h2>
+<p>২০২৬-এ Copilot-এর পরিচয়: "students-দের best AI coding tool এবং GitHub-native team-দের natural choice।" বাংলাদেশের ৪০-৪৫ হাজার active Copilot user-এর ৮০%-ই student — কারণ Student Pack-এর FREE access। যদি আপনি BD-র university-তে CSE/EEE/IIT/IICT-এর student, Copilot Pro free apply করেন — সেটাই আপনার AI coding journey-এর শুরু।</p>
+<p>Sumon graduate হবেন ৬ মাসে। তখন তিনি Cursor + Copilot দু'টোই চালাবেন কিনা — এখনই plan করছেন। তিনি বলেন: "Copilot আমাকে professional হতে সাহায্য করেছে। Cost ছিল ০। এই learning curve professional tier-এ যেতে সহজ করেছে।"</p>
+<p>BD context-এ পরামর্শ: Student হলে Copilot Pro free apply আজই করুন। Pro হলে আপনার budget + workflow-এ যা fit সেটাই। Tool-এর সঙ্গে loyalty না — productivity-র সঙ্গে।</p>
+
+
+<h2>প্রায়শই জিজ্ঞাসিত প্রশ্ন (FAQ)</h2>
         <script type="application/ld+json">
         {
           "@context": "https://schema.org",

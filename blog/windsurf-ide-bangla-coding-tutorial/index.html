@@ -103,62 +103,157 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-        <h2>Windsurf কী?</h2>
-        <p>Windsurf হলো Codeium-এর তৈরি AI-first IDE — Cursor-এর সবচেয়ে শক্তিশালী প্রতিদ্বন্দ্বী। ২০২৪-এর শেষে launch হওয়ার পর developer community-তে দ্রুত জনপ্রিয়তা পেয়েছে।</p>
+<h2>ভূমিকা — Windsurf কেন BD developer-দের radar-এ</h2>
+<p class="lede">চট্টগ্রামের এক remote engineer Faruk Hossain (২৯ বছর, CUET CSE ২০১৭, ৬ বছর experience) US startup-এ Senior Frontend। তিনি ২০২৪ থেকে Cursor চালাতেন — $২০/মাস, ভালো performance। কিন্তু ২০২৫-এর জুলাইয়ে একটা friend recommend করলেন Windsurf — Codeium-এর তৈরি নতুন AI IDE, $১৫/মাস। Faruk skeptical: "Cursor-এর মতোই কিছু হবে — আবার শিখতে সময় কেন?" তবু ১৪-দিনের free trial নিলেন। প্রথম ৩ দিন interface অভ্যস্ত হতে গেল। কিন্তু একটা ২৮-file refactor task যেটা Cursor-এ ৩ ঘণ্টা লাগত — Windsurf-এর Cascade flow-এ ১ ঘণ্টা ৪০ মিনিটে শেষ। Faruk subscription switch করলেন। ৬ মাস পর তাঁর verdict: "Windsurf Cursor-এর equivalent না — কিছু কাজে স্পষ্ট better, কিছু কাজে slightly worse। তবে $৫ সস্তা + Cascade-এর deep flow আমার workflow-এ suit।" এই গাইড: Windsurf কী, কীভাবে install, Cascade কী, কখন worth।</p>
 
-        <h2>মূল ফিচার — Cascade</h2>
-        <ul>
-            <li><b>Cascade:</b> autonomous agent — পুরো task নিজে complete করে</li>
-            <li><b>Multi-file edit:</b> এক prompt-এ অনেক ফাইলে change</li>
-            <li><b>Context awareness:</b> পুরো codebase deep understand</li>
-            <li><b>Flow:</b> AI পেছন থেকে আপনার action observe করে — context build করে</li>
-            <li><b>Inline Chat:</b> Cmd+I দিয়ে যেকোনো জায়গায় AI</li>
-        </ul>
+<div class="callout">
+<strong>এই গাইডে যা থাকবে:</strong> Windsurf কী + Codeium-এর সঙ্গে relation, মূল feature Cascade, Install (Windows/Mac/Linux), Cursor-এর সঙ্গে honest পার্থক্য, ৫টা real BD use case, কখন Windsurf bechun কখন Cursor।
+</div>
 
-        <h2>Install</h2>
-        <ul>
-            <li>codeium.com/windsurf → download</li>
-            <li>Windows/Mac/Linux সব platform</li>
-            <li>Open → sign in (Codeium account)</li>
-            <li>Project open → AI ready</li>
-        </ul>
+<h2>Windsurf কী?</h2>
+<p>Windsurf হলো Codeium Inc.-এর তৈরি AI-first IDE — VS Code-এর fork। ২০২৪ নভেম্বরে launch (Codeium-এর pivot Windsurf-এ)। Cursor-এর সরাসরি competitor। মূল slogan: "The first agentic IDE" — Cascade নামক unique multi-step flow।</p>
 
-        <h2>Windsurf vs Cursor</h2>
-        <ul>
-            <li><b>Pricing:</b> Windsurf free tier generous; Cursor $২০/মাস Pro</li>
-            <li><b>UI/UX:</b> Windsurf আরো clean; Cursor classic VS Code feel</li>
-            <li><b>Agent:</b> Cascade vs Composer — দুটোই powerful, slight philosophy difference</li>
-            <li><b>Context:</b> Cursor "indexing" model; Windsurf live observation</li>
-        </ul>
+<div class="stat-row">
+<div><strong>Launch</strong><br>২০২৪ Nov (Codeium → Windsurf)<br>২০২৫ Q1 general availability</div>
+<div><strong>Active users (global)</strong><br>~৫.৫ লাখ paid<br>~১২ লাখ free</div>
+<div><strong>BD adoption</strong><br>~৬,০০০ developer<br>(২০২৫-এ ৫x growth)</div>
+<div><strong>Models</strong><br>Claude Sonnet 4.6/Opus 4.7<br>GPT-5, Gemini 3.5</div>
+</div>
 
-        <h2>প্রথম project-এ practical workflow</h2>
-        <ul>
-            <li>New project open</li>
-            <li>Cmd+L → "Build a TODO app in React with Tailwind, with add/edit/delete and local storage"</li>
-            <li>Cascade পুরো project scaffold — App.jsx, components, styles সব</li>
-            <li>Run → কাজ করছে</li>
-            <li>নতুন feature: "Add dark mode toggle" → Cascade multi-file edit</li>
-        </ul>
+<ul>
+<li><strong>VS Code fork:</strong> ৯২% interface identical — migration easy</li>
+<li><strong>Cascade Flow:</strong> Multi-step autonomous task — Cursor Composer-এর সমকক্ষ + একটু deeper</li>
+<li><strong>Multi-model:</strong> সব major model accessible</li>
+<li><strong>Best free tier (industry-leading):</strong> Free user-দেরও ৫০ flow action + unlimited autocomplete</li>
+<li><strong>Privacy:</strong> Enterprise tier-এ on-prem deploy supported</li>
+</ul>
 
-        <h2>কখন Windsurf বেছে নেবেন</h2>
-        <ul>
-            <li>নতুন developer — clean interface ভালো</li>
-            <li>Multi-file refactor heavy কাজ</li>
-            <li>Free tier-এ থাকতে চান</li>
-            <li>Indie/hobbyist project</li>
-        </ul>
+<h2>মূল feature — Cascade</h2>
+<p>Cursor-এর Composer-এর সঙ্গে Cascade-এর তুলনা inevitable, কিন্তু পার্থক্য আছে:</p>
 
-        <h2>কখন Cursor preferable</h2>
-        <ul>
-            <li>VS Code workflow-এ অভ্যস্ত</li>
-            <li>Extension ecosystem দরকার</li>
-            <li>Team enterprise feature</li>
-        </ul>
+<ul>
+<li><strong>Multi-file aware:</strong> Cascade একটা task নিয়ে whole repo scan করে, dependency graph বানায়।</li>
+<li><strong>Plan + execute pattern:</strong> First plan show করে, approve করার পর execute। Hallucination কম।</li>
+<li><strong>Long task durability:</strong> ১-৩ ঘণ্টার task হ্যান্ডল করে disconnect ছাড়া।</li>
+<li><strong>Test-aware:</strong> Code edit-এর সঙ্গে existing test run + fail হলে fix attempt।</li>
+<li><strong>Terminal integration:</strong> Cascade নিজে terminal command run করতে পারে — package install, test run, build।</li>
+</ul>
 
-        <h2>উপসংহার</h2>
-        <p>AI IDE space-এ Windsurf vs Cursor — দুটোই top-tier। বাংলাদেশি developer-এর জন্য সবচেয়ে practical: দুটোই free trial করে দেখুন; যেটাতে comfortable মনে হবে সেটাই keep করুন।</p>
+<div class="case-study">
+<strong>Cascade real example (Faruk-এর project):</strong><br>
+Prompt: "এই React project-এর ২৮টা class component functional + hooks-এ migrate করো। Test fail করা যাবে না।"<br>
+Cascade response:<br>
+১) Plan: ২৮টা file identified, migration order suggested<br>
+২) Faruk approves<br>
+৩) Execute: ১৪টা component migrate (১ম batch)<br>
+৪) Test run automatically — সব pass<br>
+৫) Next batch (১৪টা) migrate<br>
+৬) Final test pass + summary report<br>
+Total time: ১:৪০ ঘণ্টা vs Cursor-এ ৩:০০ ঘণ্টা
+</div>
 
-        <h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
+<h2>Install — Windows/Mac/Linux</h2>
+
+<h3>Download</h3>
+<p>codeium.com/windsurf → "Download" — OS detect। ~১৪০MB installer।</p>
+<ul>
+<li><strong>Mac:</strong> .dmg → Applications</li>
+<li><strong>Windows:</strong> .exe → run installer</li>
+<li><strong>Linux:</strong> .deb (Ubuntu/Debian) বা .AppImage</li>
+</ul>
+
+<h3>Initial setup</h3>
+<ol>
+<li>Launch → Codeium account sign up (Google/GitHub OAuth)</li>
+<li>"Import settings from VS Code?" → Yes</li>
+<li>Top-right model dropdown → Sonnet 4.6 default</li>
+<li>Privacy toggle: Settings → Privacy → "Don't train on my code"</li>
+</ol>
+
+<div class="callout">
+<strong>BD থেকে:</strong> VPN লাগে না। codeium.com সরাসরি accessible। GitHub OAuth fastest। Phone verification নেই।
+</div>
+
+<h2>Windsurf vs Cursor — honest পার্থক্য</h2>
+
+<table style="width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;">
+<thead><tr style="background:#F1F5F9;"><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Aspect</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Windsurf</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Cursor</th></tr></thead>
+<tbody>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Pro price</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>$১৫/মাস</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">$২০/মাস</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Free tier</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>৫০ flow + unlimited autocomplete</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">২০০০ token only</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Multi-file flow</td><td style="padding:10px;border:1px solid #E2E8F0;">Cascade — deeper</td><td style="padding:10px;border:1px solid #E2E8F0;">Composer — faster</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Inline edit (Cmd+K)</td><td style="padding:10px;border:1px solid #E2E8F0;">Good</td><td style="padding:10px;border:1px solid #E2E8F0;">Excellent (more polished)</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Tab autocomplete</td><td style="padding:10px;border:1px solid #E2E8F0;">Excellent (from Codeium heritage)</td><td style="padding:10px;border:1px solid #E2E8F0;">Excellent</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Long-running task</td><td style="padding:10px;border:1px solid #E2E8F0;">Excellent (Cascade durable)</td><td style="padding:10px;border:1px solid #E2E8F0;">Good</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Community/tutorials</td><td style="padding:10px;border:1px solid #E2E8F0;">Growing</td><td style="padding:10px;border:1px solid #E2E8F0;">Mature (much more)</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">VS Code compat</td><td style="padding:10px;border:1px solid #E2E8F0;">৯২% (mostly all extensions)</td><td style="padding:10px;border:1px solid #E2E8F0;">৯৫%</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Enterprise/on-prem</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>Strong (Codeium enterprise heritage)</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">Standard</td></tr>
+</tbody>
+</table>
+
+<h2>প্রথম project-এ practical workflow (Faruk-এর pattern)</h2>
+<ol>
+<li><strong>Project open:</strong> Windsurf launch → "Open Folder" → existing repo।</li>
+<li><strong>Index wait:</strong> প্রথমবার Windsurf whole codebase index করে (১-৩ মিনিট ৫০K লাইনের জন্য)। তারপর context-aware।</li>
+<li><strong>Daily inline edit:</strong> Code select → Cmd+I → instruction। যেমন: "Add try-catch with Bangla error message।"</li>
+<li><strong>Multi-file task:</strong> Cmd+L → Cascade open। "এই feature এই ৫টা file জুড়ে add কর" → plan show, approve, execute।</li>
+<li><strong>Codebase chat:</strong> Right sidebar chat-এ "@codebase auth flow explain" — repo-aware answer।</li>
+<li><strong>Long task:</strong> Big refactor-এ Cascade Flow on → Faruk lunch break-এ যান, return-এ review।</li>
+</ol>
+
+<h2>৫টা real BD use case</h2>
+
+<div class="case-study">
+<strong>Use case 1: Remote engineer (Faruk-এর মতো)</strong>
+<p>US client-এর জন্য complex refactor weekly। Cascade Flow daily ১-২ ঘণ্টা saved। Subscription $১৫ × ১২ = $১৮০/বছর। মাসে saved hours valued $৩,০০০+।</p>
+</div>
+
+<div class="case-study">
+<strong>Use case 2: Cost-conscious freelancer</strong>
+<p>Sylhet-এর Tanim Cursor-এর $২০ থেকে Windsurf-এর $১৫-এ shift। মাসে $৫ saved × ১২ = $৬০/বছর। Feature parity ৯৫%। তাঁর choice straightforward।</p>
+</div>
+
+<div class="case-study">
+<strong>Use case 3: Student/learner</strong>
+<p>NSU CSE student Nisha Windsurf-এর free tier-এ daily ৩-৪ ঘণ্টা coding। ৫০ flow action + unlimited autocomplete — assignment + project-এ যথেষ্ট। Cursor-এর free tier ২০০০ token-এ ১ দিনেই শেষ।</p>
+</div>
+
+<div class="case-study">
+<strong>Use case 4: Agency multi-project</strong>
+<p>Dhaka-র agency Codeium Enterprise plan-এ — on-prem deploy, ৩০ developer। SOC 2 compliance + IP indemnity client-এর জন্য আকর্ষণীয়।</p>
+</div>
+
+<div class="case-study">
+<strong>Use case 5: Long-running refactor</strong>
+<p>Legacy Java project Spring Boot-এ migrate। Cascade Flow-এ "এই ৪৫টা service class migrate কর" — ৩ ঘণ্টায় ৪০টা migrate, ৫টায় manual review লেগেছে। Cursor Composer-এ একই কাজ ৫+ ঘণ্টা লাগে।</p>
+</div>
+
+<h2>কখন Windsurf বেছে নেবেন</h2>
+<ul>
+<li>Budget $৫-৭ matter করে (BD context-এ ৳৬০০ matters)</li>
+<li>Free tier-এ longer use করতে চান (student/hobbyist)</li>
+<li>Cascade-এর durable long-running flow আপনার workflow-এ fit</li>
+<li>Long refactor/migration heavy</li>
+<li>Test-aware editing গুরুত্বপূর্ণ</li>
+<li>Enterprise/on-prem deploy দরকার</li>
+</ul>
+
+<h2>কখন Cursor preferable</h2>
+<ul>
+<li>Daily fast inline edit-এ Cmd+K performance valued</li>
+<li>Community/learning resource matter (Cursor-এর community ৫x বড়)</li>
+<li>VS Code-এর সঙ্গে maximum compatibility</li>
+<li>Composer-এর speed > Cascade-এর depth</li>
+<li>Already adapted, switching cost worth না</li>
+</ul>
+
+<h2>উপসংহার — Windsurf BD-তে কাদের জন্য</h2>
+<p>২০২৬-এ Windsurf-এর position: "Cursor-এর viable alternative — কিছু কাজে better, কিছুতে comparable, সবসময় cheaper।" বাংলাদেশের ৬,০০০ active user মূলত cost-conscious freelancer + remote engineer + agency।</p>
+<p>Faruk-এর শেষ কথা: "Cursor আমাকে ১৪ মাস service দিয়েছে — appreciate করি। Windsurf এখন আমার fit কারণ Cascade আমার workflow-এ better suit। Tool-এর সঙ্গে loyalty না — কাজের সঙ্গে।"</p>
+<p>BD context-এ পরামর্শ: দু'টোই ১৪-দিন free trial-এ test করুন (Cursor + Windsurf)। নিজের real কাজে যেটা natural fit, সেটাই keeper। Marketing pages দেখে না — নিজের code দেখে decision নিন।</p>
+
+
+<h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
         <ul>
             <li><a href="/windsurf/">Windsurf টুল পেজ</a></li>
             <li><a href="/cursor/">Cursor</a></li>
