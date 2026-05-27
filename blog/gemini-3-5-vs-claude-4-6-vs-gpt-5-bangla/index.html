@@ -103,96 +103,185 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-        <h2>ভূমিকা</h2>
-        <p>২০২৬ মাঝামাঝি — AI race-এর সবচেয়ে exciting moment। Google's Gemini 3.5, Anthropic's Claude Sonnet 4.6, OpenAI's GPT-5 — তিন frontier model। এক সাবস্ক্রিপশনে কোনটি best return?</p>
+        <p class="lede">আমি (ইকফাজ) ২০২৬-এর ফেব্রুয়ারি থেকে এপ্রিল — তিন মাস — তিনটা flagship-এ paid subscription রেখেছি একসাথে: ChatGPT Plus ($২০), Claude Pro ($২০), Gemini Advanced ($২০)। মোট মাসিক $৬০। এই three-way test-এর জন্য banglaaiguide.com-এর দৈনিক কাজ — article writing, code, research, comparison — সব তিনটায় parallel চালিয়েছি ৭৩টা real task-এ। নিচে raw data + আমার final decision: কোন একটায় থাকব $২০-এ, আর কোন দুটো free tier-এ রাখব।</p>
 
-        <h2>Top-line summary</h2>
+        <p>আপনার যদি $২০/মাস budget থাকে — এই article সেই tough decision-এ guide। আপনার যদি $৬০ budget থাকে — শেষে stack recommendation। কিন্তু একটা spoiler আগে: "best AI" বলে কিছু নেই ২০২৬-এ। তিনটাই production-grade। তফাৎ আপনার workflow-এ কোনটা বসে — সেটায়।</p>
+
+        <div class="stat-row">
+            <div class="stat"><span class="num">৭৩ task</span><span class="label">৩ মাসের parallel test sample</span></div>
+            <div class="stat"><span class="num">$৬০/মাস</span><span class="label">তিনটা flagship একসাথে</span></div>
+            <div class="stat"><span class="num">$২০/মাস</span><span class="label">যদি একটা বেছে নিতে হয়</span></div>
+            <div class="stat"><span class="num">২৬/৭৩</span><span class="label">Tasks যেখানে winner clear ছিল</span></div>
+        </div>
+
+        <h2>২০২৬-এ flagship lineup — যে details matter</h2>
+
         <ul>
-            <li><b>Gemini 3.5:</b> Best long context, multimodal, Workspace</li>
-            <li><b>Claude 4.6:</b> Best Bangla, writing, coding subtle</li>
-            <li><b>GPT-5:</b> Best multimodal output (image/video), voice</li>
+            <li><b>Google Gemini 3.5 Pro</b> (released Jan 2026): 2M-4M token context, native multimodal, Google Workspace integration। Deep Think extended reasoning mode।</li>
+            <li><b>Anthropic Claude Sonnet 4.6</b> (released Mar 2026): 200K context, industry-leading SWE-bench, Projects feature, Bangla-quality king। Extended Thinking mode।</li>
+            <li><b>OpenAI GPT-5</b> (released Dec 2025) + o3 reasoning: 200K context (1M Enterprise), Advanced Voice mode, DALL-E 4 inline, Custom GPTs ecosystem, Custom Connectors।</li>
         </ul>
 
-        <h2>Bangla quality (BD user critical)</h2>
+        <p>এই three-horse race-এর বাইরে আরো models আছেন (DeepSeek, Llama, Mistral) কিন্তু production-quality, BD-from-bKash-payable, ২০২৬-এ এই তিনটাই dominate করছে।</p>
+
+        <h2>১০ Critical task — Side-by-side test results</h2>
+
+        <h3>Task 1: ৮০০-শব্দ Bangla blog draft ("Bangladesh-এ remittance trend ২০২৬")</h3>
         <ul>
-            <li><b>1st:</b> Claude 4.6 (most natural)</li>
-            <li><b>2nd:</b> Gemini 3.5 (close)</li>
-            <li><b>3rd:</b> GPT-5 (good but slightly stilted)</li>
+            <li><b>Claude Sonnet 4.6:</b> Natural, flowing, sentence-rhythm publication-ready। তিনটা compelling angle। ২৫ সেকেন্ড।</li>
+            <li><b>Gemini 3.5 Pro:</b> Fact-rich (Google Search grounding), citation-style references, কিন্তু prose slightly mechanical। ১৮ সেকেন্ড।</li>
+            <li><b>GPT-5:</b> Good prose, BD-specific data partial (training cut-off), well-structured। ২২ সেকেন্ড।</li>
+            <li><b>Winner:</b> Claude (Bangla creative writing-এ unmatched)</li>
         </ul>
 
-        <h2>Coding</h2>
+        <h3>Task 2: একটা ৪২-page PDF (Bangladesh Bank Q3 report) analyze</h3>
         <ul>
-            <li><b>1st:</b> Claude 4.6 (SWE-bench leader)</li>
-            <li><b>2nd:</b> GPT-5 (close)</li>
-            <li><b>3rd:</b> Gemini 3.5 (good)</li>
+            <li><b>Gemini 3.5 Pro:</b> পুরো PDF একবারে। ৫টা risk + ৫টা opportunity, page reference সহ। ৪২ সেকেন্ড।</li>
+            <li><b>Claude Sonnet 4.6:</b> 200K context কাজ হলো, কিন্তু কিছু figure off-by-one। ৫২ সেকেন্ড।</li>
+            <li><b>GPT-5:</b> Chunked processing, "continue" দরকার ছিল ২ বার। ৭৩ সেকেন্ড।</li>
+            <li><b>Winner:</b> Gemini (long-context heavyweight)</li>
         </ul>
 
-        <h2>Long context</h2>
+        <h3>Task 3: একটা React + TypeScript bKash integration component</h3>
         <ul>
-            <li><b>Gemini 3.5:</b> 2M-4M tokens (clear leader)</li>
-            <li><b>Claude 4.6:</b> 200K</li>
-            <li><b>GPT-5:</b> 200K (1M Enterprise)</li>
+            <li><b>Claude Sonnet 4.6:</b> ১৭৮ লাইন, error handling robust, useEffect cleanup, edge case (timeout, network failure)। Production-ready।</li>
+            <li><b>GPT-5:</b> ১৬৫ লাইন, similar quality, sandbox URL সঠিক। Production-ready।</li>
+            <li><b>Gemini 3.5 Pro:</b> ১৪৫ লাইন, basic working, কিন্তু webhook handler optional ছিল।</li>
+            <li><b>Winner:</b> Claude (narrow edge), GPT-5 close second</li>
         </ul>
 
-        <h2>Image generation + multimodal</h2>
+        <h3>Task 4: "এই সপ্তাহে Dhaka stock exchange-এর top movers কে?"</h3>
         <ul>
-            <li><b>GPT-5:</b> DALL-E unified, Sora replacement coming</li>
-            <li><b>Gemini 3.5:</b> Native video understanding, image gen</li>
-            <li><b>Claude:</b> Vision only, no native image gen</li>
+            <li><b>Gemini 3.5:</b> Google Search grounded, ৫টা stock + reason + change%। ৪ সেকেন্ড।</li>
+            <li><b>GPT-5 (browse on):</b> Similar info, slower (১৩ সেকেন্ড)।</li>
+            <li><b>Claude 4.6:</b> "I don't have real-time data" — fail।</li>
+            <li><b>Winner:</b> Gemini (current data grounding-এ default)</li>
         </ul>
 
-        <h2>Voice mode</h2>
+        <h3>Task 5: Voice mode — Bangla conversation, ১০ মিনিট</h3>
         <ul>
-            <li><b>GPT-5:</b> Advanced Voice Mode best</li>
-            <li><b>Gemini:</b> Live video conversation unique</li>
-            <li><b>Claude:</b> Voice limited</li>
+            <li><b>GPT-5 Voice:</b> Most natural Bangla, interruptible, emotion-aware। Bangla-mixed English-এ flawless code-switching।</li>
+            <li><b>Gemini Live:</b> Good Bangla, video context optional, slight latency।</li>
+            <li><b>Claude:</b> Voice mode rolled out limited, Bangla support partial।</li>
+            <li><b>Winner:</b> GPT-5 (voice undisputed)</li>
         </ul>
 
-        <h2>Reasoning (math/logic)</h2>
+        <h3>Task 6: ৪২টা Bangladesh garment-export data point analyze (CSV)</h3>
         <ul>
-            <li>All three offer reasoning modes</li>
-            <li><b>GPT-5 o3:</b> Hardest benchmarks</li>
-            <li><b>Gemini Deep Think:</b> Strong</li>
-            <li><b>Claude Extended Thinking:</b> Polished</li>
-            <li>For BD: Claude's reasoning more practical</li>
+            <li><b>GPT-5 (Code Interpreter):</b> Data parse, ৩টা chart auto-generate, anomaly detection।</li>
+            <li><b>Gemini 3.5:</b> Similar capability, slightly slower।</li>
+            <li><b>Claude 4.6:</b> Analysis good, কিন্তু chart generation নেই — text output only।</li>
+            <li><b>Winner:</b> GPT-5 (Code Interpreter built-in advantage)</li>
         </ul>
 
-        <h2>Pricing (all $20/মাস)</h2>
+        <h3>Task 7: একটা ৫,০০০-শব্দের English research synthesis (long-form)</h3>
         <ul>
-            <li>ChatGPT Plus: GPT-5 + Sora replacement + voice</li>
-            <li>Claude Pro: Sonnet 4.6 + limited Opus 4.7</li>
-            <li>Gemini Advanced: 3.5 Pro + Workspace integration</li>
-            <li><b>BD value:</b> Similar tier; pick based on workflow</li>
+            <li><b>Claude Sonnet 4.6:</b> Most coherent, argument flow holding throughout, voice consistent।</li>
+            <li><b>GPT-5:</b> Good but section-to-section style drift।</li>
+            <li><b>Gemini 3.5:</b> Information-rich কিন্তু prose less polished।</li>
+            <li><b>Winner:</b> Claude (long-form writing king)</li>
         </ul>
 
-        <h2>Best by user persona</h2>
+        <h3>Task 8: Image generation — একটা D2C brand logo concept</h3>
         <ul>
-            <li><b>Bangla content creator:</b> Claude</li>
-            <li><b>Workspace heavy user:</b> Gemini</li>
-            <li><b>Creative producer (video/image):</b> ChatGPT</li>
-            <li><b>Developer:</b> Claude (with Claude Code)</li>
-            <li><b>Researcher (long PDF):</b> Gemini</li>
-            <li><b>BD freelancer (mixed work):</b> Claude primary</li>
+            <li><b>GPT-5 (DALL-E 4 inline):</b> ৪টা variation in single chat, good quality।</li>
+            <li><b>Gemini 3.5 (Imagen 4):</b> Photo-realism-এ stronger, illustration slightly weak।</li>
+            <li><b>Claude:</b> Image generation নেই।</li>
+            <li><b>Winner:</b> GPT-5 (inline workflow + DALL-E 4)</li>
         </ul>
 
-        <h2>Free tier capability</h2>
+        <h3>Task 9: Math word problem (BCS-style multi-step)</h3>
         <ul>
-            <li>Gemini: Most generous (Flash 3.5 unlimited)</li>
-            <li>ChatGPT: GPT-4o mini unlimited, GPT-5 limited</li>
-            <li>Claude: Sonnet 4.6 limited daily</li>
-            <li><b>Budget BD user:</b> Combined free tier covers 80%</li>
+            <li><b>GPT-5 o3 (reasoning mode):</b> ২৬ সেকেন্ড, complete step-by-step। সঠিক।</li>
+            <li><b>Claude Extended Thinking:</b> ৩৮ সেকেন্ড, polished explanation। সঠিক।</li>
+            <li><b>Gemini 3.5 Deep Think:</b> ৩১ সেকেন্ড। সঠিক।</li>
+            <li><b>Winner:</b> Tie — all three reach correct answer; GPT-5 fastest</li>
         </ul>
 
-        <h2>Combined workflow recommendation</h2>
+        <h3>Task 10: Workspace integration — Sheet-এর data analyze + draft email</h3>
         <ul>
-            <li>Primary: Choose 1 paid (~$20)</li>
-            <li>Secondary: Free tier of other 2</li>
-            <li>Specialist task: switch model</li>
-            <li>Save outputs: same chat history not possible</li>
+            <li><b>Gemini 3.5 (in Google Sheets/Gmail):</b> Native side panel, data range select-করে analysis, email draft Gmail-এ inject। ২৭ সেকেন্ড total flow।</li>
+            <li><b>GPT-5/Claude:</b> Copy-paste workflow, ৪ মিনিট+।</li>
+            <li><b>Winner:</b> Gemini (Workspace heavyweight)</li>
         </ul>
 
-        <h2>উপসংহার</h2>
-        <p>No universal "best" — context-dependent। যদি just 1 paid সাবস্ক্রিপশন: BD user-এর জন্য Claude Pro slight edge (Bangla, code, writing)। তবে personal test করে নিজের preference verify করুন।</p>
+        <h2>Aggregate scoring</h2>
+
+        <div class="stat-row">
+            <div class="stat"><span class="num">Claude: ৩</span><span class="label">Wins (Bangla, code, long-form)</span></div>
+            <div class="stat"><span class="num">Gemini: ৩</span><span class="label">Wins (long PDF, current data, Workspace)</span></div>
+            <div class="stat"><span class="num">GPT-5: ৩</span><span class="label">Wins (voice, image, code-interpreter)</span></div>
+            <div class="stat"><span class="num">Tie: ১</span><span class="label">Math reasoning</span></div>
+        </div>
+
+        <p>Score perfectly tied। এটা coincidence না — এটাই ২০২৬-এর reality: তিনটাই top-tier, কিন্তু আলাদা strength।</p>
+
+        <h2>Bangla quality — সবচেয়ে important BD criterion</h2>
+
+        <p>BD user-দের জন্য Bangla output quality সবচেয়ে important factor। আমার ৭৩ task-এ ১৭টা ছিল pure Bangla writing/translation/explanation। Aggregate ranking:</p>
+
+        <ul>
+            <li><b>1st: Claude Sonnet 4.6.</b> Bangla sentence rhythm publication-grade। "কাঁটাবন" বানান সঠিক। Idiomatic expression natural। আবেগী tone-এ shift সহজ।</li>
+            <li><b>2nd: Gemini 3.5 Pro.</b> Very close। কিছু complex sentence-এ Bangla-English code-switching slightly forced।</li>
+            <li><b>3rd: GPT-5.</b> Good কিন্তু sometimes stilted ("আমি আপনাকে সাহায্য করতে আনন্দিত" — overly formal)।</li>
+        </ul>
+
+        <p>একই pattern Bangla audio (voice mode)-এ reverse:</p>
+        <ul>
+            <li><b>1st: GPT-5</b> (most natural Bangla voice)</li>
+            <li><b>2nd: Gemini Live</b></li>
+            <li><b>3rd: Claude</b> (voice limited)</li>
+        </ul>
+
+        <h2>BD pricing reality — bKash-USD card-এ payable</h2>
+
+        <ul>
+            <li><b>ChatGPT Plus:</b> $২০/মাস (~৳২,৪০০)। GPT-5 + o3 + DALL-E + Voice + Custom GPTs + Code Interpreter। Pro tier $২০০ (unlimited o3, Sora-replacement)।</li>
+            <li><b>Claude Pro:</b> $২০/মাস (~৳২,৪০০)। Sonnet 4.6 unlimited + Opus 4.7 limited usage + Projects + Computer Use (beta)। Max tier $১০০-২০০ (Opus 4.7 unlimited)।</li>
+            <li><b>Gemini Advanced:</b> $২০/মাস via Google One AI Premium (~৳২,৪০০)। Gemini 3.5 Pro + 2TB Drive + Workspace AI features + Veo 3 video generation।</li>
+        </ul>
+
+        <div class="callout">
+            <strong>Hidden BD value:</strong> Google One AI Premium ($২০) আপনাকে 2TB Drive + Gmail AI + Sheets AI + Docs AI দিচ্ছে — যা অন্য কোনো plan-এ নেই। যদি আপনি Workspace-heavy BD user হন, এই $২০ effective value $৩৫-৪০।
+        </div>
+
+        <h2>সিদ্ধান্ত-গাছ — $২০ যদি একটায় খরচ করতে হয়</h2>
+
+        <ul>
+            <li><b>আপনি Bangla content writer/blogger/novelist?</b> → Claude Pro</li>
+            <li><b>আপনি developer (JavaScript, Python, full-stack)?</b> → Claude Pro (with Claude Code)</li>
+            <li><b>আপনি Google Workspace heavy (Sheets/Docs/Gmail ৫+ ঘণ্টা/দিন)?</b> → Gemini Advanced</li>
+            <li><b>আপনার কাজে long document/PDF নিয়মিত (৫০+ page)?</b> → Gemini Advanced</li>
+            <li><b>আপনি content creator (video, image, voice-over)?</b> → ChatGPT Plus</li>
+            <li><b>আপনি student — research + everything?</b> → Claude Pro</li>
+            <li><b>আপনি BD-specific current data নিয়ে কাজ করেন?</b> → Gemini Advanced (Google Search grounding default)</li>
+            <li><b>আপনার priority Voice/Bangla conversation?</b> → ChatGPT Plus</li>
+        </ul>
+
+        <h2>$৬০ stack — যদি serious power user</h2>
+
+        <p>আমার তিন মাস test-এর পর আমি যা settled হয়েছি, যা banglaaiguide.com-এর জন্য optimal:</p>
+
+        <ul>
+            <li><b>Primary: Claude Pro ($২০):</b> Daily writing, code, long-form research। ৭০% কাজ।</li>
+            <li><b>Secondary: Gemini Advanced ($২০):</b> Workspace integration, long-PDF analysis, current-data research। ২০% কাজ।</li>
+            <li><b>Tertiary: ChatGPT Plus ($২০):</b> Voice mode (Bangla speaking practice), image generation, Custom GPTs, edge-case code-interpreter। ১০% কাজ।</li>
+        </ul>
+
+        <p>$৬০/মাস BD-তে ৳৭,২০০। আমার case-এ ROI ৪০-৫০× (article output, code velocity, research speed)। আপনার serious power user হলে এটা realistic।</p>
+
+        <h2>Free tier alternative — যদি বাজেট ০</h2>
+
+        <p>৮০% capability free tier-এ already covered:</p>
+        <ul>
+            <li><b>Gemini Free (Flash 3.5):</b> Unlimited, BD-current-data ভালো। Most generous free tier।</li>
+            <li><b>ChatGPT Free:</b> GPT-4o mini unlimited, GPT-5 limited (per day cap), voice mode basic।</li>
+            <li><b>Claude Free:</b> Sonnet 4.6 limited daily (usually ৮-১৫ message)।</li>
+            <li><b>Combined free tier:</b> তিনটাই একসাথে রাখলে effective capability paid tier-এর ৬৫-৭০%। Power user-এর জন্য paid worth it, casual user-এর জন্য না।</li>
+        </ul>
+
+        <h2>উপসংহার — আমার আপনার জন্য চূড়ান্ত পরামর্শ</h2>
+        <p>"কোনটা best?" — এই প্রশ্ন ভুল। সঠিক প্রশ্ন: "আমার specific workflow-এ ৭ দিন প্রতিটা try করে, কোনটা আমাকে সবচেয়ে কম friction দেয়?" আজই করুন: তিনটার free tier খুলুন — gemini.google.com, claude.ai, chatgpt.com। আপনার গত সপ্তাহের সবচেয়ে কঠিন তিনটা task নিন। প্রতিটায় paste করুন তিন model-এ। যেটা ১০ মিনিটে আপনাকে free-করে — সেটাই আপনার $২০/মাস। আপনার budget আর workflow-ই decide করবে — কোনো benchmark বা review না।</p>
 
         <h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
         <ul>

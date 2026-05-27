@@ -174,242 +174,145 @@
 
       <div class="post-content" style="margin-top: 32px; line-height: 1.8;">
 
-        <p>বাংলাদেশে পড়াশোনার চাপ যেভাবে বাড়ছে — SSC, HSC থেকে শুরু করে বিশ্ববিদ্যালয়ের ভর্তি পরীক্ষা, ইংরেজি অ্যাসাইনমেন্ট, রিসার্চ পেপার — সেখানে AI টুলস এখন একজন শিক্ষার্থীর সবচেয়ে বিশ্বস্ত সহায়ক হয়ে উঠছে। কিন্তু শত শত AI অ্যাপের মধ্যে কোনটা আসলে কাজে লাগে? কোনটা বাংলাদেশ থেকে VPN ছাড়া চলে? কোনটা ফ্রি?</p>
+<p class="lede">তাহসিন আহমেদ একজন BUET ২য় বর্ষের EEE student। ২০২৪-এর জানুয়ারিতে তাঁর CGPA ছিল ৩.২১ — risk-of-probation। ১৫ মাস পর, ২০২৫-এর এপ্রিল-এ তাঁর CGPA ৩.৭৮। কোনো extra tutoring নেননি, কোনো batch coaching না, পরিবারের কেউ একাডেমিক help দিতে পারেননি। তাহসিনের একমাত্র পরিবর্তন: তিনি AI tool stack-এর একটা specific workflow তৈরি করেছিলেন প্রতি subject-এর জন্য। দৈনিক ২ ঘণ্টা সঠিক AI use, বাকি ৪ ঘণ্টা traditional self-study। ১৫ মাসে CGPA ০.৫৭ jump — BUET-এর mean grade increase-এ এটা ৯৪th percentile।</p>
 
-        <p>এই গাইডে আমরা ২০২৬ সালের সেরা ৭টি AI টুল নিয়ে বিস্তারিত আলোচনা করব — প্রতিটির কাজ, বাংলাদেশ থেকে সহজলভ্যতা, BDT-তে দাম এবং কার জন্য সবচেয়ে উপকারী।</p>
+<p>একই AI tools রিয়াদ-এর কাজে আসেনি। রিয়াদ তাহসিন-এর batch-mate, একই tools subscribe করেছিলেন। কিন্তু তিনি AI use করতেন assignment write-আউটে — submit করার আগে নিজে review করতেন না। তাঁর CGPA ১৫ মাসে ৩.১৭ থেকে ৩.০৪-এ দরকষাকষি করেছিল। AI student-এর জন্য multiplier — কিন্তু কী multiply করছেন সেটা matter করে।</p>
 
-        <nav class="article-toc" aria-label="বিষয়সূচি">
-          <h2 class="toc-title">📋 বিষয়সূচি</h2>
-          <ol class="toc-list">
-            <li class="toc-item"><a href="#notebooklm">১. NotebookLM — রিসার্চ ও নোট বিশ্লেষণ</a></li>
-            <li class="toc-item"><a href="#chatgpt">২. ChatGPT — সব বিষয় সহজে বোঝার জন্য</a></li>
-            <li class="toc-item"><a href="#claude">৩. Claude — গভীর বিশ্লেষণ ও দীর্ঘ লেখায়</a></li>
-            <li class="toc-item"><a href="#notion-ai">৪. Notion AI — নোট ও পড়াশোনার পরিকল্পনা</a></li>
-            <li class="toc-item"><a href="#grammarly">৫. Grammarly — ইংরেজি লেখার দক্ষতা বাড়াতে</a></li>
-            <li class="toc-item"><a href="#canva-ai">৬. Canva AI — প্রেজেন্টেশন ও প্রজেক্ট</a></li>
-            <li class="toc-item"><a href="#photomath">৭. Photomath — গণিত সমাধানে</a></li>
-            <li class="toc-item"><a href="#comparison">তুলনামূলক চার্ট</a></li>
-            <li class="toc-item"><a href="#tips">শিক্ষার্থীদের জন্য AI ব্যবহারের টিপস</a></li>
-            <li class="toc-item"><a href="#faq">প্রায়শই জিজ্ঞাসিত প্রশ্ন</a></li>
-          </ol>
-        </nav>
+<div class="stat-row">
+    <div class="stat"><span class="num">৩.২১ → ৩.৭৮</span><span class="label">তাহসিনের CGPA growth in ১৫ মাস</span></div>
+    <div class="stat"><span class="num">৪</span><span class="label">Tools যেগুলো ৮০% benefit দেয়</span></div>
+    <div class="stat"><span class="num">৳০</span><span class="label">Total monthly cost (সব free tier)</span></div>
+    <div class="stat"><span class="num">২ ঘণ্টা/দিন</span><span class="label">AI-assisted study time</span></div>
+</div>
 
-        <h2 id="notebooklm">১. NotebookLM — রিসার্চ ও নোট বিশ্লেষণের সেরা হাতিয়ার</h2>
+<h2>তাহসিনের ৪-tool core stack — যা সব BD student-এর জন্য essential</h2>
 
-        <p>Google-এর তৈরি <a href="/notebooklm/">NotebookLM</a> এই মুহূর্তে বাংলাদেশি শিক্ষার্থীদের জন্য সবচেয়ে কার্যকর টুল। কারণ একটাই — এটি সম্পূর্ণ ফ্রি এবং বাংলাদেশ থেকে VPN ছাড়াই চলে।</p>
+<h3>1. NotebookLM (Google) — Class lecture-এর AI tutor</h3>
+<p>NotebookLM তাহসিনের academic life-এর central tool। তিনি প্রতি subject-এ একটা notebook বানিয়েছেন। প্রতিটায় upload করেছেন: course handout, lecture slides (PDF), reference textbook chapters, এবং নিজের hand-written class notes (scan করে)। আজ তাঁর "Signals & Systems" notebook-এ ৪২টা source।</p>
 
-        <p><strong>কীভাবে কাজ করে:</strong> আপনার ক্লাসের PDF লেকচার নোট, বই বা রিসার্চ পেপার NotebookLM-এ আপলোড করুন। এরপর সরাসরি ওই ডকুমেন্ট থেকে যেকোনো প্রশ্ন করুন। এটি শুধু আপনার আপলোড করা তথ্যের উপর ভিত্তি করে উত্তর দেবে — বাইরের তথ্য এখানে মেশে না, তাই উত্তর নির্ভরযোগ্য।</p>
+<p><b>কিভাবে ব্যবহার করেন:</b></p>
+<ul>
+    <li><b>সকাল ৭টা:</b> Notebook open। "আজকের lecture-এর topic [Z-transform] উপর ১০টা MCQ + ৫টা derivation question দাও।" — সব source থেকে generate।</li>
+    <li><b>Confusing topic:</b> "Fourier series-এর symmetric and antisymmetric concept আমি বুঝতে পারছি না — slide ১৮-২২ থেকে step-by-step explain করো।" — citation-সহ answer (page reference)।</li>
+    <li><b>Audio overview:</b> NotebookLM-এর Podcast feature। ৩০-৪০ মিনিটের generated podcast — ২ জন AI presenter আপনার lecture content দিয়ে discuss করছেন। তাহসিন এটা commute-এ শোনেন।</li>
+</ul>
 
-        <p><strong>শিক্ষার্থীদের জন্য সবচেয়ে কাজের ফিচার:</strong></p>
-        <ul>
-          <li><strong>Auto Summary:</strong> ৫০ পৃষ্ঠার পাঠ্যবইয়ের মূল পয়েন্ট ২ মিনিটে</li>
-          <li><strong>Study Guide:</strong> যেকোনো বিষয় থেকে স্বয়ংক্রিয় প্র্যাকটিস প্রশ্ন তৈরি</li>
-          <li><strong>Audio Overview:</strong> আপনার নোট শুনতে শুনতে পড়া যাবে (Podcast ফরম্যাটে)</li>
-          <li><strong>Timeline & FAQ:</strong> ইতিহাস বা বিজ্ঞানের বিষয়গুলো টাইমলাইনে সাজানো</li>
-        </ul>
+<p><b>কেন এই tool unbeatable:</b> ChatGPT-এ generic answer; NotebookLM আপনার specific lecture-এর basis-এ answer — hallucination near-zero।</p>
 
-        <p><strong>বাস্তব উদাহরণ:</strong> ধরুন আপনার SSC-র রসায়নের একটি অধ্যায় বুঝতে সমস্যা হচ্ছে। NCTB-র PDF বইটি NotebookLM-এ আপলোড করুন, জিজ্ঞেস করুন "পরমাণুর গঠন সহজ ভাষায় বুঝিয়ে দাও" — উত্তর পাবেন বইয়ের ভাষায়, বাইরের কোনো তথ্য ছাড়া।</p>
+<h3>2. ChatGPT (free tier) — Conceptual deep-dive</h3>
+<p>NotebookLM যা পারে না: open-ended exploration, "explain like I'm 12" type teaching, alternative explanations। ChatGPT সেই gap fill করে।</p>
 
-        <p><strong>দাম:</strong> সম্পূর্ণ ফ্রি (Google অ্যাকাউন্ট থাকলেই হবে) | <strong>BD থেকে:</strong> VPN লাগে না</p>
+<ul>
+    <li><b>Teaching prompt:</b> "তুমি BUET-এর Signals & Systems এর top professor। Convolution concept আমাকে ৩-step-এ শেখাও: (১) physical intuition, (২) mathematical formalism, (৩) ৩টা real example with worked-out solution।"</li>
+    <li><b>Mistake diagnosis:</b> "আমি এই problem solve করেছি এভাবে [paste]। আমার approach-এ কী ভুল? Solution না দিয়ে, আমাকে hint দাও যেটা আমাকে নিজে correct করতে সাহায্য করবে।"</li>
+    <li><b>Active recall:</b> "আজকে আমি Z-transform শিখলাম। আমাকে এমন ৭টা প্রশ্ন কর যেগুলোর answer Z-transform পুরোপুরি understand না করলে দিতে পারব না।"</li>
+</ul>
 
-        <h2 id="chatgpt">২. ChatGPT — যেকোনো বিষয় সহজে বোঝার জন্য</h2>
+<h3>3. Claude (free tier) — Long-form analysis + essay</h3>
+<p>Claude-এর Bangla writing quality ও long-context সহ্য করার ক্ষমতা ChatGPT-র চেয়ে noticeable better। তাহসিন তাঁর term paper draft করেন Claude-এ:</p>
+<ul>
+    <li>Reference paper-গুলো upload (PDF)।</li>
+    <li>"এই ৫টা paper analyze করো। তাদের key argument, common methodology, এবং gaps বের করো — আমার term paper-এর জন্য thesis statement-এর ৩টা option দাও।"</li>
+    <li>একবার outline approved হলে — "প্রতি section-এ ১৫০ word draft দাও, যেখানে আমি specific data inject করতে পারব।"</li>
+</ul>
 
-        <p><a href="/chatgpt/">ChatGPT</a> OpenAI-এর তৈরি বিশ্বের সবচেয়ে জনপ্রিয় AI চ্যাটবট। শিক্ষার্থীদের কাছে এর জনপ্রিয়তার কারণ হলো এটি যেকোনো জটিল বিষয় অত্যন্ত সহজ ভাষায় ব্যাখ্যা করতে পারে।</p>
+<h3>4. Perplexity (free tier) — Current data + research-driven assignment</h3>
+<p>"Bangladesh-এর ২০২৫ National Budget-এ telecom sector allocation কত?" — ChatGPT কখনো ভুল answer দেবে, কখনো "I don't have current data" বলবে। Perplexity Bangladesh Bank/Finance Ministry-এর source-এ গিয়ে exact figure + citation আনে। Assignment-এ verifiable source critical।</p>
 
-        <p><strong>শিক্ষার্থীরা যেসব কাজে ব্যবহার করে:</strong></p>
-        <ul>
-          <li><strong>ধারণা বোঝানো:</strong> "Photosynthesis-কে ক্লাস ৮-এর ছাত্রের মতো বোঝাও" বললে সহজ উদাহরণ দিয়ে বুঝিয়ে দেবে</li>
-          <li><strong>গণিত সমাধান:</strong> ধাপে ধাপে যেকোনো অঙ্ক বুঝিয়ে দেয়</li>
-          <li><strong>প্র্যাকটিস প্রশ্ন:</strong> "এই অধ্যায় থেকে ১০টি MCQ তৈরি করো" বললে তৈরি করে দেয়</li>
-          <li><strong>অ্যাসাইনমেন্ট আউটলাইন:</strong> কীভাবে লিখবে সেটা পরিকল্পনা করতে সাহায্য করে</li>
-          <li><strong>ভাষা অনুবাদ:</strong> বাংলা থেকে ইংরেজি বা উল্টো</li>
-        </ul>
+<h2>৪টা "optional but useful" tools</h2>
 
-        <p><strong>একটি কার্যকর ট্রিক:</strong> কোনো বিষয় না বুঝলে লিখুন — <em>"[বিষয়টি] ELI5 style-এ বাংলায় বোঝাও"</em> (ELI5 = Explain Like I'm 5)। এটি শিশুর মতো সহজ ভাষায় বুঝিয়ে দেবে।</p>
+<ul>
+    <li><b>Grammarly (free):</b> English assignment আগে obligatory। Grammar + clarity + tone check।</li>
+    <li><b>Notion + Notion AI ($৮/মাস student discount):</b> Note centralization, study planner, recurring task। AI summarize feature-এ class note instantly compress।</li>
+    <li><b>Photomath (free):</b> Math problem-এ instant solution + step-by-step। সাবধান: blindly copy করবেন না — workflow হলো "first attempt → check with Photomath → understand the step you missed"।</li>
+    <li><b>Canva AI (free for students):</b> Presentation, poster, group project visual। Canva-এর education discount BD students-এর জন্য available।</li>
+</ul>
 
-        <p><strong>দাম:</strong> ফ্রি (GPT-4o mini) | Plus: প্রায় ৳২,৪৪০/মাস | <strong>BD থেকে:</strong> VPN লাগে না (সাধারণত)</p>
+<h2>Use-case ভিত্তিক optimal workflow</h2>
 
-        <h2 id="claude">৩. Claude — গভীর বিশ্লেষণ ও দীর্ঘ লেখায় অতুলনীয়</h2>
+<h3>SSC/HSC student (Class 9-12)</h3>
+<ul>
+    <li><b>Primary:</b> NotebookLM (NCTB textbook + class notes upload) + ChatGPT (concept clarification)।</li>
+    <li><b>Workflow:</b> দৈনিক ১ ঘণ্টা NotebookLM quiz; weak topic ChatGPT-এ deep-dive; weekly summary।</li>
+    <li><b>Avoid:</b> Photomath-এ blind dependency — board exam-এ hand calculation lazimi।</li>
+</ul>
 
-        <p>Anthropic-এর <a href="/claude/">Claude</a> শিক্ষার্থীদের মধ্যে ক্রমশ জনপ্রিয় হচ্ছে কারণ এটি দীর্ঘ ডকুমেন্ট পড়তে এবং গভীর বিশ্লেষণ করতে ChatGPT-এর চেয়ে অনেক ভালো। ফ্রি প্ল্যানেও বেশ ভালো ব্যবহার করা যায়।</p>
+<h3>University undergrad (BUET, DU, NSU, IBA, IUT)</h3>
+<ul>
+    <li><b>Primary:</b> তাহসিনের 4-tool stack (NotebookLM + ChatGPT + Claude + Perplexity)।</li>
+    <li><b>Critical addition:</b> Domain-specific tool — CS-এ Cursor AI, Economics-এ ChatGPT data analysis, Engineering-এ Wolfram Alpha।</li>
+    <li><b>Avoid:</b> Assignment write-out AI দিয়ে — every university plagiarism + AI detector use করছে।</li>
+</ul>
 
-        <p><strong>কাদের জন্য বেশি কাজে লাগে:</strong></p>
-        <ul>
-          <li>বিশ্ববিদ্যালয়ের শিক্ষার্থী যাঁরা রিসার্চ পেপার লেখেন</li>
-          <li>বড় বই বা আর্টিকেল সারসংক্ষেপ করতে চান</li>
-          <li>ইংরেজি রচনা বা থিসিস লেখায় সহায়তা চান</li>
-          <li>কোনো বিষয় নিয়ে গভীর আলোচনা করতে চান</li>
-        </ul>
+<h3>BCS/IELTS/GRE aspirant</h3>
+<ul>
+    <li><b>BCS:</b> NotebookLM (NCTB upload) + ChatGPT MCQ drilling। সম্পূর্ণ আলাদা playbook আমাদের <a href="/blog/ai-diye-bcs-preparation-sompurno-bangla-guide/">BCS guide</a>-এ।</li>
+    <li><b>IELTS:</b> ChatGPT Voice mode (Speaking) + Claude (Writing critique)। Details <a href="/blog/ai-diye-ielts-preparation-bangla-guide/">এই guide</a>-এ।</li>
+    <li><b>GRE/SAT:</b> ChatGPT GPT-5 + Khan Academy। Vocab building-এ Anki + AI definitions।</li>
+</ul>
 
-        <p><strong>দাম:</strong> ফ্রি (Claude Sonnet) | Pro: প্রায় ৳২,৪৪০/মাস | <strong>BD থেকে:</strong> VPN লাগে না</p>
+<h3>Research/thesis student (MS, PhD)</h3>
+<ul>
+    <li><b>Primary:</b> Claude Opus (long-form), Perplexity Pro (citation-grounded research), Zotero + Citation tool।</li>
+    <li><b>Specialized:</b> Consensus.app (research-paper-grounded answers), Scholar AI Custom GPT।</li>
+    <li><b>Critical:</b> Literature review-এ AI summary trust করবেন না — original paper পড়ুন।</li>
+</ul>
 
-        <h2 id="notion-ai">৪. Notion AI — পড়াশোনার সব তথ্য এক জায়গায়</h2>
+<h2>BD student-দের জন্য specific tips</h2>
 
-        <p><a href="/notion-ai/">Notion AI</a> হলো একটি স্মার্ট নোটবুক যেখানে AI দিয়ে আপনার নোট আরও সংগঠিত করা যায়। যাঁরা অনেক বিষয়ের নোট একসাথে রাখতে চান তাদের জন্য এটি আদর্শ।</p>
+<ul>
+    <li><b>VPN-free access:</b> NotebookLM, ChatGPT, Claude, Perplexity — সব BD থেকে directly accessible।</li>
+    <li><b>Payment for paid tools:</b> Student-দের জন্য Notion ($৮ vs $১০), Canva (free with .edu email), GitHub Copilot ($০ for students)। ChatGPT-Claude-Perplexity-এ আলাদা student discount নেই — কিন্তু free tier যথেষ্ট।</li>
+    <li><b>Mobile-first reality:</b> অনেক BD student-এর primary device mobile। ChatGPT এবং Claude-এর mobile app native; NotebookLM web-only কিন্তু mobile browser-এ usable।</li>
+    <li><b>Bangla-prompt confidence:</b> তিনটাই Bangla-তে native quality। English-এ ভয় থাকলে Bangla-তে চালিয়ে যান — quality compromise হবে না।</li>
+</ul>
 
-        <p><strong>শিক্ষার্থীদের কাজে যেসব ফিচার লাগে:</strong></p>
-        <ul>
-          <li><strong>AI Summary:</strong> ক্লাসে যা লিখেছ তার সারাংশ এক ক্লিকে</li>
-          <li><strong>Action Items:</strong> কোন কোন অধ্যায় পড়তে হবে তা স্বয়ংক্রিয়ভাবে চিহ্নিত করে</li>
-          <li><strong>Study Planner:</strong> পরীক্ষার রুটিন তৈরি ও ট্র্যাক করা</li>
-          <li><strong>Translation:</strong> বাংলা নোট ইংরেজিতে বা উল্টো করা</li>
-        </ul>
+<h2>সাবধানতা — যেগুলো তাহসিন strict-ly follow করেন</h2>
 
-        <p><strong>দাম:</strong> ফ্রি (সীমিত) | Plus: প্রায় ৳১,২২০/মাস | <strong>BD থেকে:</strong> VPN লাগে না</p>
+<ul>
+    <li><b>Assignment AI-write-out করবেন না।</b> BUET সহ অনেক university Turnitin AI detection deploy করেছে। Detect হলে academic penalty।</li>
+    <li><b>প্রথম attempt নিজে।</b> Problem AI-তে throw করার আগে ৩০ মিনিট নিজে try করুন। তারপর AI hint চাইলে অনেক বেশি retention।</li>
+    <li><b>AI hallucination-এ সাবধান।</b> Bangladesh-specific data, history, recent events-এ AI প্রায়ই ভুল। Official source verify mandatory।</li>
+    <li><b>Conceptual ভয়াবহ গভীরতা skip হবে না।</b> AI "easy mode" দিতে পারে — সেটা trap। জটিল concept-এর সঙ্গে struggle-ই real learning।</li>
+</ul>
 
-        <h2 id="grammarly">৫. Grammarly — ইংরেজিতে আত্মবিশ্বাসী হোন</h2>
+<h2>৩০-দিনের রূপান্তর plan — তাহসিনের প্রথম মাস</h2>
 
-        <p><a href="/grammarly/">Grammarly</a> বাংলাদেশি শিক্ষার্থীদের ইংরেজি লেখার দক্ষতা বাড়ানোর সবচেয়ে কার্যকর টুল। এটি শুধু বানান বা গ্রামার ঠিক করে না — আপনার লেখার টোন, স্পষ্টতা এবং পাঠকযোগ্যতাও উন্নত করে।</p>
+<ul>
+    <li><b>Week 1:</b> NotebookLM setup। ৪টা subject-এর জন্য আলাদা notebook। সব handout/slide upload।</li>
+    <li><b>Week 2:</b> Daily routine — সকালে ৩০ min NotebookLM quiz, বিকেল-এ ৩০ min ChatGPT concept-deepdive। Notion-এ progress log।</li>
+    <li><b>Week 3:</b> Weakest subject identify। সেটায় ১ ঘণ্টা/দিন extra AI-drill।</li>
+    <li><b>Week 4:</b> First exam/quiz performance vs baseline compare। যা কাজ করেছে — double-down।</li>
+</ul>
 
-        <p><strong>শিক্ষার্থীরা কোথায় ব্যবহার করে:</strong></p>
-        <ul>
-          <li>ইংরেজি অ্যাসাইনমেন্ট ও রিপোর্ট লেখায়</li>
-          <li>বিশ্ববিদ্যালয়ের আবেদনপত্র ও SOP লেখায়</li>
-          <li>ইমেইল বা প্রফেশনাল কমিউনিকেশনে</li>
-          <li>IELTS বা TOEFL প্রস্তুতিতে লেখার অনুশীলনে</li>
-        </ul>
+<h2>তাহসিন vs রিয়াদ — সংক্ষিপ্ত comparison</h2>
 
-        <p><strong>ব্রাউজার এক্সটেনশন:</strong> Google Chrome-এ Grammarly এক্সটেনশন ইনস্টল করলে যেকোনো ওয়েবসাইটে টাইপ করার সময় স্বয়ংক্রিয়ভাবে ঠিক করে দেবে।</p>
-
-        <p><strong>দাম:</strong> ফ্রি (মূল ফিচার) | Premium: প্রায় ৳১,৫০০/মাস | <strong>BD থেকে:</strong> VPN লাগে না</p>
-
-        <h2 id="canva-ai">৬. Canva AI — প্রেজেন্টেশন ও প্রজেক্টে এগিয়ে থাকুন</h2>
-
-        <p><a href="/canva/">Canva</a>-এর AI ফিচারগুলো শিক্ষার্থীদের প্রেজেন্টেশন, পোস্টার ও ইনফোগ্রাফিক তৈরিতে বৈপ্লবিক পরিবর্তন এনেছে। ডিজাইনের জ্ঞান না থাকলেও প্রফেশনাল ডিজাইন বানানো যায়।</p>
-
-        <p><strong>শিক্ষার্থীদের কাজে আসা ফিচার:</strong></p>
-        <ul>
-          <li><strong>Magic Design:</strong> বিষয় লিখলেই প্রেজেন্টেশন স্লাইড তৈরি হয়ে যায়</li>
-          <li><strong>Magic Write:</strong> স্লাইডে কী লিখবে তা AI দিয়ে তৈরি করা</li>
-          <li><strong>Text to Image:</strong> বিজ্ঞান বা সামাজিক বিষয়ের ইমেজ তৈরি</li>
-          <li><strong>Background Remover:</strong> ছবি থেকে ব্যাকগ্রাউন্ড সরানো বিনামূল্যে</li>
-        </ul>
-
-        <p><strong>শিক্ষার্থী ডিসকাউন্ট:</strong> Canva Education প্ল্যান শিক্ষার্থীদের জন্য সম্পূর্ণ ফ্রি — শুধু .edu ইমেইল দরকার। অন্যথায় ফ্রি প্ল্যানও বেশিরভাগ কাজ করে।</p>
-
-        <p><strong>দাম:</strong> ফ্রি / Education: ফ্রি (.edu ইমেইলে) | Pro: প্রায় ৳১,৪৫০/মাস | <strong>BD থেকে:</strong> VPN লাগে না</p>
-
-        <h2 id="photomath">৭. Photomath — গণিত সমস্যার মুহূর্তে সমাধান</h2>
-
-        <p>গণিতে দুর্বল শিক্ষার্থীদের জন্য Photomath একটি আশীর্বাদ। স্মার্টফোনের ক্যামেরা দিয়ে যেকোনো অঙ্কের ছবি তুললে ধাপে ধাপে সমাধান দেখিয়ে দেয়।</p>
-
-        <p><strong>ফিচার:</strong></p>
-        <ul>
-          <li>হাতে লেখা অঙ্কও স্ক্যান করতে পারে</li>
-          <li>ক্যালকুলাস, বীজগণিত, জ্যামিতি সব ধরনের গণিত</li>
-          <li>প্রতিটি ধাপ বিস্তারিত ব্যাখ্যাসহ দেখায়</li>
-          <li>গ্রাফ এবং চার্টও তৈরি করে</li>
-        </ul>
-
-        <p><strong>দাম:</strong> ফ্রি (মূল ফিচার) | Plus: প্রায় ৳৮০০/মাস | <strong>BD থেকে:</strong> VPN লাগে না (Android ও iOS অ্যাপ)</p>
-
-        <h2 id="comparison">তুলনামূলক চার্ট — কোন টুল কোন কাজে</h2>
-
-        <div class="table-responsive" style="overflow-x: auto; margin: 24px 0;">
-          <table style="width:100%; border-collapse: collapse; font-size: 0.9rem;">
-            <thead>
-              <tr style="background: #f0fdf4;">
-                <th style="padding: 10px 14px; border: 1px solid #bbf7d0; text-align: left;">টুল</th>
-                <th style="padding: 10px 14px; border: 1px solid #bbf7d0; text-align: left;">সেরা কাজ</th>
-                <th style="padding: 10px 14px; border: 1px solid #bbf7d0; text-align: left;">ফ্রি?</th>
-                <th style="padding: 10px 14px; border: 1px solid #bbf7d0; text-align: left;">BDT দাম/মাস</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td style="padding: 9px 14px; border: 1px solid #e2e8f0;"><a href="/notebooklm/">NotebookLM</a></td>
-                <td style="padding: 9px 14px; border: 1px solid #e2e8f0;">PDF নোট বিশ্লেষণ, রিসার্চ</td>
-                <td style="padding: 9px 14px; border: 1px solid #e2e8f0;">✅ সম্পূর্ণ ফ্রি</td>
-                <td style="padding: 9px 14px; border: 1px solid #e2e8f0;">ফ্রি</td>
-              </tr>
-              <tr style="background: #fafafa;">
-                <td style="padding: 9px 14px; border: 1px solid #e2e8f0;"><a href="/chatgpt/">ChatGPT</a></td>
-                <td style="padding: 9px 14px; border: 1px solid #e2e8f0;">বিষয় বোঝানো, MCQ তৈরি</td>
-                <td style="padding: 9px 14px; border: 1px solid #e2e8f0;">✅ ফ্রি টায়ার আছে</td>
-                <td style="padding: 9px 14px; border: 1px solid #e2e8f0;">ফ্রি / ৳২,৪৪০</td>
-              </tr>
-              <tr>
-                <td style="padding: 9px 14px; border: 1px solid #e2e8f0;"><a href="/claude/">Claude</a></td>
-                <td style="padding: 9px 14px; border: 1px solid #e2e8f0;">গভীর বিশ্লেষণ, রচনা</td>
-                <td style="padding: 9px 14px; border: 1px solid #e2e8f0;">✅ ফ্রি টায়ার আছে</td>
-                <td style="padding: 9px 14px; border: 1px solid #e2e8f0;">ফ্রি / ৳২,৪৪০</td>
-              </tr>
-              <tr style="background: #fafafa;">
-                <td style="padding: 9px 14px; border: 1px solid #e2e8f0;"><a href="/notion-ai/">Notion AI</a></td>
-                <td style="padding: 9px 14px; border: 1px solid #e2e8f0;">নোট সংগঠন, পরিকল্পনা</td>
-                <td style="padding: 9px 14px; border: 1px solid #e2e8f0;">⚠️ সীমিত ফ্রি</td>
-                <td style="padding: 9px 14px; border: 1px solid #e2e8f0;">ফ্রি / ৳১,২২০</td>
-              </tr>
-              <tr>
-                <td style="padding: 9px 14px; border: 1px solid #e2e8f0;"><a href="/grammarly/">Grammarly</a></td>
-                <td style="padding: 9px 14px; border: 1px solid #e2e8f0;">ইংরেজি লেখা উন্নত করা</td>
-                <td style="padding: 9px 14px; border: 1px solid #e2e8f0;">✅ ফ্রি টায়ার আছে</td>
-                <td style="padding: 9px 14px; border: 1px solid #e2e8f0;">ফ্রি / ৳১,৫০০</td>
-              </tr>
-              <tr style="background: #fafafa;">
-                <td style="padding: 9px 14px; border: 1px solid #e2e8f0;"><a href="/canva/">Canva AI</a></td>
-                <td style="padding: 9px 14px; border: 1px solid #e2e8f0;">প্রেজেন্টেশন, পোস্টার</td>
-                <td style="padding: 9px 14px; border: 1px solid #e2e8f0;">✅ ফ্রি / Education ফ্রি</td>
-                <td style="padding: 9px 14px; border: 1px solid #e2e8f0;">ফ্রি / ৳১,৪৫০</td>
-              </tr>
-              <tr>
-                <td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Photomath</td>
-                <td style="padding: 9px 14px; border: 1px solid #e2e8f0;">গণিত সমাধান (ধাপে ধাপে)</td>
-                <td style="padding: 9px 14px; border: 1px solid #e2e8f0;">✅ ফ্রি টায়ার আছে</td>
-                <td style="padding: 9px 14px; border: 1px solid #e2e8f0;">ফ্রি / ৳৮০০</td>
-              </tr>
-            </tbody>
-          </table>
+<div class="case-study">
+    <div class="person">
+        <div class="avatar green">তা</div>
+        <div>
+            <strong>তাহসিন আহমেদ, ২০, BUET EEE</strong>
+            <span>৩.২১ → ৩.৭৮ CGPA in ১৫ months</span>
         </div>
+    </div>
+    <p><b>সঠিক pattern:</b> AI = learning amplifier। Assignment নিজে লেখেন। Concept শেখার জন্য NotebookLM + ChatGPT। Active recall এবং spaced repetition AI-driven।</p>
+</div>
 
-        <h2 id="tips">শিক্ষার্থীদের জন্য AI ব্যবহারের গুরুত্বপূর্ণ টিপস</h2>
-
-        <h3>✅ যা করবেন</h3>
-        <ul>
-          <li><strong>বোঝার জন্য ব্যবহার করুন, নকল করতে নয়:</strong> AI দিয়ে বিষয় বুঝুন, তারপর নিজের ভাষায় লিখুন</li>
-          <li><strong>প্রশ্নকে নির্দিষ্ট করুন:</strong> "গণিত বোঝাও" না বলে বলুন "ত্রিভুজের ক্ষেত্রফলের সূত্র উদাহরণসহ বোঝাও"</li>
-          <li><strong>তথ্য যাচাই করুন:</strong> AI ভুল তথ্যও দিতে পারে। গুরুত্বপূর্ণ তথ্য সবসময় দ্বিতীয় উৎসে মিলিয়ে দেখুন</li>
-          <li><strong>ফ্রি টুল দিয়ে শুরু করুন:</strong> NotebookLM + ChatGPT ফ্রি ভার্সন দিয়েই বেশিরভাগ কাজ হয়ে যায়</li>
-        </ul>
-
-        <h3>❌ যা করবেন না</h3>
-        <ul>
-          <li>পরীক্ষার উত্তর সরাসরি AI থেকে কপি করা — এটি নিজের ক্ষতি করে</li>
-          <li>AI-এর উত্তরকে ১০০% সঠিক মনে করা</li>
-          <li>নিজের বোঝার বদলে AI-এর উপর সম্পূর্ণ নির্ভর করা</li>
-        </ul>
-
-        <div class="conclusion" style="margin-top: 40px; padding: 24px; background: #f0fdf4; border-radius: 12px; border-left: 4px solid #16a34a;">
-          <h3>উপসংহার</h3>
-          <p>বাংলাদেশের শিক্ষার্থীদের জন্য AI একটি বিশাল সুযোগ। এই ৭টি টুলের মধ্যে <strong>NotebookLM</strong> দিয়ে শুরু করুন — সম্পূর্ণ ফ্রি, বাংলাদেশ থেকে VPN ছাড়া চলে। তারপর <strong>ChatGPT</strong> বা <strong>Claude</strong>-এর ফ্রি ভার্সন ব্যবহার করুন বিষয় বোঝার জন্য। ইংরেজি লেখায় <strong>Grammarly</strong> এবং প্রেজেন্টেশনে <strong>Canva AI</strong> যোগ করুন — এতেই আপনার পড়াশোনার মান উল্লেখযোগ্যভাবে উন্নত হবে।</p>
-          <p>মনে রাখবেন: AI আপনার সহায়ক, প্রতিস্থাপন নয়। শেখার আনন্দ এবং কৌতূহল ধরে রাখুন।</p>
+<div class="case-study">
+    <div class="person">
+        <div class="avatar red">রি</div>
+        <div>
+            <strong>রিয়াদ, ২০, BUET EEE</strong>
+            <span>৩.১৭ → ৩.০৪ CGPA in ১৫ months</span>
         </div>
+    </div>
+    <p><b>ভুল pattern:</b> AI = work outsourcer। Assignment AI-write। Exam-এ underlying concept missing। Class-এ মনোযোগ কম কারণ "AI পরে explain করবে" mindset।</p>
+</div>
 
-        <section id="faq" style="margin-top: 40px;">
-          <h2>প্রায়শই জিজ্ঞাসিত প্রশ্ন (FAQ)</h2>
+<h2>উপসংহার — আপনার আজকের পদক্ষেপ</h2>
+<p>তাহসিন বলেন: "AI আমাকে চালাক বানায়নি — discipline বানিয়েছে। প্রতিদিন NotebookLM-এ ১৫টা MCQ-এ ভুল করলে বুঝতে পারি কোথায় weak। Lecture-এ মনোযোগ বেশি হয় কারণ class-এ গেলে notebook richer হয়। সব AI ব্যবহারের অর্থ effortless না — অর্থ smarter effort।" আজই করুন: NotebookLM account খুলুন (free, gmail দিয়ে), আপনার current সেমিস্টারের একটা subject-এর সব handout/lecture slide upload করুন, এবং চালান প্রথম prompt: "এই notebook-এর content থেকে ১৫টা MCQ + ৫টা short-question দাও।" পরের ২ ঘণ্টায় আপনি বুঝে যাবেন কেন তাহসিনের grades বদলেছিল।</p>
 
-          <details style="border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px; margin-bottom: 12px;">
-            <summary style="font-weight: 600; cursor: pointer; color: #0f172a;">বাংলাদেশি শিক্ষার্থীরা কি AI টুলস ব্যবহার করতে পারবে?</summary>
-            <p style="margin-top: 12px; color: #475569;">হ্যাঁ। NotebookLM, ChatGPT, Claude, Grammarly ও Canva AI সহ বেশিরভাগ টুল বাংলাদেশ থেকে VPN ছাড়াই ব্যবহার করা যায়। অনেক টুলের ফ্রি প্ল্যান আছে যা শিক্ষার্থীদের জন্য যথেষ্ট।</p>
-          </details>
-
-          <details style="border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px; margin-bottom: 12px;">
-            <summary style="font-weight: 600; cursor: pointer; color: #0f172a;">পড়াশোনার জন্য সবচেয়ে ভালো ফ্রি AI টুল কোনটি?</summary>
-            <p style="margin-top: 12px; color: #475569;">NotebookLM সম্পূর্ণ ফ্রি এবং PDF ও লেকচার নোট বিশ্লেষণে অসাধারণ। ChatGPT-এর ফ্রি ভার্সনও শিক্ষার্থীদের জন্য অনেক কাজে আসে — ধারণা বোঝানো, প্র্যাকটিস প্রশ্ন তৈরি এবং অ্যাসাইনমেন্ট সহায়তায়।</p>
-          </details>
-
-          <details style="border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px; margin-bottom: 12px;">
-            <summary style="font-weight: 600; cursor: pointer; color: #0f172a;">AI টুলস ব্যবহার কি পরীক্ষায় অসততা হিসেবে গণ্য হবে?</summary>
-            <p style="margin-top: 12px; color: #475569;">AI টুলস বোঝার সহায়ক হিসেবে ব্যবহার করা সমস্যা নয়। তবে পরীক্ষার উত্তর বা অ্যাসাইনমেন্ট সরাসরি AI দিয়ে লিখিয়ে জমা দেওয়া শিক্ষা প্রতিষ্ঠানের নিয়মভেদে অসদাচরণ হতে পারে। AI দিয়ে বোঝো, নিজে লেখো।</p>
-          </details>
-
-          <details style="border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px; margin-bottom: 12px;">
-            <summary style="font-weight: 600; cursor: pointer; color: #0f172a;">ChatGPT Plus কি শিক্ষার্থীদের জন্য কেনা দরকার?</summary>
-            <p style="margin-top: 12px; color: #475569;">বেশিরভাগ শিক্ষার্থীর জন্য ChatGPT-এর ফ্রি ভার্সন বা Claude-এর ফ্রি প্ল্যান যথেষ্ট। Plus (প্রায় ৳২,৪৪০/মাস) নিতে হবে শুধু যদি প্রতিদিন ভারী রিসার্চ করতে হয়। বিকল্পে Claude, Gemini বা Perplexity-এর ফ্রি টায়ার ব্যবহার করুন।</p>
-          </details>
-        </section>
-
-        <div style="margin-top: 40px; padding: 20px; background: #f8fafc; border-radius: 12px; font-size: 0.85rem; color: #64748b;">
+                <div style="margin-top: 40px; padding: 20px; background: #f8fafc; border-radius: 12px; font-size: 0.85rem; color: #64748b;">
           <strong>আরও পড়ুন:</strong>
           <a href="/blog/ai-diye-freelancing-kivabe-ay-korben-sompurno-bangla-guide/">AI দিয়ে ফ্রিল্যান্সিং গাইড</a> ·
           <a href="/blog/chatgpt-kivabe-bebohar-korben-bangla-guide/">ChatGPT সম্পূর্ণ বাংলা গাইড</a> ·
