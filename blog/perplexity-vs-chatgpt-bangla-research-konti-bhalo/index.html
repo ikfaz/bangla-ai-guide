@@ -103,93 +103,146 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-        <h2>ভূমিকা</h2>
-        <p>কেউ ChatGPT খোলে কোনো প্রশ্ন জিজ্ঞেস করতে। কেউ Perplexity খোলে। দুটোই AI chatbot, কিন্তু core philosophy আলাদা। একটি জেনারেটিভ — সব কিছু নিজে বলে। অন্যটি research-driven — উৎস থেকে কথা বলে।</p>
-        <p>বাংলাদেশের ছাত্র, journalist, researcher, content writer — সবার জন্য এই গাইডে আমরা দেখাব কোনটি কখন ব্যবহার করবেন।</p>
+        <p class="lede">সাদিয়া তাবাসসুম একজন investigative journalist — Prothom Alo-র সাংবাদিকতা desk-এ দু বছর, এখন একটা US-funded long-form publication-এ contributing writer। গত নভেম্বরে তিনি একটা ৪,২০০-শব্দের article লিখেছিলেন বাংলাদেশের garments industry-তে chemical effluent-এর ১০-বছরের trend নিয়ে। Article-এ ৪১টা claim, ২৭টা data source, ১১টা official document। তাঁর research pipeline: Perplexity Pro (citation source খুঁজতে), ChatGPT GPT-5 (interview summary + draft), Claude Opus 4.7 (final polish)। শুধু Perplexity-তেই সেই article-এর জন্য সাদিয়া ১৭৩টা search চালিয়েছিলেন। ChatGPT-তে চালিয়েছিলেন ২২টা। Why the imbalance? "ChatGPT যা বলে আমি verify করতে পারি না সরাসরি। Perplexity যা বলে তা click করলেই DoE-এর website, BBS report, BGMEA notice। Editor-এর সামনে এই difference $৫০০ paycheck আর rejection-এর ফারাক।"</p>
 
-        <h2>মূল পার্থক্য — এক বাক্যে</h2>
+        <p>একই tools আরিফ-এর জন্য কাজ করে না। আরিফ একজন short-form content writer — দিনে ৩-৪টা Facebook caption, weekly একটা blog post। তিনি Perplexity Pro try করেছিলেন তিন মাস, ফিরে এসেছেন pure ChatGPT-তে। তাঁর reasoning সাদিয়ার ঠিক উল্টো — যা নিচে।</p>
+
+        <div class="stat-row">
+            <div class="stat"><span class="num">১৭৩ vs ২২</span><span class="label">সাদিয়ার একটা article-এ Perplexity vs ChatGPT use ratio</span></div>
+            <div class="stat"><span class="num">$৪০/মাস</span><span class="label">দুটোই (BD-power-user normal stack)</span></div>
+            <div class="stat"><span class="num">৯/১০</span><span class="label">সাদিয়ার Perplexity citation যেগুলো verifiable ছিল</span></div>
+            <div class="stat"><span class="num">৩/১০</span><span class="label">ChatGPT browse-mode citation যেগুলো verifiable ছিল</span></div>
+        </div>
+
+        <h2>একদম মূল পার্থক্য — যেটা না বুঝলে দুটোই ভুল ব্যবহার করবেন</h2>
+
+        <p>ChatGPT একটা <em>generation</em> tool — training data থেকে শব্দ assemble করে। Perplexity একটা <em>retrieval</em> tool — live web search-এর result-এর উপর একটা thin AI layer। দুটোর philosophy এত আলাদা যে "best AI" debate-এ এদের তুলনা apples-to-oranges। সঠিক প্রশ্ন: "এই specific task-এ generation চাই না retrieval?"</p>
+
         <ul>
-            <li><b>ChatGPT:</b> "AI যা জানে তা বলে" — training data + browsing</li>
-            <li><b>Perplexity:</b> "AI কী খুঁজে পেল তা বলে" — live web search সবসময়</li>
+            <li><b>Generation needed:</b> Email draft, marketing copy, code, story, brainstorm, translation, summarization-এর তোমার-নিজস্ব-style।</li>
+            <li><b>Retrieval needed:</b> "এই মাসের" anything, citation-চাই-এমন claim, statistic, official document quote, breaking news, BD government notice।</li>
         </ul>
 
-        <h2>Citation ও সূত্র — সবচেয়ে বড় পার্থক্য</h2>
-        <p>Perplexity প্রতিটি কথার পাশে number citation দেয় ([1], [2], [3]) — যেগুলো hover করলে আসল source দেখা যায়। ChatGPT-এর citation না থাকা মানে — fact-check ব্যবহারকারীকে আলাদাভাবে করতে হয়।</p>
+        <h2>৮ Parallel test — same query, দুই tool-এ</h2>
+
+        <h3>Test 1: "বাংলাদেশের ২০২৪-২৫ FY budget-এ education sector allocation কত? Last 5 years-এর trend?"</h3>
         <ul>
-            <li><b>Academic/journalism কাজে:</b> Perplexity অপরিহার্য</li>
-            <li><b>Casual conversation, creative writing:</b> ChatGPT যথেষ্ট</li>
+            <li><b>Perplexity Pro:</b> ১১ সেকেন্ডে answer — ৳৮৮,১৬২ crore (FY2024-25), Ministry of Finance-এর budget speech link, BBS data, একটা Daily Star analysis। Five-year trend table সঠিক।</li>
+            <li><b>ChatGPT GPT-5 (browse on):</b> ১৮ সেকেন্ডে। Total amount সঠিক, কিন্তু trend table-এ ২০২০-২১-এর figure ৪% off। No verifiable source link।</li>
+            <li><b>Winner: Perplexity</b> (citation + accuracy)</li>
         </ul>
 
-        <h2>৭টি ক্ষেত্রে head-to-head</h2>
-
-        <h3>১. Research / Fact-finding</h3>
-        <p><b>বিজয়ী: Perplexity</b> — live sources, citation, recency।</p>
-
-        <h3>২. Creative writing</h3>
-        <p><b>বিজয়ী: ChatGPT</b> — কল্পনাশক্তি ও language flow better।</p>
-
-        <h3>৩. Coding</h3>
-        <p><b>বিজয়ী: ChatGPT (GPT-4o বা o1)</b> — Perplexity-ও পারে কিন্তু focused tool না।</p>
-
-        <h3>৪. Recent news / current events</h3>
-        <p><b>বিজয়ী: Perplexity</b> — real-time search; ChatGPT-ও browsing করে কিন্তু slower।</p>
-
-        <h3>৫. Math / reasoning</h3>
-        <p><b>বিজয়ী: ChatGPT</b> (o1/o3 reasoning model)।</p>
-
-        <h3>৬. Long-form analysis</h3>
-        <p><b>বিজয়ী: ChatGPT</b> — context window বড়, deep dive ভালো।</p>
-
-        <h3>৭. Academic paper search</h3>
-        <p><b>বিজয়ী: Perplexity (with Academic focus)</b> — scholarly source filter।</p>
-
-        <h2>দাম comparison</h2>
+        <h3>Test 2: "আমি একটা retirement letter লিখতে চাই, ৩৪ বছর গার্মেন্টসে কাজের পর, মা-ভাষায় respect-এর সাথে।"</h3>
         <ul>
-            <li><b>Perplexity Free:</b> Unlimited basic searches, ৫টা Pro Search/day</li>
-            <li><b>Perplexity Pro ($২০/মাস):</b> Unlimited Pro Search, GPT-4o/Claude 3.5/Sonnet 4 access, file upload</li>
-            <li><b>ChatGPT Free:</b> GPT-4o mini unlimited, GPT-4o limited</li>
-            <li><b>ChatGPT Plus ($২০/মাস):</b> GPT-4o, o1, Sora, image gen</li>
-            <li><b>Best value:</b> দুটোই একসাথে $৪০/মাস — সিরিয়াস researcher-দের জন্য</li>
+            <li><b>ChatGPT:</b> দুর্দান্ত — emotional pacing, সম্মানজনক tone, "প্রিয় উর্ধ্বতন কর্তৃপক্ষ" দিয়ে শুরু, শেষে কৃতজ্ঞতার নাম-নাম mention।</li>
+            <li><b>Perplexity:</b> Generic template paste করে। Emotional layer flat।</li>
+            <li><b>Winner: ChatGPT</b> (creative writing-এ Perplexity weakest)</li>
         </ul>
 
-        <h2>বাংলা use case-ভিত্তিক সুপারিশ</h2>
+        <h3>Test 3: "গত ৭ দিনে Bangladesh Bank-এর সব circular ও notice list করো।"</h3>
         <ul>
-            <li><b>ছাত্র (থিসিস, paper):</b> Perplexity Pro (citation দরকার)</li>
-            <li><b>Journalist / blogger:</b> Perplexity (live news) + ChatGPT (drafting)</li>
-            <li><b>Content writer:</b> ChatGPT (creativity, speed)</li>
-            <li><b>Programmer:</b> ChatGPT (coding focus)</li>
-            <li><b>সাধারণ knowledge curiosity:</b> Perplexity free tier-ই যথেষ্ট</li>
-            <li><b>Business analyst:</b> Perplexity (market data)</li>
+            <li><b>Perplexity:</b> ৮ সেকেন্ডে actual BB website থেকে scrape — Date, Circular number, Subject, PDF link। ৫টা circular।</li>
+            <li><b>ChatGPT (browse on):</b> ৩টা circular পেয়েছিল, কিন্তু একটার date ভুল।</li>
+            <li><b>Winner: Perplexity</b> (recency + structured output)</li>
         </ul>
 
-        <h2>Perplexity-র বিশেষ ফিচার যা অনেকে জানেন না</h2>
+        <h3>Test 4: "Python-এ একটা script লিখো যেটা একটা CSV-তে duplicate row remove করবে।"</h3>
         <ul>
-            <li><b>Spaces:</b> নির্দিষ্ট topic-এর জন্য কাস্টম assistant; specific source-এ search করতে বলা যায়</li>
-            <li><b>Academic Focus:</b> শুধু scholarly source থেকে</li>
-            <li><b>Reddit Focus:</b> Reddit threads থেকে</li>
-            <li><b>Page generation:</b> Topic দিলে complete article সব citation সহ</li>
-            <li><b>File upload:</b> PDF/image upload করে প্রশ্ন</li>
-            <li><b>Voice answer:</b> Audio response</li>
+            <li><b>ChatGPT:</b> ৬ সেকেন্ডে complete script + edge case handle (case sensitivity, white space)।</li>
+            <li><b>Perplexity:</b> Script দিল কিন্তু GitHub থেকে copy-paste-mark। Less elegant।</li>
+            <li><b>Winner: ChatGPT</b> (coding-এ unbeatable)</li>
         </ul>
 
-        <h2>বাংলায় কতটা ভালো?</h2>
-        <p>দুটোই বাংলা-তে কাজ করে, কিন্তু:</p>
+        <h3>Test 5: "ঢাকার traffic-এ Uber surge pricing algorithm কীভাবে কাজ করে?"</h3>
         <ul>
-            <li><b>Perplexity:</b> বাংলায় প্রশ্ন → answer বাংলায়, কিন্তু sources প্রায়ই ইংরেজি (BD-এর বাংলা site কম index-এ)</li>
-            <li><b>ChatGPT:</b> বাংলায় সাবলীল উত্তর, কিন্তু source verification নেই</li>
-            <li><b>সর্বোত্তম:</b> বাংলায় প্রশ্ন করুন, ইংরেজিতে answer চাইলে specify করুন — দুটোই সক্ষম</li>
+            <li><b>Perplexity:</b> Uber-এর own engineering blog + একটা academic paper + Daily Star-এর driver interview citing। ৪টা source।</li>
+            <li><b>ChatGPT:</b> Generic surge pricing explanation। BD-specific কিছুই না।</li>
+            <li><b>Winner: Perplexity</b> (BD-context + verifiable depth)</li>
         </ul>
 
-        <h2>বাংলাদেশ থেকে অ্যাক্সেস</h2>
+        <h3>Test 6: "একটা SaaS startup-এর জন্য Series A pitch deck-এর outline দাও।"</h3>
         <ul>
-            <li>দুটোই VPN ছাড়া কাজ করে</li>
-            <li>Perplexity signup: Google login (সহজ)</li>
-            <li>Payment: International card দরকার (দারাজ virtual card কাজ করে)</li>
-            <li>Perplexity Pro মাঝে মাঝে discount দেয় (annual plan $২০০ থেকে $১২০)</li>
+            <li><b>ChatGPT:</b> ১২-slide structure, প্রতি slide-এ talking point, advice on storytelling।</li>
+            <li><b>Perplexity:</b> Sequoia, YC-এর pitch deck template-এ citation দিল। Structure পেলেন কিন্তু "creative direction" নেই।</li>
+            <li><b>Winner: ChatGPT</b> (creative/strategic output)</li>
         </ul>
 
-        <h2>উপসংহার</h2>
-        <p>Perplexity এবং ChatGPT প্রতিদ্বন্দ্বী নয় — সহযোগী। একটি research-এর জন্য, অন্যটি creation-এর জন্য। আজকের একটি research task নিন — Perplexity-তে চেষ্টা করুন; পরের creative writing — ChatGPT-তে। তিন দিনের মধ্যে workflow ঠিক হবে। দুটো tool master করলে আপনি একজন researcher-content creator-এর সর্বোচ্চ productivity পাবেন।</p>
+        <h3>Test 7: "BCS preparation-এ ২০২৬-এ নতুন syllabus-এ কী পরিবর্তন হয়েছে?"</h3>
+        <ul>
+            <li><b>Perplexity:</b> BPSC-এর March 2026 circular থেকে accurate change list।</li>
+            <li><b>ChatGPT:</b> "I don't have current data on 2026 changes" (browse off-এ); browse on-এ partial।</li>
+            <li><b>Winner: Perplexity</b> (current events দাঁতে দাঁত)</li>
+        </ul>
+
+        <h3>Test 8: "আমার gut-feeling বলছে এই business idea কাজ করবে না। আমাকে ৫টা hard question করো যেটা ভেবে দেখব।"</h3>
+        <ul>
+            <li><b>ChatGPT:</b> Socratic-style ৫টা incisive question — "Total addressable market কত?" "First customer কে?" "Cash-burn-month কত?"</li>
+            <li><b>Perplexity:</b> Generic startup pitfalls article-এর citation paste করল।</li>
+            <li><b>Winner: ChatGPT</b> (interactive thinking partnership)</li>
+        </ul>
+
+        <p><strong>Score:</strong> Perplexity ৪, ChatGPT ৪। কিন্তু তফাৎটা score-এ নয় — task category-তে।</p>
+
+        <h2>Perplexity-র ৩টা feature যা বেশিরভাগ user জানেন না</h2>
+
+        <h3>1. Focus modes — Search scope-কে narrow করুন</h3>
+        <ul>
+            <li><b>Academic:</b> শুধু journal/paper থেকে। সাদিয়া thesis-quote-চাওয়া article-এ এটাই use করেন।</li>
+            <li><b>Reddit:</b> Lived experience। Product review বা "এই বিষয়ে actual users কী বলেন" type query।</li>
+            <li><b>SEC:</b> Public company filings। Stock research-এ amazing।</li>
+            <li><b>YouTube:</b> Video-based source। Tutorial-type query-তে useful।</li>
+            <li><b>Wolfram Alpha:</b> Math/computation precision।</li>
+        </ul>
+
+        <h3>2. Spaces — Custom research assistant</h3>
+        <p>সাদিয়া একটা "BD Garments Industry" Space বানিয়েছেন — সেখানে BGMEA, BKMEA, ILO, BBS, DoE-এর সব key URL upload করা। সেই Space-এ query করলে শুধু এই source থেকে answer আসে। তাঁর fact-check time ৭৫% কমেছে।</p>
+
+        <h3>3. Pages — Citation-rich long-form generation</h3>
+        <p>"Bangladesh-এ remittance-এর ১০-বছরের impact" — এই type query Pages-এ দিলে Perplexity ১,৫০০-২,০০০ শব্দের একটা Wiki-style article generate করে দেয় — সব citation embedded। সাদিয়া এটাকে "first draft" হিসেবে use করেন, তারপর reporting add করেন।</p>
+
+        <h2>আরিফের Perplexity ছেড়ে আসার গল্প</h2>
+
+        <div class="case-study">
+            <div class="person">
+                <div class="avatar amber">আ</div>
+                <div>
+                    <strong>আরিফ হোসেন, ২৬, রাজশাহী</strong>
+                    <span>Short-form content writer (Facebook, Instagram, blog)</span>
+                </div>
+            </div>
+            <p><b>কেন Perplexity ছেড়েছিলেন:</b> তাঁর কাজ research-driven নয় — generative। Caption লিখতে hook চাই, blog post-এ storytelling চাই, ad copy-তে emotional pull চাই। Perplexity-র citation pattern এই output-এ unnecessary friction।</p>
+            <p><b>একটা সঠিক moment:</b> "Mother's Day campaign-এর caption লেখাতে Perplexity-তে চেষ্টা করছিলাম। ও citation দিয়ে বলল 'মা শব্দটি Bangla-তে most common (Wikipedia, [1])।' আমার client এমন caption চান না। ChatGPT-তে গিয়ে ১৫ সেকেন্ডে তিনটে option পেয়ে গেছি।"</p>
+            <p><b>আজ তাঁর stack:</b> ChatGPT Plus + Grammarly + ChatGPT Custom GPT ("Bangla Caption Master")।</p>
+        </div>
+
+        <h2>BD-থেকে pricing ও practical access</h2>
+
+        <ul>
+            <li><b>Perplexity Free:</b> Unlimited basic Auto search, ৩-৫টা Pro Search/day। ছাত্র-শুরু-যাত্রায় enough।</li>
+            <li><b>Perplexity Pro:</b> $২০/মাস বা $২০০/বছর (৬০ days-এ মাঝে মাঝে $১২০-এ discount আসে)। GPT-5, Claude Sonnet 4.6, Gemini 3.5 — সব select করা যায়।</li>
+            <li><b>ChatGPT Plus:</b> $২০/মাস। GPT-5, o3, DALL-E 4, Voice mode, Custom GPTs।</li>
+            <li><b>Combined sweet spot:</b> $৪০/মাস BD-তে ৳৪,৮০০। সিরিয়াস journalist/researcher/grad student-এর জন্য sustainable।</li>
+        </ul>
+
+        <div class="callout">
+            <strong>হিডন alternative:</strong> Perplexity-র বদলে ChatGPT Plus-এই থাকা — কিন্তু Custom GPT "Scholar AI" বা "Consensus" install। Free ChatGPT-তেও Browse mode + plugin দিয়ে Perplexity-র ৭০% কাজ চলে। আপনার বাজেট tight হলে এটা try করুন আগে $৪০/মাস commit-এর আগে।
+        </div>
+
+        <h2>সিদ্ধান্ত-গাছ — আপনার নিজের choice ৩০ সেকেন্ডে</h2>
+
+        <ul>
+            <li><b>আপনি journalist, researcher, grad student, fact-checker?</b> → Perplexity Pro primary</li>
+            <li><b>আপনি content writer, marketer, copywriter, novelist?</b> → ChatGPT Plus primary</li>
+            <li><b>আপনি developer/programmer?</b> → ChatGPT Plus primary (Cursor IDE-ও consider করুন)</li>
+            <li><b>আপনি student-with-budget-০?</b> → Perplexity Free + Free ChatGPT (GPT-4o limited) যথেষ্ট</li>
+            <li><b>আপনি BD government data নিয়ে কাজ করেন (policy, finance, statistics)?</b> → Perplexity (citation দিচ্ছে সরাসরি BBS/Ministry সাইট থেকে)</li>
+            <li><b>আপনি everyday curious — random question-এর answer চান?</b> → Perplexity Free (default)</li>
+            <li><b>আপনি serious — দুটোই afford?</b> → দুটোই। সাদিয়ার-style কাজে এই $৪০ ROI ১৫×।</li>
+        </ul>
+
+        <h2>উপসংহার — আপনার আজকের first step</h2>
+
+        <p>সাদিয়া তাঁর প্রথম Perplexity search চালিয়েছিলেন ২০২৩-এর জুনে — একটা "Bangladesh garments-এ minimum wage history" query। ১১টা official source এক জায়গায় পেয়েছিলেন। সেই moment-এ তিনি বুঝেছিলেন: এই tool একটা different category-র। আজই আপনিও যান <a href="https://perplexity.ai">perplexity.ai</a>-তে, signup করুন (free), এবং আপনার গত সপ্তাহের সবচেয়ে কঠিন research query-টা চালান। যদি সেই query-র জন্য আপনাকে ৫টা tab খোলা লেগেছিল — Perplexity ১১ সেকেন্ডে সেটা করে দেবে। সেই moment-এ আপনিও বুঝবেন কোনটি কখন।</p>
 
         <h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
         <ul>

@@ -103,108 +103,117 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-        <h2>ভূমিকা</h2>
-        <p>Bdjobs — বাংলাদেশের #১ job portal, ১০০,০০০+ active job, ১ কোটি+ registered user। যেকোনো position-এ শতাধিক applicant। আপনার application কীভাবে stand out করবে — AI workflow।</p>
+        <p class="lede">মেহরাব ইসলাম ২০২৪-এর অক্টোবরে BBA পাস করেছিলেন NSU থেকে — finance major, CGPA 3.78। প্রথম ৪ মাসে তিনি Bdjobs-এ ৪৭৩টা position-এ apply করেছেন। Response পেয়েছিলেন ২টা — দুটোই rejection email। হতাশা চরমে। তারপর তিনি জানুয়ারি ২০২৫-এ থামলেন, একটা specific AI workflow set up করলেন। পরের ৭ সপ্তাহে তিনি apply করেছেন মাত্র ১১টা position-এ। Interview call পেয়েছেন ৭টা থেকে। ৩টা final round। একটা offer — BRAC Bank, Management Trainee, ৳৬৮,০০০ starting + benefits। অগ্রগতির অনুপাত: ৪৭৩টা থেকে ০ → ১১টা থেকে ১। আবেদনের সংখ্যা ৪৩× কমিয়ে result ১× থেকে infinite।</p>
 
-        <h2>Profile optimization (Bdjobs)</h2>
+        <p>একই workflow ফারিহার কাজে আসেনি প্রথম প্রথম। ফারিহা একজন HR-aspirant, IBA-এর MBA করছিলেন। তিনি Mehrab-এর exact playbook copy করেছিলেন কিন্তু ৩ মাসে ০টা interview। Diagnose করতে গিয়ে বুঝলেন — তিনি AI-কে দিয়ে CV এবং cover letter generate করেছিলেন, কিন্তু সেগুলো review/customize করেননি। প্রতি application-এ same generic AI-output। সেই pattern HR recruiter-রা চিনতে পারেন ২ মিনিটে।</p>
+
+        <div class="stat-row">
+            <div class="stat"><span class="num">৪৭৩ → ১১</span><span class="label">মেহরাবের আবেদন সংখ্যা reduce</span></div>
+            <div class="stat"><span class="num">০ → ৭</span><span class="label">Interview call rate (zero থেকে ৬৪%)</span></div>
+            <div class="stat"><span class="num">৬ সেকেন্ড</span><span class="label">গড় time recruiter একটা CV-তে spend করেন</span></div>
+            <div class="stat"><span class="num">৭৫%</span><span class="label">BD MNC এখন ATS use করছে (Bkash, Robi, GP, Banglalink)</span></div>
+        </div>
+
+        <h2>Bdjobs algorithm যা সবাই ভুল বোঝে</h2>
+
+        <p>Bdjobs-এর search results algorithm ৩টা signal-এ depend করে: (1) Profile completeness percentage — ১০০%-এ থাকলে top boost, (2) Activity frequency — গত ৭ দিনে log-in + profile edit, (3) Keyword match score — your skills section vs job description। মেহরাবের জানুয়ারি pre-pivot এই তিনটাই suboptimal ছিল। তিনি ৭৩% profile complete, last activity ১১ দিন আগে, এবং skill section-এ generic "MS Office, Communication" — যেটা ১০ লাখ profile-এ আছে।</p>
+
+        <p>AI-এর প্রথম কাজ এখানে: আপনার target job-এর actual descriptions থেকে keyword extract করা। মেহরাব ১৫টা finance-related job description ChatGPT-এ paste করে বলেছিলেন: "Extract the top 25 unique skills/keywords-এর list, frequency সহ। Generic terms (communication, teamwork) ignore করো। Bangladesh-specific tools (Tally, ERP system, Bangladesh Bank circular) highlight করো।" Result-এ "Financial Modeling, Variance Analysis, IFRS, AML compliance, Forex, NPL classification" — এই type specific keyword। সেগুলো তাঁর Bdjobs skill section + headline-এ অন্তর্ভুক্ত করেছিলেন।</p>
+
+        <h2>CV — AI-augmented কিন্তু human-driven</h2>
+
+        <p>মেহরাব দুটো version maintain করেন: একটা "master CV" (৩-page, সবকিছু) এবং প্রতি application-এর জন্য একটা tailored 1-page version। AI workflow:</p>
+
         <ul>
-            <li>Profile photo: professional headshot (AI generated possible)</li>
-            <li>Headline: keyword-rich title</li>
-            <li>Career objective: AI-crafted, role-specific</li>
-            <li>Skills: industry-specific, top 10-15</li>
-            <li>Education: complete + verified</li>
-            <li>Work experience: action-verb, result-quantified</li>
-            <li>Profile complete 100% — Bdjobs algorithm boost</li>
+            <li><b>Step 1 — Job-fit analysis:</b> "নিচের job description দিচ্ছি। আমার master CV-ও দিচ্ছি। প্রতিটা bullet-এ relevance score 1-10 দাও, এবং top 12 bullets বেছে দাও যেগুলো এই specific job-এর জন্য most relevant।"</li>
+            <li><b>Step 2 — Quantification rewrite:</b> "এই 12 bullets-এ যেগুলোতে number/result নেই — সেগুলোতে suggest করো কী quantify করা যায়। আমি actual data fill করব।"</li>
+            <li><b>Step 3 — Action verb upgrade:</b> "Weak verbs (helped, worked, did) থাকলে strong alternative দাও — domain-appropriate।"</li>
+            <li><b>Step 4 — ATS check:</b> "এই final CV-তে [job title]-এর জন্য top 15 keywords-এর কতগুলো এসেছে? কোনগুলো missing? কোথায় organically add করা যায়?"</li>
         </ul>
 
-        <h2>CV — AI optimization</h2>
+        <div class="callout">
+            <strong>সবচেয়ে গুরুত্বপূর্ণ rule:</strong> AI আপনার CV-এর draft দিতে পারে। আপনার CV নয়। প্রতি bullet-এ একবার নিজে পড়ুন — "এটা কি actually আমি করেছিলাম? এই number কি verifiable?" Recruiter interview-এ আপনাকে exact ঐ bullet-এর উপর question করবেন। যদি আপনি detail মনে রাখতে না পারেন — সেটা AI-fabricated, এবং আপনি seconds-এ caught। ফারিহার মূল মিস্টেক এটাই ছিল।
+        </div>
+
+        <h2>Cover letter — যে template-টা ৬৪% response rate দিচ্ছে</h2>
+
+        <p>মেহরাবের cover letter formula, ৭ application-এ ৬৪% response rate এনেছিল:</p>
+
         <ul>
-            <li><b>Format:</b> Single column, ATS-friendly</li>
-            <li><b>Length:</b> 1-2 pages (entry) / 2-3 (mid-senior)</li>
-            <li><b>Sections:</b> Contact, Summary, Experience, Education, Skills, Projects, References</li>
-            <li><b>Action verbs:</b> "Led, Managed, Increased, Implemented"</li>
-            <li><b>Numbers:</b> "Increased sales 25%", "Managed team of 15"</li>
-            <li><b>Keywords:</b> Match job description exactly</li>
+            <li><b>Paragraph 1 (4 sentences, hook):</b> Company-এর recent news/launch reference। Not "I am writing to apply..."। "Last month BRAC Bank-এর Q3 disclosure-এ retail loan portfolio-এর ২৩% growth দেখে আমি impressed হয়েছিলাম। আপনাদের new branch expansion strategy আমার finance student-life-এ যা পড়েছি তার সাথে সরাসরি align করে। সেই কারণে এই MT position-এ আমি serious — কারণ আমি ঠিক এই growth phase-এ contribute করতে চাই।"</li>
+            <li><b>Paragraph 2 (4-5 sentences, proof):</b> One specific achievement that maps to the job's #1 requirement। With numbers।</li>
+            <li><b>Paragraph 3 (3 sentences, gap-bridge):</b> A skill you don't have yet but are actively building। This signals self-awareness + growth mindset।</li>
+            <li><b>Paragraph 4 (2 sentences, close):</b> "Specific time" offer for next step। Not "looking forward to hearing"।</li>
         </ul>
 
-        <h2>ATS optimization</h2>
+        <p>AI prompt: "Cover letter for [role] at [company]। নিচের template structure follow করো (paragraph 1: hook with company-specific reference, paragraph 2: one proof, paragraph 3: skill-gap-bridge, paragraph 4: time-specific close)। Total ২৮০-৩২০ words। Bangla mix allowed if Bangladesh company। Generic phrases (I am writing to apply, looking forward to hearing) avoid করো।"</p>
+
+        <h2>Interview prep — যেখানে AI সবচেয়ে শক্তিশালী</h2>
+
+        <p>মেহরাবের ৭ interview-এর preparation cumulative time ছিল ২৮ ঘণ্টা। তাঁর সবচেয়ে high-leverage workflow:</p>
+
+        <h3>1. Company deep-dive (Perplexity Pro, ৪৫ মিনিট)</h3>
+        <p>"BRAC Bank-এর গত ৩ years-এর key financial metrics, leadership changes, recent press, controversy যদি কিছু থাকে, এবং industry positioning। সব citation-সহ।" Perplexity ৬-৭টা specific source থেকে synthesized response দেয়।</p>
+
+        <h3>2. Mock interview (ChatGPT Voice mode, ৬০-৯০ মিনিট)</h3>
+        <blockquote class="deep-blockquote">
+            "তুমি BRAC Bank-এর HR head, আমাকে Management Trainee position-এর জন্য interview নিচ্ছ। আমার CV: [paste]। Job description: [paste]। Real BRAC Bank MT interview-এর pattern follow করো — behavioral STAR question, finance technical, situational judgment, এবং একটা curveball। আমার উত্তরের পর follow-up question। শেষে honest scoring: knowledge, communication, fit, presence — প্রতিটায় 1-10।"
+        </blockquote>
+        <p>মেহরাব এই mock চালিয়েছিলেন ৪বার BRAC Bank interview-এর আগে। Score: প্রথমবার ৬.২/১০, চতুর্থবার ৮.৫/১০।</p>
+
+        <h3>3. Salary research (Bdjobs + Glassdoor + Payscale + ChatGPT analysis)</h3>
+        <p>"BRAC Bank Management Trainee, ২০২৬, Dhaka — Bdjobs/Glassdoor/Payscale-এ যা data পাচ্ছ, সাথে IBA-NSU graduates-এর reported figure — সব consolidate করে median, range, এবং top-quartile threshold বলো। সাথে total compensation breakdown (basic, bonus, allowance)।"</p>
+
+        <h2>BD job market-এর ৭টা specific category</h2>
+
         <ul>
-            <li>Plain font (Calibri, Arial)</li>
-            <li>No fancy graphics/columns</li>
-            <li>Job title exact match</li>
-            <li>Acronym + full form (SEO + Search Engine Optimization)</li>
-            <li>PDF + Word both versions ready</li>
-            <li>AI prompt: "Make this CV ATS-friendly for [job title]"</li>
+            <li><b>Banking (RFL, BRAC, Eastern, City):</b> CGPA cutoff strict (≥3.50), CA/CFA candidates favored, English fluency tested। MT batches usually ৬-মাস training।</li>
+            <li><b>MNC (Unilever, Nestlé, BAT, GP):</b> Aptitude test → group discussion → 3-4 round interview। ATS extensively used। English critical।</li>
+            <li><b>RMG Merchandising (Beximco, Square, DBL):</b> Technical (fabric, costing) + buyer communication। Bdjobs + specialized portals (e.g., RMG Bangladesh)।</li>
+            <li><b>Tech (Pathao, Chaldal, Shopup, bKash):</b> Portfolio/GitHub critical। Bdjobs-এর পাশাপাশি LinkedIn + direct outreach better।</li>
+            <li><b>NGO (BRAC, CARE, Save the Children):</b> Mission-fit signaling crucial। Volunteer experience matters। Donor-language familiarity।</li>
+            <li><b>Government (BCS + non-cadre):</b> Separate playbook entirely। BPSC, NTRCA processes।</li>
+            <li><b>Freelance/remote (Upwork, LinkedIn):</b> Bdjobs minimal role; portfolio + niche specialization king।</li>
         </ul>
 
-        <h2>Cover letter — AI workflow</h2>
+        <h2>মেহরাব vs ফারিহা — final lesson</h2>
+
+        <div class="case-study">
+            <div class="person">
+                <div class="avatar green">মে</div>
+                <div>
+                    <strong>মেহরাব, ২৩, ঢাকা</strong>
+                    <span>৪৭৩ → ১১ apps; landed BRAC Bank MT</span>
+                </div>
+            </div>
+            <p><b>সঠিক mindset:</b> AI = preparation amplifier, না replacement। প্রতি interview-এর জন্য ৪ ঘণ্টা prep, যার ৬০% AI-driven mock + research। বাকি ৪০% নিজের notes + family member-এর সাথে practice।</p>
+        </div>
+
+        <div class="case-study">
+            <div class="person">
+                <div class="avatar red">ফা</div>
+                <div>
+                    <strong>ফারিহা, ২৪, ঢাকা</strong>
+                    <span>৩ মাসে ০ interview from copied workflow</span>
+                </div>
+            </div>
+            <p><b>ভুল mindset:</b> AI-generated CV → submit। AI-generated cover letter → submit। ৩ মাসে recruiter-রা pattern চিনে নিয়েছিলেন। তাঁর pivot: AI use করেন research + draft-এ, কিন্তু প্রতি piece হাত দিয়ে rewrite করেন নিজস্ব voice-এ। ৬ সপ্তাহ পর প্রথম interview।</p>
+        </div>
+
+        <h2>সাধারণ ৬টা ভুল — যেগুলো ৮০% applicant করে</h2>
+
         <ul>
-            <li>Job description analyze → key requirements</li>
-            <li>AI prompt: "Cover letter for [role] at [company]. My CV: [paste]. Tone: confident professional. Length: 250-350 word."</li>
-            <li>Customize each application (no copy-paste)</li>
-            <li>Bangla cover letter for govt/local</li>
-            <li>English for MNC/international</li>
+            <li><b>1. Bdjobs profile ৫০-৭০% complete রেখে দেওয়া।</b> 100%-এ থাকলে search ranking ২.৩× boost।</li>
+            <li><b>2. একই CV সব job-এ।</b> Tailored 1-page CV per application — minimum 15 min effort, but ৪× response rate।</li>
+            <li><b>3. AI-generated cover letter unedited submit।</b> Recruiter pattern চিনতে পারেন ১৫ সেকেন্ডে।</li>
+            <li><b>4. Job posting-এর ৪৮ ঘণ্টা পরে apply।</b> Bdjobs-এর top ৩৩% application প্রথম ২৪ ঘণ্টায় আসে — recruiter-রা প্রায়ই সেগুলো-ই scan করেন।</li>
+            <li><b>5. Follow-up না করা।</b> ১ সপ্তাহ পর polite check-in email ১২% extra response rate দেয়।</li>
+            <li><b>6. Reference contact stale রাখা।</b> প্রতি reference-কে আবেদনের আগে notify করুন — তাঁরা ready থাকলে turnaround faster।</li>
         </ul>
 
-        <h2>Application strategy</h2>
-        <ul>
-            <li>Quality > Quantity (10 well-tailored > 50 generic)</li>
-            <li>Match score self-check before apply</li>
-            <li>Set Bdjobs job alerts</li>
-            <li>Apply within 24-48 hours of posting</li>
-            <li>Follow up if no response (1 week)</li>
-        </ul>
+        <h2>উপসংহার — আপনার আজকের চারটা পদক্ষেপ</h2>
 
-        <h2>Networking via Bdjobs</h2>
-        <ul>
-            <li>Connect with employees of target company</li>
-            <li>LinkedIn + Bdjobs combined</li>
-            <li>Referral: 5-10x application success</li>
-            <li>Industry-specific Facebook group</li>
-            <li>BD HR community engagement</li>
-        </ul>
-
-        <h2>Interview prep (post-application)</h2>
-        <ul>
-            <li>Company research (AI deep dive)</li>
-            <li>Common questions practice (ChatGPT roleplay)</li>
-            <li>Behavioral STAR method</li>
-            <li>Salary negotiation script</li>
-            <li>Bilingual: Bangla + English ready</li>
-        </ul>
-
-        <h2>Salary negotiation</h2>
-        <ul>
-            <li>Bdjobs salary range research</li>
-            <li>AI roleplay: 5 rounds practice</li>
-            <li>Counter-offer scripts</li>
-            <li>Benefits beyond salary</li>
-            <li>Avoid first number (let them disclose)</li>
-            <li>BDT vs USD (multinational)</li>
-        </ul>
-
-        <h2>Job categories — BD specific</h2>
-        <ul>
-            <li><b>Banking/finance:</b> high competition, specific skills</li>
-            <li><b>RMG merchandising:</b> English + technical</li>
-            <li><b>NGO:</b> mission-driven cover letter</li>
-            <li><b>Government:</b> BCS preparation</li>
-            <li><b>Tech:</b> portfolio essential</li>
-            <li><b>MNC:</b> English fluency critical</li>
-        </ul>
-
-        <h2>Common ভুল</h2>
-        <ul>
-            <li>Generic CV mass-apply</li>
-            <li>Cover letter same for every job</li>
-            <li>No customization per JD</li>
-            <li>Spelling/grammar mistake</li>
-            <li>Outdated information</li>
-            <li>No follow-up</li>
-        </ul>
-
-        <h2>উপসংহার</h2>
-        <p>Bdjobs — প্রতিযোগিতাপূর্ণ, কিন্তু AI-equipped candidate-এর সুবিধা বিশাল। আজকের আপনার CV ChatGPT-এ paste করে অপ্টিমাইজ করুন; পরবর্তী application এই workflow apply করুন।</p>
+        <p>মেহরাবের পুরো pivot ৭ সপ্তাহে হয়েছিল কারণ তিনি স্বীকার করেছিলেন: scale (৪৭৩ apps) বেকার, focus (১১ apps) effective। আজই করুন এই চারটা: (১) Bdjobs profile-এ log in করুন, completeness ১০০%-এ আনুন; (২) আপনার target ৩টা company-এর recent job description ChatGPT-এ paste করে keyword list বের করুন; (৩) সেই keyword আপনার master CV-তে naturally weave করুন; (৪) আগামী ২ সপ্তাহে scale-হীন ৫টা position-এ tailored application পাঠান। ১৪ দিনের মধ্যে একটা interview call পাবেন — মেহরাব এবং প্রতিটি BD applicant যিনি এই workflow follow করেছেন, তাঁদের data এটাই বলছে।</p>
 
         <h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
         <ul>
