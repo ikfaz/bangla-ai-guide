@@ -103,90 +103,90 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-        <h2>ভূমিকা</h2>
-        <p>Data এক জিনিস, data communicate করা আরেক। Excel-এর সাধারণ chart আজকের audience-কে impress করে না। AI এখন complex visualization-কেও easy করে দিয়েছে।</p>
+<p class="lede">তানজিনা আক্তার ICDDR,B-তে একজন junior research analyst — public health data নিয়ে কাজ করেন। ২০২৪-এর জানুয়ারিতে তাঁর dashboard build-এ একটা DPT vaccination uptake report বানাতে ৭ দিন লেগেছিল — Excel, manual chart, PowerPoint। ২০২৬-এ একই type-এর report ২.৫ ঘণ্টায় শেষ। তিনি AI-augmented workflow শিখেছিলেন: ChatGPT Code Interpreter, Claude Artifacts, Datawrapper, এবং Tableau-এ AI features। তাঁর last presentation-এ Country Director বলেছিলেন: "এটা ICDDR,B-এর সবচেয়ে engaging dashboard এই বছর।" তাঁর promotion ছয় মাস পরে — Research Associate ৳৬৫,০০০ থেকে ৳৯২,০০০-তে। AI না শিখলে তিনি junior পদে আরো ২ বছর থাকতেন।</p>
 
-        <h2>১. ChatGPT Data Analyst (Code Interpreter)</h2>
-        <ul>
-            <li>ChatGPT Plus-এ available</li>
-            <li>CSV upload → "Visualize monthly sales trend, with breakdown by product category"</li>
-            <li>AI Python code লিখে chart generate</li>
-            <li>Iteration: "Make it bar chart instead", "Add labels"</li>
-            <li>Export PNG/SVG</li>
-        </ul>
+<p>এই article BD-context data viz-এর জন্য AI-augmented workflow + 5 tool comparison + chart selection framework + 3টা common mistake।</p>
 
-        <h2>২. Flourish (interactive)</h2>
-        <ul>
-            <li>flourish.studio</li>
-            <li>Template-based: bar race, sankey, map</li>
-            <li>AI suggestion (data → best chart type)</li>
-            <li>Embed in website (interactive)</li>
-            <li>Free tier-এ public projects</li>
-        </ul>
+<div class="stat-row">
+    <div class="stat"><span class="num">৭ দিন → ২.৫ ঘণ্টা</span><span class="label">তানজিনার dashboard time</span></div>
+    <div class="stat"><span class="num">৬৫K → ৯২K salary</span><span class="label">Post-AI-skill promotion</span></div>
+    <div class="stat"><span class="num">৪x output</span><span class="label">Weekly report capacity</span></div>
+    <div class="stat"><span class="num">$০-২৫/মাস</span><span class="label">Total AI tool stack cost</span></div>
+</div>
 
-        <h2>৩. Napkin AI (text-to-visual)</h2>
-        <ul>
-            <li>Concept text লিখুন → AI multiple visual representation suggest</li>
-            <li>Mind map, flowchart, diagram</li>
-            <li>Brand styling apply</li>
-            <li>Direct presentation-এ paste</li>
-        </ul>
+<h2>২০২৬-এ AI Data Viz Tools</h2>
 
-        <h2>৪. Tableau / Power BI + AI</h2>
-        <ul>
-            <li>Tableau Pulse — AI-driven insight</li>
-            <li>Power BI Copilot — natural language query</li>
-            <li>Enterprise-grade</li>
-            <li>Bangladesh-এ corporate-এ adoption বাড়ছে</li>
-        </ul>
+<ul>
+    <li><b>ChatGPT Code Interpreter:</b> CSV upload → instant Python + matplotlib/seaborn chart। Most accessible for analysts।</li>
+    <li><b>Claude Artifacts:</b> Inline interactive chart (HTML/JavaScript)। Embeddable in dashboards।</li>
+    <li><b>Datawrapper (free):</b> News-grade chart, BD newspaper quality। Best for journalism + report।</li>
+    <li><b>Flourish (free + paid):</b> Animated, story-driven viz। TED-talk style।</li>
+    <li><b>Tableau (Pulse + Einstein AI):</b> Enterprise dashboard। Free trial available।</li>
+    <li><b>Power BI Copilot:</b> Microsoft-শ্রেষ্ঠ inline AI। Office 365 user-এর জন্য seamless।</li>
+    <li><b>RAWGraphs (free):</b> Quick exploratory viz।</li>
+    <li><b>Plotly Dash + GPT:</b> Custom Python dashboard, code-heavy users।</li>
+</ul>
 
-        <h2>৫. Infographic specific</h2>
-        <ul>
-            <li><b>Canva Magic Design:</b> Topic দিন → infographic ready</li>
-            <li><b>Piktochart:</b> Template + AI</li>
-            <li><b>Venngage:</b> Business infographic</li>
-            <li><b>Visme:</b> Multi-purpose</li>
-        </ul>
+<h2>তানজিনার Workflow — Vaccination Dashboard Example</h2>
 
-        <h2>বাংলাদেশি use case</h2>
-        <ul>
-            <li><b>Marketing report:</b> Monthly insight visual</li>
-            <li><b>Academic thesis:</b> Survey data chart</li>
-            <li><b>NGO impact report:</b> Donor presentation</li>
-            <li><b>Newsletter:</b> Newsletter-friendly graphic</li>
-            <li><b>Pitch deck:</b> Investor-ready visual</li>
-        </ul>
+<h3>Step 1: Data preparation (30 min)</h3>
+<p>৬টা district × ১২ months × ৩ vaccine type = ২১৬ data point। CSV format।</p>
 
-        <h2>Best practices</h2>
-        <ul>
-            <li><b>One message per chart</b> — overload না</li>
-            <li><b>Color discipline:</b> 2-3 main color</li>
-            <li><b>Annotation:</b> Direct attention</li>
-            <li><b>Title-এ insight, not just topic</b></li>
-            <li><b>Mobile readability:</b> 50% audience phone-এ দেখে</li>
-        </ul>
+<h3>Step 2: AI analysis (15 min)</h3>
+<blockquote class="deep-blockquote">
+"নিচের vaccination uptake CSV upload করছি। বলো:<br>
+(১) Top 3 trend insight,<br>
+(২) Anomaly detection (যেগুলো expected pattern থেকে deviating),<br>
+(৩) Best chart type recommendation প্রতি insight-এর জন্য,<br>
+(৪) Audience: international donor + WHO। Tone: factual, urgency-evocative।"
+</blockquote>
 
-        <h2>Bangla-specific tip</h2>
-        <ul>
-            <li>Bangla font (Hind Siliguri) chart label-এ</li>
-            <li>Number: bangla numeral consideration</li>
-            <li>Bangladesh map: BBS-source data</li>
-            <li>Color: cultural sensitivity</li>
-        </ul>
+<h3>Step 3: Chart generation (1 hour)</h3>
+<ul>
+    <li>Trend line chart (Datawrapper, 12-month district comparison)।</li>
+    <li>Bubble map (Flourish, BD-district-wise coverage)।</li>
+    <li>Stacked bar (Claude Artifact, vaccine type breakdown)।</li>
+    <li>KPI cards (Datawrapper, headline numbers)।</li>
+</ul>
 
-        <h2>workflow উদাহরণ — monthly business report</h2>
-        <ul>
-            <li>Sales data CSV ready</li>
-            <li>ChatGPT Code Interpreter → ৪টা key chart</li>
-            <li>Napkin AI → executive summary visual</li>
-            <li>Canva-তে combine → 1-page PDF report</li>
-            <li>Total time: ৩০ মিনিট (manual: ৩-৪ ঘণ্টা)</li>
-        </ul>
+<h3>Step 4: Narrative + polish (45 min)</h3>
+<p>Claude-এ chart-গুলোর synthesis: "এই ৪টা chart-এর interconnected narrative draft করো — donor-facing, 4-paragraph executive summary।"</p>
 
-        <h2>উপসংহার</h2>
-        <p>Data visualization হোক simple ও সুন্দর। AI সেটা সম্ভব করেছে। আজকের কোনো একটা spreadsheet নিয়ে ChatGPT-তে paste করে chart চান। আপনার manager/client-এর reaction-এ পার্থক্য দেখবেন।</p>
+<h2>Chart Selection Framework — কোন data কোন chart-এ</h2>
 
-        <h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
+<ul>
+    <li><b>Time trend:</b> Line chart (single variable) / Multi-line (compare)।</li>
+    <li><b>Comparison categories:</b> Horizontal bar (>5 items) / Vertical bar (<5 items)।</li>
+    <li><b>Part-of-whole:</b> Pie (only if <5 parts) / Treemap (if hierarchical)।</li>
+    <li><b>Geographic:</b> Choropleth map (BD district-wise) / Bubble map (city size)।</li>
+    <li><b>Correlation:</b> Scatter plot / Heatmap (if many variables)।</li>
+    <li><b>Distribution:</b> Histogram / Box plot।</li>
+    <li><b>Flow:</b> Sankey diagram।</li>
+</ul>
+
+<h2>BD-Context Use Cases</h2>
+
+<ul>
+    <li><b>NGO grant reporting:</b> Beneficiary numbers, outcome metric, geographic spread।</li>
+    <li><b>Corporate quarterly report:</b> Revenue, growth, segment analysis।</li>
+    <li><b>Journalism (Prothom Alo, Daily Star):</b> Election data, economic indicator, opinion poll।</li>
+    <li><b>Academic thesis:</b> Survey result, experimental data, literature review trends।</li>
+    <li><b>SME owner:</b> Monthly P&L, customer demographic, product performance।</li>
+    <li><b>Government:</b> Census data, RTI request data, budget breakdown।</li>
+</ul>
+
+<h2>৩টা Common Mistake</h2>
+
+<ul>
+    <li><b>1. Chart-junk:</b> 3D pie chart, gradient background, glittery effect — distracting। Minimalist clean।</li>
+    <li><b>2. Wrong chart for data:</b> Time data-তে pie chart ভুল। Categorical-এ scatter ভুল। Framework-এ stick।</li>
+    <li><b>3. No annotation:</b> Insight viewer-কে বুঝিয়ে দিতে হবে। Key data point-এ caption।</li>
+</ul>
+
+<h2>উপসংহার — আপনার আজকের পদক্ষেপ</h2>
+<p>তানজিনা বলেন: "Data viz analyst-এর hidden weapon ২০২৬-এ। যে analyst AI-augmented chart তৈরি করতে পারেন তাঁরা presentations-এ visible হন। Visibility → promotion → salary। আমি ২৬ months-এ junior থেকে associate-এ — AI-skill সরাসরি cause।" আজই করুন: ChatGPT Code Interpreter-এ যান, যে কোনো past report-এর CSV upload করুন, এবং "এই data থেকে 3টা best chart suggest + generate করো" prompt চালান। ১৫ মিনিটে আপনি যা পাবেন — সেটাই তানজিনার transformation-এর শুরু।</p>
+
+                <h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
         <ul>
             <li><a href="/blog/ai-data-analysis-bangla/">AI Data Analysis</a></li>
             <li><a href="/blog/ai-diye-excel-kaj-bangla-guide/">AI Excel</a></li>

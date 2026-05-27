@@ -106,94 +106,101 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-        <h2>ভূমিকা</h2>
-        <p>বাংলাদেশের construction industry $30B+, civil engineer-এর কাজে — design, calculation, drawing, estimation, site management — সব time-intensive। AI এই কাজের ৩০-৫০% accelerate করতে পারে।</p>
+<p class="lede">প্রকৌশলী ইমরান হোসেন BUET থেকে Civil Engineering-এ পাস করেছেন ২০১১-এ। ২০২৪ পর্যন্ত একটা mid-tier construction firm-এ Site Engineer ছিলেন — মাসিক ৳৬৫,০০০। ২০২৪-এর মাঝামাঝি তিনি একটা AI-augmented workflow শিখেছিলেন — BOQ generation, drawing analysis, site report writing, vendor negotiation। ১৮ মাস পর তিনি নিজের freelance Civil Engineering Consultancy launched করেছেন। আজ তাঁর monthly revenue ৳১.৮-২.৫ লাখ — multiple residential + small commercial project simultaneously। সবচেয়ে surprising: তাঁর hourly billable rate ৪x বেড়েছে কারণ AI দিয়ে তিনি project deliverable ৩x faster turn-around করেন। Clients তাঁকে retainer-এ pay করেন কারণ alternate এর সাথে অসম্ভব।</p>
 
-        <h2>১. Design + calculation</h2>
-        <ul>
-            <li><b>Beam/column sizing:</b> ChatGPT Code Interpreter — load → dimension</li>
-            <li><b>Foundation type recommendation:</b> soil report → foundation suggest</li>
-            <li><b>BNBC code lookup:</b> "BNBC 2020 minimum reinforcement for slab" — instant</li>
-            <li><b>Structural calculation verify:</b> manual calc + AI cross-check</li>
-            <li><b>Material optimization:</b> reduce wastage scenarios</li>
-        </ul>
+<p>এই article BD-context-এ Civil Engineer + AI-augmented workflow + ৫টা key use case + RAJUK navigation + ৪টা mistake।</p>
 
-        <h2>২. Drawing + BIM</h2>
-        <ul>
-            <li><b>AutoCAD plugins:</b> AI auto-layout, annotation</li>
-            <li><b>Revit AI:</b> family parameter, schedule auto-fill</li>
-            <li><b>Sketch to plan:</b> hand-drawn → digital (Photo to CAD apps)</li>
-            <li><b>Detail drawing:</b> typical detail generate from spec</li>
-            <li><b>Clash detection AI:</b> MEP + structural conflict identify</li>
-        </ul>
+<div class="stat-row">
+    <div class="stat"><span class="num">৳৬৫K → ৳১.৮-২.৫L</span><span class="label">ইমরানের 18-month income growth</span></div>
+    <div class="stat"><span class="num">৪x billable rate</span><span class="label">Post-AI productivity premium</span></div>
+    <div class="stat"><span class="num">৬-১২ projects</span><span class="label">Simultaneous active</span></div>
+    <div class="stat"><span class="num">$৫০/মাস</span><span class="label">AI tool stack cost</span></div>
+</div>
 
-        <h2>৩. Bill of Quantities (BoQ) + estimation</h2>
-        <ul>
-            <li>Excel + ChatGPT: schedule → BoQ</li>
-            <li>Rate analysis automation</li>
-            <li>Quotation comparison: 5 vendor → analysis</li>
-            <li>Cost escalation projection</li>
-            <li>Quantity takeoff from drawing (PlanGrid, AI tools)</li>
-        </ul>
+<h2>BD Construction Industry 2026 — context</h2>
 
-        <h2>৪. Project management</h2>
-        <ul>
-            <li>Gantt chart: tasks → AI sequence + dependencies</li>
-            <li>Critical path identification</li>
-            <li>Daily progress report: site notes → formal report</li>
-            <li>Subcontractor management</li>
-            <li>Material procurement timeline</li>
-        </ul>
+<ul>
+    <li><b>Construction GDP contribution:</b> ৭.৮% (Bangladesh Bank, 2025)।</li>
+    <li><b>Civil engineer workforce:</b> ১৫-১৮ লাখ। ৪০% underemployed/career-shift।</li>
+    <li><b>Top employers:</b> Bashundhara Group, BTI, Sheltech, Concord Group, Ratan Builders।</li>
+    <li><b>Boom area:</b> Mid-tier residential apartment, mixed-use commercial, township project।</li>
+    <li><b>AI penetration:</b> Top firms 60%+ AI-tool adoption (Autodesk Co-Pilot, Bentley iTwin)। Mid/SMB <15%। Massive opportunity।</li>
+</ul>
 
-        <h2>৫. Code compliance — BNBC, RAJUK</h2>
-        <ul>
-            <li>BNBC 2020 reference Q&A</li>
-            <li>RAJUK approval checklist</li>
-            <li>Fire safety code lookup</li>
-            <li>Setback calculation</li>
-            <li>FAR/MGC calculation</li>
-        </ul>
+<h2>ইমরানের 5 Key AI Use Cases</h2>
 
-        <h2>৬. Quality control + safety</h2>
-        <ul>
-            <li>Concrete test result analysis</li>
-            <li>Photo-based defect detection (apps)</li>
-            <li>Safety incident report draft</li>
-            <li>Toolbox talk Bangla preparation</li>
-            <li>Site inspection checklist</li>
-        </ul>
+<h3>1. BOQ (Bill of Quantities) generation</h3>
 
-        <h2>৭. Client communication</h2>
-        <ul>
-            <li>Progress photo + AI caption</li>
-            <li>Variation order justification</li>
-            <li>EOT (extension of time) narrative</li>
-            <li>Final account narrative</li>
-            <li>Bangla → English client report</li>
-        </ul>
+<blockquote class="deep-blockquote">
+"নিচের 6-story residential apartment-এর architectural drawing-এর কী-information attached করছি (square footage, room count, structural elements):<br>
+- Ground floor: 2,400 sqft, parking + utility<br>
+- Floors 1-5: 1,800 sqft each, 3-bed apartment<br>
+- Roof: 800 sqft (water tank + utility)<br>
+- Location: Mirpur DOHS<br><br>
+Generate detailed BOQ: Excavation, RCC work, brick masonry, plaster, flooring, electrical, plumbing, finishing। প্রতি item-এ: quantity, unit rate (Mirpur 2026 BD-market), total। Sum + 10% contingency।"
+</blockquote>
 
-        <h2>৮. Continuous learning</h2>
-        <ul>
-            <li>New code update summary</li>
-            <li>Case study (failure analysis)</li>
-            <li>Best practice from international project</li>
-            <li>Software tutorial (Revit, ETABS, SAP2000)</li>
-        </ul>
+<p>Result: ৩-৪ ঘণ্টার manual কাজ ২০ মিনিটে। ইমরান rate verification নিজে করেন (RAJUK + market visit)।</p>
 
-        <h2>Tools — civil engineer-এর জন্য</h2>
-        <ul>
-            <li>ChatGPT Plus: general + calculation</li>
-            <li>Claude Pro: long technical document</li>
-            <li>AutoCAD AI plugins (newer versions)</li>
-            <li>Revit Insight + Forma</li>
-            <li>PlanRadar: site management AI</li>
-            <li>ALICE Technologies: scheduling AI</li>
-        </ul>
+<h3>2. Drawing analysis + clash detection</h3>
 
-        <h2>উপসংহার</h2>
-        <p>AI কখনো structural engineer-এর প্রতিদ্বন্দ্বী হবে না — কিন্তু AI-equipped engineer যারা না, তাদের সরিয়ে দেবে। আপনার আজকের একটি repetitive task নিন (যেমন BoQ), AI দিয়ে করে দেখুন। প্রথম দিনেই ১-২ ঘণ্টা সাশ্রয়।</p>
+<ul>
+    <li>AutoCAD/Revit drawing → Claude Vision upload।</li>
+    <li>"এই structural drawing-এ obvious clash detection বলো: beam-column conflict, MEP routing issue, accessibility violation, BNBC 2020 compliance।"</li>
+    <li>Manual verification, কিন্তু AI scanning ৭০% issue pre-flag।</li>
+</ul>
 
-        <h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
+<h3>3. Site report writing (daily)</h3>
+
+<p>Site supervisor voice memo + photo → ChatGPT-এ paste → professional daily progress report draft। ৪৫-min-এর কাজ ১০ minute-এ।</p>
+
+<h3>4. Vendor negotiation prep</h3>
+
+<p>Supplier quotation comparison। AI-এ: "এই ৩টা cement supplier-এর quote: brand, price/bag, payment term, delivery time। For 6-story apartment project, recommend optimal + negotiation talking points (current market price benchmark, alternative supplier leverage)।"</p>
+
+<h3>5. RAJUK approval document drafting</h3>
+
+<ul>
+    <li>Application form auto-fill।</li>
+    <li>NOC, structural drawing checklist।</li>
+    <li>Setback compliance verification।</li>
+    <li>Fire safety compliance documentation।</li>
+</ul>
+
+<h2>BD-Specific AI Tools for Civil</h2>
+
+<ul>
+    <li><b>Autodesk AutoCAD + Generative Design (AI):</b> Industry standard, $২২৫/month।</li>
+    <li><b>Bentley iTwin (AI):</b> Infrastructure twin technology।</li>
+    <li><b>ChatGPT/Claude for BOQ:</b> $২০/month + Excel।</li>
+    <li><b>SketchUp + AI render plugins:</b> Quick visualization।</li>
+    <li><b>Bluebeam Revu:</b> PDF markup + collaboration।</li>
+    <li><b>Free alternative for small project:</b> ChatGPT free + free CAD software (LibreCAD)।</li>
+</ul>
+
+<h2>RAJUK / Government Compliance — AI helps</h2>
+
+<ul>
+    <li>BNBC 2020 (Bangladesh National Building Code) — AI can quote specific sections।</li>
+    <li>DAP (Dhaka Area Plan) compliance check।</li>
+    <li>Fire safety (BNBC chapter 4) verification।</li>
+    <li>Accessibility (chapter 4 + DAP) audit।</li>
+    <li>NOC application drafting (Fire, Power, Water, RAJUK)।</li>
+</ul>
+
+<h2>৪টা Mistake — যা ৭০% Civil Engineer-কে stuck রাখে</h2>
+
+<ul>
+    <li><b>1. AI BOQ unverified submit:</b> AI numbers ৮৫% accurate, ১৫% off। Site visit + supplier check mandatory।</li>
+    <li><b>2. Code compliance AI-blind trust:</b> BNBC + DAP regulation frequently update। AI training cut-off-এর পর change miss করে।</li>
+    <li><b>3. Vendor data feed:</b> Confidential pricing AI-তে paste — competitor leak risk। Anonymize।</li>
+    <li><b>4. Site safety neglect:</b> AI office task speed-up করে, কিন্তু site supervision physical presence-এ। AI দিয়ে remote site management ভুল।</li>
+</ul>
+
+<h2>উপসংহার — আপনার আজকের পদক্ষেপ</h2>
+<p>ইমরান বলেন: "Civil Engineering ২০২৬-এ — যে engineer AI-augmented BOQ, drawing analysis, report-writing-এ proficient, তাঁরা freelance-যোগ্য। Office-এর monotonous task থেকে AI মুক্তি দিয়েছে। আমি এখন site visit + client meeting + design review করি — যেগুলো high-value। BOQ, drafting, report — AI সাথে। হাতে দু'টা client/সপ্তাহ — ২x previous capacity।" আজই করুন: যদি আপনি Civil Engineer — আপনার current project-এর একটা BOQ section ChatGPT-এ paste করুন, "এই BOQ-এর rate Mirpur 2026 market-এ verify করো এবং missing item flag করো" prompt চালান। ২৫% থেকে ৫০% time-saving একটা task-এ instantly। ১ মাস consistent practice-এ — আপনার career trajectory shift হবে।</p>
+
+                <h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
         <ul>
             <li><a href="/blog/ai-diye-excel-kaj-bangla-guide/">AI Excel</a></li>
             <li><a href="/blog/ai-diye-quotation-proposal-bangla-guide/">AI Proposal</a></li>

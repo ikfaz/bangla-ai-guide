@@ -106,80 +106,97 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-        <h2>ভূমিকা</h2>
-        <p>বাংলাদেশের ব্যাংকিং খাত — ৬১টি ব্যাংক + ৩৪টি NBFI। প্রতিদিন হাজারো credit application, KYC, compliance report। AI এই workload-এর ৪০-৬০% দ্রুত করতে পারে — accuracy compromise না করে।</p>
+<p class="lede">Hossain Tarique BRAC Bank-এর Senior Credit Officer — Corporate Banking Division। ২০২৪-এর জানুয়ারিতে তিনি একটা ৩৫-page SME credit assessment বানাতে ৩.৫ দিন spend করতেন: financial statement analysis, ratio calculation, risk scoring, market context, recommendation memo। ২০২৬-এর মে-এ একই assessment ৯ ঘণ্টায়। সব AI-augmented — Claude Opus for narrative + ChatGPT Code Interpreter for ratio analysis + Perplexity for industry research। তাঁর Q1 2026-এ ৪৭টা credit file processed (Q1 2024-এ ২২টা ছিল)। Productivity ২.১৪x। তাঁর CRO তাঁকে "Best Credit Analyst of the Year" award দিয়েছেন। ২০২৫-এর শেষে promotion + ১৮% raise। AI banker-এর তামা গায়ে নেই — Hossain তাঁর colleagues-এর চেয়ে faster + better-quality assessment দিচ্ছেন।</p>
 
-        <h2>১. Credit application analysis</h2>
-        <ul>
-            <li><b>Document extraction:</b> ChatGPT/Claude-এ borrower-এর tax return, financial statement upload → key ratios auto-extract</li>
-            <li><b>Red flag detection:</b> "এই three years statement-এ unusual pattern চিহ্নিত করো"</li>
-            <li><b>Cross-reference:</b> Multiple bureau report compare</li>
-            <li><b>Drafting:</b> Credit memo first draft generate</li>
-        </ul>
+<p>এই article BD banking/finance professional-এর জন্য AI-augmented workflow + 6টা use case + BSEC + Bangladesh Bank compliance reality + 3টা risk যা data leak করতে পারে।</p>
 
-        <h2>২. Risk modeling</h2>
-        <ul>
-            <li><b>Scenario analysis:</b> ChatGPT Code Interpreter-এ historical data → stress test</li>
-            <li><b>Default prediction:</b> Excel + AI formula assist</li>
-            <li><b>Sector exposure:</b> "RMG sector exposure এর top risks list"</li>
-            <li><b>Compliance:</b> Basel III, IFRS 9 reference + Q&A</li>
-        </ul>
+<div class="stat-row">
+    <div class="stat"><span class="num">৩.৫ দিন → ৯ ঘণ্টা</span><span class="label">Per-credit-file processing</span></div>
+    <div class="stat"><span class="num">২২ → ৪৭ files/Q</span><span class="label">Quarterly throughput</span></div>
+    <div class="stat"><span class="num">১৮% raise</span><span class="label">Post-AI promotion</span></div>
+    <div class="stat"><span class="num">২.১৪x productivity</span><span class="label">Same person, same hours</span></div>
+</div>
 
-        <h2>৩. Customer service</h2>
-        <ul>
-            <li><b>Bangla chatbot:</b> WhatsApp/Messenger-এ account balance, statement query</li>
-            <li><b>Email reply draft:</b> Customer complaint → professional Bangla response</li>
-            <li><b>FAQ automation:</b> branch hours, interest rates, product info</li>
-            <li><b>Sentiment analysis:</b> negative reviews early detection</li>
-        </ul>
+<h2>BD Banking/Finance Industry 2026</h2>
 
-        <h2>৪. Compliance + AML</h2>
-        <ul>
-            <li><b>Transaction monitoring narrative:</b> SAR draft assist</li>
-            <li><b>BFIU report:</b> structured data → narrative</li>
-            <li><b>Policy update summary:</b> central bank circular → 1-page brief</li>
-            <li><b>Internal training:</b> AI quiz module for staff</li>
-        </ul>
+<ul>
+    <li><b>Workforce:</b> ৩.৪ লাখ banking professional, ১.১ লাখ in private banks।</li>
+    <li><b>AI adoption:</b> Top tier banks (City, BRAC, EBL, Dutch Bangla) — significant। Mid-tier slow।</li>
+    <li><b>Use cases growing:</b> Credit scoring, fraud detection, customer service chatbot, regulatory reporting।</li>
+    <li><b>Bangladesh Bank stance:</b> 2025 circular allows AI for internal analytics, but strict on customer data protection।</li>
+    <li><b>BSEC for capital market:</b> AI-aided trading signals OK, but recommendation requires human sign-off।</li>
+</ul>
 
-        <h2>৫. Investment analyst use cases</h2>
-        <ul>
-            <li><b>Earnings call summary:</b> 30-page transcript → 1-page brief</li>
-            <li><b>Sector report writing:</b> raw data → investment thesis</li>
-            <li><b>Comparable analysis:</b> multiple companies side-by-side</li>
-            <li><b>Market commentary:</b> daily update draft</li>
-        </ul>
+<h2>Hossain-এর 6 AI Use Cases</h2>
 
-        <h2>৬. Practical AI tools stack</h2>
-        <ul>
-            <li><b>Document analysis:</b> Claude (long PDF best)</li>
-            <li><b>Data analysis:</b> ChatGPT Code Interpreter</li>
-            <li><b>Email/communication:</b> ChatGPT/Gemini</li>
-            <li><b>Research:</b> Perplexity (citations)</li>
-            <li><b>Excel automation:</b> Copilot in Excel</li>
-            <li><b>Meeting transcription:</b> Otter (English), Notta (limited Bangla)</li>
-        </ul>
+<h3>1. Financial Statement Analysis</h3>
 
-        <h2>৭. Confidentiality + regulatory</h2>
-        <ul>
-            <li>Customer data NEVER paste into public AI</li>
-            <li>Anonymize first (replace names with PERSON_1)</li>
-            <li>On-premise/private deployment for sensitive: Bangladesh Bank requires</li>
-            <li>Audit trail: AI suggestion logged</li>
-            <li>Final decision: human banker — AI is assistant only</li>
-        </ul>
+<blockquote class="deep-blockquote">
+"নিচের 3-year audited financial statement (P&L, balance sheet, cash flow) attached। SME garments client।<br><br>
+Generate:<br>
+(১) 12 standard ratios (current, quick, debt-equity, ROA, ROE, GP margin, NP margin, interest coverage, asset turnover, inventory turnover, DSO, DPO),<br>
+(২) Trend analysis 3-year,<br>
+(৩) Peer comparison (BD garments mid-tier 2025 benchmark),<br>
+(৪) Top 5 red flag,<br>
+(৫) Credit recommendation: approve/reject/conditional with collateral suggestion।"
+</blockquote>
 
-        <h2>৮. Career edge — AI-skilled banker</h2>
-        <ul>
-            <li>CV-তে "AI-augmented credit analysis" highlight</li>
-            <li>Internal training session conduct</li>
-            <li>Process improvement project lead</li>
-            <li>Promotion fast-track in banks adopting AI</li>
-        </ul>
+<h3>2. Industry Research (Perplexity)</h3>
 
-        <h2>উপসংহার</h2>
-        <p>বাংলাদেশের ব্যাংকিং খাত এখনো AI adoption-এ আস্তে। যে banker আজ AI workflow build করছেন, ৩-৫ বছরে তিনি analyst-vault leader। শুরু করুন এক spreadsheet automation দিয়ে, পরে scale।</p>
+<p>"BD garments sector Q1 2026 — export volume, key challenge (US tariff, EU sustainability), top 5 buyer trend, near-term outlook।" Citation-grounded source from BBS, BGMEA, Bangladesh Bank, World Bank।</p>
 
-        <h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
+<h3>3. Risk Memo Drafting (Claude)</h3>
+
+<p>৮-page comprehensive credit risk memo: borrower profile, industry context, financial analysis summary, mitigants, recommendation। Claude generates 70%, Hossain edits final 30%।</p>
+
+<h3>4. Excel Modeling (Code Interpreter)</h3>
+
+<ul>
+    <li>DCF (Discounted Cash Flow) modeling for project finance।</li>
+    <li>Sensitivity analysis (base/best/worst case)।</li>
+    <li>Loan amortization schedule customization।</li>
+    <li>NPV/IRR calculation।</li>
+</ul>
+
+<h3>5. Customer Communication</h3>
+
+<ul>
+    <li>Loan rejection letter — diplomatic, BD-context, regulatory-compliant।</li>
+    <li>Approval letter with term sheet।</li>
+    <li>Customer query Bangla response।</li>
+</ul>
+
+<h3>6. Regulatory Reporting Pre-fill</h3>
+
+<p>Bangladesh Bank quarterly return drafting (CL-1, CL-2, CL-3, SBS-1, NPL classification)। AI helps structure, Hossain numbers verify।</p>
+
+<h2>৩টা Critical Data-Leak Risk</h2>
+
+<div class="callout">
+    <strong>সবচেয়ে গুরুত্বপূর্ণ section:</strong>
+    <ul>
+        <li><b>Customer name/account/NID:</b> Never paste। Always anonymize (Customer-A, Account-1)।</li>
+        <li><b>Bank-internal pricing/strategy:</b> Confidential — leaked AI training data via OpenAI/Anthropic possible। Use anonymous abstractions।</li>
+        <li><b>Trade secret algorithm:</b> Bank's credit scoring formula, fraud detection rule — don't paste। AI competitor learning risk।</li>
+        <li><b>Compliance violation potential:</b> Bangladesh Bank-এর Information Security Guideline (2023) — personally identifiable data third-party AI service-এ leak punishable। Internal AI Tool (e.g., on-premise GPT) for sensitive task।</li>
+    </ul>
+</div>
+
+<h2>BD Banking AI Tool Stack</h2>
+
+<ul>
+    <li><b>ChatGPT Plus / Claude Pro:</b> $20/mo. Anonymized analysis OK।</li>
+    <li><b>Perplexity Pro:</b> Industry research, citation-grounded।</li>
+    <li><b>Excel + Copilot:</b> Microsoft 365 enterprise license।</li>
+    <li><b>Bloomberg Terminal AI:</b> $25K/year — enterprise।</li>
+    <li><b>Refinitiv Eikon AI:</b> Capital market specific।</li>
+    <li><b>Internal AI (Azure OpenAI, AWS Bedrock):</b> On-premise/private — data secure।</li>
+</ul>
+
+<h2>উপসংহার — আপনার আজকের পদক্ষেপ</h2>
+<p>Hossain বলেন: "Banking ২০২৬-এ — যে analyst AI-augmented credit assessment + financial analysis করতে পারেন, তাঁরা CRO-এর কাছে visible। আমার career-এর next promotion আমি AI-skill-এর সাথে link দেখি। কিন্তু সবচেয়ে গুরুত্বপূর্ণ: customer data anonymization protocol strict — সেটাই difference responsible-vs-irresponsible banker।" আজই করুন: আপনার next credit file-এ ratio analysis ChatGPT-এ paste করুন (anonymized data only)। ১২ standard ratio + 3-year trend + peer comparison instant। ২ ঘণ্টার কাজ ২০ মিনিটে। আপনার CRO-এর সামনে presentation-এ AI-augmented analyst-এর difference দেখাবে।</p>
+
+                <h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
         <ul>
             <li><a href="/blog/ai-diye-accounting-bookkeeping-bangla-guide/">AI Accounting</a></li>
             <li><a href="/blog/ai-diye-dse-stock-market-research-bangla-guide/">DSE Stock Research</a></li>
