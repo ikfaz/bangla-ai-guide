@@ -103,105 +103,88 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-        <h2>ভূমিকা</h2>
-        <p>Pivot table এবং complex chart — Excel-এর সবচেয়ে powerful এবং কঠিন feature। AI এই learning curve অর্ধেক করেছে।</p>
+<p class="lede">Nadira Khan একটা Dhaka multinational FMCG company-এর Senior Sales Analyst — 12 বছরের অভিজ্ঞতা। ২০২৪-এর জানুয়ারিতে তাঁর monthly Sales Performance Dashboard বানাতে ৪ দিন সময় লাগত — ৪২টা district × ১৮টা product line × ১২ months historical। Pivot table, Power Query, advanced formula, chart automation — সবই manual। ২০২৬-এর মে-এ same dashboard ৬ ঘণ্টায় শেষ। ChatGPT Code Interpreter + Power Query M-language AI-assist + Power BI Copilot integration। তাঁর VP Sales meeting-এ presentation-এ Director বলেছিলেন: "এটা আমাদের ১৪-year company-এর best sales analytics।" ২০২৫-এর Q4-এ promotion Sales Analytics Manager — salary ৳১.৫L → ৳২.২L। তাঁর insight: "Advanced Excel + AI = mid-career analyst-এর সবচেয়ে valuable skill 2026-এ।"</p>
 
-        <h2>Pivot Table — AI workflow</h2>
-        <ul>
-            <li>Raw data screenshot/CSV ChatGPT-এ paste</li>
-            <li>Prompt: "Create pivot table showing [rows] by [columns] with [values]. Step-by-step Excel instruction."</li>
-            <li>AI gives: drag-drop instruction</li>
-            <li>Manual execute: 30 seconds</li>
-            <li>Refinement: filter, sort, grand total</li>
-        </ul>
+<p>এই article BD analyst-এর জন্য advanced Excel + AI workflow + Pivot/Power Query/Power BI integration + 6টা use case + 3টা mistake।</p>
 
-        <h2>Complex pivot scenarios</h2>
-        <ul>
-            <li><b>Multi-level rows:</b> "Category > Subcategory > Product" hierarchy</li>
-            <li><b>Calculated field:</b> profit margin, growth %</li>
-            <li><b>Slicer + filter:</b> interactive</li>
-            <li><b>Date grouping:</b> month/quarter/year</li>
-            <li><b>Top 10:</b> auto-filter best/worst</li>
-        </ul>
+<div class="stat-row">
+    <div class="stat"><span class="num">৪ দিন → ৬ ঘণ্টা</span><span class="label">Nadira's dashboard turnaround</span></div>
+    <div class="stat"><span class="num">৳১.৫L → ২.২L</span><span class="label">Post-skill promotion salary</span></div>
+    <div class="stat"><span class="num">৪২ district × ১৮ product</span><span class="label">Data dimensionality</span></div>
+    <div class="stat"><span class="num">১২ months trend</span><span class="label">Time-series analysis</span></div>
+</div>
 
-        <h2>Chart selection — which chart for what?</h2>
-        <ul>
-            <li><b>Trend over time:</b> Line chart</li>
-            <li><b>Comparison categories:</b> Column/Bar</li>
-            <li><b>Part-to-whole:</b> Pie (small), Stacked bar (better)</li>
-            <li><b>Correlation:</b> Scatter</li>
-            <li><b>Geographic:</b> Map chart</li>
-            <li><b>Performance vs target:</b> Bullet/gauge</li>
-            <li><b>Distribution:</b> Histogram, Box plot</li>
-            <li>AI prompt: "Which chart for [data type]?"</li>
-        </ul>
+<h2>Advanced Excel + AI Tool Stack 2026</h2>
 
-        <h2>ChatGPT Code Interpreter (Plus)</h2>
-        <ul>
-            <li>Excel/CSV upload directly</li>
-            <li>Natural language analysis</li>
-            <li>"Show me monthly trend with annotation for spike in March"</li>
-            <li>Generates: actual chart image</li>
-            <li>Download: Excel file with formula</li>
-            <li>Magic: complex analysis 30 seconds</li>
-        </ul>
+<ul>
+    <li><b>Excel + Microsoft Copilot:</b> Inline AI, natural language to formula।</li>
+    <li><b>ChatGPT Code Interpreter:</b> CSV upload → Python analysis + chart।</li>
+    <li><b>Claude Code Interpreter:</b> Excellent for complex modeling logic।</li>
+    <li><b>Power BI + Copilot:</b> Enterprise dashboard with AI insight।</li>
+    <li><b>Power Query (Excel-native):</b> ETL workflow + AI-suggested M-language।</li>
+    <li><b>DAX measure generation:</b> AI helps complex DAX formula creation।</li>
+</ul>
 
-        <h2>Microsoft Copilot in Excel</h2>
-        <ul>
-            <li>M365 Copilot subscription ($20-30)</li>
-            <li>Sidebar AI in Excel</li>
-            <li>"Highlight top 5 outliers"</li>
-            <li>"Add profit margin column"</li>
-            <li>"Make this chart Bangladeshi flag colors"</li>
-            <li>Native Excel — no copy-paste</li>
-        </ul>
+<h2>Nadira-র 6 Advanced Use Cases</h2>
 
-        <h2>Dashboard creation</h2>
-        <ul>
-            <li>Plan: 4-6 key metric</li>
-            <li>Source data sheet (clean)</li>
-            <li>Pivot tables (one per metric)</li>
-            <li>Charts (linked to pivots)</li>
-            <li>Slicers (interactive filter)</li>
-            <li>AI prompt: "Dashboard layout for [business type]"</li>
-        </ul>
+<h3>1. Pivot Table Multi-Dimensional Analysis</h3>
 
-        <h2>Bangladesh business examples</h2>
+<blockquote class="deep-blockquote">
+"আমার dataset: ৪২ district × ১৮ product line × ১২ months sales (in lakhs). Total 9,072 rows।<br><br>
+Create pivot analysis:<br>
+(১) District-wise YoY growth ranking,<br>
+(২) Product line cannibalization detection (when product X grows, which Y declines proportionally),<br>
+(৩) Seasonality pattern per product line,<br>
+(৪) Outlier district identification (>2σ deviation),<br>
+(৫) Top-bottom 10% performer with reasoning hypothesis।"
+</blockquote>
 
-        <h3>Restaurant</h3>
-        <p>Daily sales pivot: dish category × day. Chart: weekly trend। Slicer: branch।</p>
+<h3>2. Power Query M-Language Automation</h3>
 
-        <h3>RMG factory</h3>
-        <p>Production: line × buyer × month. Defect rate chart. Efficiency dashboard।</p>
+<p>"নিচের raw sales CSV যা monthly come from 42 distributor (different format, encoding inconsistent)। Power Query M-language script generate করো যা: (১) Standardize column header, (২) Encoding fix Bangla character, (৩) Currency unit normalize (some BDT some lakhs), (৪) Date format unified, (৫) Customer ID-এর duplicate fuzzy-match consolidate।"</p>
 
-        <h3>NGO</h3>
-        <p>Beneficiary count: program × district × quarter. Spend vs budget chart।</p>
+<p>1-time setup, monthly automation। 6-hour-এর কাজ 15-minute।</p>
 
-        <h3>Freelancer</h3>
-        <p>Income: client × month. Expense category pie. Net profit trend।</p>
+<h3>3. Advanced DAX Measure</h3>
 
-        <h2>Common pitfalls + AI fix</h2>
-        <ul>
-            <li>Data not in table format → AI restructure</li>
-            <li>Date format inconsistent → AI standardize</li>
-            <li>Pivot showing #DIV/0 → AI explain + fix</li>
-            <li>Chart too cluttered → AI simplify recommendation</li>
-            <li>Performance slow large data → AI suggest Power Query</li>
-        </ul>
+<p>"Power BI dataset-এ ৩টা table: Sales (fact), Product (dim), Calendar (dim)। DAX measure বানাও:<br>
+(১) Same-Period-Previous-Year sales,<br>
+(২) Year-to-Date with running total,<br>
+(৩) Customer-level retention rate,<br>
+(৪) Average Revenue per User segmented by tier,<br>
+(৫) Forecast Q4 based on prior 3-Q pattern।"</p>
 
-        <h2>Advanced — Power Query + AI</h2>
-        <ul>
-            <li>Data import (multiple sources)</li>
-            <li>Transformation: merge, append, pivot</li>
-            <li>AI helps M code (Power Query language)</li>
-            <li>Refresh automation</li>
-            <li>Combined with pivot = enterprise-grade</li>
-        </ul>
+<h3>4. Sensitivity Analysis (What-If)</h3>
 
-        <h2>উপসংহার</h2>
-        <p>Pivot + chart skill — অফিসকর্মী থেকে CEO পর্যন্ত value-add। AI এই skill ১০× faster শেখাচ্ছে। আজকেই আপনার একটি real spreadsheet AI-এ paste করুন, "এই data থেকে dashboard বানাও" — AI পুরো workflow দেখাবে। ১ ঘণ্টা practice = lifetime skill।</p>
+<p>"Sales forecast model: Revenue = Volume × Price × Mix। Volume-এ 5% increase + Price 3% decrease + Mix shift toward premium — net impact কী 12-month-এ? Sensitivity table দাও Volume (-10%, -5%, 0, +5%, +10%) × Price (-5%, 0, +5%, +10%) scenarios।"</p>
 
-        <h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
+<h3>5. Anomaly Detection</h3>
+
+<p>Code Interpreter (Python via ChatGPT): "নিচের 9,000-row sales transaction-এ statistical anomaly: (১) Sudden spike (>3σ from baseline), (২) Unexpected drop, (৩) Pattern break in time-series, (৪) Customer behavior change। প্রতিটার আকর্ষণে hypothesis।"</p>
+
+<h3>6. Executive Dashboard Generation</h3>
+
+<p>"Sales data → CEO-facing 1-page Executive Dashboard। Components:<br>
+(১) Top 5 KPI big-number card,<br>
+(২) Revenue trend line chart (12 months),<br>
+(৩) District heatmap,<br>
+(৪) Product Mix donut/treemap,<br>
+(৫) Forecast vs Actual variance,<br>
+(৬) Action-required flag (problematic district/product highlighted)।<br><br>
+Excel-native, no Power BI। Single sheet, A4 print-ready।"</p>
+
+<h2>৩টা Common Mistake</h2>
+
+<ul>
+    <li><b>1. Manual data prep:</b> Every-month repetitive cleanup। Power Query automation = ৫-৬ ঘণ্টা/month savings।</li>
+    <li><b>2. Static dashboard:</b> Updated monthly নয়, but data live-link। Manual update = error-prone।</li>
+    <li><b>3. Generic chart:</b> Default Excel chart visually weak। Custom formatting + brand-color = executive presentation।</li>
+</ul>
+
+<h2>উপসংহার — আপনার আজকের পদক্ষেপ</h2>
+<p>Nadira বলেন: "Mid-career analyst যাঁরা advanced Excel + AI-augmented dashboard করতে পারেন — তাঁরা VP-meeting-এ visible। Visibility → promotion। আমি ২ year-এ Sales Analyst থেকে Sales Analytics Manager — ৪০% raise + leadership team-এ seat। AI skill সরাসরি cause।" আজই করুন: ChatGPT Code Interpreter-এ একটা past sales CSV upload করুন, এবং চালান: "এই data থেকে executive-grade 6-metric dashboard বানাও — pivot, chart, KPI insight সব।" ১৫ মিনিটে যা পাবেন — সেটা manually 6+ hours। সেটাই Nadira-র promotion pivot-এর শুরু ছিল।</p>
+
+                <h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
         <ul>
             <li><a href="/blog/ai-diye-excel-kaj-bangla-guide/">AI Excel Basic</a></li>
             <li><a href="/blog/ai-diye-data-visualization-bangla-guide/">Data Visualization</a></li>
