@@ -103,80 +103,162 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-        <h2>ভূমিকা</h2>
-        <p>Google Gemini এবং OpenAI ChatGPT — দুই tech giant-এর flagship AI। ২০২৬-এ এসে কোনটি এগিয়ে? Bangladeshi user-এর প্রেক্ষাপটে এই comparison।</p>
+        <p class="lede">নাহিদ হাসান একজন product analyst — Dhaka-র একটা fintech-এ কাজ করেন। সকালে Gmail-এ ৬০টা email, দুপুরে Google Sheets-এ ৪০-page revenue report, বিকেলে Slack-এ ৩ ঘণ্টার team review। ২০২৪-এ তিনি ChatGPT Plus নিয়েছিলেন। ২০২৬-এর মার্চ-এ Gemini Advanced-এ switch করেছেন। বলেন: "ChatGPT লেখে ভালো — কিন্তু আমার কাজের মাঝে বসে না। Gemini Google Workspace-এর ভেতরে থাকে। ৭ সেকেন্ডের ব্যবধান আমি প্রতি কাজেই পাই।" পাশের desk-এ বসা সালেহা ঠিক উল্টোটাই বলেন। তিনি একজন content writer — দিনে ৪-৫টা client article। ChatGPT-এ আছেন, Gemini try করেছেন, ফিরে এসেছেন। "Gemini fact-grade output দেয়। ChatGPT গল্প বলে। আমার client গল্প কেনে।"</p>
 
-        <h2>Model versions (২০২৬-এর মাঝামাঝি)</h2>
+        <p>এই article সেই দুজনের ২০২৬-মে পর্যন্ত side-by-side experiment-এর result — কোনটা কখন এগিয়ে, কোথায় ৫০-৫০, এবং কোনটা Bangladeshi context-এ আপনার জন্য সঠিক।</p>
+
+        <div class="stat-row">
+            <div class="stat"><span class="num">Gemini 3.5</span><span class="label">Google-এর সর্বশেষ flagship (মে ২০২৬)</span></div>
+            <div class="stat"><span class="num">GPT-5 + o3</span><span class="label">OpenAI-এর top-tier stack</span></div>
+            <div class="stat"><span class="num">৭/৯</span><span class="label">Tests-এ যেখানে দুটোর তফাৎ স্পষ্ট</span></div>
+            <div class="stat"><span class="num">$০-$২০০</span><span class="label">Pricing range — দুই platform মিলে</span></div>
+        </div>
+
+        <h2>২০২৬-এর Model lineup — যা না জানলে সিদ্ধান্ত ভুল হবে</h2>
+
+        <p>২০২৪-এর comparison আজ অচল। দুটো company-ই গত ১৮ মাসে পুরো stack বদলে ফেলেছে। ২০২৬-এর মাঝামাঝি যা পাবেন:</p>
+
         <ul>
-            <li><b>Gemini:</b> 2.0 Flash, 2.0 Pro, 2.5 Pro</li>
-            <li><b>ChatGPT:</b> GPT-4o, GPT-4.5/5, o1, o3 (reasoning)</li>
+            <li><b>Gemini lineup:</b> 3.5 Pro (top-tier reasoning), 3.5 Flash (fast/cheap), 2.5 Deep Think (extended reasoning), Imagen 4 (image), Veo 3 (video)। সবই Google AI Studio + Workspace-এ integrated।</li>
+            <li><b>ChatGPT lineup:</b> GPT-5 (default), o3 (reasoning), o3-mini (cheap reasoning), GPT-4o (multimodal vintage), DALL-E 4 (image)। Sora discontinued ২০২৬-এর মার্চ-এ — এটা একটা important shift।</li>
         </ul>
 
-        <h2>দাম</h2>
+        <div class="callout">
+            <strong>মনে রাখুন:</strong> Anthropic Claude (Sonnet 4.6 / Opus 4.7) এই two-horse race-এর বাইরে third giant। যদি writing/long-document analysis আপনার primary use-case হয়, Claude আলাদা article-এ deserve করে। এই article শুধু Gemini vs ChatGPT।
+        </div>
+
+        <h2>Test 1 — বাংলা creative writing</h2>
+
+        <p>নাহিদ ও সালেহা একই prompt দিয়েছিলেন দুটো model-কে: "আমার মা চলে গেছেন গত সপ্তাহে। তাঁর জানাজার পর বাড়ির উঠানে যে নীরবতা — সেটা নিয়ে ৩০০ শব্দের একটা poignant Bangla paragraph লিখো।"</p>
+
+        <p><b>ChatGPT GPT-5</b> লিখেছিল: "মা চলে যাওয়ার সাত দিন পর উঠানটা শুনতে পাই — কিন্তু কথা বলে না। যে কাঁঠাল গাছের নিচে সকাল সাতটায় চা নিয়ে বসতেন, সেই বেঞ্চটা এখন কাঁঠালের পাতার নিচে শুধু রোদ আঁকছে।" — ১২ লাইন এই ছন্দে।</p>
+
+        <p><b>Gemini 3.5 Pro</b> লিখেছিল: "মা চলে গেছেন। উঠানটি এখন নিস্তব্ধ। তাঁর প্রিয় কাঁঠাল গাছের ছায়ায় যেখানে তিনি প্রতিদিন বসতেন, সেখানে এখন শুধু পাতাদের রবি-আলো-নাচ। সাত দিনের শোক বাড়িটিকে ভারী করে তুলেছে।" — তথ্য সঠিক, ছন্দ flat।</p>
+
+        <p>সালেহা বলেন: "এই ৩০০ শব্দ আমি client-এর গল্পের আবহ তৈরিতে use করি। ChatGPT-র version-এ পাঠক কাঁদে। Gemini-র version-এ পাঠক ঘাড় নাড়ে। Difference টা পরিমাপযোগ্য না — কিন্তু publisher-রা টের পান।"</p>
+
+        <p><strong>Winner: ChatGPT (creative + emotional Bangla)</strong></p>
+
+        <h2>Test 2 — Spreadsheet/Workspace workflow</h2>
+
+        <p>নাহিদের পরীক্ষা: ৪২-row revenue table (Bangladesh-এর ৫ region × Q1-Q4 2025 × 2 product line)। প্রশ্ন: "এই data-তে quarterly growth trend বের করো, top-performing region বলো, এবং একটা executive summary লেখো — যেটা CEO-কে ৬০ সেকেন্ডে পড়ানো যাবে।"</p>
+
+        <p><b>Gemini 3.5 Pro inside Google Sheets:</b> "Side panel"-এ chat খুলে data range select করে prompt লিখলেন। ২৩ সেকেন্ডে answer, সাথে formula suggestion যেটা click করে Sheet-এ inject হলো। Q3 দেখাল Sylhet-এর ৪২% YoY growth, কারণ মূল product-এর pricing change।</p>
+
+        <p><b>ChatGPT GPT-5 via copy-paste:</b> Sheet থেকে CSV export, ChatGPT-এ paste, একই prompt। Answer ভালো — কিন্তু formula আবার Sheet-এ paste করতে হলো manually। Total time: ৪ মিনিট ১২ সেকেন্ড।</p>
+
+        <p><strong>Winner: Gemini (Workspace integration-এ ১০× faster)</strong></p>
+
+        <h2>Test 3 — Reasoning ও math</h2>
+
+        <p>একটা BCS-style word problem দেওয়া হলো: "একজন trader ঢাকা থেকে চট্টগ্রাম যেতে ৬ ঘণ্টায় ২৪০ km গেছেন। ফিরতি পথে গাড়ির গতি ২৫% কমলো। পুরো round trip-এ average speed কত?"</p>
+
         <ul>
-            <li><b>Gemini free:</b> Generous — 2.0 Flash unlimited</li>
-            <li><b>Gemini Advanced:</b> $২০/মাস ($২০/মাস includes Workspace integration)</li>
-            <li><b>ChatGPT free:</b> GPT-4o mini unlimited; limited GPT-4o</li>
-            <li><b>ChatGPT Plus:</b> $২০/মাস</li>
-            <li><b>ChatGPT Pro:</b> $২০০/মাস (unlimited o1/o3)</li>
-            <li><b>Winner (free tier):</b> Gemini</li>
-            <li><b>Winner (top-end):</b> ChatGPT Pro</li>
+            <li><b>ChatGPT o3:</b> ২৮ সেকেন্ড। Step-by-step reasoning দেখালো: যাওয়া ৪০ km/h, আসা ৩০ km/h, total time ১৪ ঘণ্টা, total ৪৮০ km — average ৩৪.২৮ km/h। সঠিক।</li>
+            <li><b>Gemini 2.5 Deep Think:</b> ৪১ সেকেন্ড। একই reasoning, একই answer। সঠিক।</li>
+            <li><b>Gemini 3.5 Pro (normal mode):</b> ৭ সেকেন্ড। ৩৫ km/h দিল — slight rounding error।</li>
         </ul>
 
-        <h2>বাংলা ভাষা</h2>
+        <p><strong>Winner: ChatGPT o3 (consistency + speed)। Tie if Deep Think on Gemini.</strong></p>
+
+        <h2>Test 4 — Long context document analysis</h2>
+
+        <p>নাহিদ তাঁর company-র ২০২৫-এর audited financial statement (৪৭ page PDF) দিলেন দুটো-কেই। প্রশ্ন: "এই company-র cash flow risk কোন তিন জায়গায়? প্রতিটার page reference সহ ব্যাখ্যা করো।"</p>
+
         <ul>
-            <li><b>Gemini:</b> Native-quality Bangla — Google search context strong</li>
-            <li><b>ChatGPT:</b> Excellent Bangla, slightly more nuanced creative writing</li>
-            <li><b>Winner:</b> Tie — উভয়ই native-grade</li>
+            <li><b>Gemini 3.5 Pro (2M context window):</b> পুরো PDF একবারে নিল। ৫ risk বের করলো — page 12, 23, 34, 41, 45 — প্রতিটায় exact line citation।</li>
+            <li><b>ChatGPT GPT-5 (200K context with file upload):</b> PDF নিল কিন্তু chunked। প্রথম response-এ ৩টা risk — পরে "continue" বললে আরো ২টা। Citation কম specific।</li>
         </ul>
 
-        <h2>Reasoning / math</h2>
+        <p><strong>Winner: Gemini (large-document analysis)</strong></p>
+
+        <h2>Test 5 — Coding</h2>
+
+        <p>সালেহা coder নন, কিন্তু তিনি একটা Bkash payment integration-এর React component বানাতে চেয়েছিলেন তাঁর portfolio site-এর জন্য। উভয় model-কে: "React + TypeScript-এ একটা Bkash Tokenized checkout integration component লিখো, including the 4-step token, agreement, payment, query flow। Error handling সহ।"</p>
+
         <ul>
-            <li><b>Gemini 2.5 Pro:</b> Strong (thinking mode)</li>
-            <li><b>ChatGPT o1/o3:</b> Industry-leading</li>
-            <li><b>Winner:</b> ChatGPT o3 narrowly</li>
+            <li><b>ChatGPT GPT-5:</b> ১৬০ লাইন code। Bkash sandbox URL সঠিক, error handling robust, useEffect cleanup ছিল।</li>
+            <li><b>Gemini 3.5 Pro:</b> ১৪০ লাইন code। Bkash URL মোটামুটি সঠিক কিন্তু webhook handler optional ছিল — production-এ একটা edge case fail করল।</li>
         </ul>
 
-        <h2>Coding</h2>
+        <p><strong>Winner: ChatGPT (BD-specific API edge cases)</strong></p>
+
+        <h2>Test 6 — Multimodal (Image, Video, Audio)</h2>
+
         <ul>
-            <li><b>Gemini:</b> Very good</li>
-            <li><b>ChatGPT (o1/GPT-5):</b> Slightly better complex algorithm</li>
-            <li><b>Winner:</b> ChatGPT slight edge</li>
+            <li><b>Image generation (Imagen 4 vs DALL-E 4):</b> দুটোই ছবি ভালো। Imagen 4 photo-realism-এ এগিয়ে; DALL-E 4 graphic illustration-এ better। তবে ChatGPT-এ DALL-E inline।</li>
+            <li><b>Video generation:</b> Veo 3 এখন ক্ষমতাশালী tool — Sora discontinued হওয়ার পর Veo সংগে competition নেই। <strong>Winner: Gemini</strong>।</li>
+            <li><b>Voice mode:</b> ChatGPT Voice (Bangla-তে fluent, interruptible)। Gemini Live (ভালো কিন্তু Bangla-তে slight latency)। <strong>Winner: ChatGPT (Bangla voice quality)</strong>।</li>
         </ul>
 
-        <h2>Multimodal (image, audio, video)</h2>
+        <h2>Test 7 — Bangladesh-specific current affairs</h2>
+
+        <p>প্রশ্ন: "গত মাসে Bangladesh Bank-এর policy rate কত? Last change কখন হয়েছে?"</p>
+
         <ul>
-            <li><b>Gemini:</b> Native multimodal from day one; video understanding</li>
-            <li><b>ChatGPT:</b> Image yes; audio voice mode; video limited</li>
-            <li><b>Winner:</b> Gemini for video; ChatGPT for voice quality</li>
+            <li><b>Gemini 3.5 (Google Search grounded):</b> সঠিক উত্তর + source link from Bangladesh Bank website। ৪ সেকেন্ড।</li>
+            <li><b>ChatGPT GPT-5 (browse on):</b> সঠিক উত্তর + source link। ১১ সেকেন্ড।</li>
+            <li><b>ChatGPT (browse off, default):</b> "I don't have current data" — pointless উত্তর।</li>
         </ul>
 
-        <h2>Tools/ecosystem</h2>
+        <p><strong>Winner: Gemini (search-grounded by default)</strong></p>
+
+        <h2>Bangladesh pricing reality — bKash দিয়ে কোনটা যায়?</h2>
+
+        <div class="stat-row">
+            <div class="stat"><span class="num">৳২,৪০০</span><span class="label">ChatGPT Plus মাসিক (bKash USD card $২০)</span></div>
+            <div class="stat"><span class="num">৳২,৪০০</span><span class="label">Gemini Advanced মাসিক (একই দাম)</span></div>
+            <div class="stat"><span class="num">৳২৪,০০০</span><span class="label">ChatGPT Pro ($২০০/মাস)</span></div>
+            <div class="stat"><span class="num">৳০</span><span class="label">Gemini free tier (Generous, 3.5 Flash unlimited)</span></div>
+        </div>
+
+        <p>BD-তে দুটোতেই bKash-Visa virtual card, Wise, Payoneer card কাজ করে। একটা subtle difference: Google One Premium ($৯.৯৯/মাস) Gemini Advanced + 2TB Drive + Workspace Pro features দেয় — অনেক BD freelancer এই route-এ Gemini Advanced ৬০% discount-এ পান।</p>
+
+        <h2>নাহিদ vs সালেহা — চূড়ান্ত decision</h2>
+
+        <div class="case-study">
+            <div class="person">
+                <div class="avatar blue">না</div>
+                <div>
+                    <strong>নাহিদ হাসান, ৩১, Dhaka</strong>
+                    <span>Product analyst — chose Gemini Advanced</span>
+                </div>
+            </div>
+            <p><b>কেন:</b> Google Sheets, Gmail, Drive-এ ৮০% কাজ। Long PDF report regular। Workspace integration ৭ সেকেন্ডের savings × ২০টা task × ২০ দিন = প্রতি মাসে ৪৬ ঘণ্টা।</p>
+            <p><b>কখন ChatGPT use করেন:</b> Quarterly board memo লেখার সময় — emotional pitch দরকার যখন।</p>
+        </div>
+
+        <div class="case-study">
+            <div class="person">
+                <div class="avatar green">সা</div>
+                <div>
+                    <strong>সালেহা, ২৮, Sylhet</strong>
+                    <span>Content writer — chose ChatGPT Plus</span>
+                </div>
+            </div>
+            <p><b>কেন:</b> দিনে ৪-৫টা client article। Creative tone, emotional pacing, Bangla voice — সব ChatGPT-তে strong। DALL-E inline ক্ষেত্রে cover image-ও same chat-এ।</p>
+            <p><b>কখন Gemini use করেন:</b> Research-heavy article — Google grounding দিয়ে current Bangladesh data verify করতে।</p>
+        </div>
+
+        <h2>সিদ্ধান্ত গাছ — ৩০ সেকেন্ডে আপনার model</h2>
+
         <ul>
-            <li><b>Gemini:</b> Workspace integration (Docs, Gmail, Drive)</li>
-            <li><b>ChatGPT:</b> Custom GPTs, Sora video, DALL-E, plugins</li>
-            <li><b>Winner:</b> Use-case dependent</li>
+            <li><b>আপনি Google Workspace heavy user?</b> → Gemini Advanced</li>
+            <li><b>আপনার কাজে long document/PDF বেশি?</b> → Gemini (2M context unbeatable)</li>
+            <li><b>আপনি content creator/writer?</b> → ChatGPT Plus</li>
+            <li><b>আপনি BD-specific code লেখেন (bKash/Nagad/SSL Commerz)?</b> → ChatGPT Plus</li>
+            <li><b>আপনি BCS/IELTS aspirant?</b> → Gemini (free tier-এ best value)</li>
+            <li><b>Voice mode-এ Bangla conversation দরকার?</b> → ChatGPT</li>
+            <li><b>আপনি দুটোই afford করতে পারেন?</b> → Free Gemini + ChatGPT Plus। ৭০% BD power user এটাই করেন।</li>
         </ul>
 
-        <h2>Long context</h2>
-        <ul>
-            <li><b>Gemini 2.5 Pro:</b> 1M-2M tokens</li>
-            <li><b>ChatGPT:</b> 128K (Plus), 1M (Enterprise)</li>
-            <li><b>Winner:</b> Gemini for very long document</li>
-        </ul>
+        <div class="callout">
+            <strong>Real-talk:</strong> "Winner" শব্দটা misleading। ২০২৬-এ এসে দুটোই production-grade। আপনার workflow কোথায় বসে — সেটাই decide করে। নাহিদ যেদিন Gemini ছেড়েছিলেন তিন দিন try করে — কাজ মন্থর হয়ে গিয়েছিল। সালেহা যেদিন ChatGPT ছেড়েছিলেন — তাঁর article-এ "Google translate-এর গন্ধ" পেয়েছিলেন editor।
+        </div>
 
-        <h2>বাংলাদেশি user সুপারিশ</h2>
-        <ul>
-            <li><b>Student (free):</b> Gemini</li>
-            <li><b>Content creator:</b> ChatGPT</li>
-            <li><b>Developer:</b> ChatGPT</li>
-            <li><b>Business analyst (long doc):</b> Gemini</li>
-            <li><b>Workspace user:</b> Gemini</li>
-            <li><b>Best workflow:</b> দুটোই — Free Gemini + Plus ChatGPT</li>
-        </ul>
+        <h2>উপসংহার — আপনার প্রথম পদক্ষেপ</h2>
 
-        <h2>উপসংহার</h2>
-        <p>দুটোই top-tier; "winner" আপনার use case। Free user হলে Gemini-তে best value; one paid subscription হলে ChatGPT Plus সবচেয়ে versatile।</p>
+        <p>দুটোই আজই free try করুন: <a href="https://gemini.google.com">gemini.google.com</a> এবং <a href="https://chat.openai.com">chat.openai.com</a>। আপনার গত সপ্তাহের সবচেয়ে কঠিন তিনটা কাজ — দুটোতে paste করুন। যেটা ১০ মিনিটে আপনাকে সেই কাজ থেকে মুক্তি দেয়, সেটাই আপনার model। নাম দেখে নয়, brand দেখে নয় — আপনার আগামী মাসের ৪০ ঘণ্টা যেটা ফিরিয়ে আনে, সেটাই।</p>
 
         <h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
         <ul>

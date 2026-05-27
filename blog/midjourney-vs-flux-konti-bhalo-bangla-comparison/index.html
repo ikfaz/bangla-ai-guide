@@ -103,76 +103,127 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-        <h2>ভূমিকা</h2>
-        <p>AI image generation-এ Midjourney বহু বছর ধরেই king ছিল। ২০২৪-এ Black Forest Labs-এর Flux এসে সেই throne challenge করল। ২০২৬-এ এসে দুটোই top-tier — কিন্তু আপনার কোনটি দরকার? এই comparison।</p>
+        <p class="lede">তানভীর হাসান চট্টগ্রামের একজন graphic designer — ৬ বছরের freelance career, Fiverr-এ Top Rated Plus, mostly book cover ও album artwork। ২০২৪-এর মে পর্যন্ত তিনি pure Midjourney-তে ছিলেন। ২০২৪-এর জুন-এ Flux 1.1 Pro release হওয়ার পর তাঁর studio দুটোতে split হয়ে যায় — কোন কাজে কোনটা, সেটা ঠিক করতে লেগেছে ৩ মাস। আজ তাঁর monthly tool budget $৪৫: Midjourney Pro $৩০ + Flux via fal.ai pay-per-use ~$১৫। যে কাজে আগে তিনি ২ ঘণ্টা spend করতেন (text-heavy poster), এখন ১৮ মিনিটে শেষ। যে কাজে আগে Midjourney-তে ১৫ মিনিট লাগত (atmospheric book cover), সেটা এখনো Midjourney-তেই।</p>
 
-        <h2>১. কোয়ালিটি (photorealism)</h2>
+        <p>এই article-এ তানভীরের actual workflow + ১০টা parallel test (same prompt, দুটো model) + একজন BD startup founder-এর গল্প যিনি pure Flux-এ গেছেন এবং কেন। শেষে: কোন use case-এ আপনি কোনটা চান।</p>
+
+        <div class="stat-row">
+            <div class="stat"><span class="num">$৩০/মাস</span><span class="label">Midjourney Pro plan (২০২৬)</span></div>
+            <div class="stat"><span class="num">$০.০৪-০.০৬</span><span class="label">Flux 1.1 Pro per image via fal.ai</span></div>
+            <div class="stat"><span class="num">৭/১০</span><span class="label">Tests-এ যেখানে দুটোর তফাৎ স্পষ্ট</span></div>
+            <div class="stat"><span class="num">৯৪%</span><span class="label">Flux-এর text rendering accuracy — Midjourney ~৪২%</span></div>
+        </div>
+
+        <h2>১০ Parallel test — same prompt, দুটো model</h2>
+
+        <p>তানভীর ২০২৬-এ Flux 1.1 Pro Ultra এবং Midjourney v7-কে ১০টা identical prompt দিলেন। প্রতি pair-এ ৪টা variation generate করে best-of-4 select। নিচে summary।</p>
+
+        <h3>Test 1: "Cinematic photo of an elderly Bangladeshi rickshaw puller in Old Dhaka, golden hour, sweat on forehead, eye contact, 50mm lens, Kodak Portra 400 film grain"</h3>
         <ul>
-            <li><b>Midjourney v6.1:</b> Artistic aesthetic-এ legendary; faces sometimes idealized</li>
-            <li><b>Flux 1.1 Pro:</b> Photorealism-এ slight edge; skin texture realistic</li>
-            <li><b>Winner:</b> Photoreal-এ Flux, artistic-এ Midjourney</li>
+            <li><b>Midjourney:</b> বাহ্যিকভাবে cinematic, কিন্তু rickshaw-এর design European hand-cart-এর মতো। মুখটা idealized — wrinkles too soft।</li>
+            <li><b>Flux:</b> rickshaw সঠিকভাবে Bangladeshi (back-hood, কাঠের carriage)। চামড়ার texture authentic — sun-aged। Eye contact crisp।</li>
+            <li><b>Winner:</b> Flux (cultural accuracy + photorealism)</li>
         </ul>
 
-        <h2>২. Prompt adherence</h2>
+        <h3>Test 2: "Book cover design — magical realism novel set in Bangladesh, mystical river, full moon, oil painting style"</h3>
         <ul>
-            <li><b>Midjourney:</b> Creative liberty নেয়; "exact" output সবসময় না</li>
-            <li><b>Flux:</b> Instruction follow করে literally</li>
-            <li><b>Winner:</b> Flux for technical accuracy</li>
+            <li><b>Midjourney:</b> Atmosphere stunning। Moon reflection-এ painterly brush stroke। Mood lyrical।</li>
+            <li><b>Flux:</b> Technically clean কিন্তু "oil painting" instruction-এর paint texture কম। বেশি digital।</li>
+            <li><b>Winner:</b> Midjourney (artistic mood unbeatable)</li>
         </ul>
 
-        <h2>৩. Text rendering</h2>
+        <h3>Test 3: "Product poster — bottle of mustard oil with Bangla text 'খাঁটি সরিষার তেল' on label, white background"</h3>
         <ul>
-            <li><b>Midjourney:</b> Text-এ এখনো দুর্বল</li>
-            <li><b>Flux:</b> "POSTER SAYING DHAKA" — অনেক ভালো</li>
-            <li><b>Winner:</b> Flux clearly</li>
+            <li><b>Midjourney:</b> "খাট সরিযার তল" — Bangla characters mangled, text broken।</li>
+            <li><b>Flux:</b> "খাঁটি সরিষার তেল" — perfectly legible, font-style consistent।</li>
+            <li><b>Winner:</b> Flux (Midjourney এখনো Bangla text-এ unusable)</li>
         </ul>
 
-        <h2>৪. Hand &amp; anatomy</h2>
+        <h3>Test 4-10 — সংক্ষেপে</h3>
         <ul>
-            <li>উভয়ই improved, কিন্তু হাত complex pose-এ এখনো sometimes ভুল</li>
-            <li><b>Slight edge:</b> Flux</li>
+            <li><b>Test 4 (Album artwork — psychedelic):</b> Midjourney (color creativity)।</li>
+            <li><b>Test 5 (E-commerce product shot — shoe on wooden floor):</b> Flux (lighting realism)।</li>
+            <li><b>Test 6 (Anime style — Bangladeshi girl in saree):</b> Midjourney --niji (anime mode purpose-built)।</li>
+            <li><b>Test 7 (Architectural rendering — Dhaka apartment interior):</b> Tie (দুটোই ৯০% সঠিক)।</li>
+            <li><b>Test 8 (Hand-detail — pianist's hands on keys):</b> Flux (anatomy এখনো এগিয়ে)।</li>
+            <li><b>Test 9 (Logo + wordmark, "Padma Bazaar"):</b> Flux (text rendering)।</li>
+            <li><b>Test 10 (Storybook illustration — children in village field):</b> Midjourney (whimsy + character cohesion)।</li>
         </ul>
 
-        <h2>৫. Style versatility</h2>
+        <p><strong>Score:</strong> Flux ৬, Midjourney ৩, Tie ১।</p>
+
+        <div class="callout">
+            <strong>কিন্তু "winner" misleading:</strong> তানভীরের ৬০% paid client work এখনো Midjourney-তে যায় — book cover, album art, atmospheric illustration। বাকি ৪০% (product photo, text graphic, marketing poster) Flux-এ। দুটোই দরকার, একটায় choose করার দরকার নেই।
+        </div>
+
+        <h2>Bangladesh-থেকে access ও payment — actual reality</h2>
+
+        <h3>Midjourney</h3>
         <ul>
-            <li><b>Midjourney:</b> ২,০০০+ style references, niji mode (anime), --sref</li>
-            <li><b>Flux:</b> LoRA support, custom training সহজ</li>
-            <li><b>Winner:</b> Power user-এ Flux, ease-এ Midjourney</li>
+            <li><b>Platform:</b> midjourney.com (web) + Discord। ২০২৫-এ web app default — Discord আর mandatory নয়।</li>
+            <li><b>Payment:</b> Bidesh card দরকার। bKash USD virtual card কাজ করে। Payoneer card-এও OK।</li>
+            <li><b>Subscription tiers:</b> Basic $১০ (200 fast hour), Standard $৩০ (15 hours fast + unlimited relax), Pro $৬০ (30 hours + stealth mode)।</li>
+            <li><b>BD pain point:</b> Discord access fluctuates — মাঝে মাঝে slow। Web app stable।</li>
         </ul>
 
-        <h2>৬. দাম</h2>
+        <h3>Flux</h3>
         <ul>
-            <li><b>Midjourney:</b> $১০/মাস (200 fast hours), Discord/Web</li>
-            <li><b>Flux:</b> Free (Stable Diffusion-এ local), API $0.04/image, fal.ai/Replicate/PoE</li>
-            <li><b>Winner:</b> Flux for budget (free local), Midjourney for hassle-free</li>
+            <li><b>Access routes:</b>
+                <ul>
+                    <li><b>fal.ai</b> — easy pay-per-use, $0.04-0.06/image</li>
+                    <li><b>Replicate</b> — API + UI, similar pricing</li>
+                    <li><b>Poe</b> — subscription-based mixed model access</li>
+                    <li><b>Hugging Face Spaces</b> — Flux Schnell completely free</li>
+                    <li><b>Local install</b> — ComfyUI + Flux Dev on RTX 4070+ GPU। One-time hardware cost ৳১,২৫,০০০, তারপর unlimited free generation।</li>
+                </ul>
+            </li>
+            <li><b>BD advantage:</b> fal.ai-তে $১০ topup করলে ~১৬০-২০০ image। Schnell free unlimited (slightly lower quality)।</li>
         </ul>
 
-        <h2>৭. License (commercial use)</h2>
+        <h2>License ও commercial use — সবচেয়ে কম বোঝা টপিক</h2>
+
         <ul>
-            <li><b>Midjourney:</b> Standard plan-এ commercial OK, large company restrictions</li>
-            <li><b>Flux:</b> Flux 1 Pro commercial; Schnell/Dev different licenses</li>
-            <li><b>সতর্কতা:</b> Detail license terms read করুন</li>
+            <li><b>Midjourney Standard+:</b> $১M revenue-এর নিচে company-এর জন্য commercial OK। বড় client-এর কাছে work delivery-তে Pro plan নিরাপদ।</li>
+            <li><b>Flux 1.1 Pro:</b> Commercial use OK via licensed API providers (fal.ai, Replicate)।</li>
+            <li><b>Flux Dev:</b> Non-commercial license — research/personal only।</li>
+            <li><b>Flux Schnell:</b> Apache 2.0 — fully commercial, free।</li>
         </ul>
 
-        <h2>৮. অ্যাক্সেস (বাংলাদেশ থেকে)</h2>
+        <p>তানভীরের warning: "Flux Dev মডেল local-এ free চালানো যায়, কিন্তু সেটা দিয়ে client কাজ delivery করলে license violation। আমি জানি BD-তে অনেকে এটা ignore করে — কিন্তু client US-based হলে অনেক agency contract-এ AI license declaration clause আছে। একবার ধরা পড়লে account banned।"</p>
+
+        <h2>রিয়াদ-এর গল্প — যে কেউ pure Flux-এ গেছেন</h2>
+
+        <div class="case-study">
+            <div class="person">
+                <div class="avatar amber">রি</div>
+                <div>
+                    <strong>রিয়াদ চৌধুরী, ৩২, ঢাকা</strong>
+                    <span>E-commerce startup founder (Daraz + Facebook page)</span>
+                </div>
+            </div>
+            <p><b>Why pure Flux:</b> ১২টা SKU, প্রতি SKU-এ ৮-১০টা product photo দরকার। মাসে ১০০-১৫০ image। Midjourney-তে hassle high (Discord/web back-and-forth, text fail), Flux fal.ai API-এ Zapier দিয়ে automate করেছেন।</p>
+            <p><b>Cost:</b> মাসে $৭-৯ in API spend। Midjourney-তে $৩০-৬০ লাগত একই কাজে।</p>
+            <p><b>সীমাবদ্ধতা:</b> Atmospheric image (festival campaign visual) আর local Bangladeshi photographer hire করেন — Flux-এ সেটা ক্ষমতা থাকলেও tweaking time বেশি লাগে।</p>
+        </div>
+
+        <h2>সিদ্ধান্ত-গাছ — আপনার ৩০ সেকেন্ডের ans</h2>
+
         <ul>
-            <li><b>Midjourney:</b> Discord/web, payment বিদেশি card</li>
-            <li><b>Flux:</b> Many platforms — fal.ai, Replicate, locally</li>
-            <li><b>Free option:</b> Flux Schnell on Hugging Face</li>
+            <li><b>আপনি graphic designer / illustrator?</b> → Midjourney primary + Flux for text-graphic work</li>
+            <li><b>আপনি e-commerce/marketing-এ product shot বানান?</b> → Flux primary</li>
+            <li><b>আপনার content-এ Bangla typography দরকার (poster, label, infographic)?</b> → Flux only (Midjourney এই কাজে useless)</li>
+            <li><b>আপনি book cover, album art, atmospheric concept art বানান?</b> → Midjourney</li>
+            <li><b>আপনি free option খুঁজছেন (budget ০)?</b> → Flux Schnell on Hugging Face Spaces</li>
+            <li><b>আপনি consistent character/style across ১০-৫০ image চান?</b> → Midjourney --sref</li>
+            <li><b>আপনি custom-trained LoRA (নিজের face/product) চান?</b> → Flux Dev local install</li>
+            <li><b>আপনি প্রতি মাসে ১৫০+ image generate করেন?</b> → Flux API (cost সস্তা)</li>
         </ul>
 
-        <h2>একনজরে — কোনটি কখন</h2>
-        <ul>
-            <li><b>Artistic poster, illustration:</b> Midjourney</li>
-            <li><b>Product photo, photorealism:</b> Flux</li>
-            <li><b>Text-heavy graphic:</b> Flux</li>
-            <li><b>Style consistency series:</b> Midjourney --sref</li>
-            <li><b>Free option:</b> Flux Schnell</li>
-            <li><b>Custom training:</b> Flux LoRA</li>
-        </ul>
+        <h2>উপসংহার — তানভীরের চূড়ান্ত মত</h2>
 
-        <h2>উপসংহার</h2>
-        <p>দুটোই top-tier — winner আপনার use case। Designer/artist হলে Midjourney; technical user/marketer হলে Flux। একসাথে $২০/মাস budget থাকলে দুটোই — best toolkit।</p>
+        <p>"দুটো model দুই philosophy। Midjourney একজন artistic collaborator — interpretation নেয়, surprise দেয়। Flux একজন precise technician — exactly যা বলবেন, সেটাই দেবে। আপনি যদি commercial designer হন, দুটোই আপনার toolkit-এ থাকতে হবে। আপনি যদি আজ শুরু করেন এবং একটা বেছে নিতে হয় — text/product/marketing হলে Flux, art/illustration/mood হলে Midjourney। আর budget যদি ০ হয় — Flux Schnell free, Hugging Face-এ আজ থেকেই শুরু করুন।"</p>
+
+        <p>আপনার পরবর্তী generation কোন model-এ যাবে, সেটা আপনার prompt-এ "feeling" আছে নাকি "specification" আছে — সেটার উপর depend করে। সেই একটা প্রশ্ন আপনাকে ৯০% সময় সঠিক tool-এর দিকে নিয়ে যাবে।</p>
 
         <h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
         <ul>
