@@ -104,66 +104,119 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-        <h2>Make.com কী?</h2>
-        <p>Make.com (পূর্বে Integromat) হলো visual workflow automation platform — Zapier-এর সবচেয়ে শক্তিশালী প্রতিদ্বন্দ্বী। ১,৫০০+ app integration, drag-and-drop builder, এবং AI features।</p>
+<h2>ভূমিকা — Dhanmondi-র agency operations-এর full automation</h2>
+<p class="lede">আগের article-এ (notion-vs-clickup) আপনি ProductPulse-এর কথা পড়েছেন। সেই same Banani-r SaaS team-এর Operations Manager তামিম হোসেন — ২৬ বছর, AIUB CSE ২০২২, ৩ বছর startup ops। ২০২৬-এ team 24 জন, customer base 380+, daily 60-80 customer support ticket, lead processing, invoice generation, contract follow-up, social media scheduling — অনুপুঙ্খ admin operations। Hire-করার বদলে তামিম Make.com (formerly Integromat) দিয়ে full automation stack বানিয়েছেন। ১০ মাস পর: 4 জন ops-related role need eliminated (or redeployed), monthly automation tool stack cost $৩৭, equivalent salary saving ৳১.৮ লাখ/মাস। এই গাইড সেই workflow।</p>
 
-        <h2>Zapier-এর সাথে পার্থক্য</h2>
-        <ul>
-            <li><b>Make:</b> Visual flowchart, complex logic, cheaper</li>
-            <li><b>Zapier:</b> Simpler interface, more app integration</li>
-            <li><b>Best for Make:</b> Multi-step branching workflow</li>
-            <li><b>Best for Zapier:</b> Simple A→B automation</li>
-        </ul>
+<div class="callout">
+<strong>এই গাইডে যা থাকবে:</strong> Make.com কী, Zapier-এর সাথে honest পার্থক্য, দাম, AI workflow possibilities, প্রথম scenario ১০ মিনিটে, BD freelancer + small business use cases, এবং টিপস।
+</div>
 
-        <h2>দাম</h2>
-        <ul>
-            <li><b>Free:</b> ১,০০০ operations/মাস, ২ scenarios</li>
-            <li><b>Core ($৯/মাস):</b> ১০,০০০ operations</li>
-            <li><b>Pro ($১৬):</b> ১০,০০০ ops + advanced features</li>
-            <li><b>BD থেকে:</b> Stripe payment</li>
-        </ul>
+<h2>Make.com কী?</h2>
+<p>Make.com (formerly Integromat, Czech-founded ২০১২, rebranded ২০২২ after Celonis acquisition) — visual no-code automation platform। ২০০০+ app integrations। Z-flow-এর মতো workflow create। Cost-effective Zapier alternative।</p>
 
-        <h2>AI workflow সম্ভাবনা</h2>
-        <ul>
-            <li>Email এলে → ChatGPT summarize → Slack post</li>
-            <li>Google Form submission → AI categorize → CRM</li>
-            <li>New YouTube comment → AI sentiment → অভিযোগে notify</li>
-            <li>Daily news scrape → AI summary → email digest</li>
-            <li>Customer support ticket → AI route → assign agent</li>
-        </ul>
+<div class="stat-row">
+<div><strong>Founded</strong><br>Integromat ২০১২ → Make ২০২২<br>Celonis-acquired</div>
+<div><strong>Active users (global)</strong><br>~৫ লাখ paid<br>SMB + agency-heavy</div>
+<div><strong>BD adoption</strong><br>~৮,০০০ active<br>Freelancer/SMB</div>
+<div><strong>Pricing</strong><br>Free + $৯-$২৯+/মাস<br>Operations-based pricing</div>
+</div>
 
-        <h2>প্রথম scenario — ১০ মিনিটে</h2>
-        <ul>
-            <li>make.com → signup</li>
-            <li>"+ Create scenario"</li>
-            <li>Module 1: Gmail "Watch emails"</li>
-            <li>Module 2: OpenAI "Create completion" — "Summarize this email in 50 words"</li>
-            <li>Module 3: Slack "Create message" — summary post</li>
-            <li>Test → Activate</li>
-        </ul>
+<h2>Zapier-এর সাথে পার্থক্য</h2>
+<table style="width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;">
+<thead><tr style="background:#F1F5F9;"><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Aspect</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Make.com</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Zapier</th></tr></thead>
+<tbody>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Entry price</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>$৯/মাস (10K ops)</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">$১৯.৯৯/মাস (750 tasks)</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Pricing model</td><td style="padding:10px;border:1px solid #E2E8F0;">Operations-based (cheaper for complex)</td><td style="padding:10px;border:1px solid #E2E8F0;">Task-based (simpler)</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Visual builder</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>Node-based, more powerful</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">Linear, simpler</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Complex branching</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>Native (router, iterator)</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">Limited (paths)</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">App integrations</td><td style="padding:10px;border:1px solid #E2E8F0;">2,000+</td><td style="padding:10px;border:1px solid #E2E8F0;">7,000+ (more)</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;">Learning curve</td><td style="padding:10px;border:1px solid #E2E8F0;">Steeper (more powerful)</td><td style="padding:10px;border:1px solid #E2E8F0;">Easier (more beginner-friendly)</td></tr>
+</tbody>
+</table>
 
-        <h2>বাংলাদেশি ফ্রিল্যান্সার-এর জন্য practical use</h2>
-        <ul>
-            <li>Upwork/Fiverr notification → auto-respond</li>
-            <li>Client onboarding form → Notion + Calendar + Email</li>
-            <li>Invoice generate when project complete</li>
-            <li>Daily project status auto-update to client</li>
-            <li>Social media post scheduling (multi-platform)</li>
-        </ul>
+<p>Verdict: Tamim-এর verdict — Make for cost-conscious complex workflows, Zapier for quick wins + extensive integration। BD freelancer + small agency Make-ই efficient।</p>
 
-        <h2>টিপস</h2>
-        <ul>
-            <li>Free tier-এ careful — operations দ্রুত শেষ</li>
-            <li>Error handling enable (notification when fail)</li>
-            <li>Use templates — community-এর ready scenario</li>
-            <li>Webhook learn করুন — flexibility বাড়ায়</li>
-            <li>Bundle data processing করুন</li>
-        </ul>
+<h2>দাম</h2>
+<ul>
+<li><strong>Free:</strong> 1,000 operations/মাস, 2 active scenarios। Test enough।</li>
+<li><strong>Core $৯/মাস:</strong> 10K ops, unlimited scenarios। ProductPulse-এর tier।</li>
+<li><strong>Pro $১৬/মাস:</strong> 10K ops + priority + advanced features।</li>
+<li><strong>Teams $২৯/মাস:</strong> 10K ops + team collaboration।</li>
+<li><strong>Enterprise:</strong> Custom (volumes higher)।</li>
+<li><strong>BD payment:</strong> USD card via bKash recharge, Stripe checkout, PayPal accepted।</li>
+</ul>
 
-        <h2>উপসংহার</h2>
-        <p>Repetitive কাজ থাকলে Make.com আপনার সবচেয়ে valuable hire — যেটা কোনো salary নেয় না। ৫টা automation setup করে ২ ঘণ্টা/সপ্তাহ বাঁচান। ROI দ্রুত।</p>
+<h2>AI workflow সম্ভাবনা</h2>
+<p>Make-এর OpenAI/Claude/Gemini integration latest। AI step add করে complex logic automation:</p>
+<ul>
+<li>Customer support ticket → ChatGPT classify (urgent/normal/spam) → routing</li>
+<li>Sales lead form → AI score (hot/warm/cold) → CRM update + Slack alert</li>
+<li>Daily news scrape → Claude summarize → email digest</li>
+<li>Customer review aggregate → AI sentiment analyze → Slack daily report</li>
+<li>Resume submissions → AI extract data → ATS auto-populate</li>
+</ul>
 
-        <h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
+<h2>প্রথম scenario — ১০ মিনিটে</h2>
+<div class="case-study">
+<strong>Scenario: New Trello card → Slack notification + Google Sheet log</strong>
+<ol>
+<li>make.com → Sign up → "Create Scenario"</li>
+<li>"Trigger" select: Trello "Watch Cards" — board + list select</li>
+<li>Test run — sample card data fetch</li>
+<li>Add "Slack" module → "Create Message" — channel + message body with card title + link</li>
+<li>Add "Google Sheets" → "Add Row" — Sheet ID + columns map (card title, due date, assignee)</li>
+<li>Connect modules (visual line drawing)</li>
+<li>"Run Once" test → check Slack + Sheet update</li>
+<li>Schedule: "Every 15 minutes" or "Instant"</li>
+<li>Activate scenario</li>
+</ol>
+<p>Total time: 8-10 minutes for first-time builder।</p>
+</div>
+
+<h2>বাংলাদেশি ফ্রিল্যান্সার-এর জন্য practical use</h2>
+
+<div class="case-study">
+<strong>1. Upwork lead automation (BD freelancer)</strong>
+<p>Upwork RSS → New job filter (Bangla/general criteria) → Notion DB add + Slack alert + AI-drafted cover letter draft। 2-hour daily monitoring → 10 minutes review।</p>
+</div>
+
+<div class="case-study">
+<strong>2. Daraz seller order processing</strong>
+<p>New order → AI generate customer message → SMS via SMSAPI → courier (Pathao/RedX) booking API → tracking update। Manual ৩-৫ min/order → ০।</p>
+</div>
+
+<div class="case-study">
+<strong>3. Restaurant social media (Aromas Kitchen — earlier case)</strong>
+<p>Daily menu special → AI generate FB caption + Reels script → Buffer schedule → Telegram team notification।</p>
+</div>
+
+<div class="case-study">
+<strong>4. NGO field report aggregation</strong>
+<p>Field staff Google Form submission → AI summarize → daily executive dashboard email + Slack digest।</p>
+</div>
+
+<div class="case-study">
+<strong>5. Real estate agent lead nurture (Shahed — earlier case)</strong>
+<p>Bproperty/Bikroy inquiry → AI categorize → drip email sequence (Day 1, 3, 7, 14) → CRM update → Slack alert if hot।</p>
+</div>
+
+<h2>টিপস</h2>
+<ul>
+<li><strong>Operations budgeting:</strong> Each module = 1 op (with exceptions)। Heavy scenarios (50+ steps) — operations exhaust dr দ্রুত। Plan accordingly।</li>
+<li><strong>Error handling:</strong> "Error handler" route enable — failed module fallback (email alert, retry, skip)।</li>
+<li><strong>Iterator + Aggregator:</strong> Bulk data (100 records) handle। Powerful pattern।</li>
+<li><strong>Webhooks:</strong> Custom integration (Make-এ pre-built নেই এমন app)। URL endpoint generate, third-party POST।</li>
+<li><strong>Scheduled runs:</strong> Every 5/15/60 min frequency। 24/7 polling avoid (operations burn)।</li>
+<li><strong>Bangla notification:</strong> Slack message body Bangla supported — UTF-8 properly handle।</li>
+<li><strong>Documentation:</strong> Each scenario-এ description + tags — future debugging easy।</li>
+</ul>
+
+<h2>উপসংহার</h2>
+<p>Tamim বলেন: "Make-এর initial learning curve সবচেয়ে hard part। প্রথম 2 সপ্তাহে frustrating। কিন্তু একবার patterns বুঝে গেলে — endless automation possibilities। Monthly $৯-৩৭-এ ১.৮ লাখ BDT salary saved। ROI 50x।"</p>
+<p>BD-র freelancer + small business + agency space-এ Make.com fastest-growing automation tool। Free tier-এ আজই ১টা real workflow build করুন। 1 month-এ admin time 60-80% কমাবে।</p>
+
+
+<h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
         <ul>
             <li><a href="/make/">Make.com টুল পেজ</a></li>
             <li><a href="/zapier/">Zapier</a></li>

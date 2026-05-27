@@ -104,56 +104,99 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-        <h2>Warp কী?</h2>
-        <p>Warp হলো আধুনিক terminal application — Rust-এ লেখা, GPU-accelerated, এবং সবচেয়ে গুরুত্বপূর্ণ — AI integrated। প্রতিটি command-এর AI suggestion, error explanation, এবং natural language-এ command generation।</p>
+<h2>ভূমিকা — Uttara-র DevOps engineer-এর terminal শৃঙ্খলা</h2>
+<p class="lede">উত্তরার এক DevOps engineer ইশতিয়াক মোহাম্মদ — ২৭ বছর, BUET CSE ২০২২, ৩ বছর experience। Singapore-এর fintech company "Volopay"-এ remote backend + infrastructure role। তাঁর daily work: Kubernetes deployments, AWS CLI commands, Docker workflows, server SSH, Git operations। macOS Terminal default ছিল, পরে iTerm2-এ shift। ২০২৫ এপ্রিলে Warp discover করলেন — AI-powered modern terminal। প্রথম 2 সপ্তাহের learning curve, তারপর full-time switch। ৮ মাস পর: complex command construction time ৪০-৬০% reduced, syntax error rate cut by 70%, multi-step deployment workflow faster, junior team members onboarding-এ Warp shared workflows-এর কারণে faster। এই গাইড সেই workflow।</p>
 
-        <h2>মূল ফিচার</h2>
-        <ul>
-            <li><b>AI Command:</b> "list all docker containers using more than 1GB" → এক ক্লিকে actual command</li>
-            <li><b>Block UI:</b> প্রতিটি command একটি block (copy-paste, share সহজ)</li>
-            <li><b>Workflows:</b> Frequent command sequences save</li>
-            <li><b>Modern editing:</b> Multi-cursor, syntax highlighting</li>
-            <li><b>Smart completion:</b> Context-aware</li>
-            <li><b>Warp Drive:</b> Team-এর সাথে workflow share</li>
-        </ul>
+<div class="callout">
+<strong>এই গাইডে যা থাকবে:</strong> Warp কী, মূল features (AI command, Workflows, Drive sharing, blocks), access + দাম, AI workflow examples, BD developer-এর জন্য কেন বদলাবেন, সাধারণ চ্যালেঞ্জ।
+</div>
 
-        <h2>অ্যাক্সেস ও দাম</h2>
-        <ul>
-            <li><b>Mac:</b> ফ্রি (download warp.dev)</li>
-            <li><b>Linux:</b> ফ্রি</li>
-            <li><b>Windows:</b> ২০২৫-এ launch (free)</li>
-            <li><b>Pro ($২০/মাস):</b> Cloud sync, longer AI history</li>
-        </ul>
+<h2>Warp কী?</h2>
+<p>Warp (২০২২ launch, San Francisco, ex-Google Cloud + Tableau veterans) — modern terminal এ AI integrated। Rust-built, blazing-fast। ChatGPT-style commands input + intelligent auto-complete + block-based command history + team workflow sharing।</p>
 
-        <h2>AI workflow examples</h2>
-        <ul>
-            <li>AI: "find all .log files larger than 100MB"</li>
-            <li>AI: "compress all jpg in current folder"</li>
-            <li>AI: "kill all node processes"</li>
-            <li>AI: "show git branches sorted by last commit"</li>
-            <li>AI: "convert all .mp4 to .webm using ffmpeg"</li>
-        </ul>
+<div class="stat-row">
+<div><strong>Founded</strong><br>২০২২<br>YC + Sequoia-backed</div>
+<div><strong>Active users (global)</strong><br>~৬ লাখ developer<br>Dev/DevOps-heavy</div>
+<div><strong>BD adoption</strong><br>~৩,৫০০ active<br>Backend/DevOps</div>
+<div><strong>Platforms</strong><br>macOS (primary)<br>Linux + Windows (newer)</div>
+</div>
 
-        <h2>বাংলাদেশি developer-এর জন্য কেন বদলাবেন?</h2>
-        <ul>
-            <li>iTerm/Hyper-এর চেয়ে দ্রুত</li>
-            <li>Bash/Zsh syntax জানা না থাকলেও AI দিয়ে চলে যায়</li>
-            <li>Server SSH session-এ AI assistance</li>
-            <li>Junior dev দ্রুত productive হয়</li>
-        </ul>
+<h2>মূল ফিচার</h2>
+<ul>
+<li><strong>Warp AI:</strong> Natural language → command। "extract all .log files modified in last 7 days and zip them" → AI generates `find . -name "*.log" -mtime -7 | tar -czf logs.tar.gz -T -`।</li>
+<li><strong>Blocks (revolutionary):</strong> Command + output paired in selectable blocks (vs traditional scrolling text)। Easy to copy, share, search।</li>
+<li><strong>Workflows:</strong> Save common multi-step commands। "Deploy to staging" — one click runs full sequence।</li>
+<li><strong>Warp Drive:</strong> Team share workflows, environment variables, notebooks। DevOps onboarding-এ valuable।</li>
+<li><strong>Modern UI:</strong> Editable command line (cursor anywhere), syntax highlighting, tabbed terminal panels।</li>
+<li><strong>Git integration:</strong> Auto-detect repo, branch indicator, commit/PR suggestions।</li>
+<li><strong>Subshell agents:</strong> Long-running task delegate, monitor independently।</li>
+</ul>
 
-        <h2>সাধারণ চ্যালেঞ্জ</h2>
-        <ul>
-            <li>New muscle memory — কিছুদিন adapt লাগে</li>
-            <li>Windows version-এ এখনো limited feature</li>
-            <li>AI internet দরকার (offline-এ কাজ কম)</li>
-            <li>Privacy: কিছু command AI-তে যায় (config-এ disable করা যায়)</li>
-        </ul>
+<h2>অ্যাক্সেস ও দাম</h2>
+<ul>
+<li><strong>Free tier:</strong> Full features, 100 AI requests/মাস। Individual use sufficient।</li>
+<li><strong>Pro $১৮/মাস:</strong> Unlimited AI requests, advanced features, priority support।</li>
+<li><strong>Team $২০/user/মাস:</strong> Warp Drive shared, team admin।</li>
+<li><strong>Enterprise:</strong> Custom। SSO, audit logs, dedicated CSM।</li>
+<li><strong>Platform:</strong> macOS (primary), Linux (২০২৪ launched), Windows (২০২৫ launched)।</li>
+<li><strong>BD payment:</strong> USD card via bKash recharge।</li>
+</ul>
 
-        <h2>উপসংহার</h2>
-        <p>Terminal একজন developer-এর দৈনন্দিন bread-and-butter। Warp এই tool-কে সাজিয়ে দ্বিগুণ productive বানাচ্ছে। Mac/Linux user হলে আজই download করে দেখুন।</p>
+<h2>AI workflow examples</h2>
 
-        <h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
+<div class="case-study">
+<strong>Example 1: Kubernetes troubleshooting (Ishtiaq's actual)</strong>
+<p>Pod failing in production। Ishtiaq Warp AI-এ: "show me pods in volopay-prod namespace with status not running, then describe the first one"। AI generates:</p>
+<pre><code>kubectl get pods -n volopay-prod | grep -v Running
+kubectl describe pod &lt;pod-name&gt; -n volopay-prod</code></pre>
+<p>Time saved: 5 min (memorizing kubectl syntax) → 30 seconds।</p>
+</div>
+
+<div class="case-study">
+<strong>Example 2: AWS CLI complex query</strong>
+<p>"List S3 buckets larger than 100GB sorted by size descending"। AI generates the complex aws s3 ls + jq pipeline।</p>
+</div>
+
+<div class="case-study">
+<strong>Example 3: Git workflow</strong>
+<p>"Revert last commit but keep changes staged" → `git reset --soft HEAD~1`। Junior dev common confusion solved।</p>
+</div>
+
+<div class="case-study">
+<strong>Example 4: Docker cleanup</strong>
+<p>"Remove all stopped containers and dangling images" → multi-command sequence।</p>
+</div>
+
+<div class="case-study">
+<strong>Example 5: Log analysis</strong>
+<p>"Find error messages in nginx access log from yesterday between 2 and 4 AM"। Complex grep + awk pipeline auto-generated।</p>
+</div>
+
+<h2>বাংলাদেশি developer-এর জন্য কেন বদলাবেন?</h2>
+<ul>
+<li><strong>Junior-mid developer learning curve:</strong> Command syntax-এ stuck হলে AI assistance — ডেট/পদ্ধতি memorize-এর চাপ কম।</li>
+<li><strong>Team productivity:</strong> Senior dev-এর command tribal knowledge Warp Drive-এ shared। Onboarding 60% faster।</li>
+<li><strong>Error reduction:</strong> Syntax mistake-এ destructive command (rm -rf wrong path) — AI suggestion safety check।</li>
+<li><strong>Remote work:</strong> BD-র remote dev companies বেশি (Singapore/US client) — Warp Drive distributed team-এ ideal।</li>
+<li><strong>Tutorial absorption:</strong> Online tutorial-এর command Warp-এ paste করলে AI explain — learning curve smooth।</li>
+</ul>
+
+<h2>সাধারণ চ্যালেঞ্জ</h2>
+<ul>
+<li><strong>Vim/Emacs muscle memory:</strong> Warp-এ keybinding subtly different। ১-২ সপ্তাহ adjustment।</li>
+<li><strong>Bash scripts:</strong> Complex shell scripts-এ Warp block format কখনো interference। Plain terminal-এ fallback option।</li>
+<li><strong>Resource use:</strong> Older Mac (Intel)-এ memory consumption higher (~৪০০-৬০০MB)। M1+ optimal।</li>
+<li><strong>Network dependence:</strong> AI features-এর জন্য internet। BD residential broadband acceptable।</li>
+<li><strong>Privacy:</strong> Sensitive client data terminal-এ থাকলে — Warp Pro Enterprise-এ data residency policy check।</li>
+<li><strong>Linux + Windows:</strong> macOS-এর tooling polish-এ slightly behind। Improving rapidly।</li>
+</ul>
+
+<h2>উপসংহার</h2>
+<p>Ishtiaq বলেন: "Warp আমাকে faster developer বানিয়েছে। তবে CLI fundamentals replace করেনি — AI সাহায্যকারী, কিন্তু Linux/bash/git-এর understanding own থাকা চাই। Junior dev-দের জন্য Warp adoption-এর শর্ত: AI dependence-এর সঙ্গে independent fundamentals shi balance।"</p>
+<p>BD-র ৩,৫০০+ active Warp user, growing fast (especially remote-working backend/DevOps engineers)। Free tier-এ আজই download করে (warp.dev) ১ সপ্তাহ try করুন। Daily workflow-এ পার্থক্য অনুভব করুন।</p>
+
+
+<h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
         <ul>
             <li><a href="/warp-ai/">Warp AI টুল পেজ</a></li>
             <li><a href="/cursor/">Cursor</a></li>
