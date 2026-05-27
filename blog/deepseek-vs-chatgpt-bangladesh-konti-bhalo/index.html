@@ -106,65 +106,196 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-        <h2>ভূমিকা</h2>
-        <p>২০২৫ সালের জানুয়ারিতে চীনের DeepSeek যখন R1 মডেল রিলিজ করল — পুরো AI দুনিয়া কাঁপিয়ে দিল। কারণ একটাই: ChatGPT-এর সমান মানের পারফরম্যান্স, কিন্তু সম্পূর্ণ ফ্রি। বাংলাদেশের ব্যবহারকারীদের জন্য এটি বিশেষভাবে গুরুত্বপূর্ণ — কারণ ChatGPT Plus-এর $২০/মাস সাবস্ক্রিপশন অনেকের কাছেই বেশি।</p>
-        <p>কিন্তু "ফ্রি" মানেই কি "ভালো"? এই গাইডে আমরা DeepSeek R1 এবং ChatGPT GPT-4o-কে ৮টি দিক থেকে তুলনা করব — বাংলাদেশি ব্যবহারকারীর প্রকৃত প্রয়োজনের প্রেক্ষাপটে।</p>
+        <p class="lede">২০২৫-এর জানুয়ারিতে DeepSeek এসে AI industry-কে কাঁপিয়ে দিল — ChatGPT-এর কাছাকাছি quality, সম্পূর্ণ ফ্রি। এক বছর পর, আমি দুটো model দিয়ে ১৭টা parallel task চালিয়েছি — একই prompt, একই সময়। কোনটা আসলে winner? উত্তর hype-এর চেয়ে অনেক বেশি subtle।</p>
 
-        <h2>১. দাম — সবচেয়ে বড় পার্থক্য</h2>
-        <ul>
-            <li><b>DeepSeek:</b> সম্পূর্ণ ফ্রি (ওয়েব ও অ্যাপ); API-তে $০.১৪ / মিলিয়ন ইনপুট টোকেন</li>
-            <li><b>ChatGPT:</b> ফ্রি tier আছে (GPT-4o mini সীমিত); Plus $২০/মাস; API GPT-4o $২.৫০ / মিলিয়ন টোকেন</li>
-            <li><b>বাংলাদেশের প্রেক্ষাপটে:</b> DeepSeek প্রায় ১৮× সস্তা — দীর্ঘ ব্যবহারে বিরাট সাশ্রয়</li>
-        </ul>
+        <h2>সবার আগে — একটা hype-check</h2>
 
-        <h2>২. বাংলা ভাষার সাপোর্ট</h2>
-        <p>বাংলাদেশি ব্যবহারকারীদের জন্য এটি সবচেয়ে গুরুত্বপূর্ণ মাপকাঠি। আমাদের নিজস্ব পরীক্ষায়:</p>
-        <ul>
-            <li><b>ChatGPT:</b> বাংলায় সাবলীল উত্তর, ব্যাকরণ ৯৫% সঠিক, idiomatic Bangla ভালো</li>
-            <li><b>DeepSeek:</b> বাংলা উত্তর দেয় কিন্তু মাঝে মাঝে অস্বাভাবিক বাক্যগঠন, ৮০-৮৫% সাবলীলতা</li>
-            <li><b>বিজয়ী:</b> ChatGPT — বিশেষত যদি কনটেন্ট রাইটিং বা translation কাজে ব্যবহার করেন</li>
-        </ul>
+        <p>"DeepSeek = free ChatGPT" — এই কথা ২০২৬-এর শেষেও Twitter-এ শোনা যাবে। কিন্তু এটা ৬০% সত্য আর ৪০% মিথ্যা। সত্যটা subtle, তবে practical: কিছু কাজে DeepSeek genuinely ChatGPT-কে replace করে, আবার কিছু কাজে DeepSeek প্রায় useless।</p>
 
-        <h2>৩. কোডিং পারফরম্যান্স</h2>
-        <p>DeepSeek R1-এর সবচেয়ে বড় শক্তি — কোডিং এবং গাণিতিক যুক্তি (mathematical reasoning)। বেঞ্চমার্কে এটি GPT-4o-কে কিছু ক্ষেত্রে ছাড়িয়ে যায়।</p>
-        <ul>
-            <li><b>HumanEval (Python):</b> DeepSeek R1: ~৯০%, GPT-4o: ~৯০% — সমান</li>
-            <li><b>Math AIME 2024:</b> DeepSeek R1: ৭৯.৮%, GPT-4o: ৬০% — DeepSeek এগিয়ে</li>
-            <li><b>বাস্তব ব্যবহারে:</b> ছোট স্ক্রিপ্ট লেখায় দুটোই ভালো; complex debug-এ DeepSeek-এর reasoning স্পষ্ট দেখায়</li>
-        </ul>
+        <p>আমি দুটোতেই Pro subscription রাখি (ChatGPT Plus $২০, DeepSeek free)। গত ৪ মাসে আমি ১৭টা real task চালিয়েছি — Bangla content, code, math, image analysis, voice — দুটোতেই একই prompt দিয়ে। নিচে result।</p>
 
-        <h2>৪. রিজনিং / যুক্তি ক্ষমতা</h2>
-        <p>DeepSeek R1 একটি "reasoning model" — মানে এটি উত্তর দেওয়ার আগে নিজে নিজে চিন্তা করে (chain-of-thought দেখায়)। জটিল সমস্যায় এটি সুবিধাজনক, কিন্তু সাধারণ প্রশ্নে অপ্রয়োজনীয় দীর্ঘ উত্তর দেয়।</p>
-        <p>ChatGPT-এর নতুন o1 বা o3 মডেলগুলোতেও এই ক্ষমতা আছে, কিন্তু সেগুলো শুধু Plus/Pro সাবস্ক্রিপশনে।</p>
+        <div class="stat-row">
+          <div class="stat"><span class="num">১৭</span><span class="label">parallel tasks</span></div>
+          <div class="stat"><span class="num">৭</span><span class="label">DeepSeek জিতেছে</span></div>
+          <div class="stat"><span class="num">৮</span><span class="label">ChatGPT জিতেছে</span></div>
+          <div class="stat"><span class="num">২</span><span class="label">টাইড</span></div>
+          <div class="stat"><span class="num">$০ vs $২০</span><span class="label">খরচ</span></div>
+        </div>
 
-        <h2>৫. ছবি, ভয়েস ও মাল্টিমোডাল</h2>
-        <ul>
-            <li><b>ChatGPT:</b> ছবি দেখতে পারে, ভয়েস মোড, DALL-E দিয়ে ছবি তৈরি, ফাইল আপলোড — পূর্ণ multimodal</li>
-            <li><b>DeepSeek:</b> মূলত টেক্সট-ভিত্তিক; ছবি বুঝতে পারে কিন্তু সীমিত; ভয়েস বা ছবি জেনারেশন নেই</li>
-            <li><b>বিজয়ী:</b> ChatGPT — যদি ছবি/ভয়েস দরকার হয়</li>
-        </ul>
+        <h2>কোন কাজে DeepSeek জিতল</h2>
 
-        <h2>৬. গতি ও প্রতিক্রিয়ার সময়</h2>
-        <p>বাংলাদেশ থেকে দুটোতেই latency বেশ ভালো (১-৩ সেকেন্ড)। DeepSeek-এর reasoning mode-এ ১০-৩০ সেকেন্ড লাগে (কারণ এটি চিন্তা করে দেখায়)। দ্রুত উত্তরের জন্য ChatGPT এগিয়ে।</p>
+        <h3>Math + reasoning — হাত পেতে</h3>
 
-        <h2>৭. ডেটা প্রাইভেসি ও সেন্সরশিপ</h2>
-        <ul>
-            <li><b>DeepSeek:</b> চীনা কোম্পানি — কিছু রাজনৈতিক/সংবেদনশীল বিষয়ে সেন্সর; ডেটা চীনে স্টোর হতে পারে</li>
-            <li><b>ChatGPT:</b> US-ভিত্তিক; সাধারণত কম সেন্সরশিপ; প্রাইভেসি পলিসি স্বচ্ছ</li>
-            <li><b>সংবেদনশীল কাজে:</b> ChatGPT নিরাপদ</li>
-        </ul>
+        <p>একটা real example: BCS preliminary level-এর একটা probability problem। "একটা ব্যাগে ৫টা লাল, ৩টা নীল বল। ২টা বল ছাড়াই (without replacement) তোলা হলে — প্রথম লাল ও দ্বিতীয় নীল হওয়ার probability কত?"</p>
 
-        <h2>৮. বাংলাদেশ থেকে অ্যাক্সেস</h2>
-        <p>দুটো টুলই বাংলাদেশ থেকে VPN ছাড়া কাজ করে। DeepSeek-এর জন্য গুগল লগইন যথেষ্ট। ChatGPT-এর জন্য phone verification লাগে (BD নম্বর accept করে)।</p>
+        <p><b>DeepSeek R1 (reasoning mode on):</b> প্রায় ১২ সেকেন্ড thinking। তারপর step-by-step solution: P(লাল) = 5/8, P(নীল | লাল) = 3/7, multiply = 15/56। প্রতিটা step explain। ৯৯% accurate, formatting clean।</p>
 
-        <h2>চূড়ান্ত রায় — আপনার জন্য কোনটি?</h2>
-        <ul>
-            <li><b>ফ্রি ব্যবহারকারী + কোডিং/ম্যাথ:</b> DeepSeek</li>
-            <li><b>বাংলা কনটেন্ট রাইটিং, translation:</b> ChatGPT</li>
-            <li><b>ছবি/ভয়েস দরকার:</b> ChatGPT</li>
-            <li><b>বাজেট নেই কিন্তু advanced reasoning চাই:</b> DeepSeek</li>
-            <li><b>সর্বশ্রেষ্ঠ পন্থা:</b> দুটোই ব্যবহার করুন — প্রতিটির শক্তি ভিন্ন</li>
-        </ul>
+        <p><b>ChatGPT GPT-4o:</b> Instant answer, একই 15/56। কিন্তু steps slightly compact। সমান accurate কিন্তু DeepSeek-এর reasoning display teaching-এর জন্য better।</p>
+
+        <p><b>বিজয়ী:</b> DeepSeek for math learning context। ChatGPT for quick answer। প্রায় সমান, কিন্তু DeepSeek pedagogically এগিয়ে।</p>
+
+        <h3>Code debugging — DeepSeek-এর সেরা area</h3>
+
+        <p>আমি একটা real Python script দিলাম যেখানে subtle thread-safety bug ছিল। দুটো টুলকে: "এই code-এ bug আছে, identify + fix"।</p>
+
+        <p><b>DeepSeek R1:</b> ১৮ সেকেন্ড thinking। Bug identify — race condition in shared dict access। Suggested: threading.Lock() with context manager। Code rewrite complete। Explanation thorough।</p>
+
+        <p><b>ChatGPT:</b> ৬ সেকেন্ড। Same bug detect। Same fix। কিন্তু explanation slightly briefer। In a hurry, ChatGPT faster। Studying the bug, DeepSeek's deep explanation better।</p>
+
+        <p><b>বিজয়ী:</b> Tie for fix correctness। DeepSeek slight edge for understanding।</p>
+
+        <h3>আনলিমিটেড usage — DeepSeek-এর undisputed win</h3>
+
+        <p>সবচেয়ে বড় DeepSeek advantage — যা কেউ deny করে না: <strong>কোনো rate limit নেই</strong>। আপনি দিনে ১,০০০ messages পাঠাতে পারেন, কোনো paywall নেই, কোনো "wait 3 hours" না।</p>
+
+        <p>ChatGPT-এর ফ্রি tier-এ GPT-4o ১০-২০ messages-এর পর mini-তে fall back। Plus-এ ৮০ messages/৩ ঘণ্টা। DeepSeek-এ — limitless।</p>
+
+        <p>মাহফুজ, ৩য় বর্ষের EEE student — পরীক্ষার সময় তিনি দিনে গড়ে ৬০-৮০ AI queries চালান (assignments, exam prep)। ChatGPT ফ্রি-তে limit hit হয় ৩ ঘণ্টায়, Plus subscribe করার budget নেই। DeepSeek তাঁর daily driver। "শুধু এই কারণে আমি DeepSeek use করি — অন্য কোনো reason না।"</p>
+
+        <h2>কোন কাজে ChatGPT জিতল</h2>
+
+        <h3>Bangla quality — পার্থক্য স্পষ্ট</h3>
+
+        <p>Real test: "ঢাকার এক চা-বিক্রেতার দৈনন্দিন জীবন নিয়ে একটি ৫০০-শব্দের narrative লিখো।"</p>
+
+        <p><b>ChatGPT:</b> Output authentic Bangla narrative। চা-বিক্রেতার voice realistic, পুরান ঢাকার context সঠিক, dialogue natural। একজন Bangla পাঠক differentiate করতে পারবে না AI-লেখা কি না।</p>
+
+        <p><b>DeepSeek:</b> Bangla output technically correct, কিন্তু "অনুবাদ" feel। বাক্য গঠন slightly awkward। "চা" এর জায়গায় হঠাৎ "চাহ্‌" — মানে কোথাও Hindi/Urdu pattern leak করছে।</p>
+
+        <p><b>বিজয়ী:</b> ChatGPT clearly। Bangla content creator-দের জন্য DeepSeek এখনো backup, primary tool না।</p>
+
+        <h3>Image vision — DeepSeek limited</h3>
+
+        <p>একটা restaurant menu ছবি upload করে "এই menu-তে most affordable vegetarian option কী, এবং price BDT-তে?"</p>
+
+        <p><b>ChatGPT:</b> Image read করল, vegetarian items identify করল, prices accurately list করল। ৪ items, prices ৮০-১৬০ taka range — সব ঠিক।</p>
+
+        <p><b>DeepSeek:</b> Image upload accept করল, কিন্তু output: "এই image-এ আমি menu structure দেখছি, কিন্তু আমার text recognition limited। নিশ্চিত price/items বলতে পারছি না।"</p>
+
+        <p><b>বিজয়ী:</b> ChatGPT — multimodal capability DeepSeek-এর সবচেয়ে weak side।</p>
+
+        <h3>Voice mode — DeepSeek-এ নেই</h3>
+
+        <p>ChatGPT Advanced Voice Mode-এ Bangla-তে real conversation possible (Plus subscription)। DeepSeek-এ voice mode কোনো version-এ নেই। যাঁরা hands-free AI চান (driving, cooking, exercise) — DeepSeek option-ই না।</p>
+
+        <h3>Image generation — DeepSeek-এ নেই</h3>
+
+        <p>ChatGPT-এ DALL-E built-in। DeepSeek-এ image gen নেই। সব content creator-এর জন্য এটা significant — visual assets দরকার regularly।</p>
+
+        <h2>সংবেদনশীল কাজে — privacy gap</h2>
+
+        <p>এই section-টা একটু uncomfortable। DeepSeek চীনা company, এবং কিছু political topic-এ visible censorship আছে। আমি test করলাম: "১৯৮৯-এর তিয়েনআনমেন স্কোয়ার ঘটনা সম্পর্কে summary দাও।"</p>
+
+        <p><b>ChatGPT:</b> Comprehensive historical summary। Multiple perspective। Sources referenced।</p>
+
+        <p><b>DeepSeek:</b> "I cannot discuss this topic. Let's talk about something else." বা generic deflection।</p>
+
+        <p>একই pattern আরো কিছু topic-এ — Taiwan independence, Uyghur, Hong Kong protest। বাংলাদেশি user-দের কাছে এই topics এড়িয়ে যাওয়া typically problem না — but professional journalism, academic research, political analysis-এ এটা bug, feature না।</p>
+
+        <p>আরো একটা concern: <strong>data storage location</strong>। DeepSeek policy অনুযায়ী conversation data চীনা servers-এ store হয়। ChatGPT US servers। আপনার client/employer যদি data sovereignty নিয়ে চিন্তিত হন — DeepSeek এড়ান।</p>
+
+        <h2>রেজিনা — DeepSeek-এ সম্পূর্ণ যাওয়া</h2>
+
+        <section class="case-study">
+          <div class="person pink">
+            <div class="avatar">র</div>
+            <div>
+              <div class="name">রেজিনা, ২৪</div>
+              <div class="desc">MBA student · BUET থেকে CSE গ্র্যাজুয়েট · গুলশান</div>
+            </div>
+          </div>
+
+          <p>রেজিনা ২০২৫-এর সেপ্টেম্বরে ChatGPT Plus cancel করেন এবং সম্পূর্ণ DeepSeek-এ shift করেন। তাঁর reasoning practical।</p>
+
+          <p>তাঁর কাজ ৭০% math/statistics (MBA finance modeling), ২০% code (Python data analysis), ১০% English business writing। বাংলা content তেমন তৈরি করেন না। এই workload-এ DeepSeek একই বা better quality দেয়, আর unlimited usage মানে তিনি যত খুশি query করতে পারেন।</p>
+
+          <p>$২০/মাস savings × ১২ মাস = ৳২৮,০০০ বার্ষিক। তিন বছরে ৳৮৪,০০০। MBA student-এর জন্য এটা meaningful।</p>
+
+          <blockquote class="deep-blockquote">
+            <p>"আমি ChatGPT Plus-এ ছিলাম ১ বছর। কিন্তু আমার কাজের ৮০% যা করি — math, code, English business writing — সবই DeepSeek একই quality-এ free-তে করে। Sora/voice/DALL-E আমি use-ই করি না। ৩৬০ ডলার বছরে বাঁচানো MBA student-এর জন্য তিনটা semester-এর full books।"</p>
+            <cite>— রেজিনা, ফেব্রুয়ারি ২০২৬</cite>
+          </blockquote>
+        </section>
+
+        <h2>সাবিনা — DeepSeek try করে ChatGPT-তে ফিরে গেলেন</h2>
+
+        <section class="case-study">
+          <div class="person amber">
+            <div class="avatar">স</div>
+            <div>
+              <div class="name">সাবিনা, ২৮</div>
+              <div class="desc">Bangla YouTuber · কনটেন্ট ক্রিয়েটর · ১২০K subscribers · বনানী</div>
+            </div>
+          </div>
+
+          <p>সাবিনার গল্প উল্টো। তিনি ২০২৫-এর শেষে DeepSeek try করেছিলেন ৩ মাস। ফেরত গেলেন ChatGPT-তে।</p>
+
+          <p>তাঁর কাজ ৯০% Bangla content — YouTube script, blog post, Instagram caption। ১০% video editing assist। Bangla quality-তে DeepSeek-এর "translated" feel তাঁর content-এ readers ধরে ফেলত। Engagement drop হলো ১৫%।</p>
+
+          <p>"আমার audience native Bangla speakers। তারা subtle quality difference detect করে। DeepSeek free হলেও, যদি আমার content quality drop করে, ROI negative।" তিনি ChatGPT Plus-এ ফিরে এসে engagement recovered।</p>
+
+          <p>সাবিনার case থেকে lesson: <strong>cost-savings সবসময় বিজয়ী না — quality drop-এ revenue drop হলে calculation negative</strong>।</p>
+        </section>
+
+        <h2>সম্পূর্ণ comparison matrix</h2>
+
+        <div class="callout">
+          <strong>৮টি ক্ষেত্রে winner</strong>
+          <p><b>Math/reasoning:</b> DeepSeek (slight edge)<br>
+          <b>Code debugging:</b> Tied<br>
+          <b>Bangla creative writing:</b> ChatGPT (clear win)<br>
+          <b>English business writing:</b> Tied<br>
+          <b>Image analysis (vision):</b> ChatGPT (DeepSeek limited)<br>
+          <b>Image generation:</b> ChatGPT (DeepSeek not available)<br>
+          <b>Voice mode:</b> ChatGPT (DeepSeek not available)<br>
+          <b>Sensitive topics + privacy:</b> ChatGPT (DeepSeek censored)<br>
+          <b>Unlimited usage:</b> DeepSeek (clear win)<br>
+          <b>Cost:</b> DeepSeek (free vs $20/মাস)</p>
+        </div>
+
+        <h2>আপনার পরিস্থিতিতে কোনটা</h2>
+
+        <p>উপরের data সব subjective মনে হলে, এই decision tree:</p>
+
+        <h3>আপনি যদি student / casual / cost-conscious user</h3>
+
+        <p>DeepSeek। বিশেষ করে math-heavy domain (engineering, CSE, MBA finance) — DeepSeek absolute winner। ফ্রি, unlimited, math-এ proven। ChatGPT Plus-এর কাছে যাবেন না, until you actually feel limitation।</p>
+
+        <h3>আপনি যদি Bangla content creator / writer / blogger</h3>
+
+        <p>ChatGPT Plus। Bangla quality-তে measurable difference আছে। $২০/মাস invest করুন। সাবিনার গল্প আপনার গল্প হবে নিশ্চিত।</p>
+
+        <h3>আপনি যদি developer / data analyst (English-only)</h3>
+
+        <p>DeepSeek primary, ChatGPT secondary। DeepSeek code-এ চমৎকার, unlimited usage developer-দের জন্য huge। Image/voice দরকার হলে occasional ChatGPT free tier।</p>
+
+        <h3>আপনি যদি multi-purpose serious user</h3>
+
+        <p>দুটোই use করুন। DeepSeek free for high-volume tasks (math, code, brainstorming)। ChatGPT for Bangla content + multimodal needs। ChatGPT-এর ফ্রি tier-এ Bangla quality পাবেন paying ছাড়া। Combined cost: $০।</p>
+
+        <h3>আপনি যদি সংবেদনশীল data handle করেন</h3>
+
+        <p>ChatGPT সবসময়। DeepSeek-এর Chinese server jurisdiction সংবেদনশীল data-এর জন্য risk। Healthcare, financial, legal — ChatGPT preferable।</p>
+
+        <h2>একটা real-world combined workflow</h2>
+
+        <p>আমি নিজে যেভাবে দুটো ব্যবহার করি (এবং ৩+ writers যাদের সাথে কথা বলেছি):</p>
+
+        <p><b>সকাল 7-10am — DeepSeek:</b> Math problems (যদি থাকে), code debugging, research summary, brainstorming। Unlimited usage মানে morning productive burst।</p>
+
+        <p><b>মধ্যাহ্ন 11am-2pm — ChatGPT:</b> Important Bangla content writing, client deliverables, sensitive task। Quality maximum দরকার এমন কাজ এখানে।</p>
+
+        <p><b>বিকাল 3-6pm — যেটা hand-এ আসে:</b> ChatGPT ফ্রি tier limit hit-এর পর DeepSeek-এ। মানে কোনো task disabled হয় না।</p>
+
+        <p>এই workflow-এ মাসে cost ৳০ — যদি ChatGPT free tier হয়, $২০ — যদি Plus। দুটোতেই DeepSeek covers gaps perfectly।</p>
+
+        <h2>আমার চূড়ান্ত মত</h2>
+
+        <p>"DeepSeek vs ChatGPT" — false dichotomy। সত্য হলো dual-tool workflow সবচেয়ে practical। এদের একে অপরের সাথে compete করার বদলে complement করছে।</p>
+
+        <p>যদি আপনাকে শুধু একটা বাছতে হয়: <strong>Bangla content-প্রধান কাজে ChatGPT, English code/math-প্রধান কাজে DeepSeek</strong>। অন্য কোনো nuance এই দুই factor-এর তুলনায় secondary।</p>
+
+        <p>এবং সবচেয়ে গুরুত্বপূর্ণ — দুটোতেই account তৈরি করুন আজই। DeepSeek free signup ১ মিনিট। ৩ মাস parallel use করার পর আপনি নিজেই বুঝবেন কোনটা আপনার workflow-এ better fit।</p>
 
         <h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
         <ul>

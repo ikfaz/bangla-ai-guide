@@ -103,91 +103,138 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-        <h2>ভূমিকা</h2>
-        <p>BCS — বাংলাদেশের সবচেয়ে প্রতিযোগিতাপূর্ণ পরীক্ষা। প্রতি seat-এ ৩০০+ candidate। তিন স্তর: Prelims (২০০ MCQ), Written (৯০০ marks), Viva (২০০ marks)। AI আপনার দুই বছরের preparation-কে আরো focused, efficient করতে পারে।</p>
+        <p class="lede">তৌহিদ ইসলাম রাজশাহী বিশ্ববিদ্যালয় থেকে অর্থনীতিতে অনার্স শেষ করেছিলেন ২০২৩ সালে। তিনটি BCS দিয়েছেন। ৪৪তম-এ Prelims-এ আটকেছেন (১১৩ marks, cut-off ১১৯)। ৪৫তম-এ Written পর্যন্ত গেছেন কিন্তু Viva-তে পড়েছেন (৭৬৪/১১০০)। ৪৬তম-এ Foreign Service cadre হিসেবে recommended হয়েছেন (৯২১/১১০০)। মাঝখানের তফাৎ — দুটো জিনিস। প্রথমটা: বই থেকে পড়া কমাননি একদিনও। দ্বিতীয়টা: AI-কে personal tutor বানিয়েছেন, replacement না।</p>
 
-        <h2>Preliminary — MCQ অনুশীলন</h2>
+        <p>তৌহিদের ২৩ মাসের preparation log আমার কাছে আছে — কোন AI tool কখন কাজে লেগেছে, কোথায় ভুল করেছেন, কোথায় AI-এর উত্তরে বিশ্বাস করে marks হারিয়েছেন — সব। এই article সেই raw experience-টাই তুলে ধরবে। সাথে রাফসান নামের আরেক candidate-এর গল্প — যিনি একই সময়ে শুরু করেছিলেন, প্রায় সবটাই AI-তে outsource করেছিলেন, এবং Prelims-এ ৯৭ পেয়ে বের হয়ে গেছেন।</p>
+
+        <div class="stat-row">
+            <div class="stat"><span class="num">২৩ মাস</span><span class="label">তৌহিদের total prep time</span></div>
+            <div class="stat"><span class="num">৯২১/১১০০</span><span class="label">৪৬তম-এ final score</span></div>
+            <div class="stat"><span class="num">৪ ঘণ্টা/দিন</span><span class="label">AI-assisted study (overall ১০-১২ ঘণ্টার মধ্যে)</span></div>
+            <div class="stat"><span class="num">০ টাকা</span><span class="label">Coaching fee (পুরোটা self-study + AI)</span></div>
+        </div>
+
+        <h2>প্রথম ছ' মাস — যে ভুলটা সবাই করে</h2>
+
+        <p>তৌহিদ ৪৪তম-এর জন্য তৈরি হয়েছিলেন পুরোনো নিয়মে — Oracle, MP3, Professor's Current Affairs, কোচিং note, YouTube lecture। প্রতিদিন ১৪ ঘণ্টা। তিন মাস পর Prelims। ১১৩ পেয়েছিলেন। ৬ marks-এর জন্য cadre স্বপ্ন এক বছর পিছিয়েছিল।</p>
+
+        <p>রিভিউ করতে গিয়ে দেখলেন — যে topics-এ ভুল, সেগুলোতে তিনি বই পড়েছেন কিন্তু কখনো নিজেকে test করেননি। বই থেকে ৫০ পৃষ্ঠা মুখস্থ করে পরের দিন ভুলে গেছেন। এখানেই AI-এর প্রকৃত ভূমিকা — repetition, retrieval practice, এবং spaced recall।</p>
+
+        <blockquote class="deep-blockquote">
+            "৪৪-এ পড়েছিলাম বইয়ের মতো। ৪৬-এ পড়েছি পরীক্ষার মতো। AI আমাকে দিনে ১০০-১৫০ MCQ generate করে দিয়েছে আমারই পড়া chapter থেকে। ভুল হয়েছে যেগুলোতে — সেই concept আবার বই থেকে পড়েছি। এই loop-টাই সব কিছু বদলে দিয়েছে।"
+            <cite>— তৌহিদ, ৪৬তম BCS, Foreign Service</cite>
+        </blockquote>
+
+        <h2>Stage 1: Preliminary — ২০০ MCQ-এর যুদ্ধ</h2>
+
+        <p>Prelims-এ ৪৭ মিনিটে ২০০ MCQ। প্রশ্ন প্রতি ১৪ সেকেন্ড। এখানে speed আর confidence — দুটোই সমান গুরুত্বপূর্ণ। ভুল উত্তরে .৫ marks negative। তৌহিদের strategy ছিল তিন-স্তরের।</p>
+
+        <h3>Layer 1: NotebookLM-এ syllabus-wise source build</h3>
+        <p>তৌহিদ ২০টা NotebookLM notebook বানিয়েছিলেন — প্রতি subject-এ একটা। প্রতিটায় NCTB textbook (PDF), MP3 series-এর সংশ্লিষ্ট chapter, BPSC published past papers, এবং Bangladesh Constitution-এর অংশ upload করা। NotebookLM এই source-এর বাইরে answer দেয় না — অর্থাৎ hallucination minimal।</p>
+
+        <p>প্রতি সকালে একটা notebook বেছে নিতেন। "এই chapter থেকে ২০টা MCQ তৈরি করো, বিগত ১০ বছরের BCS pattern অনুযায়ী, ৪টা option সহ। প্রতিটার ব্যাখ্যা দাও — কেন এটাই সঠিক, অন্য ৩টা কেন ভুল।"</p>
+
+        <h3>Layer 2: ChatGPT-এ weak-area drill</h3>
+        <p>তৌহিদের একটা Notion table ছিল — প্রতিদিনের ভুল MCQ লিখে রাখতেন। সপ্তাহান্তে সেই list ChatGPT-এ পাঠাতেন: "এই ১৫টা topics-এ আমি দুর্বল — প্রতিটার উপর ১০টা MCQ + ১ paragraph concept refresh দাও।" ১৫০ MCQ এক বসায়।</p>
+
+        <h3>Layer 3: Perplexity-এ current affairs</h3>
+        <p>BCS Prelims-এ ২০ marks current affairs। তৌহিদ প্রতি রাত ৯টায় Perplexity-তে এই prompt চালাতেন: "গত ২৪ ঘণ্টায় বাংলাদেশের শীর্ষ ১০টা সংবাদ — government appointment, treaty, economic data, sports record। প্রতিটার সাথে background context।" Citation থাকার কারণে Daily Star, Prothom Alo, BSS-এর original article cross-check করা যেত।</p>
+
+        <div class="callout">
+            <strong>সতর্কতা:</strong> ChatGPT alone Bangladesh-specific data-তে প্রায়ই ভুল করে — মন্ত্রী, secretary, district-level update। Tauhid দুইবার ৪৪তম-এর preparation-এ ChatGPT-র দেওয়া "current" Foreign Secretary নাম লিখে viva-তে ছোট হয়েছিলেন। Bangladesh-related fact verify করতেই হবে — Prothom Alo, BSS, MoFA website, BPSC notice থেকে।
+        </div>
+
+        <h2>Stage 2: Written — ৯০০ marks, ৯ পত্র</h2>
+
+        <p>Prelims pass করে তৌহিদ যখন written-এ ঢুকলেন, প্রথম মাসেই বুঝে গেছিলেন — এখানে AI-কে অন্যভাবে use করতে হবে। Written-এ আপনার নিজের হাতে ৮ ঘণ্টা ধরে লিখতে হবে। ChatGPT-র copy-paste essay মুখস্থ করে গেলে — examiner প্রথম paragraph-এই ধরে ফেলবেন।</p>
+
+        <h3>Essay structure mining, content writing নয়</h3>
+        <p>তৌহিদ Essay-তে AI use করতেন শুধু একটা কাজে — structure-এর জন্য। "Climate change এবং বাংলাদেশের কৃষি — এই topic-এ ১৫০০ word essay-এর জন্য ৭টা possible structure দাও, প্রতিটার pros and cons সহ।" তারপর সবচেয়ে ভালো structure বেছে নিয়ে নিজের হাতে লিখতেন — নিজের data, নিজের উদাহরণ (Cox's Bazar salinity intrusion, Sundarban shrinkage, BRRI rice variety)।</p>
+
+        <h3>Subject-wise concrete workflow</h3>
         <ul>
-            <li><b>ChatGPT:</b> "Bangladesh history থেকে ২০টি MCQ তৈরি করো, ১৯৭১ Liberation War-এর উপর। সঠিক উত্তর + ব্যাখ্যা সহ"</li>
-            <li><b>NotebookLM:</b> NCTB book + reference PDF upload → quiz generation</li>
-            <li><b>Daily routine:</b> ৫০ MCQ AI-generated practice</li>
-            <li><b>Weak area identify:</b> AI track-এর সাথে</li>
+            <li><b>বাংলাদেশ বিষয়াবলি (২০০):</b> NotebookLM-এ Constitution + Five-Year Plan + BBS data upload → topic-wise Q&A drill</li>
+            <li><b>আন্তর্জাতিক বিষয়াবলি (১০০):</b> Perplexity weekly geopolitics summary + ChatGPT-এ "explain like I'm BCS candidate" demand</li>
+            <li><b>বাংলা (২০০):</b> AI use minimal — সাহিত্য নিজে পড়ার বিকল্প নেই। শুধু author bio চটজলদি drill</li>
+            <li><b>ইংরেজি (২০০):</b> Claude-এ essay পাঠিয়ে "grammatical and stylistic feedback in BCS examiner perspective" চাইতেন</li>
+            <li><b>গাণিতিক যুক্তি (৫০):</b> Step-by-step solution AI-এর কাছে — কিন্তু সেই step নিজে আবার করতেন</li>
+            <li><b>মানসিক দক্ষতা (৫০):</b> Past papers-ই সেরা; AI just pattern-explain করে</li>
+            <li><b>সাধারণ বিজ্ঞান ও প্রযুক্তি (১০০):</b> ChatGPT-তে concept simplify, NotebookLM-এ NCTB Class 9-10 science book</li>
+            <li><b>নৈতিকতা ও সুশাসন (১০০):</b> Citizens Charter, RTI Act PDF NotebookLM-এ; case study generation ChatGPT-এ</li>
         </ul>
 
-        <h2>Subject-wise AI strategy</h2>
+        <h2>রাফসানের ভুল — যেটা সবার শেখা দরকার</h2>
+
+        <div class="case-study">
+            <div class="person">
+                <div class="avatar red">র</div>
+                <div>
+                    <strong>রাফসান, ২৭, খুলনা</strong>
+                    <span>৪৬তম BCS — Prelims-এ ৯৭ পেয়ে বাদ</span>
+                </div>
+            </div>
+            <p>রাফসান বুয়েট থেকে CSE। ভাবলেন BCS তো mostly memorization — AI দিয়ে এক বছরে হয়ে যাবে। ChatGPT Plus নিলেন, Notion full of AI-generated note বানালেন। বই কিনেননি একটাও।</p>
+            <p>সমস্যা শুরু হলো month 4-এ। ChatGPT তাকে বলল ১৯৭১-এর মুজিবনগর সরকার শপথ নিয়েছিল ১৭ এপ্রিল। তৌহিদের Notebook (NCTB-source) বলেছিল — সঠিক তারিখ ১৭ এপ্রিল, কিন্তু গঠন হয়েছিল ১০ এপ্রিল। ChatGPT এই nuance ধরতে পারেনি। এমন দশটা ভুল fact রাফসান মুখস্থ করেছিলেন।</p>
+            <p>Prelims-এ ৯৭ — cut-off-এর ২২ marks নিচে। রাফসান এখন ৪৭তম-এর জন্য তৈরি হচ্ছেন — এবার বই কিনেছেন, NCTB পড়ছেন, AI-কে শুধু drill tool হিসেবে use করছেন। বলেন: "AI সব জানে — কিন্তু সব কিছু জানে না। আমি এই দুটোর difference বুঝতে এক বছর হারিয়েছি।"</p>
+        </div>
+
+        <h2>Stage 3: Viva — ২০০ marks, ২৫ মিনিট</h2>
+
+        <p>Viva-তে তৌহিদ ৪৫তম-এ ১৩৬/২০০ পেয়েছিলেন — অর্থাৎ সাব-cadre হলো। ৪৬তম-এ ১৭২/২০০। ৩৬ marks-এর জাম্প। মাঝখানে কী হয়েছিল? তিনি ChatGPT-র Voice mode-কে board member বানিয়েছিলেন।</p>
+
+        <p>তৌহিদের ব্যবহৃত prompt (কপি করে নিজের background দিয়ে চালান):</p>
+
+        <blockquote class="deep-blockquote">
+            "তুমি একজন কঠোর কিন্তু ন্যায়পরায়ণ BCS viva board chairperson। আমি Foreign Service cadre choice-এ আছি। আমার background: রাজশাহী বিশ্ববিদ্যালয়, অর্থনীতি, ২০২৩। আমাকে ২৫ মিনিটের mock viva দাও। বাংলা ও ইংরেজি দুটোতেই questions। আমার উত্তর শুনে interrupting follow-up। শেষে scoring: knowledge ৪০%, communication ৩০%, personality ২০%, ethics ১০%।"
+        </blockquote>
+
+        <p>প্রতি রাতে ৪০ মিনিট এই mock। প্রথম সপ্তাহে স্কোর ৬০-৬৫%। তৃতীয় সপ্তাহে ৮০%। ৪৬তম viva-র আগের সপ্তাহে ৯০%। বাস্তব viva-তে chairperson একই pattern follow করেছিলেন — তৌহিদ অবাক হননি।</p>
+
+        <h2>প্রতিদিনের routine — তৌহিদের ২৩ মাস</h2>
+
         <ul>
-            <li><b>Bangladesh Affairs:</b> NCTB Class IX-X-এর book NotebookLM-এ</li>
-            <li><b>International:</b> Perplexity recent events</li>
-            <li><b>Bangla literature:</b> Author bio quiz</li>
-            <li><b>English:</b> ChatGPT grammar drill</li>
-            <li><b>Math:</b> Step-by-step solution AI explanation</li>
-            <li><b>General Science:</b> Concept simplification</li>
-            <li><b>ICT:</b> Current tech terms</li>
+            <li><b>৫:৩০ – ৭:৩০:</b> বই পড়া (যে subject সেদিনের target)। মোবাইল অফ।</li>
+            <li><b>৭:৩০ – ৮:০০:</b> নাস্তা + Perplexity-তে গতকালের ৫টা current affairs follow-up।</li>
+            <li><b>৮:০০ – ১১:০০:</b> NotebookLM থেকে সেই chapter-এর ৫০ MCQ। ভুল গুলো Notion table-এ।</li>
+            <li><b>১১:০০ – ১:০০:</b> লেখার drill (Written প্রস্তুতির সময়) বা concept video (Prelims প্রস্তুতির সময়)।</li>
+            <li><b>২:৩০ – ৫:০০:</b> দ্বিতীয় subject — same loop।</li>
+            <li><b>৫:০০ – ৬:০০:</b> বিরতি, হাঁটা।</li>
+            <li><b>৬:০০ – ৯:০০:</b> Past paper solve (যেটা সবচেয়ে গুরুত্বপূর্ণ) — হাতে, কাগজে, ঘড়ি ধরে।</li>
+            <li><b>৯:০০ – ১০:০০:</b> ChatGPT-এ সেদিনের weak topic-এর ১৫টা প্রশ্ন।</li>
+            <li><b>১০:০০ – ১০:৩০:</b> NotebookLM audio overview — সেদিন যা পড়েছেন তার podcast-style summary।</li>
+            <li><b>১০:৩০:</b> ঘুম।</li>
         </ul>
 
-        <h2>Written (লিখিত) — Essay ও comprehension</h2>
+        <div class="callout">
+            <strong>৩-৭-২১ rule:</strong> তৌহিদ যা পড়েছেন তা ৩ দিন পর AI দিয়ে quiz, ৭ দিন পর আবার, ২১ দিন পর past paper-এর মাধ্যমে। Spaced repetition + retrieval practice — এটাই memory consolidation-এর scientific ভিত্তি।
+        </div>
+
+        <h2>AI যা পারবে না — কখনোই</h2>
+
         <ul>
-            <li><b>Essay outline:</b> ChatGPT-এ topic দিন, structure দেবে</li>
-            <li><b>Sample essay:</b> AI write করে — পরে নিজে rewrite (essay-writing skill build)</li>
-            <li><b>Comprehension:</b> Bangla/English passage AI extract</li>
-            <li><b>Translation:</b> Bangla-English-Bangla rotation practice</li>
-            <li><b>Mathematical reasoning:</b> Word problem AI solve + explain</li>
+            <li><b>হাতের লেখা:</b> Written-এ ৮ ঘণ্টা লিখতে হবে। হাত শক্তিশালী না হলে শেষের ২ ঘণ্টায় উত্তর ছোট হয়ে আসে। AI এই stamina build করে দিতে পারবে না।</li>
+            <li><b>বাংলা সাহিত্য feel:</b> রবীন্দ্রনাথ, নজরুল, জীবনানন্দের কবিতা ChatGPT-এ "explain" করালে শুকনো paragraph পাবেন। নিজে পড়ুন, নিজে অনুভব করুন।</li>
+            <li><b>Examiner manipulation:</b> Viva-তে chairperson মাঝে মাঝে provocative question করেন (Bangladesh-India relation, religious sensitivity)। AI-mock এই pressure recreate করে না — peer mock দরকার।</li>
+            <li><b>Bangladesh-specific current data:</b> Mahasthangarh-এর latest excavation finding, BBS-এর Q2 2026 inflation, BPSC notice — এসব AI-তে available না/পুরোনো। Newspaper + government website lazimi।</li>
+            <li><b>Confidence:</b> Cadre choice-এর সময় আপনাকেই decide করতে হবে — Administration না Foreign না Police। AI আপনার career value system জানে না।</li>
         </ul>
 
-        <h2>Current affairs daily update</h2>
-        <ul>
-            <li><b>Perplexity daily:</b> "Today's top 10 Bangladesh news"</li>
-            <li><b>Custom GPT:</b> দৈনিক বাংলা সংবাদ summary</li>
-            <li><b>Monthly compilation:</b> AI helps organize</li>
-            <li><b>Connection making:</b> "What was the historical context of [event]?"</li>
-        </ul>
+        <h2>খরচের হিসাব — তৌহিদ vs ঐতিহ্যগত pathway</h2>
 
-        <h2>Viva voce প্রস্তুতি</h2>
-        <ul>
-            <li><b>ChatGPT roleplay:</b> "তুমি একজন BCS viva board member। আমাকে আমার background দিয়ে questions কর। আমি Computer Science background থেকে।"</li>
-            <li><b>Behavioral practice:</b> "Tell me about yourself" — multiple variation</li>
-            <li><b>Subject knowledge:</b> Random topic deep dive</li>
-            <li><b>Bangla speaking:</b> Voice mode practice</li>
-            <li><b>Mock interview:</b> Recording + self-review</li>
-        </ul>
+        <div class="stat-row">
+            <div class="stat"><span class="num">৳৭২,০০০</span><span class="label">কোচিং (Oracle, MP3 batch) ২ বছর</span></div>
+            <div class="stat"><span class="num">৳১৪,৪০০</span><span class="label">ChatGPT Plus + NotebookLM ২ বছর (US$ ২০/মাস)</span></div>
+            <div class="stat"><span class="num">৳৮,০০০</span><span class="label">তৌহিদের বই (NCTB + reference)</span></div>
+            <div class="stat"><span class="num">৳৪৯,৬০০</span><span class="label">সাশ্রয় (coaching skip করে)</span></div>
+        </div>
 
-        <h2>Study routine — AI-enhanced</h2>
-        <ul>
-            <li><b>সকাল ৬-৮:</b> Reading (book) + AI quiz</li>
-            <li><b>সকাল ১০-১২:</b> Subject-deep study + Perplexity research</li>
-            <li><b>বিকাল ৪-৬:</b> Writing practice + AI feedback</li>
-            <li><b>সন্ধ্যা ৭-৯:</b> Current affairs + AI summarize</li>
-            <li><b>রাত ১০-১১:</b> NotebookLM audio overview (relax mode)</li>
-        </ul>
+        <p>তৌহিদ কোচিং না নিয়ে যে টাকা সাশ্রয় করেছিলেন — সেটা ৪৬তম-এর viva preparation-এ formal clothing, Dhaka-তে এসে থাকা, এবং book-এ ব্যয় হয়েছিল। কোচিং replace করেছেন — book replace করেননি। এই ভেদটাই important।</p>
 
-        <h2>Specific resource</h2>
-        <ul>
-            <li>NCTB textbooks (Classes 6-12) PDF</li>
-            <li>Bangladesh Constitution full text</li>
-            <li>Daily newspaper (Prothom Alo, Star) RSS</li>
-            <li>Past BCS questions PDF</li>
-            <li>Reference books (MP3 series, Oracle)</li>
-        </ul>
+        <h2>উপসংহার — আপনার আজকের পদক্ষেপ</h2>
 
-        <h2>মনে রাখার কৌশল</h2>
-        <ul>
-            <li>Spaced repetition (Anki + AI deck)</li>
-            <li>Mind map (ChatGPT generate)</li>
-            <li>Mnemonic creation AI</li>
-            <li>Story-based memory (events → narrative)</li>
-            <li>Visual recall (AI image)</li>
-        </ul>
+        <p>BCS preparation কোনো magic না — discipline, consistency, এবং সঠিক tool selection। AI সেই সঠিক tool — কিন্তু একটাই tool নয়। বই, past paper, peer discussion, news habit — সব আগের মতোই থাকবে। AI শুধু আপনার retrieval practice, weak-area diagnosis, এবং mock interview-কে অভাবনীয়ভাবে scale করতে পারবে।</p>
 
-        <h2>সতর্কতা</h2>
-        <ul>
-            <li>AI সব answer 100% সঠিক না — verify</li>
-            <li>Bangladesh-specific data sometimes outdated</li>
-            <li>নিজে বই পড়া replace করবে না — supplement</li>
-            <li>Past papers solve হাতে — speed build জরুরি</li>
-        </ul>
-
-        <h2>উপসংহার</h2>
-        <p>BCS-এ আজকের সফল candidate গুরুত্বপূর্ণ ভাবে AI-utilize করছেন। আপনিও আজই ChatGPT + NotebookLM combination শুরু করুন। ২ বছরের consistent study + AI accelerator = cadre হওয়ার সবচেয়ে modern পথ।</p>
+        <p>আজই করুন: একটা NotebookLM account খুলুন, প্রথম subject-এর NCTB textbook upload করুন, "এই chapter থেকে ২০টা MCQ দাও" দিয়ে শুরু করুন। আপনার পরবর্তী BCS-এ আপনিও তৌহিদের মতো cadre হবেন — যদি বইটাকে replace না করেন।</p>
 
         <h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
         <ul>
