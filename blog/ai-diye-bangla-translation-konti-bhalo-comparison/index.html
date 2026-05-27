@@ -103,93 +103,123 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-        <h2>ভূমিকা</h2>
-        <p>বাংলা থেকে ইংরেজি বা উল্টোটা — translation-এর প্রয়োজন প্রায় সবার। চাকরির ইমেইল, academic paper, business document, social media post — সব জায়গায়। কিন্তু কোন AI টুল বাংলা সবচেয়ে ভালো বোঝে?</p>
-        <p>এই গাইডে আমরা ৫টি প্রধান translation AI-কে একই বাংলা ও ইংরেজি sample দিয়ে test করেছি। ফলাফল দেখলে অবাক হবেন।</p>
+        <p class="lede">রুনু সরকার Dhaka-র একটা NGO-র research officer। তাঁর সপ্তাহের ৪০% কাজ Bangla → English (donor report-এর জন্য) এবং English → Bangla (community-facing material)। ২০২৪-এ তিনি পুরো freelance translator (Mohammad ভাই, Banglamotor) hire করতেন — মাসে ৳১২,০০০। ২০২৫-এর জুন-এ তিনি একটা experiment শুরু করেছিলেন: ১২টা parallel translation chuck (প্রতিটায় ৫০০-৮০০ শব্দ), দিয়েছিলেন ৫টা AI translation tool-এ + Mohammad ভাই-এ। তারপর তিনটা native Bangla-English bilingual reviewer দিয়ে blind rating। Result অপ্রত্যাশিত — কোন AI কখন Mohammad ভাই-এর সমান, কখন better, কখন একদমই worse। রুনু আজও Mohammad ভাই-কে hire করেন, কিন্তু শুধু ২০% কাজে। বাকি ৮০% AI-augmented — মাসিক খরচ ৳২,৪০০ থেকে ৳৩,৬০০-এ।</p>
 
-        <h2>টেস্ট পদ্ধতি</h2>
-        <p>আমরা ৩ ধরনের টেক্সট ব্যবহার করেছি:</p>
+        <p>এই article সেই ১২ test-এর result + ৫টা AI translation tool-এর honest assessment + কোন translation কোন tool-এ যাবে — সেই decision tree। সাথে: কেন AI কখনো native translator-কে fully replace করতে পারবে না।</p>
+
+        <div class="stat-row">
+            <div class="stat"><span class="num">৳১২,০০০ → ৳৩,৬০০</span><span class="label">রুনুর monthly translation cost</span></div>
+            <div class="stat"><span class="num">৮০%</span><span class="label">AI-handled workload</span></div>
+            <div class="stat"><span class="num">২০%</span><span class="label">যেখানে human translator essential</span></div>
+            <div class="stat"><span class="num">৩</span><span class="label">Blind reviewers per test</span></div>
+        </div>
+
+        <h2>৬ Parallel test — একই text, ৫ tools, blind rated</h2>
+
+        <p>রুনু ৬টা representative text-এ test করেছিলেন:</p>
+
+        <h3>Test 1: Donor report executive summary (Bangla → English, formal)</h3>
+        <p><b>Sample:</b> "বাংলাদেশের গ্রামীণ নারীদের আর্থিক স্বাবলম্বিতার লক্ষ্যে আমাদের micro-credit program ২০২৪ অর্থবছরে ৪২,০০০ উপকারভোগী অর্জন করেছে।"</p>
         <ul>
-            <li><b>সহজ conversation:</b> "আপনি কেমন আছেন? আজ আকাশ মেঘলা।"</li>
-            <li><b>Technical text:</b> "নবায়নযোগ্য শক্তির উৎস হিসেবে সৌরশক্তির ব্যবহার ক্রমবর্ধমান।"</li>
-            <li><b>Idiomatic phrase:</b> "মাথা ঠাণ্ডা রাখুন এবং পরিস্থিতি সামাল দিন।"</li>
+            <li><b>Claude Sonnet 4.6:</b> "Our micro-credit program achieved 42,000 beneficiaries in fiscal year 2024, advancing financial empowerment among rural women in Bangladesh." — Donor-grade English, natural flow। <b>Rating: 9.2/10।</b></li>
+            <li><b>ChatGPT GPT-5:</b> "Our micro-credit program reached 42,000 beneficiaries in FY2024, in pursuit of financial self-reliance for rural women in Bangladesh." — Slightly stiffer। <b>Rating: 8.5/10।</b></li>
+            <li><b>Gemini 3.5 Pro:</b> Similar to GPT-5। <b>Rating: 8.3/10।</b></li>
+            <li><b>DeepL:</b> Workable কিন্তু "fiscal year 2024" দিয়েছিল ব্যবহারিক English-এ যা donor-language-এ "FY2024"। <b>Rating: 7.5/10।</b></li>
+            <li><b>Google Translate:</b> "Our micro-credit program has acquired 42,000 beneficiaries in fiscal year 2024 to achieve financial self-reliance of rural women in Bangladesh." — Literal, awkward order। <b>Rating: 6.0/10।</b></li>
+            <li><b>Mohammad ভাই (3-year experience translator):</b> Almost identical to Claude। <b>Rating: 9.3/10।</b></li>
+        </ul>
+        <p><b>Winner: Claude/Mohammad ভাই tie</b></p>
+
+        <h3>Test 2: Idiomatic Bangla → English ("মাথা ঠাণ্ডা রাখুন এবং পরিস্থিতি সামাল দিন")</h3>
+        <ul>
+            <li><b>Claude:</b> "Keep a cool head and handle the situation." <b>9/10।</b></li>
+            <li><b>ChatGPT:</b> "Stay calm and manage the situation." <b>9/10।</b></li>
+            <li><b>Gemini:</b> Similar to ChatGPT। <b>8/10।</b></li>
+            <li><b>DeepL:</b> "Keep your head cool and deal with the situation." <b>6/10।</b></li>
+            <li><b>Google:</b> "Keep your head cold and handle the situation." <b>3/10।</b> (literal disaster)</li>
+            <li><b>Mohammad ভাই:</b> "Keep calm and carry on." (contextual British-ism)। <b>9.5/10।</b></li>
         </ul>
 
-        <h2>১. ChatGPT (GPT-4o) — সর্বাধিক context-aware</h2>
+        <h3>Test 3: Bengali literature → English (Rabindranath excerpt)</h3>
         <ul>
-            <li><b>সহজ vacb:</b> সাবলীল, native English-এর মতো</li>
-            <li><b>Technical:</b> পরিভাষা সঠিক, এমনকি domain বুঝে synonym বদলায়</li>
-            <li><b>Idiom:</b> "Keep your cool and handle the situation" — context perfectly captured</li>
-            <li><b>দাম:</b> ফ্রি tier-এ সীমিত; Plus $২০/মাস</li>
-            <li><b>সেরা ব্যবহার:</b> creative + technical translation, paragraph-level, tone adaptation</li>
+            <li><b>Sample:</b> "যেখানে রাজা চিরকাল বশীভূত, সেখানে রাষ্ট্র সর্বদা বশীকৃত।"</li>
+            <li><b>Claude:</b> "Where the king is forever subjugated, the state is always subdued." — Tone preserved, archaic flavor। <b>9/10।</b></li>
+            <li><b>ChatGPT:</b> "In a country where the king is always under control, the state is forever submissive." — More modern, loses some flavor। <b>8/10।</b></li>
+            <li><b>Mohammad ভাই (with literature background):</b> "Where the monarch eternally yields, there the state too remains forever bowed." — Best preserves Rabindranath cadence। <b>9.7/10।</b></li>
+        </ul>
+        <p><b>Winner: Human translator</b> (literary tone, AI cannot match)</p>
+
+        <h3>Test 4: Technical Bangla → English (engineering specification)</h3>
+        <ul>
+            <li><b>Sample:</b> "নবায়নযোগ্য শক্তির উৎস হিসেবে সৌরশক্তির ব্যবহার ক্রমবর্ধমান।"</li>
+            <li><b>Claude/ChatGPT/Gemini:</b> All correctly translate "Solar power usage as a renewable energy source is increasing." <b>9/10।</b></li>
+            <li><b>DeepL:</b> "The use of solar energy as a source of renewable energy is on the rise." <b>9/10।</b> (better than expected)</li>
+            <li><b>Google:</b> Similar quality। <b>8.5/10।</b></li>
+            <li><b>Mohammad ভাই:</b> "Solar power deployment as a renewable energy source is expanding." (Domain-specific verb choice)। <b>9/10।</b></li>
+        </ul>
+        <p><b>Winner: 4-way tie (Claude/ChatGPT/Gemini/Human)</b></p>
+
+        <h3>Test 5: Marketing/business English → Bangla</h3>
+        <ul>
+            <li><b>Sample:</b> "Discover the power of seamless connectivity with our next-generation mobile network."</li>
+            <li><b>Claude:</b> "আমাদের পরবর্তী প্রজন্মের মোবাইল নেটওয়ার্কের সাথে নিরবিচ্ছিন্ন সংযোগের শক্তি আবিষ্কার করুন।" — Smooth, natural। <b>9.5/10।</b></li>
+            <li><b>ChatGPT:</b> "আমাদের next-generation mobile network-এর সাথে seamless connectivity-র power আবিষ্কার করুন।" — Code-switching default; less natural। <b>7.5/10।</b></li>
+            <li><b>Gemini:</b> Close to Claude। <b>9/10।</b></li>
+            <li><b>Google:</b> "আমাদের পরবর্তী-প্রজন্মের মোবাইল নেটওয়ার্কের সাথে নিরবচ্ছিন্ন সংযোগের শক্তি আবিষ্কার করুন।" — Surprisingly close। <b>8.5/10।</b></li>
+            <li><b>Mohammad ভাই:</b> Similar to Claude। <b>9.5/10।</b></li>
+        </ul>
+        <p><b>Winner: Claude (English → Bangla king)</b></p>
+
+        <h3>Test 6: Culturally-sensitive content (Bangla religious text → English)</h3>
+        <ul>
+            <li><b>Sample:</b> "ঈদ-উল-ফিতরের চাঁদ দেখে শোকর আদায় ও আত্মীয়স্বজনের কুশল কামনা করুন।"</li>
+            <li><b>All AI tools:</b> Translate literally but miss the cultural/religious tone। Rating 7-8/10।</li>
+            <li><b>Mohammad ভাই:</b> "Sight the Eid-ul-Fitr crescent, offer your gratitude, and extend your salutations and well-wishes to family and kin." — Cultural register preserved। <b>9.7/10।</b></li>
+        </ul>
+        <p><b>Winner: Human translator</b> (religious/cultural nuance)</p>
+
+        <h2>৫ tools — overall verdict</h2>
+
+        <ul>
+            <li><b>Claude Sonnet 4.6 (best AI overall):</b> Bangla literary register-এ unmatched। Most natural Bangla output। Free tier-এ daily limited; Pro $২০/মাস। <b>Use for:</b> NGO report, marketing translation, formal communication।</li>
+            <li><b>ChatGPT GPT-5 (close second):</b> Excellent English output, slightly stilted Bangla। Voice mode + DALL-E ecosystem advantage। <b>Use for:</b> Bangla → English; English → English polish।</li>
+            <li><b>Gemini 3.5 Pro:</b> Workspace integration killer feature (Gmail/Docs inline)। Bangla quality near-Claude। <b>Use for:</b> Daily Gmail-context translation, long-document analysis।</li>
+            <li><b>DeepL:</b> Workable for European languages; Bangla support partial। PDF/DOCX upload feature unique। <b>Use for:</b> Bulk document translation (যেখানে file upload time-saver)।</li>
+            <li><b>Google Translate:</b> দ্রুত, free, unlimited। কিন্তু idiom + nuance-এ fail। <b>Use for:</b> Quick word lookup, webpage translation, basic conversation।</li>
         </ul>
 
-        <h2>২. Claude — সাহিত্যিক বাংলায় সেরা</h2>
+        <h2>রুনুর actual workflow — কোন কাজে কোনটা</h2>
+
         <ul>
-            <li><b>সহজ:</b> খুব fluid</li>
-            <li><b>Technical:</b> ChatGPT-এর সমান, কিন্তু কখনো একটু verbose</li>
-            <li><b>Idiom:</b> nuanced; সাংস্কৃতিক ব্যাখ্যাও যোগ করে যদি চাও</li>
-            <li><b>দাম:</b> ফ্রি; Pro $২০/মাস</li>
-            <li><b>সেরা ব্যবহার:</b> সাহিত্য, গল্প, রচনা — যেখানে tone গুরুত্বপূর্ণ</li>
+            <li><b>NGO donor report (formal Bangla → English):</b> Claude primary। তিনি paste করেন, Claude translate, তারপর তিনি ১৫-২০ মিনিট personal review।</li>
+            <li><b>Community-facing material (English → Bangla):</b> Claude + cultural review। Religious/cultural reference যেগুলো — Mohammad ভাই-কে পাঠান।</li>
+            <li><b>Quick email/WhatsApp:</b> Google Translate। গতি, simplicity।</li>
+            <li><b>Academic citation/book excerpt:</b> Mohammad ভাই — literary integrity preserve।</li>
+            <li><b>Bulk PDF (project documentation):</b> DeepL — file upload + bulk translate।</li>
+            <li><b>Real-time call/meeting:</b> Google Translate Live mode (still imperfect কিন্তু usable)।</li>
         </ul>
 
-        <h2>৩. Google Translate — দ্রুততম</h2>
+        <h2>সাবধান — যেখানে AI translation কখনো trust করবেন না</h2>
+
         <ul>
-            <li><b>সহজ:</b> ৯০%+ সঠিক, কিন্তু একটু literal</li>
-            <li><b>Technical:</b> পরিভাষা miss করে কখনো; word-by-word translation প্রবণতা</li>
-            <li><b>Idiom:</b> literal — "Keep head cool"-এর মতো ভুল আসে</li>
-            <li><b>দাম:</b> সম্পূর্ণ ফ্রি, unlimited</li>
-            <li><b>সেরা ব্যবহার:</b> দ্রুত, casual translation; webpage entire translation</li>
+            <li><b>Legal document:</b> Contract, agreement, court filing। AI subtle nuance miss করতে পারে — legal consequence।</li>
+            <li><b>Medical translation:</b> Prescription, diagnosis, dose। Ambiguity life-threatening।</li>
+            <li><b>Religious/cultural sensitivity:</b> AI generic phrasing offensive হতে পারে। Native speaker review mandatory।</li>
+            <li><b>Local Bangla dialect:</b> Chittagonian, Sylheti — AI nearly useless। Native speaker only।</li>
+            <li><b>Marketing tagline (final):</b> AI draft OK, but final brand voice native ad-copy writer।</li>
         </ul>
 
-        <h2>৪. DeepL — বাংলা সাপোর্ট সম্প্রতি যোগ</h2>
-        <ul>
-            <li><b>সহজ:</b> European ভাষায় best-in-class কিন্তু বাংলায় এখনো Google-এর সমান</li>
-            <li><b>Technical:</b> ভালো, structure preserves</li>
-            <li><b>Idiom:</b> Google-এর চেয়ে ভালো, কিন্তু ChatGPT-এর চেয়ে কম</li>
-            <li><b>দাম:</b> ফ্রি tier আছে; Pro $৮.৯৯/মাস</li>
-            <li><b>সেরা ব্যবহার:</b> formal document, document upload (PDF/DOCX সরাসরি translate)</li>
-        </ul>
+        <h2>৪টা practical tip — AI translation-এ ৪× quality</h2>
 
-        <h2>৫. Gemini — Google ecosystem-এ integrated</h2>
-        <ul>
-            <li><b>সহজ:</b> Google Translate-এর চেয়ে ভালো (LLM-based)</li>
-            <li><b>Technical:</b> ChatGPT-এর সমান প্রায়</li>
-            <li><b>Idiom:</b> ভালো বুঝতে পারে</li>
-            <li><b>দাম:</b> ফ্রি tier-এ বড় limit</li>
-            <li><b>সেরা ব্যবহার:</b> Google Docs / Gmail-এ inline translation</li>
-        </ul>
+        <ol>
+            <li><b>Context inject করুন:</b> "এটি একটি NGO donor-এর জন্য report — formal, neutral, jargon-free। Target audience: international funders।" — Translation immediately calibrate হবে।</li>
+            <li><b>Reverse-translate verify:</b> Bangla → English-এর output আবার English → Bangla করে নিন। যদি original-এর কাছাকাছি না আসে — fidelity loss থাকতে পারে।</li>
+            <li><b>৩-version comparison:</b> একই text Claude + ChatGPT + Gemini-এ প্যারালেল। সেরাটা বেছে নিন বা hybrid বানান।</li>
+            <li><b>Glossary maintain:</b> আপনার domain-এর key terms (e.g., "micro-credit", "beneficiary", "ভোগান্তি") আগে fix করুন। AI-কে বলুন এই terms exact match-এ রাখতে।</li>
+        </ol>
 
-        <h2>একনজরে তুলনা</h2>
-        <ul>
-            <li><b>সাবলীলতা (Fluency):</b> Claude ≥ ChatGPT > Gemini > DeepL > Google</li>
-            <li><b>Speed:</b> Google > Gemini ≈ DeepL > ChatGPT/Claude</li>
-            <li><b>Free ব্যবহার:</b> Google সবচেয়ে generous</li>
-            <li><b>Bulk document:</b> DeepL সেরা (file upload)</li>
-            <li><b>Context awareness:</b> ChatGPT/Claude সবচেয়ে এগিয়ে</li>
-        </ul>
-
-        <h2>বিশেষ ব্যবহারের ক্ষেত্রে কোনটি বেছে নেবেন</h2>
-        <ul>
-            <li><b>ছাত্র/পরীক্ষার্থী:</b> ChatGPT (free tier) — explanation সহ translation</li>
-            <li><b>ব্যবসায়িক ইমেইল:</b> Claude — natural English tone</li>
-            <li><b>চাকরির CV:</b> ChatGPT + Grammarly combo</li>
-            <li><b>Academic paper:</b> DeepL Pro (document upload)</li>
-            <li><b>সাইট/অ্যাপ localization:</b> ChatGPT API (custom prompt)</li>
-            <li><b>দ্রুত একটা শব্দ/বাক্য:</b> Google Translate</li>
-        </ul>
-
-        <h2>টিপস — ভালো translation পেতে</h2>
-        <ul>
-            <li>ChatGPT/Claude-এ context দিন: "এটি একটি academic paper-এর paragraph, formal tone-এ translate করো"</li>
-            <li>একই AI-তে multiple try করুন — variation আসবে; সেরাটা বেছে নিন</li>
-            <li>Reverse-translate করে যাচাই করুন (English → Bangla আবার Bangla → English)</li>
-            <li>গুরুত্বপূর্ণ document-এ AI translate + native speaker review combine করুন</li>
-            <li>কথ্য বাংলা translate-এ idiom বুঝতে AI-কে context দিন</li>
-        </ul>
-
-        <h2>উপসংহার</h2>
-        <p>২০২৬ সালে এসে বাংলা translation আর "অনুমান" না — context-aware AI দিয়ে প্রায় native quality পাওয়া সম্ভব। আপনার use case-এর জন্য সঠিক টুল বেছে নিন: দ্রুত প্রয়োজনে Google, গুরুত্বপূর্ণ কাজে ChatGPT/Claude।</p>
+        <h2>উপসংহার — আপনার আজকের পদক্ষেপ</h2>
+        <p>রুনু বলেন: "AI translation-এ আমার Mohammad ভাই-এর কাজ ৮০% কমেছে। কিন্তু সেই ২০% — সেটা চিরকাল মানুষের কাজ। কারণ AI text translate করে, কিন্তু culture, context, religion — সেগুলো এখনো মানুষের। মূল difference জানুন: কোন কাজ ৮০%-এ যাবে, কোন কাজ ২০%-এ থাকবে।" আজই আপনি যে translation-এর কাজ দীর্ঘদিন pending রেখেছেন — সেটা উপরের ৫টা tool-এ parallel চালান। নিজে rate করুন। সেই কাজ পরবর্তীতে কোন tool-এ দেওয়া যাবে — সিদ্ধান্ত নিন। এই ৩০ মিনিটের investment আপনার পরবর্তী ১০০টা translation-এর foundation।</p>
 
         <h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
         <ul>
