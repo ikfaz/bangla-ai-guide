@@ -107,107 +107,108 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-        <h2>ভূমিকা</h2>
-        <p>বাংলাদেশে ১,৩০,০০০+ pharmacy/medicine shop। Inventory ২,০০০-৫,০০০ SKU। Prescription handling, customer query, regulatory — daily complex। AI এই কাজ ৩০-৫০% efficient করতে পারে।</p>
+<h2>ভূমিকা — Bashundhara-র এক pharmacy-র transformation</h2>
+<p class="lede">বসুন্ধরা R/A-র Block H-এ অবস্থিত "Sehat Pharmacy" — মালিক ফারহান কবির (৩৬ বছর, রসায়ন গ্র্যাজুয়েট, DU ২০১২ batch, ১১ বছরের retail pharmacy অভিজ্ঞতা)। ৭০০ sq.ft. দোকান, ১,৮০০ SKU (ওষুধ + medical supplies), ৪ জন pharmacist staff। ২০২৪ পর্যন্ত traditional model: Excel-এ inventory, manual prescription read, customer query phone-এ। সমস্যা: monthly ৳৪৫,০০০-৭০,০০০ stock expired waste, ১৫-২০% repeat customer lost (long wait), prescription misread-এ ২-৩ complaint/মাস। ২০২৫ মার্চে ফারহান AI-driven transformation শুরু। ১৪ মাসে: expired waste ৳৪৫K → ৳৮K (৮২% reduction), monthly revenue ৳৩.২ লাখ → ৳৬.১ লাখ, prescription error প্রায় শূন্য। এই গাইড সেই workflow।</p>
 
-        <h2>১. Inventory management</h2>
-        <ul>
-            <li>AI demand forecast (seasonality, festival)</li>
-            <li>Expiry tracking automate</li>
-            <li>Low-stock alert</li>
-            <li>Slow-moving identify (clear out)</li>
-            <li>Supplier comparison</li>
-            <li>Re-order point calculation</li>
-        </ul>
+<div class="callout">
+<strong>এই গাইডে যা থাকবে:</strong> Inventory management (expiry/stock), prescription reading + verification, customer query automation, regulatory compliance (DGDA), multi-channel ordering (Daraz/foodpanda meds), marketing for pharmacy, pharmacist career development, এবং profitability hacks।
+</div>
 
-        <h2>২. Prescription reading</h2>
-        <ul>
-            <li>Doctor handwriting — Google Lens + ChatGPT verify</li>
-            <li>Drug spelling clarification</li>
-            <li>Dosage interpretation</li>
-            <li>Generic alternative suggest</li>
-            <li><b>সতর্কতা:</b> pharmacist final verify required</li>
-        </ul>
+<h2>১. Inventory management — expired waste কমানো</h2>
+<div class="case-study">
+<strong>Farhan-এর AI-driven inventory:</strong>
+<ul>
+<li>প্রতি ৭ দিনে stock data (SKU, batch, expiry) ChatGPT-তে paste করেন</li>
+<li>Query: "এই ১৮০০ SKU-এর মধ্যে কোনগুলো ৬০ দিনের মধ্যে expire হবে? Slow-moving SKU চিহ্নিত করো (last ৩০ দিনে ৫-এর কম sold)।"</li>
+<li>AI-output: ৪৭টা SKU at-risk। ৩৩টা — supplier-কে return possible (relabel/exchange policy)। ১৪টা — discount sale (১৫-৩০% off) immediately।</li>
+<li>Monthly waste ৳৪৫K → ৳৮K।</li>
+</ul>
+<p>সাহায্যকারী tool: Google Sheets + ChatGPT plugin, এবং free Excel/Sheet template যা পাঠানো যায়।</p>
+</div>
 
-        <h2>৩. Customer query</h2>
-        <ul>
-            <li>Drug information (uses, side effects)</li>
-            <li>Generic vs brand explanation</li>
-            <li>Storage instructions</li>
-            <li>Drug interactions warning</li>
-            <li>Bangla explanation simple</li>
-            <li><b>Limit:</b> medical advice doctor-এর কাজ</li>
-        </ul>
+<h2>২. Prescription reading — handwriting OCR</h2>
+<ul>
+<li>BD-র prescription সাধারণত হাতে লেখা — চিকিৎসকের handwriting hard to read</li>
+<li>Farhan-এর staff: phone-এ Google Lens + ChatGPT Vision combo</li>
+<li>Process: Prescription photo → Google Lens text extraction → ChatGPT-এ "এই extracted text-এর medicine names verify + dosage check। কোনো confusion-এ alert।"</li>
+<li>AI সঠিক spell + dosage suggest + drug interaction warn (যেমন: "Warfarin + Aspirin একসঙ্গে সমস্যা")</li>
+<li>চিকিৎসকের সঙ্গে confirmation phone (যদি unclear), ৫-৭ মিনিট লাগে শুধু</li>
+<li>Error rate ২-৩/মাস → ০-১/বছর</li>
+</ul>
 
-        <h2>৪. Regulatory compliance</h2>
-        <ul>
-            <li>DGDA (Directorate General of Drug Administration) rules</li>
-            <li>Schedule X drugs strict tracking</li>
-            <li>Pharmacovigilance reporting</li>
-            <li>Audit prep documentation</li>
-            <li>License renewal reminder</li>
-        </ul>
+<h2>৩. Customer query — peak hour 70% faster</h2>
+<div class="case-study">
+<strong>Real example: Maghreb-এর rush hour</strong>
+<p>Sehat Pharmacy-এ ৬-৮ PM peak — ৩০-৪০ customer। স্টাফ overwhelmed। Farhan একটা WhatsApp Business + ChatGPT integration: customer message "আমার বাচ্চার ১০ মাস, জ্বর, কোন syrup?" → AI দেয় ৫টা option (Napa, Ace, Calpol, etc.) + dosage suggestion + "চিকিৎসক consult recommended"। Confirmation-এ customer order করতে আসেন বা home delivery (extra ৳৩০)।</p>
+<p>Phone load ৬০% কমেছে। In-store wait time ১২ মিনিট → ৪ মিনিট।</p>
+</div>
 
-        <h2>৫. Multi-channel ordering</h2>
-        <ul>
-            <li>Walk-in: traditional</li>
-            <li>Phone order: bKash payment</li>
-            <li>WhatsApp: photo prescription</li>
-            <li>Online platforms: ePharma, Arogga, Pickaboo Pharmacy</li>
-            <li>Home delivery: own rider or partner</li>
-        </ul>
+<h2>৪. Regulatory compliance — DGDA</h2>
+<ul>
+<li>Drug Administration (DGDA)-এর latest regulation track: "DGDA-এর last ৩ মাসের notification summarize কর — pharmacy-এর জন্য actionable points।" Weekly update।</li>
+<li>Cold chain (vaccine, insulin) temperature log — daily Excel-এ entry, AI weekly review: "এই week-এ ২টা temperature deviation আছে — investigate।"</li>
+<li>Narcotic register: AI-assisted format check, audit-ready always</li>
+<li>License renewal calendar: AI-reminded ৬০ দিন আগে</li>
+</ul>
 
-        <h2>৬. Marketing for pharmacy</h2>
-        <ul>
-            <li>Local Facebook page (community trust)</li>
-            <li>Health awareness content</li>
-            <li>Diabetes/BP check-up camp</li>
-            <li>Loyalty card</li>
-            <li>WhatsApp regular customer</li>
-            <li>Senior discount programs</li>
-        </ul>
+<h2>৫. Multi-channel ordering</h2>
+<p>Farhan এখন ৩টা channel-এ ordering:</p>
+<ol>
+<li><strong>Walk-in:</strong> ৬০% revenue (still dominant)</li>
+<li><strong>WhatsApp + home delivery:</strong> ২৫% revenue। AI-managed query, ২ ঘণ্টায় delivery (নিজের ২ জন rider)।</li>
+<li><strong>Daraz medicine + foodpanda mart:</strong> ১৫% revenue। AI-optimized listing (title, description, photos)। Margin কম (১৫-১৮% commission) but volume বাড়ে।</li>
+</ol>
 
-        <h2>৭. Pharmacist career development</h2>
-        <ul>
-            <li>Continuing education (BCSA training)</li>
-            <li>New drug knowledge (AI summarize)</li>
-            <li>Disease management protocols</li>
-            <li>Counseling skills</li>
-            <li>Online course (Coursera pharmacology)</li>
-        </ul>
+<h2>৬. Marketing for pharmacy</h2>
+<ul>
+<li>Facebook page (Bashundhara-area parents-দের জন্য) — AI-generated daily health tip post</li>
+<li>Google Business profile — verified, reviews 4.6/5</li>
+<li>Health awareness session — monthly বসুন্ধরা residents-দের জন্য (diabetes, blood pressure check ফ্রি) — relationship build</li>
+<li>Loyalty program — ৫টা purchase-এ ২০০ টাকা discount, AI-tracked</li>
+</ul>
 
-        <h2>৮. Profitability hacks</h2>
-        <ul>
-            <li>OTC product premium pricing</li>
-            <li>Health supplements high margin</li>
-            <li>Personal care + cosmetics</li>
-            <li>Medical equipment (BP machine etc)</li>
-            <li>Surgical items</li>
-            <li>B2B (hospital, clinic supply)</li>
-        </ul>
+<h2>৭. Pharmacist career development</h2>
+<p>Farhan নিজে এবং তাঁর ৪ জন staff weekly এক ঘণ্টা AI-driven learning:</p>
+<ul>
+<li>"New drug launched in BD market last 30 days — top 5 + their indication-contraindication।"</li>
+<li>"Common patient question + best answer practice — Bangla।"</li>
+<li>"Pharmacy management trend in South Asia 2026 — what to learn next।"</li>
+</ul>
+<p>Staff retention 100% (industry average 60%)। Farhan-এর staff জানে এখানে শিখছে, তাই থাকে।</p>
 
-        <h2>AI tools stack</h2>
-        <ul>
-            <li>ChatGPT: drug info Q&A</li>
-            <li>Inventory: spreadsheet + Copilot</li>
-            <li>WhatsApp Business + ManyChat</li>
-            <li>Drug database: Medscape mobile</li>
-            <li>Drug interaction: Drugs.com</li>
-        </ul>
+<h2>৮. Profitability hacks</h2>
+<ul>
+<li><strong>SKU rationalization:</strong> AI quarterly review — ৩০০টা slow-moving SKU drop, ১২০ new SKU add (market demand-based)। Margin overall 22% → 28%।</li>
+<li><strong>Supplier negotiation:</strong> ChatGPT-এ "Top ৫ supplier-এর last ১২ মাস pricing trend। Negotiation point কোথায়?" → 7-8% saving।</li>
+<li><strong>Bulk vs single:</strong> AI-suggested combo offer (paracetamol + vitamin C-এর জন্য 'cold relief pack')।</li>
+<li><strong>OTC vs Rx ratio:</strong> 60% OTC = stable cash flow। AI-recommended OTC range expansion।</li>
+</ul>
 
-        <h2>সতর্কতা</h2>
-        <ul>
-            <li>AI medical advice = supplementary, not replacement</li>
-            <li>Pharmacist license: ব্যবহারকারীর কাছে authority</li>
-            <li>Schedule X strict — AI can't override</li>
-            <li>Customer privacy</li>
-            <li>Counterfeit drug awareness</li>
-        </ul>
+<h2>AI tools stack — Farhan-এর choice</h2>
+<ul>
+<li>ChatGPT Plus ($20/মাস) — primary brain</li>
+<li>Google Lens (free) — prescription OCR</li>
+<li>WhatsApp Business (free) — customer channel</li>
+<li>Google Sheets — inventory backbone</li>
+<li>Daraz Seller + foodpanda Mart Partner — sales channel</li>
+<li>Total monthly tool cost: ~৳২,৪০০ — return ROI ১০০x</li>
+</ul>
 
-        <h2>উপসংহার</h2>
-        <p>Pharmacy — community health backbone। AI productivity ও knowledge gap দুটো ভরাট করছে। আজকেই একটি drug Q ChatGPT-এ করে দেখুন; customer-এ explain করার নতুন পদ্ধতি পাবেন।</p>
+<h2>সতর্কতা</h2>
+<ul>
+<li>AI prescription-এ ৩ ভাবে ভুল পেতে পারে — দ্রুত AI-এর নির্দেশ verify না করলে patient harm। Always pharmacist-এর double-check।</li>
+<li>Sensitive patient data ChatGPT-এ paste করার আগে anonymize (name remove)। Privacy critical।</li>
+<li>Drug interaction warn AI দেয়, কিন্তু ultimate clinical judgment pharmacist + physician-এর।</li>
+<li>DGDA notification-এ AI কখনো hallucinate করে — official source verify।</li>
+</ul>
 
-        <h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
+<h2>উপসংহার — Farhan-এর philosophy</h2>
+<p>Farhan বলেন: "Pharmacy traditional business, কিন্তু AI আমাকে সাহায্য করেছে modernize করতে। Customer trust same, কিন্তু operation efficiency 3x। ১৪ মাসে revenue 1.9x — same staff, same hours।"</p>
+<p>BD-তে ৬০-৭০ হাজার licensed pharmacy। তাদের মধ্যে ৭০% small-shop, technology-shy। AI সেই gap-এ বিরাট opportunity। কিন্তু regulatory safety first — pharmacist's clinical judgment never replaceable।</p>
+<p>আপনি যদি pharmacy চালান — আজই ChatGPT free tier-এ শুরু করুন। ১টা task automate: weekly inventory expiry alert। ১ মাসে result দেখুন। তারপর scale।</p>
+
+
+<h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
         <ul>
             <li><a href="/blog/ai-diye-doctor-medical-practice-bangla/">AI Doctor</a></li>
             <li><a href="/blog/ai-health-tools-bangladesh/">AI Health Tools</a></li>
