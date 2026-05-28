@@ -6,7 +6,14 @@
   <atom:link href="https://banglaaiguide.com/feed.xml" rel="self" type="application/rss+xml" />
   <description>বাংলাদেশের জন্য AI টুলস গাইড, রিভিউ ও টিউটোরিয়াল।</description>
   <language>bn-BD</language>
-  <lastBuildDate>Thu, 28 May 2026 20:19:26 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 28 May 2026 20:42:58 GMT</lastBuildDate>
+  <item>
+    <title>আইনজীবী/উকিল AI বাংলা গাইড — Bangladesh Court Practice ২০২৬</title>
+    <link>https://banglaaiguide.com/blog/advocate-ukil-ai-bangladesh/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/advocate-ukil-ai-bangladesh/</guid>
+    <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
+    <description>Bangladesh আইনজীবীদের জন্য AI ব্যবহার — case research, contract drafting, client management, citation, court prep — বাংলা গাইড।</description>
+  </item>
   <item>
     <title>AI দিয়ে গরু পালন — Dairy Farmer-দের জন্য বাংলা গাইড ২০২৬</title>
     <link>https://banglaaiguide.com/blog/ai-diye-goru-palan-bangla/</link>
@@ -36,6 +43,13 @@
     <description>গৃহিণীদের জন্য AI — meal planning, recipe, কেনাকাটা budget, সন্তানের পড়া, পারিবারিক স্বাস্থ্য — দৈনন্দিন কাজে ChatGPT ব্যবহার বাংলা গাইড।</description>
   </item>
   <item>
+    <title>AI দিয়ে Bangladesh Bank Loan Application — Personal, Home, SME ২০২৬</title>
+    <link>https://banglaaiguide.com/blog/bd-bank-loan-ai-bangla/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/bd-bank-loan-ai-bangla/</guid>
+    <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
+    <description>Bangladesh bank loan AI দিয়ে — personal loan, home loan, SME loan, car loan। Eligibility check, document, EMI calc, common reject — বাংলা গাইড।</description>
+  </item>
+  <item>
     <title>Brac Bank Mastercard দিয়ে Claude Pro Subscription — বাংলা ২০২৬</title>
     <link>https://banglaaiguide.com/blog/brac-mastercard-claude-subscription-bangla/</link>
     <guid isPermaLink="true">https://banglaaiguide.com/blog/brac-mastercard-claude-subscription-bangla/</guid>
@@ -50,11 +64,25 @@
     <description>ChatGPT Tasks — OpenAI-এর scheduling feature যা auto-run করে। বাংলাদেশী professional-এর জন্য practical use case সহ পূর্ণ গাইড।</description>
   </item>
   <item>
+    <title>Cox&apos;s Bazar Travel AI দিয়ে — Family Vacation Planning বাংলা গাইড ২০২৬</title>
+    <link>https://banglaaiguide.com/blog/coxs-bazar-travel-ai-bangla/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/coxs-bazar-travel-ai-bangla/</guid>
+    <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
+    <description>Cox&apos;s Bazar family ভ্রমণ AI দিয়ে — hotel comparison, Marine Drive, Inani, Saint Martin, Himchori, budget, transport, peak season — সম্পূর্ণ গাইড।</description>
+  </item>
+  <item>
     <title>AI দিয়ে ডেঙ্গু প্রতিরোধ ও সচেতনতা — ২০২৬ বাংলাদেশ গাইড</title>
     <link>https://banglaaiguide.com/blog/dengue-prevention-ai-bangla/</link>
     <guid isPermaLink="true">https://banglaaiguide.com/blog/dengue-prevention-ai-bangla/</guid>
     <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
     <description>ডেঙ্গু সচেতনতা, লক্ষণ চিহ্নিতকরণ, প্রতিরোধ, প্ল্যাটেলেট monitoring, hospital referral — AI দিয়ে কীভাবে — বাংলা গাইড ২০২৬।</description>
+  </item>
+  <item>
+    <title>AI দিয়ে Government Tender লেখা — Bangladesh e-GP গাইড ২০২৬</title>
+    <link>https://banglaaiguide.com/blog/govt-tender-likha-ai-bangla/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/govt-tender-likha-ai-bangla/</guid>
+    <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
+    <description>Bangladesh govt tender AI দিয়ে — e-GP submission, technical + financial proposal, BOQ, CV, past performance — সম্পূর্ণ বাংলা গাইড।</description>
   </item>
   <item>
     <title>GPT-5 mini বাংলা গাইড — Budget-friendly OpenAI Model ২০২৬</title>
@@ -64,11 +92,67 @@
     <description>GPT-5 mini — OpenAI-এর সাশ্রয়ী model। বাংলাদেশী dev + creator-দের জন্য access, capability, GPT-5 vs mini comparison, real use case।</description>
   </item>
   <item>
+    <title>Bangladesh HR Recruiter-দের জন্য AI বাংলা গাইড — ATS, Sourcing, Interview ২০২৬</title>
+    <link>https://banglaaiguide.com/blog/hr-recruiter-bd-ai-bangla/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/hr-recruiter-bd-ai-bangla/</guid>
+    <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
+    <description>BD HR recruiter-দের জন্য AI tools — resume screening, sourcing, ATS, interview, onboarding automation — পূর্ণ বাংলা গাইড।</description>
+  </item>
+  <item>
     <title>AI দিয়ে বাংলা নাটক Script লেখা — ২০২৬ Scriptwriter গাইড</title>
     <link>https://banglaaiguide.com/blog/natok-script-ai-bangla/</link>
     <guid isPermaLink="true">https://banglaaiguide.com/blog/natok-script-ai-bangla/</guid>
     <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
     <description>AI দিয়ে বাংলা নাটক / ওয়েব সিরিজ / শর্টফিল্ম script — character arc, dialogue, plot — Claude + ChatGPT workflow, BD writer-এর জন্য পূর্ণ গাইড।</description>
+  </item>
+  <item>
+    <title>AI দিয়ে NBR Tax Consultant Bangladesh — ITR, VAT, Return গাইড ২০২৬</title>
+    <link>https://banglaaiguide.com/blog/nbr-tax-consultant-ai-bangla/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/nbr-tax-consultant-ai-bangla/</guid>
+    <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
+    <description>Bangladesh NBR tax consultant-দের জন্য AI — Individual Tax Return, VAT calculation, audit prep, client management — বাংলা গাইড।</description>
+  </item>
+  <item>
+    <title>AI দিয়ে Passport Renewal MRP/e-Passport বাংলাদেশ গাইড ২০২৬</title>
+    <link>https://banglaaiguide.com/blog/passport-mrp-ai-bangla/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/passport-mrp-ai-bangla/</guid>
+    <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
+    <description>Passport renewal AI দিয়ে — MRP to e-Passport conversion, NID matching, fees, status check, photo standard, common errors — বাংলা গাইড।</description>
+  </item>
+  <item>
+    <title>Bangladesh থেকে Remote Work AI Workflow — বাংলা গাইড ২০২৬</title>
+    <link>https://banglaaiguide.com/blog/remote-work-from-bangladesh-ai-workflow/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/remote-work-from-bangladesh-ai-workflow/</guid>
+    <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
+    <description>Bangladesh থেকে remote work — Upwork, Toptal, US/EU client, timezone, payment, AI productivity stack, tax — সম্পূর্ণ বাংলা গাইড।</description>
+  </item>
+  <item>
+    <title>Sajek Valley Vacation Planning AI দিয়ে — সম্পূর্ণ বাংলা গাইড ২০২৬</title>
+    <link>https://banglaaiguide.com/blog/sajek-vacation-planning-ai-bangla/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/sajek-vacation-planning-ai-bangla/</guid>
+    <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
+    <description>Sajek Valley ভ্রমণ পরিকল্পনা AI দিয়ে — itinerary, weather, transport (Khagrachari/Dighinala), cottage booking, budget, restricted access — সম্পূর্ণ বাংলা গাইড।</description>
+  </item>
+  <item>
+    <title>Sundarbans Tourism AI দিয়ে Plan — Eco-Tour বাংলা গাইড ২০২৬</title>
+    <link>https://banglaaiguide.com/blog/sundarbans-tourism-ai-bangla/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/sundarbans-tourism-ai-bangla/</guid>
+    <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
+    <description>Sundarbans tour AI দিয়ে — Khulna/Mongla এর তিন/চার দিনের itinerary, launch + boat selection, Forest Dept permission, wildlife spotting probability, budget — সম্পূর্ণ গাইড।</description>
+  </item>
+  <item>
+    <title>Google Veo 3 বাংলা গাইড — Sora-র Successor AI Video Model ২০২৬</title>
+    <link>https://banglaaiguide.com/blog/veo-3-bangla-deep-guide/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/veo-3-bangla-deep-guide/</guid>
+    <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
+    <description>Google Veo 3 — উন্নত AI video generation। বাংলাদেশ থেকে access, Bangla prompt, professional video creation — বাংলা গাইড।</description>
+  </item>
+  <item>
+    <title>AI দিয়ে Visa Application Bangladesh — Schengen, US, UK, Canada গাইড ২০২৬</title>
+    <link>https://banglaaiguide.com/blog/visa-application-ai-bangladesh/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/visa-application-ai-bangladesh/</guid>
+    <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
+    <description>AI দিয়ে visa application — Schengen, US, UK, Canada, Australia, India। Form fill, document checklist, interview prep, cover letter — বাংলা গাইড।</description>
   </item>
   <item>
     <title>BDT Credit Card দিয়ে AI Subscription — Brac, City, EBL, DBBL ২০২৬ গাইড</title>
