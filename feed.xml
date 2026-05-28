@@ -6,7 +6,7 @@
   <atom:link href="https://banglaaiguide.com/feed.xml" rel="self" type="application/rss+xml" />
   <description>বাংলাদেশের জন্য AI টুলস গাইড, রিভিউ ও টিউটোরিয়াল।</description>
   <language>bn-BD</language>
-  <lastBuildDate>Thu, 28 May 2026 20:54:19 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 28 May 2026 21:03:08 GMT</lastBuildDate>
   <item>
     <title>আইনজীবী/উকিল AI বাংলা গাইড — Bangladesh Court Practice ২০২৬</title>
     <link>https://banglaaiguide.com/blog/advocate-ukil-ai-bangladesh/</link>
@@ -62,6 +62,13 @@
     <guid isPermaLink="true">https://banglaaiguide.com/blog/chatgpt-tasks-scheduling-bangla/</guid>
     <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
     <description>ChatGPT Tasks — OpenAI-এর scheduling feature যা auto-run করে। বাংলাদেশী professional-এর জন্য practical use case সহ পূর্ণ গাইড।</description>
+  </item>
+  <item>
+    <title>Claude Opus 4.8 বাংলা গাইড — Anthropic-এর নতুন Flagship ২০২৬</title>
+    <link>https://banglaaiguide.com/blog/claude-opus-4-8-bangla-guide/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/claude-opus-4-8-bangla-guide/</guid>
+    <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
+    <description>Claude Opus 4.8 — Anthropic-এর latest flagship (May 28, 2026 released)। Effort Control, Dynamic Workflows, 2.5x fast mode, BD থেকে access — পূর্ণ বাংলা গাইড।</description>
   </item>
   <item>
     <title>Cox&apos;s Bazar Travel AI দিয়ে — Family Vacation Planning বাংলা গাইড ২০২৬</title>
