@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OpenClaw বাংলা গাইড — Open-Source AI Agent (২০২৬ Updated)</title>
-    <meta name="description" content="OpenClaw — Peter Steinberger-এর open-source personal AI agent। বাংলাদেশ থেকে install, 100+ skills, multi-channel inbox, security concerns + alternatives — সম্পূর্ণ গাইড।">
+    <meta name="description" content="OpenClaw — Peter Steinberger-এর open-source personal AI agent। বাংলাদেশ থেকে install, 100+ skills, multi-channel inbox, security concerns + alternatives — সম্পূর্ণ…">
     <meta name="keywords" content="OpenClaw, OpenClaw bangla, Peter Steinberger, open-source AI agent, Clawdbot, Moltbot, self-hosted AI">
     <meta name="author" content="BanglaAIGuide">
     <meta property="og:title" content="OpenClaw বাংলা গাইড — Open-Source AI Agent (২০২৬ Updated)">
-    <meta property="og:description" content="OpenClaw — Peter Steinberger-এর open-source personal AI agent। বাংলাদেশ থেকে install, 100+ skills, multi-channel inbox, security concerns + alternatives — সম্পূর্ণ গাইড।">
+    <meta property="og:description" content="OpenClaw — Peter Steinberger-এর open-source personal AI agent। বাংলাদেশ থেকে install, 100+ skills, multi-channel inbox, security concerns + alternatives — সম্পূর্ণ…">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://banglaaiguide.com/blog/openclaw-bangla-guide/">
     <meta property="og:image" content="https://banglaaiguide.com/blog/openclaw-bangla-guide/cover.svg">
@@ -17,7 +17,7 @@
     <meta property="og:image:type" content="image/svg+xml">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="OpenClaw বাংলা গাইড — Open-Source AI Agent (২০২৬ Updated)">
-    <meta name="twitter:description" content="OpenClaw — Peter Steinberger-এর open-source personal AI agent। বাংলাদেশ থেকে install, 100+ skills, multi-channel inbox, security concerns + alternatives — সম্পূর্ণ গাইড।">
+    <meta name="twitter:description" content="OpenClaw — Peter Steinberger-এর open-source personal AI agent। বাংলাদেশ থেকে install, 100+ skills, multi-channel inbox, security concerns + alternatives — সম্পূর্ণ…">
     <meta name="twitter:image" content="https://banglaaiguide.com/blog/openclaw-bangla-guide/cover.svg">
     <link rel="canonical" href="https://banglaaiguide.com/blog/openclaw-bangla-guide/">
 
@@ -26,7 +26,7 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "OpenClaw বাংলা গাইড — Open-Source AI Agent (২০২৬ Updated)",
-  "description": "OpenClaw — Peter Steinberger-এর open-source personal AI agent। বাংলাদেশ থেকে install, 100+ skills, multi-channel inbox, security concerns + alternatives — সম্পূর্ণ গাইড।",
+  "description": "OpenClaw — Peter Steinberger-এর open-source personal AI agent। বাংলাদেশ থেকে install, 100+ skills, multi-channel inbox, security concerns + alternatives — সম্পূর্ণ…",
   "image": "https://banglaaiguide.com/blog/openclaw-bangla-guide/cover.svg",
   "author":{"@type":"Person","name":"ইকফাজ","url":"https://banglaaiguide.com/about/"},
   "publisher": {
@@ -52,7 +52,8 @@
   <!-- PERSON-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-author-block">{"@context":"https://schema.org","@type":"Person","name":"ইকফাজ","alternateName":"Ikfaz","jobTitle":"প্রতিষ্ঠাতা ও সম্পাদক","url":"https://banglaaiguide.com/about/","sameAs":["https://github.com/ikfaz"],"worksFor":{"@type":"Organization","name":"বাংলা AI গাইড","url":"https://banglaaiguide.com"},"knowsAbout":["Artificial Intelligence","AI Tools","Bangladesh Tech","বাংলা AI"],"description":"বাংলা AI গাইডের প্রতিষ্ঠাতা। বাংলাদেশি ব্যবহারকারীদের জন্য AI টুলস কিউরেট ও বিশ্লেষণ করেন — কোনটা BD থেকে কাজ করে, কোনটায় bKash চলে, কোনটা আসলে দৈনন্দিন কাজে লাগে।"}</script>
 <!-- PERSON-SCHEMA:END -->
-  </head>
+      <script type="application/ld+json" data-injected-by="extend-faq-coverage">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"বাংলাদেশ থেকে OpenClaw কীভাবে access করব?","acceptedAnswer":{"@type":"Answer","text":"OpenClaw locally চালানো যায় (development-এর জন্য), কিন্তু 24/7 message receive করতে হলে একটা always-on server লাগে। মেহরাবের stack: VPS: DigitalOcean Singapore region — $১২/মাস droplet (1 vCPU, 2GB RAM, 50GB SSD)। Latency BD-থেকে ~৬০ms — acceptable। Alternative: Hetzner Finland — €৪.৫/মাস-এ একই specs পাওয়া যায়, কিন্তু latency BD-থেকে ~১৪০ms (mostly OK message lag-এর জন্য, real-time এ noticeable নয়)। Payment: EBL Aqua/City Bank dual-currency card দিয়ে দুটোই কাজ করে — bKash সরাসরি unfortunately চলে না। Install command: npm install -g openclaw তারপর openclaw init । Config wizard interactive — channel এবং LLM provider question করে। Docker option: docker run -d openclaw/openclaw — preferred…"}},{"@type":"Question","name":"OpenClaw কোন কাজে সবচেয়ে ভালো?","acceptedAnswer":{"@type":"Answer","text":"২ সপ্তাহের active deployment-এর পর BillSmart-এ OpenClaw যেভাবে কাজ করছে: ১. Customer support automation (tier 1): \"kemne bill banabo\", \"subscription cancel korbo kemne\", \"Nagad add korbo na ken\" — common 80% query agent solve করে। Escalation flag আসে শুধু complex বা angry tone detect করলে। ২. FB Messenger auto-reply (community plugin): BillSmart-এর Facebook Page-এ ৩-৪ ঘণ্টার reply lag → ১ মিনিট। Tasnim এর confirmation: \"client ৭০% বুঝতেই পারে না bot reply দিচ্ছে।\" ৩. Bangla query handling: \"amar invoice ta kothay\", \"taka katise kintu paymentslip ashe nai\" — Claude Sonnet 4.6-এর Bangla strength + OpenClaw-এর context retention = native-feel responses। ৪. Invoice generation: WhatsApp-এ \"Rahim…"}},{"@type":"Question","name":"100+ built-in skills + skill marketplace — কী জানা দরকার?","acceptedAnswer":{"@type":"Answer","text":"OpenClaw-এর \"skill\" মানে একটা specific কাজ করার pre-built capability — অনেকটা Anthropic-এর Claude Skills-এর মতো, কিন্তু agent context-এ। ২০২৬ মে-র registry-তে 120+ skill, যার মধ্যে BD startup context-এ relevant: calendar-skill: Google Calendar/Outlook-এ event create, modify, list। email-skill: Draft, send, search, summarize — IMAP/Gmail/Outlook। github-skill: PR review, issue triage, comment, label। notion-skill: Page create, database query, daily standup logging। browser-skill: Headless browser দিয়ে website navigate, form fill, screenshot। shell-skill: Local shell command run (sandboxed, with whitelist)। invoice-skill (community): PDF invoice generate — BillSmart-এ মেহরাব এটাকে fork করে…"}},{"@type":"Question","name":"OpenClaw কী + কেন viral হয়েছে — কী জানা দরকার?","acceptedAnswer":{"@type":"Answer","text":"OpenClaw একটা open-source personal AI agent framework — Peter Steinberger (PSPDFKit-এর প্রতিষ্ঠাতা, প্রাক্তন iOS dev community-র চেনা মুখ) এর তৈরি। এটা Node.js-এ written, MIT-style license-এ released (commercial use-এর আগে license verify করবেন), এবং Mac/Linux/Windows + Docker-এ চলে। মূল idea: আপনার নিজের একটা \"digital butler\" যেটা WhatsApp, Telegram, Slack, Discord, iMessage সব জায়গা থেকে message receive করে, Claude/GPT/DeepSeek/Ollama-র মতো যেকোনো LLM ব্যাকএন্ড দিয়ে process করে, এবং 100+ pre-built skill ব্যবহার করে actual কাজ করে দেয় — ক্যালেন্ডারে event বসানো, invoice generate, GitHub PR review, এমনকি browser automate করা। এর history short কিন্তু dramatic: ২০২৫ মাঝামাঝি — Clawdbot:…"}}]}</script>
+</head>
 <body>
     <header class="navbar">
         <div class="container navbar-inner">
@@ -295,7 +296,41 @@
 
     </div>
 
-    <!-- RELATED-POSTS:START -->
+    <!-- TEMPLATED-FAQ:START -->
+<section class="article-faq" aria-labelledby="faq-heading">
+  <style>
+    .article-faq { max-width: 880px; margin: 56px auto 16px; padding: 0 20px; font-family: 'Hind Siliguri', sans-serif; }
+    .article-faq h2 { font-family: 'Syne', 'Hind Siliguri', sans-serif; font-size: 28px; font-weight: 800; letter-spacing: -0.02em; color: #0F172A; margin: 0 0 18px; }
+    .article-faq .faq-item { border: 1px solid #E2E8F0; border-radius: 14px; padding: 14px 18px; margin-bottom: 12px; background: #FFFFFF; }
+    .article-faq .faq-item[open] { border-color: #16A34A; box-shadow: 0 8px 24px rgba(15,23,42,.06); }
+    .article-faq .faq-q { font-weight: 700; font-size: 16px; line-height: 1.5; color: #0F172A; cursor: pointer; list-style: none; }
+    .article-faq .faq-q::-webkit-details-marker { display: none; }
+    .article-faq .faq-q::after { content: '+'; float: right; color: #16A34A; font-size: 22px; line-height: 1; transition: transform .2s; }
+    .article-faq .faq-item[open] .faq-q::after { content: '−'; }
+    .article-faq .faq-a { margin-top: 10px; color: #334155; font-size: 15px; line-height: 1.7; }
+    .article-faq .faq-a p { margin: 0; }
+  </style>
+  <h2 id="faq-heading">সচরাচর জিজ্ঞাসা (FAQ)</h2>
+    <details class="faq-item" open>
+      <summary class="faq-q">বাংলাদেশ থেকে OpenClaw কীভাবে access করব?</summary>
+      <div class="faq-a"><p>OpenClaw locally চালানো যায় (development-এর জন্য), কিন্তু 24/7 message receive করতে হলে একটা always-on server লাগে। মেহরাবের stack: VPS: DigitalOcean Singapore region — $১২/মাস droplet (1 vCPU, 2GB RAM, 50GB SSD)। Latency BD-থেকে ~৬০ms — acceptable। Alternative: Hetzner Finland — €৪.৫/মাস-এ একই specs পাওয়া যায়, কিন্তু latency BD-থেকে ~১৪০ms (mostly OK message lag-এর জন্য, real-time এ noticeable নয়)। Payment: EBL Aqua/City Bank dual-currency card দিয়ে দুটোই কাজ করে — bKash সরাসরি unfortunately চলে না। Install command: npm install -g openclaw তারপর openclaw init । Config wizard interactive — channel এবং LLM provider question করে। Docker option: docker run -d openclaw/openclaw — preferred…</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">OpenClaw কোন কাজে সবচেয়ে ভালো?</summary>
+      <div class="faq-a"><p>২ সপ্তাহের active deployment-এর পর BillSmart-এ OpenClaw যেভাবে কাজ করছে: ১. Customer support automation (tier 1): &quot;kemne bill banabo&quot;, &quot;subscription cancel korbo kemne&quot;, &quot;Nagad add korbo na ken&quot; — common 80% query agent solve করে। Escalation flag আসে শুধু complex বা angry tone detect করলে। ২. FB Messenger auto-reply (community plugin): BillSmart-এর Facebook Page-এ ৩-৪ ঘণ্টার reply lag → ১ মিনিট। Tasnim এর confirmation: &quot;client ৭০% বুঝতেই পারে না bot reply দিচ্ছে।&quot; ৩. Bangla query handling: &quot;amar invoice ta kothay&quot;, &quot;taka katise kintu paymentslip ashe nai&quot; — Claude Sonnet 4.6-এর Bangla strength + OpenClaw-এর context retention = native-feel responses। ৪. Invoice generation: WhatsApp-এ &quot;Rahim…</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">100+ built-in skills + skill marketplace — কী জানা দরকার?</summary>
+      <div class="faq-a"><p>OpenClaw-এর &quot;skill&quot; মানে একটা specific কাজ করার pre-built capability — অনেকটা Anthropic-এর Claude Skills-এর মতো, কিন্তু agent context-এ। ২০২৬ মে-র registry-তে 120+ skill, যার মধ্যে BD startup context-এ relevant: calendar-skill: Google Calendar/Outlook-এ event create, modify, list। email-skill: Draft, send, search, summarize — IMAP/Gmail/Outlook। github-skill: PR review, issue triage, comment, label। notion-skill: Page create, database query, daily standup logging। browser-skill: Headless browser দিয়ে website navigate, form fill, screenshot। shell-skill: Local shell command run (sandboxed, with whitelist)। invoice-skill (community): PDF invoice generate — BillSmart-এ মেহরাব এটাকে fork করে…</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">OpenClaw কী + কেন viral হয়েছে — কী জানা দরকার?</summary>
+      <div class="faq-a"><p>OpenClaw একটা open-source personal AI agent framework — Peter Steinberger (PSPDFKit-এর প্রতিষ্ঠাতা, প্রাক্তন iOS dev community-র চেনা মুখ) এর তৈরি। এটা Node.js-এ written, MIT-style license-এ released (commercial use-এর আগে license verify করবেন), এবং Mac/Linux/Windows + Docker-এ চলে। মূল idea: আপনার নিজের একটা &quot;digital butler&quot; যেটা WhatsApp, Telegram, Slack, Discord, iMessage সব জায়গা থেকে message receive করে, Claude/GPT/DeepSeek/Ollama-র মতো যেকোনো LLM ব্যাকএন্ড দিয়ে process করে, এবং 100+ pre-built skill ব্যবহার করে actual কাজ করে দেয় — ক্যালেন্ডারে event বসানো, invoice generate, GitHub PR review, এমনকি browser automate করা। এর history short কিন্তু dramatic: ২০২৫ মাঝামাঝি — Clawdbot:…</p></div>
+    </details>
+</section>
+<!-- TEMPLATED-FAQ:END -->
+
+<!-- RELATED-POSTS:START -->
 <section class="related-posts" aria-label="সম্পর্কিত গাইড">
   <style>
     .related-posts { max-width: 1100px; margin: 56px auto; padding: 0 20px; font-family: 'Hind Siliguri', sans-serif; }

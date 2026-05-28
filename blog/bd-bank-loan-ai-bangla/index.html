@@ -52,7 +52,8 @@
   <!-- PERSON-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-author-block">{"@context":"https://schema.org","@type":"Person","name":"ইকফাজ","alternateName":"Ikfaz","jobTitle":"প্রতিষ্ঠাতা ও সম্পাদক","url":"https://banglaaiguide.com/about/","sameAs":["https://github.com/ikfaz"],"worksFor":{"@type":"Organization","name":"বাংলা AI গাইড","url":"https://banglaaiguide.com"},"knowsAbout":["Artificial Intelligence","AI Tools","Bangladesh Tech","বাংলা AI"],"description":"বাংলা AI গাইডের প্রতিষ্ঠাতা। বাংলাদেশি ব্যবহারকারীদের জন্য AI টুলস কিউরেট ও বিশ্লেষণ করেন — কোনটা BD থেকে কাজ করে, কোনটায় bKash চলে, কোনটা আসলে দৈনন্দিন কাজে লাগে।"}</script>
 <!-- PERSON-SCHEMA:END -->
-  </head>
+      <script type="application/ld+json" data-injected-by="extend-faq-coverage">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Common Rejection (Top 10) + AI Fix — কী জানা দরকার?","acceptedAnswer":{"@type":"Answer","text":"Income-to-EMI ratio fail: Allowance + bonus IT return-এ document করুন। NID name mismatch: Bank document, deed, IT return — সব same spelling। CIB classification SMA/SS: Existing overdue settle, 6 month wait। Insufficient banking history: Salary account-এ 12+ months consistent credit। Property document incomplete: Mutation, holding tax up-to-date। Builder not approved: RAJUK/BBA approval certificate attach। Down payment source unverified: FDR, share liquidation, gift-deed — document। Age vs tenure mismatch: Tenure কমিয়ে retirement-এর আগে maturity। Multiple recent inquiry: পরপর ৫ bank-এ apply → CIB-তে hit। Pre-check করে shortlist করুন। Vague loan purpose: Specific property + amount + builder।"}},{"@type":"Question","name":"AI Eligibility Pre-check — কী জানা দরকার?","acceptedAnswer":{"@type":"Answer","text":"Bank apply-এর আগে eligibility self-assessment — যা time + rejection-এর CIB hit বাঁচায়। ChatGPT/Claude-এ নিজের profile (salary, age, existing EMI, CIB rating) input দিয়ে generic eligibility analysis। Income-to-EMI ratio: BD bank rule — total EMI (existing + new) salary-এর ৪০-৫০% cross করলে reject। ১.৮ লাখ salary-এ EMI cap ~৭২-৯০ হাজার। Age vs tenure: Loan maturity retirement age (65/70)-এর আগে। ৪০ বছর বয়সে ২৫-year home loan বেশিরভাগ bank দেবে না। NID + e-TIN: Mandatory। NID-এ name spelling + bank document mismatch — common rejection। CIB report: Bangladesh Bank Credit Information Bureau-এর 4-year history। CIB classification (Standard/SMA/SS/DF/BL) — SMA-র বেশি হলে most bank reject। Debt…"}},{"@type":"Question","name":"Bank Selection AI — কী জানা দরকার?","acceptedAnswer":{"@type":"Answer","text":"২০২৬-এর home loan market-এর major players। AI দিয়ে — own profile-এর জন্য কোন bank historically best fit। IDLC Finance: NBFI home loan leader — interest ৮.৫-১০.৫%, processing fast, doc-flexible। BRAC Bank: Salary professional segment-এ aggressive — ৯-১১%, salary account থাকলে ০.২৫% concession। Eastern Bank (EBL): Premier Banking-এ high-income borrower-এর জন্য — ৯-১১.৫%। Dutch-Bangla Bank (DBBL): Tech-driven, online application strong — ৯.৫-১২%। City Bank: \"Manarah\" + general home loan — ৯-১১.৭৫%। Mutual Trust Bank (MTBL): Mid-segment flexible — ৯.২৫-১১.৫%। LankaBangla Finance: Long tenure (25 yr) friendly — ৯-১১%। DBH: Specialist home finance — ৮.৫-১০.৭৫%। AI prompt example: \"আমার salary…"}},{"@type":"Question","name":"Document Checklist + AI Generation — কী জানা দরকার?","acceptedAnswer":{"@type":"Answer","text":"Standard salaried home loan doc list — যেগুলো AI-তে format/draft করিয়ে নেওয়া যায়। NID + e-TIN copy — both spouses (if joint applicant)। Last 6 month bank statement — salary credit visible। Last 3 year IT return — acknowledgment slip + computation। Salary certificate — employer issued, current designation + tenure। Last 3 months pay slip। Property document — deed, mutation, mouza map, holding tax। Builder agreement / sale deed — registered। Business owner-এর জন্য: Trade license (3 year), VAT certificate, 2 year audited statement। AI use — cover letter draft, income explanation note (allowance + bonus breakdown), employment confirmation request email, builder NOC request — সব template-এ…"}}]}</script>
+</head>
 <body>
     <header class="navbar">
         <div class="container navbar-inner">
@@ -292,7 +293,41 @@
 
     </div>
 
-    <!-- RELATED-POSTS:START -->
+    <!-- TEMPLATED-FAQ:START -->
+<section class="article-faq" aria-labelledby="faq-heading">
+  <style>
+    .article-faq { max-width: 880px; margin: 56px auto 16px; padding: 0 20px; font-family: 'Hind Siliguri', sans-serif; }
+    .article-faq h2 { font-family: 'Syne', 'Hind Siliguri', sans-serif; font-size: 28px; font-weight: 800; letter-spacing: -0.02em; color: #0F172A; margin: 0 0 18px; }
+    .article-faq .faq-item { border: 1px solid #E2E8F0; border-radius: 14px; padding: 14px 18px; margin-bottom: 12px; background: #FFFFFF; }
+    .article-faq .faq-item[open] { border-color: #16A34A; box-shadow: 0 8px 24px rgba(15,23,42,.06); }
+    .article-faq .faq-q { font-weight: 700; font-size: 16px; line-height: 1.5; color: #0F172A; cursor: pointer; list-style: none; }
+    .article-faq .faq-q::-webkit-details-marker { display: none; }
+    .article-faq .faq-q::after { content: '+'; float: right; color: #16A34A; font-size: 22px; line-height: 1; transition: transform .2s; }
+    .article-faq .faq-item[open] .faq-q::after { content: '−'; }
+    .article-faq .faq-a { margin-top: 10px; color: #334155; font-size: 15px; line-height: 1.7; }
+    .article-faq .faq-a p { margin: 0; }
+  </style>
+  <h2 id="faq-heading">সচরাচর জিজ্ঞাসা (FAQ)</h2>
+    <details class="faq-item" open>
+      <summary class="faq-q">Common Rejection (Top 10) + AI Fix — কী জানা দরকার?</summary>
+      <div class="faq-a"><p>Income-to-EMI ratio fail: Allowance + bonus IT return-এ document করুন। NID name mismatch: Bank document, deed, IT return — সব same spelling। CIB classification SMA/SS: Existing overdue settle, 6 month wait। Insufficient banking history: Salary account-এ 12+ months consistent credit। Property document incomplete: Mutation, holding tax up-to-date। Builder not approved: RAJUK/BBA approval certificate attach। Down payment source unverified: FDR, share liquidation, gift-deed — document। Age vs tenure mismatch: Tenure কমিয়ে retirement-এর আগে maturity। Multiple recent inquiry: পরপর ৫ bank-এ apply → CIB-তে hit। Pre-check করে shortlist করুন। Vague loan purpose: Specific property + amount + builder।</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">AI Eligibility Pre-check — কী জানা দরকার?</summary>
+      <div class="faq-a"><p>Bank apply-এর আগে eligibility self-assessment — যা time + rejection-এর CIB hit বাঁচায়। ChatGPT/Claude-এ নিজের profile (salary, age, existing EMI, CIB rating) input দিয়ে generic eligibility analysis। Income-to-EMI ratio: BD bank rule — total EMI (existing + new) salary-এর ৪০-৫০% cross করলে reject। ১.৮ লাখ salary-এ EMI cap ~৭২-৯০ হাজার। Age vs tenure: Loan maturity retirement age (65/70)-এর আগে। ৪০ বছর বয়সে ২৫-year home loan বেশিরভাগ bank দেবে না। NID + e-TIN: Mandatory। NID-এ name spelling + bank document mismatch — common rejection। CIB report: Bangladesh Bank Credit Information Bureau-এর 4-year history। CIB classification (Standard/SMA/SS/DF/BL) — SMA-র বেশি হলে most bank reject। Debt…</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Bank Selection AI — কী জানা দরকার?</summary>
+      <div class="faq-a"><p>২০২৬-এর home loan market-এর major players। AI দিয়ে — own profile-এর জন্য কোন bank historically best fit। IDLC Finance: NBFI home loan leader — interest ৮.৫-১০.৫%, processing fast, doc-flexible। BRAC Bank: Salary professional segment-এ aggressive — ৯-১১%, salary account থাকলে ০.২৫% concession। Eastern Bank (EBL): Premier Banking-এ high-income borrower-এর জন্য — ৯-১১.৫%। Dutch-Bangla Bank (DBBL): Tech-driven, online application strong — ৯.৫-১২%। City Bank: &quot;Manarah&quot; + general home loan — ৯-১১.৭৫%। Mutual Trust Bank (MTBL): Mid-segment flexible — ৯.২৫-১১.৫%। LankaBangla Finance: Long tenure (25 yr) friendly — ৯-১১%। DBH: Specialist home finance — ৮.৫-১০.৭৫%। AI prompt example: &quot;আমার salary…</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Document Checklist + AI Generation — কী জানা দরকার?</summary>
+      <div class="faq-a"><p>Standard salaried home loan doc list — যেগুলো AI-তে format/draft করিয়ে নেওয়া যায়। NID + e-TIN copy — both spouses (if joint applicant)। Last 6 month bank statement — salary credit visible। Last 3 year IT return — acknowledgment slip + computation। Salary certificate — employer issued, current designation + tenure। Last 3 months pay slip। Property document — deed, mutation, mouza map, holding tax। Builder agreement / sale deed — registered। Business owner-এর জন্য: Trade license (3 year), VAT certificate, 2 year audited statement। AI use — cover letter draft, income explanation note (allowance + bonus breakdown), employment confirmation request email, builder NOC request — সব template-এ…</p></div>
+    </details>
+</section>
+<!-- TEMPLATED-FAQ:END -->
+
+<!-- RELATED-POSTS:START -->
 <section class="related-posts" aria-label="সম্পর্কিত গাইড">
   <style>
     .related-posts { max-width: 1100px; margin: 56px auto; padding: 0 20px; font-family: 'Hind Siliguri', sans-serif; }

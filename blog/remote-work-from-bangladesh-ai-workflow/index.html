@@ -52,6 +52,7 @@
   <!-- PERSON-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-author-block">{"@context":"https://schema.org","@type":"Person","name":"ইকফাজ","alternateName":"Ikfaz","jobTitle":"প্রতিষ্ঠাতা ও সম্পাদক","url":"https://banglaaiguide.com/about/","sameAs":["https://github.com/ikfaz"],"worksFor":{"@type":"Organization","name":"বাংলা AI গাইড","url":"https://banglaaiguide.com"},"knowsAbout":["Artificial Intelligence","AI Tools","Bangladesh Tech","বাংলা AI"],"description":"বাংলা AI গাইডের প্রতিষ্ঠাতা। বাংলাদেশি ব্যবহারকারীদের জন্য AI টুলস কিউরেট ও বিশ্লেষণ করেন — কোনটা BD থেকে কাজ করে, কোনটায় bKash চলে, কোনটা আসলে দৈনন্দিন কাজে লাগে।"}</script>
 <!-- PERSON-SCHEMA:END -->
+    <script type="application/ld+json" data-injected-by="extend-faq-coverage">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Client Communication — কী জানা দরকার?","acceptedAnswer":{"@type":"Answer","text":"BD freelancer-এর সবচেয়ে বড় bottleneck — English writing + cultural nuance। US client-এর সাথে \"I will do this\" এবং \"I'd be happy to take this on\" — দ্বিতীয়টা ৩x more likely to win। Proposal writing: Claude-এ \"Write Upwork proposal for [JD paste], my profile [link]। Tone: confident, specific, ৩০০ words max.\" Contract review: ChatGPT-এ NDA/MSA upload → \"Flag any clause unfair to contractor in BD jurisdiction।\" Weekly status update: Fahim-এর Friday template — Linear ticket export → Claude → 1-paragraph exec summary + 3-bullet next week। Difficult conversation: Salary negotiation, scope creep pushback — Claude-এ role-play first। Voice tone match: Client-এর past email paste → \"match this tone…"}},{"@type":"Question","name":"Common Mistakes BD Remote Workers Make — কী জানা দরকার?","acceptedAnswer":{"@type":"Answer","text":"Over-promising delivery: \"কাল দিয়ে দিচ্ছি\" বলে ৩ দিন late। Claude estimate দিয়ে realistic timeline দিন। Email-এ \"Sir/Madam\": US client-এর কাছে old-fashioned। \"Hi [first name]\" standard। Sync call-এ over-reliance: অপ্রয়োজনীয় meeting accept করা — async first। Tax hide করা: ৫-১০ বছর পর US visa, mortgage, MBA application-এ banking history audit হয়। TIN + return mandatory। One client dependency: ৮০% income এক client থেকে আসলে — relationship তিক্ত হলে disaster। ২-৩ client diversify। Imposter syndrome: \"আমি Indian/US developer-এর সমান না\" — fact: BD top ১০% engineer global market-এ competitive। Cheap rate quote: Junior phase-এ $৫/hour নিলে মান্থ-এর পরও তা cap হয়ে যায়। ৬ মাস পর rate বাড়ান।…"}},{"@type":"Question","name":"Async Communication AI — কী জানা দরকার?","acceptedAnswer":{"@type":"Answer","text":"Remote work-এর gold rule: \"If it can be async, it must be async.\" Fahim-এর Plaid team-এ ১৫ জন; ৪ continent-এ ছড়ানো। Synchronous call শুধু sprint planning (সপ্তাহে ১) + 1:1 (সপ্তাহে ১)। Loom + AI summary: ৫ মিনিটের video → Loom AI ৩ paragraph + action items extract করে। Notion AI for PR description: \"diff paste + write reviewer-friendly summary\" — ২ মিনিটে publishable। Slack ChatGPT thread digest: ১০০-message channel scroll → ChatGPT \"summarize last 24h\"। Claude Code commit message: staged diff থেকে conventional commit message — manual writing eliminated। Granola for meetings: Live meeting notes + AI-generated follow-up email draft। Fahim's golden rule: \"প্রতিটি sync meeting-এর আগে নিজেকে…"}},{"@type":"Question","name":"Payment + USD Handling — কী জানা দরকার?","acceptedAnswer":{"@type":"Answer","text":"২০২৬-এও BD-তে USD inward সবচেয়ে friction-heavy step। Bangladesh Bank-এর rule: USD income শুধু authorized dealer bank দিয়ে আসতে হবে। Wise: BD personal account ২০২৪ থেকে restricted; business account সম্ভব trade license + TIN দিয়ে। অনেকের জন্য workaround। Payoneer: Upwork-এর default। মাসিক withdraw limit ~$১০,০০০। Brac/EBL-এ BDT-তে আসে। Brac Bank Tara Mastercard / Tara World: USD income receive + spend — Plaid-এর মতো full-time employee-দের জন্য ideal। EBL / SCB / Citi NA: USD ERQ account allowed; ৭০% retain করা যায় USD-তে, ৩০% BDT conversion mandatory। NBR tax reality: \"Freelance income 0% tax\" — এটি myth। Actual rule: gross income annual ৩ লক্ষ-এর উপরে professional income হিসেবে taxable…"}}]}</script>
 </head>
 <body>
     <header class="navbar">
@@ -282,7 +283,41 @@
 
     </div>
 
-    <!-- RELATED-POSTS:START -->
+    <!-- TEMPLATED-FAQ:START -->
+<section class="article-faq" aria-labelledby="faq-heading">
+  <style>
+    .article-faq { max-width: 880px; margin: 56px auto 16px; padding: 0 20px; font-family: 'Hind Siliguri', sans-serif; }
+    .article-faq h2 { font-family: 'Syne', 'Hind Siliguri', sans-serif; font-size: 28px; font-weight: 800; letter-spacing: -0.02em; color: #0F172A; margin: 0 0 18px; }
+    .article-faq .faq-item { border: 1px solid #E2E8F0; border-radius: 14px; padding: 14px 18px; margin-bottom: 12px; background: #FFFFFF; }
+    .article-faq .faq-item[open] { border-color: #16A34A; box-shadow: 0 8px 24px rgba(15,23,42,.06); }
+    .article-faq .faq-q { font-weight: 700; font-size: 16px; line-height: 1.5; color: #0F172A; cursor: pointer; list-style: none; }
+    .article-faq .faq-q::-webkit-details-marker { display: none; }
+    .article-faq .faq-q::after { content: '+'; float: right; color: #16A34A; font-size: 22px; line-height: 1; transition: transform .2s; }
+    .article-faq .faq-item[open] .faq-q::after { content: '−'; }
+    .article-faq .faq-a { margin-top: 10px; color: #334155; font-size: 15px; line-height: 1.7; }
+    .article-faq .faq-a p { margin: 0; }
+  </style>
+  <h2 id="faq-heading">সচরাচর জিজ্ঞাসা (FAQ)</h2>
+    <details class="faq-item" open>
+      <summary class="faq-q">Client Communication — কী জানা দরকার?</summary>
+      <div class="faq-a"><p>BD freelancer-এর সবচেয়ে বড় bottleneck — English writing + cultural nuance। US client-এর সাথে &quot;I will do this&quot; এবং &quot;I&#39;d be happy to take this on&quot; — দ্বিতীয়টা ৩x more likely to win। Proposal writing: Claude-এ &quot;Write Upwork proposal for [JD paste], my profile [link]। Tone: confident, specific, ৩০০ words max.&quot; Contract review: ChatGPT-এ NDA/MSA upload → &quot;Flag any clause unfair to contractor in BD jurisdiction।&quot; Weekly status update: Fahim-এর Friday template — Linear ticket export → Claude → 1-paragraph exec summary + 3-bullet next week। Difficult conversation: Salary negotiation, scope creep pushback — Claude-এ role-play first। Voice tone match: Client-এর past email paste → &quot;match this tone…</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Common Mistakes BD Remote Workers Make — কী জানা দরকার?</summary>
+      <div class="faq-a"><p>Over-promising delivery: &quot;কাল দিয়ে দিচ্ছি&quot; বলে ৩ দিন late। Claude estimate দিয়ে realistic timeline দিন। Email-এ &quot;Sir/Madam&quot;: US client-এর কাছে old-fashioned। &quot;Hi [first name]&quot; standard। Sync call-এ over-reliance: অপ্রয়োজনীয় meeting accept করা — async first। Tax hide করা: ৫-১০ বছর পর US visa, mortgage, MBA application-এ banking history audit হয়। TIN + return mandatory। One client dependency: ৮০% income এক client থেকে আসলে — relationship তিক্ত হলে disaster। ২-৩ client diversify। Imposter syndrome: &quot;আমি Indian/US developer-এর সমান না&quot; — fact: BD top ১০% engineer global market-এ competitive। Cheap rate quote: Junior phase-এ $৫/hour নিলে মান্থ-এর পরও তা cap হয়ে যায়। ৬ মাস পর rate বাড়ান।…</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Async Communication AI — কী জানা দরকার?</summary>
+      <div class="faq-a"><p>Remote work-এর gold rule: &quot;If it can be async, it must be async.&quot; Fahim-এর Plaid team-এ ১৫ জন; ৪ continent-এ ছড়ানো। Synchronous call শুধু sprint planning (সপ্তাহে ১) + 1:1 (সপ্তাহে ১)। Loom + AI summary: ৫ মিনিটের video → Loom AI ৩ paragraph + action items extract করে। Notion AI for PR description: &quot;diff paste + write reviewer-friendly summary&quot; — ২ মিনিটে publishable। Slack ChatGPT thread digest: ১০০-message channel scroll → ChatGPT &quot;summarize last 24h&quot;। Claude Code commit message: staged diff থেকে conventional commit message — manual writing eliminated। Granola for meetings: Live meeting notes + AI-generated follow-up email draft। Fahim&#39;s golden rule: &quot;প্রতিটি sync meeting-এর আগে নিজেকে…</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Payment + USD Handling — কী জানা দরকার?</summary>
+      <div class="faq-a"><p>২০২৬-এও BD-তে USD inward সবচেয়ে friction-heavy step। Bangladesh Bank-এর rule: USD income শুধু authorized dealer bank দিয়ে আসতে হবে। Wise: BD personal account ২০২৪ থেকে restricted; business account সম্ভব trade license + TIN দিয়ে। অনেকের জন্য workaround। Payoneer: Upwork-এর default। মাসিক withdraw limit ~$১০,০০০। Brac/EBL-এ BDT-তে আসে। Brac Bank Tara Mastercard / Tara World: USD income receive + spend — Plaid-এর মতো full-time employee-দের জন্য ideal। EBL / SCB / Citi NA: USD ERQ account allowed; ৭০% retain করা যায় USD-তে, ৩০% BDT conversion mandatory। NBR tax reality: &quot;Freelance income 0% tax&quot; — এটি myth। Actual rule: gross income annual ৩ লক্ষ-এর উপরে professional income হিসেবে taxable…</p></div>
+    </details>
+</section>
+<!-- TEMPLATED-FAQ:END -->
+
+<!-- RELATED-POSTS:START -->
 <section class="related-posts" aria-label="সম্পর্কিত গাইড">
   <style>
     .related-posts { max-width: 1100px; margin: 56px auto; padding: 0 20px; font-family: 'Hind Siliguri', sans-serif; }
