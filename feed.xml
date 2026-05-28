@@ -6,7 +6,7 @@
   <atom:link href="https://banglaaiguide.com/feed.xml" rel="self" type="application/rss+xml" />
   <description>বাংলাদেশের জন্য AI টুলস গাইড, রিভিউ ও টিউটোরিয়াল।</description>
   <language>bn-BD</language>
-  <lastBuildDate>Thu, 28 May 2026 21:03:08 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 28 May 2026 21:15:09 GMT</lastBuildDate>
   <item>
     <title>আইনজীবী/উকিল AI বাংলা গাইড — Bangladesh Court Practice ২০২৬</title>
     <link>https://banglaaiguide.com/blog/advocate-ukil-ai-bangladesh/</link>
@@ -83,6 +83,13 @@
     <guid isPermaLink="true">https://banglaaiguide.com/blog/dengue-prevention-ai-bangla/</guid>
     <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
     <description>ডেঙ্গু সচেতনতা, লক্ষণ চিহ্নিতকরণ, প্রতিরোধ, প্ল্যাটেলেট monitoring, hospital referral — AI দিয়ে কীভাবে — বাংলা গাইড ২০২৬।</description>
+  </item>
+  <item>
+    <title>Google Gemini Omni Flash বাংলা Review — সত্যিই কি Veo 3-এর Successor? ২০২৬</title>
+    <link>https://banglaaiguide.com/blog/google-gemini-omni-bangla-review/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/google-gemini-omni-bangla-review/</guid>
+    <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
+    <description>Google Gemini Omni Flash — I/O 2026-এ launched। 7-দিনের honest review: pros, cons, Veo 3 vs Kling vs Runway তুলনা, BD creator-এর জন্য verdict।</description>
   </item>
   <item>
     <title>AI দিয়ে Government Tender লেখা — Bangladesh e-GP গাইড ২০২৬</title>
