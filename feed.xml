@@ -6,7 +6,7 @@
   <atom:link href="https://banglaaiguide.com/feed.xml" rel="self" type="application/rss+xml" />
   <description>বাংলাদেশের জন্য AI টুলস গাইড, রিভিউ ও টিউটোরিয়াল।</description>
   <language>bn-BD</language>
-  <lastBuildDate>Thu, 28 May 2026 20:42:58 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 28 May 2026 20:54:19 GMT</lastBuildDate>
   <item>
     <title>আইনজীবী/উকিল AI বাংলা গাইড — Bangladesh Court Practice ২০২৬</title>
     <link>https://banglaaiguide.com/blog/advocate-ukil-ai-bangladesh/</link>
@@ -92,6 +92,13 @@
     <description>GPT-5 mini — OpenAI-এর সাশ্রয়ী model। বাংলাদেশী dev + creator-দের জন্য access, capability, GPT-5 vs mini comparison, real use case।</description>
   </item>
   <item>
+    <title>Hermes Agent বাংলা গাইড — Nous Research-এর Self-Improving AI Agent ২০২৬</title>
+    <link>https://banglaaiguide.com/blog/hermes-agent-bangla-guide/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/hermes-agent-bangla-guide/</guid>
+    <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
+    <description>Hermes Agent — Nous Research-এর self-improving open-source AI agent (v0.14 Foundation Release)। বাংলাদেশ থেকে install, persistent memory, BD developer-দের জন্য পূর্ণ গাইড।</description>
+  </item>
+  <item>
     <title>Bangladesh HR Recruiter-দের জন্য AI বাংলা গাইড — ATS, Sourcing, Interview ২০২৬</title>
     <link>https://banglaaiguide.com/blog/hr-recruiter-bd-ai-bangla/</link>
     <guid isPermaLink="true">https://banglaaiguide.com/blog/hr-recruiter-bd-ai-bangla/</guid>
@@ -111,6 +118,13 @@
     <guid isPermaLink="true">https://banglaaiguide.com/blog/nbr-tax-consultant-ai-bangla/</guid>
     <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
     <description>Bangladesh NBR tax consultant-দের জন্য AI — Individual Tax Return, VAT calculation, audit prep, client management — বাংলা গাইড।</description>
+  </item>
+  <item>
+    <title>OpenClaw বাংলা গাইড — Open-Source AI Agent (২০২৬ Updated)</title>
+    <link>https://banglaaiguide.com/blog/openclaw-bangla-guide/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/openclaw-bangla-guide/</guid>
+    <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
+    <description>OpenClaw — Peter Steinberger-এর open-source personal AI agent। বাংলাদেশ থেকে install, 100+ skills, multi-channel inbox, security concerns + alternatives — সম্পূর্ণ গাইড।</description>
   </item>
   <item>
     <title>AI দিয়ে Passport Renewal MRP/e-Passport বাংলাদেশ গাইড ২০২৬</title>
