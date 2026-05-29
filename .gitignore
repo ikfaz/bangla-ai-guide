@@ -1,1 +1,4 @@
 *.zip
+
+# Keyword-research scratch (SERP test CSVs, never deploy)
+.kw-tmp/
