@@ -1,0 +1,27 @@
+# Normalize all text files to LF in the repository.
+# Stops the whole repo from showing as "modified" due to CRLF/LF differences.
+* text=auto eol=lf
+
+# Explicit text types
+*.html  text
+*.css   text
+*.js    text
+*.json  text
+*.xml   text
+*.svg   text
+*.md    text
+*.txt   text
+*.webmanifest text
+.htaccess text
+
+# Binary assets — never touch
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.ico  binary
+*.webp binary
+*.woff binary
+*.woff2 binary
+*.ttf  binary
+*.pdf  binary
