@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="এআই টুলস প্রাইসিং গাইড — BDT তে কত খরচ">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="AI Tools-এ মাসে কত খরচ? BDT খরচ বিশ্লেষণ">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#0891B2"/>
@@ -59,7 +59,7 @@
     <text x="51" y="27" font-size="14" text-anchor="middle" class="badge">ACCESS</text>
   </g>
 
-  <text class="title" font-size="54"><tspan x="70" y="230">এআই টুলস প্রাইসিং</tspan><tspan x="70" y="296">গাইড — BDT তে কত</tspan><tspan x="70" y="362">খরচ</tspan></text>
+  <text class="title" font-size="54"><tspan x="70" y="230">AI Tools-এ মাসে কত</tspan><tspan x="70" y="296">খরচ? BDT খরচ</tspan><tspan x="70" y="362">বিশ্লেষণ</tspan></text>
 
   <circle cx="70" cy="555" r="4" fill="#A3E635"/>
   <circle cx="86" cy="555" r="4" fill="#FFFFFF" opacity="0.6"/>

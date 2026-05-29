@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="বাংলাদেশি ফ্রিল্যান্সারদের আয় বাড়ানোর সেরা ৭টি AI টুলস ২০২৬">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="ফ্রিল্যান্সারদের আয় বাড়ানোর AI Tools — বাংলা">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#059669"/>
@@ -61,7 +61,7 @@
     <text x="51" y="27" font-size="14" text-anchor="middle" class="badge">INCOME</text>
   </g>
 
-  <text class="title" font-size="46"><tspan x="70" y="211">বাংলাদেশি</tspan><tspan x="70" y="267">ফ্রিল্যান্সারদের আয়</tspan><tspan x="70" y="323">বাড়ানোর সেরা ৭টি AI</tspan><tspan x="70" y="379">টুলস ২০২৬</tspan></text>
+  <text class="title" font-size="54"><tspan x="70" y="230">ফ্রিল্যান্সারদের</tspan><tspan x="70" y="296">আয় বাড়ানোর AI</tspan><tspan x="70" y="362">Tools — বাংলা</tspan></text>
 
   <circle cx="70" cy="555" r="4" fill="#FBBF24"/>
   <circle cx="86" cy="555" r="4" fill="#FFFFFF" opacity="0.6"/>

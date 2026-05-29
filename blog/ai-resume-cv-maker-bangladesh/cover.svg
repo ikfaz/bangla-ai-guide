@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="AI দিয়ে CV/Resume তৈরি — বাংলাদেশি চাকরিপ্রার্থীদের গাইড ২০২৬">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="AI দিয়ে CV ও Resume তৈরি — বাংলাদেশ গাইড">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#16A34A"/>
@@ -61,7 +61,7 @@
     <text x="45.5" y="27" font-size="14" text-anchor="middle" class="badge">GUIDE</text>
   </g>
 
-  <text class="title" font-size="46"><tspan x="70" y="211">AI দিয়ে CV/Resume</tspan><tspan x="70" y="267">তৈরি — বাংলাদেশি</tspan><tspan x="70" y="323">চাকরিপ্রার্থীদের গাইড</tspan><tspan x="70" y="379">২০২৬</tspan></text>
+  <text class="title" font-size="54"><tspan x="70" y="230">AI দিয়ে CV ও</tspan><tspan x="70" y="296">Resume তৈরি —</tspan><tspan x="70" y="362">বাংলাদেশ গাইড</tspan></text>
 
   <circle cx="70" cy="555" r="4" fill="#FBBF24"/>
   <circle cx="86" cy="555" r="4" fill="#FFFFFF" opacity="0.6"/>

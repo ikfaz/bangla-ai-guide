@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="AI দিয়ে ডেটা বিশ্লেষণ — বাংলা গাইড ২০২৬ | বাংলা AI গাইড">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="AI দিয়ে ডেটা অ্যানালাইসিস — সম্পূর্ণ বাংলা গাইড">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#1E40AF"/>
@@ -56,7 +56,7 @@
     <text x="51" y="27" font-size="14" text-anchor="middle" class="badge">CODING</text>
   </g>
 
-  <text class="title" font-size="46"><tspan x="70" y="239">AI দিয়ে ডেটা বিশ্লেষণ</tspan><tspan x="70" y="295">— বাংলা গাইড ২০২৬ |</tspan><tspan x="70" y="351">বাংলা AI গাইড</tspan></text>
+  <text class="title" font-size="54"><tspan x="70" y="230">AI দিয়ে ডেটা</tspan><tspan x="70" y="296">অ্যানালাইসিস —</tspan><tspan x="70" y="362">সম্পূর্ণ বাংলা গাইড</tspan></text>
 
   <circle cx="70" cy="555" r="4" fill="#06B6D4"/>
   <circle cx="86" cy="555" r="4" fill="#FFFFFF" opacity="0.6"/>

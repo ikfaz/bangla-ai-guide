@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Manus AI বাংলা গাইড — অটোনোমাস AI এজেন্ট কী, কীভাবে কাজ করে?">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Manus AI কী ও কীভাবে কাজ করে? বাংলা গাইড">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#6366F1"/>
@@ -64,7 +64,7 @@
     <text x="56.5" y="27" font-size="14" text-anchor="middle" class="badge">AI TOOL</text>
   </g>
 
-  <text class="title" font-size="46"><tspan x="70" y="239">Manus AI বাংলা গাইড —</tspan><tspan x="70" y="295">অটোনোমাস AI এজেন্ট কী,</tspan><tspan x="70" y="351">কীভাবে কাজ করে?</tspan></text>
+  <text class="title" font-size="54"><tspan x="70" y="230">Manus AI কী ও</tspan><tspan x="70" y="296">কীভাবে কাজ করে?</tspan><tspan x="70" y="362">বাংলা গাইড</tspan></text>
 
   <circle cx="70" cy="555" r="4" fill="#22D3EE"/>
   <circle cx="86" cy="555" r="4" fill="#FFFFFF" opacity="0.6"/>
