@@ -52,8 +52,7 @@
   <!-- PERSON-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-author-block">{"@context":"https://schema.org","@type":"Person","name":"ইকফাজ","alternateName":"Ikfaz","jobTitle":"প্রতিষ্ঠাতা ও সম্পাদক","url":"https://banglaaiguide.com/about/","sameAs":["https://github.com/ikfaz"],"worksFor":{"@type":"Organization","name":"বাংলা AI গাইড","url":"https://banglaaiguide.com"},"knowsAbout":["Artificial Intelligence","AI Tools","Bangladesh Tech","বাংলা AI"],"description":"বাংলা AI গাইডের প্রতিষ্ঠাতা। বাংলাদেশি ব্যবহারকারীদের জন্য AI টুলস কিউরেট ও বিশ্লেষণ করেন — কোনটা BD থেকে কাজ করে, কোনটায় bKash চলে, কোনটা আসলে দৈনন্দিন কাজে লাগে।"}</script>
 <!-- PERSON-SCHEMA:END -->
-          <script type="application/ld+json" data-injected-by="extend-faq-coverage">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Automatic1111 — কী জানা দরকার?","acceptedAnswer":{"@type":"Answer","text":"Step 1: Prerequisites Python 3.10.6 download (specific version, latest doesn't work) — python.org Git download — git-scm.com \"Add Python to PATH\" check করুন install-এ Step 2: Download Automatic1111 github.com/AUTOMATIC1111/stable-diffusion-webui Open folder you want (e.g., C:\\AI\\SD) Right-click → \"Git Bash Here\" → command: git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git Step 3: First run Folder-এ webui-user.bat double-click First run: ১০-৩০ minutes (dependencies + base model download) Browser auto-opens: localhost:7860 \"txt2img\" tab → prompt → \"Generate\""}},{"@type":"Question","name":"কেন Local Stable Diffusion?","acceptedAnswer":{"@type":"Answer","text":"Free forever: Once setup, per-image cost ০। Electricity-ই ব্যয়। Unlimited iterations: Cloud tools-এ daily/monthly limit। Local-এ infinite। Privacy: Client data/concept art cloud-এ যায় না। NDA-protected work-এ critical। Custom models: Civitai-তে ৩০,০০০+ community models। Niche style (anime, photorealism, architecture) — pretrained available। ControlNet + LoRA: Precise control — pose, depth, edge, style — cloud tools-এ limited। Offline: Internet ছাড়া কাজ চলে। Power outage backup-এ valuable। Commercial: Most SD models commercial use allowed (license check)।"}},{"@type":"Question","name":"হার্ডওয়্যার minimum — কী জানা দরকার?","acceptedAnswer":{"@type":"Answer","text":"Minimum (entry) NVIDIA GTX 1660 6GB 16GB RAM SD 1.5 only Comfortable (recommended) NVIDIA RTX 3060 12GB 32GB RAM SDXL + LoRA Best (pro) NVIDIA RTX 4090 24GB 64GB RAM SDXL + multi-LoRA + Flux Storage SSD 500GB+ (models heavy) Models 5-15GB each AMD GPU: Possible via ROCm/DirectML, performance ~৭০% of NVIDIA। NVIDIA recommended। Apple Silicon (M1/M2/M3): Works via DiffusionBee app। Slower than NVIDIA but functional। BD pricing reality (২০২৬): RTX 3060 12GB ~৳৪২,০০০ (used)। RTX 4060 16GB ~৳৬০,০০০। RTX 4070 ৳৮৫,০০০+।"}},{"@type":"Question","name":"Model download — কী জানা দরকার?","acceptedAnswer":{"@type":"Answer","text":"civitai.com — Stable Diffusion community-র model hub। Base models: SD 1.5, SDXL, FLUX dev Style models (LoRA): Photorealistic, anime, architectural, vintage Subject models: Specific character, brand style ControlNet: Pose, depth, edge guidance models Shahriar-এর favorite models: Juggernaut XL (photorealistic) RealVis XL (humans + portraits) Animagine XL (anime/2D style) Architectural Designs LoRA (buildings, interiors)"}}]}</script>
-</head>
+          </head>
 <body>
     <header class="navbar">
         <div class="container navbar-inner">
@@ -230,41 +229,7 @@
 
     </div>
 
-    <!-- TEMPLATED-FAQ:START -->
-<section class="article-faq" aria-labelledby="faq-heading">
-  <style>
-    .article-faq { max-width: 880px; margin: 56px auto 16px; padding: 0 20px; font-family: 'Hind Siliguri', sans-serif; }
-    .article-faq h2 { font-family: 'Syne', 'Hind Siliguri', sans-serif; font-size: 28px; font-weight: 800; letter-spacing: -0.02em; color: #0F172A; margin: 0 0 18px; }
-    .article-faq .faq-item { border: 1px solid #E2E8F0; border-radius: 14px; padding: 14px 18px; margin-bottom: 12px; background: #FFFFFF; }
-    .article-faq .faq-item[open] { border-color: #16A34A; box-shadow: 0 8px 24px rgba(15,23,42,.06); }
-    .article-faq .faq-q { font-weight: 700; font-size: 16px; line-height: 1.5; color: #0F172A; cursor: pointer; list-style: none; }
-    .article-faq .faq-q::-webkit-details-marker { display: none; }
-    .article-faq .faq-q::after { content: '+'; float: right; color: #16A34A; font-size: 22px; line-height: 1; transition: transform .2s; }
-    .article-faq .faq-item[open] .faq-q::after { content: '−'; }
-    .article-faq .faq-a { margin-top: 10px; color: #334155; font-size: 15px; line-height: 1.7; }
-    .article-faq .faq-a p { margin: 0; }
-  </style>
-  <h2 id="faq-heading">সচরাচর জিজ্ঞাসা (FAQ)</h2>
-    <details class="faq-item" open>
-      <summary class="faq-q">Automatic1111 — কী জানা দরকার?</summary>
-      <div class="faq-a"><p>Step 1: Prerequisites Python 3.10.6 download (specific version, latest doesn&#39;t work) — python.org Git download — git-scm.com &quot;Add Python to PATH&quot; check করুন install-এ Step 2: Download Automatic1111 github.com/AUTOMATIC1111/stable-diffusion-webui Open folder you want (e.g., C:\AI\SD) Right-click → &quot;Git Bash Here&quot; → command: git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git Step 3: First run Folder-এ webui-user.bat double-click First run: ১০-৩০ minutes (dependencies + base model download) Browser auto-opens: localhost:7860 &quot;txt2img&quot; tab → prompt → &quot;Generate&quot;</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">কেন Local Stable Diffusion?</summary>
-      <div class="faq-a"><p>Free forever: Once setup, per-image cost ০। Electricity-ই ব্যয়। Unlimited iterations: Cloud tools-এ daily/monthly limit। Local-এ infinite। Privacy: Client data/concept art cloud-এ যায় না। NDA-protected work-এ critical। Custom models: Civitai-তে ৩০,০০০+ community models। Niche style (anime, photorealism, architecture) — pretrained available। ControlNet + LoRA: Precise control — pose, depth, edge, style — cloud tools-এ limited। Offline: Internet ছাড়া কাজ চলে। Power outage backup-এ valuable। Commercial: Most SD models commercial use allowed (license check)।</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">হার্ডওয়্যার minimum — কী জানা দরকার?</summary>
-      <div class="faq-a"><p>Minimum (entry) NVIDIA GTX 1660 6GB 16GB RAM SD 1.5 only Comfortable (recommended) NVIDIA RTX 3060 12GB 32GB RAM SDXL + LoRA Best (pro) NVIDIA RTX 4090 24GB 64GB RAM SDXL + multi-LoRA + Flux Storage SSD 500GB+ (models heavy) Models 5-15GB each AMD GPU: Possible via ROCm/DirectML, performance ~৭০% of NVIDIA। NVIDIA recommended। Apple Silicon (M1/M2/M3): Works via DiffusionBee app। Slower than NVIDIA but functional। BD pricing reality (২০২৬): RTX 3060 12GB ~৳৪২,০০০ (used)। RTX 4060 16GB ~৳৬০,০০০। RTX 4070 ৳৮৫,০০০+।</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">Model download — কী জানা দরকার?</summary>
-      <div class="faq-a"><p>civitai.com — Stable Diffusion community-র model hub। Base models: SD 1.5, SDXL, FLUX dev Style models (LoRA): Photorealistic, anime, architectural, vintage Subject models: Specific character, brand style ControlNet: Pose, depth, edge guidance models Shahriar-এর favorite models: Juggernaut XL (photorealistic) RealVis XL (humans + portraits) Animagine XL (anime/2D style) Architectural Designs LoRA (buildings, interiors)</p></div>
-    </details>
-</section>
-<!-- TEMPLATED-FAQ:END -->
-
-<!-- RELATED-POSTS:START -->
+    <!-- RELATED-POSTS:START -->
 <section class="related-posts" aria-label="সম্পর্কিত গাইড">
   <style>
     .related-posts { max-width: 1100px; margin: 56px auto; padding: 0 20px; font-family: 'Hind Siliguri', sans-serif; }

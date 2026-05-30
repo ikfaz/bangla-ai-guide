@@ -175,8 +175,8 @@ function headingToQuestion(headingRaw, topic) {
   if (/example|উদাহরণ/i.test(h))
     return `${topic}-এর কিছু practical উদাহরণ কী?`;
 
-  // Generic fallback — keep heading lean
-  return `${h} — কী জানা দরকার?`;
+  // Generic fallback — skip headings that don't form a genuine question
+  return null;
 }
 
 function pickTopAnswers(sections, topic) {
@@ -302,7 +302,10 @@ function run() {
       const topic = extractTopic(title);
       const sections = extractSections(html);
       const pairs = pickTopAnswers(sections, topic);
-      if (pairs.length < 3) { skippedShort++; failedSlugs.push(e.name + ` (${pairs.length} pairs)`); continue; }
+      if (pairs.length < 3) {
+        if (REWRITE && !DRY) fs.writeFileSync(f, html, 'utf8'); // persist strip even when not re-injecting
+        skippedShort++; failedSlugs.push(e.name + ` (${pairs.length} pairs)`); continue;
+      }
       const blockHtml = renderFaqHtml(pairs);
       const schemaJsonLd = renderFaqJsonLd(pairs);
       let next = injectVisible(html, blockHtml);

@@ -52,8 +52,7 @@
   <!-- PERSON-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-author-block">{"@context":"https://schema.org","@type":"Person","name":"ইকফাজ","alternateName":"Ikfaz","jobTitle":"প্রতিষ্ঠাতা ও সম্পাদক","url":"https://banglaaiguide.com/about/","sameAs":["https://github.com/ikfaz"],"worksFor":{"@type":"Organization","name":"বাংলা AI গাইড","url":"https://banglaaiguide.com"},"knowsAbout":["Artificial Intelligence","AI Tools","Bangladesh Tech","বাংলা AI"],"description":"বাংলা AI গাইডের প্রতিষ্ঠাতা। বাংলাদেশি ব্যবহারকারীদের জন্য AI টুলস কিউরেট ও বিশ্লেষণ করেন — কোনটা BD থেকে কাজ করে, কোনটায় bKash চলে, কোনটা আসলে দৈনন্দিন কাজে লাগে।"}</script>
 <!-- PERSON-SCHEMA:END -->
-      <script type="application/ld+json" data-injected-by="extend-faq-coverage">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"AI দিয়ে Passport Renewal MRP/e-Passport বাংলাদেশ-এর কী কী সীমাবদ্ধতা আছে?","acceptedAnswer":{"@type":"Answer","text":"Saiful-এর agency reject হয়েছিল Sajeda-র NID-র জন্য — \"সাজেদা বেগম\" vs \"Sajeda Begum\" vs \"সাজেদা খাতুন\" — তিনটে document-এ তিন rকম। AI কীভাবে solve করে: Issue 1 — Name spelling variant: Bangla → English transliteration inconsistent। AI standard transliteration suggest (BGD official chart অনুযায়ী)। Issue 2 — Bengali calendar DOB: পুরোনো birth certificate-এ \"১৫ পৌষ ১৩৮৬\" → AI Gregorian convert: \"29 December 1979\"। Issue 3 — Father's name suffix: NID-এ \"মোঃ আব্দুল করিম\", passport application-এ \"Md. Abdul Karim\" — AI exact format। Issue 4 — Mother's married vs maiden: Birth certificate-এ maiden, NID-এ married — AI document-priority hierarchy explain। Issue 5 — Address mismatch: NID 2010-এর old…"}},{"@type":"Question","name":"Common rejection reasons (10) + AI-aided fix — কী জানা দরকার?","acceptedAnswer":{"@type":"Answer","text":"DIP-এর top rejection reasons এবং AI-driven prevention: 1. NID name mismatch: Application-এ \"Mohammad\" vs NID-এ \"Md.\" → AI exact-copy enforce। 2. Birth date discrepancy: SSC certificate vs NID different DOB → AI: NID DOB priority। 3. Photo wrong size/background: AI pre-verification (vision)। 4. Signature unclear/different style: Old MRP-র signature exact replicate করুন — AI tracing tip। 5. Father's name format: \"Late\" prefix missing — AI checklist। 6. Address mismatch with NID: Permanent address NID-এর সাথে exact match। 7. Old passport info missing: MRP number + expiry mandatory — AI document checklist। 8. Payment receipt not attached: A-Challan PDF upload missed — AI submit checklist। 9.…"}},{"@type":"Question","name":"AI দিয়ে Passport Renewal MRP/e-Passport বাংলাদেশ কোন কাজে সবচেয়ে ভালো?","acceptedAnswer":{"@type":"Answer","text":"Saiful + Tahmid-এর actual workflow: Step 1 — Tab open: epassport.gov.bd → \"Apply Online\" → \"I have NID\"। Step 2 — AI parallel: ChatGPT-এ paste — \"আমার MRP passport renewal হচ্ছে e-Passport-এ। Field-by-field বাংলায় বলো কী লিখব।\" Step 3 — NID details: 10-digit NID + DOB enter → system auto-fetch name/parents। AI verify — \"এই data NID card-এর সাথে match করছে?\" Step 4 — Passport type: Ordinary / Official / Diplomatic → 99% civilian-এর জন্য Ordinary। AI confirm। Step 5 — Pages + validity: 48-page / 64-page, 5-year / 10-year — AI cost-benefit analysis। Step 6 — Delivery type: Regular / Express / Super-Express — timeline + fee table। Step 7 — Address: Present + permanent address। AI: \"NID-র…"}},{"@type":"Question","name":"Photo standard (35mm×45mm white background) + AI verify — কী জানা দরকার?","acceptedAnswer":{"@type":"Answer","text":"e-Passport photo-র strict rules: Size: 35mm × 45mm (passport standard, US size 2\"×2\" নয়)। Background: Pure white (off-white, gray, blue — reject)। Face coverage: 70-80% of frame, eyes 25mm from bottom। Expression: Neutral, mouth closed, eyes open looking straight। No glasses: ২০২০-এর পর rule strict — even non-reflective frame reject। Headcover: Religious purpose-এ allowed (hijab), but full face visible। Recent: Last 6 months-এর তোলা। AI verify workflow: Studio থেকে print আনার আগে ChatGPT/Claude-এ photo upload → \"এই photo passport standard-এ pass করবে?\" Vision model background color, face position, glasses presence check করে। Sajeda-র প্রথম photo grayish background ছিল — AI catch করল,…"}}]}</script>
-</head>
+      </head>
 <body>
     <header class="navbar">
         <div class="container navbar-inner">
@@ -315,41 +314,7 @@
 
     </div>
 
-    <!-- TEMPLATED-FAQ:START -->
-<section class="article-faq" aria-labelledby="faq-heading">
-  <style>
-    .article-faq { max-width: 880px; margin: 56px auto 16px; padding: 0 20px; font-family: 'Hind Siliguri', sans-serif; }
-    .article-faq h2 { font-family: 'Syne', 'Hind Siliguri', sans-serif; font-size: 28px; font-weight: 800; letter-spacing: -0.02em; color: #0F172A; margin: 0 0 18px; }
-    .article-faq .faq-item { border: 1px solid #E2E8F0; border-radius: 14px; padding: 14px 18px; margin-bottom: 12px; background: #FFFFFF; }
-    .article-faq .faq-item[open] { border-color: #16A34A; box-shadow: 0 8px 24px rgba(15,23,42,.06); }
-    .article-faq .faq-q { font-weight: 700; font-size: 16px; line-height: 1.5; color: #0F172A; cursor: pointer; list-style: none; }
-    .article-faq .faq-q::-webkit-details-marker { display: none; }
-    .article-faq .faq-q::after { content: '+'; float: right; color: #16A34A; font-size: 22px; line-height: 1; transition: transform .2s; }
-    .article-faq .faq-item[open] .faq-q::after { content: '−'; }
-    .article-faq .faq-a { margin-top: 10px; color: #334155; font-size: 15px; line-height: 1.7; }
-    .article-faq .faq-a p { margin: 0; }
-  </style>
-  <h2 id="faq-heading">সচরাচর জিজ্ঞাসা (FAQ)</h2>
-    <details class="faq-item" open>
-      <summary class="faq-q">AI দিয়ে Passport Renewal MRP/e-Passport বাংলাদেশ-এর কী কী সীমাবদ্ধতা আছে?</summary>
-      <div class="faq-a"><p>Saiful-এর agency reject হয়েছিল Sajeda-র NID-র জন্য — &quot;সাজেদা বেগম&quot; vs &quot;Sajeda Begum&quot; vs &quot;সাজেদা খাতুন&quot; — তিনটে document-এ তিন rকম। AI কীভাবে solve করে: Issue 1 — Name spelling variant: Bangla → English transliteration inconsistent। AI standard transliteration suggest (BGD official chart অনুযায়ী)। Issue 2 — Bengali calendar DOB: পুরোনো birth certificate-এ &quot;১৫ পৌষ ১৩৮৬&quot; → AI Gregorian convert: &quot;29 December 1979&quot;। Issue 3 — Father&#39;s name suffix: NID-এ &quot;মোঃ আব্দুল করিম&quot;, passport application-এ &quot;Md. Abdul Karim&quot; — AI exact format। Issue 4 — Mother&#39;s married vs maiden: Birth certificate-এ maiden, NID-এ married — AI document-priority hierarchy explain। Issue 5 — Address mismatch: NID 2010-এর old…</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">Common rejection reasons (10) + AI-aided fix — কী জানা দরকার?</summary>
-      <div class="faq-a"><p>DIP-এর top rejection reasons এবং AI-driven prevention: 1. NID name mismatch: Application-এ &quot;Mohammad&quot; vs NID-এ &quot;Md.&quot; → AI exact-copy enforce। 2. Birth date discrepancy: SSC certificate vs NID different DOB → AI: NID DOB priority। 3. Photo wrong size/background: AI pre-verification (vision)। 4. Signature unclear/different style: Old MRP-র signature exact replicate করুন — AI tracing tip। 5. Father&#39;s name format: &quot;Late&quot; prefix missing — AI checklist। 6. Address mismatch with NID: Permanent address NID-এর সাথে exact match। 7. Old passport info missing: MRP number + expiry mandatory — AI document checklist। 8. Payment receipt not attached: A-Challan PDF upload missed — AI submit checklist। 9.…</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">AI দিয়ে Passport Renewal MRP/e-Passport বাংলাদেশ কোন কাজে সবচেয়ে ভালো?</summary>
-      <div class="faq-a"><p>Saiful + Tahmid-এর actual workflow: Step 1 — Tab open: epassport.gov.bd → &quot;Apply Online&quot; → &quot;I have NID&quot;। Step 2 — AI parallel: ChatGPT-এ paste — &quot;আমার MRP passport renewal হচ্ছে e-Passport-এ। Field-by-field বাংলায় বলো কী লিখব।&quot; Step 3 — NID details: 10-digit NID + DOB enter → system auto-fetch name/parents। AI verify — &quot;এই data NID card-এর সাথে match করছে?&quot; Step 4 — Passport type: Ordinary / Official / Diplomatic → 99% civilian-এর জন্য Ordinary। AI confirm। Step 5 — Pages + validity: 48-page / 64-page, 5-year / 10-year — AI cost-benefit analysis। Step 6 — Delivery type: Regular / Express / Super-Express — timeline + fee table। Step 7 — Address: Present + permanent address। AI: &quot;NID-র…</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">Photo standard (35mm×45mm white background) + AI verify — কী জানা দরকার?</summary>
-      <div class="faq-a"><p>e-Passport photo-র strict rules: Size: 35mm × 45mm (passport standard, US size 2&quot;×2&quot; নয়)। Background: Pure white (off-white, gray, blue — reject)। Face coverage: 70-80% of frame, eyes 25mm from bottom। Expression: Neutral, mouth closed, eyes open looking straight। No glasses: ২০২০-এর পর rule strict — even non-reflective frame reject। Headcover: Religious purpose-এ allowed (hijab), but full face visible। Recent: Last 6 months-এর তোলা। AI verify workflow: Studio থেকে print আনার আগে ChatGPT/Claude-এ photo upload → &quot;এই photo passport standard-এ pass করবে?&quot; Vision model background color, face position, glasses presence check করে। Sajeda-র প্রথম photo grayish background ছিল — AI catch করল,…</p></div>
-    </details>
-</section>
-<!-- TEMPLATED-FAQ:END -->
-
-<!-- RELATED-POSTS:START -->
+    <!-- RELATED-POSTS:START -->
 <section class="related-posts" aria-label="সম্পর্কিত গাইড">
   <style>
     .related-posts { max-width: 1100px; margin: 56px auto; padding: 0 20px; font-family: 'Hind Siliguri', sans-serif; }

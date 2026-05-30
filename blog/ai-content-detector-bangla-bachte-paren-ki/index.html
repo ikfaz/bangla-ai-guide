@@ -52,8 +52,7 @@
   <!-- PERSON-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-author-block">{"@context":"https://schema.org","@type":"Person","name":"ইকফাজ","alternateName":"Ikfaz","jobTitle":"প্রতিষ্ঠাতা ও সম্পাদক","url":"https://banglaaiguide.com/about/","sameAs":["https://github.com/ikfaz"],"worksFor":{"@type":"Organization","name":"বাংলা AI গাইড","url":"https://banglaaiguide.com"},"knowsAbout":["Artificial Intelligence","AI Tools","Bangladesh Tech","বাংলা AI"],"description":"বাংলা AI গাইডের প্রতিষ্ঠাতা। বাংলাদেশি ব্যবহারকারীদের জন্য AI টুলস কিউরেট ও বিশ্লেষণ করেন — কোনটা BD থেকে কাজ করে, কোনটায় bKash চলে, কোনটা আসলে দৈনন্দিন কাজে লাগে।"}</script>
 <!-- PERSON-SCHEMA:END -->
-          <script type="application/ld+json" data-injected-by="extend-faq-coverage">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"বাংলা content-এ detector state — কী জানা দরকার?","acceptedAnswer":{"@type":"Answer","text":"আমি (এই article-এর লেখক) ৫টা detector-এ বাংলা content পরীক্ষা চালিয়েছি — ১০টা pure ChatGPT-generated Bangla paragraph + ১০টা pure human-written Bangla paragraph + ১০টা hybrid। Result: Pure AI Bangla detection: ৬৫-৭৫% (English-এর ৮৫-৯২%-এর চেয়ে কম)। Hybrid detection: Near 50/50 random — অর্থাৎ detector confidently জানে না। False positive rate: ২০-২৫% (English-এর double)। Implication: Bangla content-এ AI detection এখনো immature। কিন্তু English content-এ rigorously deployed। সতর্কতা: \"Bangla detection দুর্বল তাই AI-write করলেও pass করে যাব\" — এই mindset এ থাকবেন না। (1) Detector ২০২৬-এ দ্রুত improve হচ্ছে, (2) Editor/professor pattern চিনতে পারেন naked eye-এও, (3) আপনার দীর্ঘমেয়াদী career…"}},{"@type":"Question","name":"AI detector ২০২৬-এ — কী জানা দরকার?","acceptedAnswer":{"@type":"Answer","text":"৩টা mathematical signal-এর basis-এ AI detector judgment নেয়: Perplexity (uncertainty score): AI predictable শব্দ choose করে। \"The weather is...\" পরের শব্দ AI-এর choice predictable (\"good\", \"nice\", \"pleasant\")। Human choice diverse (\"scorching\", \"absolutely miserable\", \"sweltering\")। Low perplexity = high AI probability। Burstiness (sentence variation): Human writing-এ sentence length varied — সংক্ষিপ্ত। তারপর জটিল, multi-clause sentence যেটা ৩৫-৪০ word ছাড়িয়ে যায়। AI-এর sentence average length-এ cluster করে। Token pattern (signature phrase): AI কিছু phrase preferences আছে: \"It is important to note that,\" \"In conclusion,\" \"Moreover,\" \"Delve into,\" \"Tapestry,\" \"Realm.\" These tokens…"}},{"@type":"Question","name":"AI Content Detector কোন কাজে সবচেয়ে ভালো?","acceptedAnswer":{"@type":"Answer","text":"তামান্না MIT-এ গিয়েও AI use করেন। কিন্তু একটা specific framework-এ: প্রথম draft 100% own: Topic explore, outline, first 300-word draft — সব নিজে। Voice + intention এখানে set হয়। AI দিয়ে gap identify: \"এই draft-এর কী missing হতে পারে? কোন angle আমি explore করিনি?\" — AI critic হিসেবে। Own expansion: Gap-গুলো নিজে fill করুন। AI-এর words use করবেন না। AI grammar pass: Final draft-এ Grammarly/ChatGPT সংশোধন — sentence-level, voice-preserving। Self-detection: GPTZero-তে own content check। ১০% উপরে AI score? Specific paragraph-গুলো identify, rewrite। Read aloud: Full draft loud-এ পড়ুন। যদি কোনো paragraph \"আপনার মুখ থেকে আসে না\" — সেটা rewrite।"}},{"@type":"Question","name":"২০২৬-এর ৫টা leading detector — কী জানা দরকার?","acceptedAnswer":{"@type":"Answer","text":"GPTZero (v3, 2025): Most widely deployed in US universities। Claimed ৯৬% accuracy। Actual: Pure ChatGPT ৮৮-৯২%, heavily-edited content ৩০-৫০%, pure human ৫-১০% false positive। Free tier 5,000 words/month। Turnitin (AI Detection 2.0): University-grade integrated with Plagiarism Check। 97% claim, actual ~90% on raw AI। ২০২৬ March update বাংলা content-এ partial support। Originality.ai: $14.95/মাস। SEO writer + agency use। বাংলা detection limited। Copyleaks: Multilingual claim। বাংলা content-এ ~৭০% accuracy বাংলা-পরীক্ষায়। ZeroGPT (free): দ্রুত কিন্তু high false positive — pure human content ৩০% সময় AI-flagged। Use carefully।"}}]}</script>
-</head>
+          </head>
 <body>
     <header class="navbar">
         <div class="container navbar-inner">
@@ -228,41 +227,7 @@
 
     </div>
 
-    <!-- TEMPLATED-FAQ:START -->
-<section class="article-faq" aria-labelledby="faq-heading">
-  <style>
-    .article-faq { max-width: 880px; margin: 56px auto 16px; padding: 0 20px; font-family: 'Hind Siliguri', sans-serif; }
-    .article-faq h2 { font-family: 'Syne', 'Hind Siliguri', sans-serif; font-size: 28px; font-weight: 800; letter-spacing: -0.02em; color: #0F172A; margin: 0 0 18px; }
-    .article-faq .faq-item { border: 1px solid #E2E8F0; border-radius: 14px; padding: 14px 18px; margin-bottom: 12px; background: #FFFFFF; }
-    .article-faq .faq-item[open] { border-color: #16A34A; box-shadow: 0 8px 24px rgba(15,23,42,.06); }
-    .article-faq .faq-q { font-weight: 700; font-size: 16px; line-height: 1.5; color: #0F172A; cursor: pointer; list-style: none; }
-    .article-faq .faq-q::-webkit-details-marker { display: none; }
-    .article-faq .faq-q::after { content: '+'; float: right; color: #16A34A; font-size: 22px; line-height: 1; transition: transform .2s; }
-    .article-faq .faq-item[open] .faq-q::after { content: '−'; }
-    .article-faq .faq-a { margin-top: 10px; color: #334155; font-size: 15px; line-height: 1.7; }
-    .article-faq .faq-a p { margin: 0; }
-  </style>
-  <h2 id="faq-heading">সচরাচর জিজ্ঞাসা (FAQ)</h2>
-    <details class="faq-item" open>
-      <summary class="faq-q">বাংলা content-এ detector state — কী জানা দরকার?</summary>
-      <div class="faq-a"><p>আমি (এই article-এর লেখক) ৫টা detector-এ বাংলা content পরীক্ষা চালিয়েছি — ১০টা pure ChatGPT-generated Bangla paragraph + ১০টা pure human-written Bangla paragraph + ১০টা hybrid। Result: Pure AI Bangla detection: ৬৫-৭৫% (English-এর ৮৫-৯২%-এর চেয়ে কম)। Hybrid detection: Near 50/50 random — অর্থাৎ detector confidently জানে না। False positive rate: ২০-২৫% (English-এর double)। Implication: Bangla content-এ AI detection এখনো immature। কিন্তু English content-এ rigorously deployed। সতর্কতা: &quot;Bangla detection দুর্বল তাই AI-write করলেও pass করে যাব&quot; — এই mindset এ থাকবেন না। (1) Detector ২০২৬-এ দ্রুত improve হচ্ছে, (2) Editor/professor pattern চিনতে পারেন naked eye-এও, (3) আপনার দীর্ঘমেয়াদী career…</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">AI detector ২০২৬-এ — কী জানা দরকার?</summary>
-      <div class="faq-a"><p>৩টা mathematical signal-এর basis-এ AI detector judgment নেয়: Perplexity (uncertainty score): AI predictable শব্দ choose করে। &quot;The weather is...&quot; পরের শব্দ AI-এর choice predictable (&quot;good&quot;, &quot;nice&quot;, &quot;pleasant&quot;)। Human choice diverse (&quot;scorching&quot;, &quot;absolutely miserable&quot;, &quot;sweltering&quot;)। Low perplexity = high AI probability। Burstiness (sentence variation): Human writing-এ sentence length varied — সংক্ষিপ্ত। তারপর জটিল, multi-clause sentence যেটা ৩৫-৪০ word ছাড়িয়ে যায়। AI-এর sentence average length-এ cluster করে। Token pattern (signature phrase): AI কিছু phrase preferences আছে: &quot;It is important to note that,&quot; &quot;In conclusion,&quot; &quot;Moreover,&quot; &quot;Delve into,&quot; &quot;Tapestry,&quot; &quot;Realm.&quot; These tokens…</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">AI Content Detector কোন কাজে সবচেয়ে ভালো?</summary>
-      <div class="faq-a"><p>তামান্না MIT-এ গিয়েও AI use করেন। কিন্তু একটা specific framework-এ: প্রথম draft 100% own: Topic explore, outline, first 300-word draft — সব নিজে। Voice + intention এখানে set হয়। AI দিয়ে gap identify: &quot;এই draft-এর কী missing হতে পারে? কোন angle আমি explore করিনি?&quot; — AI critic হিসেবে। Own expansion: Gap-গুলো নিজে fill করুন। AI-এর words use করবেন না। AI grammar pass: Final draft-এ Grammarly/ChatGPT সংশোধন — sentence-level, voice-preserving। Self-detection: GPTZero-তে own content check। ১০% উপরে AI score? Specific paragraph-গুলো identify, rewrite। Read aloud: Full draft loud-এ পড়ুন। যদি কোনো paragraph &quot;আপনার মুখ থেকে আসে না&quot; — সেটা rewrite।</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">২০২৬-এর ৫টা leading detector — কী জানা দরকার?</summary>
-      <div class="faq-a"><p>GPTZero (v3, 2025): Most widely deployed in US universities। Claimed ৯৬% accuracy। Actual: Pure ChatGPT ৮৮-৯২%, heavily-edited content ৩০-৫০%, pure human ৫-১০% false positive। Free tier 5,000 words/month। Turnitin (AI Detection 2.0): University-grade integrated with Plagiarism Check। 97% claim, actual ~90% on raw AI। ২০২৬ March update বাংলা content-এ partial support। Originality.ai: $14.95/মাস। SEO writer + agency use। বাংলা detection limited। Copyleaks: Multilingual claim। বাংলা content-এ ~৭০% accuracy বাংলা-পরীক্ষায়। ZeroGPT (free): দ্রুত কিন্তু high false positive — pure human content ৩০% সময় AI-flagged। Use carefully।</p></div>
-    </details>
-</section>
-<!-- TEMPLATED-FAQ:END -->
-
-<!-- RELATED-POSTS:START -->
+    <!-- RELATED-POSTS:START -->
 <section class="related-posts" aria-label="সম্পর্কিত গাইড">
   <style>
     .related-posts { max-width: 1100px; margin: 56px auto; padding: 0 20px; font-family: 'Hind Siliguri', sans-serif; }

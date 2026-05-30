@@ -52,7 +52,7 @@
   <!-- PERSON-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-author-block">{"@context":"https://schema.org","@type":"Person","name":"ইকফাজ","alternateName":"Ikfaz","jobTitle":"প্রতিষ্ঠাতা ও সম্পাদক","url":"https://banglaaiguide.com/about/","sameAs":["https://github.com/ikfaz"],"worksFor":{"@type":"Organization","name":"বাংলা AI গাইড","url":"https://banglaaiguide.com"},"knowsAbout":["Artificial Intelligence","AI Tools","Bangladesh Tech","বাংলা AI"],"description":"বাংলা AI গাইডের প্রতিষ্ঠাতা। বাংলাদেশি ব্যবহারকারীদের জন্য AI টুলস কিউরেট ও বিশ্লেষণ করেন — কোনটা BD থেকে কাজ করে, কোনটায় bKash চলে, কোনটা আসলে দৈনন্দিন কাজে লাগে।"}</script>
 <!-- PERSON-SCHEMA:END -->
-          <script type="application/ld+json" data-injected-by="extend-faq-coverage">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Top open-source models — কী জানা দরকার?","acceptedAnswer":{"@type":"Answer","text":"Llama 3.3 (Meta): Best general-purpose, 8B/70B variants Mistral Large 2: European, good code DeepSeek-R1 distilled: Reasoning, lighter Qwen 2.5: Chinese-led, multilingual (incl. Bangla) Phi-3 (Microsoft): Small but capable Gemma 2 (Google): Lightweight"}},{"@type":"Question","name":"Local AI vs Cloud AI কীভাবে install বা setup করব?","acceptedAnswer":{"@type":"Answer","text":"Step 1: ollama.com → download installer Step 2: Run installer Step 3: Open terminal/command prompt Step 4: ollama pull llama3.2:8b (download model, ~5GB) Step 5: ollama run llama3.2 Step 6: Chat в terminal! Step 7 (optional): Open WebUI for browser UI"}},{"@type":"Question","name":"Local AI vs Cloud AI বাংলায় কেমন কাজ করে?","acceptedAnswer":{"@type":"Answer","text":"Llama 3.3 70B: Decent Bangla Qwen 2.5: Good Bangla support Mistral: Limited Bangla Smaller models: Bangla weaker Verdict: Cloud (Claude/Gemini) still better, but local \"good enough\" for many tasks"}},{"@type":"Question","name":"Local AI — কী জানা দরকার?","acceptedAnswer":{"@type":"Answer","text":"Privacy: Data কম্পিউটার থেকে বের হয় না Free: No monthly subscription Offline: Internet ছাড়া কাজ করে Speed: Local network — fast Customization: Fine-tune possible Unlimited: No rate limit"}}]}</script>
+              <script type="application/ld+json" data-injected-by="extend-faq-coverage">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Local AI vs Cloud AI কীভাবে install বা setup করব?","acceptedAnswer":{"@type":"Answer","text":"Step 1: ollama.com → download installer Step 2: Run installer Step 3: Open terminal/command prompt Step 4: ollama pull llama3.2:8b (download model, ~5GB) Step 5: ollama run llama3.2 Step 6: Chat в terminal! Step 7 (optional): Open WebUI for browser UI"}},{"@type":"Question","name":"Local AI vs Cloud AI বাংলায় কেমন কাজ করে?","acceptedAnswer":{"@type":"Answer","text":"Llama 3.3 70B: Decent Bangla Qwen 2.5: Good Bangla support Mistral: Limited Bangla Smaller models: Bangla weaker Verdict: Cloud (Claude/Gemini) still better, but local \"good enough\" for many tasks"}},{"@type":"Question","name":"Limitations vs Cloud — কোনটা বেছে নেব?","acceptedAnswer":{"@type":"Answer","text":"Quality: 70-80% of GPT-4/Claude (best local) Speed: depends on hardware Tools: limited (no native web browsing) Multimodal: limited image/video Updates: manual download new model"}},{"@type":"Question","name":"Local AI vs Cloud AI-এর performance কেমন?","acceptedAnswer":{"@type":"Answer","text":"8B model on RTX 3060: 20-30 tokens/sec (faster than typing) 70B model on RTX 4090: 30-50 tokens/sec CPU only: Very slow (3-5 tokens/sec) Mac M2/M3: Excellent speed for size"}}]}</script>
 </head>
 <body>
     <header class="navbar">
@@ -249,10 +249,6 @@
   </style>
   <h2 id="faq-heading">সচরাচর জিজ্ঞাসা (FAQ)</h2>
     <details class="faq-item" open>
-      <summary class="faq-q">Top open-source models — কী জানা দরকার?</summary>
-      <div class="faq-a"><p>Llama 3.3 (Meta): Best general-purpose, 8B/70B variants Mistral Large 2: European, good code DeepSeek-R1 distilled: Reasoning, lighter Qwen 2.5: Chinese-led, multilingual (incl. Bangla) Phi-3 (Microsoft): Small but capable Gemma 2 (Google): Lightweight</p></div>
-    </details>
-    <details class="faq-item">
       <summary class="faq-q">Local AI vs Cloud AI কীভাবে install বা setup করব?</summary>
       <div class="faq-a"><p>Step 1: ollama.com → download installer Step 2: Run installer Step 3: Open terminal/command prompt Step 4: ollama pull llama3.2:8b (download model, ~5GB) Step 5: ollama run llama3.2 Step 6: Chat в terminal! Step 7 (optional): Open WebUI for browser UI</p></div>
     </details>
@@ -261,8 +257,12 @@
       <div class="faq-a"><p>Llama 3.3 70B: Decent Bangla Qwen 2.5: Good Bangla support Mistral: Limited Bangla Smaller models: Bangla weaker Verdict: Cloud (Claude/Gemini) still better, but local &quot;good enough&quot; for many tasks</p></div>
     </details>
     <details class="faq-item">
-      <summary class="faq-q">Local AI — কী জানা দরকার?</summary>
-      <div class="faq-a"><p>Privacy: Data কম্পিউটার থেকে বের হয় না Free: No monthly subscription Offline: Internet ছাড়া কাজ করে Speed: Local network — fast Customization: Fine-tune possible Unlimited: No rate limit</p></div>
+      <summary class="faq-q">Limitations vs Cloud — কোনটা বেছে নেব?</summary>
+      <div class="faq-a"><p>Quality: 70-80% of GPT-4/Claude (best local) Speed: depends on hardware Tools: limited (no native web browsing) Multimodal: limited image/video Updates: manual download new model</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Local AI vs Cloud AI-এর performance কেমন?</summary>
+      <div class="faq-a"><p>8B model on RTX 3060: 20-30 tokens/sec (faster than typing) 70B model on RTX 4090: 30-50 tokens/sec CPU only: Very slow (3-5 tokens/sec) Mac M2/M3: Excellent speed for size</p></div>
     </details>
 </section>
 <!-- TEMPLATED-FAQ:END -->

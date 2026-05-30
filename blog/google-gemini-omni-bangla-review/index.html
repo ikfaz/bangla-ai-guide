@@ -52,7 +52,8 @@
   <!-- PERSON-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-author-block">{"@context":"https://schema.org","@type":"Person","name":"ইকফাজ","alternateName":"Ikfaz","jobTitle":"প্রতিষ্ঠাতা ও সম্পাদক","url":"https://banglaaiguide.com/about/","sameAs":["https://github.com/ikfaz"],"worksFor":{"@type":"Organization","name":"বাংলা AI গাইড","url":"https://banglaaiguide.com"},"knowsAbout":["Artificial Intelligence","AI Tools","Bangladesh Tech","বাংলা AI"],"description":"বাংলা AI গাইডের প্রতিষ্ঠাতা। বাংলাদেশি ব্যবহারকারীদের জন্য AI টুলস কিউরেট ও বিশ্লেষণ করেন — কোনটা BD থেকে কাজ করে, কোনটায় bKash চলে, কোনটা আসলে দৈনন্দিন কাজে লাগে।"}</script>
 <!-- PERSON-SCHEMA:END -->
-  </head>
+      <script type="application/ld+json" data-injected-by="extend-faq-coverage">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Google Gemini Omni Flash-এর দাম কত এবং BD-তে এর ROI কেমন?","acceptedAnswer":{"@type":"Answer","text":"Google AI Pro: $20/মাস — Gemini Advanced (Omni Flash included), Google Flow access। BD থেকে bKash USD card-এ pay হয়। Google AI Ultra: $250/মাস — higher rate limits, priority queue, full Flow access। BD agency/professional-এর জন্য overkill unless heavy production load। Veo 3 access: Same $20 Gemini Advanced tier-এ included (Google bundle). So separate cost নেই। YouTube Shorts free tier: Shorts app-এই Omni Flash generation free — no subscription। YouTube Create app free tier: Mobile editor-এ Omni Flash free integration। BD creator-এর জন্য math: মাসিক $২০ (~২৪০০ BDT) Gemini Advanced — Omni Flash + Veo 3 + Gemini chat (Pro tier) সব একসাথে। Veo 3 + Runway আলাদা subscribe করলে $৪০-৫০। Bundle…"}},{"@type":"Question","name":"Google Gemini Omni Flash কোন কাজে সবচেয়ে ভালো?","acceptedAnswer":{"@type":"Answer","text":"Case 1 — YouTube Shorts content (Omni জিতেছে): \"Dhaka rooftop at night, neon city lights, Lo-fi vibe\" — ৩০টা variation iterate করতে Omni-তে ১৫ মিনিট লেগেছে (conversational editing-এর কারণে)। Veo 3-এ একই কাজ ৪৫ মিনিট + $৪.৫০ cost। YouTube Shorts ১০-sec format-এ Omni-র resolution limit matter করে না। Verdict: Omni clear winner। Case 2 — Brand commercial 30-sec (Veo 3 জিতেছে): Daraz Eid campaign প্রেমিক mock-up — premium feel, 4K, smooth dolly shot। Veo 3 single-clip cinematic quality unmatched। Omni-তে ৩টা 10-sec clip stitch করে continuity break, resolution 1080p insufficient for billboard. Verdict: Premium client work-এ Veo 3 default থাকবে। Case 3 — Product photo → animated promo (Omni…"}},{"@type":"Question","name":"বাংলাদেশ থেকে Google Gemini Omni Flash কীভাবে access করব?","acceptedAnswer":{"@type":"Answer","text":"Sign-up: Google account দিয়ে Gemini Advanced — VPN ছাড়া কাজ করে। Payment: bKash USD card, EBL Aqua, City Bank dual-currency card, Wise, Payoneer — সব accepted। Mobile app: Gemini app Play Store + App Store-এ BD region-এ available। YouTube Shorts Omni: YouTube app-এ BD থেকে Shorts creation flow-এ Omni integration available। Speed: Mahir-এর Banglalink fiber-এ generation latency ~৩০-৪৫ সেকেন্ড per clip। US-এ ~২৫ সেকেন্ড — marginal difference।"}},{"@type":"Question","name":"Google Gemini Omni Flash-এর কী কী সীমাবদ্ধতা আছে?","acceptedAnswer":{"@type":"Answer","text":"4K resolution চাই? Veo 3 use করুন, Omni নয়। API integration দরকার? Omni এখনো নয় — Runway/Kling/Vertex AI (Veo 3)। 15+ sec single clip? Seedance 2.0 (15s)। Omni-তে stitching workaround। Bangla voiceover edit? Omni-তে audio editing withheld। Separate ElevenLabs/Adobe Podcast। Talking avatar? Held back at launch — wait। Premium human face photorealism? Kling 2.0 still leads।"}}]}</script>
+</head>
 <body>
     <header class="navbar">
         <div class="container navbar-inner">
@@ -332,6 +333,40 @@
 </section>
 
     </div>
+
+<!-- TEMPLATED-FAQ:START -->
+<section class="article-faq" aria-labelledby="faq-heading">
+  <style>
+    .article-faq { max-width: 880px; margin: 56px auto 16px; padding: 0 20px; font-family: 'Hind Siliguri', sans-serif; }
+    .article-faq h2 { font-family: 'Syne', 'Hind Siliguri', sans-serif; font-size: 28px; font-weight: 800; letter-spacing: -0.02em; color: #0F172A; margin: 0 0 18px; }
+    .article-faq .faq-item { border: 1px solid #E2E8F0; border-radius: 14px; padding: 14px 18px; margin-bottom: 12px; background: #FFFFFF; }
+    .article-faq .faq-item[open] { border-color: #16A34A; box-shadow: 0 8px 24px rgba(15,23,42,.06); }
+    .article-faq .faq-q { font-weight: 700; font-size: 16px; line-height: 1.5; color: #0F172A; cursor: pointer; list-style: none; }
+    .article-faq .faq-q::-webkit-details-marker { display: none; }
+    .article-faq .faq-q::after { content: '+'; float: right; color: #16A34A; font-size: 22px; line-height: 1; transition: transform .2s; }
+    .article-faq .faq-item[open] .faq-q::after { content: '−'; }
+    .article-faq .faq-a { margin-top: 10px; color: #334155; font-size: 15px; line-height: 1.7; }
+    .article-faq .faq-a p { margin: 0; }
+  </style>
+  <h2 id="faq-heading">সচরাচর জিজ্ঞাসা (FAQ)</h2>
+    <details class="faq-item" open>
+      <summary class="faq-q">Google Gemini Omni Flash-এর দাম কত এবং BD-তে এর ROI কেমন?</summary>
+      <div class="faq-a"><p>Google AI Pro: $20/মাস — Gemini Advanced (Omni Flash included), Google Flow access। BD থেকে bKash USD card-এ pay হয়। Google AI Ultra: $250/মাস — higher rate limits, priority queue, full Flow access। BD agency/professional-এর জন্য overkill unless heavy production load। Veo 3 access: Same $20 Gemini Advanced tier-এ included (Google bundle). So separate cost নেই। YouTube Shorts free tier: Shorts app-এই Omni Flash generation free — no subscription। YouTube Create app free tier: Mobile editor-এ Omni Flash free integration। BD creator-এর জন্য math: মাসিক $২০ (~২৪০০ BDT) Gemini Advanced — Omni Flash + Veo 3 + Gemini chat (Pro tier) সব একসাথে। Veo 3 + Runway আলাদা subscribe করলে $৪০-৫০। Bundle…</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Google Gemini Omni Flash কোন কাজে সবচেয়ে ভালো?</summary>
+      <div class="faq-a"><p>Case 1 — YouTube Shorts content (Omni জিতেছে): &quot;Dhaka rooftop at night, neon city lights, Lo-fi vibe&quot; — ৩০টা variation iterate করতে Omni-তে ১৫ মিনিট লেগেছে (conversational editing-এর কারণে)। Veo 3-এ একই কাজ ৪৫ মিনিট + $৪.৫০ cost। YouTube Shorts ১০-sec format-এ Omni-র resolution limit matter করে না। Verdict: Omni clear winner। Case 2 — Brand commercial 30-sec (Veo 3 জিতেছে): Daraz Eid campaign প্রেমিক mock-up — premium feel, 4K, smooth dolly shot। Veo 3 single-clip cinematic quality unmatched। Omni-তে ৩টা 10-sec clip stitch করে continuity break, resolution 1080p insufficient for billboard. Verdict: Premium client work-এ Veo 3 default থাকবে। Case 3 — Product photo → animated promo (Omni…</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">বাংলাদেশ থেকে Google Gemini Omni Flash কীভাবে access করব?</summary>
+      <div class="faq-a"><p>Sign-up: Google account দিয়ে Gemini Advanced — VPN ছাড়া কাজ করে। Payment: bKash USD card, EBL Aqua, City Bank dual-currency card, Wise, Payoneer — সব accepted। Mobile app: Gemini app Play Store + App Store-এ BD region-এ available। YouTube Shorts Omni: YouTube app-এ BD থেকে Shorts creation flow-এ Omni integration available। Speed: Mahir-এর Banglalink fiber-এ generation latency ~৩০-৪৫ সেকেন্ড per clip। US-এ ~২৫ সেকেন্ড — marginal difference।</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Google Gemini Omni Flash-এর কী কী সীমাবদ্ধতা আছে?</summary>
+      <div class="faq-a"><p>4K resolution চাই? Veo 3 use করুন, Omni নয়। API integration দরকার? Omni এখনো নয় — Runway/Kling/Vertex AI (Veo 3)। 15+ sec single clip? Seedance 2.0 (15s)। Omni-তে stitching workaround। Bangla voiceover edit? Omni-তে audio editing withheld। Separate ElevenLabs/Adobe Podcast। Talking avatar? Held back at launch — wait। Premium human face photorealism? Kling 2.0 still leads।</p></div>
+    </details>
+</section>
+<!-- TEMPLATED-FAQ:END -->
 
 <!-- RELATED-POSTS:START -->
 <section class="related-posts" aria-label="সম্পর্কিত গাইড">

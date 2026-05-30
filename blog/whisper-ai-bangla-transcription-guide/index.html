@@ -55,7 +55,7 @@
   <!-- PERSON-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-author-block">{"@context":"https://schema.org","@type":"Person","name":"ইকফাজ","alternateName":"Ikfaz","jobTitle":"প্রতিষ্ঠাতা ও সম্পাদক","url":"https://banglaaiguide.com/about/","sameAs":["https://github.com/ikfaz"],"worksFor":{"@type":"Organization","name":"বাংলা AI গাইড","url":"https://banglaaiguide.com"},"knowsAbout":["Artificial Intelligence","AI Tools","Bangladesh Tech","বাংলা AI"],"description":"বাংলা AI গাইডের প্রতিষ্ঠাতা। বাংলাদেশি ব্যবহারকারীদের জন্য AI টুলস কিউরেট ও বিশ্লেষণ করেন — কোনটা BD থেকে কাজ করে, কোনটায় bKash চলে, কোনটা আসলে দৈনন্দিন কাজে লাগে।"}</script>
 <!-- PERSON-SCHEMA:END -->
-          <script type="application/ld+json" data-injected-by="extend-faq-coverage">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"4 ways to use Whisper — কী জানা দরকার?","acceptedAnswer":{"@type":"Answer","text":"১. Hugging Face web (easiest) huggingface.co/spaces/openai/whisper Audio upload → transcribe No install, no signup File size limited (~25MB) Free for casual use ২. OpenAI API (cloud) $0.006/minute Fast (cloud GPU) API integration Up to 25MB per file No local resource ৩. Local install (Python) pip install openai-whisper Free + unlimited Privacy: data never leaves computer GPU recommended for speed Cmd: whisper audio.mp3 --language Bengali --model medium ৪. Desktop apps (no-code) MacWhisper: Mac native, $20 WhisperBoard: iOS, free Whisper Transcription: Windows AudioPen: mobile + web"}},{"@type":"Question","name":"OpenAI Whisper কোন কাজে সবচেয়ে ভালো?","acceptedAnswer":{"@type":"Answer","text":"Phone recording high-quality (Voice Memos) Convert to MP3 if needed Run Whisper local (medium model) 1-hour audio = 5-10 minutes processing Output: text + SRT timestamps Cleanup with ChatGPT Final document time: 30 minutes total"}},{"@type":"Question","name":"Advanced — কী জানা দরকার?","acceptedAnswer":{"@type":"Answer","text":"Audio preprocessing: noise reduction (Audacity) Multiple audio channels separate Chunking long files Initial prompt with terms: --initial_prompt \"BD politics, RAJUK\" Voice activity detection (silero VAD) Custom vocabulary"}},{"@type":"Question","name":"Whisper model sizes — কী জানা দরকার?","acceptedAnswer":{"@type":"Answer","text":"tiny (39M): Fast, less accurate base (74M): Good balance for casual small (244M): Better accuracy medium (769M): Recommended for Bangla large-v3 (1.5B): Best accuracy, requires GPU large-v3-turbo: Latest, fast + accurate"}}]}</script>
+              <script type="application/ld+json" data-injected-by="extend-faq-coverage">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"OpenAI Whisper কোন কাজে সবচেয়ে ভালো?","acceptedAnswer":{"@type":"Answer","text":"Phone recording high-quality (Voice Memos) Convert to MP3 if needed Run Whisper local (medium model) 1-hour audio = 5-10 minutes processing Output: text + SRT timestamps Cleanup with ChatGPT Final document time: 30 minutes total"}},{"@type":"Question","name":"OpenAI Whisper-এর performance কেমন?","acceptedAnswer":{"@type":"Answer","text":"Standard Bangla clear audio: 95%+ Regional accent (Chittagong, Sylhet): 80-90% Mixed Banglish: 90%+ Background noise: 70-85% Multiple speakers: 70-80% (without diarization) Music background: poor"}},{"@type":"Question","name":"OpenAI Whisper-এর সেরা alternative কোনগুলো?","acceptedAnswer":{"@type":"Answer","text":"Real-time: Whisper is batch, use Deepgram/Otter Speaker labels: Whisper alone no, use combined tool Enterprise: Azure/GCP managed Very specific accent: train custom model"}}]}</script>
 </head>
 <body>
     <header class="navbar">
@@ -256,20 +256,16 @@
   </style>
   <h2 id="faq-heading">সচরাচর জিজ্ঞাসা (FAQ)</h2>
     <details class="faq-item" open>
-      <summary class="faq-q">4 ways to use Whisper — কী জানা দরকার?</summary>
-      <div class="faq-a"><p>১. Hugging Face web (easiest) huggingface.co/spaces/openai/whisper Audio upload → transcribe No install, no signup File size limited (~25MB) Free for casual use ২. OpenAI API (cloud) $0.006/minute Fast (cloud GPU) API integration Up to 25MB per file No local resource ৩. Local install (Python) pip install openai-whisper Free + unlimited Privacy: data never leaves computer GPU recommended for speed Cmd: whisper audio.mp3 --language Bengali --model medium ৪. Desktop apps (no-code) MacWhisper: Mac native, $20 WhisperBoard: iOS, free Whisper Transcription: Windows AudioPen: mobile + web</p></div>
-    </details>
-    <details class="faq-item">
       <summary class="faq-q">OpenAI Whisper কোন কাজে সবচেয়ে ভালো?</summary>
       <div class="faq-a"><p>Phone recording high-quality (Voice Memos) Convert to MP3 if needed Run Whisper local (medium model) 1-hour audio = 5-10 minutes processing Output: text + SRT timestamps Cleanup with ChatGPT Final document time: 30 minutes total</p></div>
     </details>
     <details class="faq-item">
-      <summary class="faq-q">Advanced — কী জানা দরকার?</summary>
-      <div class="faq-a"><p>Audio preprocessing: noise reduction (Audacity) Multiple audio channels separate Chunking long files Initial prompt with terms: --initial_prompt &quot;BD politics, RAJUK&quot; Voice activity detection (silero VAD) Custom vocabulary</p></div>
+      <summary class="faq-q">OpenAI Whisper-এর performance কেমন?</summary>
+      <div class="faq-a"><p>Standard Bangla clear audio: 95%+ Regional accent (Chittagong, Sylhet): 80-90% Mixed Banglish: 90%+ Background noise: 70-85% Multiple speakers: 70-80% (without diarization) Music background: poor</p></div>
     </details>
     <details class="faq-item">
-      <summary class="faq-q">Whisper model sizes — কী জানা দরকার?</summary>
-      <div class="faq-a"><p>tiny (39M): Fast, less accurate base (74M): Good balance for casual small (244M): Better accuracy medium (769M): Recommended for Bangla large-v3 (1.5B): Best accuracy, requires GPU large-v3-turbo: Latest, fast + accurate</p></div>
+      <summary class="faq-q">OpenAI Whisper-এর সেরা alternative কোনগুলো?</summary>
+      <div class="faq-a"><p>Real-time: Whisper is batch, use Deepgram/Otter Speaker labels: Whisper alone no, use combined tool Enterprise: Azure/GCP managed Very specific accent: train custom model</p></div>
     </details>
 </section>
 <!-- TEMPLATED-FAQ:END -->

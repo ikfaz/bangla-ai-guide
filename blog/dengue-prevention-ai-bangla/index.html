@@ -52,8 +52,7 @@
   <!-- PERSON-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-author-block">{"@context":"https://schema.org","@type":"Person","name":"ইকফাজ","alternateName":"Ikfaz","jobTitle":"প্রতিষ্ঠাতা ও সম্পাদক","url":"https://banglaaiguide.com/about/","sameAs":["https://github.com/ikfaz"],"worksFor":{"@type":"Organization","name":"বাংলা AI গাইড","url":"https://banglaaiguide.com"},"knowsAbout":["Artificial Intelligence","AI Tools","Bangladesh Tech","বাংলা AI"],"description":"বাংলা AI গাইডের প্রতিষ্ঠাতা। বাংলাদেশি ব্যবহারকারীদের জন্য AI টুলস কিউরেট ও বিশ্লেষণ করেন — কোনটা BD থেকে কাজ করে, কোনটায় bKash চলে, কোনটা আসলে দৈনন্দিন কাজে লাগে।"}</script>
 <!-- PERSON-SCHEMA:END -->
-    <script type="application/ld+json" data-injected-by="extend-faq-coverage">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"AI দিয়ে Symptom Checker — কী জানা দরকার?","acceptedAnswer":{"@type":"Answer","text":"Dr Nisara-র clinic-এ AI-এর প্রথম practical use: patient/family যখন বাড়ি থেকে WhatsApp-এ লক্ষণ পাঠায়, structured prompt দিয়ে preliminary triage হয়। Prompt template (Claude/ChatGPT-এ): \"নিচের patient-এর ডেঙ্গু symptoms দেওয়া হলো। কোনগুলো warning sign এবং কোন level-এ আছে — green (home care)/yellow (clinic visit)/red (immediate hospital) তা বাংলায় bullet point-এ বলো। Final decision doctor নেবে, তুমি শুধু triage suggest করো।\" Green (home care): উচ্চ জ্বর ১-২ দিন, body ache, headache, mild appetite loss — paracetamol + ORS + bed rest। Yellow (clinic visit within 24 hr): চোখের পেছনে ব্যথা, skin rash, mild bleeding (gum/nose), persistent vomiting। Red (hospital NOW): পেটে severe ব্যথা, প্রচুর…"}},{"@type":"Question","name":"Family WhatsApp Q&A Automation — কী জানা দরকার?","acceptedAnswer":{"@type":"Answer","text":"Dr Nisara-র clinic-এ ১৮০+ active patient family WhatsApp group। আগে রাত ১১টা পর্যন্ত phone — \"ম্যাডাম, জ্বর ১০২, paracetamol দেব?\" এখন তিনি একটি knowledge base তৈরি করেছেন — common questions-এর pre-approved answer। ChatGPT/Claude এই knowledge base ব্যবহার করে first-line reply দেয়, complex query Dr Nisara নিজে handle করেন। Tier 1 (AI auto-reply): Common medication, food, hydration, fever pattern — pre-approved scripts। Tier 2 (AI flag + doctor review): Platelet question, lab interpretation, new symptom — AI draft করে, Dr Nisara approve। Tier 3 (escalation): Warning sign keyword detect হলে AI immediately \"এখনই hospital যান\" + Dr Nisara-কে notification। Result: family-এর response time আগে ছিল…"}},{"@type":"Question","name":"Aedes Mosquito Breeding Detection — কী জানা দরকার?","acceptedAnswer":{"@type":"Answer","text":"Prevention শুধু patient care নয় — source control সবচেয়ে important। Dr Nisara তাঁর residential committee-এর সাথে একটি pilot চালিয়েছেন: residents বাড়ির ছাদ, balcony, drain, ফুলের টবের ছবি তুলে WhatsApp group-এ পাঠায়, ChatGPT vision বা Claude-এর image analysis দিয়ে breeding risk identify করে। High risk: Stagnant clear water (ফুলদানি, AC tray, plastic cover-এ জমা পানি) — Aedes-এর favorite। Roof + balcony scan: Tire, bucket, ভাঙা bottle, soft drink cap — common breeding site। Drain check: Slow drainage, leaf-blocked outlet — weekly clean মাস্ট। Indoor: Water storage drum, refrigerator drip tray, indoor plant saucer — অনেকে miss করেন। AI suggestion output: Bangla bullet list — \"এই ছবিতে ৩টি…"}},{"@type":"Question","name":"Platelet Count Interpretation + When to Hospital — কী জানা দরকার?","acceptedAnswer":{"@type":"Answer","text":"ডেঙ্গু-এ platelet drop-ই সবচেয়ে worry-এর জায়গা। Family CBC report হাতে নিয়ে আসেন, কিন্তু numbers বুঝতে পারেন না। Dr Nisara Claude-এ একটি interpretation prompt তৈরি করেছেন — report-এর values input করলে বাংলায় simple explanation আসে। Normal platelet: ১,৫০,০০০ - ৪,৫০,০০০ /µL। Mild drop (warning): ১,০০,০০০-এর নিচে — daily CBC monitoring, hydration বাড়ান। Critical (<৫০,০০০): Hospital admission strongly recommended, bleeding risk high। Very critical (<২০,০০০): Immediate hospitalization, platelet transfusion consideration। NS1 antigen: জ্বরের প্রথম ৫ দিন positive — early diagnosis-এ best। IgM/IgG: Day 5+ থেকে detect হয় — late confirmation। Hematocrit (HCT) rise >20%: Plasma leakage, dengue…"}}]}</script>
-</head>
+    </head>
 <body>
     <header class="navbar">
         <div class="container navbar-inner">
@@ -253,41 +252,7 @@
 
     </div>
 
-    <!-- TEMPLATED-FAQ:START -->
-<section class="article-faq" aria-labelledby="faq-heading">
-  <style>
-    .article-faq { max-width: 880px; margin: 56px auto 16px; padding: 0 20px; font-family: 'Hind Siliguri', sans-serif; }
-    .article-faq h2 { font-family: 'Syne', 'Hind Siliguri', sans-serif; font-size: 28px; font-weight: 800; letter-spacing: -0.02em; color: #0F172A; margin: 0 0 18px; }
-    .article-faq .faq-item { border: 1px solid #E2E8F0; border-radius: 14px; padding: 14px 18px; margin-bottom: 12px; background: #FFFFFF; }
-    .article-faq .faq-item[open] { border-color: #16A34A; box-shadow: 0 8px 24px rgba(15,23,42,.06); }
-    .article-faq .faq-q { font-weight: 700; font-size: 16px; line-height: 1.5; color: #0F172A; cursor: pointer; list-style: none; }
-    .article-faq .faq-q::-webkit-details-marker { display: none; }
-    .article-faq .faq-q::after { content: '+'; float: right; color: #16A34A; font-size: 22px; line-height: 1; transition: transform .2s; }
-    .article-faq .faq-item[open] .faq-q::after { content: '−'; }
-    .article-faq .faq-a { margin-top: 10px; color: #334155; font-size: 15px; line-height: 1.7; }
-    .article-faq .faq-a p { margin: 0; }
-  </style>
-  <h2 id="faq-heading">সচরাচর জিজ্ঞাসা (FAQ)</h2>
-    <details class="faq-item" open>
-      <summary class="faq-q">AI দিয়ে Symptom Checker — কী জানা দরকার?</summary>
-      <div class="faq-a"><p>Dr Nisara-র clinic-এ AI-এর প্রথম practical use: patient/family যখন বাড়ি থেকে WhatsApp-এ লক্ষণ পাঠায়, structured prompt দিয়ে preliminary triage হয়। Prompt template (Claude/ChatGPT-এ): &quot;নিচের patient-এর ডেঙ্গু symptoms দেওয়া হলো। কোনগুলো warning sign এবং কোন level-এ আছে — green (home care)/yellow (clinic visit)/red (immediate hospital) তা বাংলায় bullet point-এ বলো। Final decision doctor নেবে, তুমি শুধু triage suggest করো।&quot; Green (home care): উচ্চ জ্বর ১-২ দিন, body ache, headache, mild appetite loss — paracetamol + ORS + bed rest। Yellow (clinic visit within 24 hr): চোখের পেছনে ব্যথা, skin rash, mild bleeding (gum/nose), persistent vomiting। Red (hospital NOW): পেটে severe ব্যথা, প্রচুর…</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">Family WhatsApp Q&amp;A Automation — কী জানা দরকার?</summary>
-      <div class="faq-a"><p>Dr Nisara-র clinic-এ ১৮০+ active patient family WhatsApp group। আগে রাত ১১টা পর্যন্ত phone — &quot;ম্যাডাম, জ্বর ১০২, paracetamol দেব?&quot; এখন তিনি একটি knowledge base তৈরি করেছেন — common questions-এর pre-approved answer। ChatGPT/Claude এই knowledge base ব্যবহার করে first-line reply দেয়, complex query Dr Nisara নিজে handle করেন। Tier 1 (AI auto-reply): Common medication, food, hydration, fever pattern — pre-approved scripts। Tier 2 (AI flag + doctor review): Platelet question, lab interpretation, new symptom — AI draft করে, Dr Nisara approve। Tier 3 (escalation): Warning sign keyword detect হলে AI immediately &quot;এখনই hospital যান&quot; + Dr Nisara-কে notification। Result: family-এর response time আগে ছিল…</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">Aedes Mosquito Breeding Detection — কী জানা দরকার?</summary>
-      <div class="faq-a"><p>Prevention শুধু patient care নয় — source control সবচেয়ে important। Dr Nisara তাঁর residential committee-এর সাথে একটি pilot চালিয়েছেন: residents বাড়ির ছাদ, balcony, drain, ফুলের টবের ছবি তুলে WhatsApp group-এ পাঠায়, ChatGPT vision বা Claude-এর image analysis দিয়ে breeding risk identify করে। High risk: Stagnant clear water (ফুলদানি, AC tray, plastic cover-এ জমা পানি) — Aedes-এর favorite। Roof + balcony scan: Tire, bucket, ভাঙা bottle, soft drink cap — common breeding site। Drain check: Slow drainage, leaf-blocked outlet — weekly clean মাস্ট। Indoor: Water storage drum, refrigerator drip tray, indoor plant saucer — অনেকে miss করেন। AI suggestion output: Bangla bullet list — &quot;এই ছবিতে ৩টি…</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">Platelet Count Interpretation + When to Hospital — কী জানা দরকার?</summary>
-      <div class="faq-a"><p>ডেঙ্গু-এ platelet drop-ই সবচেয়ে worry-এর জায়গা। Family CBC report হাতে নিয়ে আসেন, কিন্তু numbers বুঝতে পারেন না। Dr Nisara Claude-এ একটি interpretation prompt তৈরি করেছেন — report-এর values input করলে বাংলায় simple explanation আসে। Normal platelet: ১,৫০,০০০ - ৪,৫০,০০০ /µL। Mild drop (warning): ১,০০,০০০-এর নিচে — daily CBC monitoring, hydration বাড়ান। Critical (&lt;৫০,০০০): Hospital admission strongly recommended, bleeding risk high। Very critical (&lt;২০,০০০): Immediate hospitalization, platelet transfusion consideration। NS1 antigen: জ্বরের প্রথম ৫ দিন positive — early diagnosis-এ best। IgM/IgG: Day 5+ থেকে detect হয় — late confirmation। Hematocrit (HCT) rise &gt;20%: Plasma leakage, dengue…</p></div>
-    </details>
-</section>
-<!-- TEMPLATED-FAQ:END -->
-
-<!-- RELATED-POSTS:START -->
+    <!-- RELATED-POSTS:START -->
 <section class="related-posts" aria-label="সম্পর্কিত গাইড">
   <style>
     .related-posts { max-width: 1100px; margin: 56px auto; padding: 0 20px; font-family: 'Hind Siliguri', sans-serif; }

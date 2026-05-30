@@ -35,8 +35,7 @@
   <!-- PERSON-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-author-block">{"@context":"https://schema.org","@type":"Person","name":"ইকফাজ","alternateName":"Ikfaz","jobTitle":"প্রতিষ্ঠাতা ও সম্পাদক","url":"https://banglaaiguide.com/about/","sameAs":["https://github.com/ikfaz"],"worksFor":{"@type":"Organization","name":"বাংলা AI গাইড","url":"https://banglaaiguide.com"},"knowsAbout":["Artificial Intelligence","AI Tools","Bangladesh Tech","বাংলা AI"],"description":"বাংলা AI গাইডের প্রতিষ্ঠাতা। বাংলাদেশি ব্যবহারকারীদের জন্য AI টুলস কিউরেট ও বিশ্লেষণ করেন — কোনটা BD থেকে কাজ করে, কোনটায় bKash চলে, কোনটা আসলে দৈনন্দিন কাজে লাগে।"}</script>
 <!-- PERSON-SCHEMA:END -->
-        <script type="application/ld+json" data-injected-by="extend-faq-coverage">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"AI দিয়ে ডেটা বিশ্লেষণ কোন কাজে সবচেয়ে ভালো?","acceptedAnswer":{"@type":"Answer","text":"1. Survey Data Cleaning + Analysis \"Upload করছি 12,000-row maternal health survey data (anonymized)। Columns: age, parity, ANC visits, education, district, BMI, complication occurrence। Analyze: (১) Missing data pattern + impute recommendation, (২) Outlier detection, (৩) Descriptive statistics with stratification, (৪) Logistic regression: predictors of complication, (৫) Visualization: complication rate by district + risk factor heatmap। Output: Python code + interpretation in plain Bangla।\" 2. Time-Series Forecasting \"Past 5 years monthly hospital admission data। 12-month forecast with confidence interval। Seasonality + trend decompose। ARIMA model + LSTM compare।\" 3. Geographic Analysis…"}},{"@type":"Question","name":"২০২৬-এ AI Data Analysis Tools — কী জানা দরকার?","acceptedAnswer":{"@type":"Answer","text":"ChatGPT Code Interpreter: Upload CSV/Excel → Python analysis + visualization in seconds। Claude with Code Execution: Long context, complex multi-step analysis। Google Gemini in Sheets: Inline AI for Sheets, Bangla-friendly। Microsoft Power BI + Copilot: Enterprise dashboard with AI insight। Tableau Pulse: Conversational analytics। Julius AI: Specialized data analysis chatbot। Datadog/Mixpanel + AI: Product analytics। Python + ChatGPT: For complex statistical modeling।"}},{"@type":"Question","name":"Ethical Considerations — কী জানা দরকার?","acceptedAnswer":{"@type":"Answer","text":"Patient/personal data: Always anonymize before uploading to public AI। Statistical inference vs prediction: AI gives surface; human must validate causal claims। Bias awareness: Sample bias + model bias — human-judgment essential। Reproducibility: Code + data version control mandatory (academic). P-hacking risk: AI tries multiple tests — researchers should pre-register hypothesis।"}}]}</script>
-</head>
+        </head>
 <body>
     <header class="navbar"><div class="container navbar-inner"><a href="/" class="logo"><img class="logo-mark" src="/favicon.svg" alt="বাংলা AI গাইড লোগো" width="28" height="28" decoding="async" /><span class="logo-text">বাংলা AI গাইড</span></a><nav class="nav-links"><a href="/#toolsSection">টুলস দেখুন</a><a href="/blog/">ব্লগ</a><a href="/bangla-ai-guide/">বাংলা AI গাইড</a></nav></div></header>
     <div class="container">
@@ -176,37 +175,7 @@ Output: Python code + interpretation in plain Bangla।"
 <section class="seo-block"><p>আরও বিস্তারিত জানতে আমাদের <a href="/bangla-ai-guide/">বাংলা AI গাইড</a> পড়ুন।</p><p class="seo-lead" style="font-size:13px;color:#64748b;">শেষ যাচাই: মার্চ ২০২৬ | $১ = ৳১২২</p></section>
 <section class="newsletter-block" style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:1.5rem;margin:2rem 0;text-align:center;"><h3 style="margin-top:0;">নতুন AI আপডেট পেতে চান?</h3><p>প্রতি সপ্তাহে বাংলায় AI খবর ও টিপস পান — বিনামূল্যে।</p><form class="mc-form" style="display:flex;gap:0.5rem;max-width:420px;margin:0 auto;"><input type="email" placeholder="আপনার ইমেইল" required style="flex:1;padding:0.6rem 1rem;border:1px solid #cbd5e1;border-radius:8px;"><button type="submit" style="background:#16a34a;color:#fff;border:none;padding:0.6rem 1.2rem;border-radius:8px;cursor:pointer;font-weight:600;">সাবস্ক্রাইব</button></form><p style="font-size:12px;color:#64748b;margin-top:0.75rem;">ফ্রি নিউজলেটার। যেকোনো সময় আনসাবস্ক্রাইব করতে পারবেন।</p></section>
     </div>
-    <!-- TEMPLATED-FAQ:START -->
-<section class="article-faq" aria-labelledby="faq-heading">
-  <style>
-    .article-faq { max-width: 880px; margin: 56px auto 16px; padding: 0 20px; font-family: 'Hind Siliguri', sans-serif; }
-    .article-faq h2 { font-family: 'Syne', 'Hind Siliguri', sans-serif; font-size: 28px; font-weight: 800; letter-spacing: -0.02em; color: #0F172A; margin: 0 0 18px; }
-    .article-faq .faq-item { border: 1px solid #E2E8F0; border-radius: 14px; padding: 14px 18px; margin-bottom: 12px; background: #FFFFFF; }
-    .article-faq .faq-item[open] { border-color: #16A34A; box-shadow: 0 8px 24px rgba(15,23,42,.06); }
-    .article-faq .faq-q { font-weight: 700; font-size: 16px; line-height: 1.5; color: #0F172A; cursor: pointer; list-style: none; }
-    .article-faq .faq-q::-webkit-details-marker { display: none; }
-    .article-faq .faq-q::after { content: '+'; float: right; color: #16A34A; font-size: 22px; line-height: 1; transition: transform .2s; }
-    .article-faq .faq-item[open] .faq-q::after { content: '−'; }
-    .article-faq .faq-a { margin-top: 10px; color: #334155; font-size: 15px; line-height: 1.7; }
-    .article-faq .faq-a p { margin: 0; }
-  </style>
-  <h2 id="faq-heading">সচরাচর জিজ্ঞাসা (FAQ)</h2>
-    <details class="faq-item" open>
-      <summary class="faq-q">AI দিয়ে ডেটা বিশ্লেষণ কোন কাজে সবচেয়ে ভালো?</summary>
-      <div class="faq-a"><p>1. Survey Data Cleaning + Analysis &quot;Upload করছি 12,000-row maternal health survey data (anonymized)। Columns: age, parity, ANC visits, education, district, BMI, complication occurrence। Analyze: (১) Missing data pattern + impute recommendation, (২) Outlier detection, (৩) Descriptive statistics with stratification, (৪) Logistic regression: predictors of complication, (৫) Visualization: complication rate by district + risk factor heatmap। Output: Python code + interpretation in plain Bangla।&quot; 2. Time-Series Forecasting &quot;Past 5 years monthly hospital admission data। 12-month forecast with confidence interval। Seasonality + trend decompose। ARIMA model + LSTM compare।&quot; 3. Geographic Analysis…</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">২০২৬-এ AI Data Analysis Tools — কী জানা দরকার?</summary>
-      <div class="faq-a"><p>ChatGPT Code Interpreter: Upload CSV/Excel → Python analysis + visualization in seconds। Claude with Code Execution: Long context, complex multi-step analysis। Google Gemini in Sheets: Inline AI for Sheets, Bangla-friendly। Microsoft Power BI + Copilot: Enterprise dashboard with AI insight। Tableau Pulse: Conversational analytics। Julius AI: Specialized data analysis chatbot। Datadog/Mixpanel + AI: Product analytics। Python + ChatGPT: For complex statistical modeling।</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">Ethical Considerations — কী জানা দরকার?</summary>
-      <div class="faq-a"><p>Patient/personal data: Always anonymize before uploading to public AI। Statistical inference vs prediction: AI gives surface; human must validate causal claims। Bias awareness: Sample bias + model bias — human-judgment essential। Reproducibility: Code + data version control mandatory (academic). P-hacking risk: AI tries multiple tests — researchers should pre-register hypothesis।</p></div>
-    </details>
-</section>
-<!-- TEMPLATED-FAQ:END -->
-
-<!-- RELATED-POSTS:START -->
+    <!-- RELATED-POSTS:START -->
 <section class="related-posts" aria-label="সম্পর্কিত গাইড">
   <style>
     .related-posts { max-width: 1100px; margin: 56px auto; padding: 0 20px; font-family: 'Hind Siliguri', sans-serif; }
