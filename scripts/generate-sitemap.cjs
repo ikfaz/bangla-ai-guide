@@ -59,6 +59,13 @@ function changedPaths() {
 function gitLastMods() {
   const dates = new Map();
   try {
+    const shallow = execFileSync("git", ["rev-parse", "--is-shallow-repository"], {
+      cwd: ROOT,
+      encoding: "utf8",
+    }).trim();
+    // In a shallow checkout, the boundary commit appears to introduce every
+    // tracked file. Using it would falsely refresh the whole sitemap.
+    if (shallow === "true") return dates;
     const output = execFileSync(
       "git",
       ["log", "--format=@@DATE:%cs", "--name-only", "--no-renames", "--"],
