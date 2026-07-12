@@ -6,9 +6,82 @@
 
 const fs = require("fs");
 const path = require("path");
+const { execFileSync } = require("child_process");
 
 const ROOT = path.resolve(__dirname, "..");
 const SITE_URL = "https://banglaaiguide.com";
+const SITEMAP_PATH = path.join(ROOT, "sitemap.xml");
+
+// Preserve truthful lastmod dates for unchanged pages. Filesystem mtimes are
+// unreliable in CI and fresh clones because checkout makes every file appear
+// newly modified. Only paths reported by git as changed receive today's date.
+function existingLastMods() {
+  const dates = new Map();
+  if (!fs.existsSync(SITEMAP_PATH)) return dates;
+  const xml = fs.readFileSync(SITEMAP_PATH, "utf8");
+  const entry = /<url>\s*<loc>([^<]+)<\/loc>\s*<lastmod>([^<]+)<\/lastmod>/g;
+  for (const match of xml.matchAll(entry)) dates.set(match[1], match[2]);
+  return dates;
+}
+
+function parseChangedPaths(output) {
+  const fields = output.toString("utf8").split("\0");
+  const paths = new Set();
+  for (let index = 0; index < fields.length; index += 1) {
+    const record = fields[index];
+    if (!record) continue;
+    const status = record.slice(0, 2);
+    const currentPath = record.slice(3).replace(/\\/g, "/");
+    if (currentPath) paths.add(currentPath);
+    // With porcelain -z, rename/copy records store the other path in the
+    // following NUL-delimited field. Track both sides for truthful lastmod.
+    if (/[RC]/.test(status)) {
+      const otherPath = fields[index + 1];
+      if (otherPath) paths.add(otherPath.replace(/\\/g, "/"));
+      index += 1;
+    }
+  }
+  return paths;
+}
+
+function changedPaths() {
+  try {
+    const output = execFileSync("git", ["status", "--porcelain=v1", "-z", "--untracked-files=all"], {
+      cwd: ROOT,
+      encoding: "buffer",
+    });
+    return parseChangedPaths(output);
+  } catch {
+    return new Set();
+  }
+}
+
+function gitLastMods() {
+  const dates = new Map();
+  try {
+    const output = execFileSync(
+      "git",
+      ["log", "--format=@@DATE:%cs", "--name-only", "--no-renames", "--"],
+      { cwd: ROOT, encoding: "utf8" },
+    );
+    let currentDate = null;
+    for (const line of output.split(/\r?\n/)) {
+      if (line.startsWith("@@DATE:")) {
+        currentDate = line.slice(7);
+      } else if (currentDate && line) {
+        const normalizedPath = line.replace(/\\/g, "/");
+        if (!dates.has(normalizedPath)) dates.set(normalizedPath, currentDate);
+      }
+    }
+  } catch {
+    // Existing sitemap dates remain the fallback outside a Git checkout.
+  }
+  return dates;
+}
+
+const PREVIOUS_LASTMOD = existingLastMods();
+const CHANGED_PATHS = changedPaths();
+const GIT_LASTMOD = gitLastMods();
 
 // Top-level dirs that are not user-facing pages
 const EXCLUDED_DIRS = new Set([
@@ -122,14 +195,21 @@ function ruleFor(slug) {
   return DEFAULT_RULE;
 }
 
+function todayIso() {
+  return new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Europe/Athens",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(new Date());
+}
+
 function lastModFor(slug) {
   const target = slug === "" ? "index.html" : path.join(slug, "index.html");
-  try {
-    const stat = fs.statSync(path.join(ROOT, target));
-    return stat.mtime.toISOString().slice(0, 10);
-  } catch {
-    return new Date().toISOString().slice(0, 10);
-  }
+  const normalizedTarget = target.replace(/\\/g, "/");
+  const loc = slug === "" ? `${SITE_URL}/` : `${SITE_URL}/${slug}/`;
+  if (CHANGED_PATHS.has(normalizedTarget)) return todayIso();
+  return GIT_LASTMOD.get(normalizedTarget) || PREVIOUS_LASTMOD.get(loc) || todayIso();
 }
 
 function buildSitemap(pages) {
@@ -151,7 +231,11 @@ function buildSitemap(pages) {
   return lines.join("\n") + "\n";
 }
 
-const pages = collectPages();
-const xml = buildSitemap(pages);
-fs.writeFileSync(path.join(ROOT, "sitemap.xml"), xml, "utf8");
-console.log(`Wrote sitemap.xml with ${pages.length} URLs`);
+if (require.main === module) {
+  const pages = collectPages();
+  const xml = buildSitemap(pages);
+  fs.writeFileSync(SITEMAP_PATH, xml, "utf8");
+  console.log(`Wrote sitemap.xml with ${pages.length} URLs`);
+}
+
+module.exports = { parseChangedPaths };
