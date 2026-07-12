@@ -98,6 +98,8 @@ function collect() {
       slug: entry.name, title, description, category,
       tokens,
       file,
+      cover: ['cover.webp', 'cover.png', 'cover.jpg', 'cover.jpeg', 'cover.svg']
+        .find(name => fs.existsSync(path.join(BLOG, entry.name, name))) || null,
     });
   }
   return articles;
@@ -129,7 +131,7 @@ function pickRelated(target, all, n = 4) {
 
 function renderBlock(related) {
   const cards = related.map(r => `      <a href="/blog/${r.slug}/" class="rp-card">
-        <div class="rp-cover" style="background-image: linear-gradient(135deg, rgba(5,150,105,.55), rgba(16,185,129,.25)), url('/blog/${r.slug}/cover.svg');"></div>
+        <div class="rp-cover" style="background-image: linear-gradient(135deg, rgba(5,150,105,.55), rgba(16,185,129,.25)), url('/blog/${r.slug}/${r.cover || 'cover.svg'}');"></div>
         <div class="rp-body">
           <h4 class="rp-title">${escapeHtml(r.title)}</h4>
           <span class="rp-link">পড়ুন →</span>

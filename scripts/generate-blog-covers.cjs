@@ -318,7 +318,7 @@ function buildSvg(title, slug) {
 </svg>`;
 }
 
-function updateMeta(html, coverUrl) {
+function updateMeta(html, coverUrl, coverType = 'image/svg+xml') {
   let changed = false;
   const replace = (re, replacement) => {
     if (re.test(html)) {
@@ -337,14 +337,30 @@ function updateMeta(html, coverUrl) {
     `<meta name="twitter:image" content="${coverUrl}">`
   );
   replace(
-    /"image"\s*:\s*"https:\/\/banglaaiguide\.com\/[^"]*\.(png|svg)"/,
+    /"image"\s*:\s*"https:\/\/banglaaiguide\.com\/[^"]*\.(png|svg|webp|jpe?g)"/,
     `"image": "${coverUrl}"`
   );
+  replace(
+    /("image"\s*:\s*\{[^{}]*"url"\s*:\s*)"https:\/\/banglaaiguide\.com\/[^"]+"/,
+    `$1"${coverUrl}"`
+  );
+  replace(
+    /<meta\s+property="og:image:type"\s+content="[^"]*"\s*\/?>/i,
+    `<meta property="og:image:type" content="${coverType}">`
+  );
+
+  if (!/og:image:type/i.test(html) && /<meta\s+property="og:image"/i.test(html)) {
+    html = html.replace(
+      /(<meta\s+property="og:image"[^>]*>)/i,
+      `$1\n    <meta property="og:image:type" content="${coverType}">`
+    );
+    changed = true;
+  }
 
   if (!/og:image:width/i.test(html) && /<meta\s+property="og:image"/i.test(html)) {
     html = html.replace(
       /(<meta\s+property="og:image"[^>]*>)/i,
-      `$1\n    <meta property="og:image:width" content="1200">\n    <meta property="og:image:height" content="630">\n    <meta property="og:image:type" content="image/svg+xml">`
+      `$1\n    <meta property="og:image:width" content="1200">\n    <meta property="og:image:height" content="630">`
     );
     changed = true;
   }
@@ -374,12 +390,25 @@ function run() {
     const title = extractTitle(html);
     if (!title) { skippedNoTitle++; continue; }
 
-    const svg = buildSvg(title, entry.name);
-    fs.writeFileSync(path.join(dir, 'cover.svg'), svg, 'utf8');
-    writtenSvg++;
+    const preferredRaster = [
+      ['cover.webp', 'image/webp'],
+      ['cover.png', 'image/png'],
+      ['cover.jpg', 'image/jpeg'],
+      ['cover.jpeg', 'image/jpeg'],
+    ].find(([file]) => fs.existsSync(path.join(dir, file)));
 
-    const coverUrl = `${SITE}/blog/${entry.name}/cover.svg`;
-    const result = updateMeta(html, coverUrl);
+    let coverFile = 'cover.svg';
+    let coverType = 'image/svg+xml';
+    if (preferredRaster) {
+      [coverFile, coverType] = preferredRaster;
+    } else {
+      const svg = buildSvg(title, entry.name);
+      fs.writeFileSync(path.join(dir, coverFile), svg, 'utf8');
+      writtenSvg++;
+    }
+
+    const coverUrl = `${SITE}/blog/${entry.name}/${coverFile}`;
+    const result = updateMeta(html, coverUrl, coverType);
     if (result.changed) {
       fs.writeFileSync(indexFile, result.html, 'utf8');
       updatedHtml++;

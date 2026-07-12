@@ -97,7 +97,8 @@ function collectArticles() {
     const description = extractMeta(html, 'description') || '';
     const date = extractDatePublished(html) || '2026-03-11';
     const slug = entry.name;
-    const hasCover = fs.existsSync(path.join(BLOG, slug, 'cover.svg'));
+    const cover = ['cover.webp', 'cover.png', 'cover.jpg', 'cover.jpeg', 'cover.svg']
+      .find(name => fs.existsSync(path.join(BLOG, slug, name))) || null;
 
     articles.push({
       slug,
@@ -105,7 +106,7 @@ function collectArticles() {
       description: description.length > 140 ? description.slice(0, 137) + '…' : description,
       date,
       category: categoryFor(slug, title),
-      cover: hasCover ? `cover.svg` : null,
+      cover,
     });
   }
   // newest first
