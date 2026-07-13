@@ -110,7 +110,7 @@
   </url>
   <url>
     <loc>https://banglaaiguide.com/blog/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -939,6 +939,12 @@
   <url>
     <loc>https://banglaaiguide.com/blog/claude-er-bikalpo/</loc>
     <lastmod>2026-05-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://banglaaiguide.com/blog/claude-india-rupee-pricing-bangla/</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
