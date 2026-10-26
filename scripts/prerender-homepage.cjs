@@ -34,13 +34,7 @@ function loadTools() {
 }
 
 function slugify(name) {
-  return name
-    .toLowerCase()
-    .replace(/&/g, "and")
-    .replace(/\s+/g, "-")
-    .replace(/[^a-z0-9-]/g, "")
-    .replace(/-+/g, "-")
-    .replace(/^-|-$/g, "");
+  return String(name || "").trim().toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
 }
 
 function escapeHtml(s) {
@@ -89,7 +83,7 @@ function renderCard(tool, rate) {
   <div class="tool-header tool-header-modern">
     <div class="tool-title-wrap tool-title-wrap-modern">
       <div class="tool-logo-shell">
-        <img class="tool-logo" src="${escapeHtml(tool.logo)}" alt="${escapeHtml(tool.name)} logo" width="48" height="48" loading="lazy" decoding="async" />
+        <img class="tool-logo" src="${escapeHtml(`/assets/tool-marks/${slugify(tool.name)}.svg`)}" alt="${escapeHtml(tool.name)} logo" width="48" height="48" loading="lazy" decoding="async" />
       </div>
       <div class="tool-name-block">
         <h3 class="tool-title" itemprop="name"><a href="${escapeHtml(url)}">${escapeHtml(tool.name)}</a></h3>
@@ -128,7 +122,7 @@ function renderHeroCard(tool) {
   const url = `/${slug}/`;
   const cat = categoryLabel(tool.category);
   return `<a class="hero-feature-card" href="${escapeHtml(url)}">
-  <img class="hero-feature-logo" src="${escapeHtml(tool.logo)}" alt="${escapeHtml(tool.name)} logo" width="40" height="40" loading="lazy" decoding="async" />
+  <img class="hero-feature-logo" src="${escapeHtml(`/assets/tool-marks/${slugify(tool.name)}.svg`)}" alt="${escapeHtml(tool.name)} logo" width="40" height="40" loading="lazy" decoding="async" />
   <div class="hero-feature-body">
     <h3>${escapeHtml(tool.name)}</h3>
     <p class="hero-feature-cat">${escapeHtml(cat)}</p>
@@ -161,6 +155,16 @@ function run() {
     process.exit(1);
   }
 
+  // Build local lettermarks so the directory does not depend on a remote logo service.
+  const markDir = path.join(ROOT, "assets", "tool-marks");
+  fs.mkdirSync(markDir, { recursive: true });
+  const palette = [["#e4eee5", "#24543f"], ["#f4e2d6", "#9d5232"], ["#e8e5f3", "#67539d"], ["#e0edf0", "#2d6c79"], ["#f3ecd5", "#836a28"]];
+  tools.forEach((tool, index) => {
+    const [background, foreground] = palette[index % palette.length];
+    const initials = tool.name.replace(/[^a-zA-Z0-9]/g, "").slice(0, 2);
+    const svg = '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><rect width="48" height="48" rx="13" fill="' + background + '"/><text x="24" y="31" fill="' + foreground + '" font-family="Arial,sans-serif" font-weight="700" font-size="21" text-anchor="middle">' + initials + '</text></svg>';
+    fs.writeFileSync(path.join(markDir, slugify(tool.name) + ".svg"), svg, "utf8");
+  });
   let html = fs.readFileSync(INDEX, "utf8");
   const before = html.length;
   const summaries = [];

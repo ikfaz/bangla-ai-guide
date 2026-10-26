@@ -1,4 +1,4 @@
-﻿(() => {
+(() => {
   const data = Array.isArray(window.tools)
     ? window.tools
     : (typeof tools !== "undefined" && Array.isArray(tools) ? tools : []);
@@ -903,7 +903,7 @@
 
   function renderToolLogo(tool) {
     const name = escapeHtml(tool.name || "Tool");
-    return `<img class="tool-logo" src="${escapeHtml(getToolLogo(tool))}" alt="${name} logo" width="48" height="48" style="border-radius:10px; object-fit:contain;" onerror="this.onerror=null; this.src='${escapeHtml(getToolLogoFallback(tool))}'" loading="lazy" decoding="async" />`;
+    return `<img class="tool-logo" src="${escapeHtml(`/assets/tool-marks/${toSlug(tool.name)}.svg`)}" alt="${name} logo" width="48" height="48" style="border-radius:10px; object-fit:contain;" onerror="this.onerror=null; this.src='${escapeHtml(getToolLogoFallback(tool))}'" loading="lazy" decoding="async" />`;
   }
 
   function attachToolLogoHandlers(root = document) {
@@ -1145,7 +1145,7 @@
   }
 
   function getHeroFeaturedTools() {
-    return getRankedTools().slice(0, 3);
+    return getRankedTools().slice(0, 4);
   }
 
   function getShowcaseScore(tool) {
@@ -1420,6 +1420,7 @@
         state.paymentFilter = "all";
         state.bdFilter = "all";
         state.priceFilter = "all";
+        state.favoritesFilter = false;
         resetVisibleCount();
         if (refs.searchInput) {
           refs.searchInput.value = "";
@@ -1483,6 +1484,7 @@
     const favCount = state.favorites.length;
     document.querySelectorAll("[data-fav-filter]").forEach((btn) => {
       btn.classList.toggle("active", state.favoritesFilter);
+      btn.setAttribute("aria-pressed", String(state.favoritesFilter));
       const countSpan = btn.querySelector(".fav-filter-count");
       if (countSpan) {
         countSpan.textContent = favCount > 0 ? ` (${favCount})` : "";
