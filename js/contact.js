@@ -121,6 +121,8 @@
   function bindFormEvents() {
     if (!refs.form) return;
 
+    const submit = refs.form.querySelector('button[type="submit"]');
+    if (submit) submit.disabled = false;
     const fields = refs.form.querySelectorAll("input, select, textarea");
     fields.forEach((field) => {
       field.addEventListener("blur", () => validateField(field));
@@ -133,8 +135,15 @@
       if (refs.success) refs.success.hidden = true;
       if (!validateForm()) return;
 
-      if (refs.success) refs.success.hidden = false;
-      refs.form.reset();
+      if (refs.success) {
+        const fields = refs.form.elements;
+        const topic = fields.topic.selectedOptions[0]?.textContent || fields.topic.value;
+        const body = fields.message.value.trim() + "\n\n" + fields.name.value.trim() + "\n" + fields.email.value.trim();
+        const link = document.getElementById("contactEmailDraft");
+        link.href = "mailto:ifale200@gmail.com?subject=" + encodeURIComponent("Bangla AI Guide: " + topic) + "&body=" + encodeURIComponent(body);
+        refs.success.hidden = false;
+        link.focus();
+      }
       refs.form.querySelectorAll("[aria-invalid='true']").forEach((node) => node.setAttribute("aria-invalid", "false"));
       refs.form.querySelectorAll(".contact-error").forEach((node) => {
         node.textContent = "";

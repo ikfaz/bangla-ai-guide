@@ -38,10 +38,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://logo.clearbit.com" />
-  <link rel="preconnect" href="https://www.googletagmanager.com" />
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700;800&family=Syne:wght@500;600;700;800&display=swap" />
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700;800&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet" />
-  <script src="js/mailchimp.js" defer></script>
+  <script src="js/mailchimp.js?v=2026-10-26-trust" defer></script>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"WebSite","name":"বাংলা AI গাইড","url":"https://banglaaiguide.com","description":"বাংলাদেশের জন্য AI টুলস ডিরেক্টরি","inLanguage":"bn-BD","potentialAction":{"@type":"SearchAction","target":"https://banglaaiguide.com/?q={search_term_string}","query-input":"required name=search_term_string"}}
   </script>
@@ -58,12 +57,9 @@
   <script src="js/tools-data.js?v=2026-05-26" defer></script>
   <script src="js/main.js?v=2026-10-26-2" defer></script>
   <script src="js/search-overlay.js?v=2026-05-26" defer></script>
-  <script src="js/consent.js" defer></script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DMM6V53DKC"></script>
+  <script src="/js/consent.js?v=2026-10-26-trust" defer></script>
+  <script src="/js/analytics.js?v=2026-10-26-trust" defer></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date()); gtag('config', 'G-DMM6V53DKC');
     // PWA service worker registration
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', function() {
@@ -73,7 +69,7 @@
   </script>
 
   <link rel="stylesheet" href="/css/home.css?v=2026-10-26" />
-  <script src="/js/home.js?v=2026-10-26" defer></script>
+  <script src="/js/home.js?v=2026-10-26-trust" defer></script>
 </head>
 
 <body>
@@ -207,7 +203,7 @@
         <div class="search-wrap">
           <input id="searchInput" class="search-input" type="search" placeholder="টুল খুঁজুন... (যেমন: ChatGPT, ছবি, কোডিং)" aria-label="টুল সার্চ" />
         </div>
-        <div class="category-tabs" id="categoryTabList" role="tablist" aria-label="Tool categories"><button type="button" class="tab-btn active" role="tab" aria-selected="true" aria-controls="toolsGrid" tabindex="0" data-category="all"><span data-home-bn="সব টুলস" data-home-en="All tools">সব টুলস</span></button><button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="toolsGrid" tabindex="-1" data-category="writing"><span data-home-bn="লেখালেখি" data-home-en="Writing">লেখালেখি</span></button><button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="toolsGrid" tabindex="-1" data-category="image"><span data-home-bn="ছবি ও ডিজাইন" data-home-en="Image & design">ছবি ও ডিজাইন</span></button><button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="toolsGrid" tabindex="-1" data-category="video"><span data-home-bn="ভিডিও" data-home-en="Video">ভিডিও</span></button><button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="toolsGrid" tabindex="-1" data-category="coding"><span data-home-bn="কোডিং" data-home-en="Coding">কোডিং</span></button><button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="toolsGrid" tabindex="-1" data-category="marketing"><span data-home-bn="মার্কেটিং" data-home-en="Marketing">মার্কেটিং</span></button><button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="toolsGrid" tabindex="-1" data-category="productivity"><span data-home-bn="প্রোডাক্টিভিটি" data-home-en="Productivity">প্রোডাক্টিভিটি</span></button><button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="toolsGrid" tabindex="-1" data-category="free"><span data-home-bn="ফ্রি টুলস" data-home-en="Free tools">ফ্রি টুলস</span></button></div><div class="results-toolbar"><span id="resultsCount" role="status" aria-live="polite"></span><button type="button" class="filter-chip" data-fav-filter>♡ <span data-home-bn="সংরক্ষিত টুলস" data-home-en="Saved tools">সংরক্ষিত টুলস</span><span class="fav-filter-count"></span></button></div>
+        <span id="categoryTabs" aria-hidden="true"></span><div class="category-tabs" id="categoryTabList" role="tablist" aria-label="Tool categories"><button type="button" class="tab-btn active" role="tab" aria-selected="true" aria-controls="toolsGrid" tabindex="0" data-category="all"><span data-home-bn="সব টুলস" data-home-en="All tools">সব টুলস</span></button><button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="toolsGrid" tabindex="-1" data-category="writing"><span data-home-bn="লেখালেখি" data-home-en="Writing">লেখালেখি</span></button><button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="toolsGrid" tabindex="-1" data-category="image"><span data-home-bn="ছবি ও ডিজাইন" data-home-en="Image & design">ছবি ও ডিজাইন</span></button><button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="toolsGrid" tabindex="-1" data-category="video"><span data-home-bn="ভিডিও" data-home-en="Video">ভিডিও</span></button><button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="toolsGrid" tabindex="-1" data-category="coding"><span data-home-bn="কোডিং" data-home-en="Coding">কোডিং</span></button><button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="toolsGrid" tabindex="-1" data-category="marketing"><span data-home-bn="মার্কেটিং" data-home-en="Marketing">মার্কেটিং</span></button><button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="toolsGrid" tabindex="-1" data-category="productivity"><span data-home-bn="প্রোডাক্টিভিটি" data-home-en="Productivity">প্রোডাক্টিভিটি</span></button><button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="toolsGrid" tabindex="-1" data-category="free"><span data-home-bn="ফ্রি টুলস" data-home-en="Free tools">ফ্রি টুলস</span></button></div><div class="results-toolbar"><span id="resultsCount" role="status" aria-live="polite"></span><button type="button" class="filter-chip" data-fav-filter>♡ <span data-home-bn="সংরক্ষিত টুলস" data-home-en="Saved tools">সংরক্ষিত টুলস</span><span class="fav-filter-count"></span></button></div>
         <div id="toolsGrid" class="tools-grid" role="tabpanel" aria-label="AI tools"><!-- PRERENDER:TOOLS:START -->
 <article class="tool-card" itemscope itemtype="https://schema.org/SoftwareApplication" data-category="llm" data-pricing="freemium">
   <div class="tool-card-topline">
@@ -556,7 +552,7 @@
         <div class="section-head">
           <span class="section-eyebrow">সাম্প্রতিক গাইড</span>
           <h2 class="section-title">বাংলায় বিস্তারিত পড়ুন</h2>
-          <p class="section-sub">১২১টি গভীর গাইড — টিউটোরিয়াল, তুলনা, ব্যবহার পদ্ধতি</p>
+          <p class="section-sub">টিউটোরিয়াল, তুলনা ও ব্যবহার পদ্ধতি</p>
         </div>
         <div class="blog-preview-grid">
           <a href="/blog/chatgpt-prompt-bangla-50-collection/" class="blog-card-mini">
@@ -593,7 +589,7 @@
           </a>
         </div>
         <div style="text-align: center; margin-top: 48px;">
-          <a href="/blog/" class="btn btn-ghost btn-lg">সব ১২১টি গাইড দেখুন →</a>
+          <a href="/blog/" class="btn btn-ghost btn-lg">সব গাইড দেখুন →</a>
         </div>
       </div>
     </section>
@@ -615,7 +611,7 @@
       <div class="container">
         <h2>প্রতি সপ্তাহে নতুন AI টুলস বাংলায়</h2>
         <p>বাংলাদেশি AI ব্যবহারকারীদের জন্য কিউরেটেড weekly update। কোনো spam না, যেকোনো সময় unsubscribe।</p>
-        <form class="newsletter-form newsletter-form--mailchimp" action="https://banglaaiguide.us15.list-manage.com/subscribe/post?u=d389c0647878724daecc58fc6&amp;id=aaca6896d2&amp;f_id=007c9ae1f0" method="post" target="mailchimp-subscribe-frame" accept-charset="UTF-8" data-mailchimp-form="true">
+        <form class="newsletter-form newsletter-form--mailchimp" action="https://banglaaiguide.us15.list-manage.com/subscribe/post?u=d389c0647878724daecc58fc6&amp;id=aaca6896d2&amp;f_id=007c9ae1f0" method="post" target="_blank" rel="noopener noreferrer" accept-charset="UTF-8" data-mailchimp-form="true">
           <input aria-label="Email address" type="email" name="EMAIL" placeholder="আপনার ইমেইল ঠিকানা" required />
           <button type="submit" class="btn btn-primary btn-lg">সাবস্ক্রাইব করুন</button>
         </form>
@@ -660,7 +656,7 @@
         <div class="footer-col">
           <h4>কোম্পানি</h4>
           <ul>
-            <li><a href="/about/">আমাদের সম্পর্কে</a></li>
+            <li><a href="/editorial-policy/">সম্পাদকীয় নীতি</a></li><li><a href="/about/">আমাদের সম্পর্কে</a></li>
             <li><a href="/contact/">যোগাযোগ</a></li>
             <li><a href="/privacy/">গোপনীয়তা</a></li>
             <li><a href="/terms/">শর্তাবলী</a></li>
@@ -678,8 +674,7 @@
     </div>
   </footer>
 
-  <!-- Mailchimp hidden iframe target -->
-  <iframe name="mailchimp-subscribe-frame" style="display:none" tabindex="-1" aria-hidden="true"></iframe>
+
 
 
 </body>

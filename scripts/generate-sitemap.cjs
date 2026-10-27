@@ -123,7 +123,7 @@ const PRIORITY_RULES = [
   },
   {
     match: (slug) =>
-      ["privacy", "terms", "disclaimer", "contact", "submit", "about"].includes(
+      ["privacy", "terms", "disclaimer", "contact", "submit", "about", "editorial-policy"].includes(
         slug,
       ),
     priority: "0.3",

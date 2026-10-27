@@ -2,6 +2,7 @@
   const refs = {
     form: document.getElementById("toolSubmitForm"),
     success: document.getElementById("submitSuccess"),
+    emailDraft: document.getElementById("toolEmailDraft"),
     description: document.getElementById("descriptionBn"),
     descriptionCounter: document.getElementById("descriptionCounter"),
     hamburgerBtn: document.getElementById("hamburgerBtn"),
@@ -78,7 +79,9 @@
     if (input.required && !input.value.trim()) {
       message = rules.required || "এই ঘরটি পূরণ করুন।";
     } else if (fieldName === "websiteUrl" && input.value.trim()) {
-      if (input.validity.typeMismatch) {
+      let isWebUrl = false;
+      try { isWebUrl = ["https:", "http:"].includes(new URL(input.value.trim()).protocol); } catch (_) {}
+      if (input.validity.typeMismatch || !isWebUrl) {
         message = rules.invalid || "সঠিক URL দিন।";
       }
     } else if (fieldName === "submitterEmail" && input.value.trim()) {
@@ -230,7 +233,7 @@
   }
 
   function bindFormEvents() {
-    if (!refs.form) {
+    if (!refs.form || !refs.success || !refs.emailDraft) {
       return;
     }
 
@@ -260,9 +263,32 @@
         return;
       }
 
+      const fields = refs.form.elements;
+      const value = (name) => fields[name]?.value?.trim() || "উল্লেখ করা হয়নি";
+      const labels = {
+        worksInBd: { yes: "হ্যাঁ", no: "না" },
+        vpnRequired: { yes: "হ্যাঁ", no: "না" },
+        paymentMethod: { card: "Card", bkash: "bKash", both: "Card ও bKash", not_required: "প্রয়োজন নেই", unknown: "জানি না" },
+        listingType: { free: "টুল পর্যালোচনার অনুরোধ", featured: "স্পনসরশিপ সম্পর্কে জানতে চাই" },
+      };
+      const choice = (name) => labels[name][value(name)] || value(name);
+      const body = [
+        "টুল পর্যালোচনার জন্য তথ্য / Tool review enquiry",
+        "Tool name: " + value("toolName"),
+        "Website: " + value("websiteUrl"),
+        "Category: " + value("category"),
+        "Pricing: " + value("pricing"),
+        "USD price: " + value("usdPrice"),
+        "Works in Bangladesh: " + choice("worksInBd"),
+        "VPN required: " + choice("vpnRequired"),
+        "Tool payment method: " + choice("paymentMethod"),
+        "Enquiry: " + choice("listingType"),
+        "Description: " + value("descriptionBn"),
+        "Submitter email: " + value("submitterEmail"),
+      ].join("\n");
+      refs.emailDraft.href = "mailto:ifale200@gmail.com?subject=" + encodeURIComponent("AI tool review: " + value("toolName")) + "&body=" + encodeURIComponent(body);
       refs.success.hidden = false;
-      refs.form.reset();
-      updateDescriptionCounter();
+      refs.emailDraft.focus();
 
       refs.form.querySelectorAll("[aria-invalid='true']").forEach((node) => {
         node.setAttribute("aria-invalid", "false");
@@ -271,6 +297,8 @@
         node.textContent = "";
       });
     });
+    const submit = refs.form.querySelector('button[type="submit"]');
+    if (submit) submit.disabled = false;
   }
 
   bindMenuEvents();

@@ -349,7 +349,7 @@ function renderPage(tool, tools, conversionRate) {
   `;
   const schema = buildSchema(tool, canonicalUrl, priceInfo, profile);
   const verifiedText = escapeHtml(tool.verified || "মার্চ ২০২৬");
-  const actionUrl = escapeHtml(tool.affiliate_url || tool.direct_url || "#");
+  const actionUrl = escapeHtml((tool.affiliate_approved === true && tool.affiliate_url) || tool.direct_url || "#");
   const pricingUrl = escapeHtml(tool.pricing_url || tool.direct_url || tool.affiliate_url || "#");
   const linksHtml = profile.links.map((link) => `<li><a href="${escapeHtml(link.href)}">${escapeHtml(link.text)}</a></li>`).join("");
   const faqHtml = profile.faq.map((item) => `<article class="seo-faq-item"><h3>${escapeHtml(item.q)}</h3><p>${escapeHtml(item.a)}</p></article>`).join("");
@@ -373,9 +373,10 @@ function renderPage(tool, tools, conversionRate) {
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Syne:wght@500;700;800&display=swap" />
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Syne:wght@500;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../css/style.css" />
-  <script src="../js/consent.js" defer></script>
+  <script src="/js/consent.js?v=2026-10-26-trust" defer></script>
+  <script src="/js/analytics.js?v=2026-10-26-trust" defer></script>
   <script src="../js/tools-data.js" defer></script>
-  <script src="../js/seo-pages.js" defer></script>
+  <script src="/js/seo-pages.js?v=2026-10-26-trust" defer></script>
   <script type="application/ld+json">${JSON.stringify(schema)}</script>
 </head>
 <body data-page-slug="${escapeHtml(slug)}">
@@ -432,7 +433,7 @@ function renderPage(tool, tools, conversionRate) {
         <p class="rating">★ ${Number(tool.rating || 0).toLocaleString("bn-BD", { minimumFractionDigits: 1, maximumFractionDigits: 1 })}</p>
       </div>
       <div class="seo-cta-actions">
-        <a class="btn btn-primary detail-cta" href="${actionUrl}" target="_blank" rel="nofollow noopener noreferrer">এখনই ব্যবহার করুন →</a>
+        <a class="btn btn-primary detail-cta" data-tool-slug="${escapeHtml(slug)}" data-outbound-tool="true" href="${actionUrl}" target="_blank" rel="nofollow noopener noreferrer">এখনই ব্যবহার করুন →</a>
         <a class="btn btn-ghost" href="/">সব টুলস দেখুন</a>
       </div>
 

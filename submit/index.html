@@ -16,17 +16,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Syne:wght@500;700;800&display=swap" />
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Syne:wght@500;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
-  <script src="js/submit.js" defer></script>
-  <script src="js/consent.js" defer></script>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DMM6V53DKC"></script>
-  <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-DMM6V53DKC');
-  </script>
+  <link rel="stylesheet" href="/css/style.css" />
+  <script src="/js/submit.js?v=2026-10-26-trust" defer></script>
+  <script src="/js/consent.js?v=2026-10-26-trust" defer></script>
+  <script src="/js/analytics.js?v=2026-10-26-trust" defer></script>
+
+
   <meta property="og:locale" content="bn_BD">
   <meta property="og:image" content="https://banglaaiguide.com/og-image.png">
   <meta property="og:image:width" content="1200">
@@ -63,7 +58,7 @@
           <a href="/#categoryTabs">ক্যাটাগরি</a>
           <a href="/#newsletter">নিউজলেটার</a>
         </nav>
-        <a href="submit/" class="btn btn-primary">টুল সাবমিট করুন</a>
+        <a href="/submit/" class="btn btn-primary">টুল সাবমিট করুন</a>
       </div>
     </div>
 
@@ -71,17 +66,17 @@
       <a href="/#toolsSection">টুলস দেখুন</a>
       <a href="/#categoryTabs">ক্যাটাগরি</a>
       <a href="/#newsletter">নিউজলেটার</a>
-      <a href="submit/" class="btn btn-primary mobile-cta">টুল সাবমিট করুন</a>
+      <a href="/submit/" class="btn btn-primary mobile-cta">টুল সাবমিট করুন</a>
     </div>
   </header>
 
   <main class="submit-main">
     <section class="container submit-section">
       <h1>নতুন AI টুল সাবমিট করুন</h1>
-      <p class="submit-subtext">আপনার পছন্দের টুলটি আমাদের ডিরেক্টরিতে যুক্ত করতে নিচের ফর্মটি পূরণ করুন।</p>
+      <p class="submit-subtext">টুল পর্যালোচনার অনুরোধ জানাতে নিচের তথ্য দিয়ে ইমেইলের খসড়া তৈরি করুন। এই ফর্ম সরাসরি তথ্য পাঠায় না। ইমেইল পাঠালেও প্রকাশ বা নির্দিষ্ট সময়ে পর্যালোচনার নিশ্চয়তা নেই। এখানে কোনো পেমেন্ট নেওয়া হয় না।</p>
 
       <div class="submit-success" id="submitSuccess" aria-live="polite" hidden>
-        ধন্যবাদ! আমরা ২৪ ঘন্টার মধ্যে রিভিউ করব।
+        খসড়া প্রস্তুত। তথ্য এখনো পাঠানো হয়নি। <a id="toolEmailDraft" href="mailto:ifale200@gmail.com">ইমেইল অ্যাপে খুলুন</a>, তারপর নিজে পাঠান। অ্যাপ না খুললে ফর্মের তথ্য কপি করে ifale200@gmail.com-এ ইমেইল করুন।
       </div>
 
       <form id="toolSubmitForm" novalidate>
@@ -152,20 +147,22 @@
           </fieldset>
 
           <fieldset class="form-field fieldset">
-            <legend>Payment method</legend>
+            <legend>টুলের পেমেন্ট পদ্ধতি</legend>
             <div class="radio-row">
               <label><input type="radio" name="paymentMethod" value="card" required /> Card</label>
               <label><input type="radio" name="paymentMethod" value="bkash" required /> bKash</label>
               <label><input type="radio" name="paymentMethod" value="both" required /> Both</label>
+              <label><input type="radio" name="paymentMethod" value="not_required" required /> প্রয়োজন নেই</label>
+              <label><input type="radio" name="paymentMethod" value="unknown" required /> জানি না</label>
             </div>
             <p class="field-error" data-error-for="paymentMethod"></p>
           </fieldset>
 
           <fieldset class="form-field fieldset">
-            <legend>Listing type</legend>
+            <legend>অনুরোধের ধরন</legend>
             <div class="radio-row">
-              <label><input type="radio" name="listingType" value="free" required /> ফ্রি লিস্টিং</label>
-              <label><input type="radio" name="listingType" value="featured" required /> ফিচার্ড লিস্টিং (৳৯৯৯)</label>
+              <label><input type="radio" name="listingType" value="free" required /> টুল পর্যালোচনার অনুরোধ</label>
+              <label><input type="radio" name="listingType" value="featured" required /> স্পনসরশিপ সম্পর্কে জানতে চাই</label>
             </div>
             <p class="field-error" data-error-for="listingType"></p>
           </fieldset>
@@ -180,8 +177,9 @@
           </div>
         </div>
 
-        <button type="submit" class="btn btn-primary">সাবমিট করুন</button>
+        <button type="submit" disabled class="btn btn-primary">ইমেইলের খসড়া তৈরি করুন</button>
       </form>
+      <noscript><p>খসড়া তৈরি করতে JavaScript প্রয়োজন। বিকল্পভাবে টুলের তথ্য <a href="mailto:ifale200@gmail.com">ifale200@gmail.com</a>-এ ইমেইল করুন।</p></noscript>
     </section>
   </main>
 
@@ -189,7 +187,7 @@
     <div class="container footer-inner">
       <p class="footer-brand"><img class="logo-mark" src="/favicon.svg" alt="বাংলা AI গাইড লোগো" width="20" height="20" decoding="async" / loading="lazy"><span>বাংলা AI গাইড</span></p>
       <p>© ২০২৬ বাংলা AI গাইড · বাংলাদেশের জন্য তৈরি</p>
-      <nav class="footer-links" aria-label="ফুটার লিংক"><a href="submit/">টুল সাবমিট</a><a href="contact/#advertising">বিজ্ঞাপন</a><a href="privacy/">প্রাইভেসি</a><a href="terms/">শর্তাবলী</a><a href="disclaimer/">ডিসক্লেইমার</a><a href="contact/">যোগাযোগ</a></nav>
+      <nav class="footer-links" aria-label="ফুটার লিংক"><a href="/submit/">টুল সাবমিট</a><a href="/contact/#advertising">বিজ্ঞাপন</a><a href="/privacy/">প্রাইভেসি</a><a href="/terms/">শর্তাবলী</a><a href="/disclaimer/">ডিসক্লেইমার</a><a href="/contact/">যোগাযোগ</a></nav>
     </div>
   </footer>
 </body>

@@ -96,19 +96,8 @@
 
   function bindOutboundTracking() {
     document.addEventListener("click", (event) => {
-      const link = event.target.closest("a[data-outbound-affiliate='true']");
-      if (!link) {
-        return;
-      }
-
-      if (typeof window.gtag === "function") {
-        window.gtag("event", "click_affiliate", {
-          event_category: "outbound_affiliate",
-          event_label: link.href,
-          page_location: window.location.href,
-          page_title: document.title,
-        });
-      }
+      const link = event.target.closest("a[data-outbound-tool='true']");
+      if (link) window.bagAnalytics?.track("tool_outbound", { source: "detail", tool_id: link.dataset.toolSlug });
     });
   }
 

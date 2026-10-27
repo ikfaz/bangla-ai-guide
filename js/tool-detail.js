@@ -597,7 +597,9 @@
   }
 
   function trackEvent(eventName, payload) {
-    if (typeof window.gtag === "function") window.gtag("event", eventName, payload);
+    if (eventName === "click_tool_outbound" || eventName === "click_pricing_link") {
+      window.bagAnalytics?.track("tool_outbound", { source: "detail", tool_id: payload.tool_slug });
+    }
   }
 
   function trackToolProfileView(tool, slug) {
@@ -624,9 +626,9 @@
           pricing_url: pricingLink.getAttribute("href") || ""
         });
       }
-      const affiliateLink = e.target.closest("[data-outbound-affiliate='true']");
+      const affiliateLink = e.target.closest("[data-outbound-tool='true']");
       if (affiliateLink) {
-        trackEvent("click_affiliate", {
+        trackEvent("click_tool_outbound", {
           tool_slug: affiliateLink.getAttribute("data-tool-slug") || "unknown",
           target_url: affiliateLink.getAttribute("href") || ""
         });
@@ -748,10 +750,10 @@
     const rating = Number(tool.rating || 0).toLocaleString("bn-BD", { minimumFractionDigits: 1, maximumFractionDigits: 1 });
     const verifiedText = esc(tool.verified || "মার্চ ২০২৬");
     const pricingUrl = esc(tool.pricing_url || tool.direct_url || tool.affiliate_url || "#");
-    const actionUrl = tool.affiliate_url || tool.direct_url || "#";
+    const actionUrl = (tool.affiliate_approved === true && tool.affiliate_url) || tool.direct_url || "#";
 
     refs.breadcrumb.innerHTML = `<a href="index.html">হোম</a><span>&gt;</span><a href="index.html#categoryTabs">${esc(categoryLabel)}</a><span>&gt;</span><span>${esc(tool.name)}</span>`;
-    refs.detailContent.innerHTML = `<div class="tool-header detail-title-row"><div class="tool-title-wrap"><h1 class="detail-title" itemprop="name">${esc(tool.name)}</h1></div><span class="category-tag">${esc(categoryLabel)}</span></div><div class="badges detail-badges">${getBadges(tool)}</div><p class="detail-description" itemprop="description">${esc(tool.description_bn || "")}</p><blockquote class="review-block detail-review"><p>"${esc(tool.review_bn || "রিভিউ শিগগিরই যোগ হবে")}"</p><p class="review-source">— BanglaAIGuide পাঠক</p></blockquote><div class="detail-meta"><div><p class="price">${esc(priceInfo.usdLabel)} | ${esc(priceInfo.bdtLabel)}</p><a class="pricing-link" href="${pricingUrl}" target="_blank" rel="noopener noreferrer" data-pricing-link="1" data-tool-slug="${esc(slug)}" data-tool-category="${esc(tool.category || "unknown")}">💰 দাম দেখুন</a><span class="verified-date">🗓️ যাচাই: ${verifiedText}</span></div><p class="rating">★ ${rating}</p></div><a class="btn btn-primary detail-cta" href="${esc(actionUrl)}" target="_blank" rel="nofollow noopener noreferrer" data-outbound-affiliate="true" data-tool-slug="${esc(slug)}">এখনই ব্যবহার করুন →</a><meta itemprop="applicationCategory" content="${esc(categoryLabel)}" /><meta itemprop="operatingSystem" content="Web" /><link itemprop="url" href="${esc(tool.direct_url || actionUrl)}" />`;
+    refs.detailContent.innerHTML = `<div class="tool-header detail-title-row"><div class="tool-title-wrap"><h1 class="detail-title" itemprop="name">${esc(tool.name)}</h1></div><span class="category-tag">${esc(categoryLabel)}</span></div><div class="badges detail-badges">${getBadges(tool)}</div><p class="detail-description" itemprop="description">${esc(tool.description_bn || "")}</p><blockquote class="review-block detail-review"><p>"${esc(tool.review_bn || "রিভিউ শিগগিরই যোগ হবে")}"</p><p class="review-source">— সম্পাদকীয় সারাংশ; পাঠকের সাক্ষ্য নয়</p></blockquote><div class="detail-meta"><div><p class="price">${esc(priceInfo.usdLabel)} | ${esc(priceInfo.bdtLabel)}</p><a class="pricing-link" href="${pricingUrl}" target="_blank" rel="noopener noreferrer" data-pricing-link="1" data-tool-slug="${esc(slug)}" data-tool-category="${esc(tool.category || "unknown")}">💰 দাম দেখুন</a><span class="verified-date">🗓️ যাচাই: ${verifiedText}</span></div><p class="rating">★ ${rating}</p></div><a class="btn btn-primary detail-cta" href="${esc(actionUrl)}" target="_blank" rel="nofollow noopener noreferrer" data-outbound-tool="true" data-tool-slug="${esc(slug)}">এখনই ব্যবহার করুন →</a><meta itemprop="applicationCategory" content="${esc(categoryLabel)}" /><meta itemprop="operatingSystem" content="Web" /><link itemprop="url" href="${esc(tool.direct_url || actionUrl)}" />`;
 
     applySeoMeta(tool.name, slug, seo);
     renderSeoSection(tool, slug, seo);
