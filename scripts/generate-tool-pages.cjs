@@ -415,7 +415,7 @@ function renderPage(tool, tools, conversionRate) {
         <span class="category-tag">${escapeHtml(categoryLabelMap[tool.category] || "অন্যান্য")}</span>
       </div>
       <div class="badges detail-badges">${badgeHtml}</div>
-      <p class="detail-description">${escapeHtml(tool.description_bn || profile.description)}</p>
+      <p class="detail-description seo-lead">${escapeHtml(tool.description_bn || profile.description)}</p>
       <aside class="review-block detail-review" aria-label="তথ্য যাচাইয়ের অবস্থা"><p><strong>যাচাইয়ের অবস্থা:</strong> এই টুলের জন্য পরীক্ষার নথি ও স্কোরের পদ্ধতি প্রকাশিত হয়নি। তাই রেটিং বা ব্যক্তিগত ব্যবহারের দাবি দেখানো হচ্ছে না। নিচের পুরোনো গাইডের দাম, সুবিধা, বাংলাদেশে অ্যাক্সেস ও পেমেন্টের তথ্য পুনরায় যাচাই বাকি; সিদ্ধান্ত নেওয়ার আগে সেবাটির বর্তমান তথ্য দেখুন।</p><p><a href="/editorial-policy/">আমাদের সম্পাদনা ও সংশোধন নীতি</a></p></aside>
       <div class="detail-meta">
         <div>
