@@ -27,6 +27,7 @@
   <link rel="preconnect" href="https://logo.clearbit.com" />
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700;800&family=Syne:wght@500;700;800&display=swap" rel="stylesheet" />
   <script src="/js/tools-data.js?v=2026-05-26" defer></script>
+  <script src="/js/tool-routes.js?v=2026-10-27" defer></script>
   <script src="/js/search-overlay.js?v=2026-05-26" defer></script>
 
   <script type="application/ld+json">
@@ -446,12 +447,7 @@
         if (lang.id === 'bangla' && !t.supportsBangla) s -= 15;
         if (lang.id === 'both' && t.supportsBangla) s += 10;
       }
-      // BD-essentials
-      if (t.works_in_bd) s += 5;
-      if (t.no_vpn) s += 5;
-      if (t.featured) s += 3;
-      // rating tie-break
-      s += (t.rating || 0) * 1.5;
+      // Access flags and unrated editorial scores are not verified evidence.
       return s;
     }
 
@@ -474,24 +470,24 @@
     function renderResults() {
       var top = computeResults();
       var grid = $('resultsGrid');
-      grid.innerHTML = top.map(function(t, i){
+      grid.innerHTML = '<p class="result-note">এগুলো আপনার উত্তরের ভিত্তিতে সম্ভাব্য মিল। তথ্যভান্ডারের ফিচার ও দাম যাচাই চলছে; এটি পরীক্ষিত র‌্যাঙ্কিং নয়। <a href="/editorial-policy/">সম্পাদনা নীতি</a></p>' + top.map(function(t, i){
         var rank = i + 1;
         var pills = [];
-        if (t.works_in_bd) pills.push('<span class="meta-pill good">✓ BD থেকে কাজ করে</span>');
-        if (t.no_vpn) pills.push('<span class="meta-pill good">✓ VPN লাগে না</span>');
+        pills.push('<span class="meta-pill warn">বাংলাদেশে অ্যাক্সেস ও VPN: যাচাই বাকি</span>');
         if (t.supportsBangla) pills.push('<span class="meta-pill good">✓ বাংলা সাপোর্ট</span>');
         if (t.freePlanAvailable) pills.push('<span class="meta-pill good">✓ ফ্রি tier</span>');
         if (t.payment === 'card') pills.push('<span class="meta-pill warn">কার্ড লাগবে</span>');
+        var route = window.bagToolRoutes && window.bagToolRoutes.resolve(t);
         return '<article class="result-card rank-' + rank + '">'
-          + '<span class="rank">' + (rank === 1 ? '⭐ TOP PICK' : '#' + rank) + '</span>'
+          + '<span class="rank">সম্ভাব্য মিল ' + rank + '</span>'
           + '<img class="logo" src="' + escapeHtml(t.logo || '') + '" alt="' + escapeHtml(t.name) + '" onerror="this.style.display=\'none\'">'
           + '<div class="body">'
           + '<h3>' + escapeHtml(t.name) + '</h3>'
           + '<p class="desc">' + escapeHtml(t.description_bn || '') + '</p>'
           + '<div class="meta-row">' + pills.join('') + '</div>'
           + '<div class="actions">'
-          + '<a href="/' + slugify(t.name) + '/" class="btn btn-primary">পেজ দেখুন →</a>'
-          + (t.direct_url ? '<a href="' + escapeHtml(t.direct_url) + '" target="_blank" rel="noopener" class="btn btn-ghost">টুলে যান ↗</a>' : '')
+          + (route ? '<a href="' + escapeHtml(route.href) + '"' + (route.isExternal ? ' target="_blank" rel="noopener noreferrer"' : '') + ' class="btn btn-primary">' + escapeHtml(route.labelBn) + (route.isExternal ? ' ↗' : ' →') + '</a>' : '<span>লিংক যাচাই বাকি</span>')
+          + (route && route.isProfile && t.direct_url ? '<a href="' + escapeHtml(t.direct_url) + '" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">টুলের ওয়েবসাইট ↗</a>' : '')
           + '</div>'
           + '</div></article>';
       }).join('');

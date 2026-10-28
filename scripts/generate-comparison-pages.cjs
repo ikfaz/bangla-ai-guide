@@ -23,6 +23,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const toolRoutes = require('../js/tool-routes.js');
 const vm = require('vm');
 
 const ROOT = path.resolve(__dirname, '..');
@@ -137,10 +138,14 @@ function paymentLabel(p) {
   return p || '—';
 }
 
-function bdAccessLabel(t) {
-  if (t.works_in_bd && t.no_vpn) return '<span class="badge good">✓ সরাসরি কাজ করে</span>';
-  if (t.works_in_bd && !t.no_vpn) return '<span class="badge warn">VPN লাগতে পারে</span>';
-  return '<span class="badge bad">সীমাবদ্ধ</span>';
+function bdAccessLabel() {
+  return '<span class="badge warn">যাচাই বাকি</span>';
+}
+
+function toolLink(tool) {
+  const route = toolRoutes.resolve(tool);
+  if (!route) return '<span>লিংক যাচাই বাকি</span>';
+  return '<a href="' + escapeHtml(route.href) + '"' + (route.isExternal ? ' target="_blank" rel="noopener noreferrer"' : '') + ' class="btn btn-primary">' + escapeHtml(tool.name) + ': ' + escapeHtml(route.labelBn) + (route.isExternal ? ' ↗' : ' →') + '</a>';
 }
 
 function bool(v, yes='✓ হ্যাঁ', no='✕ না') {
@@ -155,13 +160,7 @@ function buildPage(a, b) {
   const slug = pairKey(a, b);
   const url = `https://banglaaiguide.com/compare/${slug}/`;
   const title = `${a.name} vs ${b.name} — বাংলাদেশে কোনটি ভালো? (২০২৬)`;
-  const desc = `${a.name} এবং ${b.name} এর সম্পূর্ণ তুলনা — দাম, ফিচার, বাংলাদেশ থেকে অ্যাক্সেস, পেমেন্ট পদ্ধতি। বাংলায় বিস্তারিত গাইড।`;
-
-  // Pick a "winner" per criterion based on simple heuristics
-  function pricier(x, y) { return parsePrice(x.usdPrice) - parsePrice(y.usdPrice); }
-  function parsePrice(s) { if (!s) return 0; if (/free/i.test(s)) return 0; const m = String(s).match(/\$([0-9.]+)/); return m ? parseFloat(m[1]) : 999; }
-  const cheaperOne = pricier(a, b) < 0 ? a : b;
-  const ratingWin = (a.rating || 0) >= (b.rating || 0) ? a : b;
+  const desc = `${a.name} এবং ${b.name} এর প্রাথমিক তুলনা — দাম, ফিচার, বাংলাদেশ থেকে অ্যাক্সেস, পেমেন্ট পদ্ধতি। বাংলায় বিস্তারিত গাইড।`;
 
   const tableRows = [
     ['বিবরণ', escapeHtml(a.description_bn || ''), escapeHtml(b.description_bn || '')],
@@ -169,12 +168,12 @@ function buildPage(a, b) {
     ['দাম', escapeHtml(priceLabel(a)), escapeHtml(priceLabel(b))],
     ['পেমেন্ট', escapeHtml(paymentLabel(a.payment)), escapeHtml(paymentLabel(b.payment))],
     ['BD থেকে অ্যাক্সেস', bdAccessLabel(a), bdAccessLabel(b)],
-    ['VPN লাগে না', bool(a.no_vpn), bool(b.no_vpn)],
+    ['VPN প্রয়োজন', bdAccessLabel(), bdAccessLabel()],
     ['বাংলা সাপোর্ট', bool(a.supportsBangla), bool(b.supportsBangla)],
     ['ফ্রি প্ল্যান', bool(a.freePlanAvailable), bool(b.freePlanAvailable)],
     ['মোবাইল ফ্রেন্ডলি', bool(a.mobileFriendly), bool(b.mobileFriendly)],
     ['নতুনদের জন্য', bool(a.beginnerFriendly), bool(b.beginnerFriendly)],
-    ['রেটিং', `<span class="rating-big">${a.rating || '—'} ★</span>`, `<span class="rating-big">${b.rating || '—'} ★</span>`],
+    ['সম্পাদকীয় মূল্যায়ন', 'যাচাই বাকি', 'যাচাই বাকি'],
     ['সেরা কাজে', (a.bestFor || []).slice(0, 4).map(x => `<span class="chip">${escapeHtml(x)}</span>`).join(' '), (b.bestFor || []).slice(0, 4).map(x => `<span class="chip">${escapeHtml(x)}</span>`).join(' ')],
   ].map(([label, va, vb]) => `
         <div class="cmp-row">
@@ -371,7 +370,7 @@ function buildPage(a, b) {
     <section class="hero">
       <div class="eyebrow">⚡ পাশাপাশি তুলনা</div>
       <h1>${escapeHtml(a.name)} <span class="grad">vs</span> ${escapeHtml(b.name)}</h1>
-      <p>বাংলাদেশে কোনটি ব্যবহার করা ভালো? দাম, ফিচার, পেমেন্ট পদ্ধতি, বাংলা সাপোর্ট — সব দিক থেকে তুলনা। ২০২৬ আপডেটেড।</p>
+      <p>তথ্যভান্ডার থেকে দাম ও ফিচারের প্রাথমিক তুলনা। পুরোনো তথ্যের যাচাই চলছে; বাংলাদেশে অ্যাক্সেস ও VPN-এর প্রয়োজন নিশ্চিত করা হয়নি।</p>
     </section>
 
     <section class="vs-hero">
@@ -379,7 +378,7 @@ function buildPage(a, b) {
         <img src="${escapeHtml(a.logo || '')}" alt="${escapeHtml(a.name)}" onerror="this.style.display='none'" />
         <h2>${escapeHtml(a.name)}</h2>
         <p class="meta">${escapeHtml(a.category || '')}</p>
-        <p class="rating"><span class="star">★</span> ${a.rating || '—'}</p>
+        <p class="rating">মূল্যায়ন: যাচাই বাকি</p>
         <span class="price">${escapeHtml(priceLabel(a))}</span>
       </div>
       <div class="vs-circle">VS</div>
@@ -387,7 +386,7 @@ function buildPage(a, b) {
         <img src="${escapeHtml(b.logo || '')}" alt="${escapeHtml(b.name)}" onerror="this.style.display='none'" />
         <h2>${escapeHtml(b.name)}</h2>
         <p class="meta">${escapeHtml(b.category || '')}</p>
-        <p class="rating"><span class="star">★</span> ${b.rating || '—'}</p>
+        <p class="rating">মূল্যায়ন: যাচাই বাকি</p>
         <span class="price">${escapeHtml(priceLabel(b))}</span>
       </div>
     </section>
@@ -396,7 +395,7 @@ function buildPage(a, b) {
       <h3>সংক্ষেপে</h3>
       <p><strong>${escapeHtml(a.name)}</strong> — ${escapeHtml(a.description_bn || '')}</p>
       <p><strong>${escapeHtml(b.name)}</strong> — ${escapeHtml(b.description_bn || '')}</p>
-      <p>দুটিই ${escapeHtml(a.category || '')} ক্যাটাগরির শক্তিশালী AI টুল। নিচে দেখুন কোনটি আপনার জন্য সেরা — বাংলাদেশি ব্যবহারকারীর প্রেক্ষাপটে।</p>
+      <p>নিচের তথ্যকে প্রাথমিক পরিচিতি হিসেবে ব্যবহার করুন। নিজের কাজের জন্য উপযোগিতা পরীক্ষা করে সিদ্ধান্ত নিন।</p>
     </section>
 
     <h2 class="section-title">বিস্তারিত তুলনা</h2>
@@ -412,22 +411,14 @@ function buildPage(a, b) {
     </div>
 
     <section class="verdict">
-      <h3>🏆 কোনটি কোন কাজে ভালো?</h3>
-      <div class="winners">
-        <div class="winner"><p class="label">কম খরচে</p><div class="name">${escapeHtml(cheaperOne.name)}</div></div>
-        <div class="winner"><p class="label">উচ্চ রেটিং</p><div class="name">${escapeHtml(ratingWin.name)}</div></div>
-        ${a.supportsBangla && !b.supportsBangla ? `<div class="winner"><p class="label">বাংলা সাপোর্ট</p><div class="name">${escapeHtml(a.name)}</div></div>` : ''}
-        ${b.supportsBangla && !a.supportsBangla ? `<div class="winner"><p class="label">বাংলা সাপোর্ট</p><div class="name">${escapeHtml(b.name)}</div></div>` : ''}
-        ${a.beginnerFriendly && !b.beginnerFriendly ? `<div class="winner"><p class="label">নতুনদের জন্য</p><div class="name">${escapeHtml(a.name)}</div></div>` : ''}
-        ${b.beginnerFriendly && !a.beginnerFriendly ? `<div class="winner"><p class="label">নতুনদের জন্য</p><div class="name">${escapeHtml(b.name)}</div></div>` : ''}
-        ${a.no_vpn && !b.no_vpn ? `<div class="winner"><p class="label">VPN ছাড়া</p><div class="name">${escapeHtml(a.name)}</div></div>` : ''}
-        ${b.no_vpn && !a.no_vpn ? `<div class="winner"><p class="label">VPN ছাড়া</p><div class="name">${escapeHtml(b.name)}</div></div>` : ''}
-      </div>
+      <h3>বেছে নেওয়ার আগে</h3>
+      <p>একই কাজ দিয়ে দুটো টুল পরীক্ষা করে ফল, সীমাবদ্ধতা ও খরচ মিলিয়ে দেখুন। এই তালিকা প্রকাশিত পরীক্ষার ফল বা বিজয়ী ঘোষণা নয়।</p>
+      <p>তথ্যভান্ডারের পুরোনো তথ্য যাচাই চলছে। দাম, বাংলা সাপোর্ট ও অন্যান্য ফিচার ব্যবহার করার আগে সংশ্লিষ্ট টুলের ওয়েবসাইটে মিলিয়ে নিন। <a href="/editorial-policy/">আমাদের সম্পাদনা নীতি</a> পড়ুন।</p>
     </section>
 
     <div class="cta-row">
-      <a href="/${slugify(a.name)}/" class="btn btn-primary">${escapeHtml(a.name)} পেজ দেখুন →</a>
-      <a href="/${slugify(b.name)}/" class="btn btn-primary">${escapeHtml(b.name)} পেজ দেখুন →</a>
+      ${toolLink(a)}
+      ${toolLink(b)}
       <a href="/compare/" class="btn btn-ghost">অন্য তুলনা করুন</a>
       <a href="/quiz/" class="btn btn-ghost">🎯 কুইজ নিন</a>
     </div>

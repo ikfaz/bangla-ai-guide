@@ -10,6 +10,7 @@
 const fs = require("fs");
 const path = require("path");
 const vm = require("vm");
+const toolRoutes = require("../js/tool-routes.js");
 
 const ROOT = path.resolve(__dirname, "..");
 const INDEX = path.join(ROOT, "index.html");
@@ -70,11 +71,12 @@ function bdtPrice(tool, rate) {
 
 function renderCard(tool, rate) {
   const slug = slugify(tool.name);
-  const url = `/${slug}/`;
+  const route = toolRoutes.resolve(tool);
+  const url = route?.href || tool.direct_url;
   const cat = categoryLabel(tool.category);
   const price = bdtPrice(tool, rate);
-  const access = tool.no_vpn ? "VPN লাগে না" : "VPN লাগে";
-  const rating = tool.rating ? `★ ${tool.rating}` : "";
+  const access = "ব্যবহারের আগে যাচাই করুন";
+  const rating = "";
   return `<article class="tool-card" itemscope itemtype="https://schema.org/SoftwareApplication" data-category="${escapeHtml(tool.category || "other")}" data-pricing="${escapeHtml(tool.pricing || "unknown")}">
   <div class="tool-card-topline">
     <span class="category-tag">${escapeHtml(cat)}</span>
@@ -95,11 +97,11 @@ function renderCard(tool, rate) {
   <meta itemprop="operatingSystem" content="Web" />
   <p class="tool-desc" itemprop="description">${escapeHtml(tool.description_bn || "")}</p>
   <div class="tool-insight-grid">
-    <div class="tool-insight-card"><span>মূল্য</span><strong>${escapeHtml(price)}</strong></div>
+    <div class="tool-insight-card"><span>আনুমানিক মূল্য</span><strong>${escapeHtml(price)}</strong></div>
     <div class="tool-insight-card"><span>অ্যাক্সেস</span><strong>${escapeHtml(access)}</strong></div>
   </div>
   <div class="tool-card-footer">
-    <a class="btn btn-ghost" href="${escapeHtml(url)}">বিস্তারিত দেখুন</a>
+    <a class="btn btn-ghost" href="${escapeHtml(url)}">${escapeHtml(route?.labelBn || "টুলের ওয়েবসাইট")}</a>
     <a class="btn btn-primary" href="${escapeHtml(tool.direct_url || "#")}" target="_blank" rel="noopener noreferrer">টুল ব্যবহার করুন</a>
   </div>
 </article>`;
@@ -112,14 +114,15 @@ function pickTopTools(tools, n, offset = 0) {
       const af = a.featured ? 1 : 0;
       const bf = b.featured ? 1 : 0;
       if (af !== bf) return bf - af;
-      return (b.rating || 0) - (a.rating || 0);
+      return 0;
     })
     .slice(offset, offset + n);
 }
 
 function renderHeroCard(tool) {
   const slug = slugify(tool.name);
-  const url = `/${slug}/`;
+  const route = toolRoutes.resolve(tool);
+  const url = route?.href || tool.direct_url;
   const cat = categoryLabel(tool.category);
   return `<a class="hero-feature-card" href="${escapeHtml(url)}">
   <img class="hero-feature-logo" src="${escapeHtml(`/assets/tool-marks/${slugify(tool.name)}.svg`)}" alt="${escapeHtml(tool.name)} logo" width="40" height="40" loading="lazy" decoding="async" />

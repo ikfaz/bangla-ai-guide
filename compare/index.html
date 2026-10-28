@@ -27,6 +27,7 @@
   <link rel="preconnect" href="https://logo.clearbit.com" />
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700;800&family=Syne:wght@500;700;800&display=swap" rel="stylesheet" />
   <script src="/js/tools-data.js?v=2026-05-26" defer></script>
+  <script src="/js/tool-routes.js?v=2026-10-27" defer></script>
   <script src="/js/search-overlay.js?v=2026-05-26" defer></script>
   <script src="/js/newsletter-popup.js?v=2026-05-26" defer></script>
 
@@ -391,15 +392,20 @@
         if (p === 'bkash') return '<span class="badge green">bKash ✓</span>';
         return escapeHtml(p || '—');
       }),
-      field('BD থেকে কাজ করে', function(t){ return badge(t.works_in_bd); }),
-      field('VPN লাগে না', function(t){ return badge(t.no_vpn); }),
+      field('বাংলাদেশে অ্যাক্সেস', function(){ return 'যাচাই বাকি'; }),
+      field('VPN প্রয়োজন', function(){ return 'যাচাই বাকি'; }),
       field('বাংলা সাপোর্ট', function(t){ return badge(t.supportsBangla); }),
       field('ফ্রি প্ল্যান', function(t){ return badge(t.freePlanAvailable); }),
       field('মোবাইল ফ্রেন্ডলি', function(t){ return badge(t.mobileFriendly); }),
       field('নতুনদের জন্য', function(t){ return badge(t.beginnerFriendly); }),
-      field('রেটিং', function(t){ return '<span style="font-weight:700;font-size:18px">' + (t.rating || '—') + ' <span style="color:var(--warning)">★</span></span>'; }),
+      field('সম্পাদকীয় মূল্যায়ন', function(){ return 'যাচাই বাকি'; }),
       field('সেরা কাজে', function(t){ return (t.bestFor || []).map(function(b){ return '<span class="badge" style="background:var(--surface-3);color:var(--text-2);margin:2px">' + escapeHtml(b) + '</span>'; }).join(''); }),
-      field('সরাসরি লিংক', function(t){ return '<a href="/' + slugify(t.name) + '/" class="badge green" style="text-decoration:none">পেজ দেখুন →</a>'; }),
+      field('তথ্যের অবস্থা', function(){ return 'পুরোনো তথ্য যাচাই চলছে; কেনার আগে টুলের ওয়েবসাইটে মিলিয়ে নিন।'; }),
+      field('আরও দেখুন', function(t){
+        var route = window.bagToolRoutes && window.bagToolRoutes.resolve(t);
+        if (!route) return 'লিংক যাচাই বাকি';
+        return '<a href="' + escapeHtml(route.href) + '"' + (route.isExternal ? ' target="_blank" rel="noopener noreferrer"' : '') + ' class="badge green" style="text-decoration:none">' + escapeHtml(route.labelBn) + (route.isExternal ? ' ↗' : ' →') + '</a>';
+      }),
     ];
 
     function renderCompare() {

@@ -55,7 +55,8 @@
     });
   </script>
   <script src="js/tools-data.js?v=2026-05-26" defer></script>
-  <script src="js/main.js?v=2026-10-26-2" defer></script>
+  <script src="/js/tool-routes.js?v=2026-10-27" defer></script>
+  <script src="js/main.js?v=2026-10-27-routes" defer></script>
   <script src="js/search-overlay.js?v=2026-05-26" defer></script>
   <script src="/js/consent.js?v=2026-10-26-trust" defer></script>
   <script src="/js/analytics.js?v=2026-10-26-trust" defer></script>
@@ -69,7 +70,7 @@
   </script>
 
   <link rel="stylesheet" href="/css/home.css?v=2026-10-26" />
-  <script src="/js/home.js?v=2026-10-26-trust" defer></script>
+  <script src="/js/home.js?v=2026-10-27-routes" defer></script>
 </head>
 
 <body>
@@ -156,6 +157,14 @@
           <p class="section-sub"><span data-home-bn="আপনার কাজের জন্য পরিচিত কিছু AI টুল।" data-home-en="A selection of familiar AI tools for your everyday work.">আপনার কাজের জন্য পরিচিত কিছু AI টুল।</span></p>
         </div>
         <div id="heroFeatured"><!-- PRERENDER:HERO:START -->
+<a class="hero-feature-card" href="/chatgpt/">
+  <img class="hero-feature-logo" src="/assets/tool-marks/chatgpt.svg" alt="ChatGPT logo" width="40" height="40" loading="lazy" decoding="async" />
+  <div class="hero-feature-body">
+    <h3>ChatGPT</h3>
+    <p class="hero-feature-cat">LLM</p>
+    <p class="hero-feature-desc">OpenAI-এর সবচেয়ে জনপ্রিয় AI চ্যাটবট। লেখা, বিশ্লেষণ, কোড — সব কাজে দারুণ।</p>
+  </div>
+</a>
 <a class="hero-feature-card" href="/claude/">
   <img class="hero-feature-logo" src="/assets/tool-marks/claude.svg" alt="Claude logo" width="40" height="40" loading="lazy" decoding="async" />
   <div class="hero-feature-body">
@@ -164,28 +173,20 @@
     <p class="hero-feature-desc">Anthropic-এর AI — বাংলায় কথা বলে, লম্বা ডকুমেন্ট বিশ্লেষণ করে, কোড লেখে।</p>
   </div>
 </a>
-<a class="hero-feature-card" href="/midjourney/">
-  <img class="hero-feature-logo" src="/assets/tool-marks/midjourney.svg" alt="Midjourney logo" width="40" height="40" loading="lazy" decoding="async" />
+<a class="hero-feature-card" href="/gemini/">
+  <img class="hero-feature-logo" src="/assets/tool-marks/gemini.svg" alt="Gemini logo" width="40" height="40" loading="lazy" decoding="async" />
   <div class="hero-feature-body">
-    <h3>Midjourney</h3>
-    <p class="hero-feature-cat">ইমেজ</p>
-    <p class="hero-feature-desc">বিশ্বের সেরা AI আর্ট জেনারেটর। Discord-এর মাধ্যমে ব্যবহার।</p>
-  </div>
-</a>
-<a class="hero-feature-card" href="/cursor/">
-  <img class="hero-feature-logo" src="/assets/tool-marks/cursor.svg" alt="Cursor logo" width="40" height="40" loading="lazy" decoding="async" />
-  <div class="hero-feature-body">
-    <h3>Cursor</h3>
-    <p class="hero-feature-cat">কোডিং</p>
-    <p class="hero-feature-desc">AI-ফার্স্ট কোড এডিটর। স্বাভাবিক ভাষায় কোড লিখুন, এডিট করুন, ডিবাগ করুন।</p>
-  </div>
-</a>
-<a class="hero-feature-card" href="/chatgpt/">
-  <img class="hero-feature-logo" src="/assets/tool-marks/chatgpt.svg" alt="ChatGPT logo" width="40" height="40" loading="lazy" decoding="async" />
-  <div class="hero-feature-body">
-    <h3>ChatGPT</h3>
+    <h3>Gemini</h3>
     <p class="hero-feature-cat">LLM</p>
-    <p class="hero-feature-desc">OpenAI-এর সবচেয়ে জনপ্রিয় AI চ্যাটবট। লেখা, বিশ্লেষণ, কোড — সব কাজে দারুণ।</p>
+    <p class="hero-feature-desc">Google-এর AI মডেল। ইন্টারনেট সার্চ যুক্ত, বাংলা ভাষায় ভালো সাপোর্ট।</p>
+  </div>
+</a>
+<a class="hero-feature-card" href="/deepseek/">
+  <img class="hero-feature-logo" src="/assets/tool-marks/deepseek.svg" alt="DeepSeek logo" width="40" height="40" loading="lazy" decoding="async" />
+  <div class="hero-feature-body">
+    <h3>DeepSeek</h3>
+    <p class="hero-feature-cat">LLM</p>
+    <p class="hero-feature-desc">চীনের DeepSeek — কোডিং ও ম্যাথে ChatGPT-4 এর চেয়ে ভালো। রিজনিং মডেল সম্পূর্ণ ফ্রি।</p>
   </div>
 </a>
 <!-- PRERENDER:HERO:END --></div>
@@ -203,96 +204,13 @@
         <div class="search-wrap">
           <input id="searchInput" class="search-input" type="search" placeholder="টুল খুঁজুন... (যেমন: ChatGPT, ছবি, কোডিং)" aria-label="টুল সার্চ" />
         </div>
-        <span id="categoryTabs" aria-hidden="true"></span><div class="category-tabs" id="categoryTabList" role="tablist" aria-label="Tool categories"><button type="button" class="tab-btn active" role="tab" aria-selected="true" aria-controls="toolsGrid" tabindex="0" data-category="all"><span data-home-bn="সব টুলস" data-home-en="All tools">সব টুলস</span></button><button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="toolsGrid" tabindex="-1" data-category="writing"><span data-home-bn="লেখালেখি" data-home-en="Writing">লেখালেখি</span></button><button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="toolsGrid" tabindex="-1" data-category="image"><span data-home-bn="ছবি ও ডিজাইন" data-home-en="Image & design">ছবি ও ডিজাইন</span></button><button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="toolsGrid" tabindex="-1" data-category="video"><span data-home-bn="ভিডিও" data-home-en="Video">ভিডিও</span></button><button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="toolsGrid" tabindex="-1" data-category="coding"><span data-home-bn="কোডিং" data-home-en="Coding">কোডিং</span></button><button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="toolsGrid" tabindex="-1" data-category="marketing"><span data-home-bn="মার্কেটিং" data-home-en="Marketing">মার্কেটিং</span></button><button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="toolsGrid" tabindex="-1" data-category="productivity"><span data-home-bn="প্রোডাক্টিভিটি" data-home-en="Productivity">প্রোডাক্টিভিটি</span></button><button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="toolsGrid" tabindex="-1" data-category="free"><span data-home-bn="ফ্রি টুলস" data-home-en="Free tools">ফ্রি টুলস</span></button></div><div class="results-toolbar"><span id="resultsCount" role="status" aria-live="polite"></span><button type="button" class="filter-chip" data-fav-filter>♡ <span data-home-bn="সংরক্ষিত টুলস" data-home-en="Saved tools">সংরক্ষিত টুলস</span><span class="fav-filter-count"></span></button></div>
+        <span id="categoryTabs" aria-hidden="true"></span><p class="tool-evidence-note" data-home-bn="তথ্য হালনাগাদের কাজ চলছে। দাম, ফ্রি সুবিধা ও বাংলাদেশ থেকে অ্যাক্সেস প্রদানকারীর কাছে মিলিয়ে নিন।" data-home-en="Information is being reviewed. Check current prices, free features and Bangladesh access with the provider.">তথ্য হালনাগাদের কাজ চলছে। দাম, ফ্রি সুবিধা ও বাংলাদেশ থেকে অ্যাক্সেস প্রদানকারীর কাছে মিলিয়ে নিন।</p>
+        <div class="category-tabs" id="categoryTabList" role="tablist" aria-label="Tool categories"><button type="button" class="tab-btn active" role="tab" aria-selected="true" aria-controls="toolsGrid" tabindex="0" data-category="all"><span data-home-bn="সব টুলস" data-home-en="All tools">সব টুলস</span></button><button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="toolsGrid" tabindex="-1" data-category="writing"><span data-home-bn="লেখালেখি" data-home-en="Writing">লেখালেখি</span></button><button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="toolsGrid" tabindex="-1" data-category="image"><span data-home-bn="ছবি ও ডিজাইন" data-home-en="Image & design">ছবি ও ডিজাইন</span></button><button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="toolsGrid" tabindex="-1" data-category="video"><span data-home-bn="ভিডিও" data-home-en="Video">ভিডিও</span></button><button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="toolsGrid" tabindex="-1" data-category="coding"><span data-home-bn="কোডিং" data-home-en="Coding">কোডিং</span></button><button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="toolsGrid" tabindex="-1" data-category="marketing"><span data-home-bn="মার্কেটিং" data-home-en="Marketing">মার্কেটিং</span></button><button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="toolsGrid" tabindex="-1" data-category="productivity"><span data-home-bn="প্রোডাক্টিভিটি" data-home-en="Productivity">প্রোডাক্টিভিটি</span></button><button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="toolsGrid" tabindex="-1" data-category="free"><span data-home-bn="ফ্রি টুলস" data-home-en="Free tools">ফ্রি টুলস</span></button></div><div class="results-toolbar"><span id="resultsCount" role="status" aria-live="polite"></span><button type="button" class="filter-chip" data-fav-filter>♡ <span data-home-bn="সংরক্ষিত টুলস" data-home-en="Saved tools">সংরক্ষিত টুলস</span><span class="fav-filter-count"></span></button></div>
         <div id="toolsGrid" class="tools-grid" role="tabpanel" aria-label="AI tools"><!-- PRERENDER:TOOLS:START -->
 <article class="tool-card" itemscope itemtype="https://schema.org/SoftwareApplication" data-category="llm" data-pricing="freemium">
   <div class="tool-card-topline">
     <span class="category-tag">LLM</span>
-    <div class="tool-card-topline-right"><span class="tool-rating-chip">★ 4.9</span></div>
-  </div>
-  <div class="tool-header tool-header-modern">
-    <div class="tool-title-wrap tool-title-wrap-modern">
-      <div class="tool-logo-shell">
-        <img class="tool-logo" src="/assets/tool-marks/claude.svg" alt="Claude logo" width="48" height="48" loading="lazy" decoding="async" />
-      </div>
-      <div class="tool-name-block">
-        <h3 class="tool-title" itemprop="name"><a href="/claude/">Claude</a></h3>
-        <p class="tool-subtitle">LLM</p>
-      </div>
-    </div>
-  </div>
-  <meta itemprop="applicationCategory" content="llm" />
-  <meta itemprop="operatingSystem" content="Web" />
-  <p class="tool-desc" itemprop="description">Anthropic-এর AI — বাংলায় কথা বলে, লম্বা ডকুমেন্ট বিশ্লেষণ করে, কোড লেখে।</p>
-  <div class="tool-insight-grid">
-    <div class="tool-insight-card"><span>মূল্য</span><strong>ফ্রি / ৳২,৪৪০/মাস</strong></div>
-    <div class="tool-insight-card"><span>অ্যাক্সেস</span><strong>VPN লাগে না</strong></div>
-  </div>
-  <div class="tool-card-footer">
-    <a class="btn btn-ghost" href="/claude/">বিস্তারিত দেখুন</a>
-    <a class="btn btn-primary" href="https://claude.ai" target="_blank" rel="noopener noreferrer">টুল ব্যবহার করুন</a>
-  </div>
-</article>
-<article class="tool-card" itemscope itemtype="https://schema.org/SoftwareApplication" data-category="image" data-pricing="paid">
-  <div class="tool-card-topline">
-    <span class="category-tag">ইমেজ</span>
-    <div class="tool-card-topline-right"><span class="tool-rating-chip">★ 4.9</span></div>
-  </div>
-  <div class="tool-header tool-header-modern">
-    <div class="tool-title-wrap tool-title-wrap-modern">
-      <div class="tool-logo-shell">
-        <img class="tool-logo" src="/assets/tool-marks/midjourney.svg" alt="Midjourney logo" width="48" height="48" loading="lazy" decoding="async" />
-      </div>
-      <div class="tool-name-block">
-        <h3 class="tool-title" itemprop="name"><a href="/midjourney/">Midjourney</a></h3>
-        <p class="tool-subtitle">ইমেজ</p>
-      </div>
-    </div>
-  </div>
-  <meta itemprop="applicationCategory" content="image" />
-  <meta itemprop="operatingSystem" content="Web" />
-  <p class="tool-desc" itemprop="description">বিশ্বের সেরা AI আর্ট জেনারেটর। Discord-এর মাধ্যমে ব্যবহার।</p>
-  <div class="tool-insight-grid">
-    <div class="tool-insight-card"><span>মূল্য</span><strong>ফ্রি / ৳১,২২০/মাস</strong></div>
-    <div class="tool-insight-card"><span>অ্যাক্সেস</span><strong>VPN লাগে না</strong></div>
-  </div>
-  <div class="tool-card-footer">
-    <a class="btn btn-ghost" href="/midjourney/">বিস্তারিত দেখুন</a>
-    <a class="btn btn-primary" href="https://www.midjourney.com" target="_blank" rel="noopener noreferrer">টুল ব্যবহার করুন</a>
-  </div>
-</article>
-<article class="tool-card" itemscope itemtype="https://schema.org/SoftwareApplication" data-category="coding" data-pricing="freemium">
-  <div class="tool-card-topline">
-    <span class="category-tag">কোডিং</span>
-    <div class="tool-card-topline-right"><span class="tool-rating-chip">★ 4.9</span></div>
-  </div>
-  <div class="tool-header tool-header-modern">
-    <div class="tool-title-wrap tool-title-wrap-modern">
-      <div class="tool-logo-shell">
-        <img class="tool-logo" src="/assets/tool-marks/cursor.svg" alt="Cursor logo" width="48" height="48" loading="lazy" decoding="async" />
-      </div>
-      <div class="tool-name-block">
-        <h3 class="tool-title" itemprop="name"><a href="/cursor/">Cursor</a></h3>
-        <p class="tool-subtitle">কোডিং</p>
-      </div>
-    </div>
-  </div>
-  <meta itemprop="applicationCategory" content="coding" />
-  <meta itemprop="operatingSystem" content="Web" />
-  <p class="tool-desc" itemprop="description">AI-ফার্স্ট কোড এডিটর। স্বাভাবিক ভাষায় কোড লিখুন, এডিট করুন, ডিবাগ করুন।</p>
-  <div class="tool-insight-grid">
-    <div class="tool-insight-card"><span>মূল্য</span><strong>ফ্রি / ৳২,৪৪০/মাস</strong></div>
-    <div class="tool-insight-card"><span>অ্যাক্সেস</span><strong>VPN লাগে না</strong></div>
-  </div>
-  <div class="tool-card-footer">
-    <a class="btn btn-ghost" href="/cursor/">বিস্তারিত দেখুন</a>
-    <a class="btn btn-primary" href="https://cursor.com" target="_blank" rel="noopener noreferrer">টুল ব্যবহার করুন</a>
-  </div>
-</article>
-<article class="tool-card" itemscope itemtype="https://schema.org/SoftwareApplication" data-category="llm" data-pricing="freemium">
-  <div class="tool-card-topline">
-    <span class="category-tag">LLM</span>
-    <div class="tool-card-topline-right"><span class="tool-rating-chip">★ 4.8</span></div>
+    <div class="tool-card-topline-right"></div>
   </div>
   <div class="tool-header tool-header-modern">
     <div class="tool-title-wrap tool-title-wrap-modern">
@@ -309,130 +227,46 @@
   <meta itemprop="operatingSystem" content="Web" />
   <p class="tool-desc" itemprop="description">OpenAI-এর সবচেয়ে জনপ্রিয় AI চ্যাটবট। লেখা, বিশ্লেষণ, কোড — সব কাজে দারুণ।</p>
   <div class="tool-insight-grid">
-    <div class="tool-insight-card"><span>মূল্য</span><strong>ফ্রি / ৳৯৭৬/মাস</strong></div>
-    <div class="tool-insight-card"><span>অ্যাক্সেস</span><strong>VPN লাগে না</strong></div>
+    <div class="tool-insight-card"><span>আনুমানিক মূল্য</span><strong>ফ্রি / ৳৯৭৬/মাস</strong></div>
+    <div class="tool-insight-card"><span>অ্যাক্সেস</span><strong>ব্যবহারের আগে যাচাই করুন</strong></div>
   </div>
   <div class="tool-card-footer">
-    <a class="btn btn-ghost" href="/chatgpt/">বিস্তারিত দেখুন</a>
+    <a class="btn btn-ghost" href="/chatgpt/">টুলের বিস্তারিত</a>
     <a class="btn btn-primary" href="https://chatgpt.com" target="_blank" rel="noopener noreferrer">টুল ব্যবহার করুন</a>
   </div>
 </article>
-<article class="tool-card" itemscope itemtype="https://schema.org/SoftwareApplication" data-category="llm" data-pricing="free">
+<article class="tool-card" itemscope itemtype="https://schema.org/SoftwareApplication" data-category="llm" data-pricing="freemium">
   <div class="tool-card-topline">
     <span class="category-tag">LLM</span>
-    <div class="tool-card-topline-right"><span class="tool-rating-chip">★ 4.7</span></div>
+    <div class="tool-card-topline-right"></div>
   </div>
   <div class="tool-header tool-header-modern">
     <div class="tool-title-wrap tool-title-wrap-modern">
       <div class="tool-logo-shell">
-        <img class="tool-logo" src="/assets/tool-marks/deepseek.svg" alt="DeepSeek logo" width="48" height="48" loading="lazy" decoding="async" />
+        <img class="tool-logo" src="/assets/tool-marks/claude.svg" alt="Claude logo" width="48" height="48" loading="lazy" decoding="async" />
       </div>
       <div class="tool-name-block">
-        <h3 class="tool-title" itemprop="name"><a href="/deepseek/">DeepSeek</a></h3>
+        <h3 class="tool-title" itemprop="name"><a href="/claude/">Claude</a></h3>
         <p class="tool-subtitle">LLM</p>
       </div>
     </div>
   </div>
   <meta itemprop="applicationCategory" content="llm" />
   <meta itemprop="operatingSystem" content="Web" />
-  <p class="tool-desc" itemprop="description">চীনের DeepSeek — কোডিং ও ম্যাথে ChatGPT-4 এর চেয়ে ভালো। রিজনিং মডেল সম্পূর্ণ ফ্রি।</p>
+  <p class="tool-desc" itemprop="description">Anthropic-এর AI — বাংলায় কথা বলে, লম্বা ডকুমেন্ট বিশ্লেষণ করে, কোড লেখে।</p>
   <div class="tool-insight-grid">
-    <div class="tool-insight-card"><span>মূল্য</span><strong>৳০ — ফ্রি</strong></div>
-    <div class="tool-insight-card"><span>অ্যাক্সেস</span><strong>VPN লাগে না</strong></div>
+    <div class="tool-insight-card"><span>আনুমানিক মূল্য</span><strong>ফ্রি / ৳২,৪৪০/মাস</strong></div>
+    <div class="tool-insight-card"><span>অ্যাক্সেস</span><strong>ব্যবহারের আগে যাচাই করুন</strong></div>
   </div>
   <div class="tool-card-footer">
-    <a class="btn btn-ghost" href="/deepseek/">বিস্তারিত দেখুন</a>
-    <a class="btn btn-primary" href="https://chat.deepseek.com" target="_blank" rel="noopener noreferrer">টুল ব্যবহার করুন</a>
-  </div>
-</article>
-<article class="tool-card" itemscope itemtype="https://schema.org/SoftwareApplication" data-category="productivity" data-pricing="ফ্রি / ৳৭৩২">
-  <div class="tool-card-topline">
-    <span class="category-tag">প্রোডাক্টিভিটি</span>
-    <div class="tool-card-topline-right"><span class="tool-rating-chip">★ 4.7</span></div>
-  </div>
-  <div class="tool-header tool-header-modern">
-    <div class="tool-title-wrap tool-title-wrap-modern">
-      <div class="tool-logo-shell">
-        <img class="tool-logo" src="/assets/tool-marks/capcut-ai.svg" alt="CapCut AI logo" width="48" height="48" loading="lazy" decoding="async" />
-      </div>
-      <div class="tool-name-block">
-        <h3 class="tool-title" itemprop="name"><a href="/capcut-ai/">CapCut AI</a></h3>
-        <p class="tool-subtitle">প্রোডাক্টিভিটি</p>
-      </div>
-    </div>
-  </div>
-  <meta itemprop="applicationCategory" content="productivity" />
-  <meta itemprop="operatingSystem" content="Web" />
-  <p class="tool-desc" itemprop="description">বাংলাদেশে সবচেয়ে জনপ্রিয় ভিডিও এডিটিং অ্যাপ — AI ক্যাপশন, ব্যাকগ্রাউন্ড রিমুভাল ও অটো সাবটাইটেল ফিচার।</p>
-  <div class="tool-insight-grid">
-    <div class="tool-insight-card"><span>মূল্য</span><strong>চাহিদাভিত্তিক</strong></div>
-    <div class="tool-insight-card"><span>অ্যাক্সেস</span><strong>VPN লাগে না</strong></div>
-  </div>
-  <div class="tool-card-footer">
-    <a class="btn btn-ghost" href="/capcut-ai/">বিস্তারিত দেখুন</a>
-    <a class="btn btn-primary" href="https://www.capcut.com" target="_blank" rel="noopener noreferrer">টুল ব্যবহার করুন</a>
-  </div>
-</article>
-<article class="tool-card" itemscope itemtype="https://schema.org/SoftwareApplication" data-category="image" data-pricing="ফ্রি / ৳১,০৯৮">
-  <div class="tool-card-topline">
-    <span class="category-tag">ইমেজ</span>
-    <div class="tool-card-topline-right"><span class="tool-rating-chip">★ 4.7</span></div>
-  </div>
-  <div class="tool-header tool-header-modern">
-    <div class="tool-title-wrap tool-title-wrap-modern">
-      <div class="tool-logo-shell">
-        <img class="tool-logo" src="/assets/tool-marks/remove-bg.svg" alt="Remove.bg logo" width="48" height="48" loading="lazy" decoding="async" />
-      </div>
-      <div class="tool-name-block">
-        <h3 class="tool-title" itemprop="name"><a href="/remove-bg/">Remove.bg</a></h3>
-        <p class="tool-subtitle">ইমেজ</p>
-      </div>
-    </div>
-  </div>
-  <meta itemprop="applicationCategory" content="image" />
-  <meta itemprop="operatingSystem" content="Web" />
-  <p class="tool-desc" itemprop="description">এক ক্লিকে ছবির ব্যাকগ্রাউন্ড রিমুভ করুন — পণ্যের ছবি, প্রোফাইল ফটো ও ই-কমার্সের জন্য বাংলাদেশে সবচেয়ে বেশি ব্যবহৃত।</p>
-  <div class="tool-insight-grid">
-    <div class="tool-insight-card"><span>মূল্য</span><strong>চাহিদাভিত্তিক</strong></div>
-    <div class="tool-insight-card"><span>অ্যাক্সেস</span><strong>VPN লাগে না</strong></div>
-  </div>
-  <div class="tool-card-footer">
-    <a class="btn btn-ghost" href="/remove-bg/">বিস্তারিত দেখুন</a>
-    <a class="btn btn-primary" href="https://www.remove.bg" target="_blank" rel="noopener noreferrer">টুল ব্যবহার করুন</a>
-  </div>
-</article>
-<article class="tool-card" itemscope itemtype="https://schema.org/SoftwareApplication" data-category="image" data-pricing="ফ্রি / ৳১,৪৬৪">
-  <div class="tool-card-topline">
-    <span class="category-tag">ইমেজ</span>
-    <div class="tool-card-topline-right"><span class="tool-rating-chip">★ 4.7</span></div>
-  </div>
-  <div class="tool-header tool-header-modern">
-    <div class="tool-title-wrap tool-title-wrap-modern">
-      <div class="tool-logo-shell">
-        <img class="tool-logo" src="/assets/tool-marks/canva-ai.svg" alt="Canva AI logo" width="48" height="48" loading="lazy" decoding="async" />
-      </div>
-      <div class="tool-name-block">
-        <h3 class="tool-title" itemprop="name"><a href="/canva-ai/">Canva AI</a></h3>
-        <p class="tool-subtitle">ইমেজ</p>
-      </div>
-    </div>
-  </div>
-  <meta itemprop="applicationCategory" content="image" />
-  <meta itemprop="operatingSystem" content="Web" />
-  <p class="tool-desc" itemprop="description">Canva-র AI ইমেজ জেনারেটর — টেক্সট থেকে ছবি বানান, ব্যাকগ্রাউন্ড রিমুভ করুন, ডিজাইন অটো-জেনারেট করুন। বাংলাদেশে সবচেয়ে পরিচিত ডিজাইন টুল।</p>
-  <div class="tool-insight-grid">
-    <div class="tool-insight-card"><span>মূল্য</span><strong>চাহিদাভিত্তিক</strong></div>
-    <div class="tool-insight-card"><span>অ্যাক্সেস</span><strong>VPN লাগে না</strong></div>
-  </div>
-  <div class="tool-card-footer">
-    <a class="btn btn-ghost" href="/canva-ai/">বিস্তারিত দেখুন</a>
-    <a class="btn btn-primary" href="https://canva.com" target="_blank" rel="noopener noreferrer">টুল ব্যবহার করুন</a>
+    <a class="btn btn-ghost" href="/claude/">টুলের বিস্তারিত</a>
+    <a class="btn btn-primary" href="https://claude.ai" target="_blank" rel="noopener noreferrer">টুল ব্যবহার করুন</a>
   </div>
 </article>
 <article class="tool-card" itemscope itemtype="https://schema.org/SoftwareApplication" data-category="llm" data-pricing="freemium">
   <div class="tool-card-topline">
     <span class="category-tag">LLM</span>
-    <div class="tool-card-topline-right"><span class="tool-rating-chip">★ 4.6</span></div>
+    <div class="tool-card-topline-right"></div>
   </div>
   <div class="tool-header tool-header-modern">
     <div class="tool-title-wrap tool-title-wrap-modern">
@@ -449,18 +283,102 @@
   <meta itemprop="operatingSystem" content="Web" />
   <p class="tool-desc" itemprop="description">Google-এর AI মডেল। ইন্টারনেট সার্চ যুক্ত, বাংলা ভাষায় ভালো সাপোর্ট।</p>
   <div class="tool-insight-grid">
-    <div class="tool-insight-card"><span>মূল্য</span><strong>ফ্রি / ৳২,৪৩৯/মাস</strong></div>
-    <div class="tool-insight-card"><span>অ্যাক্সেস</span><strong>VPN লাগে না</strong></div>
+    <div class="tool-insight-card"><span>আনুমানিক মূল্য</span><strong>ফ্রি / ৳২,৪৩৯/মাস</strong></div>
+    <div class="tool-insight-card"><span>অ্যাক্সেস</span><strong>ব্যবহারের আগে যাচাই করুন</strong></div>
   </div>
   <div class="tool-card-footer">
-    <a class="btn btn-ghost" href="/gemini/">বিস্তারিত দেখুন</a>
+    <a class="btn btn-ghost" href="/gemini/">টুলের বিস্তারিত</a>
     <a class="btn btn-primary" href="https://gemini.google.com" target="_blank" rel="noopener noreferrer">টুল ব্যবহার করুন</a>
+  </div>
+</article>
+<article class="tool-card" itemscope itemtype="https://schema.org/SoftwareApplication" data-category="llm" data-pricing="free">
+  <div class="tool-card-topline">
+    <span class="category-tag">LLM</span>
+    <div class="tool-card-topline-right"></div>
+  </div>
+  <div class="tool-header tool-header-modern">
+    <div class="tool-title-wrap tool-title-wrap-modern">
+      <div class="tool-logo-shell">
+        <img class="tool-logo" src="/assets/tool-marks/deepseek.svg" alt="DeepSeek logo" width="48" height="48" loading="lazy" decoding="async" />
+      </div>
+      <div class="tool-name-block">
+        <h3 class="tool-title" itemprop="name"><a href="/deepseek/">DeepSeek</a></h3>
+        <p class="tool-subtitle">LLM</p>
+      </div>
+    </div>
+  </div>
+  <meta itemprop="applicationCategory" content="llm" />
+  <meta itemprop="operatingSystem" content="Web" />
+  <p class="tool-desc" itemprop="description">চীনের DeepSeek — কোডিং ও ম্যাথে ChatGPT-4 এর চেয়ে ভালো। রিজনিং মডেল সম্পূর্ণ ফ্রি।</p>
+  <div class="tool-insight-grid">
+    <div class="tool-insight-card"><span>আনুমানিক মূল্য</span><strong>৳০ — ফ্রি</strong></div>
+    <div class="tool-insight-card"><span>অ্যাক্সেস</span><strong>ব্যবহারের আগে যাচাই করুন</strong></div>
+  </div>
+  <div class="tool-card-footer">
+    <a class="btn btn-ghost" href="/deepseek/">টুলের বিস্তারিত</a>
+    <a class="btn btn-primary" href="https://chat.deepseek.com" target="_blank" rel="noopener noreferrer">টুল ব্যবহার করুন</a>
+  </div>
+</article>
+<article class="tool-card" itemscope itemtype="https://schema.org/SoftwareApplication" data-category="image" data-pricing="paid">
+  <div class="tool-card-topline">
+    <span class="category-tag">ইমেজ</span>
+    <div class="tool-card-topline-right"></div>
+  </div>
+  <div class="tool-header tool-header-modern">
+    <div class="tool-title-wrap tool-title-wrap-modern">
+      <div class="tool-logo-shell">
+        <img class="tool-logo" src="/assets/tool-marks/midjourney.svg" alt="Midjourney logo" width="48" height="48" loading="lazy" decoding="async" />
+      </div>
+      <div class="tool-name-block">
+        <h3 class="tool-title" itemprop="name"><a href="/midjourney/">Midjourney</a></h3>
+        <p class="tool-subtitle">ইমেজ</p>
+      </div>
+    </div>
+  </div>
+  <meta itemprop="applicationCategory" content="image" />
+  <meta itemprop="operatingSystem" content="Web" />
+  <p class="tool-desc" itemprop="description">বিশ্বের সেরা AI আর্ট জেনারেটর। Discord-এর মাধ্যমে ব্যবহার।</p>
+  <div class="tool-insight-grid">
+    <div class="tool-insight-card"><span>আনুমানিক মূল্য</span><strong>ফ্রি / ৳১,২২০/মাস</strong></div>
+    <div class="tool-insight-card"><span>অ্যাক্সেস</span><strong>ব্যবহারের আগে যাচাই করুন</strong></div>
+  </div>
+  <div class="tool-card-footer">
+    <a class="btn btn-ghost" href="/midjourney/">টুলের বিস্তারিত</a>
+    <a class="btn btn-primary" href="https://www.midjourney.com" target="_blank" rel="noopener noreferrer">টুল ব্যবহার করুন</a>
+  </div>
+</article>
+<article class="tool-card" itemscope itemtype="https://schema.org/SoftwareApplication" data-category="coding" data-pricing="freemium">
+  <div class="tool-card-topline">
+    <span class="category-tag">কোডিং</span>
+    <div class="tool-card-topline-right"></div>
+  </div>
+  <div class="tool-header tool-header-modern">
+    <div class="tool-title-wrap tool-title-wrap-modern">
+      <div class="tool-logo-shell">
+        <img class="tool-logo" src="/assets/tool-marks/cursor.svg" alt="Cursor logo" width="48" height="48" loading="lazy" decoding="async" />
+      </div>
+      <div class="tool-name-block">
+        <h3 class="tool-title" itemprop="name"><a href="/cursor/">Cursor</a></h3>
+        <p class="tool-subtitle">কোডিং</p>
+      </div>
+    </div>
+  </div>
+  <meta itemprop="applicationCategory" content="coding" />
+  <meta itemprop="operatingSystem" content="Web" />
+  <p class="tool-desc" itemprop="description">AI-ফার্স্ট কোড এডিটর। স্বাভাবিক ভাষায় কোড লিখুন, এডিট করুন, ডিবাগ করুন।</p>
+  <div class="tool-insight-grid">
+    <div class="tool-insight-card"><span>আনুমানিক মূল্য</span><strong>ফ্রি / ৳২,৪৪০/মাস</strong></div>
+    <div class="tool-insight-card"><span>অ্যাক্সেস</span><strong>ব্যবহারের আগে যাচাই করুন</strong></div>
+  </div>
+  <div class="tool-card-footer">
+    <a class="btn btn-ghost" href="/cursor/">টুলের বিস্তারিত</a>
+    <a class="btn btn-primary" href="https://cursor.com" target="_blank" rel="noopener noreferrer">টুল ব্যবহার করুন</a>
   </div>
 </article>
 <article class="tool-card" itemscope itemtype="https://schema.org/SoftwareApplication" data-category="productivity" data-pricing="ফ্রি / ৳৩,৫৩৮">
   <div class="tool-card-topline">
     <span class="category-tag">প্রোডাক্টিভিটি</span>
-    <div class="tool-card-topline-right"><span class="tool-rating-chip">★ 4.6</span></div>
+    <div class="tool-card-topline-right"></div>
   </div>
   <div class="tool-header tool-header-modern">
     <div class="tool-title-wrap tool-title-wrap-modern">
@@ -477,18 +395,46 @@
   <meta itemprop="operatingSystem" content="Web" />
   <p class="tool-desc" itemprop="description">AI অবতার দিয়ে প্রফেশনাল মার্কেটিং ভিডিও তৈরি করুন — ক্যামেরার সামনে না গিয়েই। ১০০+ ভাষায় ভয়েস ক্লোনিং সাপোর্ট।</p>
   <div class="tool-insight-grid">
-    <div class="tool-insight-card"><span>মূল্য</span><strong>চাহিদাভিত্তিক</strong></div>
-    <div class="tool-insight-card"><span>অ্যাক্সেস</span><strong>VPN লাগে না</strong></div>
+    <div class="tool-insight-card"><span>আনুমানিক মূল্য</span><strong>চাহিদাভিত্তিক</strong></div>
+    <div class="tool-insight-card"><span>অ্যাক্সেস</span><strong>ব্যবহারের আগে যাচাই করুন</strong></div>
   </div>
   <div class="tool-card-footer">
-    <a class="btn btn-ghost" href="/heygen/">বিস্তারিত দেখুন</a>
+    <a class="btn btn-ghost" href="/heygen/">টুলের বিস্তারিত</a>
     <a class="btn btn-primary" href="https://www.heygen.com" target="_blank" rel="noopener noreferrer">টুল ব্যবহার করুন</a>
+  </div>
+</article>
+<article class="tool-card" itemscope itemtype="https://schema.org/SoftwareApplication" data-category="productivity" data-pricing="ফ্রি / ৳৭৩২">
+  <div class="tool-card-topline">
+    <span class="category-tag">প্রোডাক্টিভিটি</span>
+    <div class="tool-card-topline-right"></div>
+  </div>
+  <div class="tool-header tool-header-modern">
+    <div class="tool-title-wrap tool-title-wrap-modern">
+      <div class="tool-logo-shell">
+        <img class="tool-logo" src="/assets/tool-marks/capcut-ai.svg" alt="CapCut AI logo" width="48" height="48" loading="lazy" decoding="async" />
+      </div>
+      <div class="tool-name-block">
+        <h3 class="tool-title" itemprop="name"><a href="/capcut-ai/">CapCut AI</a></h3>
+        <p class="tool-subtitle">প্রোডাক্টিভিটি</p>
+      </div>
+    </div>
+  </div>
+  <meta itemprop="applicationCategory" content="productivity" />
+  <meta itemprop="operatingSystem" content="Web" />
+  <p class="tool-desc" itemprop="description">বাংলাদেশে সবচেয়ে জনপ্রিয় ভিডিও এডিটিং অ্যাপ — AI ক্যাপশন, ব্যাকগ্রাউন্ড রিমুভাল ও অটো সাবটাইটেল ফিচার।</p>
+  <div class="tool-insight-grid">
+    <div class="tool-insight-card"><span>আনুমানিক মূল্য</span><strong>চাহিদাভিত্তিক</strong></div>
+    <div class="tool-insight-card"><span>অ্যাক্সেস</span><strong>ব্যবহারের আগে যাচাই করুন</strong></div>
+  </div>
+  <div class="tool-card-footer">
+    <a class="btn btn-ghost" href="/capcut-ai/">টুলের বিস্তারিত</a>
+    <a class="btn btn-primary" href="https://www.capcut.com" target="_blank" rel="noopener noreferrer">টুল ব্যবহার করুন</a>
   </div>
 </article>
 <article class="tool-card" itemscope itemtype="https://schema.org/SoftwareApplication" data-category="productivity" data-pricing="ফ্রি / ৳১,৪৬৪">
   <div class="tool-card-topline">
     <span class="category-tag">প্রোডাক্টিভিটি</span>
-    <div class="tool-card-topline-right"><span class="tool-rating-chip">★ 4.6</span></div>
+    <div class="tool-card-topline-right"></div>
   </div>
   <div class="tool-header tool-header-modern">
     <div class="tool-title-wrap tool-title-wrap-modern">
@@ -505,18 +451,46 @@
   <meta itemprop="operatingSystem" content="Web" />
   <p class="tool-desc" itemprop="description">Canva-র AI রাইটিং ও ডিজাইন টুল — মার্কেটিং পোস্টার, সোশ্যাল মিডিয়া গ্রাফিক ও বিজ্ঞাপন কপি একসাথে।</p>
   <div class="tool-insight-grid">
-    <div class="tool-insight-card"><span>মূল্য</span><strong>চাহিদাভিত্তিক</strong></div>
-    <div class="tool-insight-card"><span>অ্যাক্সেস</span><strong>VPN লাগে না</strong></div>
+    <div class="tool-insight-card"><span>আনুমানিক মূল্য</span><strong>চাহিদাভিত্তিক</strong></div>
+    <div class="tool-insight-card"><span>অ্যাক্সেস</span><strong>ব্যবহারের আগে যাচাই করুন</strong></div>
   </div>
   <div class="tool-card-footer">
-    <a class="btn btn-ghost" href="/canva-magic-write/">বিস্তারিত দেখুন</a>
+    <a class="btn btn-ghost" href="/canva-magic-write/">টুলের বিস্তারিত</a>
     <a class="btn btn-primary" href="https://www.canva.com" target="_blank" rel="noopener noreferrer">টুল ব্যবহার করুন</a>
+  </div>
+</article>
+<article class="tool-card" itemscope itemtype="https://schema.org/SoftwareApplication" data-category="image" data-pricing="ফ্রি / ৳১,০৯৮">
+  <div class="tool-card-topline">
+    <span class="category-tag">ইমেজ</span>
+    <div class="tool-card-topline-right"></div>
+  </div>
+  <div class="tool-header tool-header-modern">
+    <div class="tool-title-wrap tool-title-wrap-modern">
+      <div class="tool-logo-shell">
+        <img class="tool-logo" src="/assets/tool-marks/remove-bg.svg" alt="Remove.bg logo" width="48" height="48" loading="lazy" decoding="async" />
+      </div>
+      <div class="tool-name-block">
+        <h3 class="tool-title" itemprop="name"><a href="/remove-bg/">Remove.bg</a></h3>
+        <p class="tool-subtitle">ইমেজ</p>
+      </div>
+    </div>
+  </div>
+  <meta itemprop="applicationCategory" content="image" />
+  <meta itemprop="operatingSystem" content="Web" />
+  <p class="tool-desc" itemprop="description">এক ক্লিকে ছবির ব্যাকগ্রাউন্ড রিমুভ করুন — পণ্যের ছবি, প্রোফাইল ফটো ও ই-কমার্সের জন্য বাংলাদেশে সবচেয়ে বেশি ব্যবহৃত।</p>
+  <div class="tool-insight-grid">
+    <div class="tool-insight-card"><span>আনুমানিক মূল্য</span><strong>চাহিদাভিত্তিক</strong></div>
+    <div class="tool-insight-card"><span>অ্যাক্সেস</span><strong>ব্যবহারের আগে যাচাই করুন</strong></div>
+  </div>
+  <div class="tool-card-footer">
+    <a class="btn btn-ghost" href="/remove-bg/">টুলের বিস্তারিত</a>
+    <a class="btn btn-primary" href="https://www.remove.bg" target="_blank" rel="noopener noreferrer">টুল ব্যবহার করুন</a>
   </div>
 </article>
 <article class="tool-card" itemscope itemtype="https://schema.org/SoftwareApplication" data-category="coding" data-pricing="সম্পূর্ণ ফ্রি">
   <div class="tool-card-topline">
     <span class="category-tag">কোডিং</span>
-    <div class="tool-card-topline-right"><span class="tool-rating-chip">★ 4.5</span></div>
+    <div class="tool-card-topline-right"></div>
   </div>
   <div class="tool-header tool-header-modern">
     <div class="tool-title-wrap tool-title-wrap-modern">
@@ -533,12 +507,40 @@
   <meta itemprop="operatingSystem" content="Web" />
   <p class="tool-desc" itemprop="description">সম্পূর্ণ ফ্রি AI কোড অ্যাসিস্ট্যান্ট — GitHub Copilot-এর বিকল্প। ৭০+ প্রোগ্রামিং ল্যাঙ্গুয়েজ সাপোর্ট, কোনো ক্রেডিট কার্ড লাগে না।</p>
   <div class="tool-insight-grid">
-    <div class="tool-insight-card"><span>মূল্য</span><strong>চাহিদাভিত্তিক</strong></div>
-    <div class="tool-insight-card"><span>অ্যাক্সেস</span><strong>VPN লাগে না</strong></div>
+    <div class="tool-insight-card"><span>আনুমানিক মূল্য</span><strong>চাহিদাভিত্তিক</strong></div>
+    <div class="tool-insight-card"><span>অ্যাক্সেস</span><strong>ব্যবহারের আগে যাচাই করুন</strong></div>
   </div>
   <div class="tool-card-footer">
-    <a class="btn btn-ghost" href="/codeium/">বিস্তারিত দেখুন</a>
+    <a class="btn btn-ghost" href="/codeium/">টুলের বিস্তারিত</a>
     <a class="btn btn-primary" href="https://codeium.com" target="_blank" rel="noopener noreferrer">টুল ব্যবহার করুন</a>
+  </div>
+</article>
+<article class="tool-card" itemscope itemtype="https://schema.org/SoftwareApplication" data-category="llm" data-pricing="ফ্রি / ৳২,৪৪০">
+  <div class="tool-card-topline">
+    <span class="category-tag">LLM</span>
+    <div class="tool-card-topline-right"></div>
+  </div>
+  <div class="tool-header tool-header-modern">
+    <div class="tool-title-wrap tool-title-wrap-modern">
+      <div class="tool-logo-shell">
+        <img class="tool-logo" src="/assets/tool-marks/microsoft-copilot.svg" alt="Microsoft Copilot logo" width="48" height="48" loading="lazy" decoding="async" />
+      </div>
+      <div class="tool-name-block">
+        <h3 class="tool-title" itemprop="name"><a href="https://copilot.microsoft.com/">Microsoft Copilot</a></h3>
+        <p class="tool-subtitle">LLM</p>
+      </div>
+    </div>
+  </div>
+  <meta itemprop="applicationCategory" content="llm" />
+  <meta itemprop="operatingSystem" content="Web" />
+  <p class="tool-desc" itemprop="description">Microsoft-এর GPT-4 চালিত ফ্রি AI — Bing সার্চ, Word, Excel ও Teams-এ সরাসরি ব্যবহার করুন। বাংলাদেশে VPN ছাড়া কাজ করে।</p>
+  <div class="tool-insight-grid">
+    <div class="tool-insight-card"><span>আনুমানিক মূল্য</span><strong>চাহিদাভিত্তিক</strong></div>
+    <div class="tool-insight-card"><span>অ্যাক্সেস</span><strong>ব্যবহারের আগে যাচাই করুন</strong></div>
+  </div>
+  <div class="tool-card-footer">
+    <a class="btn btn-ghost" href="https://copilot.microsoft.com/">টুলের ওয়েবসাইট</a>
+    <a class="btn btn-primary" href="https://copilot.microsoft.com" target="_blank" rel="noopener noreferrer">টুল ব্যবহার করুন</a>
   </div>
 </article>
 <!-- PRERENDER:TOOLS:END --></div><div class="load-more"><button id="loadMoreBtn" type="button" class="btn btn-ghost" data-i18n="load_more">আরও টুলস দেখুন</button></div><noscript><p>সার্চ ও ফিল্টারের জন্য JavaScript চালু করুন। টুলের লিংক সরাসরি ব্যবহার করতে পারবেন।</p></noscript>

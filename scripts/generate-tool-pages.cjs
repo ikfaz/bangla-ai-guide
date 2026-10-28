@@ -224,7 +224,7 @@ function buildGenericProfile(tool, slug, conversionRate) {
   const categoryLabel = categoryLabelMap[tool.category] || "অন্যান্য";
   const intro = [
     `${tool.name} হলো ${categoryLabel} ক্যাটাগরির একটি টুল যা বাংলাদেশি ব্যবহারকারীদের জন্য ${tool.works_in_bd ? "বাস্তবভাবে ব্যবহারযোগ্য" : "ব্যবহারের আগে region support যাচাই করা উচিত"}।`,
-    tool.review_bn || `${tool.name} ব্যবহার করার আগে official pricing, payment method, এবং workflow fit যাচাই করা ভালো।`,
+    `${tool.name} ব্যবহার করার আগে official pricing, payment method, এবং workflow fit যাচাই করা ভালো।`,
   ];
   return {
     title: `${tool.name} বাংলাদেশে ব্যবহার, দাম ও রিভিউ | বাংলা AI গাইড`,
@@ -270,8 +270,8 @@ function pickRelatedTools(tools, currentTool) {
   return tools
     .filter((tool) => tool.name !== currentTool.name)
     .sort((a, b) => {
-      const aScore = (a.category === currentTool.category ? 50 : 0) + (Math.abs(Number(a.rating || 0) - Number(currentTool.rating || 0)) < 0.5 ? 10 : 0);
-      const bScore = (b.category === currentTool.category ? 50 : 0) + (Math.abs(Number(b.rating || 0) - Number(currentTool.rating || 0)) < 0.5 ? 10 : 0);
+      const aScore = (a.category === currentTool.category ? 50 : 0);
+      const bScore = (b.category === currentTool.category ? 50 : 0);
       return bScore - aScore || String(a.name).localeCompare(String(b.name));
     })
     .slice(0, 4);
@@ -292,7 +292,7 @@ function renderRelatedTools(tools, currentTool) {
           </div>
           <p class="tool-desc">${escapeHtml(tool.description_bn || "")}</p>
           <div class="tool-meta">
-            <p class="rating">★ ${Number(tool.rating || 0).toLocaleString("bn-BD", { minimumFractionDigits: 1, maximumFractionDigits: 1 })}</p>
+
             <a class="btn btn-ghost" href="../${escapeHtml(slug)}/">দেখুন →</a>
           </div>
         </article>
@@ -342,13 +342,8 @@ function renderPage(tool, tools, conversionRate) {
   const priceInfo = getPriceInfo(tool, conversionRate);
   const profile = slug === "notebooklm" ? buildNotebookLmProfile(tool, slug, conversionRate) : buildGenericProfile(tool, slug, conversionRate);
   const relatedHtml = renderRelatedTools(tools, tool);
-  const badgeHtml = `
-    <span class="badge badge--accent">${tool.works_in_bd ? "✅ BD-তে কাজ করে" : "⚠️ BD-তে availability check"}</span>
-    <span class="badge ${tool.no_vpn ? "badge--accent" : "badge--neutral"}">${tool.no_vpn ? "🔵 VPN লাগে না" : "⚠️ VPN লাগতে পারে"}</span>
-    ${getPaymentBadges(tool)}
-  `;
+  const badgeHtml = `<span class="badge badge--neutral">অ্যাক্সেস ও পেমেন্ট যাচাই বাকি</span>`;
   const schema = buildSchema(tool, canonicalUrl, priceInfo, profile);
-  const verifiedText = escapeHtml(tool.verified || "মার্চ ২০২৬");
   const actionUrl = escapeHtml((tool.affiliate_approved === true && tool.affiliate_url) || tool.direct_url || "#");
   const pricingUrl = escapeHtml(tool.pricing_url || tool.direct_url || tool.affiliate_url || "#");
   const linksHtml = profile.links.map((link) => `<li><a href="${escapeHtml(link.href)}">${escapeHtml(link.text)}</a></li>`).join("");
@@ -376,7 +371,8 @@ function renderPage(tool, tools, conversionRate) {
   <script src="/js/consent.js?v=2026-10-26-trust" defer></script>
   <script src="/js/analytics.js?v=2026-10-26-trust" defer></script>
   <script src="../js/tools-data.js" defer></script>
-  <script src="/js/seo-pages.js?v=2026-10-26-trust" defer></script>
+  <script src="/js/tool-routes.js?v=2026-10-27" defer></script>
+  <script src="/js/seo-pages.js?v=2026-10-27-routes" defer></script>
   <script type="application/ld+json">${JSON.stringify(schema)}</script>
 </head>
 <body data-page-slug="${escapeHtml(slug)}">
@@ -420,17 +416,14 @@ function renderPage(tool, tools, conversionRate) {
       </div>
       <div class="badges detail-badges">${badgeHtml}</div>
       <p class="detail-description">${escapeHtml(tool.description_bn || profile.description)}</p>
-      <blockquote class="review-block detail-review">
-        <p>"${escapeHtml(tool.review_bn || `${tool.name} সম্পর্কে বাংলা রিভিউ ও ব্যবহার গাইড এখানে দেয়া হয়েছে।`)}"</p>
-        <p class="review-source">— BanglaAIGuide</p>
-      </blockquote>
+      <aside class="review-block detail-review" aria-label="তথ্য যাচাইয়ের অবস্থা"><p><strong>যাচাইয়ের অবস্থা:</strong> এই টুলের জন্য পরীক্ষার নথি ও স্কোরের পদ্ধতি প্রকাশিত হয়নি। তাই রেটিং বা ব্যক্তিগত ব্যবহারের দাবি দেখানো হচ্ছে না। নিচের পুরোনো গাইডের দাম, সুবিধা, বাংলাদেশে অ্যাক্সেস ও পেমেন্টের তথ্য পুনরায় যাচাই বাকি; সিদ্ধান্ত নেওয়ার আগে সেবাটির বর্তমান তথ্য দেখুন।</p><p><a href="/editorial-policy/">আমাদের সম্পাদনা ও সংশোধন নীতি</a></p></aside>
       <div class="detail-meta">
         <div>
           <p class="price">${escapeHtml(priceInfo.usdLabel)} | ${escapeHtml(priceInfo.bdtLabel)}</p>
           <a class="pricing-link" href="${pricingUrl}" target="_blank" rel="noopener noreferrer">💰 দাম দেখুন</a>
-          <span class="verified-date">🗓️ যাচাই: ${verifiedText}</span>
+          <span class="verified-date">দাম ও অ্যাক্সেস পুনরায় যাচাই বাকি</span>
         </div>
-        <p class="rating">★ ${Number(tool.rating || 0).toLocaleString("bn-BD", { minimumFractionDigits: 1, maximumFractionDigits: 1 })}</p>
+
       </div>
       <div class="seo-cta-actions">
         <a class="btn btn-primary detail-cta" data-tool-slug="${escapeHtml(slug)}" data-outbound-tool="true" href="${actionUrl}" target="_blank" rel="nofollow noopener noreferrer">এখনই ব্যবহার করুন →</a>

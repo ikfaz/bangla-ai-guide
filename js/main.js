@@ -107,7 +107,7 @@
       hero_stat_tools: "মোট টুল",
       hero_stat_free: "ফ্রি অপশন",
       hero_stat_categories: "ক্যাটাগরি",
-      hero_stat_bd: "VPN ছাড়া",
+      hero_stat_bd: "বাংলা টুল পরিচিতি",
       category_spotlight_kicker: "ডিরেক্টরি এক্সপ্লোর",
       category_spotlight_title: "ক্যাটাগরি দিয়ে AI টুল খুঁজুন",
       category_spotlight_copy: "Futurepedia-এর মতো browse-first অনুভূতি রেখে আমরা সবচেয়ে দরকারি use-case গুলোকে পরিষ্কার কার্ডে সাজিয়েছি।",
@@ -226,7 +226,7 @@
       footer_terms: "শর্তাবলী",
       footer_disclaimer: "ডিসক্লেইমার",
       footer_contact: "যোগাযোগ",
-      tool_meta_price: "দাম",
+      tool_meta_price: "আনুমানিক দাম",
       tool_meta_access: "অ্যাক্সেস",
       tool_access_ready: "সরাসরি চলে",
       tool_access_vpn: "VPN লাগতে পারে",
@@ -285,7 +285,7 @@
       hero_stat_tools: "Total tools",
       hero_stat_free: "Free options",
       hero_stat_categories: "Categories",
-      hero_stat_bd: "No VPN",
+      hero_stat_bd: "Tool profiles",
       category_spotlight_kicker: "Explore the Directory",
       category_spotlight_title: "Find AI tools by category",
       category_spotlight_copy: "We kept a browse-first, editorial directory feel while organizing the most useful use-cases into clearer cards.",
@@ -404,7 +404,7 @@
       footer_terms: "Terms",
       footer_disclaimer: "Disclaimer",
       footer_contact: "Contact",
-      tool_meta_price: "Price",
+      tool_meta_price: "Estimated price",
       tool_meta_access: "Access",
       tool_access_ready: "Ready",
       tool_access_vpn: "VPN maybe",
@@ -632,6 +632,7 @@
   }
 
   function getPriceInfo(tool) {
+    if (typeof tool.usdPrice === "number") return { usdLabel: "Check provider pricing", bdtLabel: state.language === "en" ? "Check provider pricing" : "প্রদানকারীর দাম দেখুন", paidBdt: null, isFree: false };
     const raw = String(tool.usdPrice || "").trim();
     const lowerRaw = raw.toLowerCase();
     const hasMonthly = /\/mo/i.test(raw);
@@ -858,11 +859,16 @@
   }
 
   function getToolPagePath(slug) {
-    return `${encodeURIComponent(slug)}/`;
+    return window.bagToolRoutes?.resolve(slug)?.href || "/#toolsSection";
+  }
+
+  function getToolLinkLabel(tool) {
+    const route = window.bagToolRoutes?.resolve(tool);
+    return route ? (state.language === "en" ? route.labelEn : route.labelBn) : t("btn_visit_tool");
   }
 
   function getToolLandingUrl(tool) {
-    return `https://banglaaiguide.com/${getToolPagePath(toSlug(tool.name))}`;
+    return new URL(getToolPagePath(toSlug(tool.name)), "https://banglaaiguide.com").href;
   }
 
   function getFacebookShareUrl(tool) {
@@ -870,7 +876,7 @@
   }
 
   function getWhatsAppShareUrl(tool) {
-    const shareText = `${tool.name} — বাংলাদেশ থেকে কাজ করে!\nদেখুন: ${getToolLandingUrl(tool)}\nবাংলা AI গাইডে আরও AI টুলস →`;
+    const shareText = `${tool.name} — AI টুল সম্পর্কে জানুন\nদেখুন: ${getToolLandingUrl(tool)}\nবাংলা AI গাইডে আরও AI টুলস →`;
     return `https://wa.me/?text=${encodeURIComponent(shareText)}`;
   }
 
@@ -1066,27 +1072,11 @@
   }
 
   function getRankedTools(collection = data) {
-    return [...collection].sort((a, b) => Number(b.rating || 0) - Number(a.rating || 0) || String(a.name).localeCompare(String(b.name)));
+    return [...collection];
   }
 
   function getBadges(tool) {
-    const bdBadge = tool.works_in_bd
-      ? `<span class="badge badge--accent">${escapeHtml(t("badge_bd_yes"))}</span>`
-      : `<span class="badge badge--neutral">${escapeHtml(t("badge_bd_limited"))}</span>`;
-
-    const vpnBadge = tool.no_vpn
-      ? `<span class="badge badge--accent">${escapeHtml(t("badge_vpn_no"))}</span>`
-      : `<span class="badge badge--neutral">${escapeHtml(t("badge_vpn_maybe"))}</span>`;
-
-    let paymentBadge = `<span class="badge badge--neutral">${escapeHtml(t("badge_payment_card"))}</span>`;
-    if (tool.payment === "bkash") {
-      paymentBadge = `<span class="badge badge--accent">${escapeHtml(t("badge_payment_bkash"))}</span>`;
-    }
-    if (tool.payment === "free") {
-      paymentBadge = `<span class="badge badge--accent">${escapeHtml(t("badge_payment_free"))}</span>`;
-    }
-
-    return `${bdBadge}${vpnBadge}${paymentBadge}`;
+    return '<span class="badge badge--neutral">' + (state.language === "en" ? "Check availability with the provider" : "প্রদানকারীর কাছে অ্যাক্সেস যাচাই করুন") + '</span>';
   }
 
   function getShowcaseTools() {
@@ -1160,8 +1150,6 @@
 
     const detailUrl = getToolPagePath(toSlug(tool.name));
     const showcaseTags = getShowcaseTags(tool);
-    const score = localizedNum(getShowcaseScore(tool));
-    const bdStatus = tool.works_in_bd ? "✓" : "•";
 
     return `
       <article class="trending-card">
@@ -1178,20 +1166,10 @@
               </div>
             </div>
           </div>
-          <div class="trending-card-stats">
-            <div class="trending-stat-box">
-              <span>${escapeHtml(t("showcase_score"))}</span>
-              <strong>${score}</strong>
-            </div>
-            <div class="trending-stat-box trending-stat-box--accent">
-              <span>${escapeHtml(t("showcase_access"))}</span>
-              <strong>${escapeHtml(bdStatus)}</strong>
-            </div>
-          </div>
         </div>
         <div class="trending-card-actions">
           <div class="badges">${getBadges(tool)}</div>
-          <a class="btn btn-ghost" href="${escapeHtml(detailUrl)}">${escapeHtml(t("btn_view_tool"))}</a>
+          <a class="btn btn-ghost" href="${escapeHtml(detailUrl)}">${escapeHtml(getToolLinkLabel(tool))}</a>
         </div>
       </article>
     `;
@@ -1216,11 +1194,11 @@
     const priceInfo = getPriceInfo(tool);
     const showcaseTags = getShowcaseTags(tool);
     const isLead = index === 0;
-    const rating = tool.rating ? Number(tool.rating).toFixed(1) : null;
+    const rating = null; // Scores are hidden until a documented evaluation exists.
     const domain = getToolDomain(tool);
 
     return `
-      <article class="hero-feature-card${isLead ? " hero-feature-card--lead" : ""}">
+      <article class="hero-feature-card${isLead ? " hero-feature-card--lead" : ""}" data-tool-id="${escapeHtml(toSlug(tool.name))}">
         <div class="hero-feature-topline">
           <span class="category-tag">${escapeHtml(getHomepageCategoryLabel(getHomepageCategory(tool)))}</span>
           ${rating ? `<span class="hero-feature-rating">★ ${escapeHtml(rating)}</span>` : ""}
@@ -1240,7 +1218,7 @@
         </div>
         <div class="hero-feature-footer">
           <strong>${escapeHtml(priceInfo.bdtLabel)}</strong>
-          <a href="${escapeHtml(detailUrl)}">${escapeHtml(t("btn_view_tool"))}</a>
+          <a href="${escapeHtml(detailUrl)}">${escapeHtml(getToolLinkLabel(tool))}</a>
         </div>
       </article>
     `;
@@ -1299,7 +1277,7 @@
     const appCategory = getLocalizedApplicationCategory(tool.category);
     const homepageCategory = getHomepageCategory(tool);
     const priceInfo = getPriceInfo(tool);
-    const rating = tool.rating ? Number(tool.rating).toFixed(1) : null;
+    const rating = null; // Scores are hidden until a documented evaluation exists.
     const domain = getToolDomain(tool);
 
     const tags = [];
@@ -1308,15 +1286,13 @@
     } else if (String(tool.usdPrice || "").toLowerCase().includes("free")) {
       tags.push(t("tag_freemium"));
     }
-    if (tool.works_in_bd) {
-      tags.push(t("tag_bd_friendly"));
-    }
+
     if (!tags.length) {
       tags.push(t("tag_ai_tool"));
     }
 
     return `
-      <article class="tool-card" itemscope itemtype="https://schema.org/SoftwareApplication" data-category="${escapeHtml(homepageCategory || "other")}" data-pricing="${escapeHtml(tool.pricing || "unknown")}">
+      <article class="tool-card" data-tool-id="${escapeHtml(toSlug(tool.name))}" itemscope itemtype="https://schema.org/SoftwareApplication" data-category="${escapeHtml(homepageCategory || "other")}" data-pricing="${escapeHtml(tool.pricing || "unknown")}">
         <div class="tool-card-topline">
           <span class="category-tag">${escapeHtml(getHomepageCategoryLabel(homepageCategory) || (state.language === "en" ? "Other" : "অন্যান্য"))}</span>
           <div class="tool-card-topline-right">
@@ -1350,14 +1326,14 @@
           </div>
           <div class="tool-insight-card">
             <span>${escapeHtml(t("tool_meta_access"))}</span>
-            <strong>${escapeHtml(tool.no_vpn ? t("tool_access_ready") : t("tool_access_vpn"))}</strong>
+            <strong>${escapeHtml(state.language === "en" ? "Check before use" : "ব্যবহারের আগে যাচাই করুন")}</strong>
           </div>
         </div>
 
         <div class="badges">${tags.map((tag) => `<span class="badge badge--accent">${escapeHtml(tag)}</span>`).join("")}</div>
 
         <div class="tool-card-footer">
-          <a class="btn btn-ghost" href="${escapeHtml(detailUrl)}">${escapeHtml(t("btn_view_tool"))}</a>
+          <a class="btn btn-ghost" href="${escapeHtml(detailUrl)}">${escapeHtml(getToolLinkLabel(tool))}</a>
           <a class="btn btn-primary" href="${escapeHtml(directUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(t("btn_visit_tool"))}</a>
         </div>
       </article>
@@ -1438,13 +1414,13 @@
     const totalTools = data.length;
     const freeTools = data.filter((tool) => isFullyFree(tool)).length;
     const categoryCount = new Set(data.map((tool) => getHomepageCategory(tool))).size;
-    const noVpnCount = data.filter((tool) => tool.no_vpn).length;
+    const profileCount = data.filter((tool) => window.bagToolRoutes?.resolve(tool)?.isProfile).length;
 
     refs.heroStats.innerHTML = [
       { value: localizedNum(totalTools), label: t("hero_stat_tools") },
       { value: localizedNum(freeTools), label: t("hero_stat_free") },
       { value: localizedNum(categoryCount), label: t("hero_stat_categories") },
-      { value: localizedNum(noVpnCount), label: t("hero_stat_bd") },
+      { value: localizedNum(profileCount), label: t("hero_stat_bd") },
     ].map((item) => `
       <article class="hero-stat-card">
         <strong>${escapeHtml(item.value)}</strong>

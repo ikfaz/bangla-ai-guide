@@ -8,6 +8,7 @@ const path = require("path");
 
 const steps = [
   "fix-mojibake-slugs.cjs",
+  "generate-tool-routes.cjs",
   "meta-lint.cjs",
   "prerender-homepage.cjs",
   "inject-pillar-links.cjs",
@@ -17,6 +18,7 @@ const steps = [
   "inject-author-block.cjs",
   "generate-comparison-pages.cjs",
   "regenerate-blog-listing.cjs",
+  "repair-tool-links.cjs",
   "generate-search-index.cjs",
   "generate-feed.cjs",
   "generate-sitemap.cjs",

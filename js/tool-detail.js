@@ -45,8 +45,8 @@
   const esc = (t) => String(t ?? "").replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;").replaceAll("'", "&#039;");
   const toSlug = (v) => String(v || "").trim().toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
   const bnNum = (v) => Number(v).toLocaleString("bn-BD");
-  const getToolPagePath = (slug) => `${encodeURIComponent(slug)}/`;
-  const getToolLandingUrl = (tool) => `https://banglaaiguide.com/${getToolPagePath(toSlug(tool.name))}`;
+  const getToolPagePath = (slug) => window.bagToolRoutes?.resolve(slug)?.href || "/#toolsSection";
+  const getToolLandingUrl = (tool) => new URL(getToolPagePath(toSlug(tool.name)), "https://banglaaiguide.com").href;
   const getFacebookShareUrl = (tool) => `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(getToolLandingUrl(tool))}`;
   const getWhatsAppShareUrl = (tool) => `https://wa.me/?text=${encodeURIComponent(`${tool.name} — বাংলাদেশ থেকে কাজ করে!\nদেখুন: ${getToolLandingUrl(tool)}\nবাংলা AI গাইডে আরও AI টুলস →`)}`;
   const getToolDomain = (tool) => {
@@ -771,10 +771,17 @@
     if (!Array.isArray(data) || !data.length) return renderNotFound();
     const toolSlug = new URLSearchParams(window.location.search).get("tool");
     if (!toolSlug) return renderNotFound();
-    const slug = toolSlug.toLowerCase();
+    const legacyAliases = { mistral: "mistral-ai", kling: "kling-ai", runway: "runway-ml", leonardo: "leonardo-ai", suno: "suno-ai", jasper: "jasper-ai", "play-ht": "playht" };
+    const slug = legacyAliases[toolSlug.toLowerCase()] || toolSlug.toLowerCase();
     const tool = data.find((item) => toSlug(item.name) === slug);
     if (!tool) return renderNotFound();
-    renderTool(tool);
+    const route = window.bagToolRoutes?.resolve(tool);
+    if (route?.isProfile) { window.location.replace(route.href); return; }
+    refs.breadcrumb.innerHTML = '<a href="/">হোম</a> / ' + esc(tool.name);
+    refs.detailContent.innerHTML = '<h1>' + esc(tool.name) + '</h1><p>এই টুলের বিস্তারিত বাংলা পরিচিতি এখনো প্রকাশ করা হয়নি। বর্তমান তথ্য প্রদানকারীর ওয়েবসাইটে দেখুন।</p><a class="btn btn-primary" href="' + esc(route?.href || tool.direct_url) + '" rel="noopener noreferrer">টুলের ওয়েবসাইট →</a>';
+    refs.relatedGrid.innerHTML = "";
+    if (refs.detailSeoSection) refs.detailSeoSection.innerHTML = "";
+    if (refs.detailFaqSchema) refs.detailFaqSchema.textContent = "";
   }
 
   init();

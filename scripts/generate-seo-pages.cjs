@@ -786,7 +786,8 @@ function renderPage(page) {
   <script src="/js/analytics.js?v=2026-10-26-trust" defer></script>
   <script type="application/ld+json">${JSON.stringify(schema)}</script>
   <script src="/js/tools-data.js" defer></script>
-  <script src="/js/seo-pages.js" defer></script>
+  <script src="/js/tool-routes.js?v=2026-10-27" defer></script>
+  <script src="/js/seo-pages.js?v=2026-10-27-routes" defer></script>
   <script src="/js/mailchimp.js?v=2026-10-26-trust" defer></script>
 
 

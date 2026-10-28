@@ -49,7 +49,7 @@
       const detailLink = card.querySelector('.tool-title a, .hero-feature-title a') || (card.matches('a') ? card : null);
       if (!detailLink) return;
       const detailUrl = new URL(detailLink.href, window.location.href);
-      const toolId = detailUrl.pathname.split('/').filter(Boolean).pop();
+      const toolId = card.dataset.toolId || detailUrl.pathname.split('/').filter(Boolean).pop();
       const source = card.closest('#toolsGrid') ? 'directory' : 'featured';
       const targetUrl = new URL(link.href, window.location.href);
       track(targetUrl.origin === window.location.origin ? 'directory_result_open' : 'tool_outbound', { tool_id: toolId, source });

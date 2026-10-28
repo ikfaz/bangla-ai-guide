@@ -128,10 +128,7 @@
   }
 
   function getToolPageHref(slug) {
-    const encodedSlug = encodeURIComponent(slug);
-    const pathname = window.location.pathname || "";
-    const isNestedToolPage = pathname.includes("/tools/") || /^\/[^/]+\/$/.test(pathname) || /\/[^/]+\/index\.html$/.test(pathname);
-    return isNestedToolPage ? `../${encodedSlug}/` : `${encodedSlug}/`;
+    return window.bagToolRoutes?.resolve(slug)?.href || "/#toolsSection";
   }
 
   function escapeHtml(value) {
@@ -279,7 +276,7 @@
         link.className = "tool-inline-link";
         link.href = getToolPageHref(entry.slug);
         link.setAttribute("data-tool-slug", entry.slug);
-        link.setAttribute("aria-label", `${matched} বিস্তারিত দেখুন`);
+        link.setAttribute("aria-label", `${matched}: ${window.bagToolRoutes?.resolve(entry.slug)?.labelBn || "টুল দেখুন"}`);
         link.innerHTML = escapeHtml(matched);
         fragment.appendChild(link);
 

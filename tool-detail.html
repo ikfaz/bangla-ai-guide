@@ -18,26 +18,11 @@
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Syne:wght@500;700;800&display=swap" />
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Syne:wght@500;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
-  <script>
-  (() => {
-    const aliases = {
-      mistral: "mistral-ai",
-      kling: "kling-ai",
-      runway: "runway-ml",
-      leonardo: "leonardo-ai",
-      suno: "suno-ai",
-      jasper: "jasper-ai"
-    };
-    const params = new URLSearchParams(window.location.search);
-    const rawSlug = params.get("tool");
-    if (!rawSlug) return;
-    const slug = aliases[rawSlug] || rawSlug;
-    window.location.replace(`/${encodeURIComponent(slug)}/`);
-  })();
-  </script>
+
   <script type="application/ld+json" id="detailFaqSchema"></script>
   <script src="js/tools-data.js" defer></script>
-  <script src="js/tool-detail.js?v=2026-10-26-trust" defer></script>
+  <script src="/js/tool-routes.js?v=2026-10-27" defer></script>
+  <script src="js/tool-detail.js?v=2026-10-27-routes" defer></script>
   <script src="/js/consent.js?v=2026-10-26-trust" defer></script>
   <script src="/js/analytics.js?v=2026-10-26-trust" defer></script>
 
