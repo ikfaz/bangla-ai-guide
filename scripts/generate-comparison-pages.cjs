@@ -7,7 +7,7 @@
  * Inputs:
  *   - js/tools-data.js (parsed via eval-sandbox)
  *   - A curated list of high-search-volume pairs (CURATED) plus
- *     auto-generated pairs within same category (CATEGORY_AUTO).
+ *     the preserved published pair list (comparison-pairs.json).
  *
  * Each page:
  *   - Unique <title>, description, og tags
@@ -104,27 +104,10 @@ const CURATED_PAIRS = [
   ['Suno AI', 'ElevenLabs'],
 ];
 
-function autoCategoryPairs(tools) {
-  const byCat = {};
-  for (const t of tools) {
-    const c = t.category || 'other';
-    (byCat[c] ||= []).push(t);
-  }
-  const pairs = [];
-  for (const c in byCat) {
-    const list = byCat[c];
-    // pair within category: top-rated only (avoid quadratic explosion)
-    const top = list.slice().sort((x, y) => (y.rating || 0) - (x.rating || 0)).slice(0, 4);
-    for (let i = 0; i < top.length; i++)
-      for (let j = i + 1; j < top.length; j++)
-        pairs.push([top[i].name, top[j].name]);
-  }
-  return pairs;
-}
-
 // ---------- meta helpers ----------
 
 function priceLabel(t) {
+  if (t.priceSummary_bn) return t.priceSummary_bn;
   if (t.pricing === 'free') return 'সম্পূর্ণ ফ্রি';
   if (t.pricing === 'freemium') return 'Freemium (ফ্রি + paid plans)';
   if (t.pricing === 'paid') return 'Paid';
@@ -187,8 +170,8 @@ function buildPage(a, b) {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2026-10-31" />
+  <link rel="shortcut icon" href="/favicon.ico?v=2026-10-31" />
   <meta name="theme-color" content="#0A0A0F" />
   <title>${escapeHtml(title)}</title>
   <meta name="description" content="${escapeHtml(desc)}" />
@@ -484,7 +467,8 @@ function run() {
     if (!pairsSet.has(key)) pairsSet.set(key, [a, b]);
   };
   CURATED_PAIRS.forEach(p => addPair(p[0], p[1]));
-  autoCategoryPairs(tools).forEach(p => addPair(p[0], p[1]));
+  // Preserve published comparisons without treating unverified ratings as rankings.
+  require('./comparison-pairs.json').forEach(p => addPair(p[0], p[1]));
 
   // For "other pairs" suggestions
   ALL_PAIRS_CACHE = Array.from(pairsSet.values()).map(([a, b]) => ({

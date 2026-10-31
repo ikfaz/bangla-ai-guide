@@ -62,6 +62,7 @@ function categoryLabel(cat) {
 }
 
 function bdtPrice(tool, rate) {
+  if (tool.priceSummary_bn) return tool.priceSummary_bn;
   if (tool.pricing === "free") return "৳০ — ফ্রি";
   const m = String(tool.usdPrice || "").match(/\$(\d+(?:\.\d+)?)/);
   if (!m) return "চাহিদাভিত্তিক";

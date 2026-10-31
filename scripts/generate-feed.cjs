@@ -64,8 +64,8 @@ function collectPosts() {
   return posts.sort((a, b) => (b.sortKey < a.sortKey ? -1 : 1));
 }
 
-function buildFeed(posts) {
-  const now = new Date().toUTCString();
+function buildFeed(posts, buildDate = new Date()) {
+  const now = buildDate.toUTCString();
   const items = posts
     .map((p) => {
       const url = `${SITE}/blog/${p.slug}/`;
@@ -94,7 +94,27 @@ ${items}
 `;
 }
 
-const posts = collectPosts();
-const xml = buildFeed(posts);
-fs.writeFileSync(path.join(ROOT, "feed.xml"), xml, "utf8");
-console.log(`Wrote feed.xml with ${posts.length} blog posts`);
+function writeFeed(filePath, posts, buildDate = new Date()) {
+  const xml = buildFeed(posts, buildDate);
+  const previous = fs.existsSync(filePath) ? fs.readFileSync(filePath, "utf8") : "";
+  const dateTag = /<lastBuildDate>([^<]*)<\/lastBuildDate>/;
+  const previousDate = previous.match(dateTag)?.[1];
+  // Preserve the last meaningful feed update, not the time of an unrelated build.
+  // Normalize checkout line endings only; changes to any other metadata or item
+  // still produce a new feed. Invalid/missing dates are repaired on the next run.
+  const withoutBuildDate = (value) => value.replace(/\r\n/g, "\n").replace(dateTag, "");
+  if (previousDate && Number.isFinite(Date.parse(previousDate)) &&
+      withoutBuildDate(previous) === withoutBuildDate(xml)) {
+    return false;
+  }
+  fs.writeFileSync(filePath, xml, "utf8");
+  return true;
+}
+
+if (require.main === module) {
+  const posts = collectPosts();
+  const changed = writeFeed(path.join(ROOT, "feed.xml"), posts);
+  console.log(`${changed ? "Wrote" : "Unchanged"} feed.xml with ${posts.length} blog posts`);
+}
+
+module.exports = { buildFeed, writeFeed };

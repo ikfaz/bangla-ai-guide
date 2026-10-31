@@ -632,6 +632,13 @@
   }
 
   function getPriceInfo(tool) {
+    // Reviewed summaries keep billing context; they are not local checkout quotes.
+    if (tool.priceSummary_bn) return {
+      usdLabel: tool.usdPrice || "Check provider pricing",
+      bdtLabel: state.language === "en" ? tool.priceSummary_en : tool.priceSummary_bn,
+      paidBdt: null,
+      isFree: tool.pricing === "free",
+    };
     if (typeof tool.usdPrice === "number") return { usdLabel: "Check provider pricing", bdtLabel: state.language === "en" ? "Check provider pricing" : "প্রদানকারীর দাম দেখুন", paidBdt: null, isFree: false };
     const raw = String(tool.usdPrice || "").trim();
     const lowerRaw = raw.toLowerCase();

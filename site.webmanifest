@@ -1,25 +1,25 @@
 {
   "name": "BanglaAIGuide - বাংলা AI গাইড",
   "short_name": "BanglaAIGuide",
-  "description": "বাংলাদেশের #১ ভেরিফাইড AI টুলস ডিরেক্টরি এবং গাইড",
+  "description": "বাংলায় AI টুলস, ব্যবহারিক গাইড ও শেখার সহায়তা",
   "start_url": "/",
   "scope": "/",
   "icons": [
     {
-      "src": "/web-app-manifest-192x192.png",
+      "src": "/web-app-manifest-192x192.png?v=2026-10-31",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "maskable"
     },
     {
-      "src": "/web-app-manifest-512x512.png",
+      "src": "/web-app-manifest-512x512.png?v=2026-10-31",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#16a34a",
-  "background_color": "#0a0f1e",
+  "theme_color": "#175b43",
+  "background_color": "#fafbf7",
   "display": "standalone",
   "lang": "bn",
   "dir": "ltr"

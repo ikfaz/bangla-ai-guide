@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2026-10-31" />
+  <link rel="shortcut icon" href="/favicon.ico?v=2026-10-31" />
   <meta name="theme-color" content="#0A0A0F" />
   <title>AI টুলস তুলনা — ChatGPT, Claude, Midjourney পাশাপাশি দেখুন | বাংলা AI গাইড</title>
   <meta name="description" content="যেকোনো AI টুল পাশাপাশি তুলনা করুন — দাম, ফিচার, বাংলাদেশ থেকে অ্যাক্সেস, payment method। ChatGPT vs Claude, Midjourney vs Flux, Cursor vs Copilot — সব এক জায়গায়।" />
@@ -26,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://logo.clearbit.com" />
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700;800&family=Syne:wght@500;700;800&display=swap" rel="stylesheet" />
-  <script src="/js/tools-data.js?v=2026-05-26" defer></script>
+  <script src="/js/tools-data.js?v=2026-10-28-evidence" defer></script>
   <script src="/js/tool-routes.js?v=2026-10-27" defer></script>
   <script src="/js/search-overlay.js?v=2026-05-26" defer></script>
   <script src="/js/newsletter-popup.js?v=2026-05-26" defer></script>
@@ -384,7 +384,7 @@
       field('টুলস', function(t){ return '<h3 style="margin:0;font-family:var(--font-display);font-size:22px;font-weight:700">' + escapeHtml(t.name) + '</h3>'; }),
       field('বিবরণ', function(t){ return escapeHtml(t.description_bn || ''); }),
       field('ক্যাটাগরি', function(t){ return '<span class="badge" style="background:var(--surface-3);color:var(--text)">' + escapeHtml(t.category) + '</span>'; }),
-      field('দাম (USD)', function(t){ return escapeHtml(t.usdPrice || '—'); }),
+      field('দাম ও বিলিং', function(t){ return escapeHtml(t.priceSummary_bn || t.usdPrice || '—'); }),
       field('পেমেন্ট', function(t){
         var p = t.payment;
         if (p === 'card') return '<span class="badge amber">কার্ড লাগবে</span>';

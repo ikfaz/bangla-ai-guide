@@ -765,12 +765,12 @@ function renderPage(page) {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="shortcut icon" href="/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" href="/favicon-96x96.png?v=2026-10-31" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2026-10-31" />
+  <link rel="shortcut icon" href="/favicon.ico?v=2026-10-31" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2026-10-31" />
   <meta name="apple-mobile-web-app-title" content="MyWebSite" />
-  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="manifest" href="/site.webmanifest?v=2026-10-31" />
   <meta name="theme-color" content="#059669" />
   <title>${escapeHtml(page.title)}</title>
   <meta name="description" content="${escapeHtml(page.description)}" />
@@ -785,7 +785,7 @@ function renderPage(page) {
   <script src="/js/consent.js?v=2026-10-26-trust" defer></script>
   <script src="/js/analytics.js?v=2026-10-26-trust" defer></script>
   <script type="application/ld+json">${JSON.stringify(schema)}</script>
-  <script src="/js/tools-data.js" defer></script>
+  <script src="/js/tools-data.js?v=2026-10-28-evidence" defer></script>
   <script src="/js/tool-routes.js?v=2026-10-27" defer></script>
   <script src="/js/seo-pages.js?v=2026-10-27-routes" defer></script>
   <script src="/js/mailchimp.js?v=2026-10-26-trust" defer></script>
@@ -793,7 +793,7 @@ function renderPage(page) {
 
 </head>
 <body data-page-slug="${escapeHtml(page.slug)}" data-year-policy="${escapeHtml(page.yearPolicy)}" data-docx-article-id="${page.docxArticleId}">
-  <header class="navbar" id="top"><div class="container navbar-inner"><a href="/" class="logo" aria-label="বাংলা AI গাইড হোম"><img class="logo-mark" src="/favicon.svg" alt="বাংলা AI গাইড লোগো" width="28" height="28" decoding="async" /><span class="logo-text">বাংলা AI গাইড</span></a><button class="hamburger" id="hamburgerBtn" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="মেনু টগল করুন"><span></span><span></span><span></span></button><div class="nav-desktop"><nav class="nav-links" aria-label="প্রধান ন্যাভিগেশন"><a href="/#toolsSection">টুলস দেখুন</a><a href="/#categoryTabs">ক্যাটাগরি</a><a href="/#newsletter">নিউজলেটার</a></nav><a href="/submit.html" class="btn btn-primary">টুল সাবমিট করুন</a></div></div><div class="mobile-menu" id="mobileMenu" aria-hidden="true"><a href="/#toolsSection">টুলস দেখুন</a><a href="/#categoryTabs">ক্যাটাগরি</a><a href="/#newsletter">নিউজলেটার</a><a href="/submit.html" class="btn btn-primary mobile-cta">টুল সাবমিট করুন</a></div></header>
+  <header class="navbar" id="top"><div class="container navbar-inner"><a href="/" class="logo" aria-label="বাংলা AI গাইড হোম"><img class="logo-mark" src="/favicon.svg?v=2026-10-31" alt="বাংলা AI গাইড লোগো" width="28" height="28" decoding="async" /><span class="logo-text">বাংলা AI গাইড</span></a><button class="hamburger" id="hamburgerBtn" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="মেনু টগল করুন"><span></span><span></span><span></span></button><div class="nav-desktop"><nav class="nav-links" aria-label="প্রধান ন্যাভিগেশন"><a href="/#toolsSection">টুলস দেখুন</a><a href="/#categoryTabs">ক্যাটাগরি</a><a href="/#newsletter">নিউজলেটার</a></nav><a href="/submit.html" class="btn btn-primary">টুল সাবমিট করুন</a></div></div><div class="mobile-menu" id="mobileMenu" aria-hidden="true"><a href="/#toolsSection">টুলস দেখুন</a><a href="/#categoryTabs">ক্যাটাগরি</a><a href="/#newsletter">নিউজলেটার</a><a href="/submit.html" class="btn btn-primary mobile-cta">টুল সাবমিট করুন</a></div></header>
   <main class="seo-main">
     <article class="container seo-article-page">
       <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">হোম</a><span>&gt;</span><span>${escapeHtml(page.primaryKeyword)}</span></nav>
@@ -813,7 +813,7 @@ function renderPage(page) {
       <section class="seo-block"><h2>Bangladesh AI Resources</h2><ul class="seo-links-list">${renderResources(page, file)}</ul></section>
     </article>
   </main>
-  <footer class="site-footer"><div class="container footer-inner"><p class="footer-brand"><img class="logo-mark" src="/favicon.svg" alt="বাংলা AI গাইড লোগো" width="20" height="20" decoding="async" /><span>বাংলা AI গাইড</span></p><p>© ২০২৬ বাংলা AI গাইড · বাংলাদেশের জন্য তৈরি</p><nav class="footer-links" aria-label="ফুটার লিংক"><a href="/submit.html">টুল সাবমিট</a><a href="/contact.html#advertising">বিজ্ঞাপন</a><a href="/privacy.html">প্রাইভেসি</a><a href="/terms.html">শর্তাবলী</a><a href="/disclaimer.html">ডিসক্লেইমার</a><a href="/contact.html">যোগাযোগ</a></nav></div></footer>
+  <footer class="site-footer"><div class="container footer-inner"><p class="footer-brand"><img class="logo-mark" src="/favicon.svg?v=2026-10-31" alt="বাংলা AI গাইড লোগো" width="20" height="20" decoding="async" /><span>বাংলা AI গাইড</span></p><p>© ২০২৬ বাংলা AI গাইড · বাংলাদেশের জন্য তৈরি</p><nav class="footer-links" aria-label="ফুটার লিংক"><a href="/submit.html">টুল সাবমিট</a><a href="/contact.html#advertising">বিজ্ঞাপন</a><a href="/privacy.html">প্রাইভেসি</a><a href="/terms.html">শর্তাবলী</a><a href="/disclaimer.html">ডিসক্লেইমার</a><a href="/contact.html">যোগাযোগ</a></nav></div></footer>
 </body>
 </html>`;
 }

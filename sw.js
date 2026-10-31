@@ -10,24 +10,24 @@
  *   - Cross-origin (clearbit, fonts.googleapis): cache-first short TTL
  */
 
-const VERSION = 'bag-v2026-10-27-routes';
+const VERSION = 'bag-v2026-10-31-brand';
 const HTML_CACHE = 'bag-html-' + VERSION;
 const ASSET_CACHE = 'bag-asset-' + VERSION;
 const RUNTIME = 'bag-runtime-' + VERSION;
 
 const PRECACHE = [
   '/',
-  '/css/home.css?v=2026-10-26',
+  '/css/home.css?v=2026-10-31',
   '/js/home.js?v=2026-10-27-routes',
   '/js/consent.js?v=2026-10-26-trust',
   '/js/analytics.js?v=2026-10-26-trust',
   '/js/tool-routes.js?v=2026-10-27',
   '/blog/',
   '/css/style.css?v=2026-03-12',
-  '/js/tools-data.js?v=2026-05-26',
-  '/js/main.js?v=2026-10-27-routes',
+  '/js/tools-data.js?v=2026-10-28-evidence',
+  '/js/main.js?v=2026-10-28-evidence',
   '/js/search-overlay.js?v=2026-05-26',
-  '/favicon.svg',
+  '/favicon.svg?v=2026-10-31',
   '/site.webmanifest',
   '/search-index.json',
 ];

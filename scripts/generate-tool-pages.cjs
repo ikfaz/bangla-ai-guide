@@ -353,11 +353,11 @@ function renderPage(tool, tools, conversionRate) {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/png" href="../favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
-  <link rel="shortcut icon" href="../favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
-  <link rel="manifest" href="../site.webmanifest" />
+  <link rel="icon" type="image/png" href="../favicon-96x96.png?v=2026-10-31" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg?v=2026-10-31" />
+  <link rel="shortcut icon" href="../favicon.ico?v=2026-10-31" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png?v=2026-10-31" />
+  <link rel="manifest" href="../site.webmanifest?v=2026-10-31" />
   <meta name="theme-color" content="#059669" />
   <title>${escapeHtml(profile.title)}</title>
   <meta name="description" content="${escapeHtml(profile.description)}" />
@@ -370,7 +370,7 @@ function renderPage(tool, tools, conversionRate) {
   <link rel="stylesheet" href="../css/style.css" />
   <script src="/js/consent.js?v=2026-10-26-trust" defer></script>
   <script src="/js/analytics.js?v=2026-10-26-trust" defer></script>
-  <script src="../js/tools-data.js" defer></script>
+  <script src="../js/tools-data.js?v=2026-10-28-evidence" defer></script>
   <script src="/js/tool-routes.js?v=2026-10-27" defer></script>
   <script src="/js/seo-pages.js?v=2026-10-27-routes" defer></script>
   <script type="application/ld+json">${JSON.stringify(schema)}</script>
@@ -379,7 +379,7 @@ function renderPage(tool, tools, conversionRate) {
   <header class="navbar" id="top">
     <div class="container navbar-inner">
       <a href="/" class="logo" aria-label="বাংলা AI গাইড হোম">
-        <img class="logo-mark" src="../favicon.svg" alt="বাংলা AI গাইড লোগো" width="28" height="28" decoding="async" />
+        <img class="logo-mark" src="../favicon.svg?v=2026-10-31" alt="বাংলা AI গাইড লোগো" width="28" height="28" decoding="async" />
         <span class="logo-text">বাংলা AI গাইড</span>
       </a>
       <button class="hamburger" id="hamburgerBtn" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="মেনু টগল করুন">
@@ -447,7 +447,7 @@ function renderPage(tool, tools, conversionRate) {
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p class="footer-brand"><img class="logo-mark" src="../favicon.svg" alt="বাংলা AI গাইড লোগো" width="20" height="20" decoding="async" /><span>বাংলা AI গাইড</span></p>
+      <p class="footer-brand"><img class="logo-mark" src="../favicon.svg?v=2026-10-31" alt="বাংলা AI গাইড লোগো" width="20" height="20" decoding="async" /><span>বাংলা AI গাইড</span></p>
       <p>© ২০২৬ বাংলা AI গাইড · বাংলাদেশের জন্য তৈরি</p>
       <nav class="footer-links" aria-label="ফুটার লিংক"><a href="/submit.html">টুল সাবমিট</a><a href="/contact.html#advertising">বিজ্ঞাপন</a><a href="/privacy.html">প্রাইভেসি</a><a href="/terms.html">শর্তাবলী</a><a href="/disclaimer.html">ডিসক্লেইমার</a><a href="/contact.html">যোগাযোগ</a></nav>
     </div>
@@ -504,6 +504,9 @@ function main() {
 
   for (const tool of tools) {
     const slug = toSlug(tool.name);
+    // These guides are authored and source-reviewed; the generic template must
+    // never replace their workflow examples or scoped evidence statements.
+    if (["chatgpt", "claude", "gemini"].includes(slug)) continue;
     const html = renderPage(tool, tools, usdToBdt);
     const canonicalDir = path.join(root, slug);
     fs.mkdirSync(canonicalDir, { recursive: true });

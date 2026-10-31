@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2026-10-31" />
+  <link rel="shortcut icon" href="/favicon.ico?v=2026-10-31" />
   <meta name="theme-color" content="#0A0A0F" />
   <title>আপনার জন্য কোন AI? — ৬০ সেকেন্ডে খুঁজুন | বাংলা AI গাইড</title>
   <meta name="description" content="৫টি প্রশ্নের উত্তর দিন, AI আপনার জন্য ৩টি সেরা টুল সাজেস্ট করবে — ব্যবহার, বাজেট, পেমেন্ট, ভাষা অনুযায়ী। বাংলাদেশের জন্য কিউরেটেড।" />
@@ -26,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://logo.clearbit.com" />
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700;800&family=Syne:wght@500;700;800&display=swap" rel="stylesheet" />
-  <script src="/js/tools-data.js?v=2026-05-26" defer></script>
+  <script src="/js/tools-data.js?v=2026-10-28-evidence" defer></script>
   <script src="/js/tool-routes.js?v=2026-10-27" defer></script>
   <script src="/js/search-overlay.js?v=2026-05-26" defer></script>
 
@@ -422,7 +422,7 @@
         if (budget.id === 'free') {
           if (t.freePlanAvailable || t.pricing === 'free' || t.pricing === 'freemium') s += 20;
           else s -= 30;
-        } else {
+        } else if (price !== null) {
           if (price <= budget.maxUsd) s += 10;
           else if (price <= budget.maxUsd + 10) s -= 5;
           else s -= 15;
@@ -452,10 +452,10 @@
     }
 
     function parsePrice(s) {
-      if (!s) return 0;
-      if (/free/i.test(s)) return 0;
+      if (typeof s !== 'string' || !s.trim()) return null;
+      if (/^free$/i.test(s.trim())) return 0;
       var m = String(s).match(/\$([0-9]+(?:\.[0-9]+)?)/);
-      return m ? parseFloat(m[1]) : 0;
+      return m ? parseFloat(m[1]) : null;
     }
 
     function computeResults() {
