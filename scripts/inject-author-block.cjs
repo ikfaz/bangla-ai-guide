@@ -155,6 +155,8 @@ function run() {
     if (!fs.existsSync(file)) continue;
     let html = fs.readFileSync(file, 'utf8');
     if (isRedirectStub(html)) continue;
+    // Explicit editorial attribution must not become a personal byline.
+    if (html.includes('data-author-mode="editorial"')) continue;
     scanned++;
     const date = extractPublishDate(html);
     const block = renderAuthorBlock(date);
