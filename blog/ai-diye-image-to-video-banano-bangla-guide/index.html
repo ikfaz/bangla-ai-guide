@@ -52,7 +52,8 @@
   <!-- PERSON-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-author-block">{"@context":"https://schema.org","@type":"Person","name":"ইকফাজ","alternateName":"Ikfaz","jobTitle":"প্রতিষ্ঠাতা ও সম্পাদক","url":"https://banglaaiguide.com/about/","sameAs":["https://github.com/ikfaz"],"worksFor":{"@type":"Organization","name":"বাংলা AI গাইড","url":"https://banglaaiguide.com"},"knowsAbout":["Artificial Intelligence","AI Tools","Bangladesh Tech","বাংলা AI"],"description":"বাংলা AI গাইডের প্রতিষ্ঠাতা। বাংলাদেশি ব্যবহারকারীদের জন্য AI টুলস কিউরেট ও বিশ্লেষণ করেন — কোনটা BD থেকে কাজ করে, কোনটায় bKash চলে, কোনটা আসলে দৈনন্দিন কাজে লাগে।"}</script>
 <!-- PERSON-SCHEMA:END -->
-          </head>
+            <script src="/js/article-chrome.js" defer></script>
+</head>
 <body>
     <header class="navbar">
         <div class="container navbar-inner">
@@ -68,8 +69,11 @@
         </div>
     </header>
 
-    <div class="container">
-        <h1>AI দিয়ে Image থেকে Video বানানো — Kling, Pika, Runway গাইড</h1>
+    <div class="article-sheet container">
+        <!-- ARTICLE-META:START -->
+<p class="article-kicker"><span class="article-chip">মিডিয়া</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৫ মিনিট পড়া</span></p>
+<!-- ARTICLE-META:END -->
+<h1>AI দিয়ে Image থেকে Video বানানো — Kling, Pika, Runway গাইড</h1>
         <!-- AUTHOR-BLOCK:START -->
 <section class="author-block" itemscope itemtype="https://schema.org/Person" aria-label="লেখক সম্পর্কে">
   <style>
@@ -102,6 +106,30 @@
   </div>
 </section>
 <!-- AUTHOR-BLOCK:END -->
+<!-- ARTICLE-HERO:START -->
+<figure class="article-hero">
+  <img src="/blog/ai-diye-image-to-video-banano-bangla-guide/cover.svg" width="1200" height="630" alt="AI দিয়ে Image থেকে Video বানানো — Kling, Pika, Runway গাইড" decoding="async" fetchpriority="high">
+  <figcaption>AI দিয়ে Image থেকে Video বানানো — Kling, Pika, Runway গাইড</figcaption>
+</figure>
+<!-- ARTICLE-HERO:END -->
+<!-- ARTICLE-TOC:START -->
+<nav class="article-toc" aria-label="সূচিপত্র">
+  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
+  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
+  <ol class="toc-list">
+    <li class="toc-item"><a href="#২০২৬-এ-image-to-video-ai-landscape">২০২৬-এ Image-to-Video AI Landscape</a></li>
+    <li class="toc-item"><a href="#rakibul-এর-daily-workflow">Rakibul-এর Daily Workflow</a></li>
+    <li class="toc-item"><a href="#৬-tool-head-to-head-same-image-to-video-test">৬ Tool Head-to-Head — Same Image-to-Video Test</a></li>
+    <li class="toc-item"><a href="#bd-specific-use-cases-কোথায়-ai-video-real-roi-দেয়">BD-Specific Use Cases — কোথায় AI video real ROI দেয়</a></li>
+    <li class="toc-item"><a href="#effective-prompt-strategy">Effective Prompt Strategy</a></li>
+    <li class="toc-item"><a href="#৪টা-common-pitfall">৪টা Common Pitfall</a></li>
+    <li class="toc-item"><a href="#bd-cost-benefit-math">BD Cost-Benefit Math</a></li>
+    <li class="toc-item"><a href="#উপসংহার-আপনার-আজকের-পদক্ষেপ">উপসংহার — আপনার আজকের পদক্ষেপ</a></li>
+    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
+  </ol>
+</nav>
+<!-- ARTICLE-TOC:END -->
 
 <p class="lede">Rakibul Hasan একটা Pathao Food restaurant-এর owner — Dhanmondi-এর "Kolkata Sweets Center"। তিনি কখনো video shoot করেননি, কোনো videographer hire করার budget নেই। কিন্তু ২০২৬-এ social media-এ static photo-এর reach near-zero। তিনি ২০২৫-এর জুলাইয়ে শিখলেন image-to-video AI — Veo 3, Runway, Kling। তাঁর smartphone-এ তোলা শাশ্বত মিষ্টি-এর photo Kling AI-তে paste করে "slow zoom into syrup dripping" prompt-এ ৫-second video। Facebook + Instagram-এ post করার পর: reach ১৪x, engagement ২২x আগের static photo-এর তুলনায়। ১০ মাস পর তাঁর Facebook page-এ ৪২,০০০ follower (was 2,800), monthly Pathao Food order ১৪০% increase। Initial monthly tool investment: $২২ (Kling Pro)। Return: ৳৪.৫ লাখ additional revenue/মাস। Image-to-Video AI ছোট business-এর জন্য 2026-এর সবচেয়ে underrated multiplier।</p>
 
@@ -114,7 +142,7 @@
     <div class="stat"><span class="num">৩-৮ সেকেন্ড</span><span class="label">Typical AI image-to-video output</span></div>
 </div>
 
-<h2>২০২৬-এ Image-to-Video AI Landscape</h2>
+<h2 id="২০২৬-এ-image-to-video-ai-landscape">২০২৬-এ Image-to-Video AI Landscape</h2>
 
 <ul>
     <li><b>Google Veo 3 (top-tier):</b> Sora discontinued-এর পর de facto leader। 8-second cinematic video, prompt adherence সবচেয়ে ভালো। Subscription: Google AI Premium $২০/মাস।</li>
@@ -125,7 +153,7 @@
     <li><b>Luma Dream Machine:</b> Smooth motion, realistic physics। Free tier 30 generations/month।</li>
 </ul>
 
-<h2>Rakibul-এর Daily Workflow</h2>
+<h2 id="rakibul-এর-daily-workflow">Rakibul-এর Daily Workflow</h2>
 
 <h3>Morning (10 min): Product photography</h3>
 <p>Smartphone (iPhone 13)। Natural light কাছাকাছি window। Portable lightbox ৳২,৫০০ Daraz। ৩-৪ angle per dish।</p>
@@ -144,7 +172,7 @@ Prompt: 'Slow zoom-in to one rasgolla in syrup, glistening highlights, syrup gen
     <li>Hashtag: #DhakaFood #KolkataSweets #RasgollaLover।</li>
 </ul>
 
-<h2>৬ Tool Head-to-Head — Same Image-to-Video Test</h2>
+<h2 id="৬-tool-head-to-head-same-image-to-video-test">৬ Tool Head-to-Head — Same Image-to-Video Test</h2>
 
 <p>Same input: A traditional Bangla sweet plate photo। Same prompt: "Camera slowly orbits around the plate, sparkles on syrup, warm golden lighting, 6 seconds vertical।"</p>
 
@@ -159,7 +187,7 @@ Prompt: 'Slow zoom-in to one rasgolla in syrup, glistening highlights, syrup gen
 
 <p><b>Verdict for BD users:</b> Veo 3 যদি Google AI Premium subscription থাকে। Kling Pro standalone-এ best value-for-money।</p>
 
-<h2>BD-Specific Use Cases — কোথায় AI video real ROI দেয়</h2>
+<h2 id="bd-specific-use-cases-কোথায়-ai-video-real-roi-দেয়">BD-Specific Use Cases — কোথায় AI video real ROI দেয়</h2>
 
 <ul>
     <li><b>F&B (restaurant, sweet shop, bakery):</b> Food video universal-best converter। Rakibul-এর case।</li>
@@ -171,7 +199,7 @@ Prompt: 'Slow zoom-in to one rasgolla in syrup, glistening highlights, syrup gen
     <li><b>News/journalism:</b> Static photo → animated news visual (with disclosure)।</li>
 </ul>
 
-<h2>Effective Prompt Strategy</h2>
+<h2 id="effective-prompt-strategy">Effective Prompt Strategy</h2>
 
 <p>৬-element prompt structure:</p>
 
@@ -184,7 +212,7 @@ Prompt: 'Slow zoom-in to one rasgolla in syrup, glistening highlights, syrup gen
     <li><b>Output spec:</b> "5 seconds, vertical 9:16, cinematic mood"।</li>
 </ol>
 
-<h2>৪টা Common Pitfall</h2>
+<h2 id="৪টা-common-pitfall">৪টা Common Pitfall</h2>
 
 <ul>
     <li><b>1. Generic prompt:</b> "Make video from this image" — random/uninspired output। Specific 6-element prompt essential।</li>
@@ -193,7 +221,7 @@ Prompt: 'Slow zoom-in to one rasgolla in syrup, glistening highlights, syrup gen
     <li><b>4. Aspect ratio mismatch:</b> Square photo → 9:16 video produces awkward crop। Match input to output orientation।</li>
 </ul>
 
-<h2>BD Cost-Benefit Math</h2>
+<h2 id="bd-cost-benefit-math">BD Cost-Benefit Math</h2>
 
 <p>Rakibul-এর case:</p>
 <ul>
@@ -202,10 +230,10 @@ Prompt: 'Slow zoom-in to one rasgolla in syrup, glistening highlights, syrup gen
     <li><b>ROI:</b> ১৭৩× monthly।</li>
 </ul>
 
-<h2>উপসংহার — আপনার আজকের পদক্ষেপ</h2>
+<h2 id="উপসংহার-আপনার-আজকের-পদক্ষেপ">উপসংহার — আপনার আজকের পদক্ষেপ</h2>
 <p>Rakibul বলেন: "আমার baba ১৯৭৯-এ এই sweet shop খুলেছিলেন। আমি ২০২৫-এ social media শিখলাম। AI আমাকে কোনো videographer-এর সমান video দিচ্ছে। ছোট shop ২০২৬-এ scaling-এর জন্য AI-mandatory।" আজই করুন: আপনার business-এর একটা signature product/service-এর photo খুঁজুন। Kling AI-এ (free tier) যান, photo upload করে উপরের 6-element prompt structure-এ একটা 5-second video generate করুন। Facebook/Instagram-এ Reel হিসেবে post করুন। ৭২ ঘণ্টায় আপনি static photo-এর সাথে engagement difference দেখবেন। সেই engagement difference-ই Rakibul-কে ১০ মাসে ৪২K follower দিয়েছে।</p>
 
-                <h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
+                <h2 id="প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</h2>
         <ul>
             <li><a href="/kling-ai/">Kling AI টুল পেজ</a></li>
             <li><a href="/pika-labs/">Pika Labs</a></li>
@@ -214,7 +242,7 @@ Prompt: 'Slow zoom-in to one rasgolla in syrup, glistening highlights, syrup gen
         </ul>
 
 <section class="seo-newsletter-block" style="margin-top:2.5rem;padding:2rem;background:#f0fdf4;border-radius:12px;text-align:center;">
-  <h2 style="color:#16a34a;margin-bottom:0.5rem;">AI আপডেট পেতে চান?</h2>
+  <h2 style="color:#16a34a;margin-bottom:0.5rem;" id="ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</h2>
   <p style="margin-bottom:1rem;">প্রতি সপ্তাহে নতুন AI টুলস ও টিউটোরিয়াল বাংলায় পান।</p>
   <form class="newsletter-form newsletter-form--mailchimp" action="https://banglaaiguide.us15.list-manage.com/subscribe/post?u=d389c0647878724daecc58fc6&amp;id=aaca6896d2&amp;f_id=007c9ae1f0" method="post" target="_blank" rel="noopener noreferrer" accept-charset="UTF-8" data-mailchimp-form="true" style="display:flex;gap:8px;max-width:440px;margin:0 auto;">
     <input type="email" name="EMAIL" placeholder="আপনার ইমেইল লিখুন" required style="flex:1;padding:10px 14px;border:1px solid #e5e7eb;border-radius:8px;font-size:15px;">

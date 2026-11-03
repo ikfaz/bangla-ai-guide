@@ -1,0 +1,129 @@
+# Article components
+
+Use these snippets in new blog posts. Link the stylesheet once in `<head>`:
+
+```html
+<link rel="stylesheet" href="/css/article-visuals.css">
+```
+
+Keep question headings as `<h3>` elements that end with `?`, followed by the answer paragraphs. The build's FAQ schema step reads those headings. A `<details>` wrapper is fine when the heading stays inside it.
+
+The shared magazine chrome (cover, chips, table of contents, reading time) is added by `scripts/inject-article-chrome.cjs` for every post under `blog/`. Posts that are not wrapped in `<article>` get the class `article-sheet` on the content container. Do not hand-copy that block.
+
+## Hero
+
+```html
+<figure class="av-hero">
+  <img src="/blog/your-slug/cover.png" width="1200" height="630" alt="লেখাটির শিরোনাম" decoding="async" fetchpriority="high">
+  <figcaption>লেখাটির শিরোনাম</figcaption>
+</figure>
+```
+
+Use the PNG cover for social previews. Set `width` and `height` so the image does not shift the layout. The hero is the first image, so leave it eager.
+
+## Quick answer
+
+```html
+<aside class="av-tldr">
+  <p class="av-tldr-label">সংক্ষেপে</p>
+  <p>এক অনুচ্ছেদে মূল উত্তর।</p>
+</aside>
+```
+
+## Key facts
+
+```html
+<dl class="av-facts">
+  <div class="av-fact">
+    <dt>বিষয়</dt>
+    <dd>সংক্ষিপ্ত তথ্য</dd>
+  </div>
+  <div class="av-fact">
+    <dt>খরচ</dt>
+    <dd>যাচাই করা দাম</dd>
+  </div>
+</dl>
+```
+
+## Numbered steps
+
+```html
+<ol class="av-steps">
+  <li>প্রথম ধাপের বাক্য।</li>
+  <li>দ্বিতীয় ধাপের বাক্য।</li>
+</ol>
+```
+
+The number is drawn by CSS. Do not type the number again inside the item.
+
+## Callouts
+
+```html
+<aside class="av-callout av-callout--tip">
+  <p class="av-callout-label">টিপ</p>
+  <p>কাজে লাগে এমন একটি পরামর্শ।</p>
+</aside>
+
+<aside class="av-callout av-callout--note">
+  <p class="av-callout-label">নোট</p>
+  <p>উৎস বা সীমাবদ্ধতা।</p>
+</aside>
+
+<aside class="av-callout av-callout--warning">
+  <p class="av-callout-label">সতর্কতা</p>
+  <p>ঝুঁকি বা যা এড়িয়ে চলতে হবে।</p>
+</aside>
+```
+
+## Table
+
+```html
+<div class="av-table-scroll">
+  <table class="av-table">
+    <caption>টেবিলের শিরোনাম</caption>
+    <thead>
+      <tr><th>কলাম</th><th>তথ্য</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>নাম</td><td>বিবরণ</td></tr>
+    </tbody>
+  </table>
+</div>
+```
+
+## Pull quote
+
+```html
+<blockquote class="av-pullquote">
+  <p>লেখা থেকে এক লাইন, নতুন দাবি যোগ না করে।</p>
+</blockquote>
+```
+
+## FAQ
+
+```html
+<section>
+  <h2>সচরাচর জিজ্ঞাসা</h2>
+  <details class="av-faq">
+    <summary><h3>প্রশ্নটি কি এখানে লেখা?</h3></summary>
+    <p>উত্তরের অনুচ্ছেদ।</p>
+  </details>
+</section>
+```
+
+## Flow diagram
+
+Inline SVG keeps the labels in Bangla and adds no extra request. Use `Hind Siliguri`, which the article already loads.
+
+```html
+<figure class="av-flow">
+  <svg viewBox="0 0 720 150" role="img" aria-label="ধাপ এক, তারপর ধাপ দুই">
+    <rect x="16" y="36" width="200" height="72" rx="16" fill="#f0fdf4" stroke="#16a34a"/>
+    <text x="116" y="78" text-anchor="middle" font-family="Hind Siliguri, sans-serif" font-size="20" fill="#14532d">ধাপ এক</text>
+    <text x="250" y="80" font-size="28" fill="#16a34a">→</text>
+    <rect x="290" y="36" width="200" height="72" rx="16" fill="#f0fdf4" stroke="#16a34a"/>
+    <text x="390" y="78" text-anchor="middle" font-family="Hind Siliguri, sans-serif" font-size="20" fill="#14532d">ধাপ দুই</text>
+  </svg>
+  <figcaption>দুই ধাপের সংক্ষিপ্ত ধারা</figcaption>
+</figure>
+```

@@ -52,7 +52,8 @@
   <!-- PERSON-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-author-block">{"@context":"https://schema.org","@type":"Person","name":"ইকফাজ","alternateName":"Ikfaz","jobTitle":"প্রতিষ্ঠাতা ও সম্পাদক","url":"https://banglaaiguide.com/about/","sameAs":["https://github.com/ikfaz"],"worksFor":{"@type":"Organization","name":"বাংলা AI গাইড","url":"https://banglaaiguide.com"},"knowsAbout":["Artificial Intelligence","AI Tools","Bangladesh Tech","বাংলা AI"],"description":"বাংলা AI গাইডের প্রতিষ্ঠাতা। বাংলাদেশি ব্যবহারকারীদের জন্য AI টুলস কিউরেট ও বিশ্লেষণ করেন — কোনটা BD থেকে কাজ করে, কোনটায় bKash চলে, কোনটা আসলে দৈনন্দিন কাজে লাগে।"}</script>
 <!-- PERSON-SCHEMA:END -->
-          </head>
+            <script src="/js/article-chrome.js" defer></script>
+</head>
 <body>
     <header class="navbar">
         <div class="container navbar-inner">
@@ -68,8 +69,11 @@
         </div>
     </header>
 
-    <div class="container">
-        <h1>Midjourney vs Flux — কোনটি ভালো AI Image Generator? (বাংলা ২০২৬)</h1>
+    <div class="article-sheet container">
+        <!-- ARTICLE-META:START -->
+<p class="article-kicker"><span class="article-chip">তুলনা</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৬ মিনিট পড়া</span></p>
+<!-- ARTICLE-META:END -->
+<h1>Midjourney vs Flux — কোনটি ভালো AI Image Generator? (বাংলা ২০২৬)</h1>
         <!-- AUTHOR-BLOCK:START -->
 <section class="author-block" itemscope itemtype="https://schema.org/Person" aria-label="লেখক সম্পর্কে">
   <style>
@@ -102,6 +106,28 @@
   </div>
 </section>
 <!-- AUTHOR-BLOCK:END -->
+<!-- ARTICLE-HERO:START -->
+<figure class="article-hero">
+  <img src="/blog/midjourney-vs-flux-konti-bhalo-bangla-comparison/cover.svg" width="1200" height="630" alt="Midjourney vs Flux — কোনটি ভালো AI Image Generator? (বাংলা ২০২৬)" decoding="async" fetchpriority="high">
+  <figcaption>Midjourney vs Flux — কোনটি ভালো AI Image Generator? (বাংলা ২০২৬)</figcaption>
+</figure>
+<!-- ARTICLE-HERO:END -->
+<!-- ARTICLE-TOC:START -->
+<nav class="article-toc" aria-label="সূচিপত্র">
+  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
+  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
+  <ol class="toc-list">
+    <li class="toc-item"><a href="#১০-parallel-test-same-prompt-দুটো-model">১০ Parallel test — same prompt, দুটো model</a></li>
+    <li class="toc-item"><a href="#bangladesh-থেকে-access-ও-payment-actual-reality">Bangladesh-থেকে access ও payment — actual reality</a></li>
+    <li class="toc-item"><a href="#license-ও-commercial-use-সবচেয়ে-কম-বোঝা-টপিক">License ও commercial use — সবচেয়ে কম বোঝা টপিক</a></li>
+    <li class="toc-item"><a href="#রিয়াদ-এর-গল্প-যে-কেউ-pure-flux-এ-গেছেন">রিয়াদ-এর গল্প — যে কেউ pure Flux-এ গেছেন</a></li>
+    <li class="toc-item"><a href="#সিদ্ধান্ত-গাছ-আপনার-৩০-সেকেন্ডের-ans">সিদ্ধান্ত-গাছ — আপনার ৩০ সেকেন্ডের ans</a></li>
+    <li class="toc-item"><a href="#উপসংহার-তানভীরের-চূড়ান্ত-মত">উপসংহার — তানভীরের চূড়ান্ত মত</a></li>
+    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
+  </ol>
+</nav>
+<!-- ARTICLE-TOC:END -->
 
         <p class="lede">তানভীর হাসান চট্টগ্রামের একজন graphic designer — ৬ বছরের freelance career, Fiverr-এ Top Rated Plus, mostly book cover ও album artwork। ২০২৪-এর মে পর্যন্ত তিনি pure Midjourney-তে ছিলেন। ২০২৪-এর জুন-এ Flux 1.1 Pro release হওয়ার পর তাঁর studio দুটোতে split হয়ে যায় — কোন কাজে কোনটা, সেটা ঠিক করতে লেগেছে ৩ মাস। আজ তাঁর monthly tool budget $৪৫: Midjourney Pro $৩০ + Flux via fal.ai pay-per-use ~$১৫। যে কাজে আগে তিনি ২ ঘণ্টা spend করতেন (text-heavy poster), এখন ১৮ মিনিটে শেষ। যে কাজে আগে Midjourney-তে ১৫ মিনিট লাগত (atmospheric book cover), সেটা এখনো Midjourney-তেই।</p>
 
@@ -114,7 +140,7 @@
             <div class="stat"><span class="num">৯৪%</span><span class="label">Flux-এর text rendering accuracy — Midjourney ~৪২%</span></div>
         </div>
 
-        <h2>১০ Parallel test — same prompt, দুটো model</h2>
+        <h2 id="১০-parallel-test-same-prompt-দুটো-model">১০ Parallel test — same prompt, দুটো model</h2>
 
         <p>তানভীর ২০২৬-এ Flux 1.1 Pro Ultra এবং Midjourney v7-কে ১০টা identical prompt দিলেন। প্রতি pair-এ ৪টা variation generate করে best-of-4 select। নিচে summary।</p>
 
@@ -156,7 +182,7 @@
             <strong>কিন্তু "winner" misleading:</strong> তানভীরের ৬০% paid client work এখনো Midjourney-তে যায় — book cover, album art, atmospheric illustration। বাকি ৪০% (product photo, text graphic, marketing poster) Flux-এ। দুটোই দরকার, একটায় choose করার দরকার নেই।
         </div>
 
-        <h2>Bangladesh-থেকে access ও payment — actual reality</h2>
+        <h2 id="bangladesh-থেকে-access-ও-payment-actual-reality">Bangladesh-থেকে access ও payment — actual reality</h2>
 
         <h3>Midjourney</h3>
         <ul>
@@ -180,7 +206,7 @@
             <li><b>BD advantage:</b> fal.ai-তে $১০ topup করলে ~১৬০-২০০ image। Schnell free unlimited (slightly lower quality)।</li>
         </ul>
 
-        <h2>License ও commercial use — সবচেয়ে কম বোঝা টপিক</h2>
+        <h2 id="license-ও-commercial-use-সবচেয়ে-কম-বোঝা-টপিক">License ও commercial use — সবচেয়ে কম বোঝা টপিক</h2>
 
         <ul>
             <li><b>Midjourney Standard+:</b> $১M revenue-এর নিচে company-এর জন্য commercial OK। বড় client-এর কাছে work delivery-তে Pro plan নিরাপদ।</li>
@@ -191,7 +217,7 @@
 
         <p>তানভীরের warning: "Flux Dev মডেল local-এ free চালানো যায়, কিন্তু সেটা দিয়ে client কাজ delivery করলে license violation। আমি জানি BD-তে অনেকে এটা ignore করে — কিন্তু client US-based হলে অনেক agency contract-এ AI license declaration clause আছে। একবার ধরা পড়লে account banned।"</p>
 
-        <h2>রিয়াদ-এর গল্প — যে কেউ pure Flux-এ গেছেন</h2>
+        <h2 id="রিয়াদ-এর-গল্প-যে-কেউ-pure-flux-এ-গেছেন">রিয়াদ-এর গল্প — যে কেউ pure Flux-এ গেছেন</h2>
 
         <div class="case-study">
             <div class="person">
@@ -206,7 +232,7 @@
             <p><b>সীমাবদ্ধতা:</b> Atmospheric image (festival campaign visual) আর local Bangladeshi photographer hire করেন — Flux-এ সেটা ক্ষমতা থাকলেও tweaking time বেশি লাগে।</p>
         </div>
 
-        <h2>সিদ্ধান্ত-গাছ — আপনার ৩০ সেকেন্ডের ans</h2>
+        <h2 id="সিদ্ধান্ত-গাছ-আপনার-৩০-সেকেন্ডের-ans">সিদ্ধান্ত-গাছ — আপনার ৩০ সেকেন্ডের ans</h2>
 
         <ul>
             <li><b>আপনি graphic designer / illustrator?</b> → Midjourney primary + Flux for text-graphic work</li>
@@ -219,13 +245,13 @@
             <li><b>আপনি প্রতি মাসে ১৫০+ image generate করেন?</b> → Flux API (cost সস্তা)</li>
         </ul>
 
-        <h2>উপসংহার — তানভীরের চূড়ান্ত মত</h2>
+        <h2 id="উপসংহার-তানভীরের-চূড়ান্ত-মত">উপসংহার — তানভীরের চূড়ান্ত মত</h2>
 
         <p>"দুটো model দুই philosophy। Midjourney একজন artistic collaborator — interpretation নেয়, surprise দেয়। Flux একজন precise technician — exactly যা বলবেন, সেটাই দেবে। আপনি যদি commercial designer হন, দুটোই আপনার toolkit-এ থাকতে হবে। আপনি যদি আজ শুরু করেন এবং একটা বেছে নিতে হয় — text/product/marketing হলে Flux, art/illustration/mood হলে Midjourney। আর budget যদি ০ হয় — Flux Schnell free, Hugging Face-এ আজ থেকেই শুরু করুন।"</p>
 
         <p>আপনার পরবর্তী generation কোন model-এ যাবে, সেটা আপনার prompt-এ "feeling" আছে নাকি "specification" আছে — সেটার উপর depend করে। সেই একটা প্রশ্ন আপনাকে ৯০% সময় সঠিক tool-এর দিকে নিয়ে যাবে।</p>
 
-        <h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
+        <h2 id="প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</h2>
         <ul>
             <li><a href="/midjourney/">Midjourney টুল পেজ</a></li>
             <li><a href="/flux/">Flux AI</a></li>
@@ -234,7 +260,7 @@
         </ul>
 
 <section class="seo-newsletter-block" style="margin-top:2.5rem;padding:2rem;background:#f0fdf4;border-radius:12px;text-align:center;">
-  <h2 style="color:#16a34a;margin-bottom:0.5rem;">AI আপডেট পেতে চান?</h2>
+  <h2 style="color:#16a34a;margin-bottom:0.5rem;" id="ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</h2>
   <p style="margin-bottom:1rem;">প্রতি সপ্তাহে নতুন AI টুলস ও টিউটোরিয়াল বাংলায় পান।</p>
   <form class="newsletter-form newsletter-form--mailchimp" action="https://banglaaiguide.us15.list-manage.com/subscribe/post?u=d389c0647878724daecc58fc6&amp;id=aaca6896d2&amp;f_id=007c9ae1f0" method="post" target="_blank" rel="noopener noreferrer" accept-charset="UTF-8" data-mailchimp-form="true" style="display:flex;gap:8px;max-width:440px;margin:0 auto;">
     <input type="email" name="EMAIL" placeholder="আপনার ইমেইল লিখুন" required style="flex:1;padding:10px 14px;border:1px solid #e5e7eb;border-radius:8px;font-size:15px;">

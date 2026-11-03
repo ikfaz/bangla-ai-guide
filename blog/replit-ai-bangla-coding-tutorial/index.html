@@ -53,6 +53,7 @@
 <script type="application/ld+json" data-injected-by="inject-author-block">{"@context":"https://schema.org","@type":"Person","name":"ইকফাজ","alternateName":"Ikfaz","jobTitle":"প্রতিষ্ঠাতা ও সম্পাদক","url":"https://banglaaiguide.com/about/","sameAs":["https://github.com/ikfaz"],"worksFor":{"@type":"Organization","name":"বাংলা AI গাইড","url":"https://banglaaiguide.com"},"knowsAbout":["Artificial Intelligence","AI Tools","Bangladesh Tech","বাংলা AI"],"description":"বাংলা AI গাইডের প্রতিষ্ঠাতা। বাংলাদেশি ব্যবহারকারীদের জন্য AI টুলস কিউরেট ও বিশ্লেষণ করেন — কোনটা BD থেকে কাজ করে, কোনটায় bKash চলে, কোনটা আসলে দৈনন্দিন কাজে লাগে।"}</script>
 <!-- PERSON-SCHEMA:END -->
               <script type="application/ld+json" data-injected-by="extend-faq-coverage">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Replit AI থেকে সর্বোচ্চ পেতে কী কী টিপস আছে?","acceptedAnswer":{"@type":"Answer","text":"Agent prompt detail: \"Build study planner\" vague → বেশি explicit better। \"User signup with email, todo CRUD, calendar view with weekly grid, course material PDF upload (10 MB max), exam countdown widget\"। Iterate small: Agent-এর initial build-এ minor issues — small targeted prompt: \"Add email verification step to signup\"। Manual edit don't fear: Agent-generated code review + edit। Generated code is starting point, not final। Database choice: Replit DB simple project-এ, PostgreSQL complex-এ। Deploy free tier: Sleep after 5 min inactivity। Always-on দরকার হলে Core tier। Privacy: Free tier public। Private repls Core tier-এ। Bangla content: UTF-8 fully supported। Database fields Bangla store…"}},{"@type":"Question","name":"Replit AI-এর মূল features কী কী?","acceptedAnswer":{"@type":"Answer","text":"Replit Agent: Natural language prompt → full functional app। \"Build a study planner app with login, todo list, calendar view\" → React + Node + DB স্কেলেটন delivered। Replit Assistant (Ghostwriter): IDE-তে inline AI — autocomplete, refactor, explain, fix bug। Multi-language support: Python, JS/TS, Go, Rust, Java, C++, Ruby — সব major। Instant deploy: Click \"Deploy\" → app live URL। No DevOps knowledge needed। Built-in DB: Replit DB (key-value) + PostgreSQL (Pro) — zero-setup। Real-time collaboration: Google Docs-এর মতো — multi-user coding। Bounties: Replit job marketplace — paid project freelancing (BD students-এর জন্য income opportunity)।"}},{"@type":"Question","name":"Replit কী?","acceptedAnswer":{"@type":"Answer","text":"Replit (২০১৬ founded, San Francisco, founders Amjad Masad + Faris Masad — Jordanian origin) — browser-based collaborative IDE। ৩৫+ language support, instant deploy, real-time collaboration। ২০২৩-এ Replit AI (Ghostwriter → Agent) — natural language দিয়ে full app build। Founded ২০১৬ YC + a16z-backed Active users (global) ~৩ কোটি Student + indie dev-heavy BD adoption ~৪৫,০০০ active University CSE-dominant Free tier Strong (1 GB storage, basic AI) Paid: $২৫/মাস"}},{"@type":"Question","name":"Replit AI-এর দাম কত এবং BD-তে এর ROI কেমন?","acceptedAnswer":{"@type":"Answer","text":"Free: Public repls + basic AI (limited tokens)। 1 GB storage। Sleep after inactivity। Replit Core $২৫/মাস: Private repls, more AI usage, always-on apps, more storage। Afrin-এর tier। Teams $৩৫/user/মাস: Team collaboration, admin features। BD payment: USD card via bKash recharge। Replit BD students-এর জন্য occasional regional discounts (verify in pricing page)।"}}]}</script>
+  <script src="/js/article-chrome.js" defer></script>
 </head>
 <body>
     <header class="navbar">
@@ -69,8 +70,11 @@
         </div>
     </header>
 
-    <div class="container">
-        <h1>Replit AI বাংলা গাইড — Browser-এ Full-Stack App তৈরি ২০২৬</h1>
+    <div class="article-sheet container">
+        <!-- ARTICLE-META:START -->
+<p class="article-kicker"><span class="article-chip">কোডিং</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৫ মিনিট পড়া</span></p>
+<!-- ARTICLE-META:END -->
+<h1>Replit AI বাংলা গাইড — Browser-এ Full-Stack App তৈরি ২০২৬</h1>
         <!-- AUTHOR-BLOCK:START -->
 <section class="author-block" itemscope itemtype="https://schema.org/Person" aria-label="লেখক সম্পর্কে">
   <style>
@@ -103,15 +107,40 @@
   </div>
 </section>
 <!-- AUTHOR-BLOCK:END -->
+<!-- ARTICLE-HERO:START -->
+<figure class="article-hero">
+  <img src="/blog/replit-ai-bangla-coding-tutorial/cover.svg" width="1200" height="630" alt="Replit AI বাংলা গাইড — Browser-এ Full-Stack App তৈরি ২০২৬" decoding="async" fetchpriority="high">
+  <figcaption>Replit AI বাংলা গাইড — Browser-এ Full-Stack App তৈরি ২০২৬</figcaption>
+</figure>
+<!-- ARTICLE-HERO:END -->
+<!-- ARTICLE-TOC:START -->
+<nav class="article-toc" aria-label="সূচিপত্র">
+  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
+  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
+  <ol class="toc-list">
+    <li class="toc-item"><a href="#ভূমিকা-rajshahi-university-র-student-এর-first-saas">ভূমিকা — Rajshahi University-র student-এর first SaaS</a></li>
+    <li class="toc-item"><a href="#replit-কী">Replit কী?</a></li>
+    <li class="toc-item"><a href="#প্রধান-ai-ফিচার">প্রধান AI ফিচার</a></li>
+    <li class="toc-item"><a href="#প্রথম-app-agent-দিয়ে-১০-মিনিটে">প্রথম app — Agent দিয়ে ১০ মিনিটে</a></li>
+    <li class="toc-item"><a href="#দাম">দাম</a></li>
+    <li class="toc-item"><a href="#বাংলাদেশি-ছাত্র-developer-দের-জন্য-practical-use">বাংলাদেশি ছাত্র/developer-দের জন্য practical use</a></li>
+    <li class="toc-item"><a href="#টিপস">টিপস</a></li>
+    <li class="toc-item"><a href="#replit-vs-bolt-vs-lovable">Replit vs Bolt vs Lovable</a></li>
+    <li class="toc-item"><a href="#উপসংহার">উপসংহার</a></li>
+    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
+  </ol>
+</nav>
+<!-- ARTICLE-TOC:END -->
 
-<h2>ভূমিকা — Rajshahi University-র student-এর first SaaS</h2>
+<h2 id="ভূমিকা-rajshahi-university-র-student-এর-first-saas">ভূমিকা — Rajshahi University-র student-এর first SaaS</h2>
 <p class="lede">রাজশাহী বিশ্ববিদ্যালয়ের CSE 2nd year student আফরিন সুলতানা — ২০ বছর, ২০২৪-এ admission। Programming basic (C, Python, basic web)-এ familiar, কিন্তু production-grade application deploy কখনো করেননি। ২০২৫ সেপ্টেম্বরে একটা hackathon-এর জন্য একটা mini-SaaS idea: "Bangladeshi student-দের জন্য course material organizer + study planner"। ১৪ দিন deadline। Local laptop dev environment-এ struggle (Postgres install, Node setup, dependencies)। Replit discover করলেন — browser-এ full IDE + database + deployment, AI Agent দিয়ে natural language-এ app build। ৪ দিনে functional MVP, hackathon-এ runner-up, prize ৳৪০,০০০। সেই app-ই এখন 600+ active student user। এই গাইড সেই workflow।</p>
 
 <div class="callout">
 <strong>এই গাইডে যা থাকবে:</strong> Replit কী, প্রধান AI features (Agent, Assistant, Bounties), প্রথম app Agent দিয়ে ১০ মিনিটে, দাম, BD student/developer-এর জন্য use cases, টিপস, Replit vs Bolt vs Lovable।
 </div>
 
-<h2>Replit কী?</h2>
+<h2 id="replit-কী">Replit কী?</h2>
 <p>Replit (২০১৬ founded, San Francisco, founders Amjad Masad + Faris Masad — Jordanian origin) — browser-based collaborative IDE। ৩৫+ language support, instant deploy, real-time collaboration। ২০২৩-এ Replit AI (Ghostwriter → Agent) — natural language দিয়ে full app build।</p>
 
 <div class="stat-row">
@@ -121,7 +150,7 @@
 <div><strong>Free tier</strong><br>Strong (1 GB storage, basic AI)<br>Paid: $২৫/মাস</div>
 </div>
 
-<h2>প্রধান AI ফিচার</h2>
+<h2 id="প্রধান-ai-ফিচার">প্রধান AI ফিচার</h2>
 <ul>
 <li><strong>Replit Agent:</strong> Natural language prompt → full functional app। "Build a study planner app with login, todo list, calendar view" → React + Node + DB স্কেলেটন delivered।</li>
 <li><strong>Replit Assistant (Ghostwriter):</strong> IDE-তে inline AI — autocomplete, refactor, explain, fix bug।</li>
@@ -132,7 +161,7 @@
 <li><strong>Bounties:</strong> Replit job marketplace — paid project freelancing (BD students-এর জন্য income opportunity)।</li>
 </ul>
 
-<h2>প্রথম app — Agent দিয়ে ১০ মিনিটে</h2>
+<h2 id="প্রথম-app-agent-দিয়ে-১০-মিনিটে">প্রথম app — Agent দিয়ে ১০ মিনিটে</h2>
 <div class="case-study">
 <strong>Afrin-এর actual hackathon Day 1:</strong>
 <ol>
@@ -148,7 +177,7 @@
 <p>Day 2-4: Custom features add manually + AI-assisted। UI polish। Day 5-6: Deploy + user testing।</p>
 </div>
 
-<h2>দাম</h2>
+<h2 id="দাম">দাম</h2>
 <ul>
 <li><strong>Free:</strong> Public repls + basic AI (limited tokens)। 1 GB storage। Sleep after inactivity।</li>
 <li><strong>Replit Core $২৫/মাস:</strong> Private repls, more AI usage, always-on apps, more storage। Afrin-এর tier।</li>
@@ -156,7 +185,7 @@
 <li><strong>BD payment:</strong> USD card via bKash recharge। Replit BD students-এর জন্য occasional regional discounts (verify in pricing page)।</li>
 </ul>
 
-<h2>বাংলাদেশি ছাত্র/developer-দের জন্য practical use</h2>
+<h2 id="বাংলাদেশি-ছাত্র-developer-দের-জন্য-practical-use">বাংলাদেশি ছাত্র/developer-দের জন্য practical use</h2>
 
 <div class="case-study">
 <strong>1. CSE student MVP / hackathon (Afrin-এর মতো)</strong>
@@ -183,7 +212,7 @@
 <p>Real-time multi-user coding। University group project-এ Git conflict, environment difference — সব solved।</p>
 </div>
 
-<h2>টিপস</h2>
+<h2 id="টিপস">টিপস</h2>
 <ul>
 <li><strong>Agent prompt detail:</strong> "Build study planner" vague → বেশি explicit better। "User signup with email, todo CRUD, calendar view with weekly grid, course material PDF upload (10 MB max), exam countdown widget"।</li>
 <li><strong>Iterate small:</strong> Agent-এর initial build-এ minor issues — small targeted prompt: "Add email verification step to signup"।</li>
@@ -194,7 +223,7 @@
 <li><strong>Bangla content:</strong> UTF-8 fully supported। Database fields Bangla store smoothly।</li>
 </ul>
 
-<h2>Replit vs Bolt vs Lovable</h2>
+<h2 id="replit-vs-bolt-vs-lovable">Replit vs Bolt vs Lovable</h2>
 <table style="width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;">
 <thead><tr style="background:#F1F5F9;"><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Tool</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Strength</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Best for</th></tr></thead>
 <tbody>
@@ -206,12 +235,12 @@
 
 <p>Verdict: CSE student বা actual developer hands-on coding-এর জন্য — Replit। Non-dev founder MVP-এর জন্য — Bolt/Lovable।</p>
 
-<h2>উপসংহার</h2>
+<h2 id="উপসংহার">উপসংহার</h2>
 <p>Afrin বলেন: "Replit আমার hackathon-এর জন্য life-saving ছিল। Local laptop-এ Postgres install করতে 2 ঘণ্টা struggle। Replit-এ 30 seconds। Agent আমাকে boilerplate skip করতে দিল। আমি actual business logic-এ focused। Hackathon prize ৪০,০০০ — Replit Core $২৫ × ১২ = ৳৩৬,০০০ annual investment-এর সমান।"</p>
 <p>BD-র ১.৫ লাখ+ CSE/IT student — Replit তাদের জন্য universal entry point। Free tier-এ আজই signup করে ১টা small Agent project build করুন। শেখার curve ৪৮ ঘণ্টায় shift।</p>
 
 
-<h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
+<h2 id="প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</h2>
         <ul>
             <li><a href="/replit-ai/">Replit AI টুল পেজ</a></li>
             <li><a href="/bolt-new/">Bolt.new</a></li>
@@ -220,7 +249,7 @@
         </ul>
 
 <section class="seo-newsletter-block" style="margin-top:2.5rem;padding:2rem;background:#f0fdf4;border-radius:12px;text-align:center;">
-  <h2 style="color:#16a34a;margin-bottom:0.5rem;">AI আপডেট পেতে চান?</h2>
+  <h2 style="color:#16a34a;margin-bottom:0.5rem;" id="ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</h2>
   <p style="margin-bottom:1rem;">প্রতি সপ্তাহে নতুন AI টুলস ও টিউটোরিয়াল বাংলায় পান।</p>
   <form class="newsletter-form newsletter-form--mailchimp" action="https://banglaaiguide.us15.list-manage.com/subscribe/post?u=d389c0647878724daecc58fc6&amp;id=aaca6896d2&amp;f_id=007c9ae1f0" method="post" target="_blank" rel="noopener noreferrer" accept-charset="UTF-8" data-mailchimp-form="true" style="display:flex;gap:8px;max-width:440px;margin:0 auto;">
     <input type="email" name="EMAIL" placeholder="আপনার ইমেইল লিখুন" required style="flex:1;padding:10px 14px;border:1px solid #e5e7eb;border-radius:8px;font-size:15px;">

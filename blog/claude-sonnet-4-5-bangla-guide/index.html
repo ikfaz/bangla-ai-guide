@@ -53,6 +53,7 @@
 <script type="application/ld+json" data-injected-by="inject-author-block">{"@context":"https://schema.org","@type":"Person","name":"ইকফাজ","alternateName":"Ikfaz","jobTitle":"প্রতিষ্ঠাতা ও সম্পাদক","url":"https://banglaaiguide.com/about/","sameAs":["https://github.com/ikfaz"],"worksFor":{"@type":"Organization","name":"বাংলা AI গাইড","url":"https://banglaaiguide.com"},"knowsAbout":["Artificial Intelligence","AI Tools","Bangladesh Tech","বাংলা AI"],"description":"বাংলা AI গাইডের প্রতিষ্ঠাতা। বাংলাদেশি ব্যবহারকারীদের জন্য AI টুলস কিউরেট ও বিশ্লেষণ করেন — কোনটা BD থেকে কাজ করে, কোনটায় bKash চলে, কোনটা আসলে দৈনন্দিন কাজে লাগে।"}</script>
 <!-- PERSON-SCHEMA:END -->
               <script type="application/ld+json" data-injected-by="extend-faq-coverage">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Sonnet 4.5 vs 4.6 — কোনটা বেছে নেব?","acceptedAnswer":{"@type":"Answer","text":"Anthropic-এর marketing বলবে \"4.6 অনেক better\"। বাস্তবে: কিছু কাজে অবশ্যই better, কিছু কাজে indistinguishable। যেসব কাজে 4.6 স্পষ্টভাবে better: SWE-bench: 4.5 (৭৭.২%) → 4.6 (৭৭.২%) — same! Extended thinking mode (complex reasoning) — 4.6-এ ১৫-২০% better Math problem (multi-step) — 4.6-এ accuracy ১২% উপরে Computer Use (production-ready) — 4.6-এ stable, 4.5-এ experimental Agentic multi-step task (৫+ tool call) — 4.6-এ coherence better যেসব কাজে পার্থক্য negligible (4.5 দিয়েই চলে): Standard Bangla content writing — blog, FB caption, ad copy Translation (Bangla ↔ English) — দু'টোই top tier Email/customer support reply Simple summarization (article, video transcript) Single-file code generation…"}},{"@type":"Question","name":"বাংলাদেশ থেকে Claude Sonnet 4.5 কীভাবে access করব?","acceptedAnswer":{"@type":"Answer","text":"Sonnet 4.5 এখনও Claude.ai-এ available, কিন্তু default হিসেবে 4.6 আসে। চয়ন করতে হবে manually: Web (claude.ai) Sign in → conversation start → top-এ model dropdown \"Claude Sonnet 4.5\" select করুন (নাকি 4.6-ই থাকবে default) Pro user ($২০/মাস) — unlimited 4.5 + 4.6 দু'টোই Free user — limited messages, 4.5 access নাও পেতে পারেন API Model ID: claude-sonnet-4-5-20250929 Pricing: $৩ per M input / $১৫ per M output (4.6-এর সমান) BD থেকে: USD card prepaid recharge ($৫ minimum) Recommended: 4.6 ব্যবহার করুন, 4.5 specifically যখন legacy app বা stability-এর জন্য need Third-party OpenRouter: Sonnet 4.5 available, ৫% markup Cursor/Cline: Workspace settings থেকে model switch Poe.com: Premium tier-এ Sonnet…"}},{"@type":"Question","name":"Claude Sonnet 4.5 কোন কাজে সবচেয়ে ভালো?","acceptedAnswer":{"@type":"Answer","text":"Use case 1: Content writer/copywriter (Sabina-র মতো) Daily ৩-৫ টা blog/social post/email — Sonnet 4.5 quality consistent। মাসে $২০ Pro, কোনো extra খরচ নেই। সাবিনার বর্তমান workflow: একটা client brief paste → \"এই tone-এ ১,২০০ word post\" → 4.5 ৪০ সেকেন্ডে draft। Edit ১৫ মিনিট। Time per post: ২ ঘণ্টা → ৩০ মিনিট। Use case 2: Translation work (Bangla ↔ English) Comilla-র freelancer Faruq legal/medical document translate করেন। Sonnet 4.5-এ tone, terminology accuracy 4.6-এর সমান। মাসিক উপার্জন ৳৪২,০০০, খরচ Pro $২০ মাত্র। 4.6-এ migrate করার প্রয়োজন তিনি দেখেন না। Use case 3: Educational content (teacher/coach) Mirpur-এর coaching center-এর English teacher Nadia ৭০ জন student-এর জন্য daily lesson…"}},{"@type":"Question","name":"Claude Sonnet 4.5 বাংলায় কেমন কাজ করে?","acceptedAnswer":{"@type":"Answer","text":"Sonnet 4.5-এর Bangla output quality top-tier ছিল লঞ্চের সময় এবং এখনও দৈনিক কাজের জন্য excellent। সাবিনার ৬ মাসের অভিজ্ঞতা থেকে: Natural BD speech mimic: \"ভাই, আজকের প্রজেক্টের আপডেটটা দিন\" — formal vs casual, sentence rhythm — সবই natural। Cultural context: বাঙালি politeness, indirect refusal, formal Bangla — Sonnet 4.5 সঠিকভাবে handle করে। Bangla-English code-switch: \"Client এর brief-টা review করে modification suggest করুন\" — এই কথ্য pattern fluent। Idiom + proverb: \"চিনির ভাইয়ের মতো\" — context-এ ঠিকভাবে use করতে পারে। Limitation: Long-form (৫,০০০+ word) novel/research-এ 4.6-এর coherence সামান্য ভালো — তবে 4.5-ও acceptable।"}}]}</script>
+  <script src="/js/article-chrome.js" defer></script>
 </head>
 <body>
     <header class="navbar">
@@ -69,8 +70,11 @@
         </div>
     </header>
 
-    <div class="container">
-        <h1>Claude Sonnet 4.5 বাংলা গাইড — Anthropic-এর নতুন Flagship (২০২৬)</h1>
+    <div class="article-sheet container">
+        <!-- ARTICLE-META:START -->
+<p class="article-kicker"><span class="article-chip">এআই টুল</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৮ মিনিট পড়া</span></p>
+<!-- ARTICLE-META:END -->
+<h1>Claude Sonnet 4.5 বাংলা গাইড — Anthropic-এর নতুন Flagship (২০২৬)</h1>
         <!-- AUTHOR-BLOCK:START -->
 <section class="author-block" itemscope itemtype="https://schema.org/Person" aria-label="লেখক সম্পর্কে">
   <style>
@@ -103,15 +107,42 @@
   </div>
 </section>
 <!-- AUTHOR-BLOCK:END -->
+<!-- ARTICLE-HERO:START -->
+<figure class="article-hero">
+  <img src="/blog/claude-sonnet-4-5-bangla-guide/cover.svg" width="1200" height="630" alt="Claude Sonnet 4.5 বাংলা গাইড — Anthropic-এর নতুন Flagship (২০২৬)" decoding="async" fetchpriority="high">
+  <figcaption>Claude Sonnet 4.5 বাংলা গাইড — Anthropic-এর নতুন Flagship (২০২৬)</figcaption>
+</figure>
+<!-- ARTICLE-HERO:END -->
+<!-- ARTICLE-TOC:START -->
+<nav class="article-toc" aria-label="সূচিপত্র">
+  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
+  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
+  <ol class="toc-list">
+    <li class="toc-item"><a href="#ভূমিকা-sonnet-4-5-এখনও-কেন-প্রাসঙ্গিক">ভূমিকা — Sonnet 4.5 এখনও কেন প্রাসঙ্গিক</a></li>
+    <li class="toc-item"><a href="#sonnet-4-5-কী-এনেছিল-industry-তে">Sonnet 4.5 — কী এনেছিল industry-তে</a></li>
+    <li class="toc-item"><a href="#sonnet-4-5-vs-4-6-পার্থক্য-সততার-সঙ্গে">Sonnet 4.5 vs 4.6 — পার্থক্য সততার সঙ্গে</a></li>
+    <li class="toc-item"><a href="#bd-থেকে-access-sonnet-4-5-কীভাবে-পাবেন">BD থেকে access — Sonnet 4.5 কীভাবে পাবেন</a></li>
+    <li class="toc-item"><a href="#sonnet-4-5-বাংলায়-কেমন-পারে">Sonnet 4.5 বাংলায় — কেমন পারে?</a></li>
+    <li class="toc-item"><a href="#৫টি-use-case-যেখানে-sonnet-4-5-যথেষ্ট">৫টি use case যেখানে Sonnet 4.5 যথেষ্ট</a></li>
+    <li class="toc-item"><a href="#কখন-4-5-থেকে-4-6-এ-migrate-করবেন">কখন 4.5 থেকে 4.6-এ migrate করবেন</a></li>
+    <li class="toc-item"><a href="#project-feature-sonnet-4-5-এই-introduce">Project feature — Sonnet 4.5-এই introduce</a></li>
+    <li class="toc-item"><a href="#artifacts-interactive-output">Artifacts — interactive output</a></li>
+    <li class="toc-item"><a href="#computer-use-experimental-in-4-5">Computer Use (experimental in 4.5)</a></li>
+    <li class="toc-item"><a href="#উপসংহার-sonnet-4-5-কাদের-জন্য-এখনও-best">উপসংহার — Sonnet 4.5 কাদের জন্য এখনও best</a></li>
+    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
+  </ol>
+</nav>
+<!-- ARTICLE-TOC:END -->
 
-<h2>ভূমিকা — Sonnet 4.5 এখনও কেন প্রাসঙ্গিক</h2>
+<h2 id="ভূমিকা-sonnet-4-5-এখনও-কেন-প্রাসঙ্গিক">ভূমিকা — Sonnet 4.5 এখনও কেন প্রাসঙ্গিক</h2>
 <p class="lede">ধানমন্ডির এক content marketing agency-র Sr Copywriter সাবিনা রহমান গত ৬ মাস ধরে Claude Sonnet 4.5 ব্যবহার করছিলেন — মাসে $২০ Pro সাবস্ক্রিপশন, ক্লায়েন্ট brief থেকে blog post, FB ad copy, email sequence — দৈনিক ৩-৪ টা piece। নভেম্বর '২৫-এ Sonnet 4.6 release হলো। অনেকে বলল "এখনই migrate করো"। সাবিনা ১৪ দিন A/B test করলেন: একই brief Sonnet 4.5 vs 4.6-এ চালিয়ে quality compare। ফলাফল: ৪.৬ সামান্য better in code + extended thinking, কিন্তু standard Bangla content writing-এ পার্থক্য negligible। তিনি বলছেন: "Sonnet 4.5 এখনও আমার দৈনিক কাজে যথেষ্ট — 4.6 তখনই প্রয়োজন যখন আপনি কাজের ধরন বদলান।" এই গাইড BD users-দের জন্য — যাঁরা ভাবছেন: 4.5 কি এখনও worth it, নাকি 4.6-এ যেতেই হবে?</p>
 
 <div class="callout">
 <strong>এই গাইডে যা থাকবে:</strong> Sonnet 4.5-এর key feature যেগুলো এখনও আছে, 4.5 vs 4.6 — কখন migrate করবেন কখন না, ৫টি use case যেখানে 4.5 যথেষ্ট, BD থেকে access (Pro $২০), এবং Sonnet 4.5-এর historical importance।
 </div>
 
-<h2>Sonnet 4.5 — কী এনেছিল industry-তে</h2>
+<h2 id="sonnet-4-5-কী-এনেছিল-industry-তে">Sonnet 4.5 — কী এনেছিল industry-তে</h2>
 <p>২০২৫-এর সেপ্টেম্বরে Sonnet 4.5 release হয়েছিল। এই মডেল-ই প্রথম "agentic coding"-এর mainstream pattern set করেছিল। আগের 4.0-এর তুলনায়:</p>
 
 <div class="stat-row">
@@ -129,7 +160,7 @@
 <li><strong>Computer Use API:</strong> Browser-এ Claude direct control — research preview-তে চালু (এখন Sonnet 4.6-এ matured)।</li>
 </ul>
 
-<h2>Sonnet 4.5 vs 4.6 — পার্থক্য সততার সঙ্গে</h2>
+<h2 id="sonnet-4-5-vs-4-6-পার্থক্য-সততার-সঙ্গে">Sonnet 4.5 vs 4.6 — পার্থক্য সততার সঙ্গে</h2>
 <p>Anthropic-এর marketing বলবে "4.6 অনেক better"। বাস্তবে: কিছু কাজে অবশ্যই better, কিছু কাজে indistinguishable।</p>
 
 <div class="case-study">
@@ -160,7 +191,7 @@
 <strong>Honest verdict:</strong> দৈনিক content/translation/light coding কাজে Sonnet 4.5 এখনও যথেষ্ট। তবে Claude Pro $২০-তে এখন default model 4.6 — extra cost নেই। API user হলে 4.5 cheaper available, যা some heavy-volume use case-এ matter করে।
 </div>
 
-<h2>BD থেকে access — Sonnet 4.5 কীভাবে পাবেন</h2>
+<h2 id="bd-থেকে-access-sonnet-4-5-কীভাবে-পাবেন">BD থেকে access — Sonnet 4.5 কীভাবে পাবেন</h2>
 <p>Sonnet 4.5 এখনও Claude.ai-এ available, কিন্তু default হিসেবে 4.6 আসে। চয়ন করতে হবে manually:</p>
 
 <h3>Web (claude.ai)</h3>
@@ -186,7 +217,7 @@
 <li>Poe.com: Premium tier-এ Sonnet 4.5 access</li>
 </ul>
 
-<h2>Sonnet 4.5 বাংলায় — কেমন পারে?</h2>
+<h2 id="sonnet-4-5-বাংলায়-কেমন-পারে">Sonnet 4.5 বাংলায় — কেমন পারে?</h2>
 <p>Sonnet 4.5-এর Bangla output quality top-tier ছিল লঞ্চের সময় এবং এখনও দৈনিক কাজের জন্য excellent। সাবিনার ৬ মাসের অভিজ্ঞতা থেকে:</p>
 <ul>
 <li><strong>Natural BD speech mimic:</strong> "ভাই, আজকের প্রজেক্টের আপডেটটা দিন" — formal vs casual, sentence rhythm — সবই natural।</li>
@@ -196,7 +227,7 @@
 <li><strong>Limitation:</strong> Long-form (৫,০০০+ word) novel/research-এ 4.6-এর coherence সামান্য ভালো — তবে 4.5-ও acceptable।</li>
 </ul>
 
-<h2>৫টি use case যেখানে Sonnet 4.5 যথেষ্ট</h2>
+<h2 id="৫টি-use-case-যেখানে-sonnet-4-5-যথেষ্ট">৫টি use case যেখানে Sonnet 4.5 যথেষ্ট</h2>
 
 <div class="case-study">
 <strong>Use case 1: Content writer/copywriter (Sabina-র মতো)</strong>
@@ -223,7 +254,7 @@
 <p>Dhaka-র junior dev Rifat WordPress plugin, custom theme, simple Laravel CRUD — সব কাজ 4.5 দিয়ে করেন। SWE-bench score same, simple coding-এ পার্থক্য নেই। মাসে $২০ Cursor + Claude Pro।</p>
 </div>
 
-<h2>কখন 4.5 থেকে 4.6-এ migrate করবেন</h2>
+<h2 id="কখন-4-5-থেকে-4-6-এ-migrate-করবেন">কখন 4.5 থেকে 4.6-এ migrate করবেন</h2>
 <p>Migration-এর clear trigger:</p>
 <ul>
 <li><strong>Heavy reasoning task:</strong> Multi-step math, scientific reasoning, hard logic puzzle — 4.6-এর extended thinking advantage।</li>
@@ -235,7 +266,7 @@
 
 <p>যদি এই কোনোটাই আপনার daily না হয় — 4.5-এই থাকুন। API user হলে 4.5 সামান্য cheaper available কিছু endpoint-এ — heavy volume-এ savings।</p>
 
-<h2>Project feature — Sonnet 4.5-এই introduce</h2>
+<h2 id="project-feature-sonnet-4-5-এই-introduce">Project feature — Sonnet 4.5-এই introduce</h2>
 <p>Claude Project Sonnet 4.5-এর সঙ্গে launch হয়েছিল। এটা এখনও 4.6-এ অপরিবর্তিত — feature same, model upgrade।</p>
 <ul>
 <li><strong>System prompt:</strong> Project-এ একবার সেট করলে প্রতি conversation-এ apply হয়। যেমন: "আমি Sabina, content writer। আমার tone: warm, conversational। Brand: Aarong।"</li>
@@ -244,7 +275,7 @@
 <li><strong>BD use case:</strong> Sabina-র agency-তে ১২টা client জন্য ১২টা separate Project — প্রতিটার আলাদা tone + brand voice।</li>
 </ul>
 
-<h2>Artifacts — interactive output</h2>
+<h2 id="artifacts-interactive-output">Artifacts — interactive output</h2>
 <p>Sonnet 4.5-এই Artifact debut হয়েছিল। Code, diagram, presentation, interactive UI — Claude side panel-এ live preview। Use case BD-তে:</p>
 <ul>
 <li><strong>Interactive dashboard mockup:</strong> "এই data-এ একটা React dashboard বানাও" → side panel-এ live render।</li>
@@ -253,20 +284,20 @@
 <li><strong>Markdown report:</strong> Formatted report ready to copy/paste।</li>
 </ul>
 
-<h2>Computer Use (experimental in 4.5)</h2>
+<h2 id="computer-use-experimental-in-4-5">Computer Use (experimental in 4.5)</h2>
 <p>Sonnet 4.5-এ Computer Use API research preview-তে এসেছিল। 4.6-এ এখন stable, কিন্তু 4.5-এও experimental ব্যবহার করা যায়। Concept: Claude-কে আপনার screen দেখান + mouse/keyboard control দিন। Claude task perform করবে — browser browse, form fill, file move।</p>
 <ul>
 <li><strong>BD context:</strong> Govt website-এ form fill (NID, tax) — Claude automate করতে পারে।</li>
 <li><strong>Caveat:</strong> 4.5-এ slow + unreliable, production-এ recommend না। 4.6 এর জন্য wait করুন।</li>
 </ul>
 
-<h2>উপসংহার — Sonnet 4.5 কাদের জন্য এখনও best</h2>
+<h2 id="উপসংহার-sonnet-4-5-কাদের-জন্য-এখনও-best">উপসংহার — Sonnet 4.5 কাদের জন্য এখনও best</h2>
 <p>Sonnet 4.5 ২০২৫-এর agentic AI revolution-এর starting point ছিল। ২০২৬ মে-তেও এটা daily content/translation/light coding-এর জন্য excellent। যদি আপনি content writer, freelance translator, customer support automation চালান, simple coding করেন — Sonnet 4.5 আপনাকে fail করবে না। Pro plan-এ 4.5 + 4.6 দু'টোই পাবেন — কাজ অনুযায়ী switch করুন।</p>
 <p>সাবিনা এখনও তাঁর agency-তে Sonnet 4.5 default রেখেছেন — ১২টা client-এর কাজ smooth চলছে। তিনি 4.6 use করেন তখনই যখন একটা client-এর জন্য complex multi-part report লিখতে হয়। তাঁর philosophy: "নতুন model মানেই upgrade না — নতুন capability যখন আমার কাজে লাগবে, তখনই migrate।"</p>
 <p>যদি আপনার কাজে 4.5 যথেষ্ট মনে হয় — এখনই 4.6 চাপ নেবেন না। কাজের ধরন বদলালে তখন upgrade। সাশ্রয়ী BD context-এ এই discipline-ই বুদ্ধিমান।</p>
 
 
-<h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
+<h2 id="প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</h2>
         <ul>
             <li><a href="/claude/">Claude</a></li>
             <li><a href="/blog/claude-ai-bangladesh-guide/">Claude বাংলা</a></li>
@@ -275,7 +306,7 @@
         </ul>
 
 <section class="seo-newsletter-block" style="margin-top:2.5rem;padding:2rem;background:#f0fdf4;border-radius:12px;text-align:center;">
-  <h2 style="color:#16a34a;margin-bottom:0.5rem;">AI আপডেট পেতে চান?</h2>
+  <h2 style="color:#16a34a;margin-bottom:0.5rem;" id="ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</h2>
   <p style="margin-bottom:1rem;">প্রতি সপ্তাহে নতুন AI টুলস ও টিউটোরিয়াল বাংলায় পান।</p>
   <form class="newsletter-form newsletter-form--mailchimp" action="https://banglaaiguide.us15.list-manage.com/subscribe/post?u=d389c0647878724daecc58fc6&amp;id=aaca6896d2&amp;f_id=007c9ae1f0" method="post" target="_blank" rel="noopener noreferrer" accept-charset="UTF-8" data-mailchimp-form="true" style="display:flex;gap:8px;max-width:440px;margin:0 auto;">
     <input type="email" name="EMAIL" placeholder="আপনার ইমেইল লিখুন" required style="flex:1;padding:10px 14px;border:1px solid #e5e7eb;border-radius:8px;font-size:15px;">
