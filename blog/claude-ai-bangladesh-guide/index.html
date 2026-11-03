@@ -45,7 +45,8 @@
   <!-- PERSON-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-author-block">{"@context":"https://schema.org","@type":"Person","name":"ইকফাজ","alternateName":"Ikfaz","jobTitle":"প্রতিষ্ঠাতা ও সম্পাদক","url":"https://banglaaiguide.com/about/","sameAs":["https://github.com/ikfaz"],"worksFor":{"@type":"Organization","name":"বাংলা AI গাইড","url":"https://banglaaiguide.com"},"knowsAbout":["Artificial Intelligence","AI Tools","Bangladesh Tech","বাংলা AI"],"description":"বাংলা AI গাইডের প্রতিষ্ঠাতা। বাংলাদেশি ব্যবহারকারীদের জন্য AI টুলস কিউরেট ও বিশ্লেষণ করেন — কোনটা BD থেকে কাজ করে, কোনটায় bKash চলে, কোনটা আসলে দৈনন্দিন কাজে লাগে।"}</script>
 <!-- PERSON-SCHEMA:END -->
-            </head>
+              <script src="/js/article-chrome.js" defer></script>
+</head>
 <body>
     <header class="navbar">
         <div class="container navbar-inner">
@@ -61,9 +62,12 @@
         </div>
     </header>
 
-    <div class="container">
+    <div class="article-sheet container">
         <article>
-        <h1>Claude AI কী ও কীভাবে কাজ করে?</h1>
+        <!-- ARTICLE-META:START -->
+<p class="article-kicker"><span class="article-chip">এআই টুল</span><span class="article-chip">২৪ মার্চ, ২০২৬</span><span class="article-chip">৬ মিনিট পড়া</span></p>
+<!-- ARTICLE-META:END -->
+<h1>Claude AI কী ও কীভাবে কাজ করে?</h1>
         <!-- AUTHOR-BLOCK:START -->
 <section class="author-block" itemscope itemtype="https://schema.org/Person" aria-label="লেখক সম্পর্কে">
   <style>
@@ -96,6 +100,29 @@
   </div>
 </section>
 <!-- AUTHOR-BLOCK:END -->
+<!-- ARTICLE-HERO:START -->
+<figure class="article-hero">
+  <img src="/blog/claude-ai-bangladesh-guide/cover.svg" width="1200" height="630" alt="Claude AI কী ও কীভাবে কাজ করে?" decoding="async" fetchpriority="high">
+  <figcaption>Claude AI কী ও কীভাবে কাজ করে?</figcaption>
+</figure>
+<!-- ARTICLE-HERO:END -->
+<!-- ARTICLE-TOC:START -->
+<nav class="article-toc" aria-label="সূচিপত্র">
+  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
+  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
+  <ol class="toc-list">
+    <li class="toc-item"><a href="#claude-এর-model-family-যা-২০২৬-এ-matter-করে">Claude-এর model family — যা ২০২৬-এ matter করে</a></li>
+    <li class="toc-item"><a href="#claude-vs-chatgpt-vs-gemini-কোন-কাজে-কোনটা">Claude vs ChatGPT vs Gemini — কোন কাজে কোনটা</a></li>
+    <li class="toc-item"><a href="#bd-থেকে-claude-এ-signup-ও-payment">BD থেকে Claude-এ signup ও payment</a></li>
+    <li class="toc-item"><a href="#claude-এর-৫টা-feature-যা-সবার-জানা-দরকার">Claude-এর ৫টা feature যা সবার জানা দরকার</a></li>
+    <li class="toc-item"><a href="#শারমিনের-actual-daily-workflow-bangla-copywriter">শারমিনের actual daily workflow — Bangla copywriter</a></li>
+    <li class="toc-item"><a href="#claude-এর-সীমাবদ্ধতা-যা-chatgpt-gemini-তে-আছে">Claude-এর সীমাবদ্ধতা — যা ChatGPT/Gemini-তে আছে</a></li>
+    <li class="toc-item"><a href="#claude-কাদের-জন্য-সিদ্ধান্ত-গাছ">Claude কাদের জন্য — সিদ্ধান্ত-গাছ</a></li>
+    <li class="toc-item"><a href="#উপসংহার-আপনার-আজকের-পদক্ষেপ">উপসংহার — আপনার আজকের পদক্ষেপ</a></li>
+    <li class="toc-item"><a href="#প্রায়শই-জিজ্ঞাসিত-প্রশ্ন-faq">প্রায়শই জিজ্ঞাসিত প্রশ্ন (FAQ)</a></li>
+  </ol>
+</nav>
+<!-- ARTICLE-TOC:END -->
 
 <p class="lede">শারমিন আক্তার ঢাকার একজন সিনিয়র কপিরাইটার — একটি শীর্ষস্থানীয় এজেন্সিতে ৮ বছরের অভিজ্ঞতা। ২০২৪ সালে তিনি ChatGPT Plus ব্যবহার করতেন। ২০২৫ সালের জুনে একটি দীর্ঘ বাংলা ব্র্যান্ড স্টোরি লিখতে গিয়ে তিনি বুঝতে পারেন, ChatGPT-র বাংলা লেখা “কোথাও যন্ত্রের মতো শোনায়”। একই প্রম্পট তিনি Claude Sonnet 4.6-এ চালান — তাঁর ভাষায়, “আমার নিঃশ্বাস থেমে গিয়েছিল”। বাক্যের ছন্দ, বাংলা বাগধারা, আবেগের গতি — সবকিছুই প্রকাশযোগ্য মানের। সেদিন থেকেই তিনি Claude Pro ব্যবহারকারী। আজ ১১ মাস পর তিনি বলেন, তাঁর মাসিক ক্লায়েন্ট আয় ৪২% বেড়েছে — কারণ তাঁর বাংলা ব্র্যান্ড স্টোরিগুলো এখন AI-শনাক্তকরণে ধরা পড়ে না, আর ক্লায়েন্টরা তাঁর রেট প্রতি শব্দে $০.১৮ থেকে $০.৩৫-এ মেনে নিয়েছেন। AI টুল বদলায়নি, বদলেছিল “টুলের সঙ্গে মানানসই হওয়া”।</p>
 
@@ -108,7 +135,7 @@
     <div class="stat"><span class="num">$২০/মাস</span><span class="label">Claude Pro (BD-payable bKash USD card)</span></div>
 </div>
 
-<h2>Claude-এর model family — যা ২০২৬-এ matter করে</h2>
+<h2 id="claude-এর-model-family-যা-২০২৬-এ-matter-করে">Claude-এর model family — যা ২০২৬-এ matter করে</h2>
 
 <p>Anthropic-এর AI lineup ২০২৬-এর মাঝামাঝিতে:</p>
 
@@ -120,7 +147,7 @@
     <li><b>Projects:</b> Context-preserved workspace। প্রতি project-এ ১০০+ documents upload + custom instructions। Repeating workflows-এর জন্য game-changer।</li>
 </ul>
 
-<h2>Claude vs ChatGPT vs Gemini — কোন কাজে কোনটা</h2>
+<h2 id="claude-vs-chatgpt-vs-gemini-কোন-কাজে-কোনটা">Claude vs ChatGPT vs Gemini — কোন কাজে কোনটা</h2>
 
 <table style="width:100%;border-collapse:collapse;margin:1rem 0;">
 <thead>
@@ -142,7 +169,7 @@
 </tbody>
 </table>
 
-<h2>BD থেকে Claude-এ signup ও payment</h2>
+<h2 id="bd-থেকে-claude-এ-signup-ও-payment">BD থেকে Claude-এ signup ও payment</h2>
 
 <ol>
     <li><b>Website:</b> <a href="https://claude.ai">claude.ai</a> — VPN ছাড়া accessible from Bangladesh।</li>
@@ -154,7 +181,7 @@
     <li><b>BD payment:</b> bKash USD virtual card (Bank Asia, City Bank, EBL), Payoneer, Wise — সব accept।</li>
 </ol>
 
-<h2>Claude-এর ৫টা feature যা সবার জানা দরকার</h2>
+<h2 id="claude-এর-৫টা-feature-যা-সবার-জানা-দরকার">Claude-এর ৫টা feature যা সবার জানা দরকার</h2>
 
 <h3>1. Projects — Context-preserved workspace</h3>
 <p>শারমিনের সবচেয়ে প্রিয় ফিচার। প্রতিটি ক্লায়েন্টের জন্য আলাদা একটি Project — সেখানে ব্র্যান্ড গাইডলাইন, আগের লেখা, টোন-অব-ভয়েস ডকুমেন্ট, পারসোনা ও সাধারণ প্রশ্ন সব আপলোড করা থাকে। নতুন লেখার সময় Claude এই পুরো প্রসঙ্গ কাজে লাগায়।</p>
@@ -173,7 +200,7 @@
 <h3>5. Vision (image understanding)</h3>
 <p>ছবি আপলোড করে প্রশ্ন করুন। বাংলা হাতে লেখা ডকুমেন্ট, স্ক্রিনশট, চার্ট বা ছবি — Claude বিশ্লেষণ করে, ব্যাখ্যা দেয় ও লিখে দেয়। বাংলা হাতের লেখা OCR-এও Claude মোটামুটি নির্ভুল।</p>
 
-<h2>শারমিনের actual daily workflow — Bangla copywriter</h2>
+<h2 id="শারমিনের-actual-daily-workflow-bangla-copywriter">শারমিনের actual daily workflow — Bangla copywriter</h2>
 
 <ul>
     <li><b>সকাল ৯টা:</b> Project open (current client)। "এই brand-এর tone-of-voice অনুযায়ী একটা ১,২০০ শব্দের Mother's Day campaign story-এর outline দাও।"</li>
@@ -184,7 +211,7 @@
 
 <p>৩-৪ ঘণ্টাতেই ক্লায়েন্ট-মানের একটি লেখা। Claude ব্যবহারের আগে একই কাজে ২ দিন লাগত।</p>
 
-<h2>Claude-এর সীমাবদ্ধতা — যা ChatGPT/Gemini-তে আছে</h2>
+<h2 id="claude-এর-সীমাবদ্ধতা-যা-chatgpt-gemini-তে-আছে">Claude-এর সীমাবদ্ধতা — যা ChatGPT/Gemini-তে আছে</h2>
 
 <ul>
     <li><b>No image generation:</b> Vision-এ image বুঝে, কিন্তু generate করে না। DALL-E/Imagen/Midjourney-এর সমতুল্য নেই।</li>
@@ -194,7 +221,7 @@
     <li><b>Smaller context than Gemini:</b> 200K vs 1M-2M tokens। 500-page PDF-এ chunking দরকার।</li>
 </ul>
 
-<h2>Claude কাদের জন্য — সিদ্ধান্ত-গাছ</h2>
+<h2 id="claude-কাদের-জন্য-সিদ্ধান্ত-গাছ">Claude কাদের জন্য — সিদ্ধান্ত-গাছ</h2>
 
 <ul>
     <li><b>Content writer/blogger/journalist (especially Bangla):</b> Claude Pro primary।</li>
@@ -206,10 +233,10 @@
     <li><b>Budget = ০:</b> Claude Free + Gemini Free + ChatGPT Free combo।</li>
 </ul>
 
-<h2>উপসংহার — আপনার আজকের পদক্ষেপ</h2>
+<h2 id="উপসংহার-আপনার-আজকের-পদক্ষেপ">উপসংহার — আপনার আজকের পদক্ষেপ</h2>
 <p>শারমিন বলেন: “টুল তুলনায় ৭০টি বেঞ্চমার্ক সংখ্যার চেয়ে বেশি জরুরি আপনার একটি বাস্তব কাজ। গত সপ্তাহের কঠিন কাজটি তিনটি AI-তে দিন। যেটির আউটপুট আপনি হুবহু প্রকাশ করতে পারেন, সেটাই আপনার AI।” আজই করুন: claude.ai-এ একটি ফ্রি অ্যাকাউন্ট খুলুন (Gmail দিয়ে), আর এই সপ্তাহের সবচেয়ে কঠিন লেখা/কোডিং/বিশ্লেষণের কাজটি Claude-এ চালান। আউটপুট দ্বিগুণ ভালো হলে Pro ($২০) এর ১৪ দিনের ট্রায়াল নিন। পরের ৩০ দিনের কাজেই বুঝে যাবেন Claude আপনার জন্য মানানসই কিনা।</p>
 
-                <h2>প্রায়শই জিজ্ঞাসিত প্রশ্ন (FAQ)</h2>
+                <h2 id="প্রায়শই-জিজ্ঞাসিত-প্রশ্ন-faq">প্রায়শই জিজ্ঞাসিত প্রশ্ন (FAQ)</h2>
         <script type="application/ld+json">
         {
           "@context": "https://schema.org",

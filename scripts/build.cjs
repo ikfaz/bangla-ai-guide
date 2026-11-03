@@ -13,6 +13,7 @@ const steps = [
   "prerender-homepage.cjs",
   "inject-pillar-links.cjs",
   "generate-blog-covers.cjs",
+  "inject-article-chrome.cjs",
   "inject-related-posts.cjs",
   "inject-faq-schema.cjs",
   "inject-author-block.cjs",

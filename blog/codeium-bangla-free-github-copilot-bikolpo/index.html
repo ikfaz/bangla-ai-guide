@@ -53,6 +53,7 @@
 <script type="application/ld+json" data-injected-by="inject-author-block">{"@context":"https://schema.org","@type":"Person","name":"ইকফাজ","alternateName":"Ikfaz","jobTitle":"প্রতিষ্ঠাতা ও সম্পাদক","url":"https://banglaaiguide.com/about/","sameAs":["https://github.com/ikfaz"],"worksFor":{"@type":"Organization","name":"বাংলা AI গাইড","url":"https://banglaaiguide.com"},"knowsAbout":["Artificial Intelligence","AI Tools","Bangladesh Tech","বাংলা AI"],"description":"বাংলা AI গাইডের প্রতিষ্ঠাতা। বাংলাদেশি ব্যবহারকারীদের জন্য AI টুলস কিউরেট ও বিশ্লেষণ করেন — কোনটা BD থেকে কাজ করে, কোনটায় bKash চলে, কোনটা আসলে দৈনন্দিন কাজে লাগে।"}</script>
 <!-- PERSON-SCHEMA:END -->
               <script type="application/ld+json" data-injected-by="extend-faq-coverage">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Codeium কোন কাজে সবচেয়ে ভালো?","acceptedAnswer":{"@type":"Answer","text":"Use case 1: Internship work (PHP Laravel) Agency-র legacy Laravel codebase-এ feature add — Tanvir Codeium Tab-এ ৭০% boilerplate auto-complete। Manual logic implementation শুধু। Daily 4-5 hour-এর কাজ 2 hours-এ। ৩ মাসে confidence build। Use case 2: Personal portfolio project (React + Node) Side-project — একটা food delivery prototype। Codeium chat-এ @codebase ব্যবহার করে: \"এই project-এ auth flow কেমন? Improve সাজেশন।\" Detailed answer + code suggestion। Use case 3: LeetCode/competitive programming Daily ৩-৫টা problem। Codeium-কে: \"এই problem-এ আমার hint কী?\" Step-by-step nudge (full solution না)। Independent thinking train। Use case 4: Documentation প্রতি project-এ README + JSDoc। /docstring…"}},{"@type":"Question","name":"Codeium-এর মূল features কী কী?","acceptedAnswer":{"@type":"Answer","text":"Tab autocomplete: Type করতে শুরু করলে greyed text-এ multi-line suggestion। Tab key দিয়ে accept। Inline chat: Ctrl+Shift+L (selected code) → \"Refactor this\", \"Add error handling\", \"Explain\"। Quick edit। Sidebar chat: @-mentions support — @codebase, @file, @function। Whole repo aware। Slash commands: /explain, /test, /docstring, /fix। Frequent task shortcut। Multi-language: Python, JS, TS, Go, Rust, Java, C++, Ruby, PHP, Bash — সব main। Niche language (Solidity, Dart) decent। Bangla instruction works: \"এই function-এ error handling add করো\" perfectly understood।"}},{"@type":"Question","name":"Codeium কীভাবে install বা setup করব?","acceptedAnswer":{"@type":"Answer","text":"VS Code Extensions tab → \"Codeium\" search → install Sidebar-এ Codeium icon click → \"Sign up free\" Google/GitHub OAuth (fastest, no email verification delay) Privacy toggle: Settings → Codeium → \"Block training on my code\" → ✓ Default model: Codeium proprietary (fast)। Premium chat-এ Claude Sonnet 4.6 use। JetBrains IDE (IntelliJ/PyCharm) Settings → Plugins → \"Codeium\" search → install Restart → sign in Vim/Neovim vim-plug বা packer.nvim-এ Codeium plugin add :Codeium Auth → browser-এ OAuth complete"}},{"@type":"Question","name":"Codeium vs alternatives — কোনটা বেছে নেব?","acceptedAnswer":{"@type":"Answer","text":"Aspect Codeium Continue.dev Cody (Sourcegraph) Free tier Unlimited Tab Free + BYOK Limited Setup ease Easy Medium (API key needed) Easy Quality Very Good Excellent (with Sonnet) Good Best for BD students, hobbyists Power user Open-source contributor"}}]}</script>
+  <script src="/js/article-chrome.js" defer></script>
 </head>
 <body>
     <header class="navbar">
@@ -69,8 +70,11 @@
         </div>
     </header>
 
-    <div class="container">
-        <h1>Codeium বাংলা গাইড — GitHub Copilot-এর ফ্রি বিকল্প (২০২৬)</h1>
+    <div class="article-sheet container">
+        <!-- ARTICLE-META:START -->
+<p class="article-kicker"><span class="article-chip">কোডিং</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৫ মিনিট পড়া</span></p>
+<!-- ARTICLE-META:END -->
+<h1>Codeium বাংলা গাইড — GitHub Copilot-এর ফ্রি বিকল্প (২০২৬)</h1>
         <!-- AUTHOR-BLOCK:START -->
 <section class="author-block" itemscope itemtype="https://schema.org/Person" aria-label="লেখক সম্পর্কে">
   <style>
@@ -103,15 +107,40 @@
   </div>
 </section>
 <!-- AUTHOR-BLOCK:END -->
+<!-- ARTICLE-HERO:START -->
+<figure class="article-hero">
+  <img src="/blog/codeium-bangla-free-github-copilot-bikolpo/cover.svg" width="1200" height="630" alt="Codeium বাংলা গাইড — GitHub Copilot-এর ফ্রি বিকল্প (২০২৬)" decoding="async" fetchpriority="high">
+  <figcaption>Codeium বাংলা গাইড — GitHub Copilot-এর ফ্রি বিকল্প (২০২৬)</figcaption>
+</figure>
+<!-- ARTICLE-HERO:END -->
+<!-- ARTICLE-TOC:START -->
+<nav class="article-toc" aria-label="সূচিপত্র">
+  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
+  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
+  <ol class="toc-list">
+    <li class="toc-item"><a href="#ভূমিকা-khulna-র-এক-junior-dev-এর-০-stack">ভূমিকা — Khulna-র এক junior dev-এর $০ stack</a></li>
+    <li class="toc-item"><a href="#codeium-কী-কেন-আলাদা">Codeium কী + কেন আলাদা</a></li>
+    <li class="toc-item"><a href="#copilot-এর-চেয়ে-কেন-এগিয়ে-free-user-এর-জন্য">Copilot-এর চেয়ে কেন এগিয়ে (free user-এর জন্য)</a></li>
+    <li class="toc-item"><a href="#install-vs-code">Install (VS Code)</a></li>
+    <li class="toc-item"><a href="#প্রধান-ফিচারসমূহ">প্রধান ফিচারসমূহ</a></li>
+    <li class="toc-item"><a href="#practical-use-cases-tanvir-এর-actual-experience">Practical use cases — Tanvir-এর actual experience</a></li>
+    <li class="toc-item"><a href="#codeium-এর-paid-feature-pro">Codeium-এর paid feature (Pro)</a></li>
+    <li class="toc-item"><a href="#codeium-vs-alternatives">Codeium vs alternatives</a></li>
+    <li class="toc-item"><a href="#উপসংহার-tanvir-এর-message">উপসংহার — Tanvir-এর message</a></li>
+    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
+  </ol>
+</nav>
+<!-- ARTICLE-TOC:END -->
 
-<h2>ভূমিকা — Khulna-র এক junior dev-এর $০ stack</h2>
+<h2 id="ভূমিকা-khulna-র-এক-junior-dev-এর-০-stack">ভূমিকা — Khulna-র এক junior dev-এর $০ stack</h2>
 <p class="lede">খুলনার এক junior developer তানভীর হোসেন — ২৩ বছর বয়স, KUET CSE ২০২৪ batch (final year)। একটা local agency-তে part-time intern, monthly stipend ৳৮,০০০। GitHub Copilot Student Pack-এ apply করেছিলেন কিন্তু .ac.bd domain-এ ID verify হয়নি (২ মাস ধরে pending)। Cursor Pro $২০/মাস তাঁর budget-এর বাইরে। তখন বন্ধু Tausif সুপারিশ করল Codeium — FREE forever। ১৪ দিনের trial পর তানভীর full-time user। ৬ মাস পর — ১২টা personal project shipped, GitHub portfolio ৪০০+ commit, এবং একটা Singapore startup-এ junior remote role (monthly $১,৪০০)। তাঁর philosophy: "Codeium $0, Cursor $20 — capability gap ৭০% close, কিন্তু student-এর জন্য সবচেয়ে practical entry।" এই গাইড সেই workflow।</p>
 
 <div class="callout">
 <strong>এই গাইডে যা থাকবে:</strong> Codeium কী, Copilot-এর সঙ্গে honest পার্থক্য, install (VS Code/JetBrains/Vim), প্রধান feature, ৫টা practical use case, Codeium Pro ($১৫/মাস) কখন worth, Cursor/Continue-এর সঙ্গে comparison, এবং BD developer-এর জন্য workflow।
 </div>
 
-<h2>Codeium কী + কেন আলাদা</h2>
+<h2 id="codeium-কী-কেন-আলাদা">Codeium কী + কেন আলাদা</h2>
 <p>Codeium হলো একটা US-based AI coding assistant company (founded 2021, formerly Exafunction)। ২০২৪-এ company pivot করে Windsurf IDE launch করল — কিন্তু Codeium extension (VS Code/JetBrains-এ free) আলাদাভাবে চালু আছে।</p>
 
 <div class="stat-row">
@@ -129,7 +158,7 @@
 <li><strong>Self-host option:</strong> Enterprise-এ on-prem deploy।</li>
 </ul>
 
-<h2>Copilot-এর চেয়ে কেন এগিয়ে (free user-এর জন্য)</h2>
+<h2 id="copilot-এর-চেয়ে-কেন-এগিয়ে-free-user-এর-জন্য">Copilot-এর চেয়ে কেন এগিয়ে (free user-এর জন্য)</h2>
 
 <table style="width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;">
 <thead><tr style="background:#F1F5F9;"><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Feature</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Codeium Free</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Copilot Free</th></tr></thead>
@@ -142,7 +171,7 @@
 </tbody>
 </table>
 
-<h2>Install (VS Code)</h2>
+<h2 id="install-vs-code">Install (VS Code)</h2>
 <ol>
 <li>VS Code Extensions tab → "Codeium" search → install</li>
 <li>Sidebar-এ Codeium icon click → "Sign up free"</li>
@@ -163,7 +192,7 @@
 <li>:Codeium Auth → browser-এ OAuth complete</li>
 </ol>
 
-<h2>প্রধান ফিচারসমূহ</h2>
+<h2 id="প্রধান-ফিচারসমূহ">প্রধান ফিচারসমূহ</h2>
 <ul>
 <li><strong>Tab autocomplete:</strong> Type করতে শুরু করলে greyed text-এ multi-line suggestion। Tab key দিয়ে accept।</li>
 <li><strong>Inline chat:</strong> Ctrl+Shift+L (selected code) → "Refactor this", "Add error handling", "Explain"। Quick edit।</li>
@@ -173,7 +202,7 @@
 <li><strong>Bangla instruction works:</strong> "এই function-এ error handling add করো" perfectly understood।</li>
 </ul>
 
-<h2>Practical use cases — Tanvir-এর actual experience</h2>
+<h2 id="practical-use-cases-tanvir-এর-actual-experience">Practical use cases — Tanvir-এর actual experience</h2>
 
 <div class="case-study">
 <strong>Use case 1: Internship work (PHP Laravel)</strong>
@@ -200,7 +229,7 @@
 <p>Hacktoberfest-এ ৭টা PR merged। Codeium @codebase-এ "এই project-এর coding convention কী?" — first contribution-এর hassle কম।</p>
 </div>
 
-<h2>Codeium-এর paid feature (Pro)</h2>
+<h2 id="codeium-এর-paid-feature-pro">Codeium-এর paid feature (Pro)</h2>
 <ul>
 <li><strong>Pro $১৫/মাস:</strong> Unlimited premium chat (Claude Sonnet 4.6 unlimited), longer context, faster response, priority support</li>
 <li><strong>Teams $৪০/user/মাস:</strong> Admin dashboard, shared instructions, usage analytics</li>
@@ -209,7 +238,7 @@
 
 <p><strong>কবে Pro upgrade worth?</strong> যদি free tier-এর 50 premium chat/মাস exhausted হয় — Pro $১৫। Cursor $২০-এর চেয়ে $৫ সস্তা, Copilot Individual $১০-এর চেয়ে $৫ বেশি। মাঝখানে।</p>
 
-<h2>Codeium vs alternatives</h2>
+<h2 id="codeium-vs-alternatives">Codeium vs alternatives</h2>
 
 <table style="width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;">
 <thead><tr style="background:#F1F5F9;"><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Aspect</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Codeium</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Continue.dev</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Cody (Sourcegraph)</th></tr></thead>
@@ -221,12 +250,12 @@
 </tbody>
 </table>
 
-<h2>উপসংহার — Tanvir-এর message</h2>
+<h2 id="উপসংহার-tanvir-এর-message">উপসংহার — Tanvir-এর message</h2>
 <p>Tanvir বলেন: "Cursor $20 আমার ৬ মাসের mobile recharge। Copilot Student Pack-এ verification stuck। Codeium $0-এ আমাকে professional bridge করেছে — Singapore startup-এ job-এ। এই tool BD-র student community-র জন্য life-changing।"</p>
 <p>BD-র ১৬,০০০+ active Codeium user-এর ৭৫% student/early-career। যদি আপনি just-started developer — Codeium-এই শুরু করুন। Cursor/Copilot-এ shift করবেন যখন budget allow করে। Tool-এর সঙ্গে loyalty না — কাজের সঙ্গে।</p>
 
 
-<h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
+<h2 id="প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</h2>
         <ul>
             <li><a href="/codeium/">Codeium টুল পেজ</a></li>
             <li><a href="/github-copilot/">GitHub Copilot</a></li>
@@ -235,7 +264,7 @@
         </ul>
 
 <section class="seo-newsletter-block" style="margin-top:2.5rem;padding:2rem;background:#f0fdf4;border-radius:12px;text-align:center;">
-  <h2 style="color:#16a34a;margin-bottom:0.5rem;">AI আপডেট পেতে চান?</h2>
+  <h2 style="color:#16a34a;margin-bottom:0.5rem;" id="ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</h2>
   <p style="margin-bottom:1rem;">প্রতি সপ্তাহে নতুন AI টুলস ও টিউটোরিয়াল বাংলায় পান।</p>
   <form class="newsletter-form newsletter-form--mailchimp" action="https://banglaaiguide.us15.list-manage.com/subscribe/post?u=d389c0647878724daecc58fc6&amp;id=aaca6896d2&amp;f_id=007c9ae1f0" method="post" target="_blank" rel="noopener noreferrer" accept-charset="UTF-8" data-mailchimp-form="true" style="display:flex;gap:8px;max-width:440px;margin:0 auto;">
     <input type="email" name="EMAIL" placeholder="আপনার ইমেইল লিখুন" required style="flex:1;padding:10px 14px;border:1px solid #e5e7eb;border-radius:8px;font-size:15px;">

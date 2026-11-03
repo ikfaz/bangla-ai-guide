@@ -1,0 +1,293 @@
+/* Reusable article components for new guides.
+   Link this stylesheet from the article <head>. Class names start with av-.
+   Colors follow the site brand (green #16A34A, ink #0F172A, Hind Siliguri). */
+
+.av-hero {
+  margin: 4px 0 28px;
+}
+
+.av-hero img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  aspect-ratio: 1200 / 630;
+  object-fit: cover;
+  background: #f97316;
+}
+
+.av-hero figcaption {
+  margin-top: 8px;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.av-tldr {
+  margin: 0 0 28px;
+  padding: 18px 18px 8px;
+  background: linear-gradient(180deg, #f0fdf4 0%, #ffffff 70%);
+  border: 1px solid #bbf7d0;
+  border-radius: 18px;
+}
+
+.av-tldr-label,
+.av-callout-label {
+  margin: 0 0 8px;
+  color: #166534;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.av-tldr .seo-lead,
+.av-tldr p:last-child {
+  margin-bottom: 10px;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  font-size: 1.125rem;
+  line-height: 1.85;
+}
+
+.av-facts {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin: 8px 0 8px;
+  padding: 0;
+  list-style: none;
+}
+
+.av-fact {
+  margin: 0;
+  padding: 14px 14px 12px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  box-shadow: 0 1px 0 rgba(15, 23, 42, 0.03);
+}
+
+.av-fact dt {
+  margin: 0 0 4px;
+  color: #15803d;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.av-fact dd {
+  margin: 0;
+  color: #1e293b;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.av-steps {
+  margin: 12px 0 20px;
+  padding: 0;
+  list-style: none;
+  counter-reset: avstep;
+}
+
+.av-steps > li {
+  position: relative;
+  margin: 0 0 12px;
+  padding: 14px 14px 14px 58px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  line-height: 1.75;
+  counter-increment: avstep;
+}
+
+.av-steps > li::before {
+  content: counter(avstep);
+  position: absolute;
+  left: 12px;
+  top: 14px;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  background: #16a34a;
+  color: #fff;
+  font-weight: 800;
+  font-size: 15px;
+  line-height: 32px;
+  text-align: center;
+}
+
+.av-callout {
+  margin: 18px 0;
+  padding: 16px 16px 8px;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+}
+
+.av-callout--tip {
+  background: #f0fdf4;
+  border-color: #86efac;
+}
+
+.av-callout--note {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+.av-callout--warning {
+  background: #fff7ed;
+  border-color: #fdba74;
+}
+
+.av-callout--warning .av-callout-label {
+  color: #9a3412;
+}
+
+.av-callout--note .av-callout-label {
+  color: #334155;
+}
+
+.av-callout p,
+.av-callout li {
+  line-height: 1.8;
+}
+
+.av-table-scroll {
+  overflow-x: auto;
+  margin: 12px 0 20px;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  background: #fff;
+}
+
+.av-table {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  font-size: 16px;
+}
+
+.av-table caption {
+  caption-side: top;
+  padding: 14px 16px;
+  text-align: left;
+  font-weight: 800;
+  color: #0f172a;
+  background: #f8fafc;
+}
+
+.av-table th,
+.av-table td {
+  padding: 12px 14px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.av-table th {
+  background: #14532d;
+  color: #fff;
+  font-weight: 700;
+}
+
+.av-table tbody tr:nth-child(even) td {
+  background: #f8fafc;
+}
+
+.av-pullquote {
+  margin: 22px 0;
+  padding: 8px 0 8px 18px;
+  border: 0;
+  border-left: 4px solid #16a34a;
+  background: transparent;
+  color: #0f172a;
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1.7;
+}
+
+.av-pullquote p {
+  margin: 0;
+}
+
+.av-faq {
+  margin: 0 0 10px;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.av-faq summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 4px 14px;
+}
+
+.av-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.av-faq summary h3 {
+  margin: 10px 0;
+  padding-right: 28px;
+  font-size: 1.05rem;
+  line-height: 1.45;
+}
+
+.av-faq summary h3::after {
+  content: "+";
+  float: right;
+  margin-right: -20px;
+  color: #16a34a;
+  font-weight: 800;
+}
+
+.av-faq[open] summary h3::after {
+  content: "–";
+}
+
+.av-faq p {
+  margin: 0;
+  padding: 0 16px 14px;
+}
+
+.av-flow {
+  margin: 8px 0 20px;
+  padding: 12px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+}
+
+.av-flow svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.av-flow figcaption {
+  margin-top: 6px;
+  color: #64748b;
+  font-size: 13px;
+}
+
+@media (min-width: 720px) {
+  .av-facts {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  /* The public site stays light. These tokens only apply if a future
+     dark theme lets the page background follow the system. */
+  :root[data-theme="dark"] .av-fact,
+  :root[data-theme="dark"] .av-steps > li,
+  :root[data-theme="dark"] .av-faq,
+  :root[data-theme="dark"] .av-table-scroll {
+    background: #0f172a;
+    color: #e2e8f0;
+    border-color: #334155;
+  }
+}

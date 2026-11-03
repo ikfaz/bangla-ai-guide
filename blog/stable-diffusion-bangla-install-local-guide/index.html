@@ -52,7 +52,8 @@
   <!-- PERSON-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-author-block">{"@context":"https://schema.org","@type":"Person","name":"ইকফাজ","alternateName":"Ikfaz","jobTitle":"প্রতিষ্ঠাতা ও সম্পাদক","url":"https://banglaaiguide.com/about/","sameAs":["https://github.com/ikfaz"],"worksFor":{"@type":"Organization","name":"বাংলা AI গাইড","url":"https://banglaaiguide.com"},"knowsAbout":["Artificial Intelligence","AI Tools","Bangladesh Tech","বাংলা AI"],"description":"বাংলা AI গাইডের প্রতিষ্ঠাতা। বাংলাদেশি ব্যবহারকারীদের জন্য AI টুলস কিউরেট ও বিশ্লেষণ করেন — কোনটা BD থেকে কাজ করে, কোনটায় bKash চলে, কোনটা আসলে দৈনন্দিন কাজে লাগে।"}</script>
 <!-- PERSON-SCHEMA:END -->
-          </head>
+            <script src="/js/article-chrome.js" defer></script>
+</head>
 <body>
     <header class="navbar">
         <div class="container navbar-inner">
@@ -68,8 +69,11 @@
         </div>
     </header>
 
-    <div class="container">
-        <h1>Stable Diffusion বাংলা ইনস্টল গাইড — নিজের কম্পিউটারে Local AI Image</h1>
+    <div class="article-sheet container">
+        <!-- ARTICLE-META:START -->
+<p class="article-kicker"><span class="article-chip">মিডিয়া</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৪ মিনিট পড়া</span></p>
+<!-- ARTICLE-META:END -->
+<h1>Stable Diffusion বাংলা ইনস্টল গাইড — নিজের কম্পিউটারে Local AI Image</h1>
         <!-- AUTHOR-BLOCK:START -->
 <section class="author-block" itemscope itemtype="https://schema.org/Person" aria-label="লেখক সম্পর্কে">
   <style>
@@ -102,15 +106,40 @@
   </div>
 </section>
 <!-- AUTHOR-BLOCK:END -->
+<!-- ARTICLE-HERO:START -->
+<figure class="article-hero">
+  <img src="/blog/stable-diffusion-bangla-install-local-guide/cover.svg" width="1200" height="630" alt="Stable Diffusion বাংলা ইনস্টল গাইড — নিজের কম্পিউটারে Local AI Image" decoding="async" fetchpriority="high">
+  <figcaption>Stable Diffusion বাংলা ইনস্টল গাইড — নিজের কম্পিউটারে Local AI Image</figcaption>
+</figure>
+<!-- ARTICLE-HERO:END -->
+<!-- ARTICLE-TOC:START -->
+<nav class="article-toc" aria-label="সূচিপত্র">
+  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
+  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
+  <ol class="toc-list">
+    <li class="toc-item"><a href="#ভূমিকা-mirpur-এর-এক-game-artist-এর-local-sd-setup">ভূমিকা — Mirpur-এর এক game artist-এর local SD setup</a></li>
+    <li class="toc-item"><a href="#কেন-local-stable-diffusion">কেন Local Stable Diffusion?</a></li>
+    <li class="toc-item"><a href="#হার্ডওয়্যার-minimum">হার্ডওয়্যার minimum</a></li>
+    <li class="toc-item"><a href="#automatic1111-সবচেয়ে-popular-windows-এ-install">Automatic1111 (সবচেয়ে popular) — Windows-এ install</a></li>
+    <li class="toc-item"><a href="#comfyui-advanced-workflow">ComfyUI (advanced workflow)</a></li>
+    <li class="toc-item"><a href="#model-download-civitai">Model download — Civitai</a></li>
+    <li class="toc-item"><a href="#বাংলাদেশি-ব্যবহারকারীদের-জন্য-টিপস">বাংলাদেশি ব্যবহারকারীদের জন্য টিপস</a></li>
+    <li class="toc-item"><a href="#সাধারণ-সমস্যা">সাধারণ সমস্যা</a></li>
+    <li class="toc-item"><a href="#উপসংহার">উপসংহার</a></li>
+    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
+  </ol>
+</nav>
+<!-- ARTICLE-TOC:END -->
 
-<h2>ভূমিকা — Mirpur-এর এক game artist-এর local SD setup</h2>
+<h2 id="ভূমিকা-mirpur-এর-এক-game-artist-এর-local-sd-setup">ভূমিকা — Mirpur-এর এক game artist-এর local SD setup</h2>
 <p class="lede">মিরপুর ১০-এর এক freelance 3D/game artist শাহরিয়ার রহমান — ২৬ বছর, IUT CSE ২০২২ batch, ৩ বছর Unity game development experience। ২০২৪-এ একটা US-based indie game studio-র contract পেলেন: ৭০০+ concept art deliverable, ৬ মাস deadline, $৪,২০০ total। Midjourney monthly $৩০ পরিকল্পনা ছিল, কিন্তু complex variants + style consistency-এ Midjourney limited (paid tier-এ commercial use OK, কিন্তু per-image control low)। বন্ধু Tausif suggest করল local Stable Diffusion + ComfyUI। শাহরিয়ারের desktop: RTX 3060 12GB + 32GB RAM + i5-12400। ৩ দিন setup, learning curve ২ সপ্তাহ। পরে: per image generation cost effectively ০ taka (electricity ৳১২/দিন), unlimited iterations, ControlNet + LoRA দিয়ে precise style control। ৬ মাসে contract delivered + extra clients onboard। এই গাইড সেই workflow।</p>
 
 <div class="callout">
 <strong>এই গাইডে যা থাকবে:</strong> কেন local Stable Diffusion, hardware minimum requirements, Automatic1111 (Windows install), ComfyUI (advanced workflow), Civitai থেকে model download, BD users-এর জন্য practical tips, সাধারণ সমস্যা + সমাধান।
 </div>
 
-<h2>কেন Local Stable Diffusion?</h2>
+<h2 id="কেন-local-stable-diffusion">কেন Local Stable Diffusion?</h2>
 <ul>
 <li><strong>Free forever:</strong> Once setup, per-image cost ০। Electricity-ই ব্যয়।</li>
 <li><strong>Unlimited iterations:</strong> Cloud tools-এ daily/monthly limit। Local-এ infinite।</li>
@@ -121,7 +150,7 @@
 <li><strong>Commercial:</strong> Most SD models commercial use allowed (license check)।</li>
 </ul>
 
-<h2>হার্ডওয়্যার minimum</h2>
+<h2 id="হার্ডওয়্যার-minimum">হার্ডওয়্যার minimum</h2>
 
 <div class="stat-row">
 <div><strong>Minimum (entry)</strong><br>NVIDIA GTX 1660 6GB<br>16GB RAM<br>SD 1.5 only</div>
@@ -136,7 +165,7 @@
 <li><strong>BD pricing reality (২০২৬):</strong> RTX 3060 12GB ~৳৪২,০০০ (used)। RTX 4060 16GB ~৳৬০,০০০। RTX 4070 ৳৮৫,০০০+।</li>
 </ul>
 
-<h2>Automatic1111 (সবচেয়ে popular) — Windows-এ install</h2>
+<h2 id="automatic1111-সবচেয়ে-popular-windows-এ-install">Automatic1111 (সবচেয়ে popular) — Windows-এ install</h2>
 
 <h3>Step 1: Prerequisites</h3>
 <ol>
@@ -160,7 +189,7 @@
 <li>"txt2img" tab → prompt → "Generate"</li>
 </ol>
 
-<h2>ComfyUI (advanced workflow)</h2>
+<h2 id="comfyui-advanced-workflow">ComfyUI (advanced workflow)</h2>
 <p>Automatic1111-এর alternative — node-based visual workflow। Power users-এর জন্য better।</p>
 <ul>
 <li>github.com/comfyanonymous/ComfyUI</li>
@@ -170,7 +199,7 @@
 <li>Shahriar's choice: ComfyUI (precision-এর জন্য)</li>
 </ul>
 
-<h2>Model download — Civitai</h2>
+<h2 id="model-download-civitai">Model download — Civitai</h2>
 <p>civitai.com — Stable Diffusion community-র model hub।</p>
 <ul>
 <li><strong>Base models:</strong> SD 1.5, SDXL, FLUX dev</li>
@@ -186,7 +215,7 @@
 <li>Architectural Designs LoRA (buildings, interiors)</li>
 </ul>
 
-<h2>বাংলাদেশি ব্যবহারকারীদের জন্য টিপস</h2>
+<h2 id="বাংলাদেশি-ব্যবহারকারীদের-জন্য-টিপস">বাংলাদেশি ব্যবহারকারীদের জন্য টিপস</h2>
 <ul>
 <li><strong>Internet bandwidth:</strong> Model download 5-15GB each। Robi/GP unlimited night plan ব্যবহার করুন।</li>
 <li><strong>Electricity:</strong> ১ generation ~৫-১৫ seconds @ 200-300W। Daily ৫০ generations = ০.৫-১ kWh = ৳৬-১২।</li>
@@ -195,7 +224,7 @@
 <li><strong>Backup:</strong> Important LoRA/workflows external drive-এ backup।</li>
 </ul>
 
-<h2>সাধারণ সমস্যা</h2>
+<h2 id="সাধারণ-সমস্যা">সাধারণ সমস্যা</h2>
 <ul>
 <li><strong>"CUDA out of memory":</strong> --medvram or --lowvram flag webui-user.bat-এ add।</li>
 <li><strong>Slow generation:</strong> xformers install (<code>pip install xformers</code>) — 30% speed up।</li>
@@ -204,12 +233,12 @@
 <li><strong>Hands deformed:</strong> Negative prompt-এ "bad hands, extra fingers" + use "ADetailer" extension।</li>
 </ul>
 
-<h2>উপসংহার</h2>
+<h2 id="উপসংহার">উপসংহার</h2>
 <p>Shahriar বলেন: "Local SD-এর learning curve steep — ২ সপ্তাহ struggle। কিন্তু একবার set up + master হলে, cloud tools-এর চেয়ে ১০০x flexibility। Per image cost ০, NDA-protected client work safe, unlimited experimentation।"</p>
 <p>BD-র creative professional-দের জন্য local Stable Diffusion একটা long-term investment। GPU ৳৪০-৬০K initial cost, কিন্তু ROI ৬-১২ মাসে। আপনি যদি serious creator/designer/game artist — local SD শুরু করুন। প্রথমে Automatic1111, পরে ComfyUI।</p>
 
 
-<h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
+<h2 id="প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</h2>
         <ul>
             <li><a href="/stable-diffusion/">Stable Diffusion টুল পেজ</a></li>
             <li><a href="/flux/">Flux AI</a></li>
@@ -218,7 +247,7 @@
         </ul>
 
 <section class="seo-newsletter-block" style="margin-top:2.5rem;padding:2rem;background:#f0fdf4;border-radius:12px;text-align:center;">
-  <h2 style="color:#16a34a;margin-bottom:0.5rem;">AI আপডেট পেতে চান?</h2>
+  <h2 style="color:#16a34a;margin-bottom:0.5rem;" id="ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</h2>
   <p style="margin-bottom:1rem;">প্রতি সপ্তাহে নতুন AI টুলস ও টিউটোরিয়াল বাংলায় পান।</p>
   <form class="newsletter-form newsletter-form--mailchimp" action="https://banglaaiguide.us15.list-manage.com/subscribe/post?u=d389c0647878724daecc58fc6&amp;id=aaca6896d2&amp;f_id=007c9ae1f0" method="post" target="_blank" rel="noopener noreferrer" accept-charset="UTF-8" data-mailchimp-form="true" style="display:flex;gap:8px;max-width:440px;margin:0 auto;">
     <input type="email" name="EMAIL" placeholder="আপনার ইমেইল লিখুন" required style="flex:1;padding:10px 14px;border:1px solid #e5e7eb;border-radius:8px;font-size:15px;">

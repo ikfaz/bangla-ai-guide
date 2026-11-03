@@ -52,7 +52,8 @@
   <!-- PERSON-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-author-block">{"@context":"https://schema.org","@type":"Person","name":"ইকফাজ","alternateName":"Ikfaz","jobTitle":"প্রতিষ্ঠাতা ও সম্পাদক","url":"https://banglaaiguide.com/about/","sameAs":["https://github.com/ikfaz"],"worksFor":{"@type":"Organization","name":"বাংলা AI গাইড","url":"https://banglaaiguide.com"},"knowsAbout":["Artificial Intelligence","AI Tools","Bangladesh Tech","বাংলা AI"],"description":"বাংলা AI গাইডের প্রতিষ্ঠাতা। বাংলাদেশি ব্যবহারকারীদের জন্য AI টুলস কিউরেট ও বিশ্লেষণ করেন — কোনটা BD থেকে কাজ করে, কোনটায় bKash চলে, কোনটা আসলে দৈনন্দিন কাজে লাগে।"}</script>
 <!-- PERSON-SCHEMA:END -->
-          </head>
+            <script src="/js/article-chrome.js" defer></script>
+</head>
 <body>
     <header class="navbar">
         <div class="container navbar-inner">
@@ -68,8 +69,11 @@
         </div>
     </header>
 
-    <div class="container">
-        <h1>AI দিয়ে Data Visualization — বাংলায় Chart, Infographic, Dashboard</h1>
+    <div class="article-sheet container">
+        <!-- ARTICLE-META:START -->
+<p class="article-kicker"><span class="article-chip">কোডিং</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৪ মিনিট পড়া</span></p>
+<!-- ARTICLE-META:END -->
+<h1>AI দিয়ে Data Visualization — বাংলায় Chart, Infographic, Dashboard</h1>
         <!-- AUTHOR-BLOCK:START -->
 <section class="author-block" itemscope itemtype="https://schema.org/Person" aria-label="লেখক সম্পর্কে">
   <style>
@@ -102,6 +106,28 @@
   </div>
 </section>
 <!-- AUTHOR-BLOCK:END -->
+<!-- ARTICLE-HERO:START -->
+<figure class="article-hero">
+  <img src="/blog/ai-diye-data-visualization-bangla-guide/cover.svg" width="1200" height="630" alt="AI দিয়ে Data Visualization — বাংলায় Chart, Infographic, Dashboard" decoding="async" fetchpriority="high">
+  <figcaption>AI দিয়ে Data Visualization — বাংলায় Chart, Infographic, Dashboard</figcaption>
+</figure>
+<!-- ARTICLE-HERO:END -->
+<!-- ARTICLE-TOC:START -->
+<nav class="article-toc" aria-label="সূচিপত্র">
+  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
+  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
+  <ol class="toc-list">
+    <li class="toc-item"><a href="#২০২৬-এ-ai-data-viz-tools">২০২৬-এ AI Data Viz Tools</a></li>
+    <li class="toc-item"><a href="#তানজিনার-workflow-vaccination-dashboard-example">তানজিনার Workflow — Vaccination Dashboard Example</a></li>
+    <li class="toc-item"><a href="#chart-selection-framework-কোন-data-কোন-chart-এ">Chart Selection Framework — কোন data কোন chart-এ</a></li>
+    <li class="toc-item"><a href="#bd-context-use-cases">BD-Context Use Cases</a></li>
+    <li class="toc-item"><a href="#৩টা-common-mistake">৩টা Common Mistake</a></li>
+    <li class="toc-item"><a href="#উপসংহার-আপনার-আজকের-পদক্ষেপ">উপসংহার — আপনার আজকের পদক্ষেপ</a></li>
+    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
+  </ol>
+</nav>
+<!-- ARTICLE-TOC:END -->
 
 <p class="lede">তানজিনা আক্তার ICDDR,B-তে একজন junior research analyst — public health data নিয়ে কাজ করেন। ২০২৪-এর জানুয়ারিতে তাঁর dashboard build-এ একটা DPT vaccination uptake report বানাতে ৭ দিন লেগেছিল — Excel, manual chart, PowerPoint। ২০২৬-এ একই type-এর report ২.৫ ঘণ্টায় শেষ। তিনি AI-augmented workflow শিখেছিলেন: ChatGPT Code Interpreter, Claude Artifacts, Datawrapper, এবং Tableau-এ AI features। তাঁর last presentation-এ Country Director বলেছিলেন: "এটা ICDDR,B-এর সবচেয়ে engaging dashboard এই বছর।" তাঁর promotion ছয় মাস পরে — Research Associate ৳৬৫,০০০ থেকে ৳৯২,০০০-তে। AI না শিখলে তিনি junior পদে আরো ২ বছর থাকতেন।</p>
 
@@ -114,7 +140,7 @@
     <div class="stat"><span class="num">$০-২৫/মাস</span><span class="label">Total AI tool stack cost</span></div>
 </div>
 
-<h2>২০২৬-এ AI Data Viz Tools</h2>
+<h2 id="২০২৬-এ-ai-data-viz-tools">২০২৬-এ AI Data Viz Tools</h2>
 
 <ul>
     <li><b>ChatGPT Code Interpreter:</b> CSV upload → instant Python + matplotlib/seaborn chart। Most accessible for analysts।</li>
@@ -127,7 +153,7 @@
     <li><b>Plotly Dash + GPT:</b> Custom Python dashboard, code-heavy users।</li>
 </ul>
 
-<h2>তানজিনার Workflow — Vaccination Dashboard Example</h2>
+<h2 id="তানজিনার-workflow-vaccination-dashboard-example">তানজিনার Workflow — Vaccination Dashboard Example</h2>
 
 <h3>Step 1: Data preparation (30 min)</h3>
 <p>৬টা district × ১২ months × ৩ vaccine type = ২১৬ data point। CSV format।</p>
@@ -152,7 +178,7 @@
 <h3>Step 4: Narrative + polish (45 min)</h3>
 <p>Claude-এ chart-গুলোর synthesis: "এই ৪টা chart-এর interconnected narrative draft করো — donor-facing, 4-paragraph executive summary।"</p>
 
-<h2>Chart Selection Framework — কোন data কোন chart-এ</h2>
+<h2 id="chart-selection-framework-কোন-data-কোন-chart-এ">Chart Selection Framework — কোন data কোন chart-এ</h2>
 
 <ul>
     <li><b>Time trend:</b> Line chart (single variable) / Multi-line (compare)।</li>
@@ -164,7 +190,7 @@
     <li><b>Flow:</b> Sankey diagram।</li>
 </ul>
 
-<h2>BD-Context Use Cases</h2>
+<h2 id="bd-context-use-cases">BD-Context Use Cases</h2>
 
 <ul>
     <li><b>NGO grant reporting:</b> Beneficiary numbers, outcome metric, geographic spread।</li>
@@ -175,7 +201,7 @@
     <li><b>Government:</b> Census data, RTI request data, budget breakdown।</li>
 </ul>
 
-<h2>৩টা Common Mistake</h2>
+<h2 id="৩টা-common-mistake">৩টা Common Mistake</h2>
 
 <ul>
     <li><b>1. Chart-junk:</b> 3D pie chart, gradient background, glittery effect — distracting। Minimalist clean।</li>
@@ -183,10 +209,10 @@
     <li><b>3. No annotation:</b> Insight viewer-কে বুঝিয়ে দিতে হবে। Key data point-এ caption।</li>
 </ul>
 
-<h2>উপসংহার — আপনার আজকের পদক্ষেপ</h2>
+<h2 id="উপসংহার-আপনার-আজকের-পদক্ষেপ">উপসংহার — আপনার আজকের পদক্ষেপ</h2>
 <p>তানজিনা বলেন: "Data viz analyst-এর hidden weapon ২০২৬-এ। যে analyst AI-augmented chart তৈরি করতে পারেন তাঁরা presentations-এ visible হন। Visibility → promotion → salary। আমি ২৬ months-এ junior থেকে associate-এ — AI-skill সরাসরি cause।" আজই করুন: ChatGPT Code Interpreter-এ যান, যে কোনো past report-এর CSV upload করুন, এবং "এই data থেকে 3টা best chart suggest + generate করো" prompt চালান। ১৫ মিনিটে আপনি যা পাবেন — সেটাই তানজিনার transformation-এর শুরু।</p>
 
-                <h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
+                <h2 id="প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</h2>
         <ul>
             <li><a href="/blog/ai-data-analysis-bangla/">AI Data Analysis</a></li>
             <li><a href="/blog/ai-diye-excel-kaj-bangla-guide/">AI Excel</a></li>
@@ -195,7 +221,7 @@
         </ul>
 
 <section class="seo-newsletter-block" style="margin-top:2.5rem;padding:2rem;background:#f0fdf4;border-radius:12px;text-align:center;">
-  <h2 style="color:#16a34a;margin-bottom:0.5rem;">AI আপডেট পেতে চান?</h2>
+  <h2 style="color:#16a34a;margin-bottom:0.5rem;" id="ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</h2>
   <p style="margin-bottom:1rem;">প্রতি সপ্তাহে নতুন AI টুলস ও টিউটোরিয়াল বাংলায় পান।</p>
   <form class="newsletter-form newsletter-form--mailchimp" action="https://banglaaiguide.us15.list-manage.com/subscribe/post?u=d389c0647878724daecc58fc6&amp;id=aaca6896d2&amp;f_id=007c9ae1f0" method="post" target="_blank" rel="noopener noreferrer" accept-charset="UTF-8" data-mailchimp-form="true" style="display:flex;gap:8px;max-width:440px;margin:0 auto;">
     <input type="email" name="EMAIL" placeholder="আপনার ইমেইল লিখুন" required style="flex:1;padding:10px 14px;border:1px solid #e5e7eb;border-radius:8px;font-size:15px;">

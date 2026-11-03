@@ -52,10 +52,11 @@
   <!-- PERSON-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-author-block">{"@context":"https://schema.org","@type":"Person","name":"ইকফাজ","alternateName":"Ikfaz","jobTitle":"প্রতিষ্ঠাতা ও সম্পাদক","url":"https://banglaaiguide.com/about/","sameAs":["https://github.com/ikfaz"],"worksFor":{"@type":"Organization","name":"বাংলা AI গাইড","url":"https://banglaaiguide.com"},"knowsAbout":["Artificial Intelligence","AI Tools","Bangladesh Tech","বাংলা AI"],"description":"বাংলা AI গাইডের প্রতিষ্ঠাতা। বাংলাদেশি ব্যবহারকারীদের জন্য AI টুলস কিউরেট ও বিশ্লেষণ করেন — কোনটা BD থেকে কাজ করে, কোনটায় bKash চলে, কোনটা আসলে দৈনন্দিন কাজে লাগে।"}</script>
 <!-- PERSON-SCHEMA:END -->
+  <script type="application/ld+json" data-injected-by="extend-faq-coverage">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Claude Projects-এর কিছু practical উদাহরণ কী?","acceptedAnswer":{"@type":"Answer","text":"১. Brac CSR Communications Custom instructions: Formal-উষ্ণ tone, dignity-first language, donor + public audience। Knowledge files: Brand style guide (৪২ পৃষ্ঠা), last ২৪ মাসের ৬০টি press release, donor persona PDF, internal glossary। Typical use: Press release, donor newsletter, social posts for flood/Eid/Ramadan campaign। Time saved: প্রতি press release-এ ৪০ মিনিট → ১২ মিনিট। ২. Aamra Networks Tech Blog Custom instructions: Technical-but-accessible, B2B IT decision-maker audience, code snippets allowed, Bangla-English mix freely। Knowledge files: Aamra service catalog, last ১৮ মাসের blog post archive, target keyword list, ৩টি competitor blog sample (for tone differentiation)। Typical use:…"}},{"@type":"Question","name":"কীভাবে একটি Project তৈরি করব?","acceptedAnswer":{"@type":"Answer","text":"নাজিয়ার Brac Project setup-এর exact sequence: Step 1: claude.ai-এ login → left sidebar-এ \"Projects\" → \"+ New Project\"। Step 2: Project name: \"Brac CSR Communications\"। Description: short summary (optional)। Step 3: \"Set custom instructions\" — paste করুন role + tone + objective। নাজিয়ার example: \"তুমি Brac-এর external communications writer। Tone formal কিন্তু উষ্ণ, donor + general public audience, sensitive subjects (poverty, flood relief) ক্ষেত্রে dignity preserve কর। English-Bangla code-switching natural রাখো। Acronyms expand করো প্রথমবার।\" Step 4: \"Add content to knowledge\" — upload করুন: Brand style guide PDF, last ২৪ মাসের press release zip, donor persona deck, glossary docx। Step 5:…"}},{"@type":"Question","name":"Claude Projects-এর কী কী সীমাবদ্ধতা আছে?","acceptedAnswer":{"@type":"Answer","text":"Pro tier required: Free tier-এ Projects নেই। Pro $20/mo লাগবে। Single-model per Project: Project-এ model toggle করা যায় (Sonnet vs Opus), কিন্তু per-conversation। Context still 200K: Knowledge files যত বড়, runtime context-এ tax তত বেশি। ৫GB upload করলেও Claude এক conversation-এ ২০০K-এর বেশি absorb করতে পারে না। No live data sync: Knowledge files static — Google Drive/Notion sync নেই (yet)। Update manual। Custom instructions limit: ~৩০০০ characters — খুব দীর্ঘ persona/voice doc fit না। No multi-Project query: একটি conversation-এ একটাই Project-এর context — cross-Project synthesis manual। API access limited: Projects feature primarily web/app-based; API workflows-এ এখনো partial।"}}]}</script>
+  <script src="/js/article-chrome.js" defer></script>
   <!-- FAQ-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-faq-schema">{"@context":"https://schema.org","@type":"HowTo","name":"Claude Projects বাংলা গাইড — Persistent Context Workspace ২০২৬","step":[{"@type":"HowToStep","position":1,"name":"Brac CSR Communications","text":"Custom instructions: Formal-উষ্ণ tone, dignity-first language, donor + public audience। Knowledge files: Brand style guide (৪২ পৃষ্ঠা), last ২৪ মাসের ৬০টি press release, donor persona PDF, internal glossary। Typical use: Press release, donor newsletter, social posts for flood/Eid/Ramadan campaign। Time saved: প্রতি press release-এ ৪০ মিনিট → ১২ মিনিট।","url":"https://banglaaiguide.com/blog/claude-projects-bangla-guide/#step-1"},{"@type":"HowToStep","position":2,"name":"Aamra Networks Tech Blog","text":"Custom instructions: Technical-but-accessible, B2B IT decision-maker audience, code snippets allowed, Bangla-English mix freely। Knowledge files: Aamra service catalog, last ১৮ মাসের blog post archive, target keyword list, ৩টি competitor blog sample (for tone differentiation)। Typical use: ৮০০-১২০০ word blog on cloud migration, SD-WAN, cybersecurity for SMEs। Time saved: Outline + draft round-trip ৩ ঘণ্টা → ৫০ মিনিট।","url":"https://banglaaiguide.com/blog/claude-projects-bangla-guide/#step-2"},{"@type":"HowToStep","position":3,"name":"Robi DNCC Small Social Account","text":"Custom instructions: Witty, Gen-Z-friendly, Dhaka urban context, Banglish freely, max ২৮০ characters। Knowledge files: Last ৬ মাসের ১২০টি post (engagement-tagged), trending Dhaka meme reference doc, brand guardrails (কী politically-touchy বিষয় avoid)। Typical use: Daily ২-৩ post, weekly poll, campaign caption। Time saved: ১৫টি post idea generate করতে ৪৫ মিনিট → ১০ মিনিট।","url":"https://banglaaiguide.com/blog/claude-projects-bangla-guide/#step-3"},{"@type":"HowToStep","position":4,"name":"D2C Fashion Brand Email Sequences","text":"Custom instructions: Conversational, ২০-৩৫ বয়সী BD female audience, hero CTA \"এখনই কিনুন\", subject line A/B variants always। Knowledge files: Last ১২ মাসের email archive (open-rate tagged), product catalog CSV, customer review compilation, seasonal promotion calendar। Typical use: Welcome series, abandoned cart, post-purchase, festival drop announcement। Time saved: ৫-email sequence ২ দিন → ৪ ঘণ্টা।","url":"https://banglaaiguide.com/blog/claude-projects-bangla-guide/#step-4"},{"@type":"HowToStep","position":5,"name":"International Tech Client Whitepaper (Singapore)","text":"Custom instructions: Formal English (US spelling), ১৫০০-৩০০০ word whitepaper format, citations in IEEE style, no Bangla। Knowledge files: Client product docs, ১২টি competitor whitepaper, target buyer persona (CTO of SEA mid-market SaaS), past whitepaper templates। Typical use: Quarterly thought-leadership whitepaper, executive brief, conference abstract। Time saved: First-draft ৫ দিন → ১.৫ দিন।","url":"https://banglaaiguide.com/blog/claude-projects-bangla-guide/#step-5"}]}</script>
 <!-- FAQ-SCHEMA:END -->
-        <script type="application/ld+json" data-injected-by="extend-faq-coverage">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Claude Projects-এর কিছু practical উদাহরণ কী?","acceptedAnswer":{"@type":"Answer","text":"১. Brac CSR Communications Custom instructions: Formal-উষ্ণ tone, dignity-first language, donor + public audience। Knowledge files: Brand style guide (৪২ পৃষ্ঠা), last ২৪ মাসের ৬০টি press release, donor persona PDF, internal glossary। Typical use: Press release, donor newsletter, social posts for flood/Eid/Ramadan campaign। Time saved: প্রতি press release-এ ৪০ মিনিট → ১২ মিনিট। ২. Aamra Networks Tech Blog Custom instructions: Technical-but-accessible, B2B IT decision-maker audience, code snippets allowed, Bangla-English mix freely। Knowledge files: Aamra service catalog, last ১৮ মাসের blog post archive, target keyword list, ৩টি competitor blog sample (for tone differentiation)। Typical use:…"}},{"@type":"Question","name":"কীভাবে একটি Project তৈরি করব?","acceptedAnswer":{"@type":"Answer","text":"নাজিয়ার Brac Project setup-এর exact sequence: Step 1: claude.ai-এ login → left sidebar-এ \"Projects\" → \"+ New Project\"। Step 2: Project name: \"Brac CSR Communications\"। Description: short summary (optional)। Step 3: \"Set custom instructions\" — paste করুন role + tone + objective। নাজিয়ার example: \"তুমি Brac-এর external communications writer। Tone formal কিন্তু উষ্ণ, donor + general public audience, sensitive subjects (poverty, flood relief) ক্ষেত্রে dignity preserve কর। English-Bangla code-switching natural রাখো। Acronyms expand করো প্রথমবার।\" Step 4: \"Add content to knowledge\" — upload করুন: Brand style guide PDF, last ২৪ মাসের press release zip, donor persona deck, glossary docx। Step 5:…"}},{"@type":"Question","name":"Claude Projects-এর কী কী সীমাবদ্ধতা আছে?","acceptedAnswer":{"@type":"Answer","text":"Pro tier required: Free tier-এ Projects নেই। Pro $20/mo লাগবে। Single-model per Project: Project-এ model toggle করা যায় (Sonnet vs Opus), কিন্তু per-conversation। Context still 200K: Knowledge files যত বড়, runtime context-এ tax তত বেশি। ৫GB upload করলেও Claude এক conversation-এ ২০০K-এর বেশি absorb করতে পারে না। No live data sync: Knowledge files static — Google Drive/Notion sync নেই (yet)। Update manual। Custom instructions limit: ~৩০০০ characters — খুব দীর্ঘ persona/voice doc fit না। No multi-Project query: একটি conversation-এ একটাই Project-এর context — cross-Project synthesis manual। API access limited: Projects feature primarily web/app-based; API workflows-এ এখনো partial।"}}]}</script>
 </head>
 <body>
     <header class="navbar">
@@ -72,8 +73,11 @@
         </div>
     </header>
 
-    <div class="container">
-        <h1>Claude Projects বাংলা গাইড — Persistent Context Workspace ২০২৬</h1>
+    <div class="article-sheet container">
+        <!-- ARTICLE-META:START -->
+<p class="article-kicker"><span class="article-chip">এআই টুল</span><span class="article-chip">২৭ মে, ২০২৬</span><span class="article-chip">৯ মিনিট পড়া</span></p>
+<!-- ARTICLE-META:END -->
+<h1>Claude Projects বাংলা গাইড — Persistent Context Workspace ২০২৬</h1>
         <!-- AUTHOR-BLOCK:START -->
 <section class="author-block" itemscope itemtype="https://schema.org/Person" aria-label="লেখক সম্পর্কে">
   <style>
@@ -106,6 +110,31 @@
   </div>
 </section>
 <!-- AUTHOR-BLOCK:END -->
+<!-- ARTICLE-HERO:START -->
+<figure class="article-hero">
+  <img src="/blog/claude-projects-bangla-guide/cover.svg" width="1200" height="630" alt="Claude Projects বাংলা গাইড — Persistent Context Workspace ২০২৬" decoding="async" fetchpriority="high">
+  <figcaption>Claude Projects বাংলা গাইড — Persistent Context Workspace ২০২৬</figcaption>
+</figure>
+<!-- ARTICLE-HERO:END -->
+<!-- ARTICLE-TOC:START -->
+<nav class="article-toc" aria-label="সূচিপত্র">
+  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
+  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
+  <ol class="toc-list">
+    <li class="toc-item"><a href="#ভূমিকা-নাজিয়ার-৭-client-content-agency-র-workflow">ভূমিকা — নাজিয়ার ৭-Client Content Agency-র Workflow</a></li>
+    <li class="toc-item"><a href="#claude-projects-কী-কেন-matters">Claude Projects কী + কেন Matters</a></li>
+    <li class="toc-item"><a href="#skills-এর-সাথে-পার্থক্য">Skills-এর সাথে পার্থক্য</a></li>
+    <li class="toc-item"><a href="#কীভাবে-একটি-project-তৈরি-করব-step-by-step">কীভাবে একটি Project তৈরি করব — Step by Step</a></li>
+    <li class="toc-item"><a href="#নাজিয়ার-৫টি-real-client-project-example">নাজিয়ার ৫টি Real Client Project Example</a></li>
+    <li class="toc-item"><a href="#file-management-knowledge-files-max-5gb">File Management — Knowledge Files (Max 5GB)</a></li>
+    <li class="toc-item"><a href="#project-sharing-team-plan">Project Sharing — Team Plan</a></li>
+    <li class="toc-item"><a href="#সীমাবদ্ধতা">সীমাবদ্ধতা</a></li>
+    <li class="toc-item"><a href="#উপসংহার-আপনার-আজকের-পদক্ষেপ">উপসংহার — আপনার আজকের পদক্ষেপ</a></li>
+    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
+  </ol>
+</nav>
+<!-- ARTICLE-TOC:END -->
 
 <p class="lede">নাজিয়া তাসনিম, ৩১, DU English ২০১৪ batch, ঢাকার মোহাম্মদপুর-এর ফ্ল্যাট থেকে চালান একটি ১-জনের content agency — ৭টি long-term retainer client: Brac-এর CSR communications, Aamra Networks-এর tech blog, Robi DNCC-র একটি small social account, ২টি D2C fashion brand, আর ২টি international tech client (Singapore + Dubai)। মাসিক retainer income ৳1.8L। ২০২৫-এর সেপ্টেম্বর পর্যন্ত নাজিয়ার সবচেয়ে বড় সমস্যা ছিল — প্রতিটা client-এর জন্য আলাদা tone, আলাদা glossary, আলাদা past content reference। প্রতিদিন ৭ বার Claude-কে নতুন করে context দিতে হতো: "আমি Brac-এর জন্য লিখছি, এই brand voice, এই style guide, এই past 50 posts।" একবার কথোপকথন ১০০টি message পেরোলে context drift, আবার শুরু থেকে। এক সকালের ১৫ মিনিট শুধু copy-paste, তারপর কাজ। ২০২৬-এর জানুয়ারিতে Claude Projects-এ migrate করার পর — instant context switching, ৭টি client-এর জন্য ৭টি Project, ৫ সেকেন্ডে context shift। নাজিয়া বলেন: "Projects ছাড়া আমার agency scalable না। প্রতিটা client-এর memory Claude-এর কাছে আছে — আমি শুধু brief দিই।"</p>
 
@@ -118,13 +147,13 @@
     <div class="stat"><span class="num">৫ সেকেন্ড</span><span class="label">Context switch (was 15 min)</span></div>
 </div>
 
-<h2>ভূমিকা — নাজিয়ার ৭-Client Content Agency-র Workflow</h2>
+<h2 id="ভূমিকা-নাজিয়ার-৭-client-content-agency-র-workflow">ভূমিকা — নাজিয়ার ৭-Client Content Agency-র Workflow</h2>
 
 <p>নাজিয়ার সকাল শুরু হয় ৮টায়। আগে — ১৫-২০ মিনিট লাগত Brac-এর জন্য Claude-কে orient করতে: "আমি Brac-এর CSR team-এর external communications লিখি, tone formal-অথচ-উষ্ণ, target audience হলো donor + general public, last quarter-এ আমরা flood relief campaign চালিয়েছি যার hero metric ছিল ১২,৪০০ families।" প্রতিটা client-এর জন্য একই copy-paste ritual। দুপুরের মধ্যে ৩-৪টা ভিন্ন context-এর মধ্যে jump করতে গিয়ে — কখনো ভুল voice, কখনো ভুল glossary, কখনো এমন reference যা সেই client-এর past content-এ ছিলই না।</p>
 
 <p>Claude Projects-এর পর — Brac client-এর জন্য একটি Project তৈরি, knowledge files-এ Brac-এর last ২৪ মাসের communications, style guide PDF, donor persona deck। নাজিয়া শুধু "নতুন press release draft করো — Eid Mubarak-এর জন্য, focus on rural microfinance" — Claude already জানে কী tone, কোন vocabulary, কোন past campaign reference করতে হবে। এই same instant readiness ৭টি client জুড়ে।</p>
 
-<h2>Claude Projects কী + কেন Matters</h2>
+<h2 id="claude-projects-কী-কেন-matters">Claude Projects কী + কেন Matters</h2>
 
 <p>Claude Projects হলো Anthropic-এর persistent context workspace feature — ২০২৪-এর mid-এ launched, এখন Pro/Team/Enterprise tier-এর standard feature। প্রতিটা Project একটি isolated workspace যেখানে আপনি upload করতে পারেন knowledge files (PDF, docx, images, code), custom instructions set করতে পারেন (per-Project tone/role/objective), আর সেই Project-এর ভেতরে যত conversation শুরু করবেন — সবগুলো সেই same context inherit করে।</p>
 
@@ -138,7 +167,7 @@
 
 <p>সাধারণ Claude conversation-এ context প্রতিবার শুরু থেকে। Projects-এ context একবার set, তারপর every new chat সেই workspace-এর memory নিয়ে শুরু — যেন একজন onboarding-শেষ employee নতুন task পেয়েছে।</p>
 
-<h2>Skills-এর সাথে পার্থক্য</h2>
+<h2 id="skills-এর-সাথে-পার্থক্য">Skills-এর সাথে পার্থক্য</h2>
 
 <p>২০২৬-এ Anthropic Claude Skills release করেছে — অনেকে confused, "Projects আর Skills কী এক?" উত্তর: না।</p>
 
@@ -150,7 +179,7 @@
 
 <p>Analogy: Skills হলো আপনার professional training (যা আপনি যেকোনো কাজে নিয়ে যান), Projects হলো client-specific binder (যা শুধু সেই desk-এ থাকে)।</p>
 
-<h2>কীভাবে একটি Project তৈরি করব — Step by Step</h2>
+<h2 id="কীভাবে-একটি-project-তৈরি-করব-step-by-step">কীভাবে একটি Project তৈরি করব — Step by Step</h2>
 
 <p>নাজিয়ার Brac Project setup-এর exact sequence:</p>
 
@@ -167,7 +196,7 @@
 <b>নাজিয়ার tip:</b> Custom instructions-এ shi একটা "do-not" list রাখুন। নাজিয়া লিখেছেন: "কখনো 'beneficiary' শব্দ ব্যবহার করো না — Brac এখন 'participant' বলে। কখনো emoji না press release-এ।" — এই ২ লাইন ৩০টা ভুল edit বাঁচায়।
 </div>
 
-<h2>নাজিয়ার ৫টি Real Client Project Example</h2>
+<h2 id="নাজিয়ার-৫টি-real-client-project-example">নাজিয়ার ৫টি Real Client Project Example</h2>
 
 <div class="case-study">
 <h3>১. Brac CSR Communications</h3>
@@ -194,7 +223,7 @@
 <p><b>Custom instructions:</b> Formal English (US spelling), ১৫০০-৩০০০ word whitepaper format, citations in IEEE style, no Bangla। <b>Knowledge files:</b> Client product docs, ১২টি competitor whitepaper, target buyer persona (CTO of SEA mid-market SaaS), past whitepaper templates। <b>Typical use:</b> Quarterly thought-leadership whitepaper, executive brief, conference abstract। <b>Time saved:</b> First-draft ৫ দিন → ১.৫ দিন।</p>
 </div>
 
-<h2>File Management — Knowledge Files (Max 5GB)</h2>
+<h2 id="file-management-knowledge-files-max-5gb">File Management — Knowledge Files (Max 5GB)</h2>
 
 <p>প্রতিটা Project-এ আপনি ৫GB পর্যন্ত files রাখতে পারেন — যা content agency-র জন্য কার্যত unlimited। Supported formats: PDF, docx, txt, md, csv, images (jpg, png), code files (py, js, html, css, ইত্যাদি)।</p>
 
@@ -212,7 +241,7 @@
 
 <p>সীমা মনে রাখুন: একটি file max ৩০MB upload limit। বড় archive থাকলে compress করে multiple zip। আর Project-এর knowledge base যত বড়, প্রথম message-এর latency তত বেশি — necessary files-এই focus করুন।</p>
 
-<h2>Project Sharing — Team Plan</h2>
+<h2 id="project-sharing-team-plan">Project Sharing — Team Plan</h2>
 
 <p>নাজিয়ার agency এখনো ১-জনের, কিন্তু তাঁর Singapore client নিজেদের internal Team plan-এ নাজিয়াকে guest collaborator-হিসেবে invite করেছে। Claude Team plan-এ ($30/user/mo) আপনি Projects share করতে পারেন:</p>
 
@@ -226,7 +255,7 @@
 
 <p>Enterprise tier-এ SSO + audit log + data residency + custom DLP — large BD corporate (Brac itself, Robi, bKash) যারা Claude deploy করছেন, তাঁদের জন্য।</p>
 
-<h2>সীমাবদ্ধতা</h2>
+<h2 id="সীমাবদ্ধতা">সীমাবদ্ধতা</h2>
 
 <ul>
     <li><b>Pro tier required:</b> Free tier-এ Projects নেই। Pro $20/mo লাগবে।</li>
@@ -238,11 +267,11 @@
     <li><b>API access limited:</b> Projects feature primarily web/app-based; API workflows-এ এখনো partial।</li>
 </ul>
 
-<h2>উপসংহার — আপনার আজকের পদক্ষেপ</h2>
+<h2 id="উপসংহার-আপনার-আজকের-পদক্ষেপ">উপসংহার — আপনার আজকের পদক্ষেপ</h2>
 
 <p>Claude Projects যেকোনো BD professional-এর জন্য যাঁরা একাধিক context-এ কাজ করেন — content agency, freelancer, in-house marketer, developer juggling multiple repos, academic যিনি ৩টি research paper একসাথে লিখছেন — game-changer। নাজিয়ার ৭-client agency Projects ছাড়া scalable ছিল না; ১৫ মিনিটের context-load প্রতি client-এ মানে দিনে ২ ঘণ্টা waste। আজ Pro account থাকলে claude.ai → Projects → ১টি Project তৈরি করুন আপনার সবচেয়ে recurring task-এর জন্য (যেমন আপনার সবচেয়ে বড় client, বা আপনার personal blog)। Custom instructions + ৩-৫টা knowledge file upload — পরের সপ্তাহে আপনি নিজেই বুঝবেন কতটা time save। Projects + Skills + Sonnet 4.6 — ২০২৬-এর serious knowledge worker stack।</p>
 
-                <h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
+                <h2 id="প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</h2>
         <ul>
             <li><a href="/claude/">Claude</a></li>
             <li><a href="/blog/claude-sonnet-4-6-bangla-guide/">Claude Sonnet 4.6</a></li>
@@ -251,7 +280,7 @@
         </ul>
 
 <section class="seo-newsletter-block" style="margin-top:2.5rem;padding:2rem;background:#f0fdf4;border-radius:12px;text-align:center;">
-  <h2 style="color:#16a34a;margin-bottom:0.5rem;">AI আপডেট পেতে চান?</h2>
+  <h2 style="color:#16a34a;margin-bottom:0.5rem;" id="ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</h2>
   <p style="margin-bottom:1rem;">প্রতি সপ্তাহে নতুন AI টুলস ও টিউটোরিয়াল বাংলায় পান।</p>
   <form class="newsletter-form newsletter-form--mailchimp" action="https://banglaaiguide.us15.list-manage.com/subscribe/post?u=d389c0647878724daecc58fc6&amp;id=aaca6896d2&amp;f_id=007c9ae1f0" method="post" target="_blank" rel="noopener noreferrer" accept-charset="UTF-8" data-mailchimp-form="true" style="display:flex;gap:8px;max-width:440px;margin:0 auto;">
     <input type="email" name="EMAIL" placeholder="আপনার ইমেইল লিখুন" required style="flex:1;padding:10px 14px;border:1px solid #e5e7eb;border-radius:8px;font-size:15px;">
