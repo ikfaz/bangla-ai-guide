@@ -18,6 +18,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { REDIRECT_BLOG_SLUGS, COVER_FILES } = require('./lib/site-policy.cjs');
 
 const ROOT = path.resolve(__dirname, '..');
 const BLOG = path.join(ROOT, 'blog');
@@ -80,6 +81,7 @@ function collect() {
   const articles = [];
   for (const entry of fs.readdirSync(BLOG, { withFileTypes: true })) {
     if (!entry.isDirectory() || hasNonAscii(entry.name)) continue;
+    if (REDIRECT_BLOG_SLUGS.has(entry.name)) continue;
     const file = path.join(BLOG, entry.name, 'index.html');
     if (!fs.existsSync(file)) continue;
     const html = fs.readFileSync(file, 'utf8');
@@ -98,7 +100,7 @@ function collect() {
       slug: entry.name, title, description, category,
       tokens,
       file,
-      cover: ['cover.webp', 'cover.png', 'cover.jpg', 'cover.jpeg', 'cover.svg']
+      cover: COVER_FILES
         .find(name => fs.existsSync(path.join(BLOG, entry.name, name))) || null,
     });
   }

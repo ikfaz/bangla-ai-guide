@@ -119,4 +119,8 @@ function run() {
   console.log(`Meta-lint: patched ${touched} pages`);
 }
 
-run();
+if (process.argv.includes("--check")) {
+  require("./validate-seo.cjs");
+} else {
+  run();
+}

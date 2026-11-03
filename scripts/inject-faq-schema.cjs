@@ -25,13 +25,16 @@
  */
 
 const fs = require('fs');
-const path = require('path');
-
-const ROOT = path.resolve(__dirname, '..');
-const BLOG = path.join(ROOT, 'blog');
-
-function hasNonAscii(s) { return /[^\x00-\x7F]/.test(s); }
-function isRedirectStub(html) { return /http-equiv="refresh"/i.test(html); }
+const {
+  BLOG,
+  listBlogArticles,
+  isRedirectStub,
+  tryParseJson,
+  isNewsletterQuestion,
+  questionCore,
+  visibleText,
+  countLine,
+} = require('./lib/site-policy.cjs');
 
 function extractTag(html, tag) {
   const re = new RegExp(`<${tag}[^>]*>([\\s\\S]*?)<\\/${tag}>`, 'i');
@@ -60,7 +63,6 @@ function extractBlocks(html) {
   const endMarkers = [
     '<!-- RELATED-POSTS:START -->',
     '<!-- PILLAR-LINKS:START -->',
-    'seo-newsletter-block',
     'class="related-posts"',
     'প্রাসঙ্গিক টুলস',
   ];
@@ -69,7 +71,8 @@ function extractBlocks(html) {
     const i = html.indexOf(m, startIdx);
     if (i > -1 && i < endIdx) endIdx = i;
   }
-  const body = html.slice(startIdx, endIdx);
+  let body = html.slice(startIdx, endIdx);
+  body = body.replace(/<(section|div|aside)\b[^>]*class=(["'])[^"']*newsletter[^"']*\2[^>]*>[\s\S]*?<\/\1>/gi, '');
 
   // Find all h2/h3 and capture the content until the next heading
   const blocks = [];
@@ -92,6 +95,7 @@ function extractBlocks(html) {
 function isQuestion(text) {
   if (!text) return false;
   const t = text.trim();
+  if (isNewsletterQuestion(t)) return false;
   if (/[?？]$/.test(t)) return true;
   // Heuristic Bangla/English question starters
   if (/^(কী|কে|কেন|কীভাবে|কোন|কোথায়|কখন|কত|কাকে|কাদের)\b/.test(t)) {
@@ -151,7 +155,7 @@ function jsonLdBlock(name, json) {
 function buildBlock(faqs, steps, title, slug) {
   const url = `https://banglaaiguide.com/blog/${slug}/`;
   const parts = [];
-  if (faqs.length >= 3) {
+  if (faqs.length) {
     parts.push(jsonLdBlock('FAQPage', {
       '@context': 'https://schema.org',
       '@type': 'FAQPage',
@@ -188,41 +192,128 @@ function injectBlock(html, block) {
   return html.replace(/<\/head>/i, `  ${block}\n</head>`);
 }
 
-function removeBlock(html) {
-  return html.replace(/<!-- FAQ-SCHEMA:START -->[\s\S]*?<!-- FAQ-SCHEMA:END -->\s*/, '');
+function eachJsonLd(html, fn) {
+  const re = /<script\b[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi;
+  let match;
+  while ((match = re.exec(html)) !== null) fn(match[1]);
+}
+
+function collectExistingFaqs(html) {
+  const faqs = [];
+  eachJsonLd(html, (body) => {
+    const parsed = tryParseJson(body);
+    const visit = (node) => {
+      if (!node || typeof node !== 'object') return;
+      if (Array.isArray(node)) { node.forEach(visit); return; }
+      if (node['@type'] === 'FAQPage' && Array.isArray(node.mainEntity)) {
+        for (const item of node.mainEntity) {
+          const name = item && item.name ? String(item.name).trim() : '';
+          const text = item && item.acceptedAnswer && item.acceptedAnswer.text
+            ? String(item.acceptedAnswer.text).trim() : '';
+          if (name && text) faqs.push({ q: name, a: text });
+        }
+      }
+      if (node['@graph']) visit(node['@graph']);
+    };
+    visit(parsed);
+  });
+  return faqs;
+}
+
+function countFaqPages(html) {
+  let count = 0;
+  eachJsonLd(html, (body) => {
+    const parsed = tryParseJson(body);
+    const visit = (node) => {
+      if (!node || typeof node !== 'object') return;
+      if (Array.isArray(node)) { node.forEach(visit); return; }
+      if (node['@type'] === 'FAQPage') count += 1;
+      if (node['@graph']) visit(node['@graph']);
+    };
+    visit(parsed);
+  });
+  return count;
+}
+
+function removeSentinel(html) {
+  return html.replace(/[ \t]*<!-- FAQ-SCHEMA:START -->[\s\S]*?<!-- FAQ-SCHEMA:END -->\s*/, '');
+}
+
+function stripFaqScripts(html) {
+  return html.replace(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>/gi, (block) => {
+    const body = (block.match(/>([\s\S]*)<\/script>\s*$/i) || [])[1] || '';
+    const parsed = tryParseJson(body);
+    if (parsed === undefined) return block;
+    if (parsed['@type'] === 'FAQPage') return '';
+    if (parsed && Array.isArray(parsed['@graph'])) {
+      const kept = parsed['@graph'].filter((node) => !node || node['@type'] !== 'FAQPage');
+      if (kept.length === parsed['@graph'].length) return block;
+      if (!kept.length) return '';
+      parsed['@graph'] = kept;
+      return block.replace(body, JSON.stringify(parsed));
+    }
+    return block;
+  });
+}
+
+function mergeFaqs(existing, extracted, pageText) {
+  const stats = { newsletter: 0, hidden: 0 };
+  const seen = new Set();
+  const kept = [];
+  const consider = (item, fromExisting) => {
+    const q = String(item.q || '').trim();
+    const a = String(item.a || '').trim();
+    if (!q || !a) return;
+    if (isNewsletterQuestion(q)) { stats.newsletter += 1; return; }
+    if (!isQuestion(q)) return;
+    const core = questionCore(q);
+    if (!core || !pageText.includes(core)) {
+      if (fromExisting) stats.hidden += 1;
+      return;
+    }
+    const key = core.toLowerCase();
+    if (seen.has(key)) return;
+    seen.add(key);
+    kept.push({ q: `${core}?`, a: a.slice(0, 1200) });
+  };
+  existing.forEach((item) => consider(item, true));
+  extracted.forEach((item) => consider(item, false));
+  return { faqs: kept, ...stats, hadExisting: existing.length > 0 };
 }
 
 function run() {
   if (!fs.existsSync(BLOG)) { console.error('blog/ not found'); process.exit(1); }
-  let scanned = 0, faqInjected = 0, howToInjected = 0, removed = 0;
-  for (const entry of fs.readdirSync(BLOG, { withFileTypes: true })) {
-    if (!entry.isDirectory() || hasNonAscii(entry.name)) continue;
-    const file = path.join(BLOG, entry.name, 'index.html');
-    if (!fs.existsSync(file)) continue;
-    let html = fs.readFileSync(file, 'utf8');
+  let scanned = 0, faqInjected = 0, howToInjected = 0, deduped = 0;
+  let newsletterDropped = 0, hiddenDropped = 0;
+  for (const article of listBlogArticles()) {
+    const html = fs.readFileSync(article.file, 'utf8');
     if (isRedirectStub(html)) continue;
-    scanned++;
+    scanned += 1;
+    const beforeCount = countFaqPages(html);
     const title = stripHtml(extractTag(html, 'title') || '');
-    const blocks = extractBlocks(html);
-    const faqs = extractFaq(blocks);
-    const steps = extractHowToSteps(blocks, title);
-    const block = buildBlock(faqs, steps, title, entry.name);
-    let next;
-    if (block) {
-      next = injectBlock(html, block);
-      if (faqs.length >= 3) faqInjected++;
-      if (steps && steps.length >= 4) howToInjected++;
-    } else {
-      // No schema applicable — remove old block if any so we stay clean
-      next = removeBlock(html);
-      if (next !== html) removed++;
-    }
-    if (next !== html) fs.writeFileSync(file, next, 'utf8');
+    const pageText = visibleText(html);
+    const existing = collectExistingFaqs(html);
+    const extracted = extractFaq(extractBlocks(html));
+    const merged = mergeFaqs(existing, extracted, pageText);
+    newsletterDropped += merged.newsletter;
+    hiddenDropped += merged.hidden;
+    const steps = extractHowToSteps(extractBlocks(html), title);
+    const faqs = merged.hadExisting ? merged.faqs : (merged.faqs.length >= 3 ? merged.faqs : []);
+    const block = buildBlock(faqs, steps, title, article.slug);
+    let next = stripFaqScripts(removeSentinel(html));
+    if (block) next = injectBlock(next, block);
+    if (beforeCount > 1) deduped += 1;
+    if (faqs.length) faqInjected += 1;
+    if (steps && steps.length >= 4) howToInjected += 1;
+    if (next !== html) fs.writeFileSync(article.file, next);
   }
   console.log(`FAQ schema: scanned ${scanned} articles`);
-  console.log(`  FAQPage injected:  ${faqInjected}`);
+  console.log(`  FAQPage kept:      ${faqInjected}`);
   console.log(`  HowTo injected:    ${howToInjected}`);
-  if (removed) console.log(`  Cleaned stale:     ${removed}`);
+  console.log(`  Duplicates merged: ${deduped}`);
+  countLine('faq_deduped', deduped);
+  countLine('newsletter_questions_dropped', newsletterDropped);
+  countLine('hidden_faq_questions_dropped', hiddenDropped);
 }
 
 run();
