@@ -8,6 +8,8 @@ const fs = require("fs");
 const path = require("path");
 const { execFileSync } = require("child_process");
 
+const { REDIRECT_BLOG_SLUGS, isRedirectStub } = require("./lib/site-policy.cjs");
+
 const ROOT = path.resolve(__dirname, "..");
 const SITE_URL = "https://banglaaiguide.com";
 const SITEMAP_PATH = path.join(ROOT, "sitemap.xml");
@@ -174,6 +176,10 @@ function collectPages() {
     for (const entry of fs.readdirSync(blogDir, { withFileTypes: true })) {
       if (!entry.isDirectory()) continue;
       if (hasNonAscii(entry.name)) continue;
+      if (REDIRECT_BLOG_SLUGS.has(entry.name)) continue;
+      const blogIndex = path.join(blogDir, entry.name, "index.html");
+      if (!fs.existsSync(blogIndex)) continue;
+      if (isRedirectStub(fs.readFileSync(blogIndex, "utf8"))) continue;
       if (isHtmlPage(path.join(blogDir, entry.name))) {
         pages.push(`blog/${entry.name}`);
       }
@@ -211,7 +217,19 @@ function todayIso() {
   }).format(new Date());
 }
 
+function articleDateModified(slug) {
+  const match = String(slug).match(/^blog\/([^/]+)$/);
+  if (!match) return null;
+  const file = path.join(ROOT, "blog", match[1], "index.html");
+  if (!fs.existsSync(file)) return null;
+  const html = fs.readFileSync(file, "utf8");
+  const date = html.match(/"dateModified"\s*:\s*"(\d{4}-\d{2}-\d{2})"/);
+  return date ? date[1] : null;
+}
+
 function lastModFor(slug) {
+  const articleDate = articleDateModified(slug);
+  if (articleDate) return articleDate;
   const target = slug === "" ? "index.html" : path.join(slug, "index.html");
   const normalizedTarget = target.replace(/\\/g, "/");
   const loc = slug === "" ? `${SITE_URL}/` : `${SITE_URL}/${slug}/`;

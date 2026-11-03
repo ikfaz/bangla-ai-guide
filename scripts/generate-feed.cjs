@@ -7,6 +7,8 @@
 const fs = require("fs");
 const path = require("path");
 
+const { REDIRECT_BLOG_SLUGS, normalizeIso, gitContentDate } = require("./lib/site-policy.cjs");
+
 const ROOT = path.resolve(__dirname, "..");
 const BLOG = path.join(ROOT, "blog");
 const SITE = "https://banglaaiguide.com";
@@ -39,6 +41,7 @@ function collectPosts() {
   for (const entry of fs.readdirSync(BLOG, { withFileTypes: true })) {
     if (!entry.isDirectory()) continue;
     if (hasNonAscii(entry.name)) continue;
+    if (REDIRECT_BLOG_SLUGS.has(entry.name)) continue;
     const indexPath = path.join(BLOG, entry.name, "index.html");
     if (!fs.existsSync(indexPath)) continue;
     const html = fs.readFileSync(indexPath, "utf8");
@@ -50,8 +53,9 @@ function collectPosts() {
       /<meta name="description" content="([^"]+)"/i,
     );
     const datePublished =
-      readField(html, /"datePublished"\s*:\s*"([^"]+)"/i) ||
-      fs.statSync(indexPath).mtime.toISOString().slice(0, 10);
+      normalizeIso(readField(html, /"datePublished"\s*:\s*"([^"]+)"/i)) ||
+      gitContentDate(indexPath) ||
+      "2026-03-11";
 
     posts.push({
       slug: entry.name,

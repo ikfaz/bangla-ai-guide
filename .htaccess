@@ -43,11 +43,23 @@ RewriteRule ^best-ai-coding-tools-for-beginners-bangladesh/tool-detail\.html$ ht
 RewriteCond %{QUERY_STRING} ^tool=bolt-new
 RewriteRule ^ai-tools-bangladesh-bengali/tool-detail\.html$ https://banglaaiguide.com/bolt-new/? [R=301,L]
 
+# Canonical video-editing guide. The older slug stays as a source only.
+RewriteRule ^blog/ai-tools-for-video-editing/?$ https://banglaaiguide.com/blog/ai-video-editing-tools-2026/ [R=301,L]
+
+# Unpublished draft. Never serve the folder.
+RewriteRule ^blog/ai-diye-taka-income-2026-bangladesh-deep-draft(/.*)?$ https://banglaaiguide.com/blog/ai-diye-taka-income-2026-bangladesh/ [R=301,L]
+
 # ============================================================
 # 2. HTTPS enforcement
+#    Hostinger's CDN talks HTTP to the origin and sets
+#    X-Forwarded-Proto. Redirect only when none of the HTTPS
+#    signals are on, and always to the canonical host so the
+#    rule cannot loop on %{HTTP_HOST}.
 # ============================================================
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+RewriteCond %{HTTPS} !=on
+RewriteCond %{ENV:HTTPS} !^on$ [NC]
+RewriteCond %{HTTP:X-Forwarded-Proto} !https [NC]
+RewriteRule ^ https://banglaaiguide.com%{REQUEST_URI} [R=301,L]
 
 # ============================================================
 # 3. Non-www enforcement
