@@ -30,6 +30,7 @@
     <style>:root{--bg-gradient:linear-gradient(180deg,#F0FDF9 0%,#FAFBFC 50%,#FFFFFF 100%);--accent:#16A34A;--accent-hover:#15803D;--accent-light:#22C55E;--accent-soft:#DCFCE7;--text:#0F172A;--text-muted:#475569;--border:#E2E8F0;--shadow-sm:0 4px 12px rgba(15,23,42,.06);--shadow-md:0 10px 30px rgba(15,23,42,.08);--radius-lg:24px;--radius-md:18px}body{font-family:'Hind Siliguri',sans-serif;line-height:1.8;margin:0;padding:0;background:var(--bg-gradient);color:var(--text);-webkit-font-smoothing:antialiased}.container{max-width:820px;margin:60px auto 80px;background:#fff;padding:60px 70px;border-radius:var(--radius-lg);box-shadow:var(--shadow-md);position:relative}.container::before{content:'';position:absolute;top:0;left:0;width:6px;height:100%;background:linear-gradient(135deg,#16A34A 0%,#22C55E 100%);border-radius:var(--radius-lg) 0 0 var(--radius-lg)}h1{font-family:'Syne',sans-serif;color:var(--text);font-size:2.75rem;font-weight:800;line-height:1.2;margin:0 0 32px 0;padding-bottom:24px;border-bottom:3px solid var(--border);position:relative}h1::after{content:'';position:absolute;bottom:-3px;left:0;width:80px;height:3px;background:linear-gradient(135deg,#16A34A 0%,#22C55E 100%)}h2{font-family:'Syne',sans-serif;color:var(--text);font-size:2rem;font-weight:700;line-height:1.3;margin:48px 0 20px 0;padding-left:20px;border-left:4px solid var(--accent)}h3{font-family:'Syne',sans-serif;color:var(--text);font-size:1.5rem;font-weight:600;line-height:1.4;margin:32px 0 16px 0}p{margin-bottom:1.5em;font-size:1.125rem;color:var(--text-muted);line-height:1.8}ul{list-style:none;margin:24px 0;padding:0}ul li{position:relative;padding:14px 20px 14px 50px;margin-bottom:14px;background:linear-gradient(135deg,#F9FAFB 0%,#F0FDF4 100%);border-radius:var(--radius-md);border:1px solid var(--border);font-size:1.0625rem;line-height:1.7;color:var(--text-muted);transition:all .2s ease}ul li:hover{background:linear-gradient(135deg,#FFFFFF 0%,#F0FDF4 100%);border-color:rgba(22,163,74,.3);transform:translateX(4px);box-shadow:var(--shadow-sm)}ul li::before{content:'\2713';position:absolute;left:18px;top:50%;transform:translateY(-50%);width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#16A34A 0%,#22C55E 100%);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px}b{font-weight:600;color:var(--text)}a{color:var(--accent);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;font-weight:500;transition:all .2s ease}a:hover{color:var(--accent-hover);text-decoration-thickness:3px}@media (max-width:768px){.container{margin:30px 20px;padding:40px 30px}h1{font-size:2rem}h2{font-size:1.5rem}h3{font-size:1.25rem}p,ul li{font-size:1rem}}</style>
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/blog-premium.css">
+<script src="/js/article-chrome.js" defer></script>
   <!-- FAQ-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"ChatGPT Tasks-এর কী কী সীমাবদ্ধতা আছে?","acceptedAnswer":{"@type":"Answer","text":"External API trigger নেই: Tasks শুধু ChatGPT-এর internal capability use করতে পারে — Zapier-এর মতো cross-app trigger না। Real-time data limit: Browsing slow + sometimes outdated; breaking news-এর জন্য reliable না। 10 active task cap: Plus tier-এ 11তম task add করতে হলে কোনো একটা pause/delete করতে হবে। Timing precision: 6 AM scheduled task কখনো 6:03, কখনো 6:15-এ run হয় — exact second guarantee নেই। Bangla quality variance: Daily output-এ inconsistent — কোনো দিন polished, কোনো দিন rough। No multi-step workflow: Task A → Task B chain করা যায় না; প্রতিটা standalone। Conditional trigger beta: \"যদি X তাহলে Y\" — reliability low, production-এ use না করাই ভালো।"}},{"@type":"Question","name":"ChatGPT Tasks কীভাবে install বা setup করব?","acceptedAnswer":{"@type":"Answer","text":"রনি যেভাবে শুরু করেছিলেন: ChatGPT Plus subscription: $20/mo, bKash USD card বা Wise-এ payable। Free tier-এ Tasks limited (1 active)। Model selector: chatgpt.com-এ top-এ \"GPT-4o with scheduled tasks\" select। First prompt: \"প্রতি দিন সকাল ৬টায় বাংলাদেশের top 5 business news summarize করে আমাকে পাঠাও।\" Confirmation: ChatGPT auto-detect করে scheduling intent, time + frequency confirm চায়। Manage view: Profile → Tasks → সব active schedule, pause/edit/delete options। প্রথম task setup-এ ২ মিনিট। Confirmation message-এ exact time + recurrence (daily/weekly/monthly/custom) verify করা important — না হলে wrong slot-এ schedule হবে।"}},{"@type":"Question","name":"ChatGPT Tasks-এর দাম কত এবং BD-তে এর ROI কেমন?","acceptedAnswer":{"@type":"Answer","text":"রনি যেভাবে privacy + cost manage করেন: Sensitive data exclusion: Company-confidential metric task prompt-এ দেন না — generic industry query। Cookups internal data: Tasks-এ pull করেন না; manual review-এর সময় add করেন। Cost predictability: Plus subscription $20 flat — Tasks usage extra charge নেই। API alternative: Custom scheduling চাইলে OpenAI API + cron — কিন্তু Tasks-এর UI সহজ। Account security: 2FA on, কারণ Tasks যে কেউ access করলে inbox-এ continuously data পাবে। BD payment: bKash USD card monthly auto-renew; Wise alternative।"}},{"@type":"Question","name":"ChatGPT Tasks-এর মূল features কী কী?","acceptedAnswer":{"@type":"Answer","text":"Recurring patterns: Daily, weekly (specific day), monthly (specific date), custom cron-style। One-time scheduling: \"আগামী সোমবার 3 PM\" — interview prep, event reminder। Conditional triggers (limited): \"যদি AAPL stock 5%-এর বেশি move করে তাহলে alert\" — beta, কখনো reliable কখনো না। Email delivery toggle: Per-task setting — কিছু in-app, কিছু email, কিছু both। Pause without delete: ছুটিতে গেলে task pause, ফিরে এসে resume — schedule reset হয় না। Thread history: প্রতিটা task-এর past 30 runs visible, pattern analyze করা যায়।"}}]}</script>
 <script type="application/ld+json" data-injected-by="inject-faq-schema">{"@context":"https://schema.org","@type":"HowTo","name":"ChatGPT Tasks বাংলা গাইড — Automated Scheduling ২০২৬","step":[{"@type":"HowToStep","position":1,"name":"ভূমিকা — Roni-র Tasks Adoption","text":"রনি Cookups-এ join করার তিন মাস পর realize করলেন — তাঁর সকাল ৬টা থেকে ৭টা পুরোটাই information gathering-এ যাচ্ছে। Prothom Alo, Daily Star, Business Standard — তিনটা পড়া। তারপর Foodpanda, HungryNaki, Pathao Food-এর Facebook + Instagram check। তারপর Google Trends-এ \"food delivery Dhaka\" search। তারপর team standup-এর জন্য তিনটা talking point লেখা। সব মিলিয়ে ৪০ মিনিট। কিন্তু এই information তো standard — pattern recognition matter করে, raw data collection না। ২০২৫-এর জানুয়ারি-এ ChatGPT Tasks beta-এ available হলে রনি প্রথম যে task setup করলেন — \"প্রতি সকাল ৬টায় Bangla news digest\"। সাত দিন run ক","url":"https://banglaaiguide.com/blog/chatgpt-tasks-scheduling-bangla/#step-1"},{"@type":"HowToStep","position":2,"name":"ChatGPT Tasks কী + কীভাবে কাজ করে","text":"ChatGPT Tasks হল OpenAI-এর scheduling feature যা ChatGPT-কে নির্দিষ্ট সময়ে নির্দিষ্ট prompt run করতে দেয় — user-এর interaction ছাড়া। 2025-এর January-এ launch হয়। মূল idea: repetitive query যেগুলো daily/weekly একই pattern-এ চলে, সেগুলো automate করো। Recurring + one-time: \"প্রতি দিন 6 AM\" বা \"শুধু আগামীকাল 3 PM\"। Web app + mobile: chatgpt.com থেকে setup, iOS/Android-এ result। Email delivery: ChatGPT account email-এ notification + result। Conversation thread: প্রতিটা task-এর আলাদা thread, history preserved। Active limit: Plus tier-এ 10টা, Free tier-এ 1টা।","url":"https://banglaaiguide.com/blog/chatgpt-tasks-scheduling-bangla/#step-2"},{"@type":"HowToStep","position":3,"name":"Setup — Beta Access থেকে First Task","text":"রনি যেভাবে শুরু করেছিলেন: ChatGPT Plus subscription: $20/mo, bKash USD card বা Wise-এ payable। Free tier-এ Tasks limited (1 active)। Model selector: chatgpt.com-এ top-এ \"GPT-4o with scheduled tasks\" select। First prompt: \"প্রতি দিন সকাল ৬টায় বাংলাদেশের top 5 business news summarize করে আমাকে পাঠাও।\" Confirmation: ChatGPT auto-detect করে scheduling intent, time + frequency confirm চায়। Manage view: Profile → Tasks → সব active schedule, pause/edit/delete options। প্রথম task setup-এ ২ মিনিট। Confirmation message-এ exact time + recurrence (daily/weekly/monthly/custom) verify করা important — না হ","url":"https://banglaaiguide.com/blog/chatgpt-tasks-scheduling-bangla/#step-3"},{"@type":"HowToStep","position":4,"name":"রনি-র ৭টা Actual Tasks","text":"রনির current setup ২০২৬-এর মে অনুযায়ী — প্রতিটা task একটা specific marketing need address করে:","url":"https://banglaaiguide.com/blog/chatgpt-tasks-scheduling-bangla/#step-4"},{"@type":"HowToStep","position":5,"name":"Bangla Content Scheduling Tips","text":"Bangla output-এ Tasks-এর কিছু quirk আছে যা রনি trial-and-error করে শিখেছেন: Explicit language instruction: \"বাংলায় summarize\" না বললে ChatGPT default English-এ যায়। Tone specification: \"Professional Bangla, সাধু না, conversational\" — output quality 2x। Source URL pin: Specific news site নাম দিলে ChatGPT browse করতে পারে; vague দিলে hallucinate করে। Output format: \"Bullet point, প্রতিটা 2 sentence\" specify না করলে paragraph-এ আসে। Bangla-English code-switching: Brand name (Cookups, Foodpanda) English রাখতে বলো — translate করলে weird হয়। Time zone: Profile settings-এ Asia/Dhaka set করো — না হ","url":"https://banglaaiguide.com/blog/chatgpt-tasks-scheduling-bangla/#step-5"},{"@type":"HowToStep","position":6,"name":"Pro Features — Recurring, Conditional, Email","text":"Recurring patterns: Daily, weekly (specific day), monthly (specific date), custom cron-style। One-time scheduling: \"আগামী সোমবার 3 PM\" — interview prep, event reminder। Conditional triggers (limited): \"যদি AAPL stock 5%-এর বেশি move করে তাহলে alert\" — beta, কখনো reliable কখনো না। Email delivery toggle: Per-task setting — কিছু in-app, কিছু email, কিছু both। Pause without delete: ছুটিতে গেলে task pause, ফিরে এসে resume — schedule reset হয় না। Thread history: প্রতিটা task-এর past 30 runs visible, pattern analyze করা যায়।","url":"https://banglaaiguide.com/blog/chatgpt-tasks-scheduling-bangla/#step-6"},{"@type":"HowToStep","position":7,"name":"Privacy + Cost Considerations","text":"রনি যেভাবে privacy + cost manage করেন: Sensitive data exclusion: Company-confidential metric task prompt-এ দেন না — generic industry query। Cookups internal data: Tasks-এ pull করেন না; manual review-এর সময় add করেন। Cost predictability: Plus subscription $20 flat — Tasks usage extra charge নেই। API alternative: Custom scheduling চাইলে OpenAI API + cron — কিন্তু Tasks-এর UI সহজ। Account security: 2FA on, কারণ Tasks যে কেউ access করলে inbox-এ continuously data পাবে। BD payment: bKash USD card monthly auto-renew; Wise alternative।","url":"https://banglaaiguide.com/blog/chatgpt-tasks-scheduling-bangla/#step-7"},{"@type":"HowToStep","position":8,"name":"সীমাবদ্ধতা","text":"External API trigger নেই: Tasks শুধু ChatGPT-এর internal capability use করতে পারে — Zapier-এর মতো cross-app trigger না। Real-time data limit: Browsing slow + sometimes outdated; breaking news-এর জন্য reliable না। 10 active task cap: Plus tier-এ 11তম task add করতে হলে কোনো একটা pause/delete করতে হবে। Timing precision: 6 AM scheduled task কখনো 6:03, কখনো 6:15-এ run হয় — exact second guarantee নেই। Bangla quality variance: Daily output-এ inconsistent — কোনো দিন polished, কোনো দিন rough। No multi-step workflow: Task A → Task B chain করা যায় না; প্রতিটা standalone। Conditional trigger beta: \"যদি ","url":"https://banglaaiguide.com/blog/chatgpt-tasks-scheduling-bangla/#step-8"},{"@type":"HowToStep","position":9,"name":"উপসংহার — আপনার আজকের পদক্ষেপ","text":"ChatGPT Tasks BD professional-এর জন্য highest-ROI ChatGPT feature ২০২৬-এ — বিশেষ করে marketer, journalist, analyst, founder-দের জন্য যাঁদের daily information routine repetitive। রনির ৭টা task-এর মতো আপনার নিজের workflow scan করুন: প্রতি দিন/সপ্তাহে একই query কোনগুলো করছেন? সেগুলো Tasks-এ move করুন। শুরু করুন একটা task দিয়ে — morning news digest সবচেয়ে easy entry point। সাত দিন run করে output reliability check করুন। Confident হলে আস্তে আস্তে আরও add করুন। Plus subscription $20 — দিনে ৩৫ মিনিট save হলে ROI মাসে কয়েক হাজার টাকা। আজই chatgpt.com-এ গিয়ে প্রথম task setup করুন।","url":"https://banglaaiguide.com/blog/chatgpt-tasks-scheduling-bangla/#step-9"}]}</script>
@@ -50,8 +51,11 @@
         </div>
     </header>
 
-    <div class="container">
-        <h1>ChatGPT Tasks বাংলা গাইড — Automated Scheduling ২০২৬</h1>
+    <div class="article-sheet container">
+        <!-- ARTICLE-META:START -->
+<p class="article-kicker"><span class="article-chip">এআই টুল</span><span class="article-chip">২৮ মে, ২০২৬</span><span class="article-chip">৭ মিনিট পড়া</span></p>
+<!-- ARTICLE-META:END -->
+<h1>ChatGPT Tasks বাংলা গাইড — Automated Scheduling ২০২৬</h1>
         <!-- AUTHOR-BLOCK:START -->
 <section class="author-block" itemscope itemtype="https://schema.org/Organization" aria-label="প্রকাশক">
   <style>
@@ -85,6 +89,31 @@
   </div>
 </section>
 <!-- AUTHOR-BLOCK:END -->
+<!-- ARTICLE-HERO:START -->
+<figure class="article-hero">
+  <img src="/blog/chatgpt-tasks-scheduling-bangla/cover.png" width="1200" height="630" alt="ChatGPT Tasks বাংলা গাইড — Automated Scheduling ২০২৬" decoding="async" fetchpriority="high">
+  <figcaption>ChatGPT Tasks বাংলা গাইড — Automated Scheduling ২০২৬</figcaption>
+</figure>
+<!-- ARTICLE-HERO:END -->
+<!-- ARTICLE-TOC:START -->
+<nav class="article-toc" aria-label="সূচিপত্র">
+  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
+  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
+  <ol class="toc-list">
+    <li class="toc-item"><a href="#১-ভূমিকা-roni-র-tasks-adoption">১. ভূমিকা — Roni-র Tasks Adoption</a></li>
+    <li class="toc-item"><a href="#২-chatgpt-tasks-কী-কীভাবে-কাজ-করে">২. ChatGPT Tasks কী + কীভাবে কাজ করে</a></li>
+    <li class="toc-item"><a href="#৩-setup-beta-access-থেকে-first-task">৩. Setup — Beta Access থেকে First Task</a></li>
+    <li class="toc-item"><a href="#৪-রনি-র-৭টা-actual-tasks">৪. রনি-র ৭টা Actual Tasks</a></li>
+    <li class="toc-item"><a href="#৫-bangla-content-scheduling-tips">৫. Bangla Content Scheduling Tips</a></li>
+    <li class="toc-item"><a href="#৬-pro-features-recurring-conditional-email">৬. Pro Features — Recurring, Conditional, Email</a></li>
+    <li class="toc-item"><a href="#৭-privacy-cost-considerations">৭. Privacy + Cost Considerations</a></li>
+    <li class="toc-item"><a href="#৮-সীমাবদ্ধতা">৮. সীমাবদ্ধতা</a></li>
+    <li class="toc-item"><a href="#৯-উপসংহার-আপনার-আজকের-পদক্ষেপ">৯. উপসংহার — আপনার আজকের পদক্ষেপ</a></li>
+    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
+  </ol>
+</nav>
+<!-- ARTICLE-TOC:END -->
 
 <p class="lede">রনি চৌধুরী, ৩১, IBA-DU MBA ২০১৭, Banglalink-এ Senior Brand Manager হিসেবে সাত বছর — ২০২৪-এর শেষ-এ Cookups-এ Head of Marketing হিসেবে join করলেন। নতুন role-এ scope ৩x: 14 জনের team, daily content calendar, weekly competitive intel, monthly board reporting। প্রথম তিন মাসে morning routine ছিল চাপের: 6 AM ঘুম থেকে উঠে news scanning, social media trend check, competitor monitoring, team standup prep — মোট ৪০ মিনিট manual কাজ। ২০২৫-এর জানুয়ারি-এ OpenAI ChatGPT Tasks launch করলে রনি Plus subscription-এ ৭টা recurring task setup করেন। এখন ২০২৬-এ তাঁর morning routine ৫ মিনিট — শুধু email-এ আসা reports পড়া আর team-এ forward করা। "Tasks আমার assistant। ৩৫ মিনিট ফেরত পেয়েছি প্রতি দিন।"</p>
 
@@ -97,7 +126,7 @@
     <div class="stat"><span class="num">Jan ২০২৫</span><span class="label">Tasks launched</span></div>
 </div>
 
-<h2>১. ভূমিকা — Roni-র Tasks Adoption</h2>
+<h2 id="১-ভূমিকা-roni-র-tasks-adoption">১. ভূমিকা — Roni-র Tasks Adoption</h2>
 
 <p>রনি Cookups-এ join করার তিন মাস পর realize করলেন — তাঁর সকাল ৬টা থেকে ৭টা পুরোটাই information gathering-এ যাচ্ছে। Prothom Alo, Daily Star, Business Standard — তিনটা পড়া। তারপর Foodpanda, HungryNaki, Pathao Food-এর Facebook + Instagram check। তারপর Google Trends-এ "food delivery Dhaka" search। তারপর team standup-এর জন্য তিনটা talking point লেখা। সব মিলিয়ে ৪০ মিনিট। কিন্তু এই information তো standard — pattern recognition matter করে, raw data collection না।</p>
 
@@ -107,7 +136,7 @@
 <b>Before/After:</b> Morning routine ৪০ মিনিট manual → ৫ মিনিট review-only। Weekly competitive intel report manual research → automatic Saturday সকাল ৭টায় email। Daily news digest manual scanning → ৬টায় inbox-এ। Monthly content calendar planning ৩ ঘণ্টা → ৩০ মিনিট refinement।
 </div>
 
-<h2>২. ChatGPT Tasks কী + কীভাবে কাজ করে</h2>
+<h2 id="২-chatgpt-tasks-কী-কীভাবে-কাজ-করে">২. ChatGPT Tasks কী + কীভাবে কাজ করে</h2>
 
 <p>ChatGPT Tasks হল OpenAI-এর scheduling feature যা ChatGPT-কে নির্দিষ্ট সময়ে নির্দিষ্ট prompt run করতে দেয় — user-এর interaction ছাড়া। 2025-এর January-এ launch হয়। মূল idea: repetitive query যেগুলো daily/weekly একই pattern-এ চলে, সেগুলো automate করো।</p>
 
@@ -119,7 +148,7 @@
     <li><b>Active limit:</b> Plus tier-এ 10টা, Free tier-এ 1টা।</li>
 </ul>
 
-<h2>৩. Setup — Beta Access থেকে First Task</h2>
+<h2 id="৩-setup-beta-access-থেকে-first-task">৩. Setup — Beta Access থেকে First Task</h2>
 
 <p>রনি যেভাবে শুরু করেছিলেন:</p>
 
@@ -133,7 +162,7 @@
 
 <p>প্রথম task setup-এ ২ মিনিট। Confirmation message-এ exact time + recurrence (daily/weekly/monthly/custom) verify করা important — না হলে wrong slot-এ schedule হবে।</p>
 
-<h2>৪. রনি-র ৭টা Actual Tasks</h2>
+<h2 id="৪-রনি-র-৭টা-actual-tasks">৪. রনি-র ৭টা Actual Tasks</h2>
 
 <p>রনির current setup ২০২৬-এর মে অনুযায়ী — প্রতিটা task একটা specific marketing need address করে:</p>
 
@@ -162,7 +191,7 @@
 <b>Roni-র Reflection (মে ২০২৬):</b> "৭টা task-এ আমি দিনে ৩৫ মিনিট save করছি। কিন্তু আসল লাভ time না — consistency। আগে busy দিনে competitor check skip করতাম। এখন automatic, 9 AM-এ inbox-এ। Information gap-এর strategic risk eliminated।"
 </div>
 
-<h2>৫. Bangla Content Scheduling Tips</h2>
+<h2 id="৫-bangla-content-scheduling-tips">৫. Bangla Content Scheduling Tips</h2>
 
 <p>Bangla output-এ Tasks-এর কিছু quirk আছে যা রনি trial-and-error করে শিখেছেন:</p>
 
@@ -175,7 +204,7 @@
     <li><b>Time zone:</b> Profile settings-এ Asia/Dhaka set করো — না হলে UTC-তে schedule হবে।</li>
 </ul>
 
-<h2>৬. Pro Features — Recurring, Conditional, Email</h2>
+<h2 id="৬-pro-features-recurring-conditional-email">৬. Pro Features — Recurring, Conditional, Email</h2>
 
 <ul>
     <li><b>Recurring patterns:</b> Daily, weekly (specific day), monthly (specific date), custom cron-style।</li>
@@ -186,7 +215,7 @@
     <li><b>Thread history:</b> প্রতিটা task-এর past 30 runs visible, pattern analyze করা যায়।</li>
 </ul>
 
-<h2>৭. Privacy + Cost Considerations</h2>
+<h2 id="৭-privacy-cost-considerations">৭. Privacy + Cost Considerations</h2>
 
 <p>রনি যেভাবে privacy + cost manage করেন:</p>
 
@@ -199,7 +228,7 @@
     <li><b>BD payment:</b> bKash USD card monthly auto-renew; Wise alternative।</li>
 </ul>
 
-<h2>৮. সীমাবদ্ধতা</h2>
+<h2 id="৮-সীমাবদ্ধতা">৮. সীমাবদ্ধতা</h2>
 
 <ul>
     <li><b>External API trigger নেই:</b> Tasks শুধু ChatGPT-এর internal capability use করতে পারে — Zapier-এর মতো cross-app trigger না।</li>
@@ -211,11 +240,11 @@
     <li><b>Conditional trigger beta:</b> "যদি X তাহলে Y" — reliability low, production-এ use না করাই ভালো।</li>
 </ul>
 
-<h2>৯. উপসংহার — আপনার আজকের পদক্ষেপ</h2>
+<h2 id="৯-উপসংহার-আপনার-আজকের-পদক্ষেপ">৯. উপসংহার — আপনার আজকের পদক্ষেপ</h2>
 
 <p>ChatGPT Tasks BD professional-এর জন্য highest-ROI ChatGPT feature ২০২৬-এ — বিশেষ করে marketer, journalist, analyst, founder-দের জন্য যাঁদের daily information routine repetitive। রনির ৭টা task-এর মতো আপনার নিজের workflow scan করুন: প্রতি দিন/সপ্তাহে একই query কোনগুলো করছেন? সেগুলো Tasks-এ move করুন। শুরু করুন একটা task দিয়ে — morning news digest সবচেয়ে easy entry point। সাত দিন run করে output reliability check করুন। Confident হলে আস্তে আস্তে আরও add করুন। Plus subscription $20 — দিনে ৩৫ মিনিট save হলে ROI মাসে কয়েক হাজার টাকা। আজই chatgpt.com-এ গিয়ে প্রথম task setup করুন।</p>
 
-                <h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
+                <h2 id="প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</h2>
         <ul>
             <li><a href="/chatgpt/">ChatGPT</a></li>
             <li><a href="/blog/chatgpt-plus-bangladesh-bkash/">ChatGPT Plus bKash দিয়ে</a></li>
@@ -224,7 +253,7 @@
         </ul>
 
 <section class="seo-newsletter-block" style="margin-top:2.5rem;padding:2rem;background:#f0fdf4;border-radius:12px;text-align:center;">
-  <h2 style="color:#16a34a;margin-bottom:0.5rem;">AI আপডেট পেতে চান?</h2>
+  <h2 style="color:#16a34a;margin-bottom:0.5rem;" id="ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</h2>
   <p style="margin-bottom:1rem;">প্রতি সপ্তাহে নতুন AI টুলস ও টিউটোরিয়াল বাংলায় পান।</p>
   <form class="newsletter-form newsletter-form--mailchimp" action="https://banglaaiguide.us15.list-manage.com/subscribe/post?u=d389c0647878724daecc58fc6&amp;id=aaca6896d2&amp;f_id=007c9ae1f0" method="post" target="_blank" rel="noopener noreferrer" accept-charset="UTF-8" data-mailchimp-form="true" style="display:flex;gap:8px;max-width:440px;margin:0 auto;">
     <input type="email" name="EMAIL" placeholder="আপনার ইমেইল লিখুন" required style="flex:1;padding:10px 14px;border:1px solid #e5e7eb;border-radius:8px;font-size:15px;">

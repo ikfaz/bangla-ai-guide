@@ -30,6 +30,7 @@
     <style>:root{--bg-gradient:linear-gradient(180deg,#F0FDF9 0%,#FAFBFC 50%,#FFFFFF 100%);--accent:#16A34A;--accent-hover:#15803D;--accent-light:#22C55E;--accent-soft:#DCFCE7;--text:#0F172A;--text-muted:#475569;--border:#E2E8F0;--shadow-sm:0 4px 12px rgba(15,23,42,.06);--shadow-md:0 10px 30px rgba(15,23,42,.08);--radius-lg:24px;--radius-md:18px}body{font-family:'Hind Siliguri',sans-serif;line-height:1.8;margin:0;padding:0;background:var(--bg-gradient);color:var(--text);-webkit-font-smoothing:antialiased}.container{max-width:820px;margin:60px auto 80px;background:#fff;padding:60px 70px;border-radius:var(--radius-lg);box-shadow:var(--shadow-md);position:relative}.container::before{content:'';position:absolute;top:0;left:0;width:6px;height:100%;background:linear-gradient(135deg,#16A34A 0%,#22C55E 100%);border-radius:var(--radius-lg) 0 0 var(--radius-lg)}h1{font-family:'Syne',sans-serif;color:var(--text);font-size:2.75rem;font-weight:800;line-height:1.2;margin:0 0 32px 0;padding-bottom:24px;border-bottom:3px solid var(--border);position:relative}h1::after{content:'';position:absolute;bottom:-3px;left:0;width:80px;height:3px;background:linear-gradient(135deg,#16A34A 0%,#22C55E 100%)}h2{font-family:'Syne',sans-serif;color:var(--text);font-size:2rem;font-weight:700;line-height:1.3;margin:48px 0 20px 0;padding-left:20px;border-left:4px solid var(--accent)}h3{font-family:'Syne',sans-serif;color:var(--text);font-size:1.5rem;font-weight:600;line-height:1.4;margin:32px 0 16px 0}p{margin-bottom:1.5em;font-size:1.125rem;color:var(--text-muted);line-height:1.8}ul{list-style:none;margin:24px 0;padding:0}ul li{position:relative;padding:14px 20px 14px 50px;margin-bottom:14px;background:linear-gradient(135deg,#F9FAFB 0%,#F0FDF4 100%);border-radius:var(--radius-md);border:1px solid var(--border);font-size:1.0625rem;line-height:1.7;color:var(--text-muted);transition:all .2s ease}ul li:hover{background:linear-gradient(135deg,#FFFFFF 0%,#F0FDF4 100%);border-color:rgba(22,163,74,.3);transform:translateX(4px);box-shadow:var(--shadow-sm)}ul li::before{content:'\2713';position:absolute;left:18px;top:50%;transform:translateY(-50%);width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#16A34A 0%,#22C55E 100%);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px}b{font-weight:600;color:var(--text)}a{color:var(--accent);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;font-weight:500;transition:all .2s ease}a:hover{color:var(--accent-hover);text-decoration-thickness:3px}@media (max-width:768px){.container{margin:30px 20px;padding:40px 30px}h1{font-size:2rem}h2{font-size:1.5rem}h3{font-size:1.25rem}p,ul li{font-size:1rem}}</style>
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/blog-premium.css">
+<script src="/js/article-chrome.js" defer></script>
   <!-- FAQ-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Claude Sonnet 4.6 vs Opus 4.7-এর কিছু practical উদাহরণ কী?","acceptedAnswer":{"@type":"Answer","text":"Example 1: Sabrina, content marketer (Sonnet only) Dhanmondi-র agency-তে Sabrina daily ৪-৫টা client blog post + email + social caption লিখেন। তাঁর কাজে কোনো Opus-level reasoning দরকার নেই — Sonnet 4.6 যথেষ্ট। মাসিক খরচ: Pro $২০। ROI: প্রতি ঘণ্টায় ২x output, ৭০% time saved। Opus upgrade-এ কোনো benefit নেই। Example 2: Tareq, fintech CTO (Hybrid) Gulshan-এর startup-এ Tareq Sonnet ৮৫% কাজে use করেন (daily code, standup notes, customer email)। ১৫% Opus (architecture decision, complex migration, hard bug)। মাসিক: Cursor $২০ + Claude Max $১০০ = $১২০ ≈ ৳১৪,৪০০। Team velocity ২.৩x — এই খরচ negligible। Example 3: Tanjim, M&A lawyer (Opus primary) Dhanmondi-র law firm-এ junior associate Tanjim…"}},{"@type":"Question","name":"Claude Sonnet 4.6 vs Opus 4.7 কোন কাজে সবচেয়ে ভালো?","acceptedAnswer":{"@type":"Answer","text":"Tareq-এর startup-এ যে pattern চলে — অন্যরাও use করতে পারে: Daily kickoff: Sonnet 4.6 দিয়ে standup note generate, calendar plan, email triage। Coding (regular): Cursor + Sonnet 4.6 — ৮০-৯০% feature implementation। Hard problem detection: Sonnet ২ বার ভুল দিলে → manual escalation to Opus। Architecture decision (weekly): Opus 4.7-এ deep session, system design review। Document analysis: Short doc ( ৫০ page) → Opus। Customer email/standup recap (end of day): Sonnet — fast, cheap।"}},{"@type":"Question","name":"Claude Sonnet 4.6 vs Opus 4.7-এর performance কেমন?","acceptedAnswer":{"@type":"Answer","text":"Benchmark + real-world test: SWE-bench Verified (coding): Sonnet 4.6 ৭৭.২%, Opus 4.7 ৮৪.৬% — Opus +৭.৪% MMLU (general knowledge): Sonnet 88.৭%, Opus ৯০.১% — পার্থক্য ছোট GPQA Diamond (PhD-level science): Sonnet ৬৪%, Opus ৭৪% — Opus +১০% Long context recall (১০০K+): Sonnet ৮৯%, Opus ৯৫% — Opus stable in deep context Bangla output quality (human eval): Sonnet 4.৬৮/৫, Opus ৪.৭৪/৫ — negligible Speed (token/sec): Sonnet ৯০ tok/s, Opus ৪০ tok/s — Sonnet ২.২x faster"}},{"@type":"Question","name":"Claude Sonnet 4.6 vs Opus 4.7-এর দাম কত এবং BD-তে এর ROI কেমন?","acceptedAnswer":{"@type":"Answer","text":"Casual user Pro $২০/মাস = ৳২,৪০০ Sonnet ৯৯% Verdict: Pro যথেষ্ট Power user (dev/PM) Pro $২০ → Max $১০০/মাস Sonnet ৮৫% + Opus ১৫% Upgrade যদি Opus মাসে ১০+ session-এ লাগে API heavy (team) ৳৪০-৬০K/মাস Smart routing দরকার ৮০% Sonnet, ২০% Opus Hobbyist Free (limited) Sonnet 4.6 daily ১০-১৫ message Opus access নেই API smart routing example: Cline/OpenRouter-এ rule set করুন — \"if task"}}]}</script>
 <!-- FAQ-SCHEMA:END -->
@@ -49,8 +50,11 @@
         </div>
     </header>
 
-    <div class="container">
-        <h1>Claude Sonnet 4.6 vs Opus 4.7 — কখন কোনটি? বাংলা Decision Guide</h1>
+    <div class="article-sheet container">
+        <!-- ARTICLE-META:START -->
+<p class="article-kicker"><span class="article-chip">তুলনা</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৫ মিনিট পড়া</span></p>
+<!-- ARTICLE-META:END -->
+<h1>Claude Sonnet 4.6 vs Opus 4.7 — কখন কোনটি? বাংলা Decision Guide</h1>
         <!-- AUTHOR-BLOCK:START -->
 <section class="author-block" itemscope itemtype="https://schema.org/Organization" aria-label="প্রকাশক">
   <style>
@@ -84,15 +88,41 @@
   </div>
 </section>
 <!-- AUTHOR-BLOCK:END -->
+<!-- ARTICLE-HERO:START -->
+<figure class="article-hero">
+  <img src="/blog/claude-sonnet-vs-opus-when-to-use-bangla/cover.png" width="1200" height="630" alt="Claude Sonnet 4.6 vs Opus 4.7 — কখন কোনটি? বাংলা Decision Guide" decoding="async" fetchpriority="high">
+  <figcaption>Claude Sonnet 4.6 vs Opus 4.7 — কখন কোনটি? বাংলা Decision Guide</figcaption>
+</figure>
+<!-- ARTICLE-HERO:END -->
+<!-- ARTICLE-TOC:START -->
+<nav class="article-toc" aria-label="সূচিপত্র">
+  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
+  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
+  <ol class="toc-list">
+    <li class="toc-item"><a href="#ভূমিকা-একটা-বাস্তব-দ্বিধা">ভূমিকা — একটা বাস্তব দ্বিধা</a></li>
+    <li class="toc-item"><a href="#quick-comparison-এক-পৃষ্ঠায়-সারমর্ম">Quick comparison — এক পৃষ্ঠায় সারমর্ম</a></li>
+    <li class="toc-item"><a href="#decision-matrix-কাজের-ধরন-অনুযায়ী">Decision matrix — কাজের ধরন অনুযায়ী</a></li>
+    <li class="toc-item"><a href="#৩টা-practical-example-bd-users">৩টা practical example — BD users</a></li>
+    <li class="toc-item"><a href="#performance-measurable-পার্থক্য">Performance — measurable পার্থক্য</a></li>
+    <li class="toc-item"><a href="#cost-analysis-মাসিক-bd-context">Cost analysis — মাসিক BD context</a></li>
+    <li class="toc-item"><a href="#combined-workflow-দু-জনের-সেরা">Combined workflow — দু'জনের সেরা</a></li>
+    <li class="toc-item"><a href="#কখন-opus-overkill-not-opus">কখন Opus overkill (NOT Opus)</a></li>
+    <li class="toc-item"><a href="#কখন-sonnet-এ-stuck-তখনই-opus">কখন Sonnet-এ stuck — তখনই Opus</a></li>
+    <li class="toc-item"><a href="#উপসংহার-আপনার-decision-rule">উপসংহার — আপনার decision rule</a></li>
+    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
+  </ol>
+</nav>
+<!-- ARTICLE-TOC:END -->
 
-<h2>ভূমিকা — একটা বাস্তব দ্বিধা</h2>
+<h2 id="ভূমিকা-একটা-বাস্তব-দ্বিধা">ভূমিকা — একটা বাস্তব দ্বিধা</h2>
 <p class="lede">গত মাসে চট্টগ্রামের একজন product manager মিনহাজ চৌধুরী আমাকে message করলেন: "আমি Claude Pro $২০ দিয়ে চলছি ৮ মাস। Sonnet 4.6 ভালোই কাজ করে। কিন্তু Anthropic Max plan-এ Opus 4.7 access আছে — $১০০/মাস। আমি কি upgrade করব?" তিনি একটা logistics SaaS-এর PM, daily কাজ: feature spec লেখা, customer email reply, Excel data analysis, API documentation, কখনো architecture decision। আমি তাঁকে বললাম: "আগে ৩০ দিন track করুন — Sonnet আপনাকে কতবার fail করেছে?" দু সপ্তাহ পর তিনি জানালেন: "Sonnet ৪২ session-এ ৩ বার ব্যর্থ হয়েছে — দুটো complex system design + একটা multi-step Excel macro।" উত্তর clear: তাঁর জন্য Sonnet 4.6 যথেষ্ট, Opus extra cost waste। কিন্তু সবার ক্ষেত্রে decision এক না। এই গাইড: কীভাবে আপনি নিজে decide করবেন।</p>
 
 <div class="callout">
 <strong>এই গাইডে যা থাকবে:</strong> Sonnet 4.6 vs Opus 4.7 quick comparison, decision matrix (কাজের ধরন অনুযায়ী), real BD examples, cost analysis (₹/মাস), combined workflow strategy, এবং কখন কোনটা NOT — overkill avoid করার practical rule।
 </div>
 
-<h2>Quick comparison — এক পৃষ্ঠায় সারমর্ম</h2>
+<h2 id="quick-comparison-এক-পৃষ্ঠায়-সারমর্ম">Quick comparison — এক পৃষ্ঠায় সারমর্ম</h2>
 
 <div class="stat-row">
 <div><strong>Sonnet 4.6</strong><br>$৩/$১৫ per M token<br>৭৭.২% SWE-bench<br>২০০K context<br>৮৫% use case-এ যথেষ্ট</div>
@@ -101,7 +131,7 @@
 
 <p><strong>মূল পার্থক্য একটাই:</strong> Opus complex multi-step reasoning, deep long-form synthesis, multi-file code refactor — এসব কাজে স্পষ্ট better। অন্য সব কাজে দু'টোই same; তাহলে Sonnet সস্তা — সেটাই নিন।</p>
 
-<h2>Decision matrix — কাজের ধরন অনুযায়ী</h2>
+<h2 id="decision-matrix-কাজের-ধরন-অনুযায়ী">Decision matrix — কাজের ধরন অনুযায়ী</h2>
 
 <table style="width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;">
 <thead><tr style="background:#F1F5F9;"><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">কাজ</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">বাছুন</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">কারণ</th></tr></thead>
@@ -121,7 +151,7 @@
 </tbody>
 </table>
 
-<h2>৩টা practical example — BD users</h2>
+<h2 id="৩টা-practical-example-bd-users">৩টা practical example — BD users</h2>
 
 <div class="case-study">
 <strong>Example 1: Sabrina, content marketer (Sonnet only)</strong>
@@ -138,7 +168,7 @@
 <p>Dhanmondi-র law firm-এ junior associate Tanjim ১২০-পৃষ্ঠার agreement review করেন। প্রতি client-এ ৬-৮ ঘণ্টা saved (Opus-এ cross-reference + risk identification)। মাসে ৩-৪ deal × $২,৫০০ fee = $৮,০০০-১০,০০০ revenue। তাঁর জন্য Opus অপরিহার্য — Claude Max $১০০ + occasional API spike $৩০ = total $১৩০। ROI: ৬০x।</p>
 </div>
 
-<h2>Performance — measurable পার্থক্য</h2>
+<h2 id="performance-measurable-পার্থক্য">Performance — measurable পার্থক্য</h2>
 <p>Benchmark + real-world test:</p>
 <ul>
 <li><strong>SWE-bench Verified (coding):</strong> Sonnet 4.6 ৭৭.২%, Opus 4.7 ৮৪.৬% — Opus +৭.৪%</li>
@@ -149,7 +179,7 @@
 <li><strong>Speed (token/sec):</strong> Sonnet ৯০ tok/s, Opus ৪০ tok/s — Sonnet ২.২x faster</li>
 </ul>
 
-<h2>Cost analysis — মাসিক BD context</h2>
+<h2 id="cost-analysis-মাসিক-bd-context">Cost analysis — মাসিক BD context</h2>
 
 <div class="stat-row">
 <div><strong>Casual user</strong><br>Pro $২০/মাস = ৳২,৪০০<br>Sonnet ৯৯%<br>Verdict: Pro যথেষ্ট</div>
@@ -160,7 +190,7 @@
 
 <p><strong>API smart routing example:</strong> Cline/OpenRouter-এ rule set করুন — "if task < ৫০০ token output AND no multi-file → Sonnet; else → Opus।" মাসে $৪০-৮০ savings।</p>
 
-<h2>Combined workflow — দু'জনের সেরা</h2>
+<h2 id="combined-workflow-দু-জনের-সেরা">Combined workflow — দু'জনের সেরা</h2>
 <p>Tareq-এর startup-এ যে pattern চলে — অন্যরাও use করতে পারে:</p>
 
 <ol>
@@ -172,7 +202,7 @@
 <li><strong>Customer email/standup recap (end of day):</strong> Sonnet — fast, cheap।</li>
 </ol>
 
-<h2>কখন Opus overkill (NOT Opus)</h2>
+<h2 id="কখন-opus-overkill-not-opus">কখন Opus overkill (NOT Opus)</h2>
 <p>নিচের কাজে Opus use করবেন না — শুধু খরচ বাড়াবে, quality benefit নেই:</p>
 <ul>
 <li>Simple email reply</li>
@@ -185,7 +215,7 @@
 <li>Excel formula/basic data</li>
 </ul>
 
-<h2>কখন Sonnet-এ stuck — তখনই Opus</h2>
+<h2 id="কখন-sonnet-এ-stuck-তখনই-opus">কখন Sonnet-এ stuck — তখনই Opus</h2>
 <p>এই signal দেখলে Opus-এ switch:</p>
 <ul>
 <li>Sonnet ২+ বার ভুল উত্তর দিয়েছে একই complex problem-এ</li>
@@ -197,13 +227,13 @@
 <li>Cross-reference accuracy critical (legal, financial)</li>
 </ul>
 
-<h2>উপসংহার — আপনার decision rule</h2>
+<h2 id="উপসংহার-আপনার-decision-rule">উপসংহার — আপনার decision rule</h2>
 <p>সবচেয়ে honest rule এটাই: আগে Sonnet 4.6 দিয়ে চেষ্টা করুন। যদি ২ বার fail হয় OR task-এ ৫+ system/file জড়িত OR document ৩০+ পৃষ্ঠা — তখন Opus। অন্যথায় Sonnet-ই যথেষ্ট।</p>
 <p>Minhaj-এর উদাহরণ মনে আছেন? তিনি ৩০ দিন track করে দেখলেন Sonnet তাঁকে ৪২ session-এ ৩ বার fail করেছে। ৭% failure rate-এ Opus upgrade justified না। তিনি Pro $২০-তেই থাকলেন। অন্যদিকে Tanjim-এর law firm-এ Opus হারে কাজ-ই different — তাঁর জন্য Max $১০০ সস্তা।</p>
 <p>সিদ্ধান্ত নিন আপনার নিজের usage data দেখে — Anthropic-এর marketing দেখে না। প্রথমে track করুন: গত ৩০ দিনে Sonnet আপনাকে কতবার fail করেছে? উত্তর-ই আপনার plan।</p>
 
 
-<h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
+<h2 id="প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</h2>
         <ul>
             <li><a href="/blog/claude-sonnet-4-6-bangla-guide/">Claude Sonnet 4.6</a></li>
             <li><a href="/blog/claude-opus-4-7-bangla-guide/">Claude Opus 4.7</a></li>
@@ -212,7 +242,7 @@
         </ul>
 
 <section class="seo-newsletter-block" style="margin-top:2.5rem;padding:2rem;background:#f0fdf4;border-radius:12px;text-align:center;">
-  <h2 style="color:#16a34a;margin-bottom:0.5rem;">AI আপডেট পেতে চান?</h2>
+  <h2 style="color:#16a34a;margin-bottom:0.5rem;" id="ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</h2>
   <p style="margin-bottom:1rem;">প্রতি সপ্তাহে নতুন AI টুলস ও টিউটোরিয়াল বাংলায় পান।</p>
   <form class="newsletter-form newsletter-form--mailchimp" action="https://banglaaiguide.us15.list-manage.com/subscribe/post?u=d389c0647878724daecc58fc6&amp;id=aaca6896d2&amp;f_id=007c9ae1f0" method="post" target="_blank" rel="noopener noreferrer" accept-charset="UTF-8" data-mailchimp-form="true" style="display:flex;gap:8px;max-width:440px;margin:0 auto;">
     <input type="email" name="EMAIL" placeholder="আপনার ইমেইল লিখুন" required style="flex:1;padding:10px 14px;border:1px solid #e5e7eb;border-radius:8px;font-size:15px;">

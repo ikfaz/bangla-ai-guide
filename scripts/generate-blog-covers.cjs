@@ -24,6 +24,7 @@ const {
   listBlogArticles,
   isRedirectStub,
   countLine,
+  pngSize,
 } = require('./lib/site-policy.cjs');
 
 const FONT_FILE = path.join(__dirname, 'fonts', 'HindSiliguri-Bold.ttf');
@@ -427,16 +428,23 @@ async function run() {
     const title = extractTitle(html);
     if (!title) { skippedNoTitle += 1; continue; }
 
+    const pngPath = path.join(dir, 'cover.png');
     const webp = path.join(dir, 'cover.webp');
-    let png;
-    if (fs.existsSync(webp)) {
-      png = await compressPng(fs.readFileSync(webp), 'cover');
-    } else {
+    const existing = fs.existsSync(pngPath) ? fs.readFileSync(pngPath) : null;
+    const existingOk = existing
+      && existing.length <= MAX_COVER_BYTES
+      && (() => { const size = pngSize(existing); return size && size.width === 1200 && size.height === 630; })();
+    // A shipped 1200x630 PNG stays. WebP is the source only when no PNG exists yet,
+    // so a custom cover (and the Gemini Avatar cover) is not replaced by the template.
+    if (!existingOk && fs.existsSync(webp)) {
+      const png = await compressPng(fs.readFileSync(webp), 'cover');
+      if (writeIfChanged(pngPath, png)) writtenPng += 1;
+    } else if (!existingOk) {
       const svg = buildSvg(title, article.slug);
       if (writeIfChanged(path.join(dir, 'cover.svg'), svg)) writtenSvg += 1;
-      png = await compressPng(await rasterizeSvg(svg), 'fill');
+      const png = await compressPng(rasterizeSvg(svg), 'fill');
+      if (writeIfChanged(pngPath, png)) writtenPng += 1;
     }
-    if (writeIfChanged(path.join(dir, 'cover.png'), png)) writtenPng += 1;
 
     const next = updateMeta(html, `${SITE}/blog/${article.slug}/cover.png`);
     if (next !== html) {

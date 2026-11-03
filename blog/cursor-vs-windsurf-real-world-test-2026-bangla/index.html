@@ -30,6 +30,7 @@
     <style>:root{--bg-gradient:linear-gradient(180deg,#F0FDF9 0%,#FAFBFC 50%,#FFFFFF 100%);--accent:#16A34A;--accent-hover:#15803D;--accent-light:#22C55E;--accent-soft:#DCFCE7;--text:#0F172A;--text-muted:#475569;--border:#E2E8F0;--shadow-sm:0 4px 12px rgba(15,23,42,.06);--shadow-md:0 10px 30px rgba(15,23,42,.08);--radius-lg:24px;--radius-md:18px}body{font-family:'Hind Siliguri',sans-serif;line-height:1.8;margin:0;padding:0;background:var(--bg-gradient);color:var(--text);-webkit-font-smoothing:antialiased}.container{max-width:820px;margin:60px auto 80px;background:#fff;padding:60px 70px;border-radius:var(--radius-lg);box-shadow:var(--shadow-md);position:relative}.container::before{content:'';position:absolute;top:0;left:0;width:6px;height:100%;background:linear-gradient(135deg,#16A34A 0%,#22C55E 100%);border-radius:var(--radius-lg) 0 0 var(--radius-lg)}h1{font-family:'Syne',sans-serif;color:var(--text);font-size:2.75rem;font-weight:800;line-height:1.2;margin:0 0 32px 0;padding-bottom:24px;border-bottom:3px solid var(--border);position:relative}h1::after{content:'';position:absolute;bottom:-3px;left:0;width:80px;height:3px;background:linear-gradient(135deg,#16A34A 0%,#22C55E 100%)}h2{font-family:'Syne',sans-serif;color:var(--text);font-size:2rem;font-weight:700;line-height:1.3;margin:48px 0 20px 0;padding-left:20px;border-left:4px solid var(--accent)}h3{font-family:'Syne',sans-serif;color:var(--text);font-size:1.5rem;font-weight:600;line-height:1.4;margin:32px 0 16px 0}p{margin-bottom:1.5em;font-size:1.125rem;color:var(--text-muted);line-height:1.8}ul{list-style:none;margin:24px 0;padding:0}ul li{position:relative;padding:14px 20px 14px 50px;margin-bottom:14px;background:linear-gradient(135deg,#F9FAFB 0%,#F0FDF4 100%);border-radius:var(--radius-md);border:1px solid var(--border);font-size:1.0625rem;line-height:1.7;color:var(--text-muted);transition:all .2s ease}ul li:hover{background:linear-gradient(135deg,#FFFFFF 0%,#F0FDF4 100%);border-color:rgba(22,163,74,.3);transform:translateX(4px);box-shadow:var(--shadow-sm)}ul li::before{content:'\2713';position:absolute;left:18px;top:50%;transform:translateY(-50%);width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#16A34A 0%,#22C55E 100%);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px}b{font-weight:600;color:var(--text)}a{color:var(--accent);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;font-weight:500;transition:all .2s ease}a:hover{color:var(--accent-hover);text-decoration-thickness:3px}@media (max-width:768px){.container{margin:30px 20px;padding:40px 30px}h1{font-size:2rem}h2{font-size:1.5rem}h3{font-size:1.25rem}p,ul li{font-size:1rem}}</style>
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/blog-premium.css">
+<script src="/js/article-chrome.js" defer></script>
   <!-- FAQ-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Cursor vs Windsurf Real-World Test-এর মূল features কী কী?","acceptedAnswer":{"@type":"Answer","text":"Prompt: \"Theme toggle add করো — Light/Dark/System-default ৩টা option। localStorage-এ persist, smooth transition, all components অনুসারী। Tailwind use করো।\" Cursor (Composer): Time: ১১ মিনিট Files edited: ৭ Prompts: ২ (initial + ১টা edge case fix) Peer review: ✓ Clean, but missed ARIA labels Final acceptance: ৮৫% (manual touch-up লেগেছে) Windsurf (Cascade): Time: ১৪ মিনিট Files edited: ৯ (২টা extra utility file) Prompts: ১ Peer review: ✓ Slightly over-engineered, ARIA included Final acceptance: ৯০% Winner: Windsurf — slight edge। Cascade যে extra context (ARIA) automatic add করেছে, Cursor missed। কিন্তু Windsurf ৩ মিনিট slower।"}},{"@type":"Question","name":"Cursor vs Windsurf Real-World Test-এর দাম কত এবং BD-তে এর ROI কেমন?","acceptedAnswer":{"@type":"Answer","text":"Cursor Pro $২০/মাস (~৳২,৪০০) ৫০০ slow + ৫০০ fast Best for: pro developer Windsurf Pro $১৫/মাস (~৳১,৮০০) ৫০০ flow action Best for: cost-conscious Cursor Free $০ ২০০০ token/মাস Try করার জন্য Windsurf Free $০ ৫০ flow action + autocomplete Better free tier BD value verdict: Cost-এ Windsurf $৫ সস্তা। কিন্তু Cursor-এর Composer + tab quality-এর জন্য $২০ justified — বিশেষ করে যারা daily ৮+ ঘণ্টা coding করেন। Hobbyist/student-দের জন্য Windsurf-এর free tier better।"}},{"@type":"Question","name":"Cursor vs Windsurf Real-World Test-এর জন্য final verdict কী?","acceptedAnswer":{"@type":"Answer","text":"Choose Cursor if: Daily VS Code user — migration painless Speed > quality (rapid prototype, MVP) Refactor-heavy work (Cursor better at refactor) $২০ budget OK Community/learning resources matter (Cursor-এ much more tutorial) Choose Windsurf if: Quality > speed (architecture-heavy, test-critical) Documentation-heavy work Free tier দরকার (Windsurf free > Cursor free) $৫ cost saving matter করে Long-running autonomous flow চান (Cascade impressive)"}}]}</script>
 <!-- FAQ-SCHEMA:END -->
@@ -49,8 +50,11 @@
         </div>
     </header>
 
-    <div class="container">
-        <h1>Cursor vs Windsurf Real-World Test ২০২৬ — Developer-দের জন্য সম্পূর্ণ বাংলা গাইড</h1>
+    <div class="article-sheet container">
+        <!-- ARTICLE-META:START -->
+<p class="article-kicker"><span class="article-chip">তুলনা</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৬ মিনিট পড়া</span></p>
+<!-- ARTICLE-META:END -->
+<h1>Cursor vs Windsurf Real-World Test ২০২৬ — Developer-দের জন্য সম্পূর্ণ বাংলা গাইড</h1>
         <!-- AUTHOR-BLOCK:START -->
 <section class="author-block" itemscope itemtype="https://schema.org/Organization" aria-label="প্রকাশক">
   <style>
@@ -84,15 +88,43 @@
   </div>
 </section>
 <!-- AUTHOR-BLOCK:END -->
+<!-- ARTICLE-HERO:START -->
+<figure class="article-hero">
+  <img src="/blog/cursor-vs-windsurf-real-world-test-2026-bangla/cover.png" width="1200" height="630" alt="Cursor vs Windsurf Real-World Test ২০২৬ — Developer-দের জন্য সম্পূর্ণ বাংলা গাইড" decoding="async" fetchpriority="high">
+  <figcaption>Cursor vs Windsurf Real-World Test ২০২৬ — Developer-দের জন্য সম্পূর্ণ বাংলা গাইড</figcaption>
+</figure>
+<!-- ARTICLE-HERO:END -->
+<!-- ARTICLE-TOC:START -->
+<nav class="article-toc" aria-label="সূচিপত্র">
+  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
+  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
+  <ol class="toc-list">
+    <li class="toc-item"><a href="#ভূমিকা-একটা-সততাপূর্ণ-head-to-head">ভূমিকা — একটা সততাপূর্ণ head-to-head</a></li>
+    <li class="toc-item"><a href="#test-setup-সমান-field">Test setup — সমান field</a></li>
+    <li class="toc-item"><a href="#task-1-bug-fix-login-redirect-loop">Task 1: Bug fix (login redirect loop)</a></li>
+    <li class="toc-item"><a href="#task-2-new-feature-add-dark-mode-toggle">Task 2: New feature (add dark mode toggle)</a></li>
+    <li class="toc-item"><a href="#task-3-refactor-class-component-hooks">Task 3: Refactor (class component → hooks)</a></li>
+    <li class="toc-item"><a href="#task-4-documentation-jsdoc-for-entire-file">Task 4: Documentation (JSDoc for entire file)</a></li>
+    <li class="toc-item"><a href="#task-5-unit-tests-jest-for-service-file">Task 5: Unit tests (Jest for service file)</a></li>
+    <li class="toc-item"><a href="#overall-score-১৪-দিনের-সারমর্ম">Overall score — ১৪-দিনের সারমর্ম</a></li>
+    <li class="toc-item"><a href="#ide-feel-daily-comfort">IDE feel — daily comfort</a></li>
+    <li class="toc-item"><a href="#pricing-comparison-bd-context">Pricing comparison — BD context</a></li>
+    <li class="toc-item"><a href="#verdict-কখন-কোনটা">Verdict — কখন কোনটা</a></li>
+    <li class="toc-item"><a href="#উপসংহার-sajid-এর-final-choice">উপসংহার — Sajid-এর final choice</a></li>
+    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
+  </ol>
+</nav>
+<!-- ARTICLE-TOC:END -->
 
-<h2>ভূমিকা — একটা সততাপূর্ণ head-to-head</h2>
+<h2 id="ভূমিকা-একটা-সততাপূর্ণ-head-to-head">ভূমিকা — একটা সততাপূর্ণ head-to-head</h2>
 <p class="lede">গত ৩ মাস ধরে BD-র developer community-তে একই প্রশ্ন: "Cursor নাকি Windsurf?" — দু'টোই $১৫-২০/মাস, দু'টোই VS Code fork, দু'টোই multi-model, দু'টোই agent mode সমর্থন করে। ঢাকার এক mid-size product company-র Tech Lead Sajid Hossain (৩১ বছর, BUET CSE ২০১৪, ৮ বছর experience) এই প্রশ্নের সঠিক উত্তর খুঁজতে একটা ১৪-দিনের head-to-head test চালালেন: একই ৫টা real-world task — Cursor (Sonnet 4.6 model) এবং Windsurf (Sonnet 4.6 model)-এ চালালেন। Task type: bug fix, new feature, refactor, documentation, unit tests। প্রতিটার জন্য measure করলেন: time to completion, # of prompts needed, # of errors, code quality (peer-reviewed), final acceptance rate। এই গাইড সেই test-এর full result — কোন কাজে কোনটা স্পষ্টভাবে better, BD developer-দের জন্য verdict সহ।</p>
 
 <div class="callout">
 <strong>Test methodology:</strong> Same React/Node.js codebase (১২,০০০ লাইন), same model (Sonnet 4.6 via Cursor's $২০ + Windsurf's $১৫ subscription), same prompt verbatim দু'টোয়। Sajid + ২ জন peer developer-এর independent review।
 </div>
 
-<h2>Test setup — সমান field</h2>
+<h2 id="test-setup-সমান-field">Test setup — সমান field</h2>
 
 <div class="stat-row">
 <div><strong>Codebase</strong><br>React 18 + Node.js<br>১২,০০০ লাইন<br>৬টা microservice</div>
@@ -103,7 +135,7 @@
 
 <p>প্রতিটা task-এ Sajid identical prompt লিখেছিলেন একটা Notion doc-এ। তারপর Cursor-এ paste, run, time + result note। তারপর Windsurf-এ paste, run, একই note। Peer reviewer Nafiz এবং Tausif blind review করলেন (কোনটা Cursor কোনটা Windsurf জানেন না)।</p>
 
-<h2>Task 1: Bug fix (login redirect loop)</h2>
+<h2 id="task-1-bug-fix-login-redirect-loop">Task 1: Bug fix (login redirect loop)</h2>
 <p><strong>Prompt:</strong> "Login করার পরে user redirect হয়ে আবার login page-এ আসছে। Root cause খুঁজে fix করো। File: auth/login.tsx, middleware/auth.ts, hooks/useAuth.ts।"</p>
 
 <div class="case-study">
@@ -126,7 +158,7 @@ Peer review: ✓ Correct
 
 <p><strong>Winner:</strong> Tie। দু'টোই same root cause identify, fix quality same। Windsurf ৩৪ সেকেন্ড faster (Cascade flow এর parallel file scan-এর কারণে)।</p>
 
-<h2>Task 2: New feature (add dark mode toggle)</h2>
+<h2 id="task-2-new-feature-add-dark-mode-toggle">Task 2: New feature (add dark mode toggle)</h2>
 <p><strong>Prompt:</strong> "Theme toggle add করো — Light/Dark/System-default ৩টা option। localStorage-এ persist, smooth transition, all components অনুসারী। Tailwind use করো।"</p>
 
 <div class="case-study">
@@ -149,7 +181,7 @@ Final acceptance: ৯০%
 
 <p><strong>Winner:</strong> Windsurf — slight edge। Cascade যে extra context (ARIA) automatic add করেছে, Cursor missed। কিন্তু Windsurf ৩ মিনিট slower।</p>
 
-<h2>Task 3: Refactor (class component → hooks)</h2>
+<h2 id="task-3-refactor-class-component-hooks">Task 3: Refactor (class component → hooks)</h2>
 <p><strong>Prompt:</strong> "এই UserDashboard.jsx (৪৮০ লাইন class component) functional + hooks-এ convert করো। সব state, lifecycle, ref preserve করতে হবে। Test fail করা যাবে না।"</p>
 
 <div class="case-study">
@@ -172,7 +204,7 @@ Peer review: ✓ Good, কিন্তু extra useEffect
 
 <p><strong>Winner:</strong> Cursor। Code quality + hallucination free + faster। Refactor-এ Cursor-এর Composer test-aware editing স্পষ্টভাবে better।</p>
 
-<h2>Task 4: Documentation (JSDoc for entire file)</h2>
+<h2 id="task-4-documentation-jsdoc-for-entire-file">Task 4: Documentation (JSDoc for entire file)</h2>
 <p><strong>Prompt:</strong> "এই OrderService.ts (৬২০ লাইন, ২৪টা function) full JSDoc add করো — parameter, return type, example, throws সহ। Bangla optional, English preferred।"</p>
 
 <div class="case-study">
@@ -193,7 +225,7 @@ Issue: একটু verbose
 
 <p><strong>Winner:</strong> Windsurf — quality হিসেবে। Cursor faster কিন্তু output Windsurf-এর তুলনায় superficial।</p>
 
-<h2>Task 5: Unit tests (Jest for service file)</h2>
+<h2 id="task-5-unit-tests-jest-for-service-file">Task 5: Unit tests (Jest for service file)</h2>
 <p><strong>Prompt:</strong> "OrderService.ts-এর জন্য complete Jest test suite — ৮৫%+ coverage, edge case সহ, mock proper।"</p>
 
 <div class="case-study">
@@ -214,7 +246,7 @@ Failing tests: ০
 
 <p><strong>Winner:</strong> Windsurf — comprehensive + zero failure। Cursor faster কিন্তু ছোট manual fix লেগেছে।</p>
 
-<h2>Overall score — ১৪-দিনের সারমর্ম</h2>
+<h2 id="overall-score-১৪-দিনের-সারমর্ম">Overall score — ১৪-দিনের সারমর্ম</h2>
 
 <table style="width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;">
 <thead><tr style="background:#F1F5F9;"><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Task</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Cursor</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Windsurf</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Winner</th></tr></thead>
@@ -228,7 +260,7 @@ Failing tests: ০
 </tbody>
 </table>
 
-<h2>IDE feel — daily comfort</h2>
+<h2 id="ide-feel-daily-comfort">IDE feel — daily comfort</h2>
 <p>Speed/quality benchmark-এর বাইরে — দৈনিক comfort matter করে:</p>
 
 <ul>
@@ -238,7 +270,7 @@ Failing tests: ০
 <li><strong>Extension ecosystem:</strong> দু'টোই VS Code extension support। Cursor-এ rich-er due to broader adoption।</li>
 </ul>
 
-<h2>Pricing comparison — BD context</h2>
+<h2 id="pricing-comparison-bd-context">Pricing comparison — BD context</h2>
 
 <div class="stat-row">
 <div><strong>Cursor Pro</strong><br>$২০/মাস (~৳২,৪০০)<br>৫০০ slow + ৫০০ fast<br>Best for: pro developer</div>
@@ -249,7 +281,7 @@ Failing tests: ০
 
 <p><strong>BD value verdict:</strong> Cost-এ Windsurf $৫ সস্তা। কিন্তু Cursor-এর Composer + tab quality-এর জন্য $২০ justified — বিশেষ করে যারা daily ৮+ ঘণ্টা coding করেন। Hobbyist/student-দের জন্য Windsurf-এর free tier better।</p>
 
-<h2>Verdict — কখন কোনটা</h2>
+<h2 id="verdict-কখন-কোনটা">Verdict — কখন কোনটা</h2>
 
 <div class="case-study">
 <strong>Choose Cursor if:</strong>
@@ -273,13 +305,13 @@ Failing tests: ০
 </ul>
 </div>
 
-<h2>উপসংহার — Sajid-এর final choice</h2>
+<h2 id="উপসংহার-sajid-এর-final-choice">উপসংহার — Sajid-এর final choice</h2>
 <p>১৪ দিনের test শেষে Sajid বললেন: "দু'টোই professional-grade tool — ভুল choice নেই। আমার team-এ ৭ জন developer-কে আমি option দিয়েছি — যে যেটা comfortable। ৪ জন Cursor, ৩ জন Windsurf। দু'টো IDE-ই Sonnet 4.6 use করে — model পার্থক্য নেই, tool-এর philosophy পার্থক্য।"</p>
 <p>তিনি ব্যক্তিগতভাবে Cursor-এই থেকেছেন — daily speed + VS Code familiarity। তবে একটা specific architecture decision-এ Windsurf এ switch করেন (Cascade flow-এর deep analysis-এর জন্য)। তাঁর philosophy: "Tool-এর সঙ্গে marriage না — কাজের সঙ্গে।"</p>
 <p>BD context-এ পরামর্শ: দু'টোই ১৪ দিন free trial-এ try করুন। নিজের workflow-এ যেটা natural fit, সেটাই keeper। Marketing pages-এর বদলে নিজের real কাজে test — Sajid-এর approach-ই সবচেয়ে honest।</p>
 
 
-<h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
+<h2 id="প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</h2>
         <ul>
             <li><a href="/blog/cursor-vs-github-copilot-vs-windsurf-konti-bhalo-bangla/">Cursor vs Copilot vs Windsurf</a></li>
             <li><a href="/cursor/">Cursor</a></li>
@@ -288,7 +320,7 @@ Failing tests: ০
         </ul>
 
 <section class="seo-newsletter-block" style="margin-top:2.5rem;padding:2rem;background:#f0fdf4;border-radius:12px;text-align:center;">
-  <h2 style="color:#16a34a;margin-bottom:0.5rem;">AI আপডেট পেতে চান?</h2>
+  <h2 style="color:#16a34a;margin-bottom:0.5rem;" id="ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</h2>
   <p style="margin-bottom:1rem;">প্রতি সপ্তাহে নতুন AI টুলস ও টিউটোরিয়াল বাংলায় পান।</p>
   <form class="newsletter-form newsletter-form--mailchimp" action="https://banglaaiguide.us15.list-manage.com/subscribe/post?u=d389c0647878724daecc58fc6&amp;id=aaca6896d2&amp;f_id=007c9ae1f0" method="post" target="_blank" rel="noopener noreferrer" accept-charset="UTF-8" data-mailchimp-form="true" style="display:flex;gap:8px;max-width:440px;margin:0 auto;">
     <input type="email" name="EMAIL" placeholder="আপনার ইমেইল লিখুন" required style="flex:1;padding:10px 14px;border:1px solid #e5e7eb;border-radius:8px;font-size:15px;">

@@ -30,6 +30,7 @@
     <style>:root{--bg-gradient:linear-gradient(180deg,#F0FDF9 0%,#FAFBFC 50%,#FFFFFF 100%);--accent:#16A34A;--accent-hover:#15803D;--accent-light:#22C55E;--accent-soft:#DCFCE7;--text:#0F172A;--text-muted:#475569;--border:#E2E8F0;--shadow-sm:0 4px 12px rgba(15,23,42,.06);--shadow-md:0 10px 30px rgba(15,23,42,.08);--radius-lg:24px;--radius-md:18px}body{font-family:'Hind Siliguri',sans-serif;line-height:1.8;margin:0;padding:0;background:var(--bg-gradient);color:var(--text);-webkit-font-smoothing:antialiased}.container{max-width:820px;margin:60px auto 80px;background:#fff;padding:60px 70px;border-radius:var(--radius-lg);box-shadow:var(--shadow-md);position:relative}.container::before{content:'';position:absolute;top:0;left:0;width:6px;height:100%;background:linear-gradient(135deg,#16A34A 0%,#22C55E 100%);border-radius:var(--radius-lg) 0 0 var(--radius-lg)}h1{font-family:'Syne',sans-serif;color:var(--text);font-size:2.75rem;font-weight:800;line-height:1.2;margin:0 0 32px 0;padding-bottom:24px;border-bottom:3px solid var(--border);position:relative}h1::after{content:'';position:absolute;bottom:-3px;left:0;width:80px;height:3px;background:linear-gradient(135deg,#16A34A 0%,#22C55E 100%)}h2{font-family:'Syne',sans-serif;color:var(--text);font-size:2rem;font-weight:700;line-height:1.3;margin:48px 0 20px 0;padding-left:20px;border-left:4px solid var(--accent)}h3{font-family:'Syne',sans-serif;color:var(--text);font-size:1.5rem;font-weight:600;line-height:1.4;margin:32px 0 16px 0}p{margin-bottom:1.5em;font-size:1.125rem;color:var(--text-muted);line-height:1.8}ul{list-style:none;margin:24px 0;padding:0}ul li{position:relative;padding:14px 20px 14px 50px;margin-bottom:14px;background:linear-gradient(135deg,#F9FAFB 0%,#F0FDF4 100%);border-radius:var(--radius-md);border:1px solid var(--border);font-size:1.0625rem;line-height:1.7;color:var(--text-muted);transition:all .2s ease}ul li:hover{background:linear-gradient(135deg,#FFFFFF 0%,#F0FDF4 100%);border-color:rgba(22,163,74,.3);transform:translateX(4px);box-shadow:var(--shadow-sm)}ul li::before{content:'\2713';position:absolute;left:18px;top:50%;transform:translateY(-50%);width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#16A34A 0%,#22C55E 100%);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px}b{font-weight:600;color:var(--text)}a{color:var(--accent);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;font-weight:500;transition:all .2s ease}a:hover{color:var(--accent-hover);text-decoration-thickness:3px}@media (max-width:768px){.container{margin:30px 20px;padding:40px 30px}h1{font-size:2rem}h2{font-size:1.5rem}h3{font-size:1.25rem}p,ul li{font-size:1rem}}</style>
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/blog-premium.css">
+<script src="/js/article-chrome.js" defer></script>
   <!-- FAQ-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Standard vs Advanced — কোনটা বেছে নেব?","acceptedAnswer":{"@type":"Answer","text":"Speed: AVM real-time (~0.3s); Standard 2-4s delay Interruption: AVM-এ আপনি কথা bich-এ থামাতে পারেন; Standard wait করতে হয় Emotion: AVM ভয়েসে emotion (হাসি, রাগ, sad) understand + produce Multi-language: AVM mid-sentence language switch smooth Singing/whisper: AVM-এ possible (limited) Phone call feel: AVM = real, Standard = walkie-talkie"}},{"@type":"Question","name":"ChatGPT Voice Mode বাংলা ব্যবহার-এর কী কী সীমাবদ্ধতা আছে?","acceptedAnswer":{"@type":"Answer","text":"\"Voice not working\": mic permission চেক, headphone unplug-plug বাংলা miss করছে: ধীরে স্পষ্টভাবে বলুন, background noise কম রাখুন Limit hit: Standard-এ switch করুন, বা wait App crash voice-এ: কম-RAM device-এ AVM heavy — Standard ব্যবহার Echo: headphone use করুন"}},{"@type":"Question","name":"ChatGPT Voice Mode বাংলা ব্যবহার বাংলায় কেমন কাজ করে?","acceptedAnswer":{"@type":"Answer","text":"বাংলা প্রশ্ন বুঝতে পারে ৯৫%+ accuracy বাংলায় উত্তর দেয় (যদি বাংলায় জিজ্ঞেস করেন) Mixed conversation — Banglish — চমৎকার handle করে উচ্চারণ slight অসুন্দর, কিন্তু পরিষ্কার Code-switch (Bangla → English mid-sentence) সমস্যা নেই"}},{"@type":"Question","name":"বাংলায় ব্যবহার — কেমন কাজ করে?","acceptedAnswer":{"@type":"Answer","text":"বাংলা প্রশ্ন বুঝতে পারে ৯৫%+ accuracy বাংলায় উত্তর দেয় (যদি বাংলায় জিজ্ঞেস করেন) Mixed conversation — Banglish — চমৎকার handle করে উচ্চারণ slight অসুন্দর, কিন্তু পরিষ্কার Code-switch (Bangla → English mid-sentence) সমস্যা নেই"}}]}</script>
 <!-- FAQ-SCHEMA:END -->
@@ -49,8 +50,11 @@
         </div>
     </header>
 
-    <div class="container">
-        <h1>ChatGPT Voice Mode বাংলা ব্যবহার — Advanced + Standard সম্পূর্ণ গাইড</h1>
+    <div class="article-sheet container">
+        <!-- ARTICLE-META:START -->
+<p class="article-kicker"><span class="article-chip">মিডিয়া</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">২ মিনিট পড়া</span></p>
+<!-- ARTICLE-META:END -->
+<h1>ChatGPT Voice Mode বাংলা ব্যবহার — Advanced + Standard সম্পূর্ণ গাইড</h1>
         <!-- AUTHOR-BLOCK:START -->
 <section class="author-block" itemscope itemtype="https://schema.org/Organization" aria-label="প্রকাশক">
   <style>
@@ -84,17 +88,43 @@
   </div>
 </section>
 <!-- AUTHOR-BLOCK:END -->
+<!-- ARTICLE-HERO:START -->
+<figure class="article-hero">
+  <img src="/blog/chatgpt-voice-mode-bangla-guide/cover.png" width="1200" height="630" alt="ChatGPT Voice Mode বাংলা ব্যবহার — Advanced + Standard সম্পূর্ণ গাইড" decoding="async" fetchpriority="high">
+  <figcaption>ChatGPT Voice Mode বাংলা ব্যবহার — Advanced + Standard সম্পূর্ণ গাইড</figcaption>
+</figure>
+<!-- ARTICLE-HERO:END -->
+<!-- ARTICLE-TOC:START -->
+<nav class="article-toc" aria-label="সূচিপত্র">
+  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
+  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
+  <ol class="toc-list">
+    <li class="toc-item"><a href="#ভূমিকা">ভূমিকা</a></li>
+    <li class="toc-item"><a href="#দুই-ধরনের-voice-mode">দুই ধরনের voice mode</a></li>
+    <li class="toc-item"><a href="#voice-mode-কীভাবে-চালু-করবেন">Voice Mode কীভাবে চালু করবেন</a></li>
+    <li class="toc-item"><a href="#বাংলায়-ব্যবহার-কেমন-কাজ-করে">বাংলায় ব্যবহার — কেমন কাজ করে?</a></li>
+    <li class="toc-item"><a href="#standard-vs-advanced-মূল-পার্থক্য">Standard vs Advanced — মূল পার্থক্য</a></li>
+    <li class="toc-item"><a href="#বাস্তব-ব্যবহারের-৮টি-ক্ষেত্র">বাস্তব ব্যবহারের ৮টি ক্ষেত্র</a></li>
+    <li class="toc-item"><a href="#লিমিট-ও-বিল">লিমিট ও বিল</a></li>
+    <li class="toc-item"><a href="#সমস্যা-ও-সমাধান">সমস্যা ও সমাধান</a></li>
+    <li class="toc-item"><a href="#গোপনীয়তা">গোপনীয়তা</a></li>
+    <li class="toc-item"><a href="#উপসংহার">উপসংহার</a></li>
+    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
+  </ol>
+</nav>
+<!-- ARTICLE-TOC:END -->
 
-        <h2>ভূমিকা</h2>
+        <h2 id="ভূমিকা">ভূমিকা</h2>
         <p>ChatGPT-এর Voice Mode AI ব্যবহারের সবচেয়ে natural way। আপনি কথা বলেন, AI কথা বলে — যেন একটি বন্ধুর সাথে চা খেতে খেতে আলোচনা। বাংলা accent সম্পূর্ণ বুঝতে পারে।</p>
 
-        <h2>দুই ধরনের voice mode</h2>
+        <h2 id="দুই-ধরনের-voice-mode">দুই ধরনের voice mode</h2>
         <ul>
             <li><b>Standard Voice Mode:</b> ফ্রি tier-এ available; transcribe → process → speak (delay আছে)</li>
             <li><b>Advanced Voice Mode (AVM):</b> Plus ($২০/মাস) প্রয়োজন; real-time, emotion বুঝতে পারে, interrupted হয়</li>
         </ul>
 
-        <h2>Voice Mode কীভাবে চালু করবেন</h2>
+        <h2 id="voice-mode-কীভাবে-চালু-করবেন">Voice Mode কীভাবে চালু করবেন</h2>
         <ul>
             <li>ChatGPT অ্যাপ ওপেন করুন (মোবাইল-এ best experience)</li>
             <li>নতুন chat → মাইক্রোফোন আইকন (নিচে ডানদিকে)</li>
@@ -103,7 +133,7 @@
             <li>কথা শুরু করুন — বাংলা বা ইংরেজি</li>
         </ul>
 
-        <h2>বাংলায় ব্যবহার — কেমন কাজ করে?</h2>
+        <h2 id="বাংলায়-ব্যবহার-কেমন-কাজ-করে">বাংলায় ব্যবহার — কেমন কাজ করে?</h2>
         <ul>
             <li>বাংলা প্রশ্ন বুঝতে পারে ৯৫%+ accuracy</li>
             <li>বাংলায় উত্তর দেয় (যদি বাংলায় জিজ্ঞেস করেন)</li>
@@ -112,7 +142,7 @@
             <li>Code-switch (Bangla → English mid-sentence) সমস্যা নেই</li>
         </ul>
 
-        <h2>Standard vs Advanced — মূল পার্থক্য</h2>
+        <h2 id="standard-vs-advanced-মূল-পার্থক্য">Standard vs Advanced — মূল পার্থক্য</h2>
         <ul>
             <li><b>Speed:</b> AVM real-time (~0.3s); Standard 2-4s delay</li>
             <li><b>Interruption:</b> AVM-এ আপনি কথা bich-এ থামাতে পারেন; Standard wait করতে হয়</li>
@@ -122,7 +152,7 @@
             <li><b>Phone call feel:</b> AVM = real, Standard = walkie-talkie</li>
         </ul>
 
-        <h2>বাস্তব ব্যবহারের ৮টি ক্ষেত্র</h2>
+        <h2 id="বাস্তব-ব্যবহারের-৮টি-ক্ষেত্র">বাস্তব ব্যবহারের ৮টি ক্ষেত্র</h2>
         <ul>
             <li><b>Driving/cooking:</b> hands-free Q&A</li>
             <li><b>IELTS Speaking practice:</b> আপনি practice partner পেলেন</li>
@@ -134,7 +164,7 @@
             <li><b>Foreign language coach:</b> "Spanish বলো — আমি শিখছি"</li>
         </ul>
 
-        <h2>লিমিট ও বিল</h2>
+        <h2 id="লিমিট-ও-বিল">লিমিট ও বিল</h2>
         <ul>
             <li>Free Standard: ~১৫ মিনিট/দিন</li>
             <li>Plus ($২০): Standard unlimited, AVM ১ ঘণ্টা/দিন</li>
@@ -142,7 +172,7 @@
             <li>BD থেকে international card / Wise / virtual card</li>
         </ul>
 
-        <h2>সমস্যা ও সমাধান</h2>
+        <h2 id="সমস্যা-ও-সমাধান">সমস্যা ও সমাধান</h2>
         <ul>
             <li><b>"Voice not working":</b> mic permission চেক, headphone unplug-plug</li>
             <li><b>বাংলা miss করছে:</b> ধীরে স্পষ্টভাবে বলুন, background noise কম রাখুন</li>
@@ -151,7 +181,7 @@
             <li><b>Echo:</b> headphone use করুন</li>
         </ul>
 
-        <h2>গোপনীয়তা</h2>
+        <h2 id="গোপনীয়তা">গোপনীয়তা</h2>
         <ul>
             <li>ChatGPT voice training-এ ব্যবহৃত হয় কিনা: Settings → Data Controls থেকে opt-out</li>
             <li>Voice recording cloud-এ store হয়</li>
@@ -159,10 +189,10 @@
             <li>Conversation history delete করতে পারবেন</li>
         </ul>
 
-        <h2>উপসংহার</h2>
+        <h2 id="উপসংহার">উপসংহার</h2>
         <p>Voice Mode AI-এর ভবিষ্যৎ — typing-এর চেয়ে দ্রুত, intuitive, accessible। বাংলায় চমৎকার কাজ করে। আজই headphone নিয়ে ৫ মিনিট cook-এর সাথে কথা বলে দেখুন — আপনার AI usage বদলে যাবে।</p>
 
-        <h2>প্রাসঙ্গিক টুলস ও গাইড</h2>
+        <h2 id="প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</h2>
         <ul>
             <li><a href="/chatgpt/">ChatGPT</a></li>
             <li><a href="/blog/chatgpt-mobile-app-bangla-guide/">ChatGPT মোবাইল অ্যাপ</a></li>
@@ -171,7 +201,7 @@
         </ul>
 
 <section class="seo-newsletter-block" style="margin-top:2.5rem;padding:2rem;background:#f0fdf4;border-radius:12px;text-align:center;">
-  <h2 style="color:#16a34a;margin-bottom:0.5rem;">AI আপডেট পেতে চান?</h2>
+  <h2 style="color:#16a34a;margin-bottom:0.5rem;" id="ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</h2>
   <p style="margin-bottom:1rem;">প্রতি সপ্তাহে নতুন AI টুলস ও টিউটোরিয়াল বাংলায় পান।</p>
   <form class="newsletter-form newsletter-form--mailchimp" action="https://banglaaiguide.us15.list-manage.com/subscribe/post?u=d389c0647878724daecc58fc6&amp;id=aaca6896d2&amp;f_id=007c9ae1f0" method="post" target="_blank" rel="noopener noreferrer" accept-charset="UTF-8" data-mailchimp-form="true" style="display:flex;gap:8px;max-width:440px;margin:0 auto;">
     <input type="email" name="EMAIL" placeholder="আপনার ইমেইল লিখুন" required style="flex:1;padding:10px 14px;border:1px solid #e5e7eb;border-radius:8px;font-size:15px;">

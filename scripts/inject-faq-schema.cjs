@@ -64,13 +64,16 @@ function extractBlocks(html) {
     '<!-- RELATED-POSTS:START -->',
     '<!-- PILLAR-LINKS:START -->',
     'class="related-posts"',
-    'প্রাসঙ্গিক টুলস',
   ];
   let endIdx = html.length;
   for (const m of endMarkers) {
     const i = html.indexOf(m, startIdx);
     if (i > -1 && i < endIdx) endIdx = i;
   }
+  // Stop at the related-tools heading itself. A table-of-contents link can
+  // repeat the same words earlier; that link must not truncate the article.
+  const headingStop = /<h[23]\b[^>]*>[^<]{0,80}প্রাসঙ্গিক টুলস/i.exec(html.slice(startIdx));
+  if (headingStop && startIdx + headingStop.index < endIdx) endIdx = startIdx + headingStop.index;
   let body = html.slice(startIdx, endIdx);
   body = body.replace(/<(section|div|aside)\b[^>]*class=(["'])[^"']*newsletter[^"']*\2[^>]*>[\s\S]*?<\/\1>/gi, '');
 

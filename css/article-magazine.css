@@ -1,0 +1,305 @@
+/* Shared magazine chrome for blog articles.
+   Loaded by blog-premium.css and by editorial posts that do not use that file.
+   Tool pages, compare pages, and the homepage do not load this stylesheet. */
+
+/* Editorial posts use .seo-article-page and do not load blog-premium.css. */
+.seo-article-page {
+  width: min(760px, calc(100% - 32px));
+  max-width: 760px;
+  margin: 28px auto 48px;
+  padding: 36px 32px 56px;
+}
+
+article.container.seo-article-page {
+  position: static;
+}
+
+.seo-article-page ul,
+.seo-article-page ol {
+  margin: 1.25rem 0;
+  padding-left: 1.35rem;
+}
+
+.seo-article-page li {
+  margin: 0 0 0.65rem;
+}
+
+.seo-article-page table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+}
+
+.seo-article-page th,
+.seo-article-page td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.seo-article-page th {
+  background: #14532d;
+  color: #fff;
+}
+
+.seo-article-page p,
+.seo-article-page li {
+  font-size: 1.125rem;
+  line-height: 1.9;
+}
+
+.seo-article-page h1 {
+  font-family: "Hind Siliguri", "Syne", sans-serif;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1.25;
+  color: #0f172a;
+  background: none;
+  -webkit-text-fill-color: currentColor;
+}
+
+.seo-article-page h2 {
+  margin-top: 2.4rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 2px solid #dcfce7;
+  font-family: "Hind Siliguri", sans-serif;
+  font-size: 1.55rem;
+  line-height: 1.35;
+}
+
+.seo-article-page h2::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 8px;
+  border-radius: 999px;
+  background: #16a34a;
+  vertical-align: 0.05em;
+}
+
+.seo-article-page h3 {
+  font-family: "Hind Siliguri", sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.45;
+  padding-left: 12px;
+  border-left: 3px solid #86efac;
+}
+
+.seo-article-page blockquote {
+  margin: 1.4rem 0;
+  padding: 0.2rem 0 0.2rem 1rem;
+  border-left: 4px solid #16a34a;
+  color: #0f172a;
+  font-size: 1.2rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 700px) {
+  .seo-article-page {
+    padding: 22px 16px 40px;
+  }
+
+  .seo-article-page p,
+  .seo-article-page li {
+    font-size: 1.0625rem;
+  }
+
+  .seo-article-page h1 {
+    font-size: 1.7rem;
+  }
+}
+
+.article-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: 80;
+  pointer-events: none;
+  background: transparent;
+}
+
+.article-progress > span {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: #16a34a;
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+.article-kicker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 16px;
+  padding: 0;
+}
+
+.article-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #f0fdf4;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: 0;
+}
+
+.article-hero {
+  margin: 8px 0 28px;
+}
+
+.article-hero img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  border-radius: 18px;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
+  aspect-ratio: 1200 / 630;
+  object-fit: cover;
+  background: #f97316;
+}
+
+.article-hero figcaption {
+  margin-top: 8px;
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.article-toc {
+  position: relative;
+  margin: 8px 0 32px;
+  padding: 14px 16px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+}
+
+.article-toc-toggle {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.article-toc-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0;
+  color: #14532d;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.article-toc-label::after {
+  content: "খুলুন";
+  color: #16a34a;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.article-toc-toggle:checked + .article-toc-label::after {
+  content: "বন্ধ";
+}
+
+.article-toc .toc-list {
+  display: none;
+  margin: 12px 0 0;
+  padding-left: 18px;
+}
+
+.article-toc-toggle:checked ~ .toc-list {
+  display: block;
+}
+
+.article-toc .toc-item {
+  margin: 6px 0;
+}
+
+.article-toc .toc-item a {
+  color: #334155;
+  font-weight: 600;
+  text-decoration: none;
+  border: 0;
+}
+
+.article-toc .toc-item a:hover {
+  color: #15803d;
+}
+
+.av-table-scroll {
+  overflow-x: auto;
+  margin: 0 0 1.4rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+.related-posts {
+  max-width: 800px !important;
+  margin: 40px auto 56px !important;
+  padding: 0 16px !important;
+}
+
+.related-posts h3 {
+  margin: 0 0 6px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  font-size: 1.45rem !important;
+  line-height: 1.3 !important;
+}
+
+.related-posts .rp-grid {
+  gap: 14px !important;
+}
+
+.related-posts .rp-card {
+  border-radius: 16px !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+}
+
+.related-posts .rp-cover {
+  height: 120px !important;
+}
+
+@media (min-width: 900px) {
+  .article-toc {
+    position: sticky;
+    top: 12px;
+    z-index: 4;
+  }
+
+  .article-toc-label {
+    cursor: default;
+  }
+
+  .article-toc-label::after {
+    content: none;
+  }
+
+  .article-toc .toc-list {
+    display: block;
+  }
+}
+
+@media (max-width: 700px) {
+  .article-hero {
+    margin-left: -4px;
+    margin-right: -4px;
+  }
+
+  .article-hero img {
+    border-radius: 14px;
+  }
+}
