@@ -253,6 +253,46 @@ function insertAt(html, at, block) {
   return html.slice(0, at) + '\n' + block + html.slice(at);
 }
 
+const CONSENT_TAG = '<script src="/js/consent.js?v=2026-10-26-trust" defer></script>';
+const ANALYTICS_TAG = '<script src="/js/analytics.js?v=2026-10-26-trust" defer></script>';
+
+function scriptTags(html, fileName) {
+  const re = new RegExp(
+    `<script\\b[^>]*\\bsrc=["']/js/${fileName}(?:\\?[^"']*)?["'][^>]*>\\s*</script>`,
+    'gi',
+  );
+  const tags = [];
+  let match;
+  while ((match = re.exec(html))) {
+    tags.push({ index: match.index, end: match.index + match[0].length });
+  }
+  return tags;
+}
+
+// Same GA4 loader as root pages: consent.js must come first, then analytics.js.
+// analytics.js only requests gtag after the visitor accepts analytics consent.
+function ensureAnalytics(html) {
+  const consent = scriptTags(html, 'consent\\.js');
+  const analytics = scriptTags(html, 'analytics\\.js');
+  if (
+    consent.length === 1 &&
+    analytics.length === 1 &&
+    consent[0].index < analytics[0].index
+  ) {
+    return html;
+  }
+  const removable = [...consent, ...analytics].sort((a, b) => b.index - a.index);
+  let next = html;
+  for (const tag of removable) {
+    next = next.slice(0, tag.index) + next.slice(tag.end);
+  }
+  if (!/<\/head>/i.test(next)) return html;
+  return next.replace(
+    /<\/head>/i,
+    `  ${CONSENT_TAG}\n  ${ANALYTICS_TAG}\n</head>`,
+  );
+}
+
 function ensureHeadAssets(html) {
   let next = html;
   if (!/blog-premium\.css/.test(next) && !/article-magazine\.css/.test(next)) {
@@ -261,7 +301,7 @@ function ensureHeadAssets(html) {
   if (!/article-chrome\.js/.test(next)) {
     next = next.replace(/<\/head>/i, '  <script src="/js/article-chrome.js" defer></script>\n</head>');
   }
-  return next;
+  return ensureAnalytics(next);
 }
 
 function processFile(file, slug) {
@@ -269,11 +309,17 @@ function processFile(file, slug) {
   if (isRedirectStub(original)) return false;
   let html = wrapBareArticle(original);
   const slice = articleSlice(html);
-  if (!slice) return false;
+  const title = slice
+    ? stripTags((html.slice(slice.start, slice.end).match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i) || [])[1] || '')
+    : '';
+  if (!slice || !title) {
+    const next = ensureHeadAssets(original);
+    if (next === original) return false;
+    fs.writeFileSync(file, next);
+    return true;
+  }
 
   let article = ensureSheetClass(html.slice(slice.start, slice.end));
-  const title = stripTags((article.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i) || [])[1] || '');
-  if (!title) return false;
 
   const headed = addHeadingIds(article);
   article = headed.html;
@@ -333,6 +379,23 @@ function run() {
     if (processFile(file, entry.name)) updated++;
   }
   console.log(`Article chrome: scanned ${scanned}, updated ${updated}`);
+  const missing = [];
+  for (const entry of fs.readdirSync(BLOG, { withFileTypes: true })) {
+    if (!entry.isDirectory() || hasNonAscii(entry.name)) continue;
+    const file = path.join(BLOG, entry.name, 'index.html');
+    if (!fs.existsSync(file)) continue;
+    const html = fs.readFileSync(file, 'utf8');
+    if (isRedirectStub(html)) continue;
+    const consent = scriptTags(html, 'consent\\.js');
+    const analytics = scriptTags(html, 'analytics\\.js');
+    if (!(consent.length === 1 && analytics.length === 1 && consent[0].index < analytics[0].index)) {
+      missing.push(entry.name);
+    }
+  }
+  if (missing.length) {
+    console.error(`Analytics missing or duplicated on ${missing.length} articles: ${missing.slice(0, 8).join(', ')}`);
+    process.exit(1);
+  }
 }
 
 run();
