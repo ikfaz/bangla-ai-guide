@@ -6,7 +6,7 @@
   <atom:link href="https://banglaaiguide.com/feed.xml" rel="self" type="application/rss+xml" />
   <description>বাংলাদেশের জন্য AI টুলস গাইড, রিভিউ ও টিউটোরিয়াল।</description>
   <language>bn-BD</language>
-  <lastBuildDate>Tue, 03 Nov 2026 23:34:59 GMT</lastBuildDate>
+  <lastBuildDate>Wed, 04 Nov 2026 00:52:53 GMT</lastBuildDate>
   <item>
     <title>Gemini Avatar শেয়ার: নিজের চেহারায় AI ভিডিও বানানোর গাইড | বাংলা AI গাইড</title>
     <link>https://banglaaiguide.com/blog/gemini-avatar-share-bangla-guide/</link>
@@ -673,11 +673,11 @@
     <description>বাংলাদেশের গৃহশিক্ষক/private tutor-রা কীভাবে AI দিয়ে student outcome + income দুটোই বাড়াবেন? Lesson prep, practice, parent reporting — সম্পূর্ণ workflow।</description>
   </item>
   <item>
-    <title>AI দিয়ে Product Launch Checklist — Startup-এর জন্য বাংলা গাইড</title>
+    <title>প্রোডাক্ট লঞ্চ চেকলিস্ট: AI দিয়ে ধাপ</title>
     <link>https://banglaaiguide.com/blog/ai-diye-product-launch-checklist-bangla/</link>
     <guid isPermaLink="true">https://banglaaiguide.com/blog/ai-diye-product-launch-checklist-bangla/</guid>
     <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
-    <description>নতুন product launch করার আগে কী কী checklist? AI দিয়ে কীভাবে pre-launch, launch day, post-launch plan করবেন? Startup + SME-এর জন্য সম্পূর্ণ workflow।</description>
+    <description>নতুন প্রোডাক্ট ছাড়ার আগে, লঞ্চের দিনে ও পরের মাসে কী করবেন। AI দিয়ে গবেষণা, লেখা, যাচাই ও ফলোআপের চেকলিস্ট—ছোট দল ও স্টার্টআপের জন্য সহজ বাংলা গাইড।</description>
   </item>
   <item>
     <title>AI দিয়ে Professional Headshot ও CV Photo — ৫ মিনিটে Studio-Quality</title>
@@ -1128,11 +1128,11 @@
     <description>Make.com (পূর্বে Integromat) দিয়ে কীভাবে Gmail, Sheets, ChatGPT, Slack এর মধ্যে workflow automate করবেন? বাংলাদেশি ফ্রিল্যান্সার ও ব্যবসার জন্য practical scenario।</description>
   </item>
   <item>
-    <title>Manus AI কী ও কীভাবে কাজ করে? বাংলা গাইড</title>
+    <title>Manus AI কী? এজেন্টের কাজ, দাম ও গাইড</title>
     <link>https://banglaaiguide.com/blog/manus-ai-bangla-guide/</link>
     <guid isPermaLink="true">https://banglaaiguide.com/blog/manus-ai-bangla-guide/</guid>
     <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
-    <description>Manus AI এজেন্ট দিয়ে অটোমেটিক কাজ, ফিচার, অ্যাক্সেস ও বাংলাদেশ থেকে ব্যবহার — সম্পূর্ণ বাংলা গাইড।</description>
+    <description>Manus AI একটি এআই এজেন্ট: কাজ দিলে গবেষণা, স্লাইড বা সাইটের ধাপ এগিয়ে নেয়। Free ও Pro-এর যাচাই করা দাম, মাসিক ক্রেডিট, এবং বাংলাদেশ থেকে ব্যবহারের সীমা।</description>
   </item>
   <item>
     <title>MCP (Model Context Protocol) বাংলা গাইড — AI Tool Integration-এর Standard</title>
@@ -1422,11 +1422,11 @@
     <description>সেরা AI অনুবাদ টুলস দিয়ে বাংলা-ইংরেজি অনুবাদ করুন। Google Translate, DeepL, ChatGPT — কোনটি বাংলা অনুবাদে সেরা? সম্পূর্ণ তুলনা ও গাইড।</description>
   </item>
   <item>
-    <title>Claude AI কী ও কীভাবে কাজ করে? বাংলাদেশ গাইড</title>
+    <title>Claude-এর দাম বাংলাদেশে: Free, Pro ও Max</title>
     <link>https://banglaaiguide.com/blog/claude-ai-bangladesh-guide/</link>
     <guid isPermaLink="true">https://banglaaiguide.com/blog/claude-ai-bangladesh-guide/</guid>
     <pubDate>Tue, 24 Mar 2026 00:00:00 GMT</pubDate>
-    <description>Claude AI কীভাবে ব্যবহার করবেন, ফ্রি vs Pro দাম, ChatGPT-র সাথে পার্থক্য আর বাংলাদেশ থেকে ব্যবহার — সম্পূর্ণ বাংলা গাইড।</description>
+    <description>Claude-এর Free, Pro, Max ও Ultra-এর অফিসিয়াল দাম ডলারে, বাংলাদেশ ব্যাংকের রেটে আনুমানিক টাকায়। কোন প্ল্যান কাজে লাগে ও দেশ থেকে কীভাবে পেমেন্ট করবেন।</description>
   </item>
   <item>
     <title>Flux AI ইমেজ জেনারেটর — ফ্রি ও ওপেন সোর্স বিকল্প ২০২৬</title>
@@ -1602,13 +1602,6 @@
     <guid isPermaLink="true">https://banglaaiguide.com/blog/claude-vs-chatgpt-bangladeshe-konti-bhalo/</guid>
     <pubDate>Wed, 11 Mar 2026 00:00:00 GMT</pubDate>
     <description>বাংলাদেশে Claude এবং ChatGPT-এর মধ্যে কোনটি আপনার জন্য সেরা? এই বিস্তারিত বিশ্লেষণে দুটি AI মডেলের বৈশিষ্ট্য, সুবিধা, অসুবিধা এবং ব্যবহারিক প্রয়োগ সম্পর্কে জানুন।</description>
-  </item>
-  <item>
-    <title>Cursor AI বাংলা টিউটোরিয়াল: কোডিংয়ে বিপ্লব আনুন</title>
-    <link>https://banglaaiguide.com/blog/cursor-ai-bangla-tutorial-codingye-biplob-anun/</link>
-    <guid isPermaLink="true">https://banglaaiguide.com/blog/cursor-ai-bangla-tutorial-codingye-biplob-anun/</guid>
-    <pubDate>Wed, 11 Mar 2026 00:00:00 GMT</pubDate>
-    <description>Cursor AI একটি উদ্ভাবনী, AI-চালিত কোড এডিটর যা উন্নত কৃত্রিম বুদ্ধিমত্তা ক্ষমতাগুলো সরাসরি আপনার কোডিং পরিবেশে সংযুক্ত করে।</description>
   </item>
   <item>
     <title>ফ্রি AI ইমেজ জেনারেটর — বাংলাদেশ থেকে ব্যবহার: সম্পূর্ণ গাইড</title>
