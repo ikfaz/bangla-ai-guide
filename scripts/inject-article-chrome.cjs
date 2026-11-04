@@ -13,8 +13,8 @@ const ROOT = path.resolve(__dirname, '..');
 const BLOG = path.join(ROOT, 'blog');
 
 const COVERS = [
-  ['cover.webp', 'image/webp'],
   ['cover.png', 'image/png'],
+  ['cover.webp', 'image/webp'],
   ['cover.jpg', 'image/jpeg'],
   ['cover.jpeg', 'image/jpeg'],
   ['cover.svg', 'image/svg+xml'],

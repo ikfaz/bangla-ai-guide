@@ -1,0 +1,12 @@
+{
+  "name": "bangla-ai-guide",
+  "private": true,
+  "description": "Static site build for banglaaiguide.com",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@resvg/resvg-js": "^2.6.2",
+    "sharp": "^0.34.4"
+  }
+}

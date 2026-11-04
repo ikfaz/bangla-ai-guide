@@ -16,13 +16,19 @@
 
 const fs = require('fs');
 const path = require('path');
+const { Resvg } = require('@resvg/resvg-js');
+const sharp = require('sharp');
+const {
+  BLOG,
+  SITE,
+  listBlogArticles,
+  isRedirectStub,
+  countLine,
+  pngSize,
+} = require('./lib/site-policy.cjs');
 
-const ROOT = path.resolve(__dirname, '..');
-const BLOG = path.join(ROOT, 'blog');
-const SITE = 'https://banglaaiguide.com';
-
-function hasNonAscii(s) { return /[^\x00-\x7F]/.test(s); }
-function isRedirectStub(html) { return /http-equiv="refresh"/i.test(html); }
+const FONT_FILE = path.join(__dirname, 'fonts', 'HindSiliguri-Bold.ttf');
+const MAX_COVER_BYTES = 150 * 1024;
 
 function escapeXml(s) {
   return String(s)
@@ -318,108 +324,143 @@ function buildSvg(title, slug) {
 </svg>`;
 }
 
-function updateMeta(html, coverUrl, coverType = 'image/svg+xml') {
-  let changed = false;
-  const replace = (re, replacement) => {
-    if (re.test(html)) {
-      const before = html;
-      html = html.replace(re, replacement);
-      if (html !== before) changed = true;
-    }
-  };
-
-  replace(
-    /<meta\s+property="og:image"\s+content="[^"]*"\s*\/?>/i,
-    `<meta property="og:image" content="${coverUrl}">`
-  );
-  replace(
-    /<meta\s+name="twitter:image"\s+content="[^"]*"\s*\/?>/i,
-    `<meta name="twitter:image" content="${coverUrl}">`
-  );
-  replace(
-    /"image"\s*:\s*"https:\/\/banglaaiguide\.com\/[^"]*\.(png|svg|webp|jpe?g)"/,
-    `"image": "${coverUrl}"`
-  );
-  replace(
-    /("image"\s*:\s*\{[^{}]*"url"\s*:\s*)"https:\/\/banglaaiguide\.com\/[^"]+"/,
-    `$1"${coverUrl}"`
-  );
-  replace(
-    /<meta\s+property="og:image:type"\s+content="[^"]*"\s*\/?>/i,
-    `<meta property="og:image:type" content="${coverType}">`
-  );
-
-  if (!/og:image:type/i.test(html) && /<meta\s+property="og:image"/i.test(html)) {
-    html = html.replace(
-      /(<meta\s+property="og:image"[^>]*>)/i,
-      `$1\n    <meta property="og:image:type" content="${coverType}">`
-    );
-    changed = true;
-  }
-
-  if (!/og:image:width/i.test(html) && /<meta\s+property="og:image"/i.test(html)) {
-    html = html.replace(
-      /(<meta\s+property="og:image"[^>]*>)/i,
-      `$1\n    <meta property="og:image:width" content="1200">\n    <meta property="og:image:height" content="630">`
-    );
-    changed = true;
-  }
-
-  return { html, changed };
+function writeIfChanged(file, data) {
+  const next = Buffer.isBuffer(data) ? data : Buffer.from(data);
+  if (fs.existsSync(file) && fs.readFileSync(file).equals(next)) return false;
+  fs.writeFileSync(file, next);
+  return true;
 }
 
-function run() {
+function prepareSvgForRaster(svg) {
+  const badgeFill = ((svg.match(/\.badge\s*\{[^}]*fill:\s*([^;}]+)/) || [])[1] || '#14532D').trim();
+  let prepared = svg.replace(/<style[\s\S]*?<\/style>/gi, '');
+  const family = 'Hind Siliguri';
+  const paint = {
+    title: ` fill="#FFFFFF" font-family="${family}" font-weight="700"`,
+    badge: ` fill="${badgeFill}" font-family="${family}" font-weight="700"`,
+    'brand-main': ` fill="#FFFFFF" font-family="${family}" font-weight="700"`,
+    brand: ` fill="#FFFFFF" font-family="${family}" font-weight="700" opacity="0.85"`,
+    url: ` fill="#FFFFFF" font-family="${family}" font-weight="700" opacity="0.85"`,
+  };
+  prepared = prepared.replace(/class="(title|badge|brand-main|brand|url)"/g, (_, cls) => paint[cls]);
+  prepared = prepared.replace(/font-family="[^"]*"/g, `font-family="${family}"`);
+  return prepared;
+}
+
+function rasterizeSvg(svg) {
+  const renderer = new Resvg(prepareSvgForRaster(svg), {
+    fitTo: { mode: 'width', value: 1200 },
+    font: {
+      fontFiles: [FONT_FILE],
+      loadSystemFonts: false,
+      defaultFontFamily: 'Hind Siliguri',
+    },
+  });
+  return renderer.render().asPng();
+}
+
+async function compressPng(png, fit) {
+  const attempts = [
+    { colors: 128, quality: 75 },
+    { colors: 64, quality: 60 },
+    { colors: 32, quality: 50 },
+  ];
+  let last = png;
+  for (const attempt of attempts) {
+    last = await sharp(png)
+      .resize(1200, 630, { fit })
+      .png({ compressionLevel: 9, palette: true, quality: attempt.quality, colors: attempt.colors, effort: 10 })
+      .toBuffer();
+    if (last.length <= MAX_COVER_BYTES) return last;
+  }
+  return last;
+}
+
+function upsertMeta(html, kind, key, content) {
+  const tagRe = new RegExp(`<meta\\b[^>]*\\b${kind}\\s*=\\s*(["'])${key}\\1[^>]*>`, 'i');
+  const tag = `<meta ${kind}="${key}" content="${content}">`;
+  if (tagRe.test(html)) {
+    return html.replace(tagRe, (full) => {
+      if (/\bcontent\s*=/.test(full)) {
+        return full.replace(/\bcontent\s*=\s*(["'])[\s\S]*?\1/, `content="${content}"`);
+      }
+      return full.replace(/\s*\/?>$/, ` content="${content}">`);
+    });
+  }
+  if (/<\/head>/i.test(html)) return html.replace(/<\/head>/i, `  ${tag}\n</head>`);
+  return html;
+}
+
+function updateMeta(html, coverUrl) {
+  let next = upsertMeta(html, 'property', 'og:image', coverUrl);
+  next = upsertMeta(next, 'name', 'twitter:image', coverUrl);
+  next = upsertMeta(next, 'property', 'og:image:type', 'image/png');
+  if (!/property=["']og:image:width["']/i.test(next)) {
+    next = upsertMeta(next, 'property', 'og:image:width', '1200');
+  }
+  if (!/property=["']og:image:height["']/i.test(next)) {
+    next = upsertMeta(next, 'property', 'og:image:height', '630');
+  }
+  next = next.replace(/\bsrc=(["'])cover\.webp\1/g, 'src=$1cover.png$1');
+  return next;
+}
+
+async function run() {
+  if (!fs.existsSync(FONT_FILE)) {
+    console.error(`Missing ${FONT_FILE}`);
+    process.exit(1);
+  }
   if (!fs.existsSync(BLOG)) {
     console.error('blog/ directory not found');
     process.exit(1);
   }
 
-  let writtenSvg = 0, updatedHtml = 0, skippedMojibake = 0, skippedRedirect = 0, skippedNoTitle = 0;
+  let writtenSvg = 0;
+  let writtenPng = 0;
+  let updatedHtml = 0;
+  let skippedRedirect = 0;
+  let skippedNoTitle = 0;
 
-  for (const entry of fs.readdirSync(BLOG, { withFileTypes: true })) {
-    if (!entry.isDirectory()) continue;
-    if (hasNonAscii(entry.name)) { skippedMojibake++; continue; }
-
-    const dir = path.join(BLOG, entry.name);
-    const indexFile = path.join(dir, 'index.html');
-    if (!fs.existsSync(indexFile)) continue;
-
-    let html = fs.readFileSync(indexFile, 'utf8');
-    if (isRedirectStub(html)) { skippedRedirect++; continue; }
-
+  for (const article of listBlogArticles()) {
+    const dir = path.dirname(article.file);
+    const html = fs.readFileSync(article.file, 'utf8');
+    if (isRedirectStub(html)) { skippedRedirect += 1; continue; }
     const title = extractTitle(html);
-    if (!title) { skippedNoTitle++; continue; }
+    if (!title) { skippedNoTitle += 1; continue; }
 
-    const preferredRaster = [
-      ['cover.webp', 'image/webp'],
-      ['cover.png', 'image/png'],
-      ['cover.jpg', 'image/jpeg'],
-      ['cover.jpeg', 'image/jpeg'],
-    ].find(([file]) => fs.existsSync(path.join(dir, file)));
-
-    let coverFile = 'cover.svg';
-    let coverType = 'image/svg+xml';
-    if (preferredRaster) {
-      [coverFile, coverType] = preferredRaster;
-    } else {
-      const svg = buildSvg(title, entry.name);
-      fs.writeFileSync(path.join(dir, coverFile), svg, 'utf8');
-      writtenSvg++;
+    const pngPath = path.join(dir, 'cover.png');
+    const webp = path.join(dir, 'cover.webp');
+    const existing = fs.existsSync(pngPath) ? fs.readFileSync(pngPath) : null;
+    const existingOk = existing
+      && existing.length <= MAX_COVER_BYTES
+      && (() => { const size = pngSize(existing); return size && size.width === 1200 && size.height === 630; })();
+    // A shipped 1200x630 PNG stays. WebP is the source only when no PNG exists yet,
+    // so a custom cover (and the Gemini Avatar cover) is not replaced by the template.
+    if (!existingOk && fs.existsSync(webp)) {
+      const png = await compressPng(fs.readFileSync(webp), 'cover');
+      if (writeIfChanged(pngPath, png)) writtenPng += 1;
+    } else if (!existingOk) {
+      const svg = buildSvg(title, article.slug);
+      if (writeIfChanged(path.join(dir, 'cover.svg'), svg)) writtenSvg += 1;
+      const png = await compressPng(rasterizeSvg(svg), 'fill');
+      if (writeIfChanged(pngPath, png)) writtenPng += 1;
     }
 
-    const coverUrl = `${SITE}/blog/${entry.name}/${coverFile}`;
-    const result = updateMeta(html, coverUrl, coverType);
-    if (result.changed) {
-      fs.writeFileSync(indexFile, result.html, 'utf8');
-      updatedHtml++;
+    const next = updateMeta(html, `${SITE}/blog/${article.slug}/cover.png`);
+    if (next !== html) {
+      fs.writeFileSync(article.file, next);
+      updatedHtml += 1;
     }
   }
 
-  console.log(`Covers: wrote ${writtenSvg} SVG files`);
+  console.log(`Covers: wrote ${writtenPng} PNG files, refreshed ${writtenSvg} SVG files`);
   console.log(`Meta:   updated ${updatedHtml} HTML pages`);
-  if (skippedMojibake) console.log(`Skipped (mojibake folder): ${skippedMojibake}`);
-  if (skippedRedirect) console.log(`Skipped (redirect stub):   ${skippedRedirect}`);
-  if (skippedNoTitle)  console.log(`Skipped (no <title>):      ${skippedNoTitle}`);
+  if (skippedRedirect) console.log(`Skipped (redirect stub): ${skippedRedirect}`);
+  if (skippedNoTitle) console.log(`Skipped (no <title>):    ${skippedNoTitle}`);
+  countLine('png_covers_written', writtenPng);
 }
 
-run();
+run().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});
