@@ -12,13 +12,7 @@ const path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 const BLOG = path.join(ROOT, 'blog');
 
-const COVERS = [
-  ['cover.png', 'image/png'],
-  ['cover.webp', 'image/webp'],
-  ['cover.jpg', 'image/jpeg'],
-  ['cover.jpeg', 'image/jpeg'],
-  ['cover.svg', 'image/svg+xml'],
-];
+const { blogArt } = require('./lib/blog-art.cjs');
 
 function hasNonAscii(s) { return /[^\x00-\x7F]/.test(s); }
 function isRedirectStub(html) { return /http-equiv="refresh"/i.test(html); }
@@ -104,10 +98,6 @@ function readingMinutes(articleHtml) {
   const text = stripTags(readingSource(articleHtml));
   const words = text ? text.split(/\s+/).length : 0;
   return Math.max(1, Math.round(words / 180));
-}
-
-function coverFor(dir) {
-  return COVERS.find(([file]) => fs.existsSync(path.join(dir, file))) || null;
 }
 
 function replaceSentinel(html, start, end, block) {
@@ -214,9 +204,9 @@ function metaBlock(articleHtml, slug, title) {
   return `<!-- ARTICLE-META:START -->\n<p class="article-kicker">${chips.join('')}</p>\n<!-- ARTICLE-META:END -->`;
 }
 
-function heroBlock(slug, title, coverFile) {
-  const src = `/blog/${slug}/${coverFile}`;
-  return `<!-- ARTICLE-HERO:START -->\n<figure class="article-hero">\n  <img src="${src}" width="1200" height="630" alt="${escapeHtml(title)}" decoding="async" fetchpriority="high">\n  <figcaption>${escapeHtml(title)}</figcaption>\n</figure>\n<!-- ARTICLE-HERO:END -->`;
+function heroBlock(slug, title) {
+  const { src, alt, width=1200, height=630 } = blogArt(slug, title);
+  return `<!-- ARTICLE-HERO:START -->\n<figure class="article-hero">\n  <img src="${escapeHtml(src)}" width="${width}" height="${height}" alt="${escapeHtml(alt)}" decoding="async" fetchpriority="high">\n</figure>\n<!-- ARTICLE-HERO:END -->`;
 }
 
 function tocBlock(headings) {
@@ -301,6 +291,9 @@ function ensureHeadAssets(html) {
   if (!/article-chrome\.js/.test(next)) {
     next = next.replace(/<\/head>/i, '  <script src="/js/article-chrome.js" defer></script>\n</head>');
   }
+  if (!/guide-reader\.css/.test(next)) {
+    next = next.replace(/<\/head>/i, '  <link rel="stylesheet" href="/css/guide-reader.css">\n</head>');
+  }
   return ensureAnalytics(next);
 }
 
@@ -321,6 +314,7 @@ function processFile(file, slug) {
 
   let article = ensureSheetClass(html.slice(slice.start, slice.end));
 
+  if (!/^[^>]*\bdata-guide-reader\b/.test(article)) article = article.replace(/^<(article|div)\b/, '<$1 data-guide-reader');
   const headed = addHeadingIds(article);
   article = headed.html;
   const headings = headed.headings;
@@ -330,9 +324,8 @@ function processFile(file, slug) {
   if (replacedMeta) article = replacedMeta;
   else if (!/class=(["'])[^"']*\barticle-kicker\b[^"']*\1/.test(article)) article = insertBeforeH1(article, meta);
 
-  const cover = coverFor(path.dirname(file));
-  if (cover) {
-    const hero = heroBlock(slug, title, cover[0]);
+  {
+    const hero = heroBlock(slug, title);
     const replacedHero = replaceSentinel(article, '<!-- ARTICLE-HERO:START -->', '<!-- ARTICLE-HERO:END -->', hero);
     if (replacedHero) {
       article = replacedHero;
@@ -358,6 +351,12 @@ function processFile(file, slug) {
     }
   }
 
+  // Keep the reading header light: the publisher biography belongs after the text.
+  const publisher = article.match(/<!-- AUTHOR-BLOCK:START -->[\s\S]*?<!-- AUTHOR-BLOCK:END -->/);
+  if (publisher && article.indexOf(publisher[0]) < article.indexOf('<!-- ARTICLE-HERO:START -->')) {
+    article = article.replace(publisher[0], '').replace(/(\s*<\/(?:div|article)>)$/i, (_, close) => '\n' + publisher[0] + close);
+  }
+  article = article.replace(/(<\/h1>\r?\n)[ \t]+(?=\r?\n)/i, '$1');
   let next = html.slice(0, slice.start) + article + html.slice(slice.end);
   next = ensureHeadAssets(next);
   if (next === original) return false;

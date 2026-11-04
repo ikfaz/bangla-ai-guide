@@ -12,3 +12,6 @@
 
 /* Shared open-book and spark mark. Text beside it supplies the brand name. */
 .brand-logo{width:48px;height:48px;flex:none;object-fit:contain}.footer .brand-logo{width:42px;height:42px}@media(max-width:600px){.brand-logo{width:42px;height:42px}}
+
+/* An actual image keeps homepage article previews available to readers and assistive technology. */
+.blog-card-mini .cover{overflow:hidden}.blog-card-mini .cover img{display:block;width:100%;height:100%;object-fit:cover}

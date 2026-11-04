@@ -24,6 +24,8 @@ const steps = [
   ["generate-comparison-pages.cjs"],
   ["regenerate-blog-listing.cjs"],
   ["repair-tool-links.cjs"],
+  ["apply-site-shell.cjs"],
+  ["style-interiors.cjs"],
   ["generate-search-index.cjs"],
   ["generate-feed.cjs"],
   ["generate-sitemap.cjs"],

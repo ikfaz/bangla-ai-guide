@@ -18,8 +18,9 @@
 
 const fs = require('fs');
 const path = require('path');
-const { REDIRECT_BLOG_SLUGS, COVER_FILES } = require('./lib/site-policy.cjs');
+const { REDIRECT_BLOG_SLUGS } = require('./lib/site-policy.cjs');
 
+const { blogArt } = require('./lib/blog-art.cjs');
 const ROOT = path.resolve(__dirname, '..');
 const BLOG = path.join(ROOT, 'blog');
 
@@ -100,8 +101,7 @@ function collect() {
       slug: entry.name, title, description, category,
       tokens,
       file,
-      cover: COVER_FILES
-        .find(name => fs.existsSync(path.join(BLOG, entry.name, name))) || null,
+      art: blogArt(entry.name, title),
     });
   }
   return articles;
@@ -133,7 +133,7 @@ function pickRelated(target, all, n = 4) {
 
 function renderBlock(related) {
   const cards = related.map(r => `      <a href="/blog/${r.slug}/" class="rp-card">
-        <div class="rp-cover" style="background-image: linear-gradient(135deg, rgba(5,150,105,.55), rgba(16,185,129,.25)), url('/blog/${r.slug}/${r.cover || 'cover.svg'}');"></div>
+        <img class="rp-cover" src="${escapeHtml(r.art.src)}" width="${r.art.width || 1200}" height="${r.art.height || 630}" alt="${escapeHtml(r.art.alt)}" decoding="async" loading="lazy">
         <div class="rp-body">
           <h4 class="rp-title">${escapeHtml(r.title)}</h4>
           <span class="rp-link">পড়ুন →</span>
@@ -142,18 +142,6 @@ function renderBlock(related) {
 
   return `<!-- RELATED-POSTS:START -->
 <section class="related-posts" aria-label="সম্পর্কিত গাইড">
-  <style>
-    .related-posts { max-width: 1100px; margin: 56px auto; padding: 0 20px; font-family: 'Hind Siliguri', sans-serif; }
-    .related-posts h3 { font-family: 'Syne', 'Hind Siliguri', sans-serif; font-size: 28px; font-weight: 800; margin: 0 0 8px; letter-spacing: -0.02em; color: #0F172A; }
-    .related-posts .rp-sub { color: #64748B; margin: 0 0 28px; font-size: 15px; }
-    .related-posts .rp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
-    .related-posts .rp-card { display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 18px; overflow: hidden; text-decoration: none; color: inherit; transition: all .25s ease; }
-    .related-posts .rp-card:hover { transform: translateY(-4px); border-color: #16A34A; box-shadow: 0 16px 36px rgba(15,23,42,.12); }
-    .related-posts .rp-cover { height: 110px; background-size: cover; background-position: center; }
-    .related-posts .rp-body { padding: 16px 18px 18px; flex: 1; display: flex; flex-direction: column; }
-    .related-posts .rp-title { font-size: 15px; font-weight: 700; line-height: 1.4; margin: 0 0 12px; color: #0F172A; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-    .related-posts .rp-link { margin-top: auto; color: #16A34A; font-size: 13px; font-weight: 600; }
-  </style>
   <h3>সম্পর্কিত গাইড</h3>
   <p class="rp-sub">এই বিষয়ে আরও পড়ুন:</p>
   <div class="rp-grid">
@@ -166,10 +154,17 @@ ${cards}
 // --- injection -----------------------------------------------------------
 
 function injectBlock(html, block) {
-  // A finished article may already include this section without sentinels.
-  // Leave that block alone instead of inserting a second copy.
-  if (!/<!-- RELATED-POSTS:START -->/.test(html) && /class=(["'])[^"']*\brelated-posts\b[^"']*\1/.test(html)) {
-    return html;
+  // Keep hand-picked destinations, while updating their old background posters.
+  if (!/<!-- RELATED-POSTS:START -->/.test(html) && /class="related-posts"/.test(html)) {
+    return html.replace(/<section class="related-posts"[^>]*>[\s\S]*?<\/section>/i, section =>
+      section.replace(/\s*<style>[\s\S]*?<\/style>/i, '').replace(
+        /(<a href="\/blog\/([^"/]+)\/" class="rp-card">\s*)(?:<div class="rp-cover"[^>]*><\/div>|<img class="rp-cover"[^>]*>)/g,
+        (_, link, slug) => {
+          const art = blogArt(slug, '');
+          return link + `<img class="rp-cover" src="${escapeHtml(art.src)}" width="${art.width || 1200}" height="${art.height || 630}" alt="${escapeHtml(art.alt)}" decoding="async" loading="lazy">`;
+        }
+      )
+    );
   }
   // Replace existing block if sentinels present
   if (/<!-- RELATED-POSTS:START -->/.test(html)) {
