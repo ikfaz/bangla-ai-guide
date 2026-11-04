@@ -292,6 +292,9 @@ function run() {
     const html = fs.readFileSync(article.file, 'utf8');
     if (isRedirectStub(html)) continue;
     scanned += 1;
+    // Keep a hand-authored FAQPage that is not inside the injector sentinels.
+    // Rebuilding it would append heading questions and rewrite the meta block.
+    if (/FAQPage/.test(html) && !/<!-- FAQ-SCHEMA:START -->/.test(html)) continue;
     const beforeCount = countFaqPages(html);
     const title = stripHtml(extractTag(html, 'title') || '');
     const pageText = visibleText(html);

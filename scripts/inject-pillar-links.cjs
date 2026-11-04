@@ -68,6 +68,8 @@ function inject(html, currentPath) {
     const re = new RegExp(`${START}[\\s\\S]*?${END}`, "m");
     return html.replace(re, wrapped);
   }
+  // Finished pages can ship this section without sentinels. Do not add another.
+  if (/class=(["'])[^"']*\bpillar-links-section\b[^"']*\1/.test(html)) return html;
   // First-run insertion point, in priority order:
   //   1. before </main>
   //   2. before opening <footer (covers blog posts without <main>)
