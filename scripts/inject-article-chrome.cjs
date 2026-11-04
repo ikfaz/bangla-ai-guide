@@ -327,7 +327,8 @@ function processFile(file, slug) {
 
   const meta = metaBlock(article, slug, title);
   const replacedMeta = replaceSentinel(article, '<!-- ARTICLE-META:START -->', '<!-- ARTICLE-META:END -->', meta);
-  article = replacedMeta || insertBeforeH1(article, meta);
+  if (replacedMeta) article = replacedMeta;
+  else if (!/class=(["'])[^"']*\barticle-kicker\b[^"']*\1/.test(article)) article = insertBeforeH1(article, meta);
 
   const cover = coverFor(path.dirname(file));
   if (cover) {
@@ -335,7 +336,7 @@ function processFile(file, slug) {
     const replacedHero = replaceSentinel(article, '<!-- ARTICLE-HERO:START -->', '<!-- ARTICLE-HERO:END -->', hero);
     if (replacedHero) {
       article = replacedHero;
-    } else {
+    } else if (!/class=(["'])[^"']*\barticle-hero\b[^"']*\1/.test(article)) {
       const anchor = anchorAfterTitle(article);
       if (anchor != null) article = insertAt(article, anchor, hero);
     }
@@ -346,7 +347,7 @@ function processFile(file, slug) {
     const replacedToc = replaceSentinel(article, '<!-- ARTICLE-TOC:START -->', '<!-- ARTICLE-TOC:END -->', toc);
     if (replacedToc) {
       article = replacedToc;
-    } else {
+    } else if (!/class=(["'])[^"']*\barticle-toc\b[^"']*\1/.test(article)) {
       const heroEnd = article.indexOf('<!-- ARTICLE-HERO:END -->');
       if (heroEnd > -1) {
         article = insertAt(article, heroEnd + '<!-- ARTICLE-HERO:END -->'.length, toc);

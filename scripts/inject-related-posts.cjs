@@ -166,6 +166,11 @@ ${cards}
 // --- injection -----------------------------------------------------------
 
 function injectBlock(html, block) {
+  // A finished article may already include this section without sentinels.
+  // Leave that block alone instead of inserting a second copy.
+  if (!/<!-- RELATED-POSTS:START -->/.test(html) && /class=(["'])[^"']*\brelated-posts\b[^"']*\1/.test(html)) {
+    return html;
+  }
   // Replace existing block if sentinels present
   if (/<!-- RELATED-POSTS:START -->/.test(html)) {
     return html.replace(
