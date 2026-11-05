@@ -34,6 +34,8 @@
   <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <link rel="stylesheet" href="/css/site-shell.css">
   <link rel="stylesheet" href="/css/guide-reader.css">
+  <link rel="stylesheet" href="/css/guide-workshop.css">
+  <script src="/js/guide-workshop.js" defer></script>
 </head>
 <body data-author-mode="editorial">
     <!-- GUIDE-HEADER:START -->
@@ -50,35 +52,30 @@
 </header>
 <!-- GUIDE-HEADER:END -->
 
-    <div data-guide-reader class="article-sheet container">
-        <!-- ARTICLE-META:START -->
-<p class="article-kicker"><span class="article-chip">তুলনা</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৩ মিনিট পড়া</span></p>
-<!-- ARTICLE-META:END -->
-<h1 id="gs-content">AI Agent vs Chatbot — পার্থক্য কী? বাংলা গাইড (২০২৬)</h1>
-
-<!-- ARTICLE-HERO:START -->
-<figure class="article-hero">
+    <div data-guide-reader class="article-sheet container" data-guide-workshop><div class="gw-hero"><div class="gw-hero-copy"><p class="article-kicker"><span class="article-chip">তুলনা</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৩ মিনিট পড়া</span></p><h1 id="gs-content">AI Agent vs Chatbot — পার্থক্য কী? বাংলা গাইড (২০২৬)</h1><p class="gw-deck">AI agent এবং chatbot এক জিনিস নয়। কী আলাদা, কোনটা কখন, business-এ কোনটা ব্যবহার? বাংলায় সহজ ব্যাখ্যা + practical examples।</p><a class="gw-actions" href="#core-difference-one-sentence">Core Difference — One Sentence <span aria-hidden="true">↓</span></a></div><div class="gw-hero-visual"><figure class="article-hero">
   <img src="/assets/editorial/automation.svg" width="1000" height="440" alt="সংযুক্ত কাজের ধাপ ও সুইচের অঙ্কন" decoding="async" fetchpriority="high">
-</figure>
-<!-- ARTICLE-HERO:END -->
-<!-- ARTICLE-TOC:START -->
-<nav class="article-toc" aria-label="সূচিপত্র">
-  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
-  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
-  <ol class="toc-list">
-    <li class="toc-item"><a href="#core-difference-one-sentence">Core Difference — One Sentence</a></li>
-    <li class="toc-item"><a href="#chatbot-what-it-does">Chatbot — What It Does</a></li>
-    <li class="toc-item"><a href="#ai-agent-what-it-does">AI Agent — What It Does</a></li>
-    <li class="toc-item"><a href="#side-by-side-comparison">Side-by-Side Comparison</a></li>
-    <li class="toc-item"><a href="#bd-context-use-cases">BD-Context Use Cases</a></li>
-    <li class="toc-item"><a href="#bd-reality-today">BD Reality Today</a></li>
-    <li class="toc-item"><a href="#build-adopt-decision-tree">Build/Adopt Decision Tree</a></li>
-    <li class="toc-item"><a href="#উপসংহার-আপনার-আজকের-পদক্ষেপ">উপসংহার — আপনার আজকের পদক্ষেপ</a></li>
-    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
-    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
-  </ol>
-</nav>
-<!-- ARTICLE-TOC:END -->
+</figure></div></div><div class="gw-layout"><nav class="gw-chapters" aria-label="এই গাইডে"><details open><summary>এই গাইডে</summary><ol>
+<li><a href="#core-difference-one-sentence">Core Difference — One Sentence</a></li>
+<li><a href="#chatbot-what-it-does">Chatbot — What It Does</a></li>
+<li><a href="#ai-agent-what-it-does">AI Agent — What It Does</a></li>
+<li><a href="#side-by-side-comparison">Side-by-Side Comparison</a></li>
+<li><a href="#bd-context-use-cases">BD-Context Use Cases</a></li>
+<li><a href="#bd-reality-today">BD Reality Today</a></li>
+<li><a href="#build-adopt-decision-tree">Build/Adopt Decision Tree</a></li>
+<li><a href="#উপসংহার-আপনার-আজকের-পদক্ষেপ">উপসংহার — আপনার আজকের পদক্ষেপ</a></li>
+<li><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+</ol></details></nav><div class="gw-reading">
+
+
+
+
+
+
+
+
+
+
+
 
 <p class="lede">Bashir Ahmed একটা Dhaka SaaS startup-এর CTO — Dev team-এ ৬ engineer। ২০২৪-এর জানুয়ারিতে তাঁদের customer service-এ একটা ManyChat-based chatbot ছিল — keyword-based reply, predictable use case। ২০২৫-এর জুনে তিনি একটা AI agent deploy করেছিলেন — Claude Computer Use beta + Custom Workflow। দু'টা সম্পূর্ণ ভিন্ন paradigm। Chatbot reply দেয়, AI agent কাজ করে — order check, refund process, inventory update, support escalation। ১১ মাসে support team ৪ → ১ FTE, productivity 7x। তাঁর insight: "Chatbot 2020-এর tech। AI Agent 2026-এর reality। BD business-এর জন্য এই difference understanding 2-year competitive advantage।"</p>
 
@@ -117,7 +114,7 @@
 
 <h2 id="side-by-side-comparison">Side-by-Side Comparison</h2>
 
-<table style="width:100%;border-collapse:collapse;margin:1rem 0;">
+<div class="gw-table-scroll" role="region" tabindex="0" aria-label="Side-by-Side Comparison"><table style="width:100%;border-collapse:collapse;margin:1rem 0;" class="gw-table">
 <thead>
 <tr style="background:#f1f5f9;">
 <th style="padding:10px;border:1px solid #e5e7eb;">Aspect</th>
@@ -126,13 +123,13 @@
 </tr>
 </thead>
 <tbody>
-<tr><td style="padding:10px;border:1px solid #e5e7eb;">Action</td><td style="padding:10px;border:1px solid #e5e7eb;">Reply only</td><td style="padding:10px;border:1px solid #e5e7eb;">Execute multi-step task</td></tr>
-<tr><td style="padding:10px;border:1px solid #e5e7eb;">Tools access</td><td style="padding:10px;border:1px solid #e5e7eb;">None / limited API</td><td style="padding:10px;border:1px solid #e5e7eb;">Browser + file + API + code</td></tr>
-<tr><td style="padding:10px;border:1px solid #e5e7eb;">Autonomy</td><td style="padding:10px;border:1px solid #e5e7eb;">Low (script-driven)</td><td style="padding:10px;border:1px solid #e5e7eb;">High (goal-driven)</td></tr>
-<tr><td style="padding:10px;border:1px solid #e5e7eb;">Cost (build)</td><td style="padding:10px;border:1px solid #e5e7eb;">৳5K-50K</td><td style="padding:10px;border:1px solid #e5e7eb;">৳50K-5L+</td></tr>
-<tr><td style="padding:10px;border:1px solid #e5e7eb;">Use case complexity</td><td style="padding:10px;border:1px solid #e5e7eb;">Simple FAQ/support</td><td style="padding:10px;border:1px solid #e5e7eb;">Multi-system workflow automation</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Aspect">Action</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Chatbot">Reply only</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="AI Agent">Execute multi-step task</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Aspect">Tools access</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Chatbot">None / limited API</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="AI Agent">Browser + file + API + code</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Aspect">Autonomy</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Chatbot">Low (script-driven)</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="AI Agent">High (goal-driven)</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Aspect">Cost (build)</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Chatbot">৳5K-50K</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="AI Agent">৳50K-5L+</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Aspect">Use case complexity</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Chatbot">Simple FAQ/support</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="AI Agent">Multi-system workflow automation</td></tr>
 </tbody>
-</table>
+</table></div>
 
 <h2 id="bd-context-use-cases">BD-Context Use Cases</h2>
 
@@ -163,7 +160,7 @@
 <h2 id="build-adopt-decision-tree">Build/Adopt Decision Tree</h2>
 
 <ul>
-    <li><b>Daily tasks &lt; 100, simple Q&A:</b> Chatbot enough।</li>
+    <li><b>Daily tasks &lt; 100, simple Q&amp;A:</b> Chatbot enough।</li>
     <li><b>Daily tasks 100-1,000, repetitive multi-step:</b> AI Agent ROI justified।</li>
     <li><b>Enterprise scale + custom workflow:</b> Custom AI Agent + dedicated team।</li>
     <li><b>High-stakes decision (financial, medical):</b> Hybrid — agent suggests, human approves।</li>
@@ -223,7 +220,7 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-    </div>
+    </div></div><p class="sr-only" data-guide-copy-status role="status" aria-live="polite"></p></div>
 
     <!-- RELATED-POSTS:START -->
 <section class="related-posts" aria-label="সম্পর্কিত গাইড">

@@ -36,6 +36,8 @@
 <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <link rel="stylesheet" href="/css/site-shell.css">
   <link rel="stylesheet" href="/css/guide-reader.css">
+<link rel="stylesheet" href="/css/guide-workshop.css">
+  <script src="/js/guide-workshop.js" defer></script>
   <!-- FAQ-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"বাংলাদেশ থেকে ChatGPT প্রম্পট লেখার কৌশল ও উপার্জনের উপায় কীভাবে access করব?","acceptedAnswer":{"@type":"Answer","text":"ChatGPT হল OpenAI-এর তৈরি একটা Large Language Model — যেটা মানুষের লেখা billions of words থেকে training নিয়ে natural language conversation করতে পারে। ২০২২-এর nov-এ launch, ২০২৬-এ flagship model GPT-5, plus o3 reasoning model। বাংলাদেশ থেকে VPN ছাড়া fully accessible। BD-specific signup ও setup — ৪ মিনিটে Browser-এ যান: chat.openai.com । Mobile app-এ Android/iOS দুটোই available — App Store/Play Store-এ \"ChatGPT\" search। Sign up: Google account (recommended — ২ সেকেন্ড), Microsoft, Apple, বা email। BD numbers OTP support করে। Free tier: Signup-এর সাথে সাথে GPT-4o mini unlimited, GPT-5 limited (daily cap), Voice mode (basic), image generation কিছু free। প্রথম message: উপরে input box-এ…"}},{"@type":"Question","name":"ChatGPT প্রম্পট লেখার কৌশল ও উপার্জনের উপায় কোন কাজে সবচেয়ে ভালো?","acceptedAnswer":{"@type":"Answer","text":"আনিকা তাঁর $৪৮০ income করেছিলেন এই workflow-এ: Niche selection: \"Bangla cultural content for South Asian diaspora in US\" — ChatGPT-এর সাথে brainstorm করে chose। Upwork profile + first proposal: ChatGPT-এর আশ্রয়ে written। প্রথম client: $৭৫ for a 1,500-word piece on \"Durga Puja traditions in Dhaka\"। Research, draft, edit — সব ChatGPT + her own oral family history। Client over-deliver → 5-star review: Repeat client-এ rate ১.৫× বাড়ালেন। ৩ মাসে ৬ client × avg $৮০ = $৪৮০।"}},{"@type":"Question","name":"ChatGPT Plus কেনা worth it?","acceptedAnswer":{"@type":"Answer","text":"Worth it যদি: দৈনিক ১৫+ message চালান, advanced model দরকার, voice mode regular use, image generation সপ্তাহে ৫+ বার, freelance income $২০০+/মাস। Worth it না যদি: দৈনিক ৫-এর কম message, casual learner, free tier-এর limit hit হয় না। Alternative: Gemini Free / Claude Free / Perplexity Free — ৭০% capability covered।"}}]}</script>
 <!-- FAQ-SCHEMA:END -->
@@ -57,34 +59,30 @@
 <!-- GUIDE-HEADER:END -->
 
     <!-- Article Content -->
-    <article data-guide-reader>
-        <!-- ARTICLE-META:START -->
-<p class="article-kicker"><span class="article-chip">এআই টুল</span><span class="article-chip">১১ মার্চ, ২০২৬</span><span class="article-chip">৯ মিনিট পড়া</span></p>
-<!-- ARTICLE-META:END -->
-<h1 id="gs-content">ChatGPT প্রম্পট লেখার কৌশল ও উপার্জনের উপায় — বাংলা গাইড ২০২৬</h1>
-
-<!-- ARTICLE-HERO:START -->
-<figure class="article-hero">
+    <article data-guide-reader data-guide-workshop><div class="gw-hero"><div class="gw-hero-copy"><p class="article-kicker"><span class="article-chip">এআই টুল</span><span class="article-chip">১১ মার্চ, ২০২৬</span><span class="article-chip">৯ মিনিট পড়া</span></p><h1 id="gs-content">ChatGPT প্রম্পট লেখার কৌশল ও উপার্জনের উপায় — বাংলা গাইড ২০২৬</h1><p class="gw-deck">ChatGPT দিয়ে প্রম্পট লেখার ১০টি কৌশল, বহুমুখী প্রয়োগ এবং উপার্জনের উপায়। বিগিনারদের জন্য সম্পূর্ণ বাংলা টিউটোরিয়াল।</p><a class="gw-actions" href="#chatgpt-কী-এবং-bd-থেকে-কীভাবে-সঠিকভাবে-শুরু-করবেন">ChatGPT কী, এবং BD থেকে কীভাবে সঠিকভাবে শুরু করবেন <span aria-hidden="true">↓</span></a></div><div class="gw-hero-visual"><figure class="article-hero">
   <img src="/assets/editorial/conversation.svg" width="1000" height="440" alt="চ্যাট উইন্ডোতে প্রশ্ন ও উত্তরের বুদবুদের অঙ্কন" decoding="async" fetchpriority="high">
-</figure>
-<!-- ARTICLE-HERO:END -->
-<!-- ARTICLE-TOC:START -->
-<nav class="article-toc" aria-label="সূচিপত্র">
-  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
-  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
-  <ol class="toc-list">
-    <li class="toc-item"><a href="#chatgpt-কী-এবং-bd-থেকে-কীভাবে-সঠিকভাবে-শুরু-করবেন">ChatGPT কী, এবং BD থেকে কীভাবে সঠিকভাবে শুরু করবেন</a></li>
-    <li class="toc-item"><a href="#আনিকার-৬টা-pattern-beginner-থেকে-confident-user">আনিকার ৬টা pattern — beginner থেকে confident user</a></li>
-    <li class="toc-item"><a href="#৫টা-প্রথম-দিন-practice-prompt-copy-করে-চালান">৫টা প্রথম-দিন practice prompt — copy করে চালান</a></li>
-    <li class="toc-item"><a href="#bd-freelancer-দের-জন্য-income-workflow">BD freelancer-দের জন্য income workflow</a></li>
-    <li class="toc-item"><a href="#chatgpt-কী-কী-করতে-পারে-১৫টা-use-case-bd-context-এ">ChatGPT কী কী করতে পারে — ১৫টা use case BD context-এ</a></li>
-    <li class="toc-item"><a href="#সাধারণ-ভুল-যেগুলো-chatgpt-কে-dumb-মনে-করায়">সাধারণ ভুল — যেগুলো ChatGPT-কে dumb মনে করায়</a></li>
-    <li class="toc-item"><a href="#chatgpt-plus-কেনা-worth-it-bd-context-decision">ChatGPT Plus কেনা worth it? — BD-context decision</a></li>
-    <li class="toc-item"><a href="#উপসংহার-আপনার-আজকের-৩০-মিনিট">উপসংহার — আপনার আজকের ৩০ মিনিট</a></li>
-    <li class="toc-item"><a href="#faq">সচরাচর জিজ্ঞাসা (FAQ)</a></li>
-  </ol>
-</nav>
-<!-- ARTICLE-TOC:END -->
+</figure></div></div><div class="gw-layout"><nav class="gw-chapters" aria-label="এই গাইডে"><details open><summary>এই গাইডে</summary><ol>
+<li><a href="#chatgpt-কী-এবং-bd-থেকে-কীভাবে-সঠিকভাবে-শুরু-করবেন">ChatGPT কী, এবং BD থেকে কীভাবে সঠিকভাবে শুরু করবেন</a></li>
+<li><a href="#আনিকার-৬টা-pattern-beginner-থেকে-confident-user">আনিকার ৬টা pattern — beginner থেকে confident user</a></li>
+<li><a href="#৫টা-প্রথম-দিন-practice-prompt-copy-করে-চালান">৫টা প্রথম-দিন practice prompt — copy করে চালান</a></li>
+<li><a href="#bd-freelancer-দের-জন্য-income-workflow">BD freelancer-দের জন্য income workflow</a></li>
+<li><a href="#chatgpt-কী-কী-করতে-পারে-১৫টা-use-case-bd-context-এ">ChatGPT কী কী করতে পারে — ১৫টা use case BD context-এ</a></li>
+<li><a href="#সাধারণ-ভুল-যেগুলো-chatgpt-কে-dumb-মনে-করায়">সাধারণ ভুল — যেগুলো ChatGPT-কে dumb মনে করায়</a></li>
+<li><a href="#chatgpt-plus-কেনা-worth-it-bd-context-decision">ChatGPT Plus কেনা worth it? — BD-context decision</a></li>
+<li><a href="#উপসংহার-আপনার-আজকের-৩০-মিনিট">উপসংহার — আপনার আজকের ৩০ মিনিট</a></li>
+<li><a href="#faq">সচরাচর জিজ্ঞাসা (FAQ)</a></li>
+</ol></details></nav><div class="gw-reading">
+
+
+
+
+
+
+
+
+
+
+
 
 <p class="lede">আনিকা রহমান প্রথম ChatGPT খুলেছিলেন ২০২৪-এর জুলাইয়ে। চট্টগ্রামের একটা পাবলিক কলেজে B.A. honours-এর ছাত্রী। English-এ confident না — Bangla-তে প্রশ্ন করতে লজ্জাবোধ। প্রথম দিন তিনটা প্রশ্ন করেছিলেন, তিনটায়ই হতাশ হয়েছিলেন। একটার উত্তর তিনি বুঝতে পারেননি, একটায় "I cannot help with that," আর একটার উত্তর তথ্য-ভুল ছিল। তিনি বন্ধ করে দিয়েছিলেন এক সপ্তাহ। তারপর আবার ফিরেছিলেন — কিন্তু এবার একটা নির্দিষ্ট pattern শিখে। আজ ২০২৬-এর মে — আনিকা প্রতিদিন ৪০-৬০টা ChatGPT message চালান। তাঁর CGPA বেড়েছে, ইংরেজি confidence বেড়েছে, এবং তিনি গত ৩ মাসে $৪৮০ আয় করেছেন একটা US-based content gig থেকে — সম্পূর্ণ ChatGPT-augmented workflow-এ।</p>
 
@@ -102,7 +100,7 @@
 <p>ChatGPT হল OpenAI-এর তৈরি একটা Large Language Model — যেটা মানুষের লেখা billions of words থেকে training নিয়ে natural language conversation করতে পারে। ২০২২-এর nov-এ launch, ২০২৬-এ flagship model GPT-5, plus o3 reasoning model। বাংলাদেশ থেকে VPN ছাড়া fully accessible।</p>
 
 <h3>BD-specific signup ও setup — ৪ মিনিটে</h3>
-<ol>
+<ol class="gw-steps">
     <li><b>Browser-এ যান:</b> <a href="https://chat.openai.com" rel="noopener" target="_blank">chat.openai.com</a>। Mobile app-এ Android/iOS দুটোই available — App Store/Play Store-এ "ChatGPT" search।</li>
     <li><b>Sign up:</b> Google account (recommended — ২ সেকেন্ড), Microsoft, Apple, বা email। BD numbers OTP support করে।</li>
     <li><b>Free tier:</b> Signup-এর সাথে সাথে GPT-4o mini unlimited, GPT-5 limited (daily cap), Voice mode (basic), image generation কিছু free।</li>
@@ -198,7 +196,7 @@
 
 <p>আনিকা তাঁর $৪৮০ income করেছিলেন এই workflow-এ:</p>
 
-<ol>
+<ol class="gw-steps">
     <li><b>Niche selection:</b> "Bangla cultural content for South Asian diaspora in US" — ChatGPT-এর সাথে brainstorm করে chose।</li>
     <li><b>Upwork profile + first proposal:</b> ChatGPT-এর আশ্রয়ে written।</li>
     <li><b>প্রথম client:</b> $৭৫ for a 1,500-word piece on "Durga Puja traditions in Dhaka"। Research, draft, edit — সব ChatGPT + her own oral family history।</li>
@@ -315,7 +313,7 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-    </article>
+    </div></div><p class="sr-only" data-guide-copy-status role="status" aria-live="polite"></p></article>
 
     <!-- Footer -->
     <!-- TEMPLATED-FAQ:START -->

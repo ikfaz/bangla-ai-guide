@@ -34,6 +34,8 @@
 <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <link rel="stylesheet" href="/css/site-shell.css">
   <link rel="stylesheet" href="/css/guide-reader.css">
+<link rel="stylesheet" href="/css/guide-workshop.css">
+  <script src="/js/guide-workshop.js" defer></script>
   <!-- FAQ-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Synthesia কোন কাজে সবচেয়ে ভালো?","acceptedAnswer":{"@type":"Answer","text":"1. Bank/financial services (Brac Bank, EBL, City Bank) Compliance training (anti-money laundering, KYC, BBP), product knowledge updates, customer service standards। SCORM + LMS integration critical। 2. Telecom (Robi, Grameenphone, Banglalink) Retailer training (12,000+ outlets), new product launches (5G, IoT), customer experience standards। Multi-language deliverable। 3. Pharma (Beximco Pharma, Square, Incepta, Renata) Medical representative training, product detailing scripts, compliance (DGDA, regulatory)। Updates frequent — versioning advantage। 4. RMG export (Beximco, DBL, Hameem) Production floor safety training, quality standards, buyer compliance (Walmart, H&M)। ৫০,০০০+ worker base।…"}},{"@type":"Question","name":"Synthesia থেকে সর্বোচ্চ পেতে কী কী টিপস আছে?","acceptedAnswer":{"@type":"Answer","text":"Bangla quality: Built-in TTS Bangla acceptable-but-stiff। Custom voice clone (own L&D specialist's voice) recommended। Script test: Bangla translation cross-check native speaker-এ। AI translation কখনো subtle errors। Avatar diversity: Multiple avatars (different ethnicity, age, gender) — engagement diversity-এর জন্য। Module length: Corporate microlearning trend — 3-5 min module preferred (vs 30 min lecture)। Engagement higher। SCORM testing: LMS-এ upload-এর আগে preview। Sync issues sometimes। Compliance disclosure: \"This video uses AI-generated presenter\" — best practice, transparent।"}},{"@type":"Question","name":"Synthesia কী?","acceptedAnswer":{"@type":"Answer","text":"Synthesia (২০১৭ founded, London) — enterprise AI video creation platform। corporate training-এ industry leader। ৫৫,০০০+ company customer (Fortune 500-এর ৫০%+)। Y Combinator + Kleiner Perkins-backed। Stock avatars + custom avatars + 140+ languages + workflow integration। Founded ২০১৭, London Victor Riparbelli Active customers ৫৫,০০০+ company Enterprise-heavy BD adoption ~৬০০ enterprise (Robi, Grameenphone, BAT BD, Nestlé BD) Pricing $২৯-$১২০+/seat/মাস Enterprise custom"}},{"@type":"Question","name":"Synthesia-এর দাম কত এবং BD-তে এর ROI কেমন?","acceptedAnswer":{"@type":"Answer","text":"Starter $২৯/মাস: 10 min/মাস, basic features। Test only। Creator $৬৪/মাস: 30 min, custom avatars, brand kit। Enterprise (custom $৫০০-৫,০০০+/মাস): Robi-এর tier। Unlimited minutes, custom avatars, SCORM, SSO, dedicated CSM, white-labeling। BD payment: Enterprise contracts via wire transfer। Smaller plans via USD card। Robi's annual contract: ~$৪২,০০০ (vs traditional production ৳১.৪ কোটি/বছর) — 95% saving।"}}]}</script>
 <!-- FAQ-SCHEMA:END -->
@@ -53,38 +55,33 @@
 </header>
 <!-- GUIDE-HEADER:END -->
 
-    <div data-guide-reader class="article-sheet container">
-        <!-- ARTICLE-META:START -->
-<p class="article-kicker"><span class="article-chip">মিডিয়া</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৪ মিনিট পড়া</span></p>
-<!-- ARTICLE-META:END -->
-<h1 id="gs-content">Synthesia বাংলা গাইড — Corporate Training Video বানানোর সম্পূর্ণ পদ্ধতি</h1>
-
-<!-- ARTICLE-HERO:START -->
-<figure class="article-hero">
+    <div data-guide-reader class="article-sheet container" data-guide-workshop><div class="gw-hero"><div class="gw-hero-copy"><p class="article-kicker"><span class="article-chip">মিডিয়া</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৪ মিনিট পড়া</span></p><h1 id="gs-content">Synthesia বাংলা গাইড — Corporate Training Video বানানোর সম্পূর্ণ পদ্ধতি</h1><p class="gw-deck">Synthesia-তে AI avatar এবং multilingual voice দিয়ে কীভাবে corporate training video বানাবেন? বাংলাদেশি কোম্পানির HR, L&amp;D ও marketing-এর জন্য practical গাইড।</p><a class="gw-actions" href="#ভূমিকা-robi-axiata-র-learning-development-team-এর-synthesia-adoption">ভূমিকা — Robi Axiata-র Learning &amp; Development… <span aria-hidden="true">↓</span></a></div><div class="gw-hero-visual"><figure class="article-hero">
   <img src="/assets/editorial/movies.svg" width="1000" height="440" alt="ভিডিওর ক্ল্যাপবোর্ড, ফিল্ম ও টাইমলাইনের অঙ্কন" decoding="async" fetchpriority="high">
-</figure>
-<!-- ARTICLE-HERO:END -->
-<!-- ARTICLE-TOC:START -->
-<nav class="article-toc" aria-label="সূচিপত্র">
-  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
-  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
-  <ol class="toc-list">
-    <li class="toc-item"><a href="#ভূমিকা-robi-axiata-র-learning-development-team-এর-synthesia-adoption">ভূমিকা — Robi Axiata-র Learning &amp; Development team-এর Synthesia adoption</a></li>
-    <li class="toc-item"><a href="#synthesia-কী">Synthesia কী?</a></li>
-    <li class="toc-item"><a href="#heygen-এর-সাথে-পার্থক্য-corporate-context">HeyGen-এর সাথে পার্থক্য (corporate context)</a></li>
-    <li class="toc-item"><a href="#প্রথম-ভিডিও-বানানো-robi-corporate-context">প্রথম ভিডিও বানানো (Robi corporate context)</a></li>
-    <li class="toc-item"><a href="#দাম-ও-plan">দাম ও plan</a></li>
-    <li class="toc-item"><a href="#বাংলাদেশি-কোম্পানির-জন্য-use-case">বাংলাদেশি কোম্পানির জন্য use case</a></li>
-    <li class="toc-item"><a href="#টিপস">টিপস</a></li>
-    <li class="toc-item"><a href="#উপসংহার">উপসংহার</a></li>
-    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
-    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
-  </ol>
-</nav>
-<!-- ARTICLE-TOC:END -->
+</figure></div></div><div class="gw-layout"><nav class="gw-chapters" aria-label="এই গাইডে"><details open><summary>এই গাইডে</summary><ol>
+<li><a href="#ভূমিকা-robi-axiata-র-learning-development-team-এর-synthesia-adoption">ভূমিকা — Robi Axiata-র Learning &amp; Development team-এর Synthesia adoption</a></li>
+<li><a href="#synthesia-কী">Synthesia কী?</a></li>
+<li><a href="#heygen-এর-সাথে-পার্থক্য-corporate-context">HeyGen-এর সাথে পার্থক্য (corporate context)</a></li>
+<li><a href="#প্রথম-ভিডিও-বানানো-robi-corporate-context">প্রথম ভিডিও বানানো (Robi corporate context)</a></li>
+<li><a href="#দাম-ও-plan">দাম ও plan</a></li>
+<li><a href="#বাংলাদেশি-কোম্পানির-জন্য-use-case">বাংলাদেশি কোম্পানির জন্য use case</a></li>
+<li><a href="#টিপস">টিপস</a></li>
+<li><a href="#উপসংহার">উপসংহার</a></li>
+<li><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+</ol></details></nav><div class="gw-reading">
 
-<h2 id="ভূমিকা-robi-axiata-র-learning-development-team-এর-synthesia-adoption">ভূমিকা — Robi Axiata-র Learning & Development team-এর Synthesia adoption</h2>
-<p class="lede">Robi Axiata-র Learning & Development team-এর Senior Manager মাহফুজা রহমান — ৩৭ বছর, BUP MBA ২০১১, ১৩ বছর HRD experience (Banglalink → Robi)। তাঁর team-এর responsibility: ৭,০০০+ employee + ১২,০০০ retailer-এর জন্য continuous training — compliance, product knowledge, customer service, leadership। ২০২৪ পর্যন্ত workflow: in-person filming/training studio rent, 2-week production cycle per module, per-module cost ৳৩.৫-৬ লাখ (videographer + presenter + editor + post-production)। Annual module need ৩০-৪০। ২০২৫ মার্চে Synthesia Enterprise pilot। ৬ মাস পর: module production 14 days → 3 days, cost per module ৳৮৫,০০০ (75% reduction), multi-language version (Bangla + English) feasibility। এই গাইড সেই enterprise corporate L&D workflow।</p>
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="ভূমিকা-robi-axiata-র-learning-development-team-এর-synthesia-adoption">ভূমিকা — Robi Axiata-র Learning &amp; Development team-এর Synthesia adoption</h2>
+<p class="lede">Robi Axiata-র Learning &amp; Development team-এর Senior Manager মাহফুজা রহমান — ৩৭ বছর, BUP MBA ২০১১, ১৩ বছর HRD experience (Banglalink → Robi)। তাঁর team-এর responsibility: ৭,০০০+ employee + ১২,০০০ retailer-এর জন্য continuous training — compliance, product knowledge, customer service, leadership। ২০২৪ পর্যন্ত workflow: in-person filming/training studio rent, 2-week production cycle per module, per-module cost ৳৩.৫-৬ লাখ (videographer + presenter + editor + post-production)। Annual module need ৩০-৪০। ২০২৫ মার্চে Synthesia Enterprise pilot। ৬ মাস পর: module production 14 days → 3 days, cost per module ৳৮৫,০০০ (75% reduction), multi-language version (Bangla + English) feasibility। এই গাইড সেই enterprise corporate L&amp;D workflow।</p>
 
 <div class="callout">
 <strong>এই গাইডে যা থাকবে:</strong> Synthesia কী, HeyGen-এর সাথে honest difference, প্রথম video বানানো (corporate context), দাম + plan (enterprise reality), বাংলাদেশি কোম্পানির জন্য use case, এবং compliance/quality tips।
@@ -102,18 +99,18 @@
 
 <h2 id="heygen-এর-সাথে-পার্থক্য-corporate-context">HeyGen-এর সাথে পার্থক্য (corporate context)</h2>
 
-<table style="width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;">
+<div class="gw-table-scroll" role="region" tabindex="0" aria-label="HeyGen-এর সাথে পার্থক্য (corporate context)"><table style="width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;" class="gw-table">
 <thead><tr style="background:#F1F5F9;"><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Aspect</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Synthesia</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">HeyGen</th></tr></thead>
 <tbody>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Target customer</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>Enterprise L&D</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">Creator + SMB + enterprise</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Compliance + security</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>SOC 2 Type II, GDPR, ISO 27001</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">SOC 2 + GDPR</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Template library</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>300+ corporate-focused</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">200+ varied</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">SCORM/LMS export</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>Native</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">Limited</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Custom avatar cost</td><td style="padding:10px;border:1px solid #E2E8F0;">~$১,০০০ setup</td><td style="padding:10px;border:1px solid #E2E8F0;">Creator plan included</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Avatar polish</td><td style="padding:10px;border:1px solid #E2E8F0;">Professional, presenter-style</td><td style="padding:10px;border:1px solid #E2E8F0;">More varied, natural</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Translation</td><td style="padding:10px;border:1px solid #E2E8F0;">Strong (140+ langs)</td><td style="padding:10px;border:1px solid #E2E8F0;">Excellent (HeyGen Translate)</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Aspect">Target customer</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Synthesia"><strong>Enterprise L&amp;D</strong></td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="HeyGen">Creator + SMB + enterprise</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Aspect">Compliance + security</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Synthesia"><strong>SOC 2 Type II, GDPR, ISO 27001</strong></td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="HeyGen">SOC 2 + GDPR</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Aspect">Template library</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Synthesia"><strong>300+ corporate-focused</strong></td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="HeyGen">200+ varied</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Aspect">SCORM/LMS export</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Synthesia"><strong>Native</strong></td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="HeyGen">Limited</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Aspect">Custom avatar cost</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Synthesia">~$১,০০০ setup</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="HeyGen">Creator plan included</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Aspect">Avatar polish</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Synthesia">Professional, presenter-style</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="HeyGen">More varied, natural</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Aspect">Translation</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Synthesia">Strong (140+ langs)</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="HeyGen">Excellent (HeyGen Translate)</td></tr>
 </tbody>
-</table>
+</table></div>
 
 <p>Verdict: Enterprise compliance-heavy industries (bank, telecom, pharma) → Synthesia preferred। Creator/smaller agency → HeyGen better।</p>
 
@@ -159,7 +156,7 @@
 
 <div class="case-study">
 <strong>4. RMG export (Beximco, DBL, Hameem)</strong>
-<p>Production floor safety training, quality standards, buyer compliance (Walmart, H&M)। ৫০,০০০+ worker base।</p>
+<p>Production floor safety training, quality standards, buyer compliance (Walmart, H&amp;M)। ৫০,০০০+ worker base।</p>
 </div>
 
 <div class="case-study">
@@ -174,7 +171,7 @@
 
 <h2 id="টিপস">টিপস</h2>
 <ul>
-<li><strong>Bangla quality:</strong> Built-in TTS Bangla acceptable-but-stiff। Custom voice clone (own L&D specialist's voice) recommended।</li>
+<li><strong>Bangla quality:</strong> Built-in TTS Bangla acceptable-but-stiff। Custom voice clone (own L&amp;D specialist's voice) recommended।</li>
 <li><strong>Script test:</strong> Bangla translation cross-check native speaker-এ। AI translation কখনো subtle errors।</li>
 <li><strong>Avatar diversity:</strong> Multiple avatars (different ethnicity, age, gender) — engagement diversity-এর জন্য।</li>
 <li><strong>Module length:</strong> Corporate microlearning trend — 3-5 min module preferred (vs 30 min lecture)। Engagement higher।</li>
@@ -183,7 +180,7 @@
 </ul>
 
 <h2 id="উপসংহার">উপসংহার</h2>
-<p>Mahfuza বলেন: "Robi-এর L&D budget প্রতি বছর ৳১.৪ কোটি ছিল production-এ alone। Synthesia-তে ৪২ লাখে full year-এর module — savings ৯৪ লাখ যা reinvested learning analytics + actual content quality-এ। Plus, content updates 14 days → 3 days। Compliance-driven industry-এ এই agility game-changer।"</p>
+<p>Mahfuza বলেন: "Robi-এর L&amp;D budget প্রতি বছর ৳১.৪ কোটি ছিল production-এ alone। Synthesia-তে ৪২ লাখে full year-এর module — savings ৯৪ লাখ যা reinvested learning analytics + actual content quality-এ। Plus, content updates 14 days → 3 days। Compliance-driven industry-এ এই agility game-changer।"</p>
 <p>BD-র ৫০০+ enterprise (১,০০০+ employee) — Synthesia-গ্রেড enterprise AI training-এর জন্য ideal target। Mid-size company HeyGen consider করতে পারে। Free trial request করে demo দেখুন — sales team responsive।</p>
 
 
@@ -238,7 +235,7 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-    </div>
+    </div></div><p class="sr-only" data-guide-copy-status role="status" aria-live="polite"></p></div>
 
     <!-- TEMPLATED-FAQ:START -->
 <section class="article-faq" aria-labelledby="faq-heading">

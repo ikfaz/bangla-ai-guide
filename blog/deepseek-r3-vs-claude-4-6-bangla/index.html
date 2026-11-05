@@ -34,6 +34,8 @@
 <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <link rel="stylesheet" href="/css/site-shell.css">
   <link rel="stylesheet" href="/css/guide-reader.css">
+<link rel="stylesheet" href="/css/guide-workshop.css">
+  <script src="/js/guide-workshop.js" defer></script>
   <!-- FAQ-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"DeepSeek R3 vs Claude Sonnet 4.6 বাংলায় কেমন কাজ করে?","acceptedAnswer":{"@type":"Answer","text":"এটাই deciding factor BD users-এর জন্য: Test prompt: \"একটা ৮০০-শব্দের blog post লিখুন বাংলাদেশে গ্রীষ্মকালীন স্বাস্থ্য সচেতনতা নিয়ে। লক্ষ্য audience: middle-class শহুরে পরিবার। Tone: warm, conversational।\" Claude Sonnet 4.6: Natural BD sentence rhythm, idiom appropriate (\"ছাতাটা সঙ্গে রাখুন\"), middle-class context সঠিক (rickshaw heat, school commute, fasting Ramadan)। Rating: ৪.৮/৫। DeepSeek R3: Grammatically correct, কিন্তু stiff academic tone। Idiom rare, BD-specific context generic। কিছু শব্দ India-Bangla (Kolkata flavor)। Rating: ৩.৬/৫। Verdict: Bangla content writing, translation, customer email — Claude স্পষ্ট better। DeepSeek-এ Bangla output edit লাগে ৪০-৫০% time।"}},{"@type":"Question","name":"DeepSeek R3 vs Claude Sonnet 4.6 কোন কাজে সবচেয়ে ভালো?","acceptedAnswer":{"@type":"Answer","text":"কাজ বাছুন কারণ Bangla content/translation Claude Quality স্পষ্ট better Math/algorithm/competitive programming DeepSeek Reasoning + cost Daily code (multi-file) Claude Context + Cursor integration Heavy API volume (cost) DeepSeek ৮৫% cheaper Customer support (English) Either Quality comparable Sensitive client data Claude বা DeepSeek self-host Privacy PhD-level science reasoning DeepSeek (math) বা Claude Opus (synthesis) Task-specific Student learning DeepSeek free Cost = ০"}},{"@type":"Question","name":"বাংলাদেশ থেকে DeepSeek R3 vs Claude Sonnet 4.6 কীভাবে access করব?","acceptedAnswer":{"@type":"Answer","text":"Claude Sonnet 4.6 Pro $২০/মাস (Sonnet unlimited + Opus limited) Payment: USD card (Brac/City/EBL Mastercard via bKash) VPN লাগে না, claude.ai সরাসরি accessible DeepSeek R3 Free tier: chat.deepseek.com — daily limited usage, ৮-১২ message API: deepseek.com → $৫-১০ prepaid (BD card-এ smooth) Open weight: HuggingFace থেকে download → local Ollama deploy possible VPN: ২০২৬-এ BD থেকে direct access, কোনো block নেই"}},{"@type":"Question","name":"DeepSeek R3 vs Claude Sonnet 4.6 ব্যবহারে privacy/security নিয়ে কী জানা দরকার?","acceptedAnswer":{"@type":"Answer","text":"Privacy বিবেচনা: Claude (Anthropic, US): Privacy-first, no training on user data by default। SOC 2 Type II compliant। DeepSeek (China-based): Default policy unclear about training use। Sensitive client data, financial info, healthcare — careful থাকুন। Self-host option: DeepSeek R3 open weights — local deploy possible (GPU দরকার, ~৬৭০B param)। Privacy-critical use-এ এটা game-changer।"}},{"@type":"Question","name":"When DeepSeek wins?","acceptedAnswer":{"@type":"Answer","text":"Math-heavy reasoning (AIME, Olympiad-style) Competitive programming High API volume — $২০০+/মাস savings Privacy-critical (self-host capability) Open-weight research/experiment Student/free tier need"}},{"@type":"Question","name":"When Claude wins?","acceptedAnswer":{"@type":"Answer","text":"Bangla content/translation (huge gap) Multi-file complex refactor Business writing, customer email Cursor/Windsurf/Claude Code-এর সঙ্গে native integration Privacy with cloud (US-based, regulated) Long context coherence (২০০K stable)"}}]}</script>
 <!-- FAQ-SCHEMA:END -->
@@ -53,40 +55,35 @@
 </header>
 <!-- GUIDE-HEADER:END -->
 
-    <div data-guide-reader class="article-sheet container">
-        <!-- ARTICLE-META:START -->
-<p class="article-kicker"><span class="article-chip">তুলনা</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৫ মিনিট পড়া</span></p>
-<!-- ARTICLE-META:END -->
-<h1 id="gs-content">DeepSeek R3 vs Claude Sonnet 4.6 — ফ্রি বনাম Paid Showdown ২০২৬</h1>
-
-<!-- ARTICLE-HERO:START -->
-<figure class="article-hero">
+    <div data-guide-reader class="article-sheet container" data-guide-workshop><div class="gw-hero"><div class="gw-hero-copy"><p class="article-kicker"><span class="article-chip">তুলনা</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৫ মিনিট পড়া</span></p><h1 id="gs-content">DeepSeek R3 vs Claude Sonnet 4.6 — ফ্রি বনাম Paid Showdown ২০২৬</h1><p class="gw-deck">DeepSeek R3 (ফ্রি) এবং Claude Sonnet 4.6 ($20/মাস) — কোনটি ভালো? বাংলা, coding, reasoning, BD access — practical comparison।</p><a class="gw-actions" href="#ভূমিকা-দু-টো-জগত-দু-টো-philosophy">ভূমিকা — দু'টো জগত, দু'টো philosophy <span aria-hidden="true">↓</span></a></div><div class="gw-hero-visual"><figure class="article-hero">
   <img src="/assets/editorial/comparison.svg" width="1000" height="440" alt="পাশাপাশি দুটি প্যানেলে বৈশিষ্ট্য মেলানোর অঙ্কন" decoding="async" fetchpriority="high">
-</figure>
-<!-- ARTICLE-HERO:END -->
-<!-- ARTICLE-TOC:START -->
-<nav class="article-toc" aria-label="সূচিপত্র">
-  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
-  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
-  <ol class="toc-list">
-    <li class="toc-item"><a href="#ভূমিকা-দু-টো-জগত-দু-টো-philosophy">ভূমিকা — দু'টো জগত, দু'টো philosophy</a></li>
-    <li class="toc-item"><a href="#quick-verdict-এক-বাক্যে">Quick verdict — এক বাক্যে</a></li>
-    <li class="toc-item"><a href="#bangla-quality-সবচেয়ে-গুরুত্বপূর্ণ-পার্থক্য-bd-তে">Bangla quality — সবচেয়ে গুরুত্বপূর্ণ পার্থক্য BD-তে</a></li>
-    <li class="toc-item"><a href="#coding-পার্থক্য-কোথায়">Coding — পার্থক্য কোথায়</a></li>
-    <li class="toc-item"><a href="#reasoning-chain-of-thought">Reasoning (chain-of-thought)</a></li>
-    <li class="toc-item"><a href="#speed">Speed</a></li>
-    <li class="toc-item"><a href="#privacy-এই-point-এ-বড়-পার্থক্য">Privacy — এই point-এ বড় পার্থক্য</a></li>
-    <li class="toc-item"><a href="#bd-access-payment-setup">BD access — payment + setup</a></li>
-    <li class="toc-item"><a href="#use-case-matrix-কোন-কাজে-কোনটা">Use case matrix — কোন কাজে কোনটা</a></li>
-    <li class="toc-item"><a href="#combined-strategy-most-bd-users">Combined strategy (most BD users)</a></li>
-    <li class="toc-item"><a href="#when-deepseek-wins">When DeepSeek wins</a></li>
-    <li class="toc-item"><a href="#when-claude-wins">When Claude wins</a></li>
-    <li class="toc-item"><a href="#উপসংহার-rumman-এর-final-setup">উপসংহার — Rumman-এর final setup</a></li>
-    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
-    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
-  </ol>
-</nav>
-<!-- ARTICLE-TOC:END -->
+</figure></div></div><div class="gw-layout"><nav class="gw-chapters" aria-label="এই গাইডে"><details open><summary>এই গাইডে</summary><ol>
+<li><a href="#ভূমিকা-দু-টো-জগত-দু-টো-philosophy">ভূমিকা — দু'টো জগত, দু'টো philosophy</a></li>
+<li><a href="#quick-verdict-এক-বাক্যে">Quick verdict — এক বাক্যে</a></li>
+<li><a href="#bangla-quality-সবচেয়ে-গুরুত্বপূর্ণ-পার্থক্য-bd-তে">Bangla quality — সবচেয়ে গুরুত্বপূর্ণ পার্থক্য BD-তে</a></li>
+<li><a href="#coding-পার্থক্য-কোথায়">Coding — পার্থক্য কোথায়</a></li>
+<li><a href="#reasoning-chain-of-thought">Reasoning (chain-of-thought)</a></li>
+<li><a href="#speed">Speed</a></li>
+<li><a href="#privacy-এই-point-এ-বড়-পার্থক্য">Privacy — এই point-এ বড় পার্থক্য</a></li>
+<li><a href="#bd-access-payment-setup">BD access — payment + setup</a></li>
+<li><a href="#use-case-matrix-কোন-কাজে-কোনটা">Use case matrix — কোন কাজে কোনটা</a></li>
+<li><a href="#combined-strategy-most-bd-users">Combined strategy (most BD users)</a></li>
+<li><a href="#when-deepseek-wins">When DeepSeek wins</a></li>
+<li><a href="#when-claude-wins">When Claude wins</a></li>
+<li><a href="#উপসংহার-rumman-এর-final-setup">উপসংহার — Rumman-এর final setup</a></li>
+<li><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+</ol></details></nav><div class="gw-reading">
+
+
+
+
+
+
+
+
+
+
+
 
 <h2 id="ভূমিকা-দু-টো-জগত-দু-টো-philosophy">ভূমিকা — দু'টো জগত, দু'টো philosophy</h2>
 <p class="lede">ঢাকার এক junior data scientist Rumman Sajid (২৬ বছর, JU Statistics ২০২২ ব্যাচ, ৩ বছর experience) একটা NBFI-তে credit risk modeling করেন। তাঁর monthly tool budget কড়াকড়ি: ৳৩,০০০ — কারণ company AI subscription cover করে না। গত January-তে তিনি একটা decision-এ stuck হলেন: Claude Sonnet 4.6 ($২০/মাস) নাকি DeepSeek R3 (এক-তৃতীয়াংশ cost-এ similar capability)? তিন মাস ধরে দু'টোই parallel চালিয়ে যা পেয়েছেন, এই গাইডে। সারমর্ম: দু'টোই ভালো — কিন্তু ভিন্ন purpose-এ। ভুল pick = মাসে ৳১,৫০০ wasted বা productivity gap। সঠিক pick = same কাজ ৬০% সস্তায়। এই গাইড: BD developer/analyst-দের জন্য DeepSeek R3 vs Claude Sonnet 4.6-এর honest comparison।</p>
@@ -125,16 +122,16 @@
 <h2 id="coding-পার্থক্য-কোথায়">Coding — পার্থক্য কোথায়</h2>
 <p>Coding benchmark এবং real test দু'টোতেই DeepSeek surprisingly competitive:</p>
 
-<table style="width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;">
+<div class="gw-table-scroll" role="region" tabindex="0" aria-label="Coding — পার্থক্য কোথায়"><table style="width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;" class="gw-table">
 <thead><tr style="background:#F1F5F9;"><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Task</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Claude 4.6</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">DeepSeek R3</th></tr></thead>
 <tbody>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">SWE-bench Verified</td><td style="padding:10px;border:1px solid #E2E8F0;">৭৭.২%</td><td style="padding:10px;border:1px solid #E2E8F0;">৭৪.৮%</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">HumanEval</td><td style="padding:10px;border:1px solid #E2E8F0;">৯২%</td><td style="padding:10px;border:1px solid #E2E8F0;">৮৯%</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Codeforces (competitive)</td><td style="padding:10px;border:1px solid #E2E8F0;">২০৬৫ rating</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>২২১৪ rating</strong></td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Bug fix accuracy (real test)</td><td style="padding:10px;border:1px solid #E2E8F0;">৮৬%</td><td style="padding:10px;border:1px solid #E2E8F0;">৮২%</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Multi-file refactor</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★★★</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★ (context window smaller)</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Task">SWE-bench Verified</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Claude 4.6">৭৭.২%</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="DeepSeek R3">৭৪.৮%</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Task">HumanEval</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Claude 4.6">৯২%</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="DeepSeek R3">৮৯%</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Task">Codeforces (competitive)</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Claude 4.6">২০৬৫ rating</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="DeepSeek R3"><strong>২২১৪ rating</strong></td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Task">Bug fix accuracy (real test)</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Claude 4.6">৮৬%</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="DeepSeek R3">৮২%</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Task">Multi-file refactor</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Claude 4.6">★★★★★</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="DeepSeek R3">★★★ (context window smaller)</td></tr>
 </tbody>
-</table>
+</table></div>
 
 <p><strong>Verdict:</strong> Competitive programming-এ DeepSeek জিতে। Production multi-file refactor-এ Claude better। দু'টোর মধ্যে gap ~৩-৫%।</p>
 
@@ -184,19 +181,19 @@
 
 <h2 id="use-case-matrix-কোন-কাজে-কোনটা">Use case matrix — কোন কাজে কোনটা</h2>
 
-<table style="width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;">
+<div class="gw-table-scroll" role="region" tabindex="0" aria-label="Use case matrix — কোন কাজে কোনটা"><table style="width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;" class="gw-table">
 <thead><tr style="background:#F1F5F9;"><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">কাজ</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">বাছুন</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">কারণ</th></tr></thead>
 <tbody>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Bangla content/translation</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>Claude</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">Quality স্পষ্ট better</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Math/algorithm/competitive programming</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>DeepSeek</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">Reasoning + cost</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Daily code (multi-file)</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>Claude</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">Context + Cursor integration</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Heavy API volume (cost)</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>DeepSeek</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">৮৫% cheaper</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Customer support (English)</td><td style="padding:10px;border:1px solid #E2E8F0;">Either</td><td style="padding:10px;border:1px solid #E2E8F0;">Quality comparable</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Sensitive client data</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>Claude</strong> বা DeepSeek self-host</td><td style="padding:10px;border:1px solid #E2E8F0;">Privacy</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">PhD-level science reasoning</td><td style="padding:10px;border:1px solid #E2E8F0;">DeepSeek (math) বা Claude Opus (synthesis)</td><td style="padding:10px;border:1px solid #E2E8F0;">Task-specific</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Student learning</td><td style="padding:10px;border:1px solid #E2E8F0;">DeepSeek free</td><td style="padding:10px;border:1px solid #E2E8F0;">Cost = ০</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="কাজ">Bangla content/translation</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="বাছুন"><strong>Claude</strong></td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="কারণ">Quality স্পষ্ট better</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="কাজ">Math/algorithm/competitive programming</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="বাছুন"><strong>DeepSeek</strong></td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="কারণ">Reasoning + cost</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="কাজ">Daily code (multi-file)</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="বাছুন"><strong>Claude</strong></td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="কারণ">Context + Cursor integration</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="কাজ">Heavy API volume (cost)</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="বাছুন"><strong>DeepSeek</strong></td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="কারণ">৮৫% cheaper</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="কাজ">Customer support (English)</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="বাছুন">Either</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="কারণ">Quality comparable</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="কাজ">Sensitive client data</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="বাছুন"><strong>Claude</strong> বা DeepSeek self-host</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="কারণ">Privacy</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="কাজ">PhD-level science reasoning</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="বাছুন">DeepSeek (math) বা Claude Opus (synthesis)</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="কারণ">Task-specific</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="কাজ">Student learning</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="বাছুন">DeepSeek free</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="কারণ">Cost = ০</td></tr>
 </tbody>
-</table>
+</table></div>
 
 <h2 id="combined-strategy-most-bd-users">Combined strategy (most BD users)</h2>
 <p>Rumman-এর actual workflow (BD analysts/devs-এর জন্য template):</p>
@@ -286,7 +283,7 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-    </div>
+    </div></div><p class="sr-only" data-guide-copy-status role="status" aria-live="polite"></p></div>
 
     <!-- TEMPLATED-FAQ:START -->
 <section class="article-faq" aria-labelledby="faq-heading">

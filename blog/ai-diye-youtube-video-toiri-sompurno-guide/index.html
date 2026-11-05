@@ -44,6 +44,8 @@
 <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <link rel="stylesheet" href="/css/site-shell.css">
   <link rel="stylesheet" href="/css/guide-reader.css">
+<link rel="stylesheet" href="/css/guide-workshop.css">
+  <script src="/js/guide-workshop.js" defer></script>
   <!-- FAQ-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"AI দিয়ে বাংলা YouTube ভিডিও তৈরি করা কি সম্ভব?","acceptedAnswer":{"@type":"Answer","text":"হ্যাঁ, ElevenLabs (বাংলা ভয়েস), Runway/Kling AI (ভিডিও), Canva AI (থাম্বনেইল) এবং ChatGPT (স্ক্রিপ্ট) ব্যবহার করে সম্পূর্ণ AI-জেনারেটেড বাংলা YouTube ভিডিও তৈরি সম্ভব।"}},{"@type":"Question","name":"AI দিয়ে তৈরি YouTube ভিডিও কি monetize হয়?","acceptedAnswer":{"@type":"Answer","text":"হ্যাঁ, AI-জেনারেটেড কন্টেন্ট YouTube-এ monetize হতে পারে — তবে কন্টেন্ট অবশ্যই অরিজিনাল ও উপকারী হতে হবে। YouTube-এর Community Guidelines মানতে হবে।"}},{"@type":"Question","name":"YouTube ভিডিওর জন্য AI স্ক্রিপ্ট লিখতে কোন টুল ব্যবহার করব?","acceptedAnswer":{"@type":"Answer","text":"ChatGPT, Claude এবং Gemini — এই তিনটিই YouTube স্ক্রিপ্ট লেখার জন্য জনপ্রিয়। ভিডিওর বিষয়, টার্গেট অডিয়েন্স ও চ্যানেলের স্টাইল বলে দিলে চমৎকার স্ক্রিপ্ট পাওয়া যায়।"}},{"@type":"Question","name":"AI দিয়ে YouTube থাম্বনেইল তৈরি করব কীভাবে?","acceptedAnswer":{"@type":"Answer","text":"Canva AI (Magic Design), Midjourney বা DALL-E 3 দিয়ে YouTube থাম্বনেইল তৈরি করা যায়। ১২৮০×৭২০ পিক্সেলের উজ্জ্বল, কন্ট্রাস্ট-সমৃদ্ধ থাম্বনেইল ক্লিক রেট বাড়ায়।"}}]}</script>
 <!-- FAQ-SCHEMA:END -->
@@ -65,33 +67,28 @@
 <!-- GUIDE-HEADER:END -->
 
     <!-- Article Content -->
-    <div data-guide-reader class="article-sheet container">
-        <!-- ARTICLE-META:START -->
-<p class="article-kicker"><span class="article-chip">মিডিয়া</span><span class="article-chip">১১ মার্চ, ২০২৬</span><span class="article-chip">৭ মিনিট পড়া</span></p>
-<!-- ARTICLE-META:END -->
-<h1 id="gs-content">AI দিয়ে YouTube ভিডিও তৈরি — সম্পূর্ণ গাইড</h1>
-
-<!-- ARTICLE-HERO:START -->
-<figure class="article-hero">
+    <div data-guide-reader class="article-sheet container" data-guide-workshop><div class="gw-hero"><div class="gw-hero-copy"><p class="article-kicker"><span class="article-chip">মিডিয়া</span><span class="article-chip">১১ মার্চ, ২০২৬</span><span class="article-chip">৭ মিনিট পড়া</span></p><h1 id="gs-content">AI দিয়ে YouTube ভিডিও তৈরি — সম্পূর্ণ গাইড</h1><p class="gw-deck">AI প্রযুক্তি ব্যবহার করে কিভাবে YouTube ভিডিও তৈরি করবেন তার সম্পূর্ণ বাংলা গাইড। স্ক্রিপ্ট লেখা থেকে এডিটিং ও SEO অপ্টিমাইজেশন পর্যন্ত সকল ধাপ শিখুন।</p><a class="gw-actions" href="#নাফিজের-৭-step-production-pipeline">নাফিজের ৭-step production pipeline <span aria-hidden="true">↓</span></a></div><div class="gw-hero-visual"><figure class="article-hero">
   <img src="/assets/editorial/movies.svg" width="1000" height="440" alt="ভিডিওর ক্ল্যাপবোর্ড, ফিল্ম ও টাইমলাইনের অঙ্কন" decoding="async" fetchpriority="high">
-</figure>
-<!-- ARTICLE-HERO:END -->
-<!-- ARTICLE-TOC:START -->
-<nav class="article-toc" aria-label="সূচিপত্র">
-  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
-  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
-  <ol class="toc-list">
-    <li class="toc-item"><a href="#নাফিজের-৭-step-production-pipeline">নাফিজের ৭-step production pipeline</a></li>
-    <li class="toc-item"><a href="#সাকিবের-৩টা-ভুল-যেগুলো-৪২০-subscriber-এ-আটকে-রেখেছে">সাকিবের ৩টা ভুল — যেগুলো ৪২০ subscriber-এ আটকে রেখেছে</a></li>
-    <li class="toc-item"><a href="#bd-থেকে-monetization-reality">BD-থেকে monetization reality</a></li>
-    <li class="toc-item"><a href="#২০২৬-এ-best-ai-tool-stack-নাফিজের-নিজের">২০২৬-এ best AI tool stack (নাফিজের নিজের)</a></li>
-    <li class="toc-item"><a href="#আজকের-পদক্ষেপ-আপনার-প্রথম-৩০-দিন">আজকের পদক্ষেপ — আপনার প্রথম ৩০ দিন</a></li>
-    <li class="toc-item"><a href="#নাফিজের-চূড়ান্ত-পরামর্শ">নাফিজের চূড়ান্ত পরামর্শ</a></li>
-    <li class="toc-item"><a href="#সচরাচর-জিজ্ঞাসা">সচরাচর জিজ্ঞাসা</a></li>
-    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
-  </ol>
-</nav>
-<!-- ARTICLE-TOC:END -->
+</figure></div></div><div class="gw-layout"><nav class="gw-chapters" aria-label="এই গাইডে"><details open><summary>এই গাইডে</summary><ol>
+<li><a href="#নাফিজের-৭-step-production-pipeline">নাফিজের ৭-step production pipeline</a></li>
+<li><a href="#সাকিবের-৩টা-ভুল-যেগুলো-৪২০-subscriber-এ-আটকে-রেখেছে">সাকিবের ৩টা ভুল — যেগুলো ৪২০ subscriber-এ আটকে রেখেছে</a></li>
+<li><a href="#bd-থেকে-monetization-reality">BD-থেকে monetization reality</a></li>
+<li><a href="#২০২৬-এ-best-ai-tool-stack-নাফিজের-নিজের">২০২৬-এ best AI tool stack (নাফিজের নিজের)</a></li>
+<li><a href="#আজকের-পদক্ষেপ-আপনার-প্রথম-৩০-দিন">আজকের পদক্ষেপ — আপনার প্রথম ৩০ দিন</a></li>
+<li><a href="#নাফিজের-চূড়ান্ত-পরামর্শ">নাফিজের চূড়ান্ত পরামর্শ</a></li>
+<li><a href="#সচরাচর-জিজ্ঞাসা">সচরাচর জিজ্ঞাসা</a></li>
+</ol></details></nav><div class="gw-reading">
+
+
+
+
+
+
+
+
+
+
+
 
 <p class="lede">নাফিজ আহমেদের YouTube channel "Bangla AI Lab" আজ ২০২৬-এর মে-তে ১,৪৭,০০০ subscriber-এ পৌঁছেছে। ২০২৪-এর জানুয়ারিতে তিনি শূন্য থেকে শুরু করেছিলেন। ১৬ মাসে ১.৪৭ লাখ subscriber, এবং সবচেয়ে গুরুত্বপূর্ণ — গত মাসে $৩,২০০ AdSense + $১,৮০০ sponsorship = $৫,০০০ revenue। তাঁর ৩-person operation: তিনি + একজন editor (sister, part-time) + একজন voice talent (Fiverr-এ contract)। কিন্তু আসল secret-টা manpower-এ নয়, AI stack-এ। তিনি প্রতি video-তে যে কাজ ২০২২-এর YouTuber-রা ১২-১৫ ঘণ্টায় করতেন — সেটা ৩ ঘণ্টায় শেষ করেন। স্ক্রিপ্ট, voice, thumbnail, B-roll, captions, SEO — পুরোটাই AI-augmented।</p>
 
@@ -105,24 +102,24 @@
         </div>
 
         <h2 id="নাফিজের-৭-step-production-pipeline">নাফিজের ৭-step production pipeline</h2>
-        <h3>Step 1: Topic & angle (Perplexity + manual judgment, ১৫ মিনিট)</h3>
+        <h3 class="gw-step-heading">Step 1: Topic &amp; angle (Perplexity + manual judgment, ১৫ মিনিট)</h3>
         <p>নাফিজ প্রতি সপ্তাহে Sunday সকালে topic research করেন। তিনি Perplexity-তে চালান: "এই সপ্তাহে AI ও tech-এ Bangladesh-এর audience-এর জন্য সবচেয়ে relevant ৫টা topic — যেগুলো এখনো বাংলা YouTube-এ explored না।" Perplexity citation-সহ দেয়। তিনি ৫টা থেকে একটা বেছে নেন intuition-এ।</p>
         <p><b>সাকিবের ভুল:</b> তিনি ChatGPT-তে বলতেন "১০টা viral topic দাও" — generic খেলোয়াড়। Perplexity-র live-search-driven topic-এর সাথে compete করা কঠিন।</p>
 
-        <h3>Step 2: Script (Claude Opus 4.7, ৩৫ মিনিট)</h3>
+        <h3 class="gw-step-heading">Step 2: Script (Claude Opus 4.7, ৩৫ মিনিট)</h3>
         <p>নাফিজের prompt template (নিজের জন্য customize করুন):</p>
         <blockquote class="deep-blockquote">
             "তুমি একজন YouTube scriptwriter যিনি tech topic-এ Bangla audience-এর জন্য লেখো। নিচের topic-এ ৮-১০ মিনিটের video script লেখো। Structure: hook (০-১৫ সেকেন্ড, attention grab), problem statement, ৩-৪টা main point with example, counter-argument acknowledgment, CTA। Bangla casual tone, English tech terms-এ italic না দিয়ে natural use। Reader-personal voice। Topic: [your topic]."
         </blockquote>
         <p>Claude দীর্ঘ context-এ ভালো — পুরো script consistency রাখে। নাফিজ output পেয়ে ১০-১৫ মিনিট নিজে edit করেন — Bangladesh-specific reference (Daraz, bKash, BCS) inject করেন, যা generic AI miss করে।</p>
 
-        <h3>Step 3: Voice (নিজের + ElevenLabs cloned voice, ২৫ মিনিট)</h3>
+        <h3 class="gw-step-heading">Step 3: Voice (নিজের + ElevenLabs cloned voice, ২৫ মিনিট)</h3>
         <p>নাফিজ নিজের voice clone করিয়েছেন ElevenLabs-এ ($২২/মাস plan)। Script paste করেন, Bangla-trained clone থেকে generation, তারপর নিজের mic-এ আবার ৩-৪টা key moment record করেন (emotional beat, call-to-action) এবং mix করেন। Result: ১০০% AI-cloned voice-এর মতো monotone নয়, কিন্তু production speed AI-fast।</p>
         <div class="callout">
             <strong>Important:</strong> Pure AI voice (নিজের না record করে) ২০২৬-এ YouTube algorithm-এ slight penalty পায়। YouTube official policy এখনো বলেনি, কিন্তু creators-এর data দেখায় AI-disclosed video-এ ১২-১৮% lower watch time। Hybrid approach safer।
         </div>
 
-        <h3>Step 4: B-roll & visuals (Midjourney + free stock + screen recordings, ৪০ মিনিট)</h3>
+        <h3 class="gw-step-heading">Step 4: B-roll &amp; visuals (Midjourney + free stock + screen recordings, ৪০ মিনিট)</h3>
         <p>প্রতি video-তে ৩০-৪০টা cut। Sources:</p>
         <ul>
             <li><b>৪০% screen recording:</b> Demo, UI tour। নিজের scriptable।</li>
@@ -131,13 +128,13 @@
             <li><b>১০% Veo 3 generated:</b> Atmospheric establishment shots।</li>
         </ul>
 
-        <h3>Step 5: Edit (Descript + CapCut, ৪৫ মিনিট)</h3>
+        <h3 class="gw-step-heading">Step 5: Edit (Descript + CapCut, ৪৫ মিনিট)</h3>
         <p>Descript-এ paste-edit (text-based) — filler word "um/uh" auto-remove। তারপর CapCut-এ final polish, transition, music sync, color grade।</p>
 
-        <h3>Step 6: Thumbnail (Midjourney + Photoshop, ২০ মিনিট)</h3>
+        <h3 class="gw-step-heading">Step 6: Thumbnail (Midjourney + Photoshop, ২০ মিনিট)</h3>
         <p>নাফিজের thumbnail formula: একটা strong face/expression + ২-৩ Bangla word large text + visual element। Midjourney দিয়ে base image, তারপর Photoshop-এ text overlay। ৩টা variant generate করেন, ১ সপ্তাহে highest-CTR-টা বেছে নেন (YouTube Studio-তে A/B test built-in)।</p>
 
-        <h3>Step 7: SEO (ChatGPT + VidIQ, ১৫ মিনিট)</h3>
+        <h3 class="gw-step-heading">Step 7: SEO (ChatGPT + VidIQ, ১৫ মিনিট)</h3>
         <p>"আমার video-র topic এই: [topic]। Bangladesh + India + Bangla-speaking audience-এর জন্য top 25 search keyword দাও, monthly search volume estimate-সহ। সাথে একটা SEO-optimized title (60 char max), description-এর প্রথম paragraph (150 char), এবং tags (10টা)।" VidIQ-এ cross-check করেন।</p>
 
         <h2 id="সাকিবের-৩টা-ভুল-যেগুলো-৪২০-subscriber-এ-আটকে-রেখেছে">সাকিবের ৩টা ভুল — যেগুলো ৪২০ subscriber-এ আটকে রেখেছে</h2>
@@ -251,7 +248,7 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-    </div>
+    </div></div><p class="sr-only" data-guide-copy-status role="status" aria-live="polite"></p></div>
 
 
         <h2 id="faq">সচরাচর জিজ্ঞাসা (FAQ)</h2>

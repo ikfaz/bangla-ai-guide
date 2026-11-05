@@ -34,6 +34,8 @@
 <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <link rel="stylesheet" href="/css/site-shell.css">
   <link rel="stylesheet" href="/css/guide-reader.css">
+<link rel="stylesheet" href="/css/guide-workshop.css">
+  <script src="/js/guide-workshop.js" defer></script>
   <!-- FAQ-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Gemini 3.5 vs Claude 4.6 vs GPT-5-এর দাম কত এবং BD-তে এর ROI কেমন?","acceptedAnswer":{"@type":"Answer","text":"ChatGPT Plus: $২০/মাস (~৳২,৪০০)। GPT-5 + o3 + DALL-E + Voice + Custom GPTs + Code Interpreter। Pro tier $২০০ (unlimited o3, Sora-replacement)। Claude Pro: $২০/মাস (~৳২,৪০০)। Sonnet 4.6 unlimited + Opus 4.7 limited usage + Projects + Computer Use (beta)। Max tier $১০০-২০০ (Opus 4.7 unlimited)। Gemini Advanced: $২০/মাস via Google One AI Premium (~৳২,৪০০)। Gemini 3.5 Pro + 2TB Drive + Workspace AI features + Veo 3 video generation। Hidden BD value: Google One AI Premium ($২০) আপনাকে 2TB Drive + Gmail AI + Sheets AI + Docs AI দিচ্ছে — যা অন্য কোনো plan-এ নেই। যদি আপনি Workspace-heavy BD user হন, এই $২০ effective value $৩৫-৪০।"}},{"@type":"Question","name":"Gemini 3.5 vs Claude 4.6 vs GPT-5 বাংলায় কেমন কাজ করে?","acceptedAnswer":{"@type":"Answer","text":"BD user-দের জন্য Bangla output quality সবচেয়ে important factor। আমার ৭৩ task-এ ১৭টা ছিল pure Bangla writing/translation/explanation। Aggregate ranking: 1st: Claude Sonnet 4.6. Bangla sentence rhythm publication-grade। \"কাঁটাবন\" বানান সঠিক। Idiomatic expression natural। আবেগী tone-এ shift সহজ। 2nd: Gemini 3.5 Pro. Very close। কিছু complex sentence-এ Bangla-English code-switching slightly forced। 3rd: GPT-5. Good কিন্তু sometimes stilted (\"আমি আপনাকে সাহায্য করতে আনন্দিত\" — overly formal)। একই pattern Bangla audio (voice mode)-এ reverse: 1st: GPT-5 (most natural Bangla voice) 2nd: Gemini Live 3rd: Claude (voice limited)"}},{"@type":"Question","name":"Gemini 3.5 vs Claude 4.6 vs GPT-5-এর সেরা alternative কোনগুলো?","acceptedAnswer":{"@type":"Answer","text":"৮০% capability free tier-এ already covered: Gemini Free (Flash 3.5): Unlimited, BD-current-data ভালো। Most generous free tier। ChatGPT Free: GPT-4o mini unlimited, GPT-5 limited (per day cap), voice mode basic। Claude Free: Sonnet 4.6 limited daily (usually ৮-১৫ message)। Combined free tier: তিনটাই একসাথে রাখলে effective capability paid tier-এর ৬৫-৭০%। Power user-এর জন্য paid worth it, casual user-এর জন্য না।"}}]}</script>
 <!-- FAQ-SCHEMA:END -->
@@ -53,36 +55,31 @@
 </header>
 <!-- GUIDE-HEADER:END -->
 
-    <div data-guide-reader class="article-sheet container">
-        <!-- ARTICLE-META:START -->
-<p class="article-kicker"><span class="article-chip">তুলনা</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৭ মিনিট পড়া</span></p>
-<!-- ARTICLE-META:END -->
-<h1 id="gs-content">Gemini 3.5 vs Claude 4.6 vs GPT-5 — সবচেয়ে বড় AI Comparison ২০২৬</h1>
-
-<!-- ARTICLE-HERO:START -->
-<figure class="article-hero">
+    <div data-guide-reader class="article-sheet container" data-guide-workshop><div class="gw-hero"><div class="gw-hero-copy"><p class="article-kicker"><span class="article-chip">তুলনা</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৭ মিনিট পড়া</span></p><h1 id="gs-content">Gemini 3.5 vs Claude 4.6 vs GPT-5 — সবচেয়ে বড় AI Comparison ২০২৬</h1><p class="gw-deck">বাজারের ৩ top frontier model — Gemini 3.5, Claude Sonnet 4.6, GPT-5 — সম্পূর্ণ side-by-side। কোনটি কোন কাজে সেরা, BD context-এ কোনটি বেছে নেবেন।</p><a class="gw-actions" href="#২০২৬-এ-flagship-lineup-যে-details-matter">২০২৬-এ flagship lineup — যে details matter <span aria-hidden="true">↓</span></a></div><div class="gw-hero-visual"><figure class="article-hero">
   <img src="/assets/editorial/comparison.svg" width="1000" height="440" alt="পাশাপাশি দুটি প্যানেলে বৈশিষ্ট্য মেলানোর অঙ্কন" decoding="async" fetchpriority="high">
-</figure>
-<!-- ARTICLE-HERO:END -->
-<!-- ARTICLE-TOC:START -->
-<nav class="article-toc" aria-label="সূচিপত্র">
-  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
-  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
-  <ol class="toc-list">
-    <li class="toc-item"><a href="#২০২৬-এ-flagship-lineup-যে-details-matter">২০২৬-এ flagship lineup — যে details matter</a></li>
-    <li class="toc-item"><a href="#১০-critical-task-side-by-side-test-results">১০ Critical task — Side-by-side test results</a></li>
-    <li class="toc-item"><a href="#aggregate-scoring">Aggregate scoring</a></li>
-    <li class="toc-item"><a href="#bangla-quality-সবচেয়ে-important-bd-criterion">Bangla quality — সবচেয়ে important BD criterion</a></li>
-    <li class="toc-item"><a href="#bd-pricing-reality-bkash-usd-card-এ-payable">BD pricing reality — bKash-USD card-এ payable</a></li>
-    <li class="toc-item"><a href="#সিদ্ধান্ত-গাছ-২০-যদি-একটায়-খরচ-করতে-হয়">সিদ্ধান্ত-গাছ — $২০ যদি একটায় খরচ করতে হয়</a></li>
-    <li class="toc-item"><a href="#৬০-stack-যদি-serious-power-user">$৬০ stack — যদি serious power user</a></li>
-    <li class="toc-item"><a href="#free-tier-alternative-যদি-বাজেট-০">Free tier alternative — যদি বাজেট ০</a></li>
-    <li class="toc-item"><a href="#উপসংহার-আমার-আপনার-জন্য-চূড়ান্ত-পরামর্শ">উপসংহার — আমার আপনার জন্য চূড়ান্ত পরামর্শ</a></li>
-    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
-    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
-  </ol>
-</nav>
-<!-- ARTICLE-TOC:END -->
+</figure></div></div><div class="gw-layout"><nav class="gw-chapters" aria-label="এই গাইডে"><details open><summary>এই গাইডে</summary><ol>
+<li><a href="#২০২৬-এ-flagship-lineup-যে-details-matter">২০২৬-এ flagship lineup — যে details matter</a></li>
+<li><a href="#১০-critical-task-side-by-side-test-results">১০ Critical task — Side-by-side test results</a></li>
+<li><a href="#aggregate-scoring">Aggregate scoring</a></li>
+<li><a href="#bangla-quality-সবচেয়ে-important-bd-criterion">Bangla quality — সবচেয়ে important BD criterion</a></li>
+<li><a href="#bd-pricing-reality-bkash-usd-card-এ-payable">BD pricing reality — bKash-USD card-এ payable</a></li>
+<li><a href="#সিদ্ধান্ত-গাছ-২০-যদি-একটায়-খরচ-করতে-হয়">সিদ্ধান্ত-গাছ — $২০ যদি একটায় খরচ করতে হয়</a></li>
+<li><a href="#৬০-stack-যদি-serious-power-user">$৬০ stack — যদি serious power user</a></li>
+<li><a href="#free-tier-alternative-যদি-বাজেট-০">Free tier alternative — যদি বাজেট ০</a></li>
+<li><a href="#উপসংহার-আমার-আপনার-জন্য-চূড়ান্ত-পরামর্শ">উপসংহার — আমার আপনার জন্য চূড়ান্ত পরামর্শ</a></li>
+<li><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+</ol></details></nav><div class="gw-reading">
+
+
+
+
+
+
+
+
+
+
+
 
         <p class="lede">বাংলা AI গাইড ২০২৬-এর ফেব্রুয়ারি থেকে এপ্রিল — তিন মাস — তিনটা flagship-এ paid subscription রেখেছি একসাথে: ChatGPT Plus ($২০), Claude Pro ($২০), Gemini Advanced ($২০)। মোট মাসিক $৬০। এই three-way test-এর জন্য banglaaiguide.com-এর দৈনিক কাজ — article writing, code, research, comparison — সব তিনটায় parallel চালিয়েছি ৭৩টা real task-এ। নিচে raw data + আমার final decision: কোন একটায় থাকব $২০-এ, আর কোন দুটো free tier-এ রাখব।</p>
 
@@ -315,7 +312,7 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-    </div>
+    </div></div><p class="sr-only" data-guide-copy-status role="status" aria-live="polite"></p></div>
 
     <!-- TEMPLATED-FAQ:START -->
 <section class="article-faq" aria-labelledby="faq-heading">

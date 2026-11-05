@@ -34,6 +34,8 @@
   <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <link rel="stylesheet" href="/css/site-shell.css">
   <link rel="stylesheet" href="/css/guide-reader.css">
+  <link rel="stylesheet" href="/css/guide-workshop.css">
+  <script src="/js/guide-workshop.js" defer></script>
 </head>
 <body data-author-mode="editorial">
     <!-- GUIDE-HEADER:START -->
@@ -50,35 +52,30 @@
 </header>
 <!-- GUIDE-HEADER:END -->
 
-    <div data-guide-reader class="article-sheet container">
-        <!-- ARTICLE-META:START -->
-<p class="article-kicker"><span class="article-chip">ব্যবসা</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৬ মিনিট পড়া</span></p>
-<!-- ARTICLE-META:END -->
-<h1 id="gs-content">AI দিয়ে Doctor ও Medical Practice — বাংলাদেশি চিকিৎসকদের জন্য গাইড</h1>
-
-<!-- ARTICLE-HERO:START -->
-<figure class="article-hero">
+    <div data-guide-reader class="article-sheet container" data-guide-workshop><div class="gw-hero"><div class="gw-hero-copy"><p class="article-kicker"><span class="article-chip">ব্যবসা</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৬ মিনিট পড়া</span></p><h1 id="gs-content">AI দিয়ে Doctor ও Medical Practice — বাংলাদেশি চিকিৎসকদের জন্য গাইড</h1><p class="gw-deck">চিকিৎসক ও medical professional-দের জন্য AI tools — ডায়াগনোসিস support, patient note, research, prescription, telemedicine।</p><a class="gw-actions" href="#ডা-রিজওয়ানের-4-layer-ai-workflow">ডা. রিজওয়ানের 4-layer AI workflow <span aria-hidden="true">↓</span></a></div><div class="gw-hero-visual"><figure class="article-hero">
   <img src="/assets/editorial/medicine.svg" width="1000" height="440" alt="স্টেথোস্কোপ ও চিকিৎসার নোটের অঙ্কন" decoding="async" fetchpriority="high">
-</figure>
-<!-- ARTICLE-HERO:END -->
-<!-- ARTICLE-TOC:START -->
-<nav class="article-toc" aria-label="সূচিপত্র">
-  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
-  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
-  <ol class="toc-list">
-    <li class="toc-item"><a href="#ডা-রিজওয়ানের-4-layer-ai-workflow">ডা. রিজওয়ানের 4-layer AI workflow</a></li>
-    <li class="toc-item"><a href="#bd-telemedicine-landscape-২০২৬-এ">BD telemedicine landscape ২০২৬-এ</a></li>
-    <li class="toc-item"><a href="#bmdc-ethical-framework-legal-reality">BMDC ethical framework + legal reality</a></li>
-    <li class="toc-item"><a href="#real-risk-যেখানে-ai-medical-practice-কে-dangerous-করে">Real risk — যেখানে AI medical practice-কে dangerous করে</a></li>
-    <li class="toc-item"><a href="#cme-continuous-medical-education-ai-augmented-learning">CME (Continuous Medical Education) — AI-augmented learning</a></li>
-    <li class="toc-item"><a href="#practice-management-time-revenue">Practice management — Time + revenue</a></li>
-    <li class="toc-item"><a href="#২০২৬-এর-recommended-tool-stack-bd-gp-এর-জন্য">২০২৬-এর recommended tool stack (BD GP-এর জন্য)</a></li>
-    <li class="toc-item"><a href="#উপসংহার-আপনার-আজকের-পদক্ষেপ">উপসংহার — আপনার আজকের পদক্ষেপ</a></li>
-    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
-    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
-  </ol>
-</nav>
-<!-- ARTICLE-TOC:END -->
+</figure><aside class="gw-feature"><div class="gw-copy-head"><span>চেষ্টা করে দেখুন</span><button class="gw-copy" type="button" data-guide-copy="guide-copy-1" hidden aria-label="এই লেখা কপি করুন"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 5V4a1 1 0 0 0-1-1H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h1"/></svg><span>কপি করুন</span></button></div><p>"নিচের consultation transcript-এর SOAP-format note বানাও: S (Subjective): Patient's chief complaint, history, presenting symptoms। O (Objective): Vitals, examination findings, lab if mentioned। A (Assessment): Differential diagnosis priority order। P (Plan): Investigations,…</p></aside></div></div><div class="gw-layout"><nav class="gw-chapters" aria-label="এই গাইডে"><details open><summary>এই গাইডে</summary><ol>
+<li><a href="#ডা-রিজওয়ানের-4-layer-ai-workflow">ডা. রিজওয়ানের 4-layer AI workflow</a></li>
+<li><a href="#bd-telemedicine-landscape-২০২৬-এ">BD telemedicine landscape ২০২৬-এ</a></li>
+<li><a href="#bmdc-ethical-framework-legal-reality">BMDC ethical framework + legal reality</a></li>
+<li><a href="#real-risk-যেখানে-ai-medical-practice-কে-dangerous-করে">Real risk — যেখানে AI medical practice-কে dangerous করে</a></li>
+<li><a href="#cme-continuous-medical-education-ai-augmented-learning">CME (Continuous Medical Education) — AI-augmented learning</a></li>
+<li><a href="#practice-management-time-revenue">Practice management — Time + revenue</a></li>
+<li><a href="#২০২৬-এর-recommended-tool-stack-bd-gp-এর-জন্য">২০২৬-এর recommended tool stack (BD GP-এর জন্য)</a></li>
+<li><a href="#উপসংহার-আপনার-আজকের-পদক্ষেপ">উপসংহার — আপনার আজকের পদক্ষেপ</a></li>
+<li><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+</ol></details></nav><div class="gw-reading">
+
+
+
+
+
+
+
+
+
+
+
 
         <p class="lede">ডা. রিজওয়ান হোসেন একজন General Practitioner — Kushtia-র একটা mid-sized clinic-এ কাজ করেন। দৈনিক ৭০-৯০ patient (সকাল ৯-১২, বিকাল ৪-৯)। ২০২৪-এর জুলাইয়ে তিনি একটা breaking-point moment-এ ছিলেন — patient-এর সঙ্গে actual time ৫-৬ মিনিট, documentation-এ ৩-৪ মিনিট, এবং সন্ধ্যায় ২ ঘণ্টা backlog catch-up। ১৫ মাস পর, ২০২৫-এর অক্টোবরে, তাঁর daily backlog শূন্য, patient-time ৭-৯ মিনিট (improved care), এবং সন্ধ্যা ৭টার পর তিনি বাড়ি যান। পরিবর্তন: একটা specific AI-augmented workflow — যেখানে documentation, drug interaction, patient communication, এবং evidence-based decision support — সবই AI assist করছে, কিন্তু clinical judgment ১০০% তাঁর। তিনি নিজের পেশায় AI use-এর জন্য BMDC-এর ethical framework follow করেন। এই article সেই framework + তাঁর exact daily workflow।</p>
 
@@ -96,14 +93,14 @@
 <h3>Layer 1: Real-time documentation (Otter.ai + ChatGPT-এ SOAP)</h3>
 <p>Patient-এর সঙ্গে consultation-এ Otter.ai phone-এ background record করেন (patient consent-এর পরে, BMDC-এর recording guideline অনুযায়ী)। Consultation শেষে transcript কপি করে ChatGPT-এ:</p>
 
-<blockquote class="deep-blockquote">
+<div class="gw-copy-block"><div class="gw-copy-head"><span>কপি করার প্রম্পট</span><button class="gw-copy" type="button" data-guide-copy="guide-copy-1" hidden aria-label="এই লেখা কপি করুন"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 5V4a1 1 0 0 0-1-1H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h1"/></svg><span>কপি করুন</span></button></div><blockquote class="deep-blockquote" id="guide-copy-1" data-guide-source>
 "নিচের consultation transcript-এর SOAP-format note বানাও:<br>
 S (Subjective): Patient's chief complaint, history, presenting symptoms।<br>
 O (Objective): Vitals, examination findings, lab if mentioned।<br>
 A (Assessment): Differential diagnosis priority order।<br>
 P (Plan): Investigations, treatment, follow-up।<br>
 Patient name/identifier remove করো, age/gender preserve। Bangla-English mixed allowed।"
-</blockquote>
+</blockquote></div>
 
 <p>প্রতি note ৪৫ সেকেন্ডে ready। তাঁর Saturday afternoon-এর ২৫ patient-এর সব note ১২ মিনিটে। আগে এই কাজ ১ ঘণ্টা।</p>
 
@@ -185,7 +182,7 @@ Patient name/identifier remove করো, age/gender preserve। Bangla-English 
 
 <ul>
     <li><b>Appointment scheduling:</b> Google Calendar + ChatGPT-এ daily summary। "আজকের ৪০ appointment-এ কতজন follow-up, কতজন new, কে কে high-priority (complex case)?"</li>
-    <li><b>Inventory:</b> Medicine stock sheet ChatGPT-এ paste → "এই sheet-এ যা stock <১৫ unit, সেগুলো list করো, suggested reorder quantity সহ।"</li>
+    <li><b>Inventory:</b> Medicine stock sheet ChatGPT-এ paste → "এই sheet-এ যা stock &lt;১৫ unit, সেগুলো list করো, suggested reorder quantity সহ।"</li>
     <li><b>Billing/insurance:</b> Insurance claim form drafting — AI-augmented (verify mandatory)।</li>
     <li><b>Patient SMS reminder:</b> Bangla, age-appropriate, AI-batch-generate।</li>
 </ul>
@@ -261,7 +258,7 @@ Patient name/identifier remove করো, age/gender preserve। Bangla-English 
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-    </div>
+    </div></div><p class="sr-only" data-guide-copy-status role="status" aria-live="polite"></p></div>
 
     <!-- RELATED-POSTS:START -->
 <section class="related-posts" aria-label="সম্পর্কিত গাইড">

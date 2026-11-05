@@ -34,6 +34,8 @@
 <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <link rel="stylesheet" href="/css/site-shell.css">
   <link rel="stylesheet" href="/css/guide-reader.css">
+<link rel="stylesheet" href="/css/guide-workshop.css">
+  <script src="/js/guide-workshop.js" defer></script>
   <!-- FAQ-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"বাংলাদেশ থেকে OpenClaw কীভাবে access করব?","acceptedAnswer":{"@type":"Answer","text":"OpenClaw locally চালানো যায় (development-এর জন্য), কিন্তু 24/7 message receive করতে হলে একটা always-on server লাগে। মেহরাবের stack: VPS: DigitalOcean Singapore region — $১২/মাস droplet (1 vCPU, 2GB RAM, 50GB SSD)। Latency BD-থেকে ~৬০ms — acceptable। Alternative: Hetzner Finland — €৪.৫/মাস-এ একই specs পাওয়া যায়, কিন্তু latency BD-থেকে ~১৪০ms (mostly OK message lag-এর জন্য, real-time এ noticeable নয়)। Payment: EBL Aqua/City Bank dual-currency card দিয়ে দুটোই কাজ করে — bKash সরাসরি unfortunately চলে না। Install command: npm install -g openclaw তারপর openclaw init । Config wizard interactive — channel এবং LLM provider question করে। Docker option: docker run -d openclaw/openclaw — preferred…"}},{"@type":"Question","name":"OpenClaw কোন কাজে সবচেয়ে ভালো?","acceptedAnswer":{"@type":"Answer","text":"২ সপ্তাহের active deployment-এর পর BillSmart-এ OpenClaw যেভাবে কাজ করছে: ১. Customer support automation (tier 1): \"kemne bill banabo\", \"subscription cancel korbo kemne\", \"Nagad add korbo na ken\" — common 80% query agent solve করে। Escalation flag আসে শুধু complex বা angry tone detect করলে। ২. FB Messenger auto-reply (community plugin): BillSmart-এর Facebook Page-এ ৩-৪ ঘণ্টার reply lag → ১ মিনিট। Tasnim এর confirmation: \"client ৭০% বুঝতেই পারে না bot reply দিচ্ছে।\" ৩. Bangla query handling: \"amar invoice ta kothay\", \"taka katise kintu paymentslip ashe nai\" — Claude Sonnet 4.6-এর Bangla strength + OpenClaw-এর context retention = native-feel responses। ৪. Invoice generation: WhatsApp-এ \"Rahim…"}},{"@type":"Question","name":"OpenClaw-এর কী কী সীমাবদ্ধতা আছে?","acceptedAnswer":{"@type":"Answer","text":"Self-host overhead: VPS maintain, log monitor, security patch apply — সময় লাগে। Non-technical user-এর জন্য না। Skill marketplace risk: যেকোনো skill install করার আগে source code পড়ুন। LLM cost monitoring: Runaway loop-এ agent অনেক token খেয়ে fellte পারে — daily budget alert set করুন। Bangla edge case: Mixed Bangla-English code-switching mostly fine, কিন্তু সম্পূর্ণ formal সাধু-ভাষা context-এ occasional misinterpretation। Compliance: Customer data EU/USA server-এ গেলে BD-র upcoming Data Protection Act-এর সাথে clash হতে পারে — Singapore region preferred। Vendor lock-in (subtle): ১২০+ skill OpenClaw-এর own format-এ লেখা — migration easy না।"}},{"@type":"Question","name":"OpenClaw-এর সেরা alternative কোনগুলো?","acceptedAnswer":{"@type":"Answer","text":"Hermes Agent: Closed-source কিন্তু funded startup-এর তৈরি, better security posture, $২৯/মাস। বাংলাদেশী reader-এর জন্য আমাদের Hermes Agent বাংলা গাইড পড়ুন — comparable feature set, less DIY। n8n: Visual workflow automation, self-hosted free। AI agent-এর জন্য purpose-built না কিন্তু \"trigger-action\" model BD freelancer-দের জন্য enough হতে পারে। Activepieces: n8n-এর open-source competitor, AI step built-in, simpler UI। Custom build (Claude Agent SDK): মেহরাবের পরবর্তী plan — OpenClaw থেকে eventually নিজস্ব minimal agent-এ migrate করা, Anthropic-এর official SDK ব্যবহার করে।"}}]}</script>
 <!-- FAQ-SCHEMA:END -->
@@ -53,38 +55,33 @@
 </header>
 <!-- GUIDE-HEADER:END -->
 
-    <div data-guide-reader class="article-sheet container">
-        <!-- ARTICLE-META:START -->
-<p class="article-kicker"><span class="article-chip">ব্যবসা</span><span class="article-chip">২৮ মে, ২০২৬</span><span class="article-chip">১১ মিনিট পড়া</span></p>
-<!-- ARTICLE-META:END -->
-<h1 id="gs-content">OpenClaw বাংলা গাইড — Open-Source AI Agent (২০২৬ Updated)</h1>
-
-<!-- ARTICLE-HERO:START -->
-<figure class="article-hero">
+    <div data-guide-reader class="article-sheet container" data-guide-workshop><div class="gw-hero"><div class="gw-hero-copy"><p class="article-kicker"><span class="article-chip">ব্যবসা</span><span class="article-chip">২৮ মে, ২০২৬</span><span class="article-chip">১১ মিনিট পড়া</span></p><h1 id="gs-content">OpenClaw বাংলা গাইড — Open-Source AI Agent (২০২৬ Updated)</h1><p class="gw-deck">OpenClaw — Peter Steinberger-এর open-source personal AI agent। বাংলাদেশ থেকে install, 100+ skills, multi-channel inbox, security concerns + alternatives — সম্পূর্ণ…</p><a class="gw-actions" href="#ভূমিকা-মেহরাবের-billsmart-এ-openclaw-এর-প্রবেশ">ভূমিকা — মেহরাবের BillSmart-এ OpenClaw-এর প্রবেশ <span aria-hidden="true">↓</span></a></div><div class="gw-hero-visual"><figure class="article-hero">
   <img src="/assets/editorial/automation.svg" width="1000" height="440" alt="সংযুক্ত কাজের ধাপ ও সুইচের অঙ্কন" decoding="async" fetchpriority="high">
-</figure>
-<!-- ARTICLE-HERO:END -->
-<!-- ARTICLE-TOC:START -->
-<nav class="article-toc" aria-label="সূচিপত্র">
-  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
-  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
-  <ol class="toc-list">
-    <li class="toc-item"><a href="#ভূমিকা-মেহরাবের-billsmart-এ-openclaw-এর-প্রবেশ">ভূমিকা — মেহরাবের BillSmart-এ OpenClaw-এর প্রবেশ</a></li>
-    <li class="toc-item"><a href="#openclaw-কী-কেন-viral-হয়েছে">OpenClaw কী + কেন viral হয়েছে</a></li>
-    <li class="toc-item"><a href="#multi-channel-inbox-support-সব-জায়গা-থেকে-এক-জায়গায়">Multi-channel inbox support — সব জায়গা থেকে এক জায়গায়</a></li>
-    <li class="toc-item"><a href="#100-built-in-skills-skill-marketplace">100+ built-in skills + skill marketplace</a></li>
-    <li class="toc-item"><a href="#বাংলাদেশ-থেকে-install-mac-linux-windows-vps">বাংলাদেশ থেকে install — Mac/Linux/Windows + VPS</a></li>
-    <li class="toc-item"><a href="#bring-your-own-key-যেকোনো-llm-backend">Bring-your-own-key — যেকোনো LLM backend</a></li>
-    <li class="toc-item"><a href="#মেহরাবের-৬টা-practical-bd-use-case">মেহরাবের ৬টা practical BD use case</a></li>
-    <li class="toc-item"><a href="#২০২৬-controversy-security-disasters-reputation-hits">২০২৬ controversy — security disasters + reputation hits</a></li>
-    <li class="toc-item"><a href="#alternatives-যদি-openclaw-আপনার-stack-এ-না-মানায়">Alternatives — যদি OpenClaw আপনার stack-এ না মানায়</a></li>
-    <li class="toc-item"><a href="#সীমাবদ্ধতা-careful-use">সীমাবদ্ধতা + careful use</a></li>
-    <li class="toc-item"><a href="#উপসংহার-মেহরাবের-পরামর্শ">উপসংহার — মেহরাবের পরামর্শ</a></li>
-    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
-    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
-  </ol>
-</nav>
-<!-- ARTICLE-TOC:END -->
+</figure></div></div><div class="gw-layout"><nav class="gw-chapters" aria-label="এই গাইডে"><details open><summary>এই গাইডে</summary><ol>
+<li><a href="#ভূমিকা-মেহরাবের-billsmart-এ-openclaw-এর-প্রবেশ">ভূমিকা — মেহরাবের BillSmart-এ OpenClaw-এর প্রবেশ</a></li>
+<li><a href="#openclaw-কী-কেন-viral-হয়েছে">OpenClaw কী + কেন viral হয়েছে</a></li>
+<li><a href="#multi-channel-inbox-support-সব-জায়গা-থেকে-এক-জায়গায়">Multi-channel inbox support — সব জায়গা থেকে এক জায়গায়</a></li>
+<li><a href="#100-built-in-skills-skill-marketplace">100+ built-in skills + skill marketplace</a></li>
+<li><a href="#বাংলাদেশ-থেকে-install-mac-linux-windows-vps">বাংলাদেশ থেকে install — Mac/Linux/Windows + VPS</a></li>
+<li><a href="#bring-your-own-key-যেকোনো-llm-backend">Bring-your-own-key — যেকোনো LLM backend</a></li>
+<li><a href="#মেহরাবের-৬টা-practical-bd-use-case">মেহরাবের ৬টা practical BD use case</a></li>
+<li><a href="#২০২৬-controversy-security-disasters-reputation-hits">২০২৬ controversy — security disasters + reputation hits</a></li>
+<li><a href="#alternatives-যদি-openclaw-আপনার-stack-এ-না-মানায়">Alternatives — যদি OpenClaw আপনার stack-এ না মানায়</a></li>
+<li><a href="#সীমাবদ্ধতা-careful-use">সীমাবদ্ধতা + careful use</a></li>
+<li><a href="#উপসংহার-মেহরাবের-পরামর্শ">উপসংহার — মেহরাবের পরামর্শ</a></li>
+<li><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+</ol></details></nav><div class="gw-reading">
+
+
+
+
+
+
+
+
+
+
+
 
 <h2 id="ভূমিকা-মেহরাবের-billsmart-এ-openclaw-এর-প্রবেশ">ভূমিকা — মেহরাবের BillSmart-এ OpenClaw-এর প্রবেশ</h2>
 
@@ -123,7 +120,7 @@
 
 <p>OpenClaw-এর strongest feature এর "unified inbox" — মেহরাব যেটাকে বলেন "BillSmart-এর central nervous system"। নিচের table-এ supported channel:</p>
 
-<table style="width:100%;border-collapse:collapse;margin:1rem 0;">
+<div class="gw-table-scroll" role="region" tabindex="0" aria-label="Multi-channel inbox support — সব জায়গা থেকে এক জায়গায়"><table style="width:100%;border-collapse:collapse;margin:1rem 0;" class="gw-table">
 <thead>
 <tr style="background:#f1f5f9;">
 <th style="padding:10px;border:1px solid #e5e7eb;">Channel</th>
@@ -132,17 +129,17 @@
 </tr>
 </thead>
 <tbody>
-<tr><td style="padding:10px;border:1px solid #e5e7eb;">WhatsApp (Business API)</td><td style="padding:10px;border:1px solid #e5e7eb;">Stable</td><td style="padding:10px;border:1px solid #e5e7eb;">High — BD-তে #1 client channel</td></tr>
-<tr><td style="padding:10px;border:1px solid #e5e7eb;">Telegram Bot</td><td style="padding:10px;border:1px solid #e5e7eb;">Stable</td><td style="padding:10px;border:1px solid #e5e7eb;">Medium — internal team</td></tr>
-<tr><td style="padding:10px;border:1px solid #e5e7eb;">Slack</td><td style="padding:10px;border:1px solid #e5e7eb;">Stable</td><td style="padding:10px;border:1px solid #e5e7eb;">High — startup team</td></tr>
-<tr><td style="padding:10px;border:1px solid #e5e7eb;">Discord</td><td style="padding:10px;border:1px solid #e5e7eb;">Stable</td><td style="padding:10px;border:1px solid #e5e7eb;">Medium — community management</td></tr>
-<tr><td style="padding:10px;border:1px solid #e5e7eb;">iMessage</td><td style="padding:10px;border:1px solid #e5e7eb;">Mac-only, beta</td><td style="padding:10px;border:1px solid #e5e7eb;">Low — iPhone-heavy users-এর জন্য</td></tr>
-<tr><td style="padding:10px;border:1px solid #e5e7eb;">MS Teams</td><td style="padding:10px;border:1px solid #e5e7eb;">Beta</td><td style="padding:10px;border:1px solid #e5e7eb;">Medium — corporate client</td></tr>
-<tr><td style="padding:10px;border:1px solid #e5e7eb;">Email (IMAP/SMTP)</td><td style="padding:10px;border:1px solid #e5e7eb;">Stable</td><td style="padding:10px;border:1px solid #e5e7eb;">High — formal client comm</td></tr>
-<tr><td style="padding:10px;border:1px solid #e5e7eb;">SMS (Twilio)</td><td style="padding:10px;border:1px solid #e5e7eb;">Stable</td><td style="padding:10px;border:1px solid #e5e7eb;">Medium — Twilio BD-তে limited</td></tr>
-<tr><td style="padding:10px;border:1px solid #e5e7eb;">Facebook Messenger</td><td style="padding:10px;border:1px solid #e5e7eb;">Community plugin</td><td style="padding:10px;border:1px solid #e5e7eb;">Very high — BD-র page communication</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Channel">WhatsApp (Business API)</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Status">Stable</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="BD relevance">High — BD-তে #1 client channel</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Channel">Telegram Bot</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Status">Stable</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="BD relevance">Medium — internal team</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Channel">Slack</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Status">Stable</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="BD relevance">High — startup team</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Channel">Discord</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Status">Stable</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="BD relevance">Medium — community management</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Channel">iMessage</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Status">Mac-only, beta</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="BD relevance">Low — iPhone-heavy users-এর জন্য</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Channel">MS Teams</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Status">Beta</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="BD relevance">Medium — corporate client</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Channel">Email (IMAP/SMTP)</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Status">Stable</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="BD relevance">High — formal client comm</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Channel">SMS (Twilio)</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Status">Stable</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="BD relevance">Medium — Twilio BD-তে limited</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Channel">Facebook Messenger</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Status">Community plugin</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="BD relevance">Very high — BD-র page communication</td></tr>
 </tbody>
-</table>
+</table></div>
 
 <p>BillSmart-এর ক্ষেত্রে মেহরাব তিনটা channel active করেছেন — WhatsApp Business, Email (Hostinger-এর IMAP), এবং Slack (internal team)। একটা message যেকোনো channel-এ এলে OpenClaw সেটাকে normalize করে, একই context-এ Claude-কে পাঠায়, এবং response ওই channel-এই ফেরত দেয়।</p>
 
@@ -309,7 +306,7 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-    </div>
+    </div></div><p class="sr-only" data-guide-copy-status role="status" aria-live="polite"></p></div>
 
     <!-- TEMPLATED-FAQ:START -->
 <section class="article-faq" aria-labelledby="faq-heading">

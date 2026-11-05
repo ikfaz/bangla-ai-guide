@@ -34,6 +34,8 @@
   <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <link rel="stylesheet" href="/css/site-shell.css">
   <link rel="stylesheet" href="/css/guide-reader.css">
+  <link rel="stylesheet" href="/css/guide-workshop.css">
+  <script src="/js/guide-workshop.js" defer></script>
 </head>
 <body data-author-mode="editorial">
     <!-- GUIDE-HEADER:START -->
@@ -50,35 +52,30 @@
 </header>
 <!-- GUIDE-HEADER:END -->
 
-    <div data-guide-reader class="article-sheet container">
-        <!-- ARTICLE-META:START -->
-<p class="article-kicker"><span class="article-chip">মিডিয়া</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৫ মিনিট পড়া</span></p>
-<!-- ARTICLE-META:END -->
-<h1 id="gs-content">AI দিয়ে Image থেকে Video বানানো — Kling, Pika, Runway গাইড</h1>
-
-<!-- ARTICLE-HERO:START -->
-<figure class="article-hero">
+    <div data-guide-reader class="article-sheet container" data-guide-workshop><div class="gw-hero"><div class="gw-hero-copy"><p class="article-kicker"><span class="article-chip">মিডিয়া</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৫ মিনিট পড়া</span></p><h1 id="gs-content">AI দিয়ে Image থেকে Video বানানো — Kling, Pika, Runway গাইড</h1><p class="gw-deck">একটি static ছবি থেকে কীভাবে AI দিয়ে animated video বানাবেন? Kling AI, Pika Labs, Runway ML, Luma — সব ইমেজ-টু-ভিডিও টুলের তুলনা ও বাংলায় টিউটোরিয়াল।</p><a class="gw-actions" href="#rakibul-এর-daily-workflow">Rakibul-এর Daily Workflow <span aria-hidden="true">↓</span></a></div><div class="gw-hero-visual"><figure class="article-hero">
   <img src="/assets/editorial/movies.svg" width="1000" height="440" alt="ভিডিওর ক্ল্যাপবোর্ড, ফিল্ম ও টাইমলাইনের অঙ্কন" decoding="async" fetchpriority="high">
-</figure>
-<!-- ARTICLE-HERO:END -->
-<!-- ARTICLE-TOC:START -->
-<nav class="article-toc" aria-label="সূচিপত্র">
-  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
-  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
-  <ol class="toc-list">
-    <li class="toc-item"><a href="#২০২৬-এ-image-to-video-ai-landscape">২০২৬-এ Image-to-Video AI Landscape</a></li>
-    <li class="toc-item"><a href="#rakibul-এর-daily-workflow">Rakibul-এর Daily Workflow</a></li>
-    <li class="toc-item"><a href="#৬-tool-head-to-head-same-image-to-video-test">৬ Tool Head-to-Head — Same Image-to-Video Test</a></li>
-    <li class="toc-item"><a href="#bd-specific-use-cases-কোথায়-ai-video-real-roi-দেয়">BD-Specific Use Cases — কোথায় AI video real ROI দেয়</a></li>
-    <li class="toc-item"><a href="#effective-prompt-strategy">Effective Prompt Strategy</a></li>
-    <li class="toc-item"><a href="#৪টা-common-pitfall">৪টা Common Pitfall</a></li>
-    <li class="toc-item"><a href="#bd-cost-benefit-math">BD Cost-Benefit Math</a></li>
-    <li class="toc-item"><a href="#উপসংহার-আপনার-আজকের-পদক্ষেপ">উপসংহার — আপনার আজকের পদক্ষেপ</a></li>
-    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
-    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
-  </ol>
-</nav>
-<!-- ARTICLE-TOC:END -->
+</figure></div></div><div class="gw-layout"><nav class="gw-chapters" aria-label="এই গাইডে"><details open><summary>এই গাইডে</summary><ol>
+<li><a href="#২০২৬-এ-image-to-video-ai-landscape">২০২৬-এ Image-to-Video AI Landscape</a></li>
+<li><a href="#rakibul-এর-daily-workflow">Rakibul-এর Daily Workflow</a></li>
+<li><a href="#৬-tool-head-to-head-same-image-to-video-test">৬ Tool Head-to-Head — Same Image-to-Video Test</a></li>
+<li><a href="#bd-specific-use-cases-কোথায়-ai-video-real-roi-দেয়">BD-Specific Use Cases — কোথায় AI video real ROI দেয়</a></li>
+<li><a href="#effective-prompt-strategy">Effective Prompt Strategy</a></li>
+<li><a href="#৪টা-common-pitfall">৪টা Common Pitfall</a></li>
+<li><a href="#bd-cost-benefit-math">BD Cost-Benefit Math</a></li>
+<li><a href="#উপসংহার-আপনার-আজকের-পদক্ষেপ">উপসংহার — আপনার আজকের পদক্ষেপ</a></li>
+<li><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+</ol></details></nav><div class="gw-reading">
+
+
+
+
+
+
+
+
+
+
+
 
 <p class="lede">Rakibul Hasan একটা Pathao Food restaurant-এর owner — Dhanmondi-এর "Kolkata Sweets Center"। তিনি কখনো video shoot করেননি, কোনো videographer hire করার budget নেই। কিন্তু ২০২৬-এ social media-এ static photo-এর reach near-zero। তিনি ২০২৫-এর জুলাইয়ে শিখলেন image-to-video AI — Veo 3, Runway, Kling। তাঁর smartphone-এ তোলা শাশ্বত মিষ্টি-এর photo Kling AI-তে paste করে "slow zoom into syrup dripping" prompt-এ ৫-second video। Facebook + Instagram-এ post করার পর: reach ১৪x, engagement ২২x আগের static photo-এর তুলনায়। ১০ মাস পর তাঁর Facebook page-এ ৪২,০০০ follower (was 2,800), monthly Pathao Food order ১৪০% increase। Initial monthly tool investment: $২২ (Kling Pro)। Return: ৳৪.৫ লাখ additional revenue/মাস। Image-to-Video AI ছোট business-এর জন্য 2026-এর সবচেয়ে underrated multiplier।</p>
 
@@ -139,7 +136,7 @@ Prompt: 'Slow zoom-in to one rasgolla in syrup, glistening highlights, syrup gen
 <h2 id="bd-specific-use-cases-কোথায়-ai-video-real-roi-দেয়">BD-Specific Use Cases — কোথায় AI video real ROI দেয়</h2>
 
 <ul>
-    <li><b>F&B (restaurant, sweet shop, bakery):</b> Food video universal-best converter। Rakibul-এর case।</li>
+    <li><b>F&amp;B (restaurant, sweet shop, bakery):</b> Food video universal-best converter। Rakibul-এর case।</li>
     <li><b>D2C (saree, beauty, accessory):</b> Product spin video, fabric texture closeup।</li>
     <li><b>Real estate:</b> Static property photo → walk-through animation।</li>
     <li><b>Travel/tourism:</b> Cox's Bazar, Sundarban scenic photo → cinematic Reel।</li>
@@ -233,7 +230,7 @@ Prompt: 'Slow zoom-in to one rasgolla in syrup, glistening highlights, syrup gen
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-    </div>
+    </div></div><p class="sr-only" data-guide-copy-status role="status" aria-live="polite"></p></div>
 
     <!-- RELATED-POSTS:START -->
 <section class="related-posts" aria-label="সম্পর্কিত গাইড">

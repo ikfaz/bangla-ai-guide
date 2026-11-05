@@ -34,6 +34,8 @@
   <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <link rel="stylesheet" href="/css/site-shell.css">
   <link rel="stylesheet" href="/css/guide-reader.css">
+  <link rel="stylesheet" href="/css/guide-workshop.css">
+  <script src="/js/guide-workshop.js" defer></script>
 </head>
 <body data-author-mode="editorial">
     <!-- GUIDE-HEADER:START -->
@@ -50,34 +52,29 @@
 </header>
 <!-- GUIDE-HEADER:END -->
 
-    <div data-guide-reader class="article-sheet container">
-        <!-- ARTICLE-META:START -->
-<p class="article-kicker"><span class="article-chip">আয়</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৪ মিনিট পড়া</span></p>
-<!-- ARTICLE-META:END -->
-<h1 id="gs-content">AI দিয়ে Contract Review — Freelancer ও SME-দের বাংলা গাইড</h1>
-
-<!-- ARTICLE-HERO:START -->
-<figure class="article-hero">
+    <div data-guide-reader class="article-sheet container" data-guide-workshop><div class="gw-hero"><div class="gw-hero-copy"><p class="article-kicker"><span class="article-chip">আয়</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৪ মিনিট পড়া</span></p><h1 id="gs-content">AI দিয়ে Contract Review — Freelancer ও SME-দের বাংলা গাইড</h1><p class="gw-deck">Freelance contract, NDA, service agreement কীভাবে AI দিয়ে রিভিউ করবেন signing-এর আগে? Risky clause, negotiation points, fairness check — practical।</p><a class="gw-actions" href="#tasnia-র-ai-workflow-per-contract">Tasnia-র AI Workflow (per Contract) <span aria-hidden="true">↓</span></a></div><div class="gw-hero-visual"><figure class="article-hero">
   <img src="/assets/editorial/law.svg" width="1000" height="440" alt="ন্যায়ের দাঁড়িপাল্লা ও নথির অঙ্কন" decoding="async" fetchpriority="high">
-</figure>
-<!-- ARTICLE-HERO:END -->
-<!-- ARTICLE-TOC:START -->
-<nav class="article-toc" aria-label="সূচিপত্র">
-  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
-  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
-  <ol class="toc-list">
-    <li class="toc-item"><a href="#২০২৬-এ-freelance-contract-reality">২০২৬-এ Freelance Contract Reality</a></li>
-    <li class="toc-item"><a href="#৭টা-critical-red-flag">৭টা Critical Red Flag</a></li>
-    <li class="toc-item"><a href="#tasnia-র-ai-workflow-per-contract">Tasnia-র AI Workflow (per Contract)</a></li>
-    <li class="toc-item"><a href="#3-real-case-studies">3 Real Case Studies</a></li>
-    <li class="toc-item"><a href="#when-to-hire-a-real-lawyer">When to Hire a Real Lawyer</a></li>
-    <li class="toc-item"><a href="#bd-context-ai-tool-stack">BD-Context AI Tool Stack</a></li>
-    <li class="toc-item"><a href="#উপসংহার-আপনার-আজকের-পদক্ষেপ">উপসংহার — আপনার আজকের পদক্ষেপ</a></li>
-    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
-    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
-  </ol>
-</nav>
-<!-- ARTICLE-TOC:END -->
+</figure></div></div><div class="gw-layout"><nav class="gw-chapters" aria-label="এই গাইডে"><details open><summary>এই গাইডে</summary><ol>
+<li><a href="#২০২৬-এ-freelance-contract-reality">২০২৬-এ Freelance Contract Reality</a></li>
+<li><a href="#৭টা-critical-red-flag">৭টা Critical Red Flag</a></li>
+<li><a href="#tasnia-র-ai-workflow-per-contract">Tasnia-র AI Workflow (per Contract)</a></li>
+<li><a href="#3-real-case-studies">3 Real Case Studies</a></li>
+<li><a href="#when-to-hire-a-real-lawyer">When to Hire a Real Lawyer</a></li>
+<li><a href="#bd-context-ai-tool-stack">BD-Context AI Tool Stack</a></li>
+<li><a href="#উপসংহার-আপনার-আজকের-পদক্ষেপ">উপসংহার — আপনার আজকের পদক্ষেপ</a></li>
+<li><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+</ol></details></nav><div class="gw-reading">
+
+
+
+
+
+
+
+
+
+
+
 
 <p class="lede">Tasnia Akter একজন BD freelance UX designer — গত ৩ বছরে ৪২ international client সাথে কাজ করেছেন। ২০২৪-এর জুলাইয়ে তিনি একটা US client-এর ১২-page contract sign করেছিলেন — মাসে $৩,৫০০ retainer। Contract-এ একটা hidden clause ছিল: "All deliverable IP transfers to client upon project initiation, even if payment is incomplete।" Project mid-way তে client ছিল ২ months overdue payment। Tasnia work stop করেছিলেন — client legal threat পাঠালেন তাঁর portfolio site-এ project-এর mockup show করার জন্য। তিনি ৬ মাস legal battle-এ কাটিয়েছেন, $৮,৪০০ legal fee খরচ করেছেন। ২০২৫-এর সেপ্টেম্বরে তিনি একটা AI-augmented contract review workflow শিখলেন। ২০২৬-এর মে পর্যন্ত তিনি ১৪টা new client contract reviewed — ৬টায় red-flag clause identified pre-sign + negotiated remove। তাঁর legal exposure শূন্য, business growth steady।</p>
 
@@ -115,7 +112,7 @@
 
 <h2 id="tasnia-র-ai-workflow-per-contract">Tasnia-র AI Workflow (per Contract)</h2>
 
-<h3>Step 1: Full contract paste + structural analysis (Claude, 5 min)</h3>
+<h3 class="gw-step-heading">Step 1: Full contract paste + structural analysis (Claude, 5 min)</h3>
 
 <blockquote class="deep-blockquote">
 "নিচের ১২-page MSA (Master Service Agreement) attached। আমি BD-based freelance UX designer। Client US Delaware LLC।<br><br>
@@ -127,15 +124,15 @@ Analyze:<br>
 (৫) Overall risk rating: low/medium/high।"
 </blockquote>
 
-<h3>Step 2: Specific clause deep-dive (10 min)</h3>
+<h3 class="gw-step-heading">Step 2: Specific clause deep-dive (10 min)</h3>
 
 <p>Red flag-গুলোর প্রতিটায় follow-up: "এই clause-এর alternate wording yang freelancer-friendly: present 3 options progressive (mild/moderate/aggressive) negotiation।"</p>
 
-<h3>Step 3: Comparison with industry standard (5 min)</h3>
+<h3 class="gw-step-heading">Step 3: Comparison with industry standard (5 min)</h3>
 
 <p>"নিচের clause: [paste]। 2026 US freelance industry standard MSA-এ এই type-এর clause কী wording থাকে? আমার current vs standard — explain difference।"</p>
 
-<h3>Step 4: Counter-proposal drafting (10 min)</h3>
+<h3 class="gw-step-heading">Step 4: Counter-proposal drafting (10 min)</h3>
 
 <p>"আমার freelancer-friendly version of this contract draft করো — same business intent preserved, কিন্তু IP transfer post-payment, defined scope, BD-jurisdiction option, mutual indemnification।"</p>
 
@@ -249,7 +246,7 @@ Analyze:<br>
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-    </div>
+    </div></div><p class="sr-only" data-guide-copy-status role="status" aria-live="polite"></p></div>
 
     <!-- RELATED-POSTS:START -->
 <section class="related-posts" aria-label="সম্পর্কিত গাইড">

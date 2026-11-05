@@ -34,6 +34,8 @@
   <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <link rel="stylesheet" href="/css/site-shell.css">
   <link rel="stylesheet" href="/css/guide-reader.css">
+  <link rel="stylesheet" href="/css/guide-workshop.css">
+  <script src="/js/guide-workshop.js" defer></script>
 </head>
 <body data-author-mode="editorial">
     <!-- GUIDE-HEADER:START -->
@@ -50,32 +52,27 @@
 </header>
 <!-- GUIDE-HEADER:END -->
 
-    <div data-guide-reader class="article-sheet container">
-        <!-- ARTICLE-META:START -->
-<p class="article-kicker"><span class="article-chip">মিডিয়া</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৩ মিনিট পড়া</span></p>
-<!-- ARTICLE-META:END -->
-<h1 id="gs-content">AI দিয়ে Image to GIF বানানো — Animation সম্পূর্ণ বাংলা গাইড</h1>
-
-<!-- ARTICLE-HERO:START -->
-<figure class="article-hero">
+    <div data-guide-reader class="article-sheet container" data-guide-workshop><div class="gw-hero"><div class="gw-hero-copy"><p class="article-kicker"><span class="article-chip">মিডিয়া</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৩ মিনিট পড়া</span></p><h1 id="gs-content">AI দিয়ে Image to GIF বানানো — Animation সম্পূর্ণ বাংলা গাইড</h1><p class="gw-deck">Static ছবি থেকে animated GIF কীভাবে AI দিয়ে বানাবেন? Use cases, tools (Kling, Pika, Photoshop AI), workflow — social media, blog, ad-এর জন্য।</p><a class="gw-actions" href="#ritika-র-per-asset-workflow">Ritika-র Per-Asset Workflow <span aria-hidden="true">↓</span></a></div><div class="gw-hero-visual"><figure class="article-hero">
   <img src="/assets/editorial/movies.svg" width="1000" height="440" alt="ভিডিওর ক্ল্যাপবোর্ড, ফিল্ম ও টাইমলাইনের অঙ্কন" decoding="async" fetchpriority="high">
-</figure>
-<!-- ARTICLE-HERO:END -->
-<!-- ARTICLE-TOC:START -->
-<nav class="article-toc" aria-label="সূচিপত্র">
-  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
-  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
-  <ol class="toc-list">
-    <li class="toc-item"><a href="#২০২৬-এ-image-to-gif-ai-tool-stack">২০২৬-এ Image-to-GIF AI Tool Stack</a></li>
-    <li class="toc-item"><a href="#ritika-র-per-asset-workflow">Ritika-র Per-Asset Workflow</a></li>
-    <li class="toc-item"><a href="#4-bd-use-cases">4 BD Use Cases</a></li>
-    <li class="toc-item"><a href="#3-optimization-tips">3 Optimization Tips</a></li>
-    <li class="toc-item"><a href="#উপসংহার-আপনার-আজকের-পদক্ষেপ">উপসংহার — আপনার আজকের পদক্ষেপ</a></li>
-    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
-    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
-  </ol>
-</nav>
-<!-- ARTICLE-TOC:END -->
+</figure></div></div><div class="gw-layout"><nav class="gw-chapters" aria-label="এই গাইডে"><details open><summary>এই গাইডে</summary><ol>
+<li><a href="#২০২৬-এ-image-to-gif-ai-tool-stack">২০২৬-এ Image-to-GIF AI Tool Stack</a></li>
+<li><a href="#ritika-র-per-asset-workflow">Ritika-র Per-Asset Workflow</a></li>
+<li><a href="#4-bd-use-cases">4 BD Use Cases</a></li>
+<li><a href="#3-optimization-tips">3 Optimization Tips</a></li>
+<li><a href="#উপসংহার-আপনার-আজকের-পদক্ষেপ">উপসংহার — আপনার আজকের পদক্ষেপ</a></li>
+<li><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+</ol></details></nav><div class="gw-reading">
+
+
+
+
+
+
+
+
+
+
+
 
 <p class="lede">Ritika Hossain Dhanmondi-এর একটা D2C startup-এর Social Media Manager — beauty brand "Anara Cosmetics"। তাঁর daily routine-এ animated GIF + short looping content critical — Facebook + Instagram-এ static-চেয়ে engagement 4-6x। ২০২৪-এর জানুয়ারিতে তিনি GIF বানাতেন Photoshop-এ — প্রতিটায় 30-45 minutes। ২০২৬-এর মে-এ same GIF 3-5 minutes-এ। AI tool stack: Pika Labs + Kling AI + LottieFiles + Photoshop AI। তাঁর Anara page-এ ৩৪K → ৮৭K follower 18 months-এ। Director-এর সাথে monthly meeting-এ Ritika-র content output-এর scale দেখে CEO তাঁকে retainer salary ৳৭০K থেকে ৳১.২L-এ বাড়িয়েছেন। GIF — underrated অথচ powerful conversion driver।</p>
 
@@ -102,20 +99,20 @@
 
 <h2 id="ritika-র-per-asset-workflow">Ritika-র Per-Asset Workflow</h2>
 
-<h3>Step 1: Concept (2 min)</h3>
+<h3 class="gw-step-heading">Step 1: Concept (2 min)</h3>
 <ul>
     <li>Product photo (still)।</li>
     <li>Goal: Showcase one specific feature (color shift, application motion, packaging reveal)।</li>
     <li>Output spec: 9:16 vertical (Reel) বা 1:1 square (feed)।</li>
 </ul>
 
-<h3>Step 2: AI animation (3 min)</h3>
+<h3 class="gw-step-heading">Step 2: AI animation (3 min)</h3>
 <p>Pika Labs prompt: "Slow rotating spin of lipstick tube, soft golden lighting, white seamless background, glossy reflection on tube cap, 3-second smooth loop"।</p>
 
-<h3>Step 3: Export + optimize (1 min)</h3>
+<h3 class="gw-step-heading">Step 3: Export + optimize (1 min)</h3>
 <ul>
     <li>MP4 → Ezgif converts to GIF।</li>
-    <li>File size optimize <2MB (Facebook auto-compress otherwise)।</li>
+    <li>File size optimize &lt;2MB (Facebook auto-compress otherwise)।</li>
     <li>Loop seamless।</li>
 </ul>
 
@@ -132,7 +129,7 @@
 
 <ul>
     <li><b>1. Loop seamless:</b> First + last frame identical = no jarring restart।</li>
-    <li><b>2. File size <2MB:</b> Facebook compress otherwise = quality loss।</li>
+    <li><b>2. File size &lt;2MB:</b> Facebook compress otherwise = quality loss।</li>
     <li><b>3. Mobile-first design:</b> Most BD viewing phone। 9:16 vertical winning।</li>
 </ul>
 
@@ -190,7 +187,7 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-    </div>
+    </div></div><p class="sr-only" data-guide-copy-status role="status" aria-live="polite"></p></div>
 
     <!-- RELATED-POSTS:START -->
 <section class="related-posts" aria-label="সম্পর্কিত গাইড">

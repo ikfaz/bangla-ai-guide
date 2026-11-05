@@ -34,6 +34,8 @@
 <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <link rel="stylesheet" href="/css/site-shell.css">
   <link rel="stylesheet" href="/css/guide-reader.css">
+<link rel="stylesheet" href="/css/guide-workshop.css">
+  <script src="/js/guide-workshop.js" defer></script>
   <!-- FAQ-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Cursor vs Windsurf Real-World Test-এর মূল features কী কী?","acceptedAnswer":{"@type":"Answer","text":"Prompt: \"Theme toggle add করো — Light/Dark/System-default ৩টা option। localStorage-এ persist, smooth transition, all components অনুসারী। Tailwind use করো।\" Cursor (Composer): Time: ১১ মিনিট Files edited: ৭ Prompts: ২ (initial + ১টা edge case fix) Peer review: ✓ Clean, but missed ARIA labels Final acceptance: ৮৫% (manual touch-up লেগেছে) Windsurf (Cascade): Time: ১৪ মিনিট Files edited: ৯ (২টা extra utility file) Prompts: ১ Peer review: ✓ Slightly over-engineered, ARIA included Final acceptance: ৯০% Winner: Windsurf — slight edge। Cascade যে extra context (ARIA) automatic add করেছে, Cursor missed। কিন্তু Windsurf ৩ মিনিট slower।"}},{"@type":"Question","name":"Cursor vs Windsurf Real-World Test-এর দাম কত এবং BD-তে এর ROI কেমন?","acceptedAnswer":{"@type":"Answer","text":"Cursor Pro $২০/মাস (~৳২,৪০০) ৫০০ slow + ৫০০ fast Best for: pro developer Windsurf Pro $১৫/মাস (~৳১,৮০০) ৫০০ flow action Best for: cost-conscious Cursor Free $০ ২০০০ token/মাস Try করার জন্য Windsurf Free $০ ৫০ flow action + autocomplete Better free tier BD value verdict: Cost-এ Windsurf $৫ সস্তা। কিন্তু Cursor-এর Composer + tab quality-এর জন্য $২০ justified — বিশেষ করে যারা daily ৮+ ঘণ্টা coding করেন। Hobbyist/student-দের জন্য Windsurf-এর free tier better।"}},{"@type":"Question","name":"Cursor vs Windsurf Real-World Test-এর জন্য final verdict কী?","acceptedAnswer":{"@type":"Answer","text":"Choose Cursor if: Daily VS Code user — migration painless Speed > quality (rapid prototype, MVP) Refactor-heavy work (Cursor better at refactor) $২০ budget OK Community/learning resources matter (Cursor-এ much more tutorial) Choose Windsurf if: Quality > speed (architecture-heavy, test-critical) Documentation-heavy work Free tier দরকার (Windsurf free > Cursor free) $৫ cost saving matter করে Long-running autonomous flow চান (Cascade impressive)"}}]}</script>
 <!-- FAQ-SCHEMA:END -->
@@ -53,39 +55,34 @@
 </header>
 <!-- GUIDE-HEADER:END -->
 
-    <div data-guide-reader class="article-sheet container">
-        <!-- ARTICLE-META:START -->
-<p class="article-kicker"><span class="article-chip">তুলনা</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৬ মিনিট পড়া</span></p>
-<!-- ARTICLE-META:END -->
-<h1 id="gs-content">Cursor vs Windsurf Real-World Test ২০২৬ — Developer-দের জন্য সম্পূর্ণ বাংলা গাইড</h1>
-
-<!-- ARTICLE-HERO:START -->
-<figure class="article-hero">
+    <div data-guide-reader class="article-sheet container" data-guide-workshop><div class="gw-hero"><div class="gw-hero-copy"><p class="article-kicker"><span class="article-chip">তুলনা</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৬ মিনিট পড়া</span></p><h1 id="gs-content">Cursor vs Windsurf Real-World Test ২০২৬ — Developer-দের জন্য সম্পূর্ণ বাংলা গাইড</h1><p class="gw-deck">Cursor vs Windsurf — actual coding task-এ কোনটি ভালো? Real benchmark, agent quality, IDE feel, pricing — বাংলাদেশি developer-দের decision guide।</p><a class="gw-actions" href="#ভূমিকা-একটা-সততাপূর্ণ-head-to-head">ভূমিকা — একটা সততাপূর্ণ head-to-head <span aria-hidden="true">↓</span></a></div><div class="gw-hero-visual"><figure class="article-hero">
   <img src="/assets/editorial/coding.svg" width="1000" height="440" alt="কোড এডিটরের পর্দা ও কার্সরের অঙ্কন" decoding="async" fetchpriority="high">
-</figure>
-<!-- ARTICLE-HERO:END -->
-<!-- ARTICLE-TOC:START -->
-<nav class="article-toc" aria-label="সূচিপত্র">
-  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
-  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
-  <ol class="toc-list">
-    <li class="toc-item"><a href="#ভূমিকা-একটা-সততাপূর্ণ-head-to-head">ভূমিকা — একটা সততাপূর্ণ head-to-head</a></li>
-    <li class="toc-item"><a href="#test-setup-সমান-field">Test setup — সমান field</a></li>
-    <li class="toc-item"><a href="#task-1-bug-fix-login-redirect-loop">Task 1: Bug fix (login redirect loop)</a></li>
-    <li class="toc-item"><a href="#task-2-new-feature-add-dark-mode-toggle">Task 2: New feature (add dark mode toggle)</a></li>
-    <li class="toc-item"><a href="#task-3-refactor-class-component-hooks">Task 3: Refactor (class component → hooks)</a></li>
-    <li class="toc-item"><a href="#task-4-documentation-jsdoc-for-entire-file">Task 4: Documentation (JSDoc for entire file)</a></li>
-    <li class="toc-item"><a href="#task-5-unit-tests-jest-for-service-file">Task 5: Unit tests (Jest for service file)</a></li>
-    <li class="toc-item"><a href="#overall-score-১৪-দিনের-সারমর্ম">Overall score — ১৪-দিনের সারমর্ম</a></li>
-    <li class="toc-item"><a href="#ide-feel-daily-comfort">IDE feel — daily comfort</a></li>
-    <li class="toc-item"><a href="#pricing-comparison-bd-context">Pricing comparison — BD context</a></li>
-    <li class="toc-item"><a href="#verdict-কখন-কোনটা">Verdict — কখন কোনটা</a></li>
-    <li class="toc-item"><a href="#উপসংহার-sajid-এর-final-choice">উপসংহার — Sajid-এর final choice</a></li>
-    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
-    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
-  </ol>
-</nav>
-<!-- ARTICLE-TOC:END -->
+</figure><aside class="gw-feature"><div class="gw-copy-head"><span>চেষ্টা করে দেখুন</span><button class="gw-copy" type="button" data-guide-copy="guide-copy-1" hidden aria-label="এই লেখা কপি করুন"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 5V4a1 1 0 0 0-1-1H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h1"/></svg><span>কপি করুন</span></button></div><p>Prompt: "Login করার পরে user redirect হয়ে আবার login page-এ আসছে। Root cause খুঁজে fix করো। File: auth/login.tsx, middleware/auth.ts, hooks/useAuth.ts।"</p></aside></div></div><div class="gw-layout"><nav class="gw-chapters" aria-label="এই গাইডে"><details open><summary>এই গাইডে</summary><ol>
+<li><a href="#ভূমিকা-একটা-সততাপূর্ণ-head-to-head">ভূমিকা — একটা সততাপূর্ণ head-to-head</a></li>
+<li><a href="#test-setup-সমান-field">Test setup — সমান field</a></li>
+<li><a href="#task-1-bug-fix-login-redirect-loop">Task 1: Bug fix (login redirect loop)</a></li>
+<li><a href="#task-2-new-feature-add-dark-mode-toggle">Task 2: New feature (add dark mode toggle)</a></li>
+<li><a href="#task-3-refactor-class-component-hooks">Task 3: Refactor (class component → hooks)</a></li>
+<li><a href="#task-4-documentation-jsdoc-for-entire-file">Task 4: Documentation (JSDoc for entire file)</a></li>
+<li><a href="#task-5-unit-tests-jest-for-service-file">Task 5: Unit tests (Jest for service file)</a></li>
+<li><a href="#overall-score-১৪-দিনের-সারমর্ম">Overall score — ১৪-দিনের সারমর্ম</a></li>
+<li><a href="#ide-feel-daily-comfort">IDE feel — daily comfort</a></li>
+<li><a href="#pricing-comparison-bd-context">Pricing comparison — BD context</a></li>
+<li><a href="#verdict-কখন-কোনটা">Verdict — কখন কোনটা</a></li>
+<li><a href="#উপসংহার-sajid-এর-final-choice">উপসংহার — Sajid-এর final choice</a></li>
+<li><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+</ol></details></nav><div class="gw-reading">
+
+
+
+
+
+
+
+
+
+
+
 <p class="cluster-keeper">এই বিষয়ের মূল পাতা: <a href="/cursor-ai-bangla/">Cursor AI কী, কাজ ও দাম (টাকায়)</a>। নিচের লেখা সেই গাইডের পরিপূরক, প্রতিস্থাপন নয়।</p>
 
 <h2 id="ভূমিকা-একটা-সততাপূর্ণ-head-to-head">ভূমিকা — একটা সততাপূর্ণ head-to-head</h2>
@@ -107,7 +104,7 @@
 <p>প্রতিটা task-এ Sajid identical prompt লিখেছিলেন একটা Notion doc-এ। তারপর Cursor-এ paste, run, time + result note। তারপর Windsurf-এ paste, run, একই note। Peer reviewer Nafiz এবং Tausif blind review করলেন (কোনটা Cursor কোনটা Windsurf জানেন না)।</p>
 
 <h2 id="task-1-bug-fix-login-redirect-loop">Task 1: Bug fix (login redirect loop)</h2>
-<p><strong>Prompt:</strong> "Login করার পরে user redirect হয়ে আবার login page-এ আসছে। Root cause খুঁজে fix করো। File: auth/login.tsx, middleware/auth.ts, hooks/useAuth.ts।"</p>
+<div class="gw-copy-block"><div class="gw-copy-head"><span>কপি করার প্রম্পট</span><button class="gw-copy" type="button" data-guide-copy="guide-copy-1" hidden aria-label="এই লেখা কপি করুন"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 5V4a1 1 0 0 0-1-1H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h1"/></svg><span>কপি করুন</span></button></div><p id="guide-copy-1" data-guide-source><strong>Prompt:</strong> "Login করার পরে user redirect হয়ে আবার login page-এ আসছে। Root cause খুঁজে fix করো। File: auth/login.tsx, middleware/auth.ts, hooks/useAuth.ts।"</p></div>
 
 <div class="case-study">
 <strong>Cursor:</strong><br>
@@ -130,7 +127,7 @@ Peer review: ✓ Correct
 <p><strong>Winner:</strong> Tie। দু'টোই same root cause identify, fix quality same। Windsurf ৩৪ সেকেন্ড faster (Cascade flow এর parallel file scan-এর কারণে)।</p>
 
 <h2 id="task-2-new-feature-add-dark-mode-toggle">Task 2: New feature (add dark mode toggle)</h2>
-<p><strong>Prompt:</strong> "Theme toggle add করো — Light/Dark/System-default ৩টা option। localStorage-এ persist, smooth transition, all components অনুসারী। Tailwind use করো।"</p>
+<div class="gw-copy-block"><div class="gw-copy-head"><span>কপি করার প্রম্পট</span><button class="gw-copy" type="button" data-guide-copy="guide-copy-2" hidden aria-label="এই লেখা কপি করুন"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 5V4a1 1 0 0 0-1-1H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h1"/></svg><span>কপি করুন</span></button></div><p id="guide-copy-2" data-guide-source><strong>Prompt:</strong> "Theme toggle add করো — Light/Dark/System-default ৩টা option। localStorage-এ persist, smooth transition, all components অনুসারী। Tailwind use করো।"</p></div>
 
 <div class="case-study">
 <strong>Cursor (Composer):</strong><br>
@@ -153,7 +150,7 @@ Final acceptance: ৯০%
 <p><strong>Winner:</strong> Windsurf — slight edge। Cascade যে extra context (ARIA) automatic add করেছে, Cursor missed। কিন্তু Windsurf ৩ মিনিট slower।</p>
 
 <h2 id="task-3-refactor-class-component-hooks">Task 3: Refactor (class component → hooks)</h2>
-<p><strong>Prompt:</strong> "এই UserDashboard.jsx (৪৮০ লাইন class component) functional + hooks-এ convert করো। সব state, lifecycle, ref preserve করতে হবে। Test fail করা যাবে না।"</p>
+<div class="gw-copy-block"><div class="gw-copy-head"><span>কপি করার প্রম্পট</span><button class="gw-copy" type="button" data-guide-copy="guide-copy-3" hidden aria-label="এই লেখা কপি করুন"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 5V4a1 1 0 0 0-1-1H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h1"/></svg><span>কপি করুন</span></button></div><p id="guide-copy-3" data-guide-source><strong>Prompt:</strong> "এই UserDashboard.jsx (৪৮০ লাইন class component) functional + hooks-এ convert করো। সব state, lifecycle, ref preserve করতে হবে। Test fail করা যাবে না।"</p></div>
 
 <div class="case-study">
 <strong>Cursor:</strong><br>
@@ -176,7 +173,7 @@ Peer review: ✓ Good, কিন্তু extra useEffect
 <p><strong>Winner:</strong> Cursor। Code quality + hallucination free + faster। Refactor-এ Cursor-এর Composer test-aware editing স্পষ্টভাবে better।</p>
 
 <h2 id="task-4-documentation-jsdoc-for-entire-file">Task 4: Documentation (JSDoc for entire file)</h2>
-<p><strong>Prompt:</strong> "এই OrderService.ts (৬২০ লাইন, ২৪টা function) full JSDoc add করো — parameter, return type, example, throws সহ। Bangla optional, English preferred।"</p>
+<div class="gw-copy-block"><div class="gw-copy-head"><span>কপি করার প্রম্পট</span><button class="gw-copy" type="button" data-guide-copy="guide-copy-4" hidden aria-label="এই লেখা কপি করুন"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 5V4a1 1 0 0 0-1-1H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h1"/></svg><span>কপি করুন</span></button></div><p id="guide-copy-4" data-guide-source><strong>Prompt:</strong> "এই OrderService.ts (৬২০ লাইন, ২৪টা function) full JSDoc add করো — parameter, return type, example, throws সহ। Bangla optional, English preferred।"</p></div>
 
 <div class="case-study">
 <strong>Cursor:</strong><br>
@@ -197,7 +194,7 @@ Issue: একটু verbose
 <p><strong>Winner:</strong> Windsurf — quality হিসেবে। Cursor faster কিন্তু output Windsurf-এর তুলনায় superficial।</p>
 
 <h2 id="task-5-unit-tests-jest-for-service-file">Task 5: Unit tests (Jest for service file)</h2>
-<p><strong>Prompt:</strong> "OrderService.ts-এর জন্য complete Jest test suite — ৮৫%+ coverage, edge case সহ, mock proper।"</p>
+<div class="gw-copy-block"><div class="gw-copy-head"><span>কপি করার প্রম্পট</span><button class="gw-copy" type="button" data-guide-copy="guide-copy-5" hidden aria-label="এই লেখা কপি করুন"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 5V4a1 1 0 0 0-1-1H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h1"/></svg><span>কপি করুন</span></button></div><p id="guide-copy-5" data-guide-source><strong>Prompt:</strong> "OrderService.ts-এর জন্য complete Jest test suite — ৮৫%+ coverage, edge case সহ, mock proper।"</p></div>
 
 <div class="case-study">
 <strong>Cursor:</strong><br>
@@ -219,17 +216,17 @@ Failing tests: ০
 
 <h2 id="overall-score-১৪-দিনের-সারমর্ম">Overall score — ১৪-দিনের সারমর্ম</h2>
 
-<table style="width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;">
+<div class="gw-table-scroll" role="region" tabindex="0" aria-label="Overall score — ১৪-দিনের সারমর্ম"><table style="width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;" class="gw-table">
 <thead><tr style="background:#F1F5F9;"><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Task</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Cursor</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Windsurf</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Winner</th></tr></thead>
 <tbody>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Bug fix</td><td style="padding:10px;border:1px solid #E2E8F0;">৪:৩২</td><td style="padding:10px;border:1px solid #E2E8F0;">৩:৫৮</td><td style="padding:10px;border:1px solid #E2E8F0;">Tie (W faster)</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">New feature</td><td style="padding:10px;border:1px solid #E2E8F0;">১১:০০ (৮৫%)</td><td style="padding:10px;border:1px solid #E2E8F0;">১৪:০০ (৯০%)</td><td style="padding:10px;border:1px solid #E2E8F0;">Windsurf (quality)</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Refactor</td><td style="padding:10px;border:1px solid #E2E8F0;">৭:০০, ০ halluc</td><td style="padding:10px;border:1px solid #E2E8F0;">৯:০০, ১ halluc</td><td style="padding:10px;border:1px solid #E2E8F0;">Cursor</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Documentation</td><td style="padding:10px;border:1px solid #E2E8F0;">৬:০০ (basic)</td><td style="padding:10px;border:1px solid #E2E8F0;">৮:০০ (rich)</td><td style="padding:10px;border:1px solid #E2E8F0;">Windsurf</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Unit tests</td><td style="padding:10px;border:1px solid #E2E8F0;">১২:০০ (৮৯%)</td><td style="padding:10px;border:1px solid #E2E8F0;">১৫:০০ (৯৩%)</td><td style="padding:10px;border:1px solid #E2E8F0;">Windsurf</td></tr>
-<tr style="font-weight:bold;background:#F8FAFC;"><td style="padding:10px;border:1px solid #E2E8F0;">Total</td><td style="padding:10px;border:1px solid #E2E8F0;">৪০:৩২ (faster ৪x)</td><td style="padding:10px;border:1px solid #E2E8F0;">৪৯:৫৮ (better quality ৩x)</td><td style="padding:10px;border:1px solid #E2E8F0;">Mixed</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Task">Bug fix</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Cursor">৪:৩২</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Windsurf">৩:৫৮</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Winner">Tie (W faster)</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Task">New feature</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Cursor">১১:০০ (৮৫%)</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Windsurf">১৪:০০ (৯০%)</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Winner">Windsurf (quality)</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Task">Refactor</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Cursor">৭:০০, ০ halluc</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Windsurf">৯:০০, ১ halluc</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Winner">Cursor</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Task">Documentation</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Cursor">৬:০০ (basic)</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Windsurf">৮:০০ (rich)</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Winner">Windsurf</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Task">Unit tests</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Cursor">১২:০০ (৮৯%)</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Windsurf">১৫:০০ (৯৩%)</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Winner">Windsurf</td></tr>
+<tr style="font-weight:bold;background:#F8FAFC;"><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Task">Total</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Cursor">৪০:৩২ (faster ৪x)</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Windsurf">৪৯:৫৮ (better quality ৩x)</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Winner">Mixed</td></tr>
 </tbody>
-</table>
+</table></div>
 
 <h2 id="ide-feel-daily-comfort">IDE feel — daily comfort</h2>
 <p>Speed/quality benchmark-এর বাইরে — দৈনিক comfort matter করে:</p>
@@ -258,7 +255,7 @@ Failing tests: ০
 <strong>Choose Cursor if:</strong>
 <ul>
 <li>Daily VS Code user — migration painless</li>
-<li>Speed > quality (rapid prototype, MVP)</li>
+<li>Speed &gt; quality (rapid prototype, MVP)</li>
 <li>Refactor-heavy work (Cursor better at refactor)</li>
 <li>$২০ budget OK</li>
 <li>Community/learning resources matter (Cursor-এ much more tutorial)</li>
@@ -268,9 +265,9 @@ Failing tests: ০
 <div class="case-study">
 <strong>Choose Windsurf if:</strong>
 <ul>
-<li>Quality > speed (architecture-heavy, test-critical)</li>
+<li>Quality &gt; speed (architecture-heavy, test-critical)</li>
 <li>Documentation-heavy work</li>
-<li>Free tier দরকার (Windsurf free > Cursor free)</li>
+<li>Free tier দরকার (Windsurf free &gt; Cursor free)</li>
 <li>$৫ cost saving matter করে</li>
 <li>Long-running autonomous flow চান (Cascade impressive)</li>
 </ul>
@@ -333,7 +330,7 @@ Failing tests: ০
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-    </div>
+    </div></div><p class="sr-only" data-guide-copy-status role="status" aria-live="polite"></p></div>
 
     <!-- TEMPLATED-FAQ:START -->
 <section class="article-faq" aria-labelledby="faq-heading">

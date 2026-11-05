@@ -34,6 +34,8 @@
 <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <link rel="stylesheet" href="/css/site-shell.css">
   <link rel="stylesheet" href="/css/guide-reader.css">
+<link rel="stylesheet" href="/css/guide-workshop.css">
+  <script src="/js/guide-workshop.js" defer></script>
   <!-- FAQ-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"বাংলায় কতটা ভালো?","acceptedAnswer":{"@type":"Answer","text":"Bangla output: ২০২৬-এ improved। Article Writer 6.0 (GPT-5 powered) Bangla long-form 4.2/5। Idioms + cultural context: BD-specific phrases (eid, durga puja, monsoon) handle decent। Bangla SEO: Bangla keyword integration works, কিন্তু English-এর সমান accurate না। Mixed Bangla-English: \"Aarong-এর fashion trend\" — natural code-switch acceptable। Honest verdict: Bangla-heavy কাজে ChatGPT/Claude marginally better। Writesonic SEO + workflow integration-এর জন্য preferred।"}},{"@type":"Question","name":"Writesonic কী?","acceptedAnswer":{"@type":"Answer","text":"Writesonic (২০২১ founded, US-based, ex-Stanford founders) — AI writing platform বিশেষভাবে SEO-focused content + chatbot builder। GPT-4.5 + Claude-powered। Y Combinator backed। ২০২৫-এ \"GPT-5 powered Article Writer 6.0\" launch — industry-leading long-form quality। Founded ২০২১, San Francisco Y Combinator backed Active users ~১২ লাখ global SMB + agency-heavy BD adoption ~৬,০০০ active D2C + content marketer Pricing Free + $২০-৪৯৯/মাস"}},{"@type":"Question","name":"Writesonic-এর দাম কত এবং BD-তে এর ROI কেমন?","acceptedAnswer":{"@type":"Answer","text":"Free: 50 generations/মাস, 2500 word limit। Test। Individual $২০/মাস: Unlimited words, GPT-4 access, Article Writer। Tahmina's tier। Standard $৪৯/মাস: Botsonic, advanced SEO, Brand Voice। Tahmina + Botsonic plan। Professional $২৪৯/মাস: Enterprise features। BD payment: USD card via bKash recharge, Stripe checkout।"}},{"@type":"Question","name":"Chatsonic vs ChatGPT — কোনটা বেছে নেব?","acceptedAnswer":{"@type":"Answer","text":"Chatsonic: Real-time web search + image generation + voice + Bangla — integrated ChatGPT: Premium subscription needed for similar feature breadth Verdict: ChatGPT-এর polish slightly better, Chatsonic price-feature ratio strong"}}]}</script>
 <!-- FAQ-SCHEMA:END -->
@@ -53,36 +55,31 @@
 </header>
 <!-- GUIDE-HEADER:END -->
 
-    <div data-guide-reader class="article-sheet container">
-        <!-- ARTICLE-META:START -->
-<p class="article-kicker"><span class="article-chip">কন্টেন্ট</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৪ মিনিট পড়া</span></p>
-<!-- ARTICLE-META:END -->
-<h1 id="gs-content">Writesonic বাংলা গাইড — SEO ব্লগ ও Marketing Copy-এর জন্য AI</h1>
-
-<!-- ARTICLE-HERO:START -->
-<figure class="article-hero">
+    <div data-guide-reader class="article-sheet container" data-guide-workshop><div class="gw-hero"><div class="gw-hero-copy"><p class="article-kicker"><span class="article-chip">কন্টেন্ট</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৪ মিনিট পড়া</span></p><h1 id="gs-content">Writesonic বাংলা গাইড — SEO ব্লগ ও Marketing Copy-এর জন্য AI</h1><p class="gw-deck">Writesonic-এ Chatsonic, Article Writer, Botsonic কীভাবে ব্যবহার করবেন? Real-time data, SEO-optimized output ও দাম comparison — বাংলাদেশি content creator-দের জন্য…</p><a class="gw-actions" href="#ভূমিকা-mohammadpur-এর-e-commerce-founder-এর-content-engine">ভূমিকা — Mohammadpur-এর e-commerce founder-এর… <span aria-hidden="true">↓</span></a></div><div class="gw-hero-visual"><figure class="article-hero">
   <img src="/assets/editorial/writing.svg" width="1000" height="440" alt="সম্পাদিত পাণ্ডুলিপি ও ফাউন্টেন পেনের অঙ্কন" decoding="async" fetchpriority="high">
-</figure>
-<!-- ARTICLE-HERO:END -->
-<!-- ARTICLE-TOC:START -->
-<nav class="article-toc" aria-label="সূচিপত্র">
-  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
-  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
-  <ol class="toc-list">
-    <li class="toc-item"><a href="#ভূমিকা-mohammadpur-এর-e-commerce-founder-এর-content-engine">ভূমিকা — Mohammadpur-এর e-commerce founder-এর content engine</a></li>
-    <li class="toc-item"><a href="#writesonic-কী">Writesonic কী?</a></li>
-    <li class="toc-item"><a href="#article-writer-6-0-flagship">Article Writer 6.0 — flagship</a></li>
-    <li class="toc-item"><a href="#দাম">দাম</a></li>
-    <li class="toc-item"><a href="#jasper-এর-সাথে-পার্থক্য">Jasper-এর সাথে পার্থক্য</a></li>
-    <li class="toc-item"><a href="#বাংলায়-কতটা-ভালো">বাংলায় কতটা ভালো?</a></li>
-    <li class="toc-item"><a href="#botsonic-chatbot-builder">Botsonic — Chatbot builder</a></li>
-    <li class="toc-item"><a href="#chatsonic-vs-chatgpt">Chatsonic vs ChatGPT</a></li>
-    <li class="toc-item"><a href="#উপসংহার">উপসংহার</a></li>
-    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
-    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
-  </ol>
-</nav>
-<!-- ARTICLE-TOC:END -->
+</figure></div></div><div class="gw-layout"><nav class="gw-chapters" aria-label="এই গাইডে"><details open><summary>এই গাইডে</summary><ol>
+<li><a href="#ভূমিকা-mohammadpur-এর-e-commerce-founder-এর-content-engine">ভূমিকা — Mohammadpur-এর e-commerce founder-এর content engine</a></li>
+<li><a href="#writesonic-কী">Writesonic কী?</a></li>
+<li><a href="#article-writer-6-0-flagship">Article Writer 6.0 — flagship</a></li>
+<li><a href="#দাম">দাম</a></li>
+<li><a href="#jasper-এর-সাথে-পার্থক্য">Jasper-এর সাথে পার্থক্য</a></li>
+<li><a href="#বাংলায়-কতটা-ভালো">বাংলায় কতটা ভালো?</a></li>
+<li><a href="#botsonic-chatbot-builder">Botsonic — Chatbot builder</a></li>
+<li><a href="#chatsonic-vs-chatgpt">Chatsonic vs ChatGPT</a></li>
+<li><a href="#উপসংহার">উপসংহার</a></li>
+<li><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+</ol></details></nav><div class="gw-reading">
+
+
+
+
+
+
+
+
+
+
+
 
 <h2 id="ভূমিকা-mohammadpur-এর-e-commerce-founder-এর-content-engine">ভূমিকা — Mohammadpur-এর e-commerce founder-এর content engine</h2>
 <p class="lede">মোহাম্মদপুরের একটা D2C fashion brand "Anika Style"-এর co-founder + content head তাহমিনা ইসলাম — ২৭ বছর, NSU Marketing ২০২০, ৩ বছর brand managment-এ। ২০২৪-এ brand launch — Daraz + Facebook + own website। ২০২৫-এ challenge: monthly blog ৬-৮ piece (SEO traffic), Facebook ad copy ৪৫-৬০টা, email newsletter ৪টা, product description ১৫-২০টা। In-house team 2 jr writer + 1 sr writer, monthly cost ৳৮৫,০০০। Tahmina cost optimize-এর জন্য Writesonic trial শুরু — Article Writer 6.0 + Botsonic (chatbot)। ৪ মাস পর: writer team 1 sr writer (other 2 redeployed), monthly content tool cost $৪৯, total saving ৳৪০,০০০+/month, content output 1.5x। এই গাইড সেই workflow।</p>
@@ -135,16 +132,16 @@
 </ul>
 
 <h2 id="jasper-এর-সাথে-পার্থক্য">Jasper-এর সাথে পার্থক্য</h2>
-<table style="width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;">
+<div class="gw-table-scroll" role="region" tabindex="0" aria-label="Jasper-এর সাথে পার্থক্য"><table style="width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;" class="gw-table">
 <thead><tr style="background:#F1F5F9;"><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Aspect</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Writesonic</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Jasper</th></tr></thead>
 <tbody>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Entry price</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>$২০/মাস</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">$৪৯/মাস</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">SEO focus</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>Native (Article Writer 6.0)</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">Add-on integration</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Brand voice</td><td style="padding:10px;border:1px solid #E2E8F0;">Basic</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>Excellent (multi-brand)</strong></td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Chatbot builder</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>Botsonic included</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">Not included</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Best for</td><td style="padding:10px;border:1px solid #E2E8F0;">SMB, SEO-driven content, D2C</td><td style="padding:10px;border:1px solid #E2E8F0;">Enterprise, brand-driven</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Aspect">Entry price</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Writesonic"><strong>$২০/মাস</strong></td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Jasper">$৪৯/মাস</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Aspect">SEO focus</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Writesonic"><strong>Native (Article Writer 6.0)</strong></td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Jasper">Add-on integration</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Aspect">Brand voice</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Writesonic">Basic</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Jasper"><strong>Excellent (multi-brand)</strong></td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Aspect">Chatbot builder</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Writesonic"><strong>Botsonic included</strong></td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Jasper">Not included</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Aspect">Best for</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Writesonic">SMB, SEO-driven content, D2C</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Jasper">Enterprise, brand-driven</td></tr>
 </tbody>
-</table>
+</table></div>
 
 <h2 id="বাংলায়-কতটা-ভালো">বাংলায় কতটা ভালো?</h2>
 <ul>
@@ -233,7 +230,7 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-    </div>
+    </div></div><p class="sr-only" data-guide-copy-status role="status" aria-live="polite"></p></div>
 
     <!-- TEMPLATED-FAQ:START -->
 <section class="article-faq" aria-labelledby="faq-heading">

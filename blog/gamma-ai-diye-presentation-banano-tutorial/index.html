@@ -34,6 +34,8 @@
 <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <link rel="stylesheet" href="/css/site-shell.css">
   <link rel="stylesheet" href="/css/guide-reader.css">
+<link rel="stylesheet" href="/css/guide-workshop.css">
+  <script src="/js/guide-workshop.js" defer></script>
   <!-- FAQ-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Gamma AI দিয়ে প্রেজেন্টেশন বানানো বাংলায় কেমন কাজ করে?","acceptedAnswer":{"@type":"Answer","text":"Topic এবং outline বাংলায় লিখুন — সম্পূর্ণ presentation বাংলায় আসবে Font: Settings → Theme → Font-এ \"Hind Siliguri\" বা \"Noto Sans Bengali\" সিলেক্ট করুন Image: AI-জেনারেটেড image-এ বাংলা text কম রাখুন (AI এখনো বাংলা text-এ ভুল করে) Edit: প্রতিটি স্লাইড ক্লিক করে নিজে edit করতে পারবেন"}},{"@type":"Question","name":"Gamma vs অন্যান্য AI presentation টুল — কোনটা বেছে নেব?","acceptedAnswer":{"@type":"Answer","text":"Gamma: সবচেয়ে balanced — design ভালো, content ভালো, easy Beautiful.ai: design সুন্দর, কিন্তু content কম, expensive Tome: storytelling format ভালো, কম customization Canva Magic Design: design master, কিন্তু slide-by-slide কম structured SlidesGPT: দ্রুত, কিন্তু design তেমন polished না"}},{"@type":"Question","name":"কোন কাজে কোন approach?","acceptedAnswer":{"@type":"Answer","text":"ক্লাসের assignment: Generate from topic রিপোর্ট/থিসিস presentation: Import PDF/Word — AI পুরো document থেকে slide বানাবে Pitch deck (startup): \"Paste text\" — নিজের লেখা content দিন; AI design করবে Workshop slide: Topic + style: \"interactive, lots of examples\""}},{"@type":"Question","name":"Gamma AI দিয়ে প্রেজেন্টেশন বানানো-এর দাম কত এবং BD-তে এর ROI কেমন?","acceptedAnswer":{"@type":"Answer","text":"Free: ৪০০ initial credit + প্রতি invite-এ ২০০ credit Plus ($১০/মাস): Unlimited generation, watermark remove Pro ($২০/মাস): Custom branding, larger file import, advanced AI BD পেমেন্ট: International card (দারাজ-এর virtual card কাজ করে)"}},{"@type":"Question","name":"ভূমিকা — Gamma AI কেন?","acceptedAnswer":{"@type":"Answer","text":"PowerPoint বা Google Slides-এ একটি ১৫-স্লাইডের প্রেজেন্টেশন বানাতে ২-৪ ঘণ্টা। Gamma AI-তে — ১-২ মিনিট। শুধু topic বললে, AI পুরো presentation বানিয়ে দেয় — content, design, layout, image সহ। বাংলাদেশের ছাত্র (assignment), শিক্ষক (লেকচার), startup ফাউন্ডার (pitch deck), অফিসের কর্মী (report) — সবার জন্য এটি সময় বাঁচানোর powerful টুল।"}}]}</script>
 <!-- FAQ-SCHEMA:END -->
@@ -53,36 +55,31 @@
 </header>
 <!-- GUIDE-HEADER:END -->
 
-    <div data-guide-reader class="article-sheet container">
-        <!-- ARTICLE-META:START -->
-<p class="article-kicker"><span class="article-chip">মিডিয়া</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৩ মিনিট পড়া</span></p>
-<!-- ARTICLE-META:END -->
-<h1 id="gs-content">Gamma AI দিয়ে প্রেজেন্টেশন বানানো — ১ মিনিটে প্রফেশনাল স্লাইড</h1>
-
-<!-- ARTICLE-HERO:START -->
-<figure class="article-hero">
+    <div data-guide-reader class="article-sheet container" data-guide-workshop><div class="gw-hero"><div class="gw-hero-copy"><p class="article-kicker"><span class="article-chip">মিডিয়া</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৩ মিনিট পড়া</span></p><h1 id="gs-content">Gamma AI দিয়ে প্রেজেন্টেশন বানানো — ১ মিনিটে প্রফেশনাল স্লাইড</h1><p class="gw-deck">Gamma AI দিয়ে বাংলায় প্রফেশনাল প্রেজেন্টেশন কীভাবে বানাবেন? এক প্রম্পটে স্লাইড, ডিজাইন, ছবি — সব AI করে দেবে। ধাপে ধাপে টিউটোরিয়াল ও টিপস।</p><a class="gw-actions" href="#প্রথম-presentation-বানানোর-ধাপ">প্রথম presentation বানানোর ধাপ <span aria-hidden="true">↓</span></a></div><div class="gw-hero-visual"><figure class="article-hero">
   <img src="/assets/editorial/classroom.svg" width="1000" height="440" alt="বোর্ড, চক ও খোলা বইয়ের অঙ্কন" decoding="async" fetchpriority="high">
-</figure>
-<!-- ARTICLE-HERO:END -->
-<!-- ARTICLE-TOC:START -->
-<nav class="article-toc" aria-label="সূচিপত্র">
-  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
-  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
-  <ol class="toc-list">
-    <li class="toc-item"><a href="#ভূমিকা-gamma-ai-কেন">ভূমিকা — Gamma AI কেন?</a></li>
-    <li class="toc-item"><a href="#অ্যাকাউন্ট-খোলা">অ্যাকাউন্ট খোলা</a></li>
-    <li class="toc-item"><a href="#প্রথম-presentation-বানানোর-ধাপ">প্রথম presentation বানানোর ধাপ</a></li>
-    <li class="toc-item"><a href="#বাংলায়-presentation-বানানোর-জন্য-বিশেষ-টিপস">বাংলায় presentation বানানোর জন্য বিশেষ টিপস</a></li>
-    <li class="toc-item"><a href="#কোন-কাজে-কোন-approach">কোন কাজে কোন approach?</a></li>
-    <li class="toc-item"><a href="#export-ও-share">Export ও Share</a></li>
-    <li class="toc-item"><a href="#দাম">দাম</a></li>
-    <li class="toc-item"><a href="#gamma-vs-অন্যান্য-ai-presentation-টুল">Gamma vs অন্যান্য AI presentation টুল</a></li>
-    <li class="toc-item"><a href="#উপসংহার">উপসংহার</a></li>
-    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
-    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
-  </ol>
-</nav>
-<!-- ARTICLE-TOC:END -->
+</figure></div></div><div class="gw-layout"><nav class="gw-chapters" aria-label="এই গাইডে"><details open><summary>এই গাইডে</summary><ol>
+<li><a href="#ভূমিকা-gamma-ai-কেন">ভূমিকা — Gamma AI কেন?</a></li>
+<li><a href="#অ্যাকাউন্ট-খোলা">অ্যাকাউন্ট খোলা</a></li>
+<li><a href="#প্রথম-presentation-বানানোর-ধাপ">প্রথম presentation বানানোর ধাপ</a></li>
+<li><a href="#বাংলায়-presentation-বানানোর-জন্য-বিশেষ-টিপস">বাংলায় presentation বানানোর জন্য বিশেষ টিপস</a></li>
+<li><a href="#কোন-কাজে-কোন-approach">কোন কাজে কোন approach?</a></li>
+<li><a href="#export-ও-share">Export ও Share</a></li>
+<li><a href="#দাম">দাম</a></li>
+<li><a href="#gamma-vs-অন্যান্য-ai-presentation-টুল">Gamma vs অন্যান্য AI presentation টুল</a></li>
+<li><a href="#উপসংহার">উপসংহার</a></li>
+<li><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+</ol></details></nav><div class="gw-reading">
+
+
+
+
+
+
+
+
+
+
+
 
         <h2 id="ভূমিকা-gamma-ai-কেন">ভূমিকা — Gamma AI কেন?</h2>
         <p>PowerPoint বা Google Slides-এ একটি ১৫-স্লাইডের প্রেজেন্টেশন বানাতে ২-৪ ঘণ্টা। Gamma AI-তে — ১-২ মিনিট। শুধু topic বললে, AI পুরো presentation বানিয়ে দেয় — content, design, layout, image সহ।</p>
@@ -98,17 +95,17 @@
 
         <h2 id="প্রথম-presentation-বানানোর-ধাপ">প্রথম presentation বানানোর ধাপ</h2>
 
-        <h3>ধাপ ১: &quot;Create new&quot; → &quot;Presentation&quot;</h3>
+        <h3 class="gw-step-heading">ধাপ ১: "Create new" → "Presentation"</h3>
         <p>হোম পেজ থেকে "Create new" → তিনটি option আসবে: Generate, Import file, Paste text। নতুনদের জন্য "Generate" সবচেয়ে দ্রুত।</p>
 
-        <h3>ধাপ ২: Topic লিখুন (বাংলা বা ইংরেজি)</h3>
+        <h3 class="gw-step-heading">ধাপ ২: Topic লিখুন (বাংলা বা ইংরেজি)</h3>
         <p>উদাহরণ: "বাংলাদেশে নবায়নযোগ্য শক্তির সম্ভাবনা — ১২ স্লাইডের একটি academic presentation, ভূমিকা/সমস্যা/সমাধান/উপসংহার structure-এ"।</p>
         <p>যত বেশি specific লিখবেন, তত ভালো ফলাফল।</p>
 
-        <h3>ধাপ ৩: Outline review করুন</h3>
+        <h3 class="gw-step-heading">ধাপ ৩: Outline review করুন</h3>
         <p>AI প্রথমে একটি outline দেখাবে (১০-১৫টি স্লাইডের শিরোনাম)। অপ্রয়োজনীয় স্লাইড মুছুন, নতুন যোগ করুন, ক্রম পরিবর্তন করুন।</p>
 
-        <h3>ধাপ ৪: Theme সিলেক্ট ও Generate</h3>
+        <h3 class="gw-step-heading">ধাপ ৪: Theme সিলেক্ট ও Generate</h3>
         <p>১৫+ pre-built theme আছে। "Continue" → AI ২-৩ মিনিটে পুরো presentation তৈরি করবে — text, image, layout সব মিলিয়ে।</p>
 
         <h2 id="বাংলায়-presentation-বানানোর-জন্য-বিশেষ-টিপস">বাংলায় presentation বানানোর জন্য বিশেষ টিপস</h2>
@@ -207,7 +204,7 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-    </div>
+    </div></div><p class="sr-only" data-guide-copy-status role="status" aria-live="polite"></p></div>
 
     <!-- TEMPLATED-FAQ:START -->
 <section class="article-faq" aria-labelledby="faq-heading">

@@ -34,6 +34,8 @@
 <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <link rel="stylesheet" href="/css/site-shell.css">
   <link rel="stylesheet" href="/css/guide-reader.css">
+<link rel="stylesheet" href="/css/guide-workshop.css">
+  <script src="/js/guide-workshop.js" defer></script>
   <!-- FAQ-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Codeium কোন কাজে সবচেয়ে ভালো?","acceptedAnswer":{"@type":"Answer","text":"Use case 1: Internship work (PHP Laravel) Agency-র legacy Laravel codebase-এ feature add — Tanvir Codeium Tab-এ ৭০% boilerplate auto-complete। Manual logic implementation শুধু। Daily 4-5 hour-এর কাজ 2 hours-এ। ৩ মাসে confidence build। Use case 2: Personal portfolio project (React + Node) Side-project — একটা food delivery prototype। Codeium chat-এ @codebase ব্যবহার করে: \"এই project-এ auth flow কেমন? Improve সাজেশন।\" Detailed answer + code suggestion। Use case 3: LeetCode/competitive programming Daily ৩-৫টা problem। Codeium-কে: \"এই problem-এ আমার hint কী?\" Step-by-step nudge (full solution না)। Independent thinking train। Use case 4: Documentation প্রতি project-এ README + JSDoc। /docstring…"}},{"@type":"Question","name":"Codeium-এর মূল features কী কী?","acceptedAnswer":{"@type":"Answer","text":"Tab autocomplete: Type করতে শুরু করলে greyed text-এ multi-line suggestion। Tab key দিয়ে accept। Inline chat: Ctrl+Shift+L (selected code) → \"Refactor this\", \"Add error handling\", \"Explain\"। Quick edit। Sidebar chat: @-mentions support — @codebase, @file, @function। Whole repo aware। Slash commands: /explain, /test, /docstring, /fix। Frequent task shortcut। Multi-language: Python, JS, TS, Go, Rust, Java, C++, Ruby, PHP, Bash — সব main। Niche language (Solidity, Dart) decent। Bangla instruction works: \"এই function-এ error handling add করো\" perfectly understood।"}},{"@type":"Question","name":"Codeium কীভাবে install বা setup করব?","acceptedAnswer":{"@type":"Answer","text":"VS Code Extensions tab → \"Codeium\" search → install Sidebar-এ Codeium icon click → \"Sign up free\" Google/GitHub OAuth (fastest, no email verification delay) Privacy toggle: Settings → Codeium → \"Block training on my code\" → ✓ Default model: Codeium proprietary (fast)। Premium chat-এ Claude Sonnet 4.6 use। JetBrains IDE (IntelliJ/PyCharm) Settings → Plugins → \"Codeium\" search → install Restart → sign in Vim/Neovim vim-plug বা packer.nvim-এ Codeium plugin add :Codeium Auth → browser-এ OAuth complete"}},{"@type":"Question","name":"Codeium vs alternatives — কোনটা বেছে নেব?","acceptedAnswer":{"@type":"Answer","text":"Aspect Codeium Continue.dev Cody (Sourcegraph) Free tier Unlimited Tab Free + BYOK Limited Setup ease Easy Medium (API key needed) Easy Quality Very Good Excellent (with Sonnet) Good Best for BD students, hobbyists Power user Open-source contributor"}}]}</script>
 <!-- FAQ-SCHEMA:END -->
@@ -53,36 +55,31 @@
 </header>
 <!-- GUIDE-HEADER:END -->
 
-    <div data-guide-reader class="article-sheet container">
-        <!-- ARTICLE-META:START -->
-<p class="article-kicker"><span class="article-chip">কোডিং</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৫ মিনিট পড়া</span></p>
-<!-- ARTICLE-META:END -->
-<h1 id="gs-content">Codeium বাংলা গাইড — GitHub Copilot-এর ফ্রি বিকল্প (২০২৬)</h1>
-
-<!-- ARTICLE-HERO:START -->
-<figure class="article-hero">
+    <div data-guide-reader class="article-sheet container" data-guide-workshop><div class="gw-hero"><div class="gw-hero-copy"><p class="article-kicker"><span class="article-chip">কোডিং</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৫ মিনিট পড়া</span></p><h1 id="gs-content">Codeium বাংলা গাইড — GitHub Copilot-এর ফ্রি বিকল্প (২০২৬)</h1><p class="gw-deck">Codeium কী এবং কেন এটি GitHub Copilot-এর সেরা ফ্রি বিকল্প? VS Code/JetBrains setup, autocomplete, AI chat — বাংলাদেশি developer-দের জন্য সম্পূর্ণ গাইড।</p><a class="gw-actions" href="#ভূমিকা-khulna-র-এক-junior-dev-এর-০-stack">ভূমিকা — Khulna-র এক junior dev-এর $০ stack <span aria-hidden="true">↓</span></a></div><div class="gw-hero-visual"><figure class="article-hero">
   <img src="/assets/editorial/coding.svg" width="1000" height="440" alt="কোড এডিটরের পর্দা ও কার্সরের অঙ্কন" decoding="async" fetchpriority="high">
-</figure>
-<!-- ARTICLE-HERO:END -->
-<!-- ARTICLE-TOC:START -->
-<nav class="article-toc" aria-label="সূচিপত্র">
-  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
-  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
-  <ol class="toc-list">
-    <li class="toc-item"><a href="#ভূমিকা-khulna-র-এক-junior-dev-এর-০-stack">ভূমিকা — Khulna-র এক junior dev-এর $০ stack</a></li>
-    <li class="toc-item"><a href="#codeium-কী-কেন-আলাদা">Codeium কী + কেন আলাদা</a></li>
-    <li class="toc-item"><a href="#copilot-এর-চেয়ে-কেন-এগিয়ে-free-user-এর-জন্য">Copilot-এর চেয়ে কেন এগিয়ে (free user-এর জন্য)</a></li>
-    <li class="toc-item"><a href="#install-vs-code">Install (VS Code)</a></li>
-    <li class="toc-item"><a href="#প্রধান-ফিচারসমূহ">প্রধান ফিচারসমূহ</a></li>
-    <li class="toc-item"><a href="#practical-use-cases-tanvir-এর-actual-experience">Practical use cases — Tanvir-এর actual experience</a></li>
-    <li class="toc-item"><a href="#codeium-এর-paid-feature-pro">Codeium-এর paid feature (Pro)</a></li>
-    <li class="toc-item"><a href="#codeium-vs-alternatives">Codeium vs alternatives</a></li>
-    <li class="toc-item"><a href="#উপসংহার-tanvir-এর-message">উপসংহার — Tanvir-এর message</a></li>
-    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
-    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
-  </ol>
-</nav>
-<!-- ARTICLE-TOC:END -->
+</figure></div></div><div class="gw-layout"><nav class="gw-chapters" aria-label="এই গাইডে"><details open><summary>এই গাইডে</summary><ol>
+<li><a href="#ভূমিকা-khulna-র-এক-junior-dev-এর-০-stack">ভূমিকা — Khulna-র এক junior dev-এর $০ stack</a></li>
+<li><a href="#codeium-কী-কেন-আলাদা">Codeium কী + কেন আলাদা</a></li>
+<li><a href="#copilot-এর-চেয়ে-কেন-এগিয়ে-free-user-এর-জন্য">Copilot-এর চেয়ে কেন এগিয়ে (free user-এর জন্য)</a></li>
+<li><a href="#install-vs-code">Install (VS Code)</a></li>
+<li><a href="#প্রধান-ফিচারসমূহ">প্রধান ফিচারসমূহ</a></li>
+<li><a href="#practical-use-cases-tanvir-এর-actual-experience">Practical use cases — Tanvir-এর actual experience</a></li>
+<li><a href="#codeium-এর-paid-feature-pro">Codeium-এর paid feature (Pro)</a></li>
+<li><a href="#codeium-vs-alternatives">Codeium vs alternatives</a></li>
+<li><a href="#উপসংহার-tanvir-এর-message">উপসংহার — Tanvir-এর message</a></li>
+<li><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+</ol></details></nav><div class="gw-reading">
+
+
+
+
+
+
+
+
+
+
+
 <p class="cluster-keeper">Codeium-এর এডিটর Windsurf নামেও পরিচিত। Cursor, Windsurf ও Copilot-এর মূল পাতা: <a href="/cursor-ai-bangla/">Cursor AI কী, কাজ ও দাম (টাকায়)</a>। Windsurf-এর আলাদা টিউটোরিয়াল: <a href="/blog/windsurf-ide-bangla-coding-tutorial/">Windsurf IDE বাংলা গাইড</a>।</p>
 
 <h2 id="ভূমিকা-khulna-র-এক-junior-dev-এর-০-stack">ভূমিকা — Khulna-র এক junior dev-এর $০ stack</h2>
@@ -112,16 +109,16 @@
 
 <h2 id="copilot-এর-চেয়ে-কেন-এগিয়ে-free-user-এর-জন্য">Copilot-এর চেয়ে কেন এগিয়ে (free user-এর জন্য)</h2>
 
-<table style="width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;">
+<div class="gw-table-scroll" role="region" tabindex="0" aria-label="Copilot-এর চেয়ে কেন এগিয়ে (free user-এর জন্য)"><table style="width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;" class="gw-table">
 <thead><tr style="background:#F1F5F9;"><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Feature</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Codeium Free</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Copilot Free</th></tr></thead>
 <tbody>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Available to all</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>Yes</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">Student Pack required (verification process)</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Tab autocomplete</td><td style="padding:10px;border:1px solid #E2E8F0;">Unlimited</td><td style="padding:10px;border:1px solid #E2E8F0;">2000 completions/মাস</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Chat messages</td><td style="padding:10px;border:1px solid #E2E8F0;">50/মাস (premium model)</td><td style="padding:10px;border:1px solid #E2E8F0;">50 chat messages/মাস</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Codebase context</td><td style="padding:10px;border:1px solid #E2E8F0;">Yes (@codebase)</td><td style="padding:10px;border:1px solid #E2E8F0;">Limited</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Privacy</td><td style="padding:10px;border:1px solid #E2E8F0;">Strong (no training)</td><td style="padding:10px;border:1px solid #E2E8F0;">Free tier has minor training opt-in</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Feature">Available to all</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Codeium Free"><strong>Yes</strong></td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Copilot Free">Student Pack required (verification process)</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Feature">Tab autocomplete</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Codeium Free">Unlimited</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Copilot Free">2000 completions/মাস</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Feature">Chat messages</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Codeium Free">50/মাস (premium model)</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Copilot Free">50 chat messages/মাস</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Feature">Codebase context</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Codeium Free">Yes (@codebase)</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Copilot Free">Limited</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Feature">Privacy</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Codeium Free">Strong (no training)</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Copilot Free">Free tier has minor training opt-in</td></tr>
 </tbody>
-</table>
+</table></div>
 
 <h2 id="install-vs-code">Install (VS Code)</h2>
 <ol>
@@ -192,15 +189,15 @@
 
 <h2 id="codeium-vs-alternatives">Codeium vs alternatives</h2>
 
-<table style="width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;">
+<div class="gw-table-scroll" role="region" tabindex="0" aria-label="Codeium vs alternatives"><table style="width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;" class="gw-table">
 <thead><tr style="background:#F1F5F9;"><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Aspect</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Codeium</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Continue.dev</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Cody (Sourcegraph)</th></tr></thead>
 <tbody>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Free tier</td><td style="padding:10px;border:1px solid #E2E8F0;">Unlimited Tab</td><td style="padding:10px;border:1px solid #E2E8F0;">Free + BYOK</td><td style="padding:10px;border:1px solid #E2E8F0;">Limited</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Setup ease</td><td style="padding:10px;border:1px solid #E2E8F0;">Easy</td><td style="padding:10px;border:1px solid #E2E8F0;">Medium (API key needed)</td><td style="padding:10px;border:1px solid #E2E8F0;">Easy</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Quality</td><td style="padding:10px;border:1px solid #E2E8F0;">Very Good</td><td style="padding:10px;border:1px solid #E2E8F0;">Excellent (with Sonnet)</td><td style="padding:10px;border:1px solid #E2E8F0;">Good</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Best for</td><td style="padding:10px;border:1px solid #E2E8F0;">BD students, hobbyists</td><td style="padding:10px;border:1px solid #E2E8F0;">Power user</td><td style="padding:10px;border:1px solid #E2E8F0;">Open-source contributor</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Aspect">Free tier</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Codeium">Unlimited Tab</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Continue.dev">Free + BYOK</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Cody (Sourcegraph)">Limited</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Aspect">Setup ease</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Codeium">Easy</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Continue.dev">Medium (API key needed)</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Cody (Sourcegraph)">Easy</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Aspect">Quality</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Codeium">Very Good</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Continue.dev">Excellent (with Sonnet)</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Cody (Sourcegraph)">Good</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Aspect">Best for</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Codeium">BD students, hobbyists</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Continue.dev">Power user</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Cody (Sourcegraph)">Open-source contributor</td></tr>
 </tbody>
-</table>
+</table></div>
 
 <h2 id="উপসংহার-tanvir-এর-message">উপসংহার — Tanvir-এর message</h2>
 <p>Tanvir বলেন: "Cursor $20 আমার ৬ মাসের mobile recharge। Copilot Student Pack-এ verification stuck। Codeium $0-এ আমাকে professional bridge করেছে — Singapore startup-এ job-এ। এই tool BD-র student community-র জন্য life-changing।"</p>
@@ -258,7 +255,7 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-    </div>
+    </div></div><p class="sr-only" data-guide-copy-status role="status" aria-live="polite"></p></div>
 
     <!-- TEMPLATED-FAQ:START -->
 <section class="article-faq" aria-labelledby="faq-heading">

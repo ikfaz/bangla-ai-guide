@@ -34,6 +34,8 @@
 <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <link rel="stylesheet" href="/css/site-shell.css">
   <link rel="stylesheet" href="/css/guide-reader.css">
+<link rel="stylesheet" href="/css/guide-workshop.css">
+  <script src="/js/guide-workshop.js" defer></script>
   <!-- FAQ-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"ClipDrop কোন কাজে সবচেয়ে ভালো?","acceptedAnswer":{"@type":"Answer","text":"Use case 1: Daraz/Shopify product photo (Saiful) Home shoot → white background remove → professional appearance। Rejection rate 40% → 6%। Revenue 1.4L → 3.6L। Use case 2: Real estate listing (Bproperty/Bikroy) Empty room → \"Replace background\" + \"Relight\" — staged look। Cleanup tool-এ excess clutter remove। Listing-to-inquiry rate 30% boost। Use case 3: Restaurant menu (food photography) Phone food photo → \"Relight\" (golden hour soft light) + \"Cleanup\" (table edge crumb remove) + \"Upscaler\" → Reels-ready। Use case 4: FB Marketplace seller Used product photo enhancement — old furniture photo-কে professional showroom-style। Use case 5: Profile picture upgrade (LinkedIn) Casual photo → \"Remove…"}},{"@type":"Question","name":"ClipDrop কী?","acceptedAnswer":{"@type":"Answer","text":"ClipDrop (২০১৯, French startup, ২০২৩-এ Stability AI-এর অধীনে) একটা AI-powered image editing platform। মূল USP: complex Photoshop task-গুলো এক click-এ AI দিয়ে। Web + mobile + API + Photoshop plugin। ২০২৬-এ Stability AI-এর Stable Diffusion model integration-এর সঙ্গে আরো শক্তিশালী। Founded ২০১৯, Paris Acquired by Stability AI 2023 Active users ~১৫ লাখ global Designer + e-commerce BD adoption ~৬,৫০০ active Daraz/FB seller-heavy Pricing Free + Pro $৭-১৪/মাস"}},{"@type":"Question","name":"ClipDrop থেকে সর্বোচ্চ পেতে কী কী টিপস আছে?","acceptedAnswer":{"@type":"Answer","text":"High-res source photo: Phone-এ HDR mode on + bright daylight। AI output input quality-এর উপর depends। Batch process: Pro plan-এ multi-image। 30 photo upload → coffee break → ready। Save settings: Frequently-used filter combo bookmark। Combine tools: Remove BG → Relight → Upscale = professional studio shot। Watermark: Pro plan-এ remove। Daraz/Shopify-এ watermark-ed photo reject হতে পারে।"}},{"@type":"Question","name":"ClipDrop-এর দাম কত এবং BD-তে এর ROI কেমন?","acceptedAnswer":{"@type":"Answer","text":"Free: Daily limit-এ 100 image processing। Watermark-ed output। Pro $৭/মাস (annual) / $১৪/মাস (monthly): Unlimited, no watermark, higher resolution, priority। API: Per-call pricing — developers-এর জন্য। BD payment: USD card (Brac/City/EBL Mastercard via bKash recharge)।"}}]}</script>
 <!-- FAQ-SCHEMA:END -->
@@ -53,36 +55,31 @@
 </header>
 <!-- GUIDE-HEADER:END -->
 
-    <div data-guide-reader class="article-sheet container">
-        <!-- ARTICLE-META:START -->
-<p class="article-kicker"><span class="article-chip">মিডিয়া</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৪ মিনিট পড়া</span></p>
-<!-- ARTICLE-META:END -->
-<h1 id="gs-content">ClipDrop বাংলা গাইড — All-in-One AI Image Editing Suite</h1>
-
-<!-- ARTICLE-HERO:START -->
-<figure class="article-hero">
+    <div data-guide-reader class="article-sheet container" data-guide-workshop><div class="gw-hero"><div class="gw-hero-copy"><p class="article-kicker"><span class="article-chip">মিডিয়া</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৪ মিনিট পড়া</span></p><h1 id="gs-content">ClipDrop বাংলা গাইড — All-in-One AI Image Editing Suite</h1><p class="gw-deck">ClipDrop-এর ১২+ AI image tool (Cleanup, Uncrop, Relight, Replace Background) কীভাবে ব্যবহার করবেন? দাম, web/mobile workflow ও বাংলাদেশি designer-দের জন্য সম্পূর্ণ…</p><a class="gw-actions" href="#ভূমিকা-tongi-র-এক-daraz-seller-এর-photo-upgrade">ভূমিকা — Tongi-র এক Daraz seller-এর photo upgrade <span aria-hidden="true">↓</span></a></div><div class="gw-hero-visual"><figure class="article-hero">
   <img src="/assets/editorial/classroom.svg" width="1000" height="440" alt="বোর্ড, চক ও খোলা বইয়ের অঙ্কন" decoding="async" fetchpriority="high">
-</figure>
-<!-- ARTICLE-HERO:END -->
-<!-- ARTICLE-TOC:START -->
-<nav class="article-toc" aria-label="সূচিপত্র">
-  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
-  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
-  <ol class="toc-list">
-    <li class="toc-item"><a href="#ভূমিকা-tongi-র-এক-daraz-seller-এর-photo-upgrade">ভূমিকা — Tongi-র এক Daraz seller-এর photo upgrade</a></li>
-    <li class="toc-item"><a href="#clipdrop-কী">ClipDrop কী?</a></li>
-    <li class="toc-item"><a href="#১২টি-প্রধান-টুল">১২টি প্রধান টুল</a></li>
-    <li class="toc-item"><a href="#দাম">দাম</a></li>
-    <li class="toc-item"><a href="#প্রথম-edit-১-মিনিটে">প্রথম edit — ১ মিনিটে</a></li>
-    <li class="toc-item"><a href="#বাংলাদেশি-use-cases">বাংলাদেশি use cases</a></li>
-    <li class="toc-item"><a href="#clipdrop-vs-alternatives">ClipDrop vs alternatives</a></li>
-    <li class="toc-item"><a href="#টিপস">টিপস</a></li>
-    <li class="toc-item"><a href="#উপসংহার">উপসংহার</a></li>
-    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
-    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
-  </ol>
-</nav>
-<!-- ARTICLE-TOC:END -->
+</figure></div></div><div class="gw-layout"><nav class="gw-chapters" aria-label="এই গাইডে"><details open><summary>এই গাইডে</summary><ol>
+<li><a href="#ভূমিকা-tongi-র-এক-daraz-seller-এর-photo-upgrade">ভূমিকা — Tongi-র এক Daraz seller-এর photo upgrade</a></li>
+<li><a href="#clipdrop-কী">ClipDrop কী?</a></li>
+<li><a href="#১২টি-প্রধান-টুল">১২টি প্রধান টুল</a></li>
+<li><a href="#দাম">দাম</a></li>
+<li><a href="#প্রথম-edit-১-মিনিটে">প্রথম edit — ১ মিনিটে</a></li>
+<li><a href="#বাংলাদেশি-use-cases">বাংলাদেশি use cases</a></li>
+<li><a href="#clipdrop-vs-alternatives">ClipDrop vs alternatives</a></li>
+<li><a href="#টিপস">টিপস</a></li>
+<li><a href="#উপসংহার">উপসংহার</a></li>
+<li><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+</ol></details></nav><div class="gw-reading">
+
+
+
+
+
+
+
+
+
+
+
 
 <h2 id="ভূমিকা-tongi-র-এক-daraz-seller-এর-photo-upgrade">ভূমিকা — Tongi-র এক Daraz seller-এর photo upgrade</h2>
 <p class="lede">টঙ্গীর এক home-based Daraz seller সাইফুল ইসলাম — ৩৩ বছর, fashion accessories (woman scarf, jewelry, hair clip) sells। Stock photo দরকার — প্রতি product per ৪-৬টা angle, white background, professional look। আগে ছিল ২টা option: home-shoot phone-এ ($০ cost, quality poor — Daraz rejection ৪০%) বা agency-তে ৳২৫০/photo (১৫০ SKU × ৪ = ৬০০ photos = ৳১.৫ লাখ — unsustainable)। ২০২৫-এ ClipDrop discover করলেন — phone-এ shot, white background remove + lighting fix + cleanup। Per photo ৩-৫ মিনিট, $০-১৪/মাস cost। ১০ মাস পর: Daraz listing 150 → 380, monthly revenue ৳১.৪ লাখ → ৳৩.৬ লাখ, photo rejection ৪০% → ৬%। এই গাইড সেই workflow।</p>
@@ -164,16 +161,16 @@
 
 <h2 id="clipdrop-vs-alternatives">ClipDrop vs alternatives</h2>
 
-<table style="width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;">
+<div class="gw-table-scroll" role="region" tabindex="0" aria-label="ClipDrop vs alternatives"><table style="width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;" class="gw-table">
 <thead><tr style="background:#F1F5F9;"><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Tool</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Strength</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Price</th></tr></thead>
 <tbody>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">ClipDrop</td><td style="padding:10px;border:1px solid #E2E8F0;">All-in-one AI suite</td><td style="padding:10px;border:1px solid #E2E8F0;">$৭-১৪/মাস</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Remove.bg</td><td style="padding:10px;border:1px solid #E2E8F0;">Background-only specialist</td><td style="padding:10px;border:1px solid #E2E8F0;">$৯/মাস (40 images)</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Pixlr</td><td style="padding:10px;border:1px solid #E2E8F0;">Full photo editor</td><td style="padding:10px;border:1px solid #E2E8F0;">$৪.৯০/মাস</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Photopea</td><td style="padding:10px;border:1px solid #E2E8F0;">Free Photoshop alternative</td><td style="padding:10px;border:1px solid #E2E8F0;">Free (ads)</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Canva</td><td style="padding:10px;border:1px solid #E2E8F0;">Design + light editing</td><td style="padding:10px;border:1px solid #E2E8F0;">Free + $১৫/মাস</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Tool">ClipDrop</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Strength">All-in-one AI suite</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Price">$৭-১৪/মাস</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Tool">Remove.bg</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Strength">Background-only specialist</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Price">$৯/মাস (40 images)</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Tool">Pixlr</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Strength">Full photo editor</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Price">$৪.৯০/মাস</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Tool">Photopea</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Strength">Free Photoshop alternative</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Price">Free (ads)</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Tool">Canva</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Strength">Design + light editing</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Price">Free + $১৫/মাস</td></tr>
 </tbody>
-</table>
+</table></div>
 
 <h2 id="টিপস">টিপস</h2>
 <ul>
@@ -240,7 +237,7 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-    </div>
+    </div></div><p class="sr-only" data-guide-copy-status role="status" aria-live="polite"></p></div>
 
     <!-- TEMPLATED-FAQ:START -->
 <section class="article-faq" aria-labelledby="faq-heading">

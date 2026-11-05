@@ -34,6 +34,8 @@
 <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <link rel="stylesheet" href="/css/site-shell.css">
   <link rel="stylesheet" href="/css/guide-reader.css">
+<link rel="stylesheet" href="/css/guide-workshop.css">
+  <script src="/js/guide-workshop.js" defer></script>
   <!-- FAQ-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"AI দিয়ে Bangladesh Bank Loan Application-এর কী কী সীমাবদ্ধতা আছে?","acceptedAnswer":{"@type":"Answer","text":"AI eligibility analyze করতে পারে, narrative লিখতে পারে, scenario simulate করতে পারে — কিন্তু কিছু কাজ AI করবে না। Real-time interest rate: Bank-এর website + branch-এই দিনের actual rate। AI-এর knowledge cutoff থাকে। Relationship-based concession: Salary account, FDR, prior loan — bank-এর internal scoring-এ। Branch manager-এর সাথে সরাসরি কথাই rate negotiate করে। Document forge করবেন না: AI দিয়ে fake salary certificate, manipulated bank statement তৈরি ক্রিমিনাল offense — Bangladesh Bank fraud detection severe। Personal financial data security: NID, bank statement, salary certificate AI chat-এ upload করবেন না। Summary text + numbers যথেষ্ট। Final approval bank-এর discretion: AI eligibility…"}},{"@type":"Question","name":"AI দিয়ে Bangladesh Bank Loan Application কোন কাজে সবচেয়ে ভালো?","acceptedAnswer":{"@type":"Answer","text":"BD bank application form structured — কিন্তু narrative section (loan purpose, repayment plan, source of down payment) আপনাকে লিখতে হয়। এই narrative-ই অনেক সময় approval/reject decide করে। Loan purpose: \"Self-occupied residential flat purchase, Mirpur DOHS, BBA-approved builder\" — vague না, specific। Down payment source: \"১৫ লাখ savings (DBBL FDR), ১০ লাখ Aamra ESOP liquidation, documented\" — verifiable। Repayment capacity: Monthly income breakdown — basic, allowance, bonus, expected increment trajectory। Existing liability: Honest disclosure — bank cross-check CIB-তে করবেই। Razia-র AI-revised narrative-এর highlight: Aamra-র Senior Manager position-এ 5-year tenure, structured allowance…"}},{"@type":"Question","name":"Loan Type Comparison — কোনটা বেছে নেব?","acceptedAnswer":{"@type":"Answer","text":"BD-এর ২০২৬-এর market rate + tenure overview। AI দিয়ে — নিজের profile-এর সাথে কোনটা best match সেটা decide। Loan Type Interest (২০২৬) Tenure Max Amount Personal/Salary loan 9-15% 1-5 বছর 20 লাখ Home loan 8-12% 5-25 বছর 2 কোটি Car loan 9-13% 3-7 বছর গাড়ির 70% SME/Business 9-15% 1-7 বছর 5 কোটি Education loan 8-11% 5-10 বছর 40 লাখ Credit card EMI 12-25% 3-36 মাস Card limit"}}]}</script>
 <!-- FAQ-SCHEMA:END -->
@@ -53,39 +55,34 @@
 </header>
 <!-- GUIDE-HEADER:END -->
 
-    <div data-guide-reader class="article-sheet container">
-        <!-- ARTICLE-META:START -->
-<p class="article-kicker"><span class="article-chip">গাইড</span><span class="article-chip">২৮ মে, ২০২৬</span><span class="article-chip">৯ মিনিট পড়া</span></p>
-<!-- ARTICLE-META:END -->
-<h1 id="gs-content">AI দিয়ে Bangladesh Bank Loan Application — Personal, Home, SME ২০২৬</h1>
-
-<!-- ARTICLE-HERO:START -->
-<figure class="article-hero">
+    <div data-guide-reader class="article-sheet container" data-guide-workshop><div class="gw-hero"><div class="gw-hero-copy"><p class="article-kicker"><span class="article-chip">গাইড</span><span class="article-chip">২৮ মে, ২০২৬</span><span class="article-chip">৯ মিনিট পড়া</span></p><h1 id="gs-content">AI দিয়ে Bangladesh Bank Loan Application — Personal, Home, SME ২০২৬</h1><p class="gw-deck">Bangladesh bank loan AI দিয়ে — personal loan, home loan, SME loan, car loan। Eligibility check, document, EMI calc, common reject — বাংলা গাইড।</p><a class="gw-actions" href="#১-ভূমিকা-razia-র-home-loan-এ-ai-assist">ভূমিকা — Razia-র home loan-এ AI assist <span aria-hidden="true">↓</span></a></div><div class="gw-hero-visual"><figure class="article-hero">
   <img src="/assets/editorial/accounting.svg" width="1000" height="440" alt="ক্যালকুলেটর ও হিসাবের খাতার অঙ্কন" decoding="async" fetchpriority="high">
-</figure>
-<!-- ARTICLE-HERO:END -->
-<!-- ARTICLE-TOC:START -->
-<nav class="article-toc" aria-label="সূচিপত্র">
-  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
-  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
-  <ol class="toc-list">
-    <li class="toc-item"><a href="#১-ভূমিকা-razia-র-home-loan-এ-ai-assist">১. ভূমিকা — Razia-র home loan-এ AI assist</a></li>
-    <li class="toc-item"><a href="#২-bd-bank-loan-ecosystem-commercial-bank-nbfi-mfs-loan">২. BD Bank Loan Ecosystem — Commercial Bank, NBFI, MFS-loan</a></li>
-    <li class="toc-item"><a href="#৩-loan-type-comparison-personal-salary-home-car-business-education">৩. Loan Type Comparison — Personal/Salary/Home/Car/Business/Education</a></li>
-    <li class="toc-item"><a href="#৪-ai-eligibility-pre-check-income-nid-cib-report">৪. AI Eligibility Pre-check (Income, NID, CIB Report)</a></li>
-    <li class="toc-item"><a href="#৫-bank-selection-ai-interest-rate-comparison">৫. Bank Selection AI — Interest Rate Comparison</a></li>
-    <li class="toc-item"><a href="#৬-document-checklist-ai-generation-income-proof-it-return-bank-statement">৬. Document Checklist + AI Generation (Income Proof, IT Return, Bank Statement)</a></li>
-    <li class="toc-item"><a href="#৭-application-form-ai-fill-bb-specific-format">৭. Application Form AI Fill (BB-specific Format)</a></li>
-    <li class="toc-item"><a href="#৮-emi-calculation-early-settlement-planning">৮. EMI Calculation + Early Settlement Planning</a></li>
-    <li class="toc-item"><a href="#৯-cib-rating-improvement-strategy">৯. CIB Rating Improvement Strategy</a></li>
-    <li class="toc-item"><a href="#১০-common-rejection-top-10-ai-fix">১০. Common Rejection (Top 10) + AI Fix</a></li>
-    <li class="toc-item"><a href="#১১-সীমাবদ্ধতা-ai-bank-officer-relationship-matters">১১. সীমাবদ্ধতা — AI ≠ Bank Officer; Relationship Matters</a></li>
-    <li class="toc-item"><a href="#১২-উপসংহার-আপনার-আজকের-পদক্ষেপ">১২. উপসংহার — আপনার আজকের পদক্ষেপ</a></li>
-    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
-    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
-  </ol>
-</nav>
-<!-- ARTICLE-TOC:END -->
+</figure></div></div><div class="gw-layout"><nav class="gw-chapters" aria-label="এই গাইডে"><details open><summary>এই গাইডে</summary><ol>
+<li><a href="#১-ভূমিকা-razia-র-home-loan-এ-ai-assist">১. ভূমিকা — Razia-র home loan-এ AI assist</a></li>
+<li><a href="#২-bd-bank-loan-ecosystem-commercial-bank-nbfi-mfs-loan">২. BD Bank Loan Ecosystem — Commercial Bank, NBFI, MFS-loan</a></li>
+<li><a href="#৩-loan-type-comparison-personal-salary-home-car-business-education">৩. Loan Type Comparison — Personal/Salary/Home/Car/Business/Education</a></li>
+<li><a href="#৪-ai-eligibility-pre-check-income-nid-cib-report">৪. AI Eligibility Pre-check (Income, NID, CIB Report)</a></li>
+<li><a href="#৫-bank-selection-ai-interest-rate-comparison">৫. Bank Selection AI — Interest Rate Comparison</a></li>
+<li><a href="#৬-document-checklist-ai-generation-income-proof-it-return-bank-statement">৬. Document Checklist + AI Generation (Income Proof, IT Return, Bank Statement)</a></li>
+<li><a href="#৭-application-form-ai-fill-bb-specific-format">৭. Application Form AI Fill (BB-specific Format)</a></li>
+<li><a href="#৮-emi-calculation-early-settlement-planning">৮. EMI Calculation + Early Settlement Planning</a></li>
+<li><a href="#৯-cib-rating-improvement-strategy">৯. CIB Rating Improvement Strategy</a></li>
+<li><a href="#১০-common-rejection-top-10-ai-fix">১০. Common Rejection (Top 10) + AI Fix</a></li>
+<li><a href="#১১-সীমাবদ্ধতা-ai-bank-officer-relationship-matters">১১. সীমাবদ্ধতা — AI ≠ Bank Officer; Relationship Matters</a></li>
+<li><a href="#১২-উপসংহার-আপনার-আজকের-পদক্ষেপ">১২. উপসংহার — আপনার আজকের পদক্ষেপ</a></li>
+<li><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+</ol></details></nav><div class="gw-reading">
+
+
+
+
+
+
+
+
+
+
+
 
 <p class="lede">Razia Sultana, ৩৬, Mirpur-12-এ থাকেন। Aamra Networks-এ Senior Manager — মাসিক salary ১.৮ লাখ। বছরের পর বছর "নিজের বাড়ি" স্বপ্নটা accumulated savings + Aamra-র স্টক option-এ ভর করে দাঁড়িয়েছিল। ২০২৬-এর ফেব্রুয়ারিতে Mirpur DOHS-এ ৬৫ লাখ টাকার ফ্ল্যাট পছন্দ — ২৫ লাখ down payment, বাকি ৪০ লাখ home loan। প্রথম চেষ্টায় ৫টা bank-এ application — ২টা reject, ৩টা conditional (extra collateral দাবি)। দ্বিতীয়বার ChatGPT + Claude-এ application restructure, eligibility pre-check, bank shortlist — চার bank approve in single try, interest rate ০.৫% কম, disbursement ২১ দিনে (typical ৪৫-এর বদলে)। এই গাইডে — Bangladesh bank loan ecosystem, AI দিয়ে eligibility check, bank comparison, document prep, EMI plan, এবং common rejection-এর AI fix।</p>
 
@@ -120,7 +117,7 @@
 
 <p>BD-এর ২০২৬-এর market rate + tenure overview। AI দিয়ে — নিজের profile-এর সাথে কোনটা best match সেটা decide।</p>
 
-<table style="width:100%;border-collapse:collapse;margin:1rem 0;">
+<div class="gw-table-scroll" role="region" tabindex="0" aria-label="৩. Loan Type Comparison — Personal/Salary/Home/Car/Business/Education"><table style="width:100%;border-collapse:collapse;margin:1rem 0;" class="gw-table">
 <thead>
 <tr style="background:#f1f5f9;">
 <th style="padding:10px;border:1px solid #e5e7eb;">Loan Type</th>
@@ -130,14 +127,14 @@
 </tr>
 </thead>
 <tbody>
-<tr><td style="padding:10px;border:1px solid #e5e7eb;">Personal/Salary loan</td><td style="padding:10px;border:1px solid #e5e7eb;">9-15%</td><td style="padding:10px;border:1px solid #e5e7eb;">1-5 বছর</td><td style="padding:10px;border:1px solid #e5e7eb;">20 লাখ</td></tr>
-<tr><td style="padding:10px;border:1px solid #e5e7eb;">Home loan</td><td style="padding:10px;border:1px solid #e5e7eb;">8-12%</td><td style="padding:10px;border:1px solid #e5e7eb;">5-25 বছর</td><td style="padding:10px;border:1px solid #e5e7eb;">2 কোটি</td></tr>
-<tr><td style="padding:10px;border:1px solid #e5e7eb;">Car loan</td><td style="padding:10px;border:1px solid #e5e7eb;">9-13%</td><td style="padding:10px;border:1px solid #e5e7eb;">3-7 বছর</td><td style="padding:10px;border:1px solid #e5e7eb;">গাড়ির 70%</td></tr>
-<tr><td style="padding:10px;border:1px solid #e5e7eb;">SME/Business</td><td style="padding:10px;border:1px solid #e5e7eb;">9-15%</td><td style="padding:10px;border:1px solid #e5e7eb;">1-7 বছর</td><td style="padding:10px;border:1px solid #e5e7eb;">5 কোটি</td></tr>
-<tr><td style="padding:10px;border:1px solid #e5e7eb;">Education loan</td><td style="padding:10px;border:1px solid #e5e7eb;">8-11%</td><td style="padding:10px;border:1px solid #e5e7eb;">5-10 বছর</td><td style="padding:10px;border:1px solid #e5e7eb;">40 লাখ</td></tr>
-<tr><td style="padding:10px;border:1px solid #e5e7eb;">Credit card EMI</td><td style="padding:10px;border:1px solid #e5e7eb;">12-25%</td><td style="padding:10px;border:1px solid #e5e7eb;">3-36 মাস</td><td style="padding:10px;border:1px solid #e5e7eb;">Card limit</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Loan Type">Personal/Salary loan</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Interest (২০২৬)">9-15%</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Tenure">1-5 বছর</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Max Amount">20 লাখ</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Loan Type">Home loan</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Interest (২০২৬)">8-12%</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Tenure">5-25 বছর</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Max Amount">2 কোটি</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Loan Type">Car loan</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Interest (২০২৬)">9-13%</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Tenure">3-7 বছর</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Max Amount">গাড়ির 70%</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Loan Type">SME/Business</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Interest (২০২৬)">9-15%</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Tenure">1-7 বছর</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Max Amount">5 কোটি</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Loan Type">Education loan</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Interest (২০২৬)">8-11%</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Tenure">5-10 বছর</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Max Amount">40 লাখ</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Loan Type">Credit card EMI</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Interest (২০২৬)">12-25%</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Tenure">3-36 মাস</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Max Amount">Card limit</td></tr>
 </tbody>
-</table>
+</table></div>
 
 <h2 id="৪-ai-eligibility-pre-check-income-nid-cib-report">৪. AI Eligibility Pre-check (Income, NID, CIB Report)</h2>
 
@@ -172,7 +169,7 @@
 
 <p>Standard salaried home loan doc list — যেগুলো AI-তে format/draft করিয়ে নেওয়া যায়।</p>
 
-<ul>
+<ul class="gw-checklist">
     <li><b>NID + e-TIN copy</b> — both spouses (if joint applicant)।</li>
     <li><b>Last 6 month bank statement</b> — salary credit visible।</li>
     <li><b>Last 3 year IT return</b> — acknowledgment slip + computation।</li>
@@ -307,7 +304,7 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-    </div>
+    </div></div><p class="sr-only" data-guide-copy-status role="status" aria-live="polite"></p></div>
 
     <!-- TEMPLATED-FAQ:START -->
 <section class="article-faq" aria-labelledby="faq-heading">

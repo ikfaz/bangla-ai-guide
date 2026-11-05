@@ -43,6 +43,8 @@
 <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <link rel="stylesheet" href="/css/site-shell.css">
   <link rel="stylesheet" href="/css/guide-reader.css">
+<link rel="stylesheet" href="/css/guide-workshop.css">
+  <script src="/js/guide-workshop.js" defer></script>
   <!-- FAQ-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Claude-এর সেরা বিকল্প AI কোনটি?","acceptedAnswer":{"@type":"Answer","text":"ChatGPT (OpenAI), Google Gemini এবং Microsoft Copilot Claude-এর জনপ্রিয় বিকল্প। কন্টেন্ট রাইটিংয়ের জন্য ChatGPT, রিসার্চের জন্য Perplexity AI ভালো।"}},{"@type":"Question","name":"Claude ফ্রি ভার্সনে কতটুকু ব্যবহার করা যায়?","acceptedAnswer":{"@type":"Answer","text":"Claude ফ্রি ভার্সনে প্রতিদিন সীমিত সংখ্যক বার্তা পাঠানো যায়। Pro ($20/মাস) নিলে ৫ গুণ বেশি ব্যবহার লিমিট পাওয়া যায়।"}},{"@type":"Question","name":"Claude কি বাংলাদেশে কাজ করে?","acceptedAnswer":{"@type":"Answer","text":"হ্যাঁ, Claude বাংলাদেশ থেকে ব্যবহার করা যায়। claude.ai-তে Google বা Email দিয়ে অ্যাকাউন্ট তৈরি করুন।"}},{"@type":"Question","name":"কোন কাজে Claude ChatGPT-এর চেয়ে ভালো?","acceptedAnswer":{"@type":"Answer","text":"দীর্ঘ ডকুমেন্ট বিশ্লেষণ ও লং-ফর্ম রাইটিংয়ে Claude প্রায়ই এগিয়ে থাকে। এর ২০০K টোকেন কন্টেক্সট উইন্ডো বড় ডকুমেন্ট প্রসেসিংয়ের জন্য আদর্শ।"}}]}</script>
 <!-- FAQ-SCHEMA:END -->
@@ -64,51 +66,30 @@
 <!-- GUIDE-HEADER:END -->
 
     <!-- Article Content -->
-    <div data-guide-reader class="article-sheet container">
-        <!-- ARTICLE-META:START -->
-<p class="article-kicker"><span class="article-chip">এআই টুল</span><span class="article-chip">১১ মার্চ, ২০২৬</span><span class="article-chip">১০ মিনিট পড়া</span></p>
-<!-- ARTICLE-META:END -->
-<h1 id="gs-content">Claude এর বিকল্প: আপনার জন্য সেরা এআই কোনটি?</h1>
-
-<!-- ARTICLE-HERO:START -->
-<figure class="article-hero">
+    <div data-guide-reader class="article-sheet container" data-guide-workshop><div class="gw-hero"><div class="gw-hero-copy"><p class="article-kicker"><span class="article-chip">এআই টুল</span><span class="article-chip">১১ মার্চ, ২০২৬</span><span class="article-chip">১০ মিনিট পড়া</span></p><h1 id="gs-content">Claude এর বিকল্প: আপনার জন্য সেরা এআই কোনটি?</h1><p class="gw-deck">Claude AI এর সেরা বিকল্পগুলি খুঁজুন! ChatGPT, Gemini, Copilot সহ অন্যান্য এআই টুলের বৈশিষ্ট্য, সুবিধা, অসুবিধা এবং বাংলা ভাষার সমর্থনের বিস্তারিত তুলনা।</p><a class="gw-actions" href="#ভমক">ভূমিকা <span aria-hidden="true">↓</span></a></div><div class="gw-hero-visual"><figure class="article-hero">
   <img src="/assets/editorial/comparison.svg" width="1000" height="440" alt="পাশাপাশি দুটি প্যানেলে বৈশিষ্ট্য মেলানোর অঙ্কন" decoding="async" fetchpriority="high">
-</figure>
-<!-- ARTICLE-HERO:END -->
-<!-- ARTICLE-TOC:START -->
-<nav class="article-toc" aria-label="সূচিপত্র">
-  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
-  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
-  <ol class="toc-list">
-    <li class="toc-item"><a href="#বিষয়সূচি">📋 বিষয়সূচি</a></li>
-    <li class="toc-item"><a href="#ভমক">ভূমিকা</a></li>
-    <li class="toc-item"><a href="#claude-এর-পরধন-বশষটযসমহ">Claude এর প্রধান বৈশিষ্ট্যসমূহ</a></li>
-    <li class="toc-item"><a href="#claude-এর-সর-বকলপসমহ">Claude এর সেরা বিকল্পসমূহ</a></li>
-    <li class="toc-item"><a href="#বল-ভষর-জনয-এআই-টলর-গরতব">বাংলা ভাষার জন্য এআই টুলের গুরুত্ব</a></li>
-    <li class="toc-item"><a href="#আপনর-জনয-সঠক-এআই-টল-নরবচন">আপনার জন্য সঠিক এআই টুল নির্বাচন</a></li>
-    <li class="toc-item"><a href="#উপসহর">উপসংহার</a></li>
-    <li class="toc-item"><a href="#references">References</a></li>
-  </ol>
-</nav>
-<!-- ARTICLE-TOC:END -->
+</figure></div></div><div class="gw-layout"><nav class="gw-chapters" aria-label="এই গাইডে"><details open><summary>এই গাইডে</summary><ol>
+<li><a href="#ভমক">ভূমিকা</a></li>
+<li><a href="#claude-এর-পরধন-বশষটযসমহ">Claude এর প্রধান বৈশিষ্ট্যসমূহ</a></li>
+<li><a href="#claude-এর-সর-বকলপসমহ">Claude এর সেরা বিকল্পসমূহ</a></li>
+<li><a href="#বল-ভষর-জনয-এআই-টলর-গরতব">বাংলা ভাষার জন্য এআই টুলের গুরুত্ব</a></li>
+<li><a href="#আপনর-জনয-সঠক-এআই-টল-নরবচন">আপনার জন্য সঠিক এআই টুল নির্বাচন</a></li>
+<li><a href="#উপসহর">উপসংহার</a></li>
+<li><a href="#references">References</a></li>
+</ol></details></nav><div class="gw-reading">
 
-        <nav class="article-toc" aria-label="বিষয়সূচি">
-  <h2 class="toc-title" id="বিষয়সূচি">📋 বিষয়সূচি</h2>
-  <ol class="toc-list">
-    <li class="toc-item"><a href="#ভমক">ভূমিকা</a></li>
-    <li class="toc-item"><a href="#claude-এর-পরধন-বশষটযসমহ">Claude এর প্রধান বৈশিষ্ট্যসমূহ</a></li>
-    <li class="toc-item"><a href="#claude-এর-সর-বকলপসমহ">Claude এর সেরা বিকল্পসমূহ</a></li>
-      <li class="toc-item toc-sub"><a href="#১-chatgpt-openai">১. ChatGPT (OpenAI)</a></li>
-      <li class="toc-item toc-sub"><a href="#২-google-gemini-google">২. Google Gemini (Google)</a></li>
-      <li class="toc-item toc-sub"><a href="#৩-microsoft-copilot-microsoft">৩. Microsoft Copilot (Microsoft)</a></li>
-      <li class="toc-item toc-sub"><a href="#৪-perplexity-ai">৪. Perplexity AI</a></li>
-      <li class="toc-item toc-sub"><a href="#৫-huggingchat">৫. HuggingChat</a></li>
-      <li class="toc-item toc-sub"><a href="#৬-অনযনয-উললখযগয-বকলপ">৬. অন্যান্য উল্লেখযোগ্য বিকল্প</a></li>
-    <li class="toc-item"><a href="#বল-ভষর-জনয-এআই-টলর-গরতব">বাংলা ভাষার জন্য এআই টুলের গুরুত্ব</a></li>
-    <li class="toc-item"><a href="#আপনর-জনয-সঠক-এআই-টল-নরবচন">আপনার জন্য সঠিক এআই টুল নির্বাচন</a></li>
-    <li class="toc-item"><a href="#উপসহর">উপসংহার</a></li>
-  </ol>
-</nav>
+
+
+
+
+
+
+
+
+
+
+
+
 <h2 id="ভমক">ভূমিকা</h2>
         <p>কৃত্রিম বুদ্ধিমত্তা (AI) আমাদের দৈনন্দিন জীবন এবং কাজের পদ্ধতিকে দ্রুত পরিবর্তন করছে। এই পরিবর্তনের ধারায়, লার্জ ল্যাঙ্গুয়েজ মডেল (LLM) গুলো বিশেষ ভূমিকা পালন করছে, যার মধ্যে Claude AI একটি উল্লেখযোগ্য নাম। Anthropic দ্বারা তৈরি Claude, তার উন্নত কথোপকথন ক্ষমতা, দীর্ঘ টেক্সট প্রক্রিয়াকরণ এবং নৈতিকতার প্রতি অঙ্গীকারের জন্য পরিচিত। এটি বিভিন্ন সৃজনশীল এবং বিশ্লেষণমূলক কাজে সহায়তা করে থাকে।</p>
         <p>তবে, অনেক ব্যবহারকারী বিভিন্ন কারণে Claude এর বিকল্প খুঁজছেন। এর কারণ হতে পারে খরচ, নির্দিষ্ট ফিচারের অভাব, ভাষার সীমাবদ্ধতা, অথবা সহজলভ্যতা। বিশেষ করে বাংলাদেশের মতো উন্নয়নশীল দেশগুলোতে, যেখানে ইন্টারনেট অ্যাক্সেস এবং ডিজিটাল সাক্ষরতা বাড়ছে, সেখানে স্থানীয় প্রয়োজন অনুযায়ী এআই টুলের চাহিদা বাড়ছে। বাংলা ভাষার সমর্থন এবং স্থানীয় প্রেক্ষাপটে উপযোগী ফিচারগুলো এখন এআই ব্যবহারকারীদের কাছে অত্যন্ত গুরুত্বপূর্ণ। এই প্রবন্ধে আমরা Claude এর সেরা কিছু বিকল্প নিয়ে আলোচনা করব, যা আপনার প্রয়োজন মেটাতে পারে এবং বাংলা ভাষাভাষী ব্যবহারকারীদের জন্য বিশেষভাবে উপযোগী হতে পারে।</p>
@@ -244,7 +225,7 @@
   </div>
 </section>
 <!-- AUTHOR-BLOCK:END -->
-    </div>
+    </div></div><p class="sr-only" data-guide-copy-status role="status" aria-live="polite"></p></div>
 
 
         <h2 id="faq">সচরাচর জিজ্ঞাসা (FAQ)</h2>

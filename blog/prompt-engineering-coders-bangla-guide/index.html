@@ -34,6 +34,8 @@
   <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <link rel="stylesheet" href="/css/site-shell.css">
   <link rel="stylesheet" href="/css/guide-reader.css">
+  <link rel="stylesheet" href="/css/guide-workshop.css">
+  <script src="/js/guide-workshop.js" defer></script>
 </head>
 <body data-author-mode="editorial">
     <!-- GUIDE-HEADER:START -->
@@ -50,41 +52,36 @@
 </header>
 <!-- GUIDE-HEADER:END -->
 
-    <div data-guide-reader class="article-sheet container">
-        <!-- ARTICLE-META:START -->
-<p class="article-kicker"><span class="article-chip">কন্টেন্ট</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৩ মিনিট পড়া</span></p>
-<!-- ARTICLE-META:END -->
-<h1 id="gs-content">Prompt Engineering for Coders — Developer-দের জন্য বাংলা Master Guide</h1>
-
-<!-- ARTICLE-HERO:START -->
-<figure class="article-hero">
+    <div data-guide-reader class="article-sheet container" data-guide-workshop><div class="gw-hero"><div class="gw-hero-copy"><p class="article-kicker"><span class="article-chip">কন্টেন্ট</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৩ মিনিট পড়া</span></p><h1 id="gs-content">Prompt Engineering for Coders — Developer-দের জন্য বাংলা Master Guide</h1><p class="gw-deck">Programmer-দের জন্য advanced prompt engineering — কীভাবে ChatGPT, Claude, Cursor থেকে best code generate করবেন? Templates, patterns, anti-patterns।</p><a class="gw-actions" href="#মৌলিক-structure-coding-prompt">মৌলিক structure — coding prompt <span aria-hidden="true">↓</span></a></div><div class="gw-hero-visual"><figure class="article-hero">
   <img src="/assets/editorial/coding.svg" width="1000" height="440" alt="কোড এডিটরের পর্দা ও কার্সরের অঙ্কন" decoding="async" fetchpriority="high">
-</figure>
-<!-- ARTICLE-HERO:END -->
-<!-- ARTICLE-TOC:START -->
-<nav class="article-toc" aria-label="সূচিপত্র">
-  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
-  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
-  <ol class="toc-list">
-    <li class="toc-item"><a href="#ভূমিকা">ভূমিকা</a></li>
-    <li class="toc-item"><a href="#মৌলিক-structure-coding-prompt">মৌলিক structure — coding prompt</a></li>
-    <li class="toc-item"><a href="#master-prompt-template">Master prompt template</a></li>
-    <li class="toc-item"><a href="#pattern-1-function-generation">Pattern 1: Function generation</a></li>
-    <li class="toc-item"><a href="#pattern-2-bug-debugging">Pattern 2: Bug debugging</a></li>
-    <li class="toc-item"><a href="#pattern-3-code-review">Pattern 3: Code review</a></li>
-    <li class="toc-item"><a href="#pattern-4-refactoring">Pattern 4: Refactoring</a></li>
-    <li class="toc-item"><a href="#pattern-5-architecture-decision">Pattern 5: Architecture decision</a></li>
-    <li class="toc-item"><a href="#pattern-6-test-generation">Pattern 6: Test generation</a></li>
-    <li class="toc-item"><a href="#pattern-7-documentation">Pattern 7: Documentation</a></li>
-    <li class="toc-item"><a href="#anti-patterns-avoid">Anti-patterns (avoid)</a></li>
-    <li class="toc-item"><a href="#cursor-claude-code-specific">Cursor/Claude Code specific</a></li>
-    <li class="toc-item"><a href="#bd-specific-developer-prompts">BD-specific developer prompts</a></li>
-    <li class="toc-item"><a href="#উপসংহার">উপসংহার</a></li>
-    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
-    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
-  </ol>
-</nav>
-<!-- ARTICLE-TOC:END -->
+</figure></div></div><div class="gw-layout"><nav class="gw-chapters" aria-label="এই গাইডে"><details open><summary>এই গাইডে</summary><ol>
+<li><a href="#ভূমিকা">ভূমিকা</a></li>
+<li><a href="#মৌলিক-structure-coding-prompt">মৌলিক structure — coding prompt</a></li>
+<li><a href="#master-prompt-template">Master prompt template</a></li>
+<li><a href="#pattern-1-function-generation">Pattern 1: Function generation</a></li>
+<li><a href="#pattern-2-bug-debugging">Pattern 2: Bug debugging</a></li>
+<li><a href="#pattern-3-code-review">Pattern 3: Code review</a></li>
+<li><a href="#pattern-4-refactoring">Pattern 4: Refactoring</a></li>
+<li><a href="#pattern-5-architecture-decision">Pattern 5: Architecture decision</a></li>
+<li><a href="#pattern-6-test-generation">Pattern 6: Test generation</a></li>
+<li><a href="#pattern-7-documentation">Pattern 7: Documentation</a></li>
+<li><a href="#anti-patterns-avoid">Anti-patterns (avoid)</a></li>
+<li><a href="#cursor-claude-code-specific">Cursor/Claude Code specific</a></li>
+<li><a href="#bd-specific-developer-prompts">BD-specific developer prompts</a></li>
+<li><a href="#উপসংহার">উপসংহার</a></li>
+<li><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+</ol></details></nav><div class="gw-reading">
+
+
+
+
+
+
+
+
+
+
+
 
         <h2 id="ভূমিকা">ভূমিকা</h2>
         <p>AI coding tools (Cursor, Claude Code, ChatGPT) productivity ১০x করছে — কিন্তু প্রভাব আপনার prompt quality-এর উপর। এই গাইডে developer-দের জন্য specialized prompt techniques।</p>
@@ -221,7 +218,7 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-    </div>
+    </div></div><p class="sr-only" data-guide-copy-status role="status" aria-live="polite"></p></div>
 
     <!-- RELATED-POSTS:START -->
 <section class="related-posts" aria-label="সম্পর্কিত গাইড">

@@ -538,6 +538,8 @@
   <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <link rel="stylesheet" href="/css/site-shell.css">
   <link rel="stylesheet" href="/css/interiors.css">
+  <link rel="stylesheet" href="/css/guide-workshop.css">
+  <script src="/js/guide-workshop.js" defer></script>
 </head>
 <body data-interior="standalone">
     <!-- GUIDE-HEADER:START -->
@@ -559,8 +561,20 @@
             <a href="/">হোম</a> / <a href="/bangla-ai-guide/">বাংলা AI গাইড</a> / DeepSeek Bangladesh
         </div>
 
-        <article>
-            <!-- INTERIOR:START --><div class="inside-intro inside-illustrated"><div class="inside-copy"><p class="inside-kicker"><span aria-hidden="true"></span>বাংলা AI গাইড  /  ব্যবহারিক নির্দেশিকা</p><!-- INTERIOR:COPY --><h1 id="gs-content">DeepSeek AI কী ও কীভাবে ব্যবহার করবেন</h1><!-- INTERIOR:/COPY --></div><figure class="inside-plate"><img src="/assets/editorial/model.svg" alt="সংযুক্ত নোড ও একটি এআই মডেলের চিপের অঙ্কন" width="1000" height="440" decoding="async"></figure></div><!-- INTERIOR:END -->
+        <article data-guide-reader data-guide-workshop><div class="gw-hero"><div class="gw-hero-copy"><h1 id="gs-content">DeepSeek AI কী ও কীভাবে ব্যবহার করবেন</h1><p class="gw-deck">DeepSeek দিয়ে ফ্রিতে চ্যাট ও কোডিং, ফিচার, দাম ও বাংলাদেশ থেকে ব্যবহারের উপায় — সম্পূর্ণ বাংলায়।</p><a class="gw-actions" href="#deepseek-বাংলাদেশ-থেকে-কীভাবে-ব্যবহার-করবেন-৫-মিনিটে">DeepSeek বাংলাদেশ থেকে কীভাবে ব্যবহার করবেন - ৫… <span aria-hidden="true">↓</span></a></div><div class="gw-hero-visual"><figure class="inside-plate article-hero"><img src="/assets/editorial/model.svg" alt="সংযুক্ত নোড ও একটি এআই মডেলের চিপের অঙ্কন" width="1000" height="440" decoding="async"></figure></div></div><div class="gw-layout"><nav class="gw-chapters" aria-label="এই গাইডে"><details open><summary>এই গাইডে</summary><ol>
+<li><a href="#deepseek-কী-এবং-কেন-এটি-গুরুত্বপূর্ণ">DeepSeek কী এবং কেন এটি গুরুত্বপূর্ণ?</a></li>
+<li><a href="#deepseek-vs-chatgpt-কোনটা-ভালো-বাংলাদেশিদের-জন্য">DeepSeek vs ChatGPT - কোনটা ভালো বাংলাদেশিদের জন্য?</a></li>
+<li><a href="#deepseek-বাংলাদেশ-থেকে-কীভাবে-ব্যবহার-করবেন-৫-মিনিটে">DeepSeek বাংলাদেশ থেকে কীভাবে ব্যবহার করবেন - ৫ মিনিটে</a></li>
+<li><a href="#deepseek-দিয়ে-কী-কী-করতে-পারবেন">DeepSeek দিয়ে কী কী করতে পারবেন?</a></li>
+<li><a href="#deepseek-এর-সীমাবদ্ধতা-জানা-দরকার">DeepSeek এর সীমাবদ্ধতা - জানা দরকার</a></li>
+<li><a href="#বাংলাদেশি-ডেভেলপারদের-জন্য-deepseek-কেন-সেরা">বাংলাদেশি ডেভেলপারদের জন্য DeepSeek কেন সেরা</a></li>
+<li><a href="#deepseek-api-নিজের-অ্যাপে-ব্যবহার-করুন">DeepSeek API - নিজের অ্যাপে ব্যবহার করুন</a></li>
+<li><a href="#deepseek-নাকি-claude-নাকি-chatgpt-কখন-কোনটা">DeepSeek নাকি Claude নাকি ChatGPT - কখন কোনটা?</a></li>
+<li><a href="#deepseek-দিয়ে-ইনকাম-করার-উপায়">DeepSeek দিয়ে ইনকাম করার উপায়</a></li>
+<li><a href="#deepseek-bangladesh-সচরাচর-প্রশ্ন-faq">DeepSeek Bangladesh - সচরাচর প্রশ্ন (FAQ)</a></li>
+<li><a href="#শেষ-কথা-deepseek-ব্যবহার-শুরু-করুন-আজই">শেষ কথা - DeepSeek ব্যবহার শুরু করুন আজই</a></li>
+</ol></details></nav><div class="gw-reading">
+            <p class="inside-kicker"><span aria-hidden="true"></span>বাংলা AI গাইড  /  ব্যবহারিক নির্দেশিকা</p>
 
             <div class="meta">
                 <span>📅 প্রকাশিত: মার্চ ৭, ২০২৬</span>
@@ -580,7 +594,7 @@
 
             <p>বাংলাদেশ থেকে DeepSeek ব্যবহার করা যায় কোনো VPN ছাড়াই। কোডিং, ম্যাথ সমাধান, লজিক্যাল রিজনিং - যেকোনো জটিল কাজে এটি অসাধারণ।</p>
 
-            <h2>DeepSeek কী এবং কেন এটি গুরুত্বপূর্ণ?</h2>
+            <h2 id="deepseek-কী-এবং-কেন-এটি-গুরুত্বপূর্ণ">DeepSeek কী এবং কেন এটি গুরুত্বপূর্ণ?</h2>
 
             <p>DeepSeek হলো একটি ওপেন-সোর্স AI মডেল যা ২০২৫ সালের শুরুতে চালু হয়। DeepSeek R1 (Reasoning Model) এবং DeepSeek V3 (General Purpose) - দুটি প্রধান ভার্সন রয়েছে।</p>
 
@@ -597,9 +611,9 @@
                 </ul>
             </div>
 
-            <h2>DeepSeek vs ChatGPT - কোনটা ভালো বাংলাদেশিদের জন্য?</h2>
+            <h2 id="deepseek-vs-chatgpt-কোনটা-ভালো-বাংলাদেশিদের-জন্য">DeepSeek vs ChatGPT - কোনটা ভালো বাংলাদেশিদের জন্য?</h2>
 
-            <table class="comparison-table">
+            <div class="gw-table-scroll" role="region" tabindex="0" aria-label="DeepSeek vs ChatGPT - কোনটা ভালো বাংলাদেশিদের জন্য?"><table class="comparison-table gw-table">
                 <thead>
                     <tr>
                         <th>বৈশিষ্ট্য</th>
@@ -609,46 +623,46 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><strong>মূল্য</strong></td>
-                        <td>সম্পূর্ণ ফ্রি</td>
-                        <td>৳২,৪৪০/মাস ($20)</td>
+                        <td data-column="বৈশিষ্ট্য"><strong>মূল্য</strong></td>
+                        <td data-column="DeepSeek R1">সম্পূর্ণ ফ্রি</td>
+                        <td data-column="ChatGPT-4">৳২,৪৪০/মাস ($20)</td>
                     </tr>
                     <tr>
-                        <td><strong>কোডিং</strong></td>
-                        <td>⭐⭐⭐⭐⭐ (চমৎকার)</td>
-                        <td>⭐⭐⭐⭐ (ভালো)</td>
+                        <td data-column="বৈশিষ্ট্য"><strong>কোডিং</strong></td>
+                        <td data-column="DeepSeek R1">⭐⭐⭐⭐⭐ (চমৎকার)</td>
+                        <td data-column="ChatGPT-4">⭐⭐⭐⭐ (ভালো)</td>
                     </tr>
                     <tr>
-                        <td><strong>ম্যাথ</strong></td>
-                        <td>⭐⭐⭐⭐⭐ (অসাধারণ)</td>
-                        <td>⭐⭐⭐⭐ (ভালো)</td>
+                        <td data-column="বৈশিষ্ট্য"><strong>ম্যাথ</strong></td>
+                        <td data-column="DeepSeek R1">⭐⭐⭐⭐⭐ (অসাধারণ)</td>
+                        <td data-column="ChatGPT-4">⭐⭐⭐⭐ (ভালো)</td>
                     </tr>
                     <tr>
-                        <td><strong>বাংলা ভাষা</strong></td>
-                        <td>⭐⭐⭐ (মাঝারি)</td>
-                        <td>⭐⭐⭐⭐⭐ (চমৎকার)</td>
+                        <td data-column="বৈশিষ্ট্য"><strong>বাংলা ভাষা</strong></td>
+                        <td data-column="DeepSeek R1">⭐⭐⭐ (মাঝারি)</td>
+                        <td data-column="ChatGPT-4">⭐⭐⭐⭐⭐ (চমৎকার)</td>
                     </tr>
                     <tr>
-                        <td><strong>রিজনিং</strong></td>
-                        <td>⭐⭐⭐⭐⭐ (সেরা)</td>
-                        <td>⭐⭐⭐⭐ (ভালো)</td>
+                        <td data-column="বৈশিষ্ট্য"><strong>রিজনিং</strong></td>
+                        <td data-column="DeepSeek R1">⭐⭐⭐⭐⭐ (সেরা)</td>
+                        <td data-column="ChatGPT-4">⭐⭐⭐⭐ (ভালো)</td>
                     </tr>
                     <tr>
-                        <td><strong>গতি</strong></td>
-                        <td>দ্রুত</td>
-                        <td>খুব দ্রুত</td>
+                        <td data-column="বৈশিষ্ট্য"><strong>গতি</strong></td>
+                        <td data-column="DeepSeek R1">দ্রুত</td>
+                        <td data-column="ChatGPT-4">খুব দ্রুত</td>
                     </tr>
                     <tr>
-                        <td><strong>বাংলাদেশ থেকে</strong></td>
-                        <td>✅ VPN ছাড়া কাজ করে</td>
-                        <td>✅ VPN ছাড়া কাজ করে</td>
+                        <td data-column="বৈশিষ্ট্য"><strong>বাংলাদেশ থেকে</strong></td>
+                        <td data-column="DeepSeek R1">✅ VPN ছাড়া কাজ করে</td>
+                        <td data-column="ChatGPT-4">✅ VPN ছাড়া কাজ করে</td>
                     </tr>
                 </tbody>
-            </table>
+            </table></div>
 
             <p><strong>সিদ্ধান্ত:</strong> বাংলায় কন্টেন্ট লেখার জন্য ChatGPT ভালো। কিন্তু কোডিং, ম্যাথ, লজিক সমস্যা সমাধানের জন্য DeepSeek অনেক এগিয়ে - আর তা-ও ফ্রিতে!</p>
 
-            <h2>DeepSeek বাংলাদেশ থেকে কীভাবে ব্যবহার করবেন - ৫ মিনিটে</h2>
+            <h2 id="deepseek-বাংলাদেশ-থেকে-কীভাবে-ব্যবহার-করবেন-৫-মিনিটে">DeepSeek বাংলাদেশ থেকে কীভাবে ব্যবহার করবেন - ৫ মিনিটে</h2>
 
             <div class="step-card">
                 <h4>ধাপ ১: ওয়েবসাইটে যান</h4>
@@ -679,7 +693,7 @@
                 DeepSeek ফ্রিতে শুরু করুন →
             </a>
 
-            <h2>DeepSeek দিয়ে কী কী করতে পারবেন?</h2>
+            <h2 id="deepseek-দিয়ে-কী-কী-করতে-পারবেন">DeepSeek দিয়ে কী কী করতে পারবেন?</h2>
 
             <h3>১. কোডিং - সব ল্যাঙ্গুয়েজে</h3>
             <p>Python, JavaScript, Java, C++, Go - যেকোনো ভাষায় কোড লিখতে পারে। Bug fix, code review, optimization সবকিছু।</p>
@@ -697,7 +711,7 @@
             <h3>৫. ডেভেলপারদের জন্য API</h3>
             <p>DeepSeek এর API ব্যবহার করে নিজের অ্যাপ বানাতে পারবেন। খুবই সস্তা - GPT-4 এর তুলনায় ৯৫% কম খরচ।</p>
 
-            <h2>DeepSeek এর সীমাবদ্ধতা - জানা দরকার</h2>
+            <h2 id="deepseek-এর-সীমাবদ্ধতা-জানা-দরকার">DeepSeek এর সীমাবদ্ধতা - জানা দরকার</h2>
 
             <ul>
                 <li><strong>বাংলা ভাষায় দুর্বল:</strong> ChatGPT এর মতো ভালো বাংলা লেখে না। ইংরেজিতে ব্যবহার করুন।</li>
@@ -706,7 +720,7 @@
                 <li><strong>রিয়েল-টাইম ইন্টারনেট নেই:</strong> সাম্প্রতিক খবর জানে না (২০২৪ পর্যন্ত ডেটা)।</li>
             </ul>
 
-            <h2>বাংলাদেশি ডেভেলপারদের জন্য DeepSeek কেন সেরা</h2>
+            <h2 id="বাংলাদেশি-ডেভেলপারদের-জন্য-deepseek-কেন-সেরা">বাংলাদেশি ডেভেলপারদের জন্য DeepSeek কেন সেরা</h2>
 
             <p>যদি আপনি ফ্রিল্যান্স ডেভেলপার হন, DeepSeek আপনার কাজের গতি ৩ গুণ বাড়াতে পারে:</p>
 
@@ -720,11 +734,11 @@
 
             <p>Upwork/Fiverr এ যারা কাজ করেন, DeepSeek দিয়ে দ্রুত ডেলিভারি দিতে পারবেন। ক্লায়েন্ট খুশি, আপনিও খুশি।</p>
 
-            <h2>DeepSeek API - নিজের অ্যাপে ব্যবহার করুন</h2>
+            <h2 id="deepseek-api-নিজের-অ্যাপে-ব্যবহার-করুন">DeepSeek API - নিজের অ্যাপে ব্যবহার করুন</h2>
 
             <p>DeepSeek এর API অত্যন্ত সস্তা। আপনার ওয়েবসাইট বা অ্যাপে AI যোগ করতে পারবেন।</p>
 
-            <table class="comparison-table">
+            <div class="gw-table-scroll" role="region" tabindex="0" aria-label="DeepSeek API - নিজের অ্যাপে ব্যবহার করুন"><table class="comparison-table gw-table">
                 <thead>
                     <tr>
                         <th>API Provider</th>
@@ -734,26 +748,26 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>DeepSeek V3</td>
-                        <td>$0.27</td>
-                        <td>৳৩৩</td>
+                        <td data-column="API Provider">DeepSeek V3</td>
+                        <td data-column="মূল্য (1M tokens)">$0.27</td>
+                        <td data-column="BDT মূল্য">৳৩৩</td>
                     </tr>
                     <tr>
-                        <td>GPT-4 Turbo</td>
-                        <td>$10.00</td>
-                        <td>৳১,২২০</td>
+                        <td data-column="API Provider">GPT-4 Turbo</td>
+                        <td data-column="মূল্য (1M tokens)">$10.00</td>
+                        <td data-column="BDT মূল্য">৳১,২২০</td>
                     </tr>
                     <tr>
-                        <td>Claude Sonnet</td>
-                        <td>$3.00</td>
-                        <td>৳৩৬৬</td>
+                        <td data-column="API Provider">Claude Sonnet</td>
+                        <td data-column="মূল্য (1M tokens)">$3.00</td>
+                        <td data-column="BDT মূল্য">৳৩৬৬</td>
                     </tr>
                 </tbody>
-            </table>
+            </table></div>
 
             <p>দেখুন, DeepSeek কত সস্তা! স্টার্টআপ বা ছোট প্রজেক্টের জন্য আদর্শ।</p>
 
-            <h2>DeepSeek নাকি Claude নাকি ChatGPT - কখন কোনটা?</h2>
+            <h2 id="deepseek-নাকি-claude-নাকি-chatgpt-কখন-কোনটা">DeepSeek নাকি Claude নাকি ChatGPT - কখন কোনটা?</h2>
 
             <div class="highlight-box">
                 <h3>📌 ব্যবহারের নির্দেশিকা</h3>
@@ -768,7 +782,7 @@
 
             <p><strong>প্রো টিপ:</strong> তিনটিই ব্যবহার করুন! একই প্রম্পট তিনটিতে দিয়ে দেখুন কোনটা ভালো জবাব দেয়। এভাবে সেরা ফলাফল পাবেন।</p>
 
-            <h2>DeepSeek দিয়ে ইনকাম করার উপায়</h2>
+            <h2 id="deepseek-দিয়ে-ইনকাম-করার-উপায়">DeepSeek দিয়ে ইনকাম করার উপায়</h2>
 
             <h3>১. ফ্রিল্যান্স কোডিং</h3>
             <p>Fiverr/Upwork এ Python, JavaScript সার্ভিস দিন। DeepSeek কোড লিখে দেবে, আপনি রিভিউ করে ডেলিভারি দেবেন।</p>
@@ -783,7 +797,7 @@
             <p>ব্যবসায়ীদের ডেটা দিন DeepSeek কে - সে অ্যানালাইসিস করে রিপোর্ট দেবে। আপনি সেটা ফরম্যাট করে বিক্রি করুন।</p>
 
             <div class="faq-section">
-                <h2>DeepSeek Bangladesh - সচরাচর প্রশ্ন (FAQ)</h2>
+                <h2 id="deepseek-bangladesh-সচরাচর-প্রশ্ন-faq">DeepSeek Bangladesh - সচরাচর প্রশ্ন (FAQ)</h2>
 
                 <div class="faq-item">
                     <div class="faq-question">১. DeepSeek কি সত্যিই ফ্রি? কোনো hidden cost নেই?</div>
@@ -821,7 +835,7 @@
                 </div>
             </div>
 
-            <h2>শেষ কথা - DeepSeek ব্যবহার শুরু করুন আজই</h2>
+            <h2 id="শেষ-কথা-deepseek-ব্যবহার-শুরু-করুন-আজই">শেষ কথা - DeepSeek ব্যবহার শুরু করুন আজই</h2>
 
             <p>DeepSeek হলো সেই AI টুল যা বাংলাদেশি ডেভেলপার, ছাত্র-ছাত্রী, ফ্রিল্যান্সারদের জন্য গেম চেঞ্জার হতে পারে। সম্পূর্ণ ফ্রি, অসাধারণ পারফরম্যান্স, আর VPN এর ঝামেলা নেই।</p>
 
@@ -839,7 +853,7 @@
                     <label class="sr-only" for="deepseekNewsletterEmail">ইমেইল</label>
                     <input id="deepseekNewsletterEmail" type="email" name="EMAIL" placeholder="আপনার ইমেইল লিখুন" required>
                     <div class="mailchimp-trap" aria-hidden="true">
-                        <input type="text" name="b_d389c0647878724daecc58fc6_aaca6896d2" tabindex="-1" value="">
+                        <input type="text" name="b_d389c0647878724daecc58fc6_aaca6896d2" tabindex="-1" value>
                     </div>
                     <button type="submit" class="cta-button">Get AI Tools Weekly</button>
                 </form>
@@ -851,7 +865,7 @@
             <p style="margin-top: 3rem; padding-top: 2rem; border-top: 2px solid #e5e7eb;">
                 <strong>আরও পড়ুন:</strong> <a href="/bangla-ai-guide/">বাংলা AI গাইড</a> - বাংলাদেশের জন্য সম্পূর্ণ AI টুলস রিভিউ, BDT মূল্য, ব্যবহারের নিয়ম সহ কিউরেটেড টুলের তথ্য।
             </p>
-        </article>
+        </div></div><p class="sr-only" data-guide-copy-status role="status" aria-live="polite"></p></article>
     </div>
 
     <!-- PILLAR-LINKS:START -->

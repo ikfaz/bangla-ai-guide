@@ -34,6 +34,8 @@
 <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <link rel="stylesheet" href="/css/site-shell.css">
   <link rel="stylesheet" href="/css/guide-reader.css">
+<link rel="stylesheet" href="/css/guide-workshop.css">
+  <script src="/js/guide-workshop.js" defer></script>
   <!-- FAQ-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Brac Bank Mastercard দিয়ে Claude Pro Subscription কীভাবে install বা setup করব?","acceptedAnswer":{"@type":"Answer","text":"সব paperwork ready থাকলে Claude subscription কেনা সরাসরি ১৫-২০ মিনিটের কাজ। তাসনিম-এর exact workflow: Step 1 — Brac Bank app login: Astha (Brac Bank-এর official app) install করুন। Login PIN + biometric set করুন। Step 2 — Card USD activation check: \"Cards\" section-এ গিয়ে আপনার Mastercard select করুন। \"International Transaction\" toggle ON থাকতে হবে। OFF থাকলে enable করুন। Step 3 — USD limit verify: Same screen-এ \"Available USD endorsement\" দেখুন। যদি $120-এর কম থাকে তাহলে অপেক্ষা করুন বা endorsement বাড়ান। Step 4 — Claude.ai signup: claude.ai-এ যান, Gmail বা separate email দিয়ে account খুলুন। Email verification complete করুন। Step 5 — Upgrade to Pro: Settings → Billing → Upgrade to Pro।…"}},{"@type":"Question","name":"Brac Bank Mastercard দিয়ে Claude Pro Subscription-এর সেরা alternative কোনগুলো?","acceptedAnswer":{"@type":"Answer","text":"Brac Bank account না থাকলেও সমস্যা নেই। অন্যান্য BD bank-এও similar Mastercard option আছে। তবে প্রতিটি bank-এর specific quirk আছে। City Bank American Express + Mastercard: Amex Platinum Bangladesh-এ সবচেয়ে premium, কিন্তু Claude/Anthropic অনেক সময় Amex accept করে না — Mastercard variant নিন। EBL Aqua Mastercard: Eastern Bank Limited-এর primary international card। USD endorsement easy, Claude-এ smoothly work করে। DBBL Nexus Mastercard: Dutch-Bangla Bank-এর entry-level option। $500-$1,000 limit। Pro-এর জন্য enough, Max-এর জন্য কঠিন। Standard Chartered Visa Platinum: Mastercard না হলেও Claude Visa accept করে। SC-এর premium customer-এর জন্য option। HSBC Premier Mastercard: Bangladesh-এ…"}},{"@type":"Question","name":"Brac Bank Mastercard দিয়ে Claude Pro Subscription-এর কী কী সীমাবদ্ধতা আছে?","acceptedAnswer":{"@type":"Answer","text":"Brac Bank Mastercard-এর কিছু practical limitation যা জেনে রাখা ভালো: Forex conversion charge: 2-2.5% per transaction। $20 charge-এ ~$0.50 extra। USD endorsement renewable: প্রতি বছর January-এ reset, monitor করতে হবে। 3D Secure (OTP) mandatory: Bangladesh Bank-এর rule, bypass সম্ভব না। Astha app dependency: International transaction toggle, OTP — সবকিছু app-এ। App update পরিবর্তে banking issue হতে পারে। Brac Bank Contact Center: 16221 (Bangladesh থেকে) বা +880-2-988-3779 (NRB hotline)। Anthropic billing support: support.anthropic.com — billing-specific query-তে ৪৮-৭২ ঘণ্টা response time।"}},{"@type":"Question","name":"Claude Pro vs Max — কোনটা বেছে নেব?","acceptedAnswer":{"@type":"Answer","text":"সবার Max লাগে না। তাসনিম-এর use case-এ Max justify হয়, কিন্তু সাধারণ user-এর জন্য Pro যথেষ্ট। Claude Pro ($20/মাস): Sonnet 4.6 unlimited + Opus 4.7 limited (5x free user-এর rate)। Casual user, student, content writer, occasional coder-এর জন্য enough। Claude Max ($100/মাস): Pro-এর সব + Opus 4.7 5x higher rate। Power user — daily 8+ hour Claude use করেন এমন professional-এর জন্য। Claude Max ($200/মাস): 20x higher rate। Heavy developer, agency owner, AI-first business-এর জন্য। Pro + Max combo: তাসনিম-এর মত পেশাদার-যারা separate workflows আলাদা করতে চান।"}}]}</script>
 <!-- FAQ-SCHEMA:END -->
@@ -53,38 +55,33 @@
 </header>
 <!-- GUIDE-HEADER:END -->
 
-    <div data-guide-reader class="article-sheet container">
-        <!-- ARTICLE-META:START -->
-<p class="article-kicker"><span class="article-chip">এআই টুল</span><span class="article-chip">২৮ মে, ২০২৬</span><span class="article-chip">৯ মিনিট পড়া</span></p>
-<!-- ARTICLE-META:END -->
-<h1 id="gs-content">Brac Bank Mastercard দিয়ে Claude Pro Subscription — বাংলা ২০২৬</h1>
-
-<!-- ARTICLE-HERO:START -->
-<figure class="article-hero">
+    <div data-guide-reader class="article-sheet container" data-guide-workshop><div class="gw-hero"><div class="gw-hero-copy"><p class="article-kicker"><span class="article-chip">এআই টুল</span><span class="article-chip">২৮ মে, ২০২৬</span><span class="article-chip">৯ মিনিট পড়া</span></p><h1 id="gs-content">Brac Bank Mastercard দিয়ে Claude Pro Subscription — বাংলা ২০২৬</h1><p class="gw-deck">Brac Bank Platinum/World Mastercard দিয়ে Claude Pro + Max সাবস্ক্রিপশন কেনা — step-by-step, USD limit, common issue + fix — বাংলা গাইড।</p><a class="gw-actions" href="#step-by-step-setup-brac-online-banking-usd-activation-claude-ai-signup">Step-by-step setup — Brac online banking + USD… <span aria-hidden="true">↓</span></a></div><div class="gw-hero-visual"><figure class="article-hero">
   <img src="/assets/editorial/payments.svg" width="1000" height="440" alt="পেমেন্ট কার্ড, কয়েন ও রসিদের অঙ্কন" decoding="async" fetchpriority="high">
-</figure>
-<!-- ARTICLE-HERO:END -->
-<!-- ARTICLE-TOC:START -->
-<nav class="article-toc" aria-label="সূচিপত্র">
-  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
-  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
-  <ol class="toc-list">
-    <li class="toc-item"><a href="#ভূমিকা-তাসনিম-এর-brac-mastercard-claude-journey">ভূমিকা — তাসনিম-এর Brac Mastercard + Claude journey</a></li>
-    <li class="toc-item"><a href="#brac-bank-এর-কোন-card-গুলো-work-করে">Brac Bank-এর কোন card-গুলো work করে</a></li>
-    <li class="toc-item"><a href="#usd-endorsement-brac-bank-এর-rule-paperwork">USD endorsement — Brac Bank-এর rule + paperwork</a></li>
-    <li class="toc-item"><a href="#step-by-step-setup-brac-online-banking-usd-activation-claude-ai-signup">Step-by-step setup — Brac online banking + USD activation + Claude.ai signup</a></li>
-    <li class="toc-item"><a href="#common-rejection-reasons-specific-fix">Common rejection reasons + specific fix</a></li>
-    <li class="toc-item"><a href="#claude-pro-vs-max-কোনটা-কাকে-উপযুক্ত">Claude Pro vs Max — কোনটা কাকে উপযুক্ত</a></li>
-    <li class="toc-item"><a href="#bd-billing-address-requirement-workaround">BD billing address requirement + workaround</a></li>
-    <li class="toc-item"><a href="#refund-dispute-process-brac-bank-দিয়ে">Refund + dispute process (Brac Bank দিয়ে)</a></li>
-    <li class="toc-item"><a href="#alternative-scenarios-brac-না-হলে-city-ebl-dbbl">Alternative scenarios — Brac না হলে City/EBL/DBBL</a></li>
-    <li class="toc-item"><a href="#সীমাবদ্ধতা-customer-support-contact">সীমাবদ্ধতা + customer support contact</a></li>
-    <li class="toc-item"><a href="#উপসংহার-আপনার-আজকের-পদক্ষেপ">উপসংহার — আপনার আজকের পদক্ষেপ</a></li>
-    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
-    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
-  </ol>
-</nav>
-<!-- ARTICLE-TOC:END -->
+</figure></div></div><div class="gw-layout"><nav class="gw-chapters" aria-label="এই গাইডে"><details open><summary>এই গাইডে</summary><ol>
+<li><a href="#ভূমিকা-তাসনিম-এর-brac-mastercard-claude-journey">ভূমিকা — তাসনিম-এর Brac Mastercard + Claude journey</a></li>
+<li><a href="#brac-bank-এর-কোন-card-গুলো-work-করে">Brac Bank-এর কোন card-গুলো work করে</a></li>
+<li><a href="#usd-endorsement-brac-bank-এর-rule-paperwork">USD endorsement — Brac Bank-এর rule + paperwork</a></li>
+<li><a href="#step-by-step-setup-brac-online-banking-usd-activation-claude-ai-signup">Step-by-step setup — Brac online banking + USD activation + Claude.ai signup</a></li>
+<li><a href="#common-rejection-reasons-specific-fix">Common rejection reasons + specific fix</a></li>
+<li><a href="#claude-pro-vs-max-কোনটা-কাকে-উপযুক্ত">Claude Pro vs Max — কোনটা কাকে উপযুক্ত</a></li>
+<li><a href="#bd-billing-address-requirement-workaround">BD billing address requirement + workaround</a></li>
+<li><a href="#refund-dispute-process-brac-bank-দিয়ে">Refund + dispute process (Brac Bank দিয়ে)</a></li>
+<li><a href="#alternative-scenarios-brac-না-হলে-city-ebl-dbbl">Alternative scenarios — Brac না হলে City/EBL/DBBL</a></li>
+<li><a href="#সীমাবদ্ধতা-customer-support-contact">সীমাবদ্ধতা + customer support contact</a></li>
+<li><a href="#উপসংহার-আপনার-আজকের-পদক্ষেপ">উপসংহার — আপনার আজকের পদক্ষেপ</a></li>
+<li><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+</ol></details></nav><div class="gw-reading">
+
+
+
+
+
+
+
+
+
+
+
 
 <p class="lede">তাসনিম রহমান, BUET Civil ২০২০ batch-এর engineer, Singapore-এর Surbana Jurong-এ গত ২ বছর কাজ করছেন। ঢাকায় তার parents Brac Bank-এর দীর্ঘদিনের customer, আর তাসনিম নিজে Brac Platinum Mastercard ব্যবহার করেন AI subscription কেনার জন্য। তার monthly stack — Claude Pro $20 + Claude Max $100, মোট $120/মাস। কিন্তু প্রথমদিকে এই setup মোটেও smooth ছিল না। "প্রথম ৩-৪ বার card decline হয়েছে। কখনো 3D Secure fail, কখনো USD limit exhausted, কখনো billing address mismatch — পুরা confusion ছিল," তাসনিম বলেন। আজ তার Brac Mastercard-এ প্রতি মাসের ১ তারিখে $120 auto-debit হয়, কোনো issue ছাড়াই। এই গাইডে তাসনিম-এর exact setup, common rejection-এর fix, আর Brac Bank-এর USD endorsement rule — সব detail-এ।</p>
 
@@ -107,7 +104,7 @@
 
 <p>Brac Bank Bangladesh-এর সবচেয়ে large private bank-গুলোর একটি, ~৬০ লাখ customer। তাদের credit + debit card portfolio-তে multiple tier আছে। কিন্তু সব card Claude subscription-এ same level-এ কাজ করে না।</p>
 
-<table style="width:100%;border-collapse:collapse;margin:1rem 0;">
+<div class="gw-table-scroll" role="region" tabindex="0" aria-label="Brac Bank-এর কোন card-গুলো work করে"><table style="width:100%;border-collapse:collapse;margin:1rem 0;" class="gw-table">
 <thead>
 <tr style="background:#f1f5f9;">
 <th style="padding:10px;border:1px solid #e5e7eb;">Card Type</th>
@@ -116,13 +113,13 @@
 </tr>
 </thead>
 <tbody>
-<tr><td style="padding:10px;border:1px solid #e5e7eb;">Brac Standard/Classic Mastercard</td><td style="padding:10px;border:1px solid #e5e7eb;">Endorsement needed</td><td style="padding:10px;border:1px solid #e5e7eb;">Works but limited</td></tr>
-<tr><td style="padding:10px;border:1px solid #e5e7eb;">Brac Gold Mastercard</td><td style="padding:10px;border:1px solid #e5e7eb;">Endorsement needed</td><td style="padding:10px;border:1px solid #e5e7eb;">Works, smoother approval</td></tr>
-<tr><td style="padding:10px;border:1px solid #e5e7eb;"><b>Brac Platinum Mastercard</b></td><td style="padding:10px;border:1px solid #e5e7eb;">Endorsement easy</td><td style="padding:10px;border:1px solid #e5e7eb;"><b>Best for tech subs</b></td></tr>
-<tr><td style="padding:10px;border:1px solid #e5e7eb;">Brac World Mastercard</td><td style="padding:10px;border:1px solid #e5e7eb;">Higher USD limit</td><td style="padding:10px;border:1px solid #e5e7eb;">Best for Pro+Max combo</td></tr>
-<tr><td style="padding:10px;border:1px solid #e5e7eb;">Brac Signature Mastercard</td><td style="padding:10px;border:1px solid #e5e7eb;">Premium, custom limit</td><td style="padding:10px;border:1px solid #e5e7eb;">Multiple AI subs OK</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Card Type">Brac Standard/Classic Mastercard</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="USD Support">Endorsement needed</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Claude Subscription">Works but limited</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Card Type">Brac Gold Mastercard</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="USD Support">Endorsement needed</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Claude Subscription">Works, smoother approval</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Card Type"><b>Brac Platinum Mastercard</b></td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="USD Support">Endorsement easy</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Claude Subscription"><b>Best for tech subs</b></td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Card Type">Brac World Mastercard</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="USD Support">Higher USD limit</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Claude Subscription">Best for Pro+Max combo</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Card Type">Brac Signature Mastercard</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="USD Support">Premium, custom limit</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Claude Subscription">Multiple AI subs OK</td></tr>
 </tbody>
-</table>
+</table></div>
 
 <p>তাসনিম-এর recommendation — "Pro মাত্র চাইলে Gold বা Platinum যথেষ্ট। Pro + Max বা multiple AI tool stack করলে World/Signature নিন — higher USD limit + better customer service।"</p>
 
@@ -287,7 +284,7 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-    </div>
+    </div></div><p class="sr-only" data-guide-copy-status role="status" aria-live="polite"></p></div>
 
 <!-- TEMPLATED-FAQ:START -->
 <section class="article-faq" aria-labelledby="faq-heading">

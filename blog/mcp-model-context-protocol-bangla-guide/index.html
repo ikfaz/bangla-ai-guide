@@ -34,6 +34,8 @@
 <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <link rel="stylesheet" href="/css/site-shell.css">
   <link rel="stylesheet" href="/css/guide-reader.css">
+<link rel="stylesheet" href="/css/guide-workshop.css">
+  <script src="/js/guide-workshop.js" defer></script>
   <!-- FAQ-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"MCP-এর কিছু practical উদাহরণ কী?","acceptedAnswer":{"@type":"Answer","text":"\"mcpServers\": { \"filesystem\": { \"command\": \"npx\", \"args\": [\"-y\", \"@modelcontextprotocol/server-filesystem\", \"/Users/me/Documents\"] }, \"github\": { \"command\": \"npx\", \"args\": [\"-y\", \"@modelcontextprotocol/server-github\"], \"env\": { \"GITHUB_TOKEN\": \"ghp_...\" } } }"}},{"@type":"Question","name":"কেন MCP দরকার?","acceptedAnswer":{"@type":"Answer","text":"Before MCP: প্রতিটা AI tool integration custom — ChatGPT vs Claude vs Gemini আলাদা code With MCP: একবার লেখো, যেকোনো MCP-compatible AI ব্যবহার করতে পারে Vendor neutral: Anthropic open standard published Ecosystem: Hundreds of pre-built MCP servers"}},{"@type":"Question","name":"কীভাবে কাজ করে?","acceptedAnswer":{"@type":"Answer","text":"AI client (Claude, ChatGPT, etc.) ↔ MCP Server ↔ Resource (database, API, file) Protocol: JSON-RPC over stdio/HTTP Standardized: tool definition, resource access, prompt template Permission-based: user explicitly grants access"}},{"@type":"Question","name":"MCP vs alternatives — কোনটা বেছে নেব?","acceptedAnswer":{"@type":"Answer","text":"vs OpenAI Function Calling: OpenAI proprietary; MCP open vs LangChain Tools: LangChain library, MCP protocol vs Zapier: Zapier visual workflow, MCP code vs OpenAPI: OpenAPI describes API, MCP integrates LLM"}},{"@type":"Question","name":"ভূমিকা — MCP কী?","acceptedAnswer":{"@type":"Answer","text":"Model Context Protocol (MCP) — Anthropic ২০২৪ সালে release করা open standard যা AI মডেলগুলোকে external tools, data sources, এবং services-এর সাথে connect করতে দেয়। সহজ ভাষায়: USB-এর মতো — যেকোনো AI মডেল যেকোনো MCP-compatible tool ব্যবহার করতে পারে।"}}]}</script>
 <!-- FAQ-SCHEMA:END -->
@@ -53,38 +55,33 @@
 </header>
 <!-- GUIDE-HEADER:END -->
 
-    <div data-guide-reader class="article-sheet container">
-        <!-- ARTICLE-META:START -->
-<p class="article-kicker"><span class="article-chip">গাইড</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">২ মিনিট পড়া</span></p>
-<!-- ARTICLE-META:END -->
-<h1 id="gs-content">MCP (Model Context Protocol) বাংলা গাইড — AI Tool Integration-এর Standard</h1>
-
-<!-- ARTICLE-HERO:START -->
-<figure class="article-hero">
+    <div data-guide-reader class="article-sheet container" data-guide-workshop><div class="gw-hero"><div class="gw-hero-copy"><p class="article-kicker"><span class="article-chip">গাইড</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">২ মিনিট পড়া</span></p><h1 id="gs-content">MCP (Model Context Protocol) বাংলা গাইড — AI Tool Integration-এর Standard</h1><p class="gw-deck">MCP কী, Anthropic-এর Model Context Protocol কেন গুরুত্বপূর্ণ, কীভাবে AI tools একসাথে কাজ করানো যায় — developer ও power user-দের জন্য সম্পূর্ণ গাইড।</p><a class="gw-actions" href="#কীভাবে-কাজ-করে">কীভাবে কাজ করে <span aria-hidden="true">↓</span></a></div><div class="gw-hero-visual"><figure class="article-hero">
   <img src="/assets/editorial/automation.svg" width="1000" height="440" alt="সংযুক্ত কাজের ধাপ ও সুইচের অঙ্কন" decoding="async" fetchpriority="high">
-</figure>
-<!-- ARTICLE-HERO:END -->
-<!-- ARTICLE-TOC:START -->
-<nav class="article-toc" aria-label="সূচিপত্র">
-  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
-  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
-  <ol class="toc-list">
-    <li class="toc-item"><a href="#ভূমিকা-mcp-কী">ভূমিকা — MCP কী?</a></li>
-    <li class="toc-item"><a href="#কেন-mcp-দরকার">কেন MCP দরকার?</a></li>
-    <li class="toc-item"><a href="#কীভাবে-কাজ-করে">কীভাবে কাজ করে</a></li>
-    <li class="toc-item"><a href="#pre-built-mcp-servers-popular">Pre-built MCP servers (popular)</a></li>
-    <li class="toc-item"><a href="#কীভাবে-ব্যবহার-করবেন-claude-desktop">কীভাবে ব্যবহার করবেন (Claude Desktop)</a></li>
-    <li class="toc-item"><a href="#example-config">Example config</a></li>
-    <li class="toc-item"><a href="#developer-own-mcp-server-বানানো">Developer — own MCP server বানানো</a></li>
-    <li class="toc-item"><a href="#bangladesh-use-cases">Bangladesh use cases</a></li>
-    <li class="toc-item"><a href="#security-privacy">Security + privacy</a></li>
-    <li class="toc-item"><a href="#mcp-vs-alternatives">MCP vs alternatives</a></li>
-    <li class="toc-item"><a href="#উপসংহার">উপসংহার</a></li>
-    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
-    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
-  </ol>
-</nav>
-<!-- ARTICLE-TOC:END -->
+</figure></div></div><div class="gw-layout"><nav class="gw-chapters" aria-label="এই গাইডে"><details open><summary>এই গাইডে</summary><ol>
+<li><a href="#ভূমিকা-mcp-কী">ভূমিকা — MCP কী?</a></li>
+<li><a href="#কেন-mcp-দরকার">কেন MCP দরকার?</a></li>
+<li><a href="#কীভাবে-কাজ-করে">কীভাবে কাজ করে</a></li>
+<li><a href="#pre-built-mcp-servers-popular">Pre-built MCP servers (popular)</a></li>
+<li><a href="#কীভাবে-ব্যবহার-করবেন-claude-desktop">কীভাবে ব্যবহার করবেন (Claude Desktop)</a></li>
+<li><a href="#example-config">Example config</a></li>
+<li><a href="#developer-own-mcp-server-বানানো">Developer — own MCP server বানানো</a></li>
+<li><a href="#bangladesh-use-cases">Bangladesh use cases</a></li>
+<li><a href="#security-privacy">Security + privacy</a></li>
+<li><a href="#mcp-vs-alternatives">MCP vs alternatives</a></li>
+<li><a href="#উপসংহার">উপসংহার</a></li>
+<li><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+</ol></details></nav><div class="gw-reading">
+
+
+
+
+
+
+
+
+
+
+
 
         <h2 id="ভূমিকা-mcp-কী">ভূমিকা — MCP কী?</h2>
         <p>Model Context Protocol (MCP) — Anthropic ২০২৪ সালে release করা open standard যা AI মডেলগুলোকে external tools, data sources, এবং services-এর সাথে connect করতে দেয়।</p>
@@ -222,7 +219,7 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-    </div>
+    </div></div><p class="sr-only" data-guide-copy-status role="status" aria-live="polite"></p></div>
 
     <!-- TEMPLATED-FAQ:START -->
 <section class="article-faq" aria-labelledby="faq-heading">

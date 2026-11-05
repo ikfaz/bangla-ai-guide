@@ -34,6 +34,8 @@
   <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <link rel="stylesheet" href="/css/site-shell.css">
   <link rel="stylesheet" href="/css/guide-reader.css">
+  <link rel="stylesheet" href="/css/guide-workshop.css">
+  <script src="/js/guide-workshop.js" defer></script>
 </head>
 <body data-author-mode="editorial">
     <!-- GUIDE-HEADER:START -->
@@ -50,33 +52,28 @@
 </header>
 <!-- GUIDE-HEADER:END -->
 
-    <div data-guide-reader class="article-sheet container">
-        <!-- ARTICLE-META:START -->
-<p class="article-kicker"><span class="article-chip">তুলনা</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৭ মিনিট পড়া</span></p>
-<!-- ARTICLE-META:END -->
-<h1 id="gs-content">AI দিয়ে বাংলা Translation — Google, ChatGPT, DeepL কোনটি ভালো? (২০২৬)</h1>
-
-<!-- ARTICLE-HERO:START -->
-<figure class="article-hero">
+    <div data-guide-reader class="article-sheet container" data-guide-workshop><div class="gw-hero"><div class="gw-hero-copy"><p class="article-kicker"><span class="article-chip">তুলনা</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৭ মিনিট পড়া</span></p><h1 id="gs-content">AI দিয়ে বাংলা Translation — Google, ChatGPT, DeepL কোনটি ভালো? (২০২৬)</h1><p class="gw-deck">বাংলা থেকে ইংরেজি বা ইংরেজি থেকে বাংলা translation-এর জন্য সেরা AI টুল কোনটি? Google Translate, ChatGPT, Claude, DeepL — সব টুলের accuracy টেস্ট, দাম ও use case।</p><a class="gw-actions" href="#রুনুর-actual-workflow-কোন-কাজে-কোনটা">রুনুর actual workflow — কোন কাজে কোনটা <span aria-hidden="true">↓</span></a></div><div class="gw-hero-visual"><figure class="article-hero">
   <img src="/assets/editorial/language.svg" width="1000" height="440" alt="বাংলা অক্ষর, সম্পাদনার পেনসিল ও কথার বুদবুদের অঙ্কন" decoding="async" fetchpriority="high">
-</figure>
-<!-- ARTICLE-HERO:END -->
-<!-- ARTICLE-TOC:START -->
-<nav class="article-toc" aria-label="সূচিপত্র">
-  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
-  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
-  <ol class="toc-list">
-    <li class="toc-item"><a href="#৬-parallel-test-একই-text-৫-tools-blind-rated">৬ Parallel test — একই text, ৫ tools, blind rated</a></li>
-    <li class="toc-item"><a href="#৫-tools-overall-verdict">৫ tools — overall verdict</a></li>
-    <li class="toc-item"><a href="#রুনুর-actual-workflow-কোন-কাজে-কোনটা">রুনুর actual workflow — কোন কাজে কোনটা</a></li>
-    <li class="toc-item"><a href="#সাবধান-যেখানে-ai-translation-কখনো-trust-করবেন-না">সাবধান — যেখানে AI translation কখনো trust করবেন না</a></li>
-    <li class="toc-item"><a href="#৪টা-practical-tip-ai-translation-এ-৪-quality">৪টা practical tip — AI translation-এ ৪× quality</a></li>
-    <li class="toc-item"><a href="#উপসংহার-আপনার-আজকের-পদক্ষেপ">উপসংহার — আপনার আজকের পদক্ষেপ</a></li>
-    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
-    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
-  </ol>
-</nav>
-<!-- ARTICLE-TOC:END -->
+</figure></div></div><div class="gw-layout"><nav class="gw-chapters" aria-label="এই গাইডে"><details open><summary>এই গাইডে</summary><ol>
+<li><a href="#৬-parallel-test-একই-text-৫-tools-blind-rated">৬ Parallel test — একই text, ৫ tools, blind rated</a></li>
+<li><a href="#৫-tools-overall-verdict">৫ tools — overall verdict</a></li>
+<li><a href="#রুনুর-actual-workflow-কোন-কাজে-কোনটা">রুনুর actual workflow — কোন কাজে কোনটা</a></li>
+<li><a href="#সাবধান-যেখানে-ai-translation-কখনো-trust-করবেন-না">সাবধান — যেখানে AI translation কখনো trust করবেন না</a></li>
+<li><a href="#৪টা-practical-tip-ai-translation-এ-৪-quality">৪টা practical tip — AI translation-এ ৪× quality</a></li>
+<li><a href="#উপসংহার-আপনার-আজকের-পদক্ষেপ">উপসংহার — আপনার আজকের পদক্ষেপ</a></li>
+<li><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+</ol></details></nav><div class="gw-reading">
+
+
+
+
+
+
+
+
+
+
+
 
         <p class="lede">রুনু সরকার Dhaka-র একটা NGO-র research officer। তাঁর সপ্তাহের ৪০% কাজ Bangla → English (donor report-এর জন্য) এবং English → Bangla (community-facing material)। ২০২৪-এ তিনি পুরো freelance translator (Mohammad ভাই, Banglamotor) hire করতেন — মাসে ৳১২,০০০। ২০২৫-এর জুন-এ তিনি একটা experiment শুরু করেছিলেন: ১২টা parallel translation chuck (প্রতিটায় ৫০০-৮০০ শব্দ), দিয়েছিলেন ৫টা AI translation tool-এ + Mohammad ভাই-এ। তারপর তিনটা native Bangla-English bilingual reviewer দিয়ে blind rating। Result অপ্রত্যাশিত — কোন AI কখন Mohammad ভাই-এর সমান, কখন better, কখন একদমই worse। রুনু আজও Mohammad ভাই-কে hire করেন, কিন্তু শুধু ২০% কাজে। বাকি ৮০% AI-augmented — মাসিক খরচ ৳২,৪০০ থেকে ৳৩,৬০০-এ।</p>
 
@@ -247,7 +244,7 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-    </div>
+    </div></div><p class="sr-only" data-guide-copy-status role="status" aria-live="polite"></p></div>
 
     <!-- RELATED-POSTS:START -->
 <section class="related-posts" aria-label="সম্পর্কিত গাইড">

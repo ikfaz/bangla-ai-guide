@@ -26,6 +26,7 @@ const steps = [
   ["repair-tool-links.cjs"],
   ["apply-site-shell.cjs"],
   ["style-interiors.cjs"],
+  ["apply-guide-workshops.cjs"],
   ["generate-search-index.cjs"],
   ["generate-feed.cjs"],
   ["generate-sitemap.cjs"],

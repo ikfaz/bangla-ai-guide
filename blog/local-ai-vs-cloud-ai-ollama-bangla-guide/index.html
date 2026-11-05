@@ -34,6 +34,8 @@
 <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <link rel="stylesheet" href="/css/site-shell.css">
   <link rel="stylesheet" href="/css/guide-reader.css">
+<link rel="stylesheet" href="/css/guide-workshop.css">
+  <script src="/js/guide-workshop.js" defer></script>
   <!-- FAQ-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Local AI vs Cloud AI কীভাবে install বা setup করব?","acceptedAnswer":{"@type":"Answer","text":"Step 1: ollama.com → download installer Step 2: Run installer Step 3: Open terminal/command prompt Step 4: ollama pull llama3.2:8b (download model, ~5GB) Step 5: ollama run llama3.2 Step 6: Chat в terminal! Step 7 (optional): Open WebUI for browser UI"}},{"@type":"Question","name":"Local AI vs Cloud AI বাংলায় কেমন কাজ করে?","acceptedAnswer":{"@type":"Answer","text":"Llama 3.3 70B: Decent Bangla Qwen 2.5: Good Bangla support Mistral: Limited Bangla Smaller models: Bangla weaker Verdict: Cloud (Claude/Gemini) still better, but local \"good enough\" for many tasks"}},{"@type":"Question","name":"Limitations vs Cloud — কোনটা বেছে নেব?","acceptedAnswer":{"@type":"Answer","text":"Quality: 70-80% of GPT-4/Claude (best local) Speed: depends on hardware Tools: limited (no native web browsing) Multimodal: limited image/video Updates: manual download new model"}},{"@type":"Question","name":"Local AI vs Cloud AI-এর performance কেমন?","acceptedAnswer":{"@type":"Answer","text":"8B model on RTX 3060: 20-30 tokens/sec (faster than typing) 70B model on RTX 4090: 30-50 tokens/sec CPU only: Very slow (3-5 tokens/sec) Mac M2/M3: Excellent speed for size"}},{"@type":"Question","name":"Local AI — কেন?","acceptedAnswer":{"@type":"Answer","text":"Privacy: Data কম্পিউটার থেকে বের হয় না Free: No monthly subscription Offline: Internet ছাড়া কাজ করে Speed: Local network — fast Customization: Fine-tune possible Unlimited: No rate limit"}}]}</script>
 <!-- FAQ-SCHEMA:END -->
@@ -53,40 +55,35 @@
 </header>
 <!-- GUIDE-HEADER:END -->
 
-    <div data-guide-reader class="article-sheet container">
-        <!-- ARTICLE-META:START -->
-<p class="article-kicker"><span class="article-chip">তুলনা</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৩ মিনিট পড়া</span></p>
-<!-- ARTICLE-META:END -->
-<h1 id="gs-content">Local AI vs Cloud AI — Ollama দিয়ে নিজের কম্পিউটারে AI চালানোর গাইড</h1>
-
-<!-- ARTICLE-HERO:START -->
-<figure class="article-hero">
+    <div data-guide-reader class="article-sheet container" data-guide-workshop><div class="gw-hero"><div class="gw-hero-copy"><p class="article-kicker"><span class="article-chip">তুলনা</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৩ মিনিট পড়া</span></p><h1 id="gs-content">Local AI vs Cloud AI — Ollama দিয়ে নিজের কম্পিউটারে AI চালানোর গাইড</h1><p class="gw-deck">নিজের কম্পিউটারে AI run করা সম্ভব? Ollama, Llama 3, DeepSeek local, privacy benefits — বাংলাদেশি ব্যবহারকারীদের জন্য সম্পূর্ণ গাইড।</p><a class="gw-actions" href="#setup-workflow-windows-mac">Setup workflow (Windows/Mac) <span aria-hidden="true">↓</span></a></div><div class="gw-hero-visual"><figure class="article-hero">
   <img src="/assets/editorial/comparison.svg" width="1000" height="440" alt="পাশাপাশি দুটি প্যানেলে বৈশিষ্ট্য মেলানোর অঙ্কন" decoding="async" fetchpriority="high">
-</figure>
-<!-- ARTICLE-HERO:END -->
-<!-- ARTICLE-TOC:START -->
-<nav class="article-toc" aria-label="সূচিপত্র">
-  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
-  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
-  <ol class="toc-list">
-    <li class="toc-item"><a href="#ভূমিকা">ভূমিকা</a></li>
-    <li class="toc-item"><a href="#local-ai-কেন">Local AI — কেন?</a></li>
-    <li class="toc-item"><a href="#hardware-requirements">Hardware requirements</a></li>
-    <li class="toc-item"><a href="#ollama-easiest-tool">Ollama — easiest tool</a></li>
-    <li class="toc-item"><a href="#top-open-source-models-2026">Top open-source models (2026)</a></li>
-    <li class="toc-item"><a href="#bangla-quality-local-models">Bangla quality — local models</a></li>
-    <li class="toc-item"><a href="#setup-workflow-windows-mac">Setup workflow (Windows/Mac)</a></li>
-    <li class="toc-item"><a href="#gui-alternatives-no-terminal">GUI alternatives (no terminal)</a></li>
-    <li class="toc-item"><a href="#performance-expectations">Performance expectations</a></li>
-    <li class="toc-item"><a href="#use-cases-when-local-makes-sense">Use cases — when local makes sense</a></li>
-    <li class="toc-item"><a href="#limitations-vs-cloud">Limitations vs Cloud</a></li>
-    <li class="toc-item"><a href="#cost-analysis-bd-context">Cost analysis (BD context)</a></li>
-    <li class="toc-item"><a href="#উপসংহার">উপসংহার</a></li>
-    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
-    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
-  </ol>
-</nav>
-<!-- ARTICLE-TOC:END -->
+</figure></div></div><div class="gw-layout"><nav class="gw-chapters" aria-label="এই গাইডে"><details open><summary>এই গাইডে</summary><ol>
+<li><a href="#ভূমিকা">ভূমিকা</a></li>
+<li><a href="#local-ai-কেন">Local AI — কেন?</a></li>
+<li><a href="#hardware-requirements">Hardware requirements</a></li>
+<li><a href="#ollama-easiest-tool">Ollama — easiest tool</a></li>
+<li><a href="#top-open-source-models-2026">Top open-source models (2026)</a></li>
+<li><a href="#bangla-quality-local-models">Bangla quality — local models</a></li>
+<li><a href="#setup-workflow-windows-mac">Setup workflow (Windows/Mac)</a></li>
+<li><a href="#gui-alternatives-no-terminal">GUI alternatives (no terminal)</a></li>
+<li><a href="#performance-expectations">Performance expectations</a></li>
+<li><a href="#use-cases-when-local-makes-sense">Use cases — when local makes sense</a></li>
+<li><a href="#limitations-vs-cloud">Limitations vs Cloud</a></li>
+<li><a href="#cost-analysis-bd-context">Cost analysis (BD context)</a></li>
+<li><a href="#উপসংহার">উপসংহার</a></li>
+<li><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+</ol></details></nav><div class="gw-reading">
+
+
+
+
+
+
+
+
+
+
+
 
         <h2 id="ভূমিকা">ভূমিকা</h2>
         <p>Cloud AI (ChatGPT, Claude) সবার known। কিন্তু নিজের কম্পিউটারে — internet ছাড়া, privacy ১০০%, no monthly fee — AI চালানো সম্ভব। ২০২৬-এ এটি accessible হয়েছে।</p>
@@ -248,7 +245,7 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-    </div>
+    </div></div><p class="sr-only" data-guide-copy-status role="status" aria-live="polite"></p></div>
 
     <!-- TEMPLATED-FAQ:START -->
 <section class="article-faq" aria-labelledby="faq-heading">

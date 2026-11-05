@@ -34,6 +34,8 @@
 <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <link rel="stylesheet" href="/css/site-shell.css">
   <link rel="stylesheet" href="/css/guide-reader.css">
+<link rel="stylesheet" href="/css/guide-workshop.css">
+  <script src="/js/guide-workshop.js" defer></script>
   <!-- FAQ-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Grok AI কোন কাজে সবচেয়ে ভালো?","acceptedAnswer":{"@type":"Answer","text":"1. Breaking news + trend analysis (Murad-এর মতো) BD political event unfolding — Grok-এ \"What's happening with Bangladesh elections in last 2 hours? Summarize key narratives from X.\" Real-time aggregation। Other AIs cannot do। 2. Social media sentiment \"Sentiment around bKash service outage today on X\" — Grok aggregates posts + sentiment classification। 3. Tech news + trends \"Latest in AI tooling discussions on X this week\" — tech Twitter-এর pulse। 4. Influencer research \"Top BD tech influencers on X by engagement last 30 days\" — Grok analyzes data live। 5. Image generation (Aurora) X Premium-এ free image gen। Photorealistic, less restrictive than DALL-E।"}},{"@type":"Question","name":"Grok কী?","acceptedAnswer":{"@type":"Answer","text":"Grok (xAI-এর product, Elon Musk-এর AI company) — first launched ২০২৩ Nov। X (formerly Twitter) Premium subscribers-এর জন্য available। Real-time access to X data — যা ChatGPT/Claude-এ নেই। Founded ২০২৩ xAI Elon Musk founded Model versions Grok 1 → Grok 4 (২০২৬ Q1) Rapid iteration Active users (global) ~৫০ লাখ X Premium ~৩০ লাখ active Grok BD adoption ~১২,০০০ active Journalist/political/tech"}},{"@type":"Question","name":"বাংলায় কাজ করে?","acceptedAnswer":{"@type":"Answer","text":"Bangla input: Understand করে। Mixed Bangla-English smooth। Bangla output: Decent for short text (tweets, captions)। Long-form slightly stiff। Bangla X analysis: Bangla X posts indexed limited compared to English-dominant। Bangla trends detection ~৬০% accurate। Cultural context: BD-specific knowledge ChatGPT/Claude-এর সমকক্ষ, কিন্তু idiom + cultural nuance kichu missing।"}}]}</script>
 <!-- FAQ-SCHEMA:END -->
@@ -53,36 +55,31 @@
 </header>
 <!-- GUIDE-HEADER:END -->
 
-    <div data-guide-reader class="article-sheet container">
-        <!-- ARTICLE-META:START -->
-<p class="article-kicker"><span class="article-chip">এআই টুল</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৪ মিনিট পড়া</span></p>
-<!-- ARTICLE-META:END -->
-<h1 id="gs-content">Grok AI বাংলা গাইড — X-এর Real-Time Knowledge AI</h1>
-
-<!-- ARTICLE-HERO:START -->
-<figure class="article-hero">
+    <div data-guide-reader class="article-sheet container" data-guide-workshop><div class="gw-hero"><div class="gw-hero-copy"><p class="article-kicker"><span class="article-chip">এআই টুল</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৪ মিনিট পড়া</span></p><h1 id="gs-content">Grok AI বাংলা গাইড — X-এর Real-Time Knowledge AI</h1><p class="gw-deck">X (Twitter)-এর Grok AI কী, ChatGPT থেকে কীভাবে আলাদা? Real-time data access, image generation, বাংলাদেশ থেকে অ্যাক্সেস — সম্পূর্ণ গাইড।</p><a class="gw-actions" href="#ভূমিকা-একটা-bd-political-journalist-এর-real-time-intelligence">ভূমিকা — একটা BD political journalist-এর real-time… <span aria-hidden="true">↓</span></a></div><div class="gw-hero-visual"><figure class="article-hero">
   <img src="/assets/editorial/conversation.svg" width="1000" height="440" alt="চ্যাট উইন্ডোতে প্রশ্ন ও উত্তরের বুদবুদের অঙ্কন" decoding="async" fetchpriority="high">
-</figure>
-<!-- ARTICLE-HERO:END -->
-<!-- ARTICLE-TOC:START -->
-<nav class="article-toc" aria-label="সূচিপত্র">
-  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
-  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
-  <ol class="toc-list">
-    <li class="toc-item"><a href="#ভূমিকা-একটা-bd-political-journalist-এর-real-time-intelligence">ভূমিকা — একটা BD political journalist-এর real-time intelligence</a></li>
-    <li class="toc-item"><a href="#grok-কী">Grok কী?</a></li>
-    <li class="toc-item"><a href="#grok-এর-usp">Grok-এর USP</a></li>
-    <li class="toc-item"><a href="#অ্যাক্সেস-bd-থেকে">অ্যাক্সেস (BD থেকে)</a></li>
-    <li class="toc-item"><a href="#কী-কাজে-সবচেয়ে-ভালো">কী কাজে সবচেয়ে ভালো</a></li>
-    <li class="toc-item"><a href="#কী-কাজে-কম-ভালো">কী কাজে কম ভালো</a></li>
-    <li class="toc-item"><a href="#grok-4-latest-model">Grok 4 — latest model</a></li>
-    <li class="toc-item"><a href="#বাংলায়-কাজ-করে">বাংলায় কাজ করে?</a></li>
-    <li class="toc-item"><a href="#উপসংহার">উপসংহার</a></li>
-    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
-    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
-  </ol>
-</nav>
-<!-- ARTICLE-TOC:END -->
+</figure></div></div><div class="gw-layout"><nav class="gw-chapters" aria-label="এই গাইডে"><details open><summary>এই গাইডে</summary><ol>
+<li><a href="#ভূমিকা-একটা-bd-political-journalist-এর-real-time-intelligence">ভূমিকা — একটা BD political journalist-এর real-time intelligence</a></li>
+<li><a href="#grok-কী">Grok কী?</a></li>
+<li><a href="#grok-এর-usp">Grok-এর USP</a></li>
+<li><a href="#অ্যাক্সেস-bd-থেকে">অ্যাক্সেস (BD থেকে)</a></li>
+<li><a href="#কী-কাজে-সবচেয়ে-ভালো">কী কাজে সবচেয়ে ভালো</a></li>
+<li><a href="#কী-কাজে-কম-ভালো">কী কাজে কম ভালো</a></li>
+<li><a href="#grok-4-latest-model">Grok 4 — latest model</a></li>
+<li><a href="#বাংলায়-কাজ-করে">বাংলায় কাজ করে?</a></li>
+<li><a href="#উপসংহার">উপসংহার</a></li>
+<li><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+</ol></details></nav><div class="gw-reading">
+
+
+
+
+
+
+
+
+
+
+
 
 <h2 id="ভূমিকা-একটা-bd-political-journalist-এর-real-time-intelligence">ভূমিকা — একটা BD political journalist-এর real-time intelligence</h2>
 <p class="lede">ঢাকার এক freelance political analyst + journalist মুরাদ হাসান — ৩৬ বছর, JU Political Science ২০১১, ১১ বছর reporting (Dhaka Tribune, পরে freelance for international outlets — Al Jazeera, Reuters)। তাঁর beat: BD politics, regional geopolitics (India-Bangladesh, Myanmar Rohingya, China-South Asia)। Time-sensitive analysis-এ এখন real-time information critical — ChatGPT/Claude-এর knowledge cutoff problem। ২০২৫ এপ্রিলে X Premium $৮/মাস subscribe করলেন — Grok included। Grok 3 (later 4)-এর real-time X data access + uncensored political analysis কাজে এসেছে। ১২ মাস পর: breaking news analysis lead time 4-6 ঘণ্টা → 30-60 min, international assignments 4 → 11/মাস, monthly income $১,৮০০ → $৩,৪০০। এই গাইড সেই workflow।</p>
@@ -237,7 +234,7 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-    </div>
+    </div></div><p class="sr-only" data-guide-copy-status role="status" aria-live="polite"></p></div>
 
     <!-- TEMPLATED-FAQ:START -->
 <section class="article-faq" aria-labelledby="faq-heading">

@@ -34,6 +34,8 @@
 <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <link rel="stylesheet" href="/css/site-shell.css">
   <link rel="stylesheet" href="/css/guide-reader.css">
+<link rel="stylesheet" href="/css/guide-workshop.css">
+  <script src="/js/guide-workshop.js" defer></script>
   <!-- FAQ-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Make.com থেকে সর্বোচ্চ পেতে কী কী টিপস আছে?","acceptedAnswer":{"@type":"Answer","text":"Operations budgeting: Each module = 1 op (with exceptions)। Heavy scenarios (50+ steps) — operations exhaust dr দ্রুত। Plan accordingly। Error handling: \"Error handler\" route enable — failed module fallback (email alert, retry, skip)। Iterator + Aggregator: Bulk data (100 records) handle। Powerful pattern। Webhooks: Custom integration (Make-এ pre-built নেই এমন app)। URL endpoint generate, third-party POST। Scheduled runs: Every 5/15/60 min frequency। 24/7 polling avoid (operations burn)। Bangla notification: Slack message body Bangla supported — UTF-8 properly handle। Documentation: Each scenario-এ description + tags — future debugging easy।"}},{"@type":"Question","name":"Make.com কী?","acceptedAnswer":{"@type":"Answer","text":"Make.com (formerly Integromat, Czech-founded ২০১২, rebranded ২০২২ after Celonis acquisition) — visual no-code automation platform। ২০০০+ app integrations। Z-flow-এর মতো workflow create। Cost-effective Zapier alternative। Founded Integromat ২০১২ → Make ২০২২ Celonis-acquired Active users (global) ~৫ লাখ paid SMB + agency-heavy BD adoption ~৮,০০০ active Freelancer/SMB Pricing Free + $৯-$২৯+/মাস Operations-based pricing"}},{"@type":"Question","name":"Make.com কোন কাজে সবচেয়ে ভালো?","acceptedAnswer":{"@type":"Answer","text":"Make-এর OpenAI/Claude/Gemini integration latest। AI step add করে complex logic automation: Customer support ticket → ChatGPT classify (urgent/normal/spam) → routing Sales lead form → AI score (hot/warm/cold) → CRM update + Slack alert Daily news scrape → Claude summarize → email digest Customer review aggregate → AI sentiment analyze → Slack daily report Resume submissions → AI extract data → ATS auto-populate"}},{"@type":"Question","name":"Make.com-এর দাম কত এবং BD-তে এর ROI কেমন?","acceptedAnswer":{"@type":"Answer","text":"Free: 1,000 operations/মাস, 2 active scenarios। Test enough। Core $৯/মাস: 10K ops, unlimited scenarios। ProductPulse-এর tier। Pro $১৬/মাস: 10K ops + priority + advanced features। Teams $২৯/মাস: 10K ops + team collaboration। Enterprise: Custom (volumes higher)। BD payment: USD card via bKash recharge, Stripe checkout, PayPal accepted।"}}]}</script>
 <!-- FAQ-SCHEMA:END -->
@@ -53,36 +55,31 @@
 </header>
 <!-- GUIDE-HEADER:END -->
 
-    <div data-guide-reader class="article-sheet container">
-        <!-- ARTICLE-META:START -->
-<p class="article-kicker"><span class="article-chip">গাইড</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৫ মিনিট পড়া</span></p>
-<!-- ARTICLE-META:END -->
-<h1 id="gs-content">Make.com বাংলা গাইড — No-Code Automation দিয়ে ১০× Productivity</h1>
-
-<!-- ARTICLE-HERO:START -->
-<figure class="article-hero">
+    <div data-guide-reader class="article-sheet container" data-guide-workshop><div class="gw-hero"><div class="gw-hero-copy"><p class="article-kicker"><span class="article-chip">গাইড</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৫ মিনিট পড়া</span></p><h1 id="gs-content">Make.com বাংলা গাইড — No-Code Automation দিয়ে ১০× Productivity</h1><p class="gw-deck">Make.com (পূর্বে Integromat) দিয়ে কীভাবে Gmail, Sheets, ChatGPT, Slack এর মধ্যে workflow automate করবেন? বাংলাদেশি ফ্রিল্যান্সার ও ব্যবসার জন্য practical scenario।</p><a class="gw-actions" href="#ai-workflow-সম্ভাবনা">AI workflow সম্ভাবনা <span aria-hidden="true">↓</span></a></div><div class="gw-hero-visual"><figure class="article-hero">
   <img src="/assets/editorial/classroom.svg" width="1000" height="440" alt="বোর্ড, চক ও খোলা বইয়ের অঙ্কন" decoding="async" fetchpriority="high">
-</figure>
-<!-- ARTICLE-HERO:END -->
-<!-- ARTICLE-TOC:START -->
-<nav class="article-toc" aria-label="সূচিপত্র">
-  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
-  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
-  <ol class="toc-list">
-    <li class="toc-item"><a href="#ভূমিকা-dhanmondi-র-agency-operations-এর-full-automation">ভূমিকা — Dhanmondi-র agency operations-এর full automation</a></li>
-    <li class="toc-item"><a href="#make-com-কী">Make.com কী?</a></li>
-    <li class="toc-item"><a href="#zapier-এর-সাথে-পার্থক্য">Zapier-এর সাথে পার্থক্য</a></li>
-    <li class="toc-item"><a href="#দাম">দাম</a></li>
-    <li class="toc-item"><a href="#ai-workflow-সম্ভাবনা">AI workflow সম্ভাবনা</a></li>
-    <li class="toc-item"><a href="#প্রথম-scenario-১০-মিনিটে">প্রথম scenario — ১০ মিনিটে</a></li>
-    <li class="toc-item"><a href="#বাংলাদেশি-ফ্রিল্যান্সার-এর-জন্য-practical-use">বাংলাদেশি ফ্রিল্যান্সার-এর জন্য practical use</a></li>
-    <li class="toc-item"><a href="#টিপস">টিপস</a></li>
-    <li class="toc-item"><a href="#উপসংহার">উপসংহার</a></li>
-    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
-    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
-  </ol>
-</nav>
-<!-- ARTICLE-TOC:END -->
+</figure></div></div><div class="gw-layout"><nav class="gw-chapters" aria-label="এই গাইডে"><details open><summary>এই গাইডে</summary><ol>
+<li><a href="#ভূমিকা-dhanmondi-র-agency-operations-এর-full-automation">ভূমিকা — Dhanmondi-র agency operations-এর full automation</a></li>
+<li><a href="#make-com-কী">Make.com কী?</a></li>
+<li><a href="#zapier-এর-সাথে-পার্থক্য">Zapier-এর সাথে পার্থক্য</a></li>
+<li><a href="#দাম">দাম</a></li>
+<li><a href="#ai-workflow-সম্ভাবনা">AI workflow সম্ভাবনা</a></li>
+<li><a href="#প্রথম-scenario-১০-মিনিটে">প্রথম scenario — ১০ মিনিটে</a></li>
+<li><a href="#বাংলাদেশি-ফ্রিল্যান্সার-এর-জন্য-practical-use">বাংলাদেশি ফ্রিল্যান্সার-এর জন্য practical use</a></li>
+<li><a href="#টিপস">টিপস</a></li>
+<li><a href="#উপসংহার">উপসংহার</a></li>
+<li><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+</ol></details></nav><div class="gw-reading">
+
+
+
+
+
+
+
+
+
+
+
 
 <h2 id="ভূমিকা-dhanmondi-র-agency-operations-এর-full-automation">ভূমিকা — Dhanmondi-র agency operations-এর full automation</h2>
 <p class="lede">আগের article-এ (notion-vs-clickup) আপনি ProductPulse-এর কথা পড়েছেন। সেই same Banani-r SaaS team-এর Operations Manager তামিম হোসেন — ২৬ বছর, AIUB CSE ২০২২, ৩ বছর startup ops। ২০২৬-এ team 24 জন, customer base 380+, daily 60-80 customer support ticket, lead processing, invoice generation, contract follow-up, social media scheduling — অনুপুঙ্খ admin operations। Hire-করার বদলে তামিম Make.com (formerly Integromat) দিয়ে full automation stack বানিয়েছেন। ১০ মাস পর: 4 জন ops-related role need eliminated (or redeployed), monthly automation tool stack cost $৩৭, equivalent salary saving ৳১.৮ লাখ/মাস। এই গাইড সেই workflow।</p>
@@ -102,17 +99,17 @@
 </div>
 
 <h2 id="zapier-এর-সাথে-পার্থক্য">Zapier-এর সাথে পার্থক্য</h2>
-<table style="width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;">
+<div class="gw-table-scroll" role="region" tabindex="0" aria-label="Zapier-এর সাথে পার্থক্য"><table style="width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;" class="gw-table">
 <thead><tr style="background:#F1F5F9;"><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Aspect</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Make.com</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Zapier</th></tr></thead>
 <tbody>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Entry price</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>$৯/মাস (10K ops)</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">$১৯.৯৯/মাস (750 tasks)</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Pricing model</td><td style="padding:10px;border:1px solid #E2E8F0;">Operations-based (cheaper for complex)</td><td style="padding:10px;border:1px solid #E2E8F0;">Task-based (simpler)</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Visual builder</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>Node-based, more powerful</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">Linear, simpler</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Complex branching</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>Native (router, iterator)</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">Limited (paths)</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">App integrations</td><td style="padding:10px;border:1px solid #E2E8F0;">2,000+</td><td style="padding:10px;border:1px solid #E2E8F0;">7,000+ (more)</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Learning curve</td><td style="padding:10px;border:1px solid #E2E8F0;">Steeper (more powerful)</td><td style="padding:10px;border:1px solid #E2E8F0;">Easier (more beginner-friendly)</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Aspect">Entry price</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Make.com"><strong>$৯/মাস (10K ops)</strong></td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Zapier">$১৯.৯৯/মাস (750 tasks)</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Aspect">Pricing model</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Make.com">Operations-based (cheaper for complex)</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Zapier">Task-based (simpler)</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Aspect">Visual builder</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Make.com"><strong>Node-based, more powerful</strong></td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Zapier">Linear, simpler</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Aspect">Complex branching</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Make.com"><strong>Native (router, iterator)</strong></td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Zapier">Limited (paths)</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Aspect">App integrations</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Make.com">2,000+</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Zapier">7,000+ (more)</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Aspect">Learning curve</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Make.com">Steeper (more powerful)</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Zapier">Easier (more beginner-friendly)</td></tr>
 </tbody>
-</table>
+</table></div>
 
 <p>Verdict: Tamim-এর verdict — Make for cost-conscious complex workflows, Zapier for quick wins + extensive integration। BD freelancer + small agency Make-ই efficient।</p>
 
@@ -247,7 +244,7 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-    </div>
+    </div></div><p class="sr-only" data-guide-copy-status role="status" aria-live="polite"></p></div>
 
     <!-- TEMPLATED-FAQ:START -->
 <section class="article-faq" aria-labelledby="faq-heading">

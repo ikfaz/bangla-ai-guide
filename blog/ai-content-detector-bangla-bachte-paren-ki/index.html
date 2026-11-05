@@ -34,6 +34,8 @@
   <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <link rel="stylesheet" href="/css/site-shell.css">
   <link rel="stylesheet" href="/css/guide-reader.css">
+  <link rel="stylesheet" href="/css/guide-workshop.css">
+  <script src="/js/guide-workshop.js" defer></script>
 </head>
 <body data-author-mode="editorial">
     <!-- GUIDE-HEADER:START -->
@@ -50,35 +52,30 @@
 </header>
 <!-- GUIDE-HEADER:END -->
 
-    <div data-guide-reader class="article-sheet container">
-        <!-- ARTICLE-META:START -->
-<p class="article-kicker"><span class="article-chip">কন্টেন্ট</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৬ মিনিট পড়া</span></p>
-<!-- ARTICLE-META:END -->
-<h1 id="gs-content">AI Content Detector বাংলা গাইড — ChatGPT-এর লেখা ধরা পড়ে কীভাবে?</h1>
-
-<!-- ARTICLE-HERO:START -->
-<figure class="article-hero">
+    <div data-guide-reader class="article-sheet container" data-guide-workshop><div class="gw-hero"><div class="gw-hero-copy"><p class="article-kicker"><span class="article-chip">কন্টেন্ট</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৬ মিনিট পড়া</span></p><h1 id="gs-content">AI Content Detector বাংলা গাইড — ChatGPT-এর লেখা ধরা পড়ে কীভাবে?</h1><p class="gw-deck">AI-জেনারেটেড content কীভাবে detect হয়? GPTZero, Turnitin, Originality.ai কতটা accurate? AI-লেখা content humanize করার নৈতিক উপায় ও সীমাবদ্ধতা — সম্পূর্ণ বাংলা…</p><a class="gw-actions" href="#ai-detector-২০২৬-এ-actually-কীভাবে-কাজ-করে">AI detector ২০২৬-এ — actually কীভাবে কাজ করে <span aria-hidden="true">↓</span></a></div><div class="gw-hero-visual"><figure class="article-hero">
   <img src="/assets/editorial/research.svg" width="1000" height="440" alt="গবেষণার কাগজ ও বড় করে দেখার আতশকাচের অঙ্কন" decoding="async" fetchpriority="high">
-</figure>
-<!-- ARTICLE-HERO:END -->
-<!-- ARTICLE-TOC:START -->
-<nav class="article-toc" aria-label="সূচিপত্র">
-  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
-  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
-  <ol class="toc-list">
-    <li class="toc-item"><a href="#ai-detector-২০২৬-এ-actually-কীভাবে-কাজ-করে">AI detector ২০২৬-এ — actually কীভাবে কাজ করে</a></li>
-    <li class="toc-item"><a href="#২০২৬-এর-৫টা-leading-detector-accuracy-reality">২০২৬-এর ৫টা leading detector — accuracy reality</a></li>
-    <li class="toc-item"><a href="#বাংলা-content-এ-detector-state-important-caveat">বাংলা content-এ detector state — Important caveat</a></li>
-    <li class="toc-item"><a href="#কোথায়-ai-augmented-writing-100-acceptable">কোথায় AI-augmented writing 100% acceptable</a></li>
-    <li class="toc-item"><a href="#কোথায়-ai-use-করলে-career-ending-mistake">কোথায় AI use করলে career-ending mistake</a></li>
-    <li class="toc-item"><a href="#৬-step-ethical-ai-workflow-তামান্না-র-post-mit-method">৬-step ethical AI workflow — তামান্না-র post-MIT method</a></li>
-    <li class="toc-item"><a href="#humanize-ai-text-tools-কেন-এড়াবেন">&quot;Humanize AI text&quot; tools — কেন এড়াবেন</a></li>
-    <li class="toc-item"><a href="#উপসংহার-তামান্না-র-চূড়ান্ত-পরামর্শ">উপসংহার — তামান্না-র চূড়ান্ত পরামর্শ</a></li>
-    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
-    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
-  </ol>
-</nav>
-<!-- ARTICLE-TOC:END -->
+</figure></div></div><div class="gw-layout"><nav class="gw-chapters" aria-label="এই গাইডে"><details open><summary>এই গাইডে</summary><ol>
+<li><a href="#ai-detector-২০২৬-এ-actually-কীভাবে-কাজ-করে">AI detector ২০২৬-এ — actually কীভাবে কাজ করে</a></li>
+<li><a href="#২০২৬-এর-৫টা-leading-detector-accuracy-reality">২০২৬-এর ৫টা leading detector — accuracy reality</a></li>
+<li><a href="#বাংলা-content-এ-detector-state-important-caveat">বাংলা content-এ detector state — Important caveat</a></li>
+<li><a href="#কোথায়-ai-augmented-writing-100-acceptable">কোথায় AI-augmented writing 100% acceptable</a></li>
+<li><a href="#কোথায়-ai-use-করলে-career-ending-mistake">কোথায় AI use করলে career-ending mistake</a></li>
+<li><a href="#৬-step-ethical-ai-workflow-তামান্না-র-post-mit-method">৬-step ethical AI workflow — তামান্না-র post-MIT method</a></li>
+<li><a href="#humanize-ai-text-tools-কেন-এড়াবেন">"Humanize AI text" tools — কেন এড়াবেন</a></li>
+<li><a href="#উপসংহার-তামান্না-র-চূড়ান্ত-পরামর্শ">উপসংহার — তামান্না-র চূড়ান্ত পরামর্শ</a></li>
+<li><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+</ol></details></nav><div class="gw-reading">
+
+
+
+
+
+
+
+
+
+
+
 
         <p class="lede">তামান্না-র Statement of Purpose (SOP) reject হয়েছিল ৩টা US graduate school-এ — Penn State, UCLA, এবং Ohio State। তিনটাই একই reason জানিয়েছিল: "AI-generated content suspected, please resubmit original draft।" তামান্না-র SOP তিনি নিজে লিখেছিলেন — কিন্তু Grammarly-তে full clean করে, ChatGPT-এ "make this more polished" দিয়ে। দু'টা rewrite-এর পর তাঁর own voice প্রায় shed হয়ে গিয়েছিল। ৩ admission cycle lose-এর পর তিনি ৪র্থ-বার নিজে scratch থেকে লিখলেন — কোনো AI tool ছাড়া, শুধু own struggle, own dreams, own failures। সেই draft GPTZero-তে ৩% AI score (basically 100% human)। MIT-তে accepted। ২০২৬-এর fall-এ যোগ দিচ্ছেন। AI detector-এর এই reality — শিক্ষা প্রতিষ্ঠান, freelance platform, journalism — সব জায়গায় ২০২৬-এ standard practice। কিন্তু "detection bypass" শেখানো এই article-এর উদ্দেশ্য নয়। উদ্দেশ্য: AI কোথায় ethical-ly use করবেন, কোথায় your own voice ছাড়া কোনো বিকল্প নেই।</p>
 
@@ -158,7 +155,7 @@
 
 <p>তামান্না MIT-এ গিয়েও AI use করেন। কিন্তু একটা specific framework-এ:</p>
 
-<ol>
+<ol class="gw-steps">
     <li><b>প্রথম draft 100% own:</b> Topic explore, outline, first 300-word draft — সব নিজে। Voice + intention এখানে set হয়।</li>
     <li><b>AI দিয়ে gap identify:</b> "এই draft-এর কী missing হতে পারে? কোন angle আমি explore করিনি?" — AI critic হিসেবে।</li>
     <li><b>Own expansion:</b> Gap-গুলো নিজে fill করুন। AI-এর words use করবেন না।</li>
@@ -235,7 +232,7 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-    </div>
+    </div></div><p class="sr-only" data-guide-copy-status role="status" aria-live="polite"></p></div>
 
     <!-- RELATED-POSTS:START -->
 <section class="related-posts" aria-label="সম্পর্কিত গাইড">

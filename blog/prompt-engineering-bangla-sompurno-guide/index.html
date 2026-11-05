@@ -34,6 +34,8 @@
   <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <link rel="stylesheet" href="/css/site-shell.css">
   <link rel="stylesheet" href="/css/guide-reader.css">
+  <link rel="stylesheet" href="/css/guide-workshop.css">
+  <script src="/js/guide-workshop.js" defer></script>
 </head>
 <body data-author-mode="editorial">
     <!-- GUIDE-HEADER:START -->
@@ -50,37 +52,32 @@
 </header>
 <!-- GUIDE-HEADER:END -->
 
-    <div data-guide-reader class="article-sheet container">
-        <!-- ARTICLE-META:START -->
-<p class="article-kicker"><span class="article-chip">কন্টেন্ট</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">২ মিনিট পড়া</span></p>
-<!-- ARTICLE-META:END -->
-<h1 id="gs-content">Prompt Engineering সম্পূর্ণ বাংলা গাইড — ChatGPT/Claude থেকে Best Output</h1>
-
-<!-- ARTICLE-HERO:START -->
-<figure class="article-hero">
+    <div data-guide-reader class="article-sheet container" data-guide-workshop><div class="gw-hero"><div class="gw-hero-copy"><p class="article-kicker"><span class="article-chip">কন্টেন্ট</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">২ মিনিট পড়া</span></p><h1 id="gs-content">Prompt Engineering সম্পূর্ণ বাংলা গাইড — ChatGPT/Claude থেকে Best Output</h1><p class="gw-deck">AI থেকে অসাধারণ output পাওয়ার রহস্য — prompt engineering। নিয়ম, framework (RACE, CO-STAR), advanced technique, ও বাংলায় practical উদাহরণ।</p><a class="gw-actions" href="#prompt-engineering-কী">Prompt Engineering কী? <span aria-hidden="true">↓</span></a></div><div class="gw-hero-visual"><figure class="article-hero">
   <img src="/assets/editorial/prompts.svg" width="1000" height="440" alt="প্রশ্ন লেখার কার্ড ও উত্তর নির্দেশক কার্সরের অঙ্কন" decoding="async" fetchpriority="high">
-</figure>
-<!-- ARTICLE-HERO:END -->
-<!-- ARTICLE-TOC:START -->
-<nav class="article-toc" aria-label="সূচিপত্র">
-  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
-  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
-  <ol class="toc-list">
-    <li class="toc-item"><a href="#prompt-engineering-কী">Prompt Engineering কী?</a></li>
-    <li class="toc-item"><a href="#মৌলিক-৬-element-এর-prompt">মৌলিক ৬ Element-এর prompt</a></li>
-    <li class="toc-item"><a href="#জনপ্রিয়-framework">জনপ্রিয় Framework</a></li>
-    <li class="toc-item"><a href="#advanced-techniques">Advanced Techniques</a></li>
-    <li class="toc-item"><a href="#common-ভুল">Common ভুল</a></li>
-    <li class="toc-item"><a href="#bangla-prompting-tips">Bangla prompting tips</a></li>
-    <li class="toc-item"><a href="#iterative-prompting">Iterative prompting</a></li>
-    <li class="toc-item"><a href="#best-prompt-library-তৈরি">Best prompt library তৈরি</a></li>
-    <li class="toc-item"><a href="#model-specific-tips">Model-specific tips</a></li>
-    <li class="toc-item"><a href="#উপসংহার">উপসংহার</a></li>
-    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
-    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
-  </ol>
-</nav>
-<!-- ARTICLE-TOC:END -->
+</figure></div></div><div class="gw-layout"><nav class="gw-chapters" aria-label="এই গাইডে"><details open><summary>এই গাইডে</summary><ol>
+<li><a href="#prompt-engineering-কী">Prompt Engineering কী?</a></li>
+<li><a href="#মৌলিক-৬-element-এর-prompt">মৌলিক ৬ Element-এর prompt</a></li>
+<li><a href="#জনপ্রিয়-framework">জনপ্রিয় Framework</a></li>
+<li><a href="#advanced-techniques">Advanced Techniques</a></li>
+<li><a href="#common-ভুল">Common ভুল</a></li>
+<li><a href="#bangla-prompting-tips">Bangla prompting tips</a></li>
+<li><a href="#iterative-prompting">Iterative prompting</a></li>
+<li><a href="#best-prompt-library-তৈরি">Best prompt library তৈরি</a></li>
+<li><a href="#model-specific-tips">Model-specific tips</a></li>
+<li><a href="#উপসংহার">উপসংহার</a></li>
+<li><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+</ol></details></nav><div class="gw-reading">
+
+
+
+
+
+
+
+
+
+
+
 
         <h2 id="prompt-engineering-কী">Prompt Engineering কী?</h2>
         <p>একই AI tool — একজনের output ভালো, অন্যজনের সাধারণ। পার্থক্য prompt-এ। Prompt Engineering হলো AI-কে সঠিকভাবে instruct করার বিজ্ঞান (এবং কিছুটা শিল্প)। এই গাইডে শিখবেন — কীভাবে এক prompt আপনার output ১০× ভালো করে।</p>
@@ -224,7 +221,7 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-    </div>
+    </div></div><p class="sr-only" data-guide-copy-status role="status" aria-live="polite"></p></div>
 
     <!-- RELATED-POSTS:START -->
 <section class="related-posts" aria-label="সম্পর্কিত গাইড">

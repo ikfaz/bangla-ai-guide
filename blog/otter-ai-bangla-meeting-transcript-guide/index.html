@@ -34,6 +34,8 @@
 <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <link rel="stylesheet" href="/css/site-shell.css">
   <link rel="stylesheet" href="/css/guide-reader.css">
+<link rel="stylesheet" href="/css/guide-workshop.css">
+  <script src="/js/guide-workshop.js" defer></script>
   <!-- FAQ-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Otter AI কোন কাজে সবচেয়ে ভালো?","acceptedAnswer":{"@type":"Answer","text":"Sokal 9 AM Engineering Standup (15 min) Calendar-এ meeting set → Otter auto-joins → standup চলে normal speed। Meeting শেষে: AI-generated summary email-এ 3 minute later — কে কী commit করেছে, blockers কী, next standup-এ যা update দরকার। Fariha-র manual note লেখার দরকার নেই। Customer Interview (45 min) 5 customer interview/সপ্তাহ। প্রতিটার transcript + AI summary। Fariha-র research workflow: 5 interview শেষে Otter-এ \"What are the common pain points across these 5 interviews?\" ask AI cross-meeting analysis Pattern identify → product roadmap input আগে ছিল ১৫-২০ ঘণ্টার manual analysis। এখন ১-২ ঘণ্টা। Board Update (60 min) CEO + investors-এর সঙ্গে monthly update। Otter Pilot use করে: \"Did the CEO…"}},{"@type":"Question","name":"Otter AI-এর মূল features কী কী?","acceptedAnswer":{"@type":"Answer","text":"Real-time transcription: Live meeting-এ join করে instant transcript। ১-২ second delay only। Speaker identification: Different speakers automatically labeled। AI summary: Meeting শেষে auto-generated summary + key points + action items। Otter Pilot: Meeting context-aware AI assistant — \"What did Sarah commit to in the Q3 planning?\" — accurate answer। Search: Past meetings-এ keyword search। 6 months back-এ যে decision হয়েছিল — instantly findable। Calendar sync: Google/Outlook calendar-এ meetings auto-join। Integrations: Slack, Salesforce, HubSpot, Notion, Zapier। Slide capture: Screen-shared slides auto-extracted।"}},{"@type":"Question","name":"Otter কী?","acceptedAnswer":{"@type":"Answer","text":"Otter.ai (২০১৬ launch, Los Altos California) — AI-powered meeting transcription + notes platform। Zoom/Google Meet/Microsoft Teams-এ live join করে real-time transcript + AI summary দেয়। ২০২৬-এ Otter \"Otter Pilot\" (GPT-powered assistant) add করেছে — meeting context-aware Q&A। Founded ২০১৬ Sam Liang (ex-Google) Active users ~১.৫ কোটি Knowledge worker-heavy BD adoption ~১২,০০০ active Tech/startup professional Pricing Free + $১০-৩০/user/মাস"}},{"@type":"Question","name":"Otter AI-এর দাম কত এবং BD-তে এর ROI কেমন?","acceptedAnswer":{"@type":"Answer","text":"Basic (free): 300 minutes transcription/মাস, 30 min/meeting limit। Test করার জন্য। Pro $১০/user/মাস: 1,200 min/মাস, 90 min/meeting, advanced features। Fariha-র team-এর tier। Business $২০/user/মাস: 6,000 min/মাস, 4 hr/meeting, admin features। Enterprise: Custom। SSO, dedicated support, compliance। BD payment: USD card via bKash recharge।"}}]}</script>
 <!-- FAQ-SCHEMA:END -->
@@ -53,36 +55,31 @@
 </header>
 <!-- GUIDE-HEADER:END -->
 
-    <div data-guide-reader class="article-sheet container">
-        <!-- ARTICLE-META:START -->
-<p class="article-kicker"><span class="article-chip">গাইড</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৪ মিনিট পড়া</span></p>
-<!-- ARTICLE-META:END -->
-<h1 id="gs-content">Otter AI বাংলা গাইড — Meeting Auto-Transcribe ও Summary</h1>
-
-<!-- ARTICLE-HERO:START -->
-<figure class="article-hero">
+    <div data-guide-reader class="article-sheet container" data-guide-workshop><div class="gw-hero"><div class="gw-hero-copy"><p class="article-kicker"><span class="article-chip">গাইড</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৪ মিনিট পড়া</span></p><h1 id="gs-content">Otter AI বাংলা গাইড — Meeting Auto-Transcribe ও Summary</h1><p class="gw-deck">Otter AI দিয়ে কীভাবে meeting auto-transcribe, summary, action items বের করবেন? Zoom/Google Meet/Teams integration ও বাংলাদেশি team-এর জন্য practical গাইড।</p><a class="gw-actions" href="#practical-workflow-fariha-র-daily">Practical workflow — Fariha-র daily <span aria-hidden="true">↓</span></a></div><div class="gw-hero-visual"><figure class="article-hero">
   <img src="/assets/editorial/transcript.svg" width="1000" height="440" alt="শব্দতরঙ্গ থেকে লেখার পাতায় রূপান্তরের অঙ্কন" decoding="async" fetchpriority="high">
-</figure>
-<!-- ARTICLE-HERO:END -->
-<!-- ARTICLE-TOC:START -->
-<nav class="article-toc" aria-label="সূচিপত্র">
-  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
-  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
-  <ol class="toc-list">
-    <li class="toc-item"><a href="#ভূমিকা-bashundhara-র-product-manager-এর-meeting-transcript-transformatio">ভূমিকা — Bashundhara-র Product Manager-এর meeting transcript transformation</a></li>
-    <li class="toc-item"><a href="#otter-কী">Otter কী?</a></li>
-    <li class="toc-item"><a href="#মূল-ফিচার">মূল ফিচার</a></li>
-    <li class="toc-item"><a href="#setup-৫-মিনিটে">Setup (৫ মিনিটে)</a></li>
-    <li class="toc-item"><a href="#দাম">দাম</a></li>
-    <li class="toc-item"><a href="#বাংলাদেশি-team-এর-জন্য-consideration">বাংলাদেশি team-এর জন্য consideration</a></li>
-    <li class="toc-item"><a href="#practical-workflow-fariha-র-daily">Practical workflow — Fariha-র daily</a></li>
-    <li class="toc-item"><a href="#প্রতিদ্বন্দ্বী">প্রতিদ্বন্দ্বী</a></li>
-    <li class="toc-item"><a href="#উপসংহার">উপসংহার</a></li>
-    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
-    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
-  </ol>
-</nav>
-<!-- ARTICLE-TOC:END -->
+</figure></div></div><div class="gw-layout"><nav class="gw-chapters" aria-label="এই গাইডে"><details open><summary>এই গাইডে</summary><ol>
+<li><a href="#ভূমিকা-bashundhara-র-product-manager-এর-meeting-transcript-transformatio">ভূমিকা — Bashundhara-র Product Manager-এর meeting transcript transformation</a></li>
+<li><a href="#otter-কী">Otter কী?</a></li>
+<li><a href="#মূল-ফিচার">মূল ফিচার</a></li>
+<li><a href="#setup-৫-মিনিটে">Setup (৫ মিনিটে)</a></li>
+<li><a href="#দাম">দাম</a></li>
+<li><a href="#বাংলাদেশি-team-এর-জন্য-consideration">বাংলাদেশি team-এর জন্য consideration</a></li>
+<li><a href="#practical-workflow-fariha-র-daily">Practical workflow — Fariha-র daily</a></li>
+<li><a href="#প্রতিদ্বন্দ্বী">প্রতিদ্বন্দ্বী</a></li>
+<li><a href="#উপসংহার">উপসংহার</a></li>
+<li><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+</ol></details></nav><div class="gw-reading">
+
+
+
+
+
+
+
+
+
+
+
 
 <h2 id="ভূমিকা-bashundhara-র-product-manager-এর-meeting-transcript-transformatio">ভূমিকা — Bashundhara-র Product Manager-এর meeting transcript transformation</h2>
 <p class="lede">বসুন্ধরা R/A-র এক SaaS company-তে Product Manager ফারিহা আক্তার — ২৯ বছর, IBA-DU MBA ২০১৯, ৫ বছর product experience। তাঁর daily reality: ৫-৭টা meeting/দিন — engineering standup, customer interview, stakeholder review, board update। প্রতিটার পর notes লেখা, action item track করা, decision log maintain — manually ১.৫-২ ঘণ্টা daily। ২০২৫ মার্চে Otter.ai trial শুরু। ১ সপ্তাহে workflow shift। ৬ মাস পর: meeting note time ২ ঘণ্টা → ১৫ মিনিট, action item follow-through 60% → 92%, customer interview insight extraction 3x faster। ফারিহার team-এ এখন ৬ জন Otter user, monthly subscription $৬০ (যা saved $২,৪০০ value-এর জন্য negligible)। এই গাইড সেই workflow।</p>
@@ -92,7 +89,7 @@
 </div>
 
 <h2 id="otter-কী">Otter কী?</h2>
-<p>Otter.ai (২০১৬ launch, Los Altos California) — AI-powered meeting transcription + notes platform। Zoom/Google Meet/Microsoft Teams-এ live join করে real-time transcript + AI summary দেয়। ২০২৬-এ Otter "Otter Pilot" (GPT-powered assistant) add করেছে — meeting context-aware Q&A।</p>
+<p>Otter.ai (২০১৬ launch, Los Altos California) — AI-powered meeting transcription + notes platform। Zoom/Google Meet/Microsoft Teams-এ live join করে real-time transcript + AI summary দেয়। ২০২৬-এ Otter "Otter Pilot" (GPT-powered assistant) add করেছে — meeting context-aware Q&amp;A।</p>
 
 <div class="stat-row">
 <div><strong>Founded</strong><br>২০১৬<br>Sam Liang (ex-Google)</div>
@@ -114,7 +111,7 @@
 </ul>
 
 <h2 id="setup-৫-মিনিটে">Setup (৫ মিনিটে)</h2>
-<ol>
+<ol class="gw-steps">
 <li>otter.ai → Sign up Google/Microsoft</li>
 <li>Settings → "Connect Calendar" → Google/Outlook auth</li>
 <li>"Otter Assistant" enable → calendar-এ যেকোনো meeting-এ auto-join</li>
@@ -150,12 +147,12 @@
 <div class="case-study">
 <strong>Customer Interview (45 min)</strong>
 <p>5 customer interview/সপ্তাহ। প্রতিটার transcript + AI summary। Fariha-র research workflow:
-<ol>
+</p><ol class="gw-steps">
 <li>5 interview শেষে Otter-এ "What are the common pain points across these 5 interviews?" ask</li>
 <li>AI cross-meeting analysis</li>
 <li>Pattern identify → product roadmap input</li>
 </ol>
-আগে ছিল ১৫-২০ ঘণ্টার manual analysis। এখন ১-২ ঘণ্টা।</p>
+আগে ছিল ১৫-২০ ঘণ্টার manual analysis। এখন ১-২ ঘণ্টা।<p></p>
 </div>
 
 <div class="case-study">
@@ -164,16 +161,16 @@
 </div>
 
 <h2 id="প্রতিদ্বন্দ্বী">প্রতিদ্বন্দ্বী</h2>
-<table style="width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;">
+<div class="gw-table-scroll" role="region" tabindex="0" aria-label="প্রতিদ্বন্দ্বী"><table style="width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;" class="gw-table">
 <thead><tr style="background:#F1F5F9;"><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Tool</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Strength</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Price</th></tr></thead>
 <tbody>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Otter</td><td style="padding:10px;border:1px solid #E2E8F0;">Free tier strong, easy</td><td style="padding:10px;border:1px solid #E2E8F0;">$১০/user/মাস</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Fireflies</td><td style="padding:10px;border:1px solid #E2E8F0;">CRM integration heavy</td><td style="padding:10px;border:1px solid #E2E8F0;">$১০-৩৯</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Fathom</td><td style="padding:10px;border:1px solid #E2E8F0;">Free unlimited (no transcript download)</td><td style="padding:10px;border:1px solid #E2E8F0;">Free + $২৪</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Microsoft Copilot (M365)</td><td style="padding:10px;border:1px solid #E2E8F0;">Teams native, enterprise</td><td style="padding:10px;border:1px solid #E2E8F0;">$৩০/user (in Copilot)</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Read.ai</td><td style="padding:10px;border:1px solid #E2E8F0;">Meeting analytics + transcription</td><td style="padding:10px;border:1px solid #E2E8F0;">$১৫-৪০</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Tool">Otter</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Strength">Free tier strong, easy</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Price">$১০/user/মাস</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Tool">Fireflies</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Strength">CRM integration heavy</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Price">$১০-৩৯</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Tool">Fathom</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Strength">Free unlimited (no transcript download)</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Price">Free + $২৪</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Tool">Microsoft Copilot (M365)</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Strength">Teams native, enterprise</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Price">$৩০/user (in Copilot)</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Tool">Read.ai</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Strength">Meeting analytics + transcription</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Price">$১৫-৪০</td></tr>
 </tbody>
-</table>
+</table></div>
 
 <h2 id="উপসংহার">উপসংহার</h2>
 <p>Fariha বলেন: "Otter আমার এক junior PM hire করার সমান value দিচ্ছে — মাসে $১০-এ। Meeting fatigue কমেছে, action item follow-through 92%, और cross-meeting search 6-month context capability।"</p>
@@ -231,7 +228,7 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-    </div>
+    </div></div><p class="sr-only" data-guide-copy-status role="status" aria-live="polite"></p></div>
 
     <!-- TEMPLATED-FAQ:START -->
 <section class="article-faq" aria-labelledby="faq-heading">

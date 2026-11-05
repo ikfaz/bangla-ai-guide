@@ -34,6 +34,8 @@
   <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <link rel="stylesheet" href="/css/site-shell.css">
   <link rel="stylesheet" href="/css/guide-reader.css">
+  <link rel="stylesheet" href="/css/guide-workshop.css">
+  <script src="/js/guide-workshop.js" defer></script>
 </head>
 <body data-author-mode="editorial">
     <!-- GUIDE-HEADER:START -->
@@ -50,33 +52,28 @@
 </header>
 <!-- GUIDE-HEADER:END -->
 
-    <div data-guide-reader class="article-sheet container">
-        <!-- ARTICLE-META:START -->
-<p class="article-kicker"><span class="article-chip">কোডিং</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৪ মিনিট পড়া</span></p>
-<!-- ARTICLE-META:END -->
-<h1 id="gs-content">AI দিয়ে Data Visualization — বাংলায় Chart, Infographic, Dashboard</h1>
-
-<!-- ARTICLE-HERO:START -->
-<figure class="article-hero">
+    <div data-guide-reader class="article-sheet container" data-guide-workshop><div class="gw-hero"><div class="gw-hero-copy"><p class="article-kicker"><span class="article-chip">কোডিং</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৪ মিনিট পড়া</span></p><h1 id="gs-content">AI দিয়ে Data Visualization — বাংলায় Chart, Infographic, Dashboard</h1><p class="gw-deck">কোনো design skill ছাড়াই AI দিয়ে কীভাবে professional chart, infographic, dashboard বানাবেন? ChatGPT Data Analyst, Flourish, Napkin AI — analyst ও marketer-দের জন্য…</p><a class="gw-actions" href="#তানজিনার-workflow-vaccination-dashboard-example">তানজিনার Workflow — Vaccination Dashboard Example <span aria-hidden="true">↓</span></a></div><div class="gw-hero-visual"><figure class="article-hero">
   <img src="/assets/editorial/analytics.svg" width="1000" height="440" alt="সারণি, রেখাচিত্র ও তথ্যের বিন্দুর অঙ্কন" decoding="async" fetchpriority="high">
-</figure>
-<!-- ARTICLE-HERO:END -->
-<!-- ARTICLE-TOC:START -->
-<nav class="article-toc" aria-label="সূচিপত্র">
-  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
-  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
-  <ol class="toc-list">
-    <li class="toc-item"><a href="#২০২৬-এ-ai-data-viz-tools">২০২৬-এ AI Data Viz Tools</a></li>
-    <li class="toc-item"><a href="#তানজিনার-workflow-vaccination-dashboard-example">তানজিনার Workflow — Vaccination Dashboard Example</a></li>
-    <li class="toc-item"><a href="#chart-selection-framework-কোন-data-কোন-chart-এ">Chart Selection Framework — কোন data কোন chart-এ</a></li>
-    <li class="toc-item"><a href="#bd-context-use-cases">BD-Context Use Cases</a></li>
-    <li class="toc-item"><a href="#৩টা-common-mistake">৩টা Common Mistake</a></li>
-    <li class="toc-item"><a href="#উপসংহার-আপনার-আজকের-পদক্ষেপ">উপসংহার — আপনার আজকের পদক্ষেপ</a></li>
-    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
-    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
-  </ol>
-</nav>
-<!-- ARTICLE-TOC:END -->
+</figure></div></div><div class="gw-layout"><nav class="gw-chapters" aria-label="এই গাইডে"><details open><summary>এই গাইডে</summary><ol>
+<li><a href="#২০২৬-এ-ai-data-viz-tools">২০২৬-এ AI Data Viz Tools</a></li>
+<li><a href="#তানজিনার-workflow-vaccination-dashboard-example">তানজিনার Workflow — Vaccination Dashboard Example</a></li>
+<li><a href="#chart-selection-framework-কোন-data-কোন-chart-এ">Chart Selection Framework — কোন data কোন chart-এ</a></li>
+<li><a href="#bd-context-use-cases">BD-Context Use Cases</a></li>
+<li><a href="#৩টা-common-mistake">৩টা Common Mistake</a></li>
+<li><a href="#উপসংহার-আপনার-আজকের-পদক্ষেপ">উপসংহার — আপনার আজকের পদক্ষেপ</a></li>
+<li><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+</ol></details></nav><div class="gw-reading">
+
+
+
+
+
+
+
+
+
+
+
 
 <p class="lede">তানজিনা আক্তার ICDDR,B-তে একজন junior research analyst — public health data নিয়ে কাজ করেন। ২০২৪-এর জানুয়ারিতে তাঁর dashboard build-এ একটা DPT vaccination uptake report বানাতে ৭ দিন লেগেছিল — Excel, manual chart, PowerPoint। ২০২৬-এ একই type-এর report ২.৫ ঘণ্টায় শেষ। তিনি AI-augmented workflow শিখেছিলেন: ChatGPT Code Interpreter, Claude Artifacts, Datawrapper, এবং Tableau-এ AI features। তাঁর last presentation-এ Country Director বলেছিলেন: "এটা ICDDR,B-এর সবচেয়ে engaging dashboard এই বছর।" তাঁর promotion ছয় মাস পরে — Research Associate ৳৬৫,০০০ থেকে ৳৯২,০০০-তে। AI না শিখলে তিনি junior পদে আরো ২ বছর থাকতেন।</p>
 
@@ -104,10 +101,10 @@
 
 <h2 id="তানজিনার-workflow-vaccination-dashboard-example">তানজিনার Workflow — Vaccination Dashboard Example</h2>
 
-<h3>Step 1: Data preparation (30 min)</h3>
+<h3 class="gw-step-heading">Step 1: Data preparation (30 min)</h3>
 <p>৬টা district × ১২ months × ৩ vaccine type = ২১৬ data point। CSV format।</p>
 
-<h3>Step 2: AI analysis (15 min)</h3>
+<h3 class="gw-step-heading">Step 2: AI analysis (15 min)</h3>
 <blockquote class="deep-blockquote">
 "নিচের vaccination uptake CSV upload করছি। বলো:<br>
 (১) Top 3 trend insight,<br>
@@ -116,7 +113,7 @@
 (৪) Audience: international donor + WHO। Tone: factual, urgency-evocative।"
 </blockquote>
 
-<h3>Step 3: Chart generation (1 hour)</h3>
+<h3 class="gw-step-heading">Step 3: Chart generation (1 hour)</h3>
 <ul>
     <li>Trend line chart (Datawrapper, 12-month district comparison)।</li>
     <li>Bubble map (Flourish, BD-district-wise coverage)।</li>
@@ -124,15 +121,15 @@
     <li>KPI cards (Datawrapper, headline numbers)।</li>
 </ul>
 
-<h3>Step 4: Narrative + polish (45 min)</h3>
+<h3 class="gw-step-heading">Step 4: Narrative + polish (45 min)</h3>
 <p>Claude-এ chart-গুলোর synthesis: "এই ৪টা chart-এর interconnected narrative draft করো — donor-facing, 4-paragraph executive summary।"</p>
 
 <h2 id="chart-selection-framework-কোন-data-কোন-chart-এ">Chart Selection Framework — কোন data কোন chart-এ</h2>
 
 <ul>
     <li><b>Time trend:</b> Line chart (single variable) / Multi-line (compare)।</li>
-    <li><b>Comparison categories:</b> Horizontal bar (>5 items) / Vertical bar (<5 items)।</li>
-    <li><b>Part-of-whole:</b> Pie (only if <5 parts) / Treemap (if hierarchical)।</li>
+    <li><b>Comparison categories:</b> Horizontal bar (&gt;5 items) / Vertical bar (&lt;5 items)।</li>
+    <li><b>Part-of-whole:</b> Pie (only if &lt;5 parts) / Treemap (if hierarchical)।</li>
     <li><b>Geographic:</b> Choropleth map (BD district-wise) / Bubble map (city size)।</li>
     <li><b>Correlation:</b> Scatter plot / Heatmap (if many variables)।</li>
     <li><b>Distribution:</b> Histogram / Box plot।</li>
@@ -146,7 +143,7 @@
     <li><b>Corporate quarterly report:</b> Revenue, growth, segment analysis।</li>
     <li><b>Journalism (Prothom Alo, Daily Star):</b> Election data, economic indicator, opinion poll।</li>
     <li><b>Academic thesis:</b> Survey result, experimental data, literature review trends।</li>
-    <li><b>SME owner:</b> Monthly P&L, customer demographic, product performance।</li>
+    <li><b>SME owner:</b> Monthly P&amp;L, customer demographic, product performance।</li>
     <li><b>Government:</b> Census data, RTI request data, budget breakdown।</li>
 </ul>
 
@@ -212,7 +209,7 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-    </div>
+    </div></div><p class="sr-only" data-guide-copy-status role="status" aria-live="polite"></p></div>
 
     <!-- RELATED-POSTS:START -->
 <section class="related-posts" aria-label="সম্পর্কিত গাইড">

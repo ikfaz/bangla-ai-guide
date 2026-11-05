@@ -34,6 +34,8 @@
 <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <link rel="stylesheet" href="/css/site-shell.css">
   <link rel="stylesheet" href="/css/guide-reader.css">
+<link rel="stylesheet" href="/css/guide-workshop.css">
+  <script src="/js/guide-workshop.js" defer></script>
   <!-- FAQ-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Claude Sonnet 4.6 কোন কাজে সবচেয়ে ভালো?","acceptedAnswer":{"@type":"Answer","text":"Bangla content writer: Sharmin-এর use case। Long-form essay/research: Coherence across 5,000+ words। Code development: Claude Code (CLI), Cursor IDE integration। Long PDF analysis: 200K context (vs Gemini's 2M — sufficient for most)। Customer service complex query: Nuanced understanding। Academic thesis writing: Long-context consistency। Brand storytelling: Voice authenticity।"}},{"@type":"Question","name":"Claude Sonnet 4.6 বাংলায় কেমন কাজ করে?","acceptedAnswer":{"@type":"Answer","text":"BD content writer-এর জন্য Sonnet 4.6-এর Bangla quality industry-leader: Literary tone: Rabindranath-style classical থেকে modern conversational — adaptive। Idiom + cultural reference: Native-grade fluency। Emotional pacing: Mother's Day ad, retirement letter — emotion preserved। Bangla-English code-switching: Natural, not forced। সাধু-চলিত: Context-aware switching।"}},{"@type":"Question","name":"What's New in 4.6?","acceptedAnswer":{"@type":"Answer","text":"Improved Bangla: Native-quality literary writing. Extended Thinking: Optional reasoning mode for complex problems। Tool use: Multi-step task execution with code+file access। Computer Use (beta): Click + type + navigate browser/desktop। Projects feature: Context-preserved workspace। 200K context unchanged: But better utilization।"}},{"@type":"Question","name":"বাংলাদেশ থেকে Claude Sonnet 4.6 কীভাবে access করব?","acceptedAnswer":{"@type":"Answer","text":"claude.ai (web): VPN ছাড়া accessible। Mobile app: iOS + Android। Free tier: Sonnet 4.6 limited daily (10-20 messages)। Pro ($20/mo): Unlimited Sonnet 4.6 + limited Opus 4.7। Max ($100-200/mo): Opus unlimited + higher rate limits। API: Anthropic API + Amazon Bedrock + Google Vertex। Payment: bKash USD card, Wise, Payoneer।"}},{"@type":"Question","name":"What's New in 4.6 (from 4.5)?","acceptedAnswer":{"@type":"Answer","text":"Improved Bangla: Native-quality literary writing. Extended Thinking: Optional reasoning mode for complex problems। Tool use: Multi-step task execution with code+file access। Computer Use (beta): Click + type + navigate browser/desktop। Projects feature: Context-preserved workspace। 200K context unchanged: But better utilization।"}},{"@type":"Question","name":"When Sonnet 4.6 Worth It?","acceptedAnswer":{"@type":"Answer","text":"Bangla content writer/journalist/copywriter। Full-stack developer (Claude Code/Cursor)। Long-form essay writer (academic, novelist)। Brand storytelling-focused marketer।"}},{"@type":"Question","name":"When to Use Alternatives?","acceptedAnswer":{"@type":"Answer","text":"Voice mode primary: ChatGPT। Image gen: DALL-E (ChatGPT) or Imagen (Gemini)। Workspace user: Gemini Advanced। Long PDF (500+ pages): Gemini 3.5 Pro (2M context)।"}}]}</script>
 <!-- FAQ-SCHEMA:END -->
@@ -53,35 +55,30 @@
 </header>
 <!-- GUIDE-HEADER:END -->
 
-    <div data-guide-reader class="article-sheet container">
-        <!-- ARTICLE-META:START -->
-<p class="article-kicker"><span class="article-chip">এআই টুল</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৩ মিনিট পড়া</span></p>
-<!-- ARTICLE-META:END -->
-<h1 id="gs-content">Claude Sonnet 4.6 বাংলা গাইড — Anthropic-এর নতুন সেরা মডেল ২০২৬</h1>
-
-<!-- ARTICLE-HERO:START -->
-<figure class="article-hero">
+    <div data-guide-reader class="article-sheet container" data-guide-workshop><div class="gw-hero"><div class="gw-hero-copy"><p class="article-kicker"><span class="article-chip">এআই টুল</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৩ মিনিট পড়া</span></p><h1 id="gs-content">Claude Sonnet 4.6 বাংলা গাইড — Anthropic-এর নতুন সেরা মডেল ২০২৬</h1><p class="gw-deck">Claude Sonnet 4.6 — কী নতুন, 4.5 থেকে কতটা ভালো, বাংলায় কেমন কাজ করে, দাম, কখন ব্যবহার? Anthropic-এর latest flagship-এর সম্পূর্ণ গাইড।</p><a class="gw-actions" href="#what-s-new-in-4-6-from-4-5">What's New in 4.6 (from 4.5) <span aria-hidden="true">↓</span></a></div><div class="gw-hero-visual"><figure class="article-hero">
   <img src="/assets/editorial/model.svg" width="1000" height="440" alt="সংযুক্ত নোড ও একটি এআই মডেলের চিপের অঙ্কন" decoding="async" fetchpriority="high">
-</figure>
-<!-- ARTICLE-HERO:END -->
-<!-- ARTICLE-TOC:START -->
-<nav class="article-toc" aria-label="সূচিপত্র">
-  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
-  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
-  <ol class="toc-list">
-    <li class="toc-item"><a href="#what-s-new-in-4-6-from-4-5">What's New in 4.6 (from 4.5)</a></li>
-    <li class="toc-item"><a href="#access-from-bd">Access from BD</a></li>
-    <li class="toc-item"><a href="#bangla-quality-sonnet-4-6-s-strongest-edge">Bangla Quality — Sonnet 4.6's Strongest Edge</a></li>
-    <li class="toc-item"><a href="#practical-bd-use-cases">Practical BD Use Cases</a></li>
-    <li class="toc-item"><a href="#sonnet-4-6-vs-competitors">Sonnet 4.6 vs Competitors</a></li>
-    <li class="toc-item"><a href="#when-sonnet-4-6-worth-it">When Sonnet 4.6 Worth It</a></li>
-    <li class="toc-item"><a href="#when-to-use-alternatives">When to Use Alternatives</a></li>
-    <li class="toc-item"><a href="#উপসংহার-আপনার-আজকের-পদক্ষেপ">উপসংহার — আপনার আজকের পদক্ষেপ</a></li>
-    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
-    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
-  </ol>
-</nav>
-<!-- ARTICLE-TOC:END -->
+</figure></div></div><div class="gw-layout"><nav class="gw-chapters" aria-label="এই গাইডে"><details open><summary>এই গাইডে</summary><ol>
+<li><a href="#what-s-new-in-4-6-from-4-5">What's New in 4.6 (from 4.5)</a></li>
+<li><a href="#access-from-bd">Access from BD</a></li>
+<li><a href="#bangla-quality-sonnet-4-6-s-strongest-edge">Bangla Quality — Sonnet 4.6's Strongest Edge</a></li>
+<li><a href="#practical-bd-use-cases">Practical BD Use Cases</a></li>
+<li><a href="#sonnet-4-6-vs-competitors">Sonnet 4.6 vs Competitors</a></li>
+<li><a href="#when-sonnet-4-6-worth-it">When Sonnet 4.6 Worth It</a></li>
+<li><a href="#when-to-use-alternatives">When to Use Alternatives</a></li>
+<li><a href="#উপসংহার-আপনার-আজকের-পদক্ষেপ">উপসংহার — আপনার আজকের পদক্ষেপ</a></li>
+<li><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+</ol></details></nav><div class="gw-reading">
+
+
+
+
+
+
+
+
+
+
+
 
 <p class="lede">Claude Sonnet 4.6 — Anthropic-এর daily-driver flagship model, ২০২৬-এর মার্চ-এ released। ২০২৪-এর Sonnet 4.5-এর successor। BD content writer Sharmin Akter ২০২৫-এর জুন-এ Claude Pro-তে moved (article: claude-ai-bangladesh-guide-এ details)। ২০২৬-এর মে-এ তিনি বলেন: "Sonnet 4.6-এর Bangla creative writing — competitor-এর সাথে comparable নয়। Per-word rate $0.18 → $0.35 এই tool-এ দাঁড়ানো। ২০২৬-এ Claude আমার বাড়ি ভাড়া।" BD-এর জন্য Sonnet 4.6 specific reasons-এ unmatched: Bangla literary tone, 200K context window, Projects feature, code quality, computer use।</p>
 
@@ -143,7 +140,7 @@
 
 <h2 id="sonnet-4-6-vs-competitors">Sonnet 4.6 vs Competitors</h2>
 
-<table style="width:100%;border-collapse:collapse;margin:1rem 0;">
+<div class="gw-table-scroll" role="region" tabindex="0" aria-label="Sonnet 4.6 vs Competitors"><table style="width:100%;border-collapse:collapse;margin:1rem 0;" class="gw-table">
 <thead>
 <tr style="background:#f1f5f9;">
 <th style="padding:10px;border:1px solid #e5e7eb;">Task</th>
@@ -151,15 +148,15 @@
 </tr>
 </thead>
 <tbody>
-<tr><td style="padding:10px;border:1px solid #e5e7eb;">Bangla creative writing</td><td style="padding:10px;border:1px solid #e5e7eb;"><b>Claude Sonnet 4.6</b></td></tr>
-<tr><td style="padding:10px;border:1px solid #e5e7eb;">Long-form essay</td><td style="padding:10px;border:1px solid #e5e7eb;"><b>Claude Sonnet 4.6</b></td></tr>
-<tr><td style="padding:10px;border:1px solid #e5e7eb;">Coding</td><td style="padding:10px;border:1px solid #e5e7eb;"><b>Claude Sonnet 4.6</b></td></tr>
-<tr><td style="padding:10px;border:1px solid #e5e7eb;">Voice conversation</td><td style="padding:10px;border:1px solid #e5e7eb;">ChatGPT GPT-5</td></tr>
-<tr><td style="padding:10px;border:1px solid #e5e7eb;">Image generation</td><td style="padding:10px;border:1px solid #e5e7eb;">ChatGPT/Gemini</td></tr>
-<tr><td style="padding:10px;border:1px solid #e5e7eb;">Workspace integration</td><td style="padding:10px;border:1px solid #e5e7eb;">Gemini 3.5</td></tr>
-<tr><td style="padding:10px;border:1px solid #e5e7eb;">Long context (500+ pages)</td><td style="padding:10px;border:1px solid #e5e7eb;">Gemini 3.5 Pro</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Task">Bangla creative writing</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Winner"><b>Claude Sonnet 4.6</b></td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Task">Long-form essay</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Winner"><b>Claude Sonnet 4.6</b></td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Task">Coding</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Winner"><b>Claude Sonnet 4.6</b></td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Task">Voice conversation</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Winner">ChatGPT GPT-5</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Task">Image generation</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Winner">ChatGPT/Gemini</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Task">Workspace integration</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Winner">Gemini 3.5</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Task">Long context (500+ pages)</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Winner">Gemini 3.5 Pro</td></tr>
 </tbody>
-</table>
+</table></div>
 
 <h2 id="when-sonnet-4-6-worth-it">When Sonnet 4.6 Worth It</h2>
 
@@ -233,7 +230,7 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-    </div>
+    </div></div><p class="sr-only" data-guide-copy-status role="status" aria-live="polite"></p></div>
 
     <!-- TEMPLATED-FAQ:START -->
 <section class="article-faq" aria-labelledby="faq-heading">

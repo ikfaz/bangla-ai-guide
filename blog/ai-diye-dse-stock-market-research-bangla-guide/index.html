@@ -34,6 +34,8 @@
   <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <link rel="stylesheet" href="/css/site-shell.css">
   <link rel="stylesheet" href="/css/guide-reader.css">
+  <link rel="stylesheet" href="/css/guide-workshop.css">
+  <script src="/js/guide-workshop.js" defer></script>
 </head>
 <body data-author-mode="editorial">
     <!-- GUIDE-HEADER:START -->
@@ -50,32 +52,27 @@
 </header>
 <!-- GUIDE-HEADER:END -->
 
-    <div data-guide-reader class="article-sheet container">
-        <!-- ARTICLE-META:START -->
-<p class="article-kicker"><span class="article-chip">ব্যবসা</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৪ মিনিট পড়া</span></p>
-<!-- ARTICLE-META:END -->
-<h1 id="gs-content">AI দিয়ে DSE Stock Market Research — বাংলাদেশি বিনিয়োগকারীদের জন্য</h1>
-
-<!-- ARTICLE-HERO:START -->
-<figure class="article-hero">
+    <div data-guide-reader class="article-sheet container" data-guide-workshop><div class="gw-hero"><div class="gw-hero-copy"><p class="article-kicker"><span class="article-chip">ব্যবসা</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৪ মিনিট পড়া</span></p><h1 id="gs-content">AI দিয়ে DSE Stock Market Research — বাংলাদেশি বিনিয়োগকারীদের জন্য</h1><p class="gw-deck">Dhaka Stock Exchange-এ বিনিয়োগ করার জন্য AI tools কীভাবে ব্যবহার করবেন? Fundamental analysis, news monitoring, technical screening — practical bangla গাইড।</p><a class="gw-actions" href="#dse-2026-reality">DSE 2026 Reality <span aria-hidden="true">↓</span></a></div><div class="gw-hero-visual"><figure class="article-hero">
   <img src="/assets/editorial/analytics.svg" width="1000" height="440" alt="সারণি, রেখাচিত্র ও তথ্যের বিন্দুর অঙ্কন" decoding="async" fetchpriority="high">
-</figure>
-<!-- ARTICLE-HERO:END -->
-<!-- ARTICLE-TOC:START -->
-<nav class="article-toc" aria-label="সূচিপত্র">
-  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
-  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
-  <ol class="toc-list">
-    <li class="toc-item"><a href="#dse-2026-reality">DSE 2026 Reality</a></li>
-    <li class="toc-item"><a href="#sakif-এর-5-ai-use-cases">Sakif-এর 5 AI Use Cases</a></li>
-    <li class="toc-item"><a href="#bd-specific-tools-integration">BD-Specific Tools Integration</a></li>
-    <li class="toc-item"><a href="#৪টা-critical-risk">৪টা Critical Risk</a></li>
-    <li class="toc-item"><a href="#উপসংহার-আপনার-আজকের-পদক্ষেপ">উপসংহার — আপনার আজকের পদক্ষেপ</a></li>
-    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
-    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
-  </ol>
-</nav>
-<!-- ARTICLE-TOC:END -->
+</figure></div></div><div class="gw-layout"><nav class="gw-chapters" aria-label="এই গাইডে"><details open><summary>এই গাইডে</summary><ol>
+<li><a href="#dse-2026-reality">DSE 2026 Reality</a></li>
+<li><a href="#sakif-এর-5-ai-use-cases">Sakif-এর 5 AI Use Cases</a></li>
+<li><a href="#bd-specific-tools-integration">BD-Specific Tools Integration</a></li>
+<li><a href="#৪টা-critical-risk">৪টা Critical Risk</a></li>
+<li><a href="#উপসংহার-আপনার-আজকের-পদক্ষেপ">উপসংহার — আপনার আজকের পদক্ষেপ</a></li>
+<li><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+</ol></details></nav><div class="gw-reading">
+
+
+
+
+
+
+
+
+
+
+
 
 <p class="lede">Sakif Hossain Dhaka-র একটা bank-এর IT officer — main job পাশে ২০২৩-এ DSE-তে retail investor হিসেবে শুরু করেছিলেন। Initial capital ৳২ লাখ। প্রথম ১৪ মাস: ৳১.৬ লাখ-এ নেমেছিল (২০% loss)। তিনি tip-based trading + tele-trader rumor follow করতেন। ২০২৪-এর জুনে তিনি AI-augmented research workflow শিখলেন — fundamental analysis automation, Bangladesh Bank circular tracking, sector trend monitoring। ২০২৬-এর মে-এ তাঁর portfolio ৳৭.৮ লাখ। 22-month CAGR ৫৩%। তিনি BSEC-এর recommendation prohibition follow করেন — কিন্তু নিজের research-এ AI tool ব্যবহার করেন। সাবধানতা প্রথমেই: stock market high-risk, AI guarantee না, past performance future predictor না। এটা একটা case study, financial advice না।</p>
 
@@ -103,7 +100,7 @@
 <h3>1. Fundamental Analysis Automation</h3>
 
 <blockquote class="deep-blockquote">
-"নিচের company-এর last 5-year audited financial (P&L, BS, CF) attached। DSE listed [Square Pharma]। Calculate:<br>
+"নিচের company-এর last 5-year audited financial (P&amp;L, BS, CF) attached। DSE listed [Square Pharma]। Calculate:<br>
 (১) Standard 15 ratios (current, debt-equity, ROE, ROA, GP margin, NP margin, asset turnover, etc.),<br>
 (২) DCF valuation (assume cost of equity 13%, growth 8-12-15% scenario),<br>
 (৩) Peer comparison (Beximco Pharma, Renata, ACI),<br>
@@ -115,7 +112,7 @@
 
 <h3>2. Sector Trend Monitoring</h3>
 
-<p>Perplexity Pro weekly: "Bangladesh pharmaceutical sector — Q1 2026 developments. Major export deal, regulatory change, raw material price, M&A activity. Likely impact on DSE-listed pharma stock। Top 3 outperformer + 3 underperformer prediction with rationale।"</p>
+<p>Perplexity Pro weekly: "Bangladesh pharmaceutical sector — Q1 2026 developments. Major export deal, regulatory change, raw material price, M&amp;A activity. Likely impact on DSE-listed pharma stock। Top 3 outperformer + 3 underperformer prediction with rationale।"</p>
 
 <h3>3. Bangladesh Bank Circular Impact Analysis</h3>
 
@@ -209,7 +206,7 @@ Suggest rebalancing: sector concentration risk, individual stock weight optimiza
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-    </div>
+    </div></div><p class="sr-only" data-guide-copy-status role="status" aria-live="polite"></p></div>
 
     <!-- RELATED-POSTS:START -->
 <section class="related-posts" aria-label="সম্পর্কিত গাইড">

@@ -34,6 +34,8 @@
 <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <link rel="stylesheet" href="/css/site-shell.css">
   <link rel="stylesheet" href="/css/guide-reader.css">
+<link rel="stylesheet" href="/css/guide-workshop.css">
+  <script src="/js/guide-workshop.js" defer></script>
   <!-- FAQ-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Gemini 3.5 কোন কাজে সবচেয়ে ভালো?","acceptedAnswer":{"@type":"Answer","text":"1. Long PDF analysis: Government policy, annual report, court documents — 2M token unbeatable। 2. Workspace power-user: Gmail + Docs + Sheets heavy user-এর জন্য seamless integration। 3. Bangladesh-specific research: Google Search grounding — real-time, citation-rich। 4. Image/document OCR: Handwritten Bangla 85%+ accuracy। 5. Video generation: Veo 3 — BD faceless YouTube channel-এর জন্য game-changer। 6. Code analysis: Long codebase, multi-file context। 7. Multi-step task: Deep Research mode — autonomous research।"}},{"@type":"Question","name":"What's New from 2.5 Pro?","acceptedAnswer":{"@type":"Answer","text":"Context expansion: 1M → 2M tokens (effectively unlimited document analysis)। Better Bangla reasoning: Native-level fluency। Multimodal improvement: Image/video understanding deeper। Workspace native: Gmail/Docs/Sheets inline integration deeper। Deep Research mode: 5-10 minute autonomous research with source citation।"}},{"@type":"Question","name":"Gemini 3.5 vs Competitors — কোনটা বেছে নেব?","acceptedAnswer":{"@type":"Answer","text":"Use Case Best Choice Long PDF (50-500 page) Gemini 3.5 Pro Bangla creative writing Claude Sonnet 4.6 Coding (complex) Claude Sonnet 4.6 Voice conversation ChatGPT GPT-5 Workspace integration Gemini 3.5 Current data + citation Gemini 3.5 or Perplexity Video generation Gemini Veo 3"}},{"@type":"Question","name":"বাংলাদেশ থেকে Gemini 3.5 কীভাবে access করব?","acceptedAnswer":{"@type":"Answer","text":"Free tier: Gemini 3.5 Flash unlimited (gemini.google.com)। Paid: Google One AI Premium $20/mo (~৳2,400) — Pro + 2TB Drive + Workspace AI। Payment: bKash USD card, Wise, Payoneer — সব accepted। VPN-free: BD থেকে directly accessible।"}},{"@type":"Question","name":"When Gemini 3.5 Worth It (BD Context)?","acceptedAnswer":{"@type":"Answer","text":"Daily Gmail + Sheets 4+ hours user। Long PDF analysis regular। Bangladesh-current-data research। Faceless YouTube creator (Veo 3 access)। Google Drive heavy user (2TB bundled valuable)।"}}]}</script>
 <!-- FAQ-SCHEMA:END -->
@@ -53,34 +55,29 @@
 </header>
 <!-- GUIDE-HEADER:END -->
 
-    <div data-guide-reader class="article-sheet container">
-        <!-- ARTICLE-META:START -->
-<p class="article-kicker"><span class="article-chip">এআই টুল</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৩ মিনিট পড়া</span></p>
-<!-- ARTICLE-META:END -->
-<h1 id="gs-content">Gemini 3.5 বাংলা গাইড — Google-এর নতুন Flagship AI (২০২৬)</h1>
-
-<!-- ARTICLE-HERO:START -->
-<figure class="article-hero">
+    <div data-guide-reader class="article-sheet container" data-guide-workshop><div class="gw-hero"><div class="gw-hero-copy"><p class="article-kicker"><span class="article-chip">এআই টুল</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৩ মিনিট পড়া</span></p><h1 id="gs-content">Gemini 3.5 বাংলা গাইড — Google-এর নতুন Flagship AI (২০২৬)</h1><p class="gw-deck">Google Gemini 3.5 — কী নতুন, ২.৫ Pro থেকে কতটা ভালো, কীভাবে বাংলায় ব্যবহার করবেন, দাম ও Workspace integration — বাংলাদেশি ব্যবহারকারীদের জন্য সম্পূর্ণ গাইড।</p><a class="gw-actions" href="#২০২৬-এ-gemini-3-5-family">২০২৬-এ Gemini 3.5 Family <span aria-hidden="true">↓</span></a></div><div class="gw-hero-visual"><figure class="article-hero">
   <img src="/assets/editorial/model.svg" width="1000" height="440" alt="সংযুক্ত নোড ও একটি এআই মডেলের চিপের অঙ্কন" decoding="async" fetchpriority="high">
-</figure>
-<!-- ARTICLE-HERO:END -->
-<!-- ARTICLE-TOC:START -->
-<nav class="article-toc" aria-label="সূচিপত্র">
-  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
-  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
-  <ol class="toc-list">
-    <li class="toc-item"><a href="#২০২৬-এ-gemini-3-5-family">২০২৬-এ Gemini 3.5 Family</a></li>
-    <li class="toc-item"><a href="#what-s-new-from-2-5-pro">What's New from 2.5 Pro</a></li>
-    <li class="toc-item"><a href="#bd-from-access">BD-from Access</a></li>
-    <li class="toc-item"><a href="#bd-use-cases-top-7">BD Use Cases (Top 7)</a></li>
-    <li class="toc-item"><a href="#gemini-3-5-vs-competitors">Gemini 3.5 vs Competitors</a></li>
-    <li class="toc-item"><a href="#when-gemini-3-5-worth-it-bd-context">When Gemini 3.5 Worth It (BD Context)</a></li>
-    <li class="toc-item"><a href="#উপসংহার-আপনার-আজকের-পদক্ষেপ">উপসংহার — আপনার আজকের পদক্ষেপ</a></li>
-    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
-    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
-  </ol>
-</nav>
-<!-- ARTICLE-TOC:END -->
+</figure></div></div><div class="gw-layout"><nav class="gw-chapters" aria-label="এই গাইডে"><details open><summary>এই গাইডে</summary><ol>
+<li><a href="#২০২৬-এ-gemini-3-5-family">২০২৬-এ Gemini 3.5 Family</a></li>
+<li><a href="#what-s-new-from-2-5-pro">What's New from 2.5 Pro</a></li>
+<li><a href="#bd-from-access">BD-from Access</a></li>
+<li><a href="#bd-use-cases-top-7">BD Use Cases (Top 7)</a></li>
+<li><a href="#gemini-3-5-vs-competitors">Gemini 3.5 vs Competitors</a></li>
+<li><a href="#when-gemini-3-5-worth-it-bd-context">When Gemini 3.5 Worth It (BD Context)</a></li>
+<li><a href="#উপসংহার-আপনার-আজকের-পদক্ষেপ">উপসংহার — আপনার আজকের পদক্ষেপ</a></li>
+<li><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+</ol></details></nav><div class="gw-reading">
+
+
+
+
+
+
+
+
+
+
+
 
 <p class="lede">Riad Hossain একটা Dhaka-based MNC-র Senior Business Analyst — 7 বছরের অভিজ্ঞতা। তাঁর daily work: Q3 + Q4 financial review report (200+ page PDF analysis), competitor intelligence research, executive briefing slide preparation। ২০২৪-এ ChatGPT Plus subscribe ছিল। ২০২৫-এর জানুয়ারি-এ Gemini 3.5 Pro launch হলে তিনি Google One AI Premium-এ switch করেছিলেন। ২০২৬-এর মে-এ তাঁর insight: "Gemini 3.5 Pro-এর 2M token context এবং Google Workspace integration combined — long-document analysis-এ unmatched। আমি 400-page annual report 30 seconds-এ summary পাই — ChatGPT chunked processing-এ 15 minutes। Time saved সরাসরি executive-facing work-এ যায়।" Promotion: Senior Analyst → Business Intelligence Manager, ৳1.2L → ৳1.85L।</p>
 
@@ -137,7 +134,7 @@
 
 <h2 id="gemini-3-5-vs-competitors">Gemini 3.5 vs Competitors</h2>
 
-<table style="width:100%;border-collapse:collapse;margin:1rem 0;">
+<div class="gw-table-scroll" role="region" tabindex="0" aria-label="Gemini 3.5 vs Competitors"><table style="width:100%;border-collapse:collapse;margin:1rem 0;" class="gw-table">
 <thead>
 <tr style="background:#f1f5f9;">
 <th style="padding:10px;border:1px solid #e5e7eb;">Use Case</th>
@@ -145,15 +142,15 @@
 </tr>
 </thead>
 <tbody>
-<tr><td style="padding:10px;border:1px solid #e5e7eb;">Long PDF (50-500 page)</td><td style="padding:10px;border:1px solid #e5e7eb;"><b>Gemini 3.5 Pro</b></td></tr>
-<tr><td style="padding:10px;border:1px solid #e5e7eb;">Bangla creative writing</td><td style="padding:10px;border:1px solid #e5e7eb;">Claude Sonnet 4.6</td></tr>
-<tr><td style="padding:10px;border:1px solid #e5e7eb;">Coding (complex)</td><td style="padding:10px;border:1px solid #e5e7eb;">Claude Sonnet 4.6</td></tr>
-<tr><td style="padding:10px;border:1px solid #e5e7eb;">Voice conversation</td><td style="padding:10px;border:1px solid #e5e7eb;">ChatGPT GPT-5</td></tr>
-<tr><td style="padding:10px;border:1px solid #e5e7eb;">Workspace integration</td><td style="padding:10px;border:1px solid #e5e7eb;"><b>Gemini 3.5</b></td></tr>
-<tr><td style="padding:10px;border:1px solid #e5e7eb;">Current data + citation</td><td style="padding:10px;border:1px solid #e5e7eb;"><b>Gemini 3.5</b> or Perplexity</td></tr>
-<tr><td style="padding:10px;border:1px solid #e5e7eb;">Video generation</td><td style="padding:10px;border:1px solid #e5e7eb;"><b>Gemini Veo 3</b></td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Use Case">Long PDF (50-500 page)</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Best Choice"><b>Gemini 3.5 Pro</b></td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Use Case">Bangla creative writing</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Best Choice">Claude Sonnet 4.6</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Use Case">Coding (complex)</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Best Choice">Claude Sonnet 4.6</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Use Case">Voice conversation</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Best Choice">ChatGPT GPT-5</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Use Case">Workspace integration</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Best Choice"><b>Gemini 3.5</b></td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Use Case">Current data + citation</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Best Choice"><b>Gemini 3.5</b> or Perplexity</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Use Case">Video generation</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Best Choice"><b>Gemini Veo 3</b></td></tr>
 </tbody>
-</table>
+</table></div>
 
 <h2 id="when-gemini-3-5-worth-it-bd-context">When Gemini 3.5 Worth It (BD Context)</h2>
 
@@ -219,7 +216,7 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-    </div>
+    </div></div><p class="sr-only" data-guide-copy-status role="status" aria-live="polite"></p></div>
 
     <!-- TEMPLATED-FAQ:START -->
 <section class="article-faq" aria-labelledby="faq-heading">

@@ -34,6 +34,8 @@
 <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <link rel="stylesheet" href="/css/site-shell.css">
   <link rel="stylesheet" href="/css/guide-reader.css">
+<link rel="stylesheet" href="/css/guide-workshop.css">
+  <script src="/js/guide-workshop.js" defer></script>
   <!-- FAQ-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Rytr কোন কাজে সবচেয়ে ভালো?","acceptedAnswer":{"@type":"Answer","text":"Client: US SaaS company, blog content (1500-word, weekly) Topic + brief Slack-এ receive (Sokal 8 AM BD time) Rytr-এ \"Blog Post\" template → topic title + keywords paste AI generates outline → Nusrat review + adjust (5 min) Section-by-section expand → AI draft Manual heavy edit: BD context examples add, factual claims verify, brand voice match (30-45 min) Grammar pass (Rytr built-in) SEO optimization: meta description, title tag — Rytr template WordPress upload + image Delivery: 2-3 hours total (vs 5-6 hours manual writing) Per blog rate $৪০। Daily 2 blogs × 5 days = $৪০০/সপ্তাহ। Monthly $১,৬০০ achievable (current $৬২০ at fewer hours)।"}},{"@type":"Question","name":"কী কী করতে পারে?","acceptedAnswer":{"@type":"Answer","text":"Blog content: 1000-2000 word blog post — outline → expansion। Social media: Facebook post, Instagram caption, LinkedIn article, Twitter thread। Email: Cold outreach, follow-up, newsletter। Product copy: Product description, landing page hero, CTA। SEO: Meta description, title tag, SEO-optimized content। Long-form: Story, song lyric, video script। Custom use case: Own template create। Plagiarism check: Built-in (paid tier)। Grammar check: Real-time, with suggestions।"}},{"@type":"Question","name":"কাদের জন্য Rytr ideal?","acceptedAnswer":{"@type":"Answer","text":"Best fit: Solo freelance writer (Nusrat-এর মতো) — $9 affordable entry BD student/early-career — first AI writing tool Small business owner — own marketing content Hobbyist blogger — passion project content Side-hustle copywriter — extra income stream Not ideal: Enterprise agency (Jasper/Copy.ai better) Bangla-heavy long-form content (ChatGPT/Claude better) Brand voice critical (Jasper better) Team workflows (Copy.ai better)"}},{"@type":"Question","name":"Rytr-এর কী কী সীমাবদ্ধতা আছে?","acceptedAnswer":{"@type":"Answer","text":"Bangla long-form: ৮০০+ word Bangla content coherence drops। English-এ better। Brand voice training: Jasper-এর মতো deep brand voice feature নেই। Generic output। Factual accuracy: Hallucination risk। Stats/numbers verify required। Advanced features: CRM integration, workflow automation — Pro tools-এ available, Rytr-এ limited। Team collaboration: Single-user focused। Team feature minimal।"}}]}</script>
 <!-- FAQ-SCHEMA:END -->
@@ -53,36 +55,31 @@
 </header>
 <!-- GUIDE-HEADER:END -->
 
-    <div data-guide-reader class="article-sheet container">
-        <!-- ARTICLE-META:START -->
-<p class="article-kicker"><span class="article-chip">এআই টুল</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৪ মিনিট পড়া</span></p>
-<!-- ARTICLE-META:END -->
-<h1 id="gs-content">Rytr বাংলা গাইড — সবচেয়ে সস্তা AI Writer ($৯/মাস)</h1>
-
-<!-- ARTICLE-HERO:START -->
-<figure class="article-hero">
+    <div data-guide-reader class="article-sheet container" data-guide-workshop><div class="gw-hero"><div class="gw-hero-copy"><p class="article-kicker"><span class="article-chip">এআই টুল</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৪ মিনিট পড়া</span></p><h1 id="gs-content">Rytr বাংলা গাইড — সবচেয়ে সস্তা AI Writer ($৯/মাস)</h1><p class="gw-deck">Rytr কেন budget-conscious content creator-দের জন্য সেরা? ৪০+ template, ৩০+ language, $৯/মাস — বাংলাদেশি ছোট ব্যবসা, ফ্রিল্যান্সার ও blogger-দের জন্য সম্পূর্ণ গাইড।</p><a class="gw-actions" href="#workflow-উদাহরণ-nusrat-এর-upwork-project">Workflow উদাহরণ — Nusrat-এর Upwork project <span aria-hidden="true">↓</span></a></div><div class="gw-hero-visual"><figure class="article-hero">
   <img src="/assets/editorial/writing.svg" width="1000" height="440" alt="সম্পাদিত পাণ্ডুলিপি ও ফাউন্টেন পেনের অঙ্কন" decoding="async" fetchpriority="high">
-</figure>
-<!-- ARTICLE-HERO:END -->
-<!-- ARTICLE-TOC:START -->
-<nav class="article-toc" aria-label="সূচিপত্র">
-  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
-  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
-  <ol class="toc-list">
-    <li class="toc-item"><a href="#ভূমিকা-bogura-র-এক-freelance-writer-এর-9-stack">ভূমিকা — Bogura-র এক freelance writer-এর $9 stack</a></li>
-    <li class="toc-item"><a href="#rytr-এর-usp">Rytr-এর USP</a></li>
-    <li class="toc-item"><a href="#কী-কী-করতে-পারে">কী কী করতে পারে</a></li>
-    <li class="toc-item"><a href="#দাম">দাম</a></li>
-    <li class="toc-item"><a href="#বাংলাদেশি-ব্যবহারকারীদের-জন্য-কেন-আকর্ষণীয়">বাংলাদেশি ব্যবহারকারীদের জন্য কেন আকর্ষণীয়</a></li>
-    <li class="toc-item"><a href="#workflow-উদাহরণ-nusrat-এর-upwork-project">Workflow উদাহরণ — Nusrat-এর Upwork project</a></li>
-    <li class="toc-item"><a href="#সীমাবদ্ধতা">সীমাবদ্ধতা</a></li>
-    <li class="toc-item"><a href="#কাদের-জন্য-rytr-ideal">কাদের জন্য Rytr ideal?</a></li>
-    <li class="toc-item"><a href="#উপসংহার">উপসংহার</a></li>
-    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
-    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
-  </ol>
-</nav>
-<!-- ARTICLE-TOC:END -->
+</figure></div></div><div class="gw-layout"><nav class="gw-chapters" aria-label="এই গাইডে"><details open><summary>এই গাইডে</summary><ol>
+<li><a href="#ভূমিকা-bogura-র-এক-freelance-writer-এর-9-stack">ভূমিকা — Bogura-র এক freelance writer-এর $9 stack</a></li>
+<li><a href="#rytr-এর-usp">Rytr-এর USP</a></li>
+<li><a href="#কী-কী-করতে-পারে">কী কী করতে পারে</a></li>
+<li><a href="#দাম">দাম</a></li>
+<li><a href="#বাংলাদেশি-ব্যবহারকারীদের-জন্য-কেন-আকর্ষণীয়">বাংলাদেশি ব্যবহারকারীদের জন্য কেন আকর্ষণীয়</a></li>
+<li><a href="#workflow-উদাহরণ-nusrat-এর-upwork-project">Workflow উদাহরণ — Nusrat-এর Upwork project</a></li>
+<li><a href="#সীমাবদ্ধতা">সীমাবদ্ধতা</a></li>
+<li><a href="#কাদের-জন্য-rytr-ideal">কাদের জন্য Rytr ideal?</a></li>
+<li><a href="#উপসংহার">উপসংহার</a></li>
+<li><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+</ol></details></nav><div class="gw-reading">
+
+
+
+
+
+
+
+
+
+
+
 
 <h2 id="ভূমিকা-bogura-র-এক-freelance-writer-এর-9-stack">ভূমিকা — Bogura-র এক freelance writer-এর $9 stack</h2>
 <p class="lede">বগুড়ার freelance content writer নুসরাত জাহান — ২৪ বছর, BU English Honours ২০২৪ batch (final year)। ২০২৪ সেপ্টেম্বরে Upwork-এ start, প্রথম ৩ মাসে ২ small client (US/UK), monthly income $১২০। ChatGPT Plus $২০-এ subscribe করতে পারছিলেন না — Bogura-তে USD card setup easy না, পরিবারের কেউ help করতে পারছিল না। বন্ধু সুপারিশ করল Rytr — $৯/মাস, India-friendly payment। ৬ মাস পর: Rytr + free Claude trial + ChatGPT free-এর hybrid stack, monthly income $৬২০, ১২টা recurring client। নুসরাতের philosophy: "Premium tool নেই থাকলেও কাজ হয় — affordable tool + own writing skill = career start।" এই গাইড সেই workflow।</p>
@@ -136,7 +133,7 @@
 
 <div class="case-study">
 <strong>Client: US SaaS company, blog content (1500-word, weekly)</strong>
-<ol>
+<ol class="gw-steps">
 <li>Topic + brief Slack-এ receive (Sokal 8 AM BD time)</li>
 <li>Rytr-এ "Blog Post" template → topic title + keywords paste</li>
 <li>AI generates outline → Nusrat review + adjust (5 min)</li>
@@ -237,7 +234,7 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-    </div>
+    </div></div><p class="sr-only" data-guide-copy-status role="status" aria-live="polite"></p></div>
 
     <!-- TEMPLATED-FAQ:START -->
 <section class="article-faq" aria-labelledby="faq-heading">

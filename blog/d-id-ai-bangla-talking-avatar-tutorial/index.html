@@ -34,6 +34,8 @@
 <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <link rel="stylesheet" href="/css/site-shell.css">
   <link rel="stylesheet" href="/css/guide-reader.css">
+<link rel="stylesheet" href="/css/guide-workshop.css">
+  <script src="/js/guide-workshop.js" defer></script>
   <!-- FAQ-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"D-ID কোন কাজে সবচেয়ে ভালো?","acceptedAnswer":{"@type":"Answer","text":"1. Educational content (Sabbir-এর মতো) Historical figures, scientific personalities, cultural icons — recreate talking avatars for documentaries। Ethical disclosure required। 2. Corporate training video Internal training-এ same presenter বার বার record না করে, একটা photo + script-এ updates। 3. Multilingual marketing One brand spokesperson photo + ২০ language scripts → ২০ localized videos। Cost-effective international campaign। 4. Memorial / tribute video Deceased family member-এর photo + recorded letter content → \"speaking\" video। Emotionally powerful (consent + ethics critical)। 5. Personalized sales outreach Sales team-এর photo + GPT-generated customized script → 100+ personalized \"video…"}},{"@type":"Question","name":"D-ID vs HeyGen vs Synthesia — কোনটা বেছে নেব?","acceptedAnswer":{"@type":"Answer","text":"Aspect D-ID HeyGen Synthesia Single photo → talking Yes (core USP) Yes (Photo Avatar) No (video record needed) Pre-built avatars ~100 500+ 150+ Custom avatar (video record) Limited Excellent Excellent Bangla voice quality Good (audio upload preferred) Better Acceptable Lip sync accuracy ★★★★ ★★★★★ ★★★★★ Entry price $৫.৯/মাস $২৪/মাস $২৯/মাস Best for Photo → video, low budget Creator/edtech Corporate training Verdict: D-ID-এর USP \"photo → talking\" — unique। HeyGen general-purpose better। Synthesia enterprise corporate। Sabbir-এর historical use case-এ D-ID-ই ideal।"}},{"@type":"Question","name":"D-ID-এর মূল features কী কী?","acceptedAnswer":{"@type":"Answer","text":"Photo to Video: Single static image → talking head video (lip-sync to audio)। D-ID-এর core। Presenter Studio: 100+ pre-built avatars (diverse age/ethnicity/gender)। Custom Avatar: Your own photo upload → unlimited usage। Voice options: Built-in TTS (140+ languages including Bangla) বা upload own audio। GPT integration: D-ID-এর chat-app — type script → AI-generated talking avatar reply (real-time)। API: Developer-দের জন্য — applications-এ integrate করা যায়।"}},{"@type":"Question","name":"D-ID কী?","acceptedAnswer":{"@type":"Answer","text":"D-ID (২০১৭, Israeli company) — AI-powered talking avatar platform। Static image upload + audio/text input → realistic talking head video। ইতিহাস: প্রথমে enterprise/historical use case (Holocaust survivors testimony preserve), পরে creator/marketing-এ expand। Founded ২০১৭, Tel Aviv Privacy-tech পিভটেদ to AI video Active users ~৮ লাখ global Marketing + edtech-heavy BD adoption ~৩,৫০০ active YouTuber/teacher Pricing Free trial + $৬-৩০০/মাস"}}]}</script>
 <!-- FAQ-SCHEMA:END -->
@@ -53,36 +55,31 @@
 </header>
 <!-- GUIDE-HEADER:END -->
 
-    <div data-guide-reader class="article-sheet container">
-        <!-- ARTICLE-META:START -->
-<p class="article-kicker"><span class="article-chip">মিডিয়া</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৫ মিনিট পড়া</span></p>
-<!-- ARTICLE-META:END -->
-<h1 id="gs-content">D-ID বাংলা গাইড — যেকোনো ছবিকে Talking Avatar বানানো</h1>
-
-<!-- ARTICLE-HERO:START -->
-<figure class="article-hero">
+    <div data-guide-reader class="article-sheet container" data-guide-workshop><div class="gw-hero"><div class="gw-hero-copy"><p class="article-kicker"><span class="article-chip">মিডিয়া</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৫ মিনিট পড়া</span></p><h1 id="gs-content">D-ID বাংলা গাইড — যেকোনো ছবিকে Talking Avatar বানানো</h1><p class="gw-deck">D-ID দিয়ে কীভাবে একটি static ছবিকে কথা বলা video-তে রূপান্তর করবেন? Photo + script → talking head video — বাংলাদেশি educator, marketer-দের জন্য সম্পূর্ণ tutorial।</p><a class="gw-actions" href="#ভূমিকা-একটা-historical-figure-কে-জীবন্ত-করা">ভূমিকা — একটা historical figure-কে জীবন্ত করা <span aria-hidden="true">↓</span></a></div><div class="gw-hero-visual"><figure class="article-hero">
   <img src="/assets/editorial/classroom.svg" width="1000" height="440" alt="বোর্ড, চক ও খোলা বইয়ের অঙ্কন" decoding="async" fetchpriority="high">
-</figure>
-<!-- ARTICLE-HERO:END -->
-<!-- ARTICLE-TOC:START -->
-<nav class="article-toc" aria-label="সূচিপত্র">
-  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
-  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
-  <ol class="toc-list">
-    <li class="toc-item"><a href="#ভূমিকা-একটা-historical-figure-কে-জীবন্ত-করা">ভূমিকা — একটা historical figure-কে জীবন্ত করা</a></li>
-    <li class="toc-item"><a href="#d-id-কী">D-ID কী?</a></li>
-    <li class="toc-item"><a href="#মূল-ফিচার">মূল ফিচার</a></li>
-    <li class="toc-item"><a href="#প্রথম-video-বানানো">প্রথম video বানানো</a></li>
-    <li class="toc-item"><a href="#দাম">দাম</a></li>
-    <li class="toc-item"><a href="#use-cases">Use cases</a></li>
-    <li class="toc-item"><a href="#d-id-vs-heygen-vs-synthesia">D-ID vs HeyGen vs Synthesia</a></li>
-    <li class="toc-item"><a href="#ভালো-result-এর-টিপস">ভালো result-এর টিপস</a></li>
-    <li class="toc-item"><a href="#উপসংহার-sabbir-এর-reflection">উপসংহার — Sabbir-এর reflection</a></li>
-    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
-    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
-  </ol>
-</nav>
-<!-- ARTICLE-TOC:END -->
+</figure></div></div><div class="gw-layout"><nav class="gw-chapters" aria-label="এই গাইডে"><details open><summary>এই গাইডে</summary><ol>
+<li><a href="#ভূমিকা-একটা-historical-figure-কে-জীবন্ত-করা">ভূমিকা — একটা historical figure-কে জীবন্ত করা</a></li>
+<li><a href="#d-id-কী">D-ID কী?</a></li>
+<li><a href="#মূল-ফিচার">মূল ফিচার</a></li>
+<li><a href="#প্রথম-video-বানানো">প্রথম video বানানো</a></li>
+<li><a href="#দাম">দাম</a></li>
+<li><a href="#use-cases">Use cases</a></li>
+<li><a href="#d-id-vs-heygen-vs-synthesia">D-ID vs HeyGen vs Synthesia</a></li>
+<li><a href="#ভালো-result-এর-টিপস">ভালো result-এর টিপস</a></li>
+<li><a href="#উপসংহার-sabbir-এর-reflection">উপসংহার — Sabbir-এর reflection</a></li>
+<li><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+</ol></details></nav><div class="gw-reading">
+
+
+
+
+
+
+
+
+
+
+
 
 <h2 id="ভূমিকা-একটা-historical-figure-কে-জীবন্ত-করা">ভূমিকা — একটা historical figure-কে জীবন্ত করা</h2>
 <p class="lede">ঢাকার এক history teacher + YouTuber সাব্বির আহমেদ — ৩৬ বছর, DU History ২০১৩, ৭ বছর Notre Dame College-এ teacher, পরে full-time YouTuber ("ইতিহাসের রং" — ৪.৫ লাখ subscriber)। ২০২৫-এ একটা ambitious project: ১৯৭১-এর Liberation War-এর key figures (Sheikh Mujib, Tajuddin Ahmad, Ziaur Rahman)-কে "talking avatars" হিসেবে animation করে কথা বলানো। Real footage limited, voice clips few। সাব্বির D-ID try করলেন — historical photo upload + scripted Bangla speech audio → AI-generated talking avatar video। প্রথম experiment-এ Mujib-এর famous March 7 speech-এর কিছু lines reproduce করলেন (ethically disclosed as AI recreation)। Educational video format-এ groundbreaking। ৬ মাসে: 12-episode series 2.4 কোটি view, channel sub jump 4.5L → 9.2L, monthly AdSense $৮৫০ → $৩,৪০০। এই গাইড সেই workflow।</p>
@@ -173,18 +170,18 @@
 
 <h2 id="d-id-vs-heygen-vs-synthesia">D-ID vs HeyGen vs Synthesia</h2>
 
-<table style="width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;">
+<div class="gw-table-scroll" role="region" tabindex="0" aria-label="D-ID vs HeyGen vs Synthesia"><table style="width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;" class="gw-table">
 <thead><tr style="background:#F1F5F9;"><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Aspect</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">D-ID</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">HeyGen</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Synthesia</th></tr></thead>
 <tbody>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Single photo → talking</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>Yes (core USP)</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">Yes (Photo Avatar)</td><td style="padding:10px;border:1px solid #E2E8F0;">No (video record needed)</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Pre-built avatars</td><td style="padding:10px;border:1px solid #E2E8F0;">~100</td><td style="padding:10px;border:1px solid #E2E8F0;">500+</td><td style="padding:10px;border:1px solid #E2E8F0;">150+</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Custom avatar (video record)</td><td style="padding:10px;border:1px solid #E2E8F0;">Limited</td><td style="padding:10px;border:1px solid #E2E8F0;">Excellent</td><td style="padding:10px;border:1px solid #E2E8F0;">Excellent</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Bangla voice quality</td><td style="padding:10px;border:1px solid #E2E8F0;">Good (audio upload preferred)</td><td style="padding:10px;border:1px solid #E2E8F0;">Better</td><td style="padding:10px;border:1px solid #E2E8F0;">Acceptable</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Lip sync accuracy</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★★</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★★★</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★★★</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Entry price</td><td style="padding:10px;border:1px solid #E2E8F0;">$৫.৯/মাস</td><td style="padding:10px;border:1px solid #E2E8F0;">$২৪/মাস</td><td style="padding:10px;border:1px solid #E2E8F0;">$২৯/মাস</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Best for</td><td style="padding:10px;border:1px solid #E2E8F0;">Photo → video, low budget</td><td style="padding:10px;border:1px solid #E2E8F0;">Creator/edtech</td><td style="padding:10px;border:1px solid #E2E8F0;">Corporate training</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Aspect">Single photo → talking</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="D-ID"><strong>Yes (core USP)</strong></td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="HeyGen">Yes (Photo Avatar)</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Synthesia">No (video record needed)</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Aspect">Pre-built avatars</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="D-ID">~100</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="HeyGen">500+</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Synthesia">150+</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Aspect">Custom avatar (video record)</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="D-ID">Limited</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="HeyGen">Excellent</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Synthesia">Excellent</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Aspect">Bangla voice quality</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="D-ID">Good (audio upload preferred)</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="HeyGen">Better</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Synthesia">Acceptable</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Aspect">Lip sync accuracy</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="D-ID">★★★★</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="HeyGen">★★★★★</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Synthesia">★★★★★</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Aspect">Entry price</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="D-ID">$৫.৯/মাস</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="HeyGen">$২৪/মাস</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Synthesia">$২৯/মাস</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Aspect">Best for</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="D-ID">Photo → video, low budget</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="HeyGen">Creator/edtech</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Synthesia">Corporate training</td></tr>
 </tbody>
-</table>
+</table></div>
 
 <p>Verdict: D-ID-এর USP "photo → talking" — unique। HeyGen general-purpose better। Synthesia enterprise corporate। Sabbir-এর historical use case-এ D-ID-ই ideal।</p>
 
@@ -254,7 +251,7 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-    </div>
+    </div></div><p class="sr-only" data-guide-copy-status role="status" aria-live="polite"></p></div>
 
     <!-- TEMPLATED-FAQ:START -->
 <section class="article-faq" aria-labelledby="faq-heading">

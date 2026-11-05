@@ -34,6 +34,8 @@
 <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <link rel="stylesheet" href="/css/site-shell.css">
   <link rel="stylesheet" href="/css/guide-reader.css">
+<link rel="stylesheet" href="/css/guide-workshop.css">
+  <script src="/js/guide-workshop.js" defer></script>
   <!-- FAQ-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Claude Opus 4.8-এর performance কেমন?","acceptedAnswer":{"@type":"Answer","text":"Anthropic-এর published benchmarks (Opus 4.7 → 4.8): 64.3% → 69.2% Agentic coding 54.7% → 57.9% Multidisciplinary reasoning 82.8% → 83.4% Agentic computer use 1753 → 1890 Knowledge work score Agentic coding-এ ~৫ point jump ৭ সপ্তাহে — significant। Computer use-এ marginal gain (~১ point) কারণ 4.7 already saturated near practical ceiling। Knowledge work-এ ১৪০-point jump (8% relative) — এটাই production-এর জন্য সবচেয়ে useful improvement। শাব্বিরের internal 12-task benchmark (Doctorola codebase থেকে): Opus 4.7-এ pass rate ৬৪%, Opus 4.8-এ ৭১%। তাঁর হিসাবে: \"১২টা task-এর মধ্যে ৭.৭টা vs ৮.৫টা pass — শুনতে কম মনে হয়, কিন্তু failure cases যেগুলো 4.7 পারেনি সেগুলো async race condition বা multi-table…"}},{"@type":"Question","name":"Claude Opus 4.8 কোন কাজে সবচেয়ে ভালো?","acceptedAnswer":{"@type":"Answer","text":"Claude Code-এ available — single session-এ hundreds of parallel subagents। Traditional agentic loop-এ একটা main agent একে একে task করে; Dynamic Workflows-এ main agent task graph তৈরি করে, subagent-দের parallel spawn করে, result merge করে। শাব্বিরের real example: Doctorola-এর scheduling service Postgres থেকে CockroachDB-তে migrate করতে হচ্ছিল। Traditional approach: ১৪ দিন (manual table-by-table analysis, query rewrite, test, deploy)। Opus 4.7-এ ১১ দিন (semi-automated)। Opus 4.8 + Dynamic Workflows-এ ৬ দিন। Case study — CockroachDB migration: Main agent ৪৭টা table identify করল, ৪৭টা parallel subagent spawn — প্রত্যেকটা একটা table-এর schema + query analysis + rewrite। Subagent-দের output main…"}},{"@type":"Question","name":"Claude Opus 4.8-এর মূল features কী কী?","acceptedAnswer":{"@type":"Answer","text":"সবচেয়ে practical addition। API + Claude Code-এ দুটি setting: Effort = low: Faster, fewer tokens, suitable for simple lookups + boilerplate generation। ~৪০% rate limit savings। Effort = high (default): Full Opus 4.8 reasoning + tool use। Complex codebase analysis, architecture decisions। শাব্বিরের rule: \"Standup-এর code review-তে effort=low (১৫০টা PR/সপ্তাহ — token খরচ বাঁচে)। Architecture review বা incident postmortem — effort=high। Max plan-এর rate limit-এ ৩দিন পরিবর্তে সপ্তাহভর কাজ করছে।\" Rate limit conservation BD developer-এর জন্য বিশেষ valuable — Max $200 plan-এ daily quota hit করা সহজ। Effort=low দিয়ে routine task করলে high-stakes task-এর জন্য budget save হয়।"}},{"@type":"Question","name":"Opus 4.7 vs 4.8 — কোনটা বেছে নেব?","acceptedAnswer":{"@type":"Answer","text":"Migrate now if: আপনি production agentic pipeline চালান — honesty improvement immediate ROI। Complex codebase refactor pending — Dynamic Workflows time savings massive। Rate limit hit করছেন — Effort Control + Fast mode অনেক quota free করবে। Multi-hour autonomous task চালান — \"works independently longer\" tangible। Wait if: Opus 4.7 দিয়ে current workflow stable + rate limit issue নেই। Pure Bangla creative writing — Sonnet 4.6 এখনো leader, Opus overkill। Dynamic Workflows production-critical task-এ চাইছেন — research preview, ২-৩ সপ্তাহ মাজা শক্ত হওয়া পর্যন্ত wait।"}}]}</script>
 <!-- FAQ-SCHEMA:END -->
@@ -53,40 +55,35 @@
 </header>
 <!-- GUIDE-HEADER:END -->
 
-    <div data-guide-reader class="article-sheet container">
-        <!-- ARTICLE-META:START -->
-<p class="article-kicker"><span class="article-chip">এআই টুল</span><span class="article-chip">২৮ মে, ২০২৬</span><span class="article-chip">৯ মিনিট পড়া</span></p>
-<!-- ARTICLE-META:END -->
-<h1 id="gs-content">Claude Opus 4.8 বাংলা গাইড — Anthropic-এর নতুন Flagship ২০২৬</h1>
-
-<!-- ARTICLE-HERO:START -->
-<figure class="article-hero">
+    <div data-guide-reader class="article-sheet container" data-guide-workshop><div class="gw-hero"><div class="gw-hero-copy"><p class="article-kicker"><span class="article-chip">এআই টুল</span><span class="article-chip">২৮ মে, ২০২৬</span><span class="article-chip">৯ মিনিট পড়া</span></p><h1 id="gs-content">Claude Opus 4.8 বাংলা গাইড — Anthropic-এর নতুন Flagship ২০২৬</h1><p class="gw-deck">Claude Opus 4.8 — Anthropic-এর latest flagship (May 28, 2026 released)। Effort Control, Dynamic Workflows, 2.5x fast mode, BD থেকে access — পূর্ণ বাংলা গাইড।</p><a class="gw-actions" href="#new-feature-2-dynamic-workflows-research-preview">NEW FEATURE 2: Dynamic Workflows (research preview) <span aria-hidden="true">↓</span></a></div><div class="gw-hero-visual"><figure class="article-hero">
   <img src="/assets/editorial/model.svg" width="1000" height="440" alt="সংযুক্ত নোড ও একটি এআই মডেলের চিপের অঙ্কন" decoding="async" fetchpriority="high">
-</figure>
-<!-- ARTICLE-HERO:END -->
-<!-- ARTICLE-TOC:START -->
-<nav class="article-toc" aria-label="সূচিপত্র">
-  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
-  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
-  <ol class="toc-list">
-    <li class="toc-item"><a href="#ভূমিকা-শাব্বিরের-opus-4-7-থেকে-4-8-migration-story">ভূমিকা — শাব্বিরের Opus 4.7 থেকে 4.8 migration story</a></li>
-    <li class="toc-item"><a href="#opus-4-8-কী-নতুন-anthropic-এর-official-positioning">Opus 4.8 কী নতুন — Anthropic-এর official positioning</a></li>
-    <li class="toc-item"><a href="#benchmark-improvements-real-numbers">Benchmark improvements — real numbers</a></li>
-    <li class="toc-item"><a href="#new-feature-1-effort-control">NEW FEATURE 1: Effort Control</a></li>
-    <li class="toc-item"><a href="#new-feature-2-dynamic-workflows-research-preview">NEW FEATURE 2: Dynamic Workflows (research preview)</a></li>
-    <li class="toc-item"><a href="#new-feature-3-fast-mode-2-5x-quicker-3x-cheaper">NEW FEATURE 3: Fast mode — 2.5x quicker, 3x cheaper</a></li>
-    <li class="toc-item"><a href="#new-feature-4-messages-api-system-entries-inside-messages-array">NEW FEATURE 4: Messages API — system entries inside messages array</a></li>
-    <li class="toc-item"><a href="#honesty-improvements-production-এর-জন্য-huge">Honesty improvements — production-এর জন্য huge</a></li>
-    <li class="toc-item"><a href="#বাংলাদেশ-থেকে-access">বাংলাদেশ থেকে access</a></li>
-    <li class="toc-item"><a href="#শাব্বিরের-৬টি-real-doctorola-pro-use-case">শাব্বিরের ৬টি real Doctorola Pro use case</a></li>
-    <li class="toc-item"><a href="#opus-4-7-vs-4-8-কখন-migrate-করবেন-কখন-wait">Opus 4.7 vs 4.8 — কখন migrate করবেন, কখন wait</a></li>
-    <li class="toc-item"><a href="#mythos-preview-note">Mythos preview note</a></li>
-    <li class="toc-item"><a href="#উপসংহার-শাব্বিরের-পরামর্শ">উপসংহার — শাব্বিরের পরামর্শ</a></li>
-    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
-    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
-  </ol>
-</nav>
-<!-- ARTICLE-TOC:END -->
+</figure></div></div><div class="gw-layout"><nav class="gw-chapters" aria-label="এই গাইডে"><details open><summary>এই গাইডে</summary><ol>
+<li><a href="#ভূমিকা-শাব্বিরের-opus-4-7-থেকে-4-8-migration-story">ভূমিকা — শাব্বিরের Opus 4.7 থেকে 4.8 migration story</a></li>
+<li><a href="#opus-4-8-কী-নতুন-anthropic-এর-official-positioning">Opus 4.8 কী নতুন — Anthropic-এর official positioning</a></li>
+<li><a href="#benchmark-improvements-real-numbers">Benchmark improvements — real numbers</a></li>
+<li><a href="#new-feature-1-effort-control">NEW FEATURE 1: Effort Control</a></li>
+<li><a href="#new-feature-2-dynamic-workflows-research-preview">NEW FEATURE 2: Dynamic Workflows (research preview)</a></li>
+<li><a href="#new-feature-3-fast-mode-2-5x-quicker-3x-cheaper">NEW FEATURE 3: Fast mode — 2.5x quicker, 3x cheaper</a></li>
+<li><a href="#new-feature-4-messages-api-system-entries-inside-messages-array">NEW FEATURE 4: Messages API — system entries inside messages array</a></li>
+<li><a href="#honesty-improvements-production-এর-জন্য-huge">Honesty improvements — production-এর জন্য huge</a></li>
+<li><a href="#বাংলাদেশ-থেকে-access">বাংলাদেশ থেকে access</a></li>
+<li><a href="#শাব্বিরের-৬টি-real-doctorola-pro-use-case">শাব্বিরের ৬টি real Doctorola Pro use case</a></li>
+<li><a href="#opus-4-7-vs-4-8-কখন-migrate-করবেন-কখন-wait">Opus 4.7 vs 4.8 — কখন migrate করবেন, কখন wait</a></li>
+<li><a href="#mythos-preview-note">Mythos preview note</a></li>
+<li><a href="#উপসংহার-শাব্বিরের-পরামর্শ">উপসংহার — শাব্বিরের পরামর্শ</a></li>
+<li><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+</ol></details></nav><div class="gw-reading">
+
+
+
+
+
+
+
+
+
+
+
 
 <p class="lede">আজ সকাল ৮টা ঢাকা সময় — Anthropic Claude Opus 4.8 release করলো। মাত্র ৭ সপ্তাহ আগে Opus 4.7 বের হয়েছিল; এত দ্রুত নতুন flagship আসা ব্যতিক্রম। শাব্বির আহমেদ খান (৩৩, BUET CSE ২০১৪, ঢাকার Doctorola Pro-এর Engineering Director, ১২-জন backend team lead) সকাল ১২টায় Claude Max account-এ 4.8 দেখে প্রথম test করেন। চার ঘণ্টা পর তিনি বললেন: "Opus 4.7 ছিল solid daily driver, কিন্তু 4.8-এর Dynamic Workflows feature আমাদের database migration কে ১৪ দিনের project থেকে ৬ দিনে নামাবে — এটা production engineer-এর জন্য real deal।" এই article: Opus 4.8-এর কী নতুন, real benchmark improvements, Effort Control, Dynamic Workflows, BD থেকে access, এবং শাব্বিরের ৬টি live use case।</p>
 
@@ -294,7 +291,7 @@ Anthropic release post-এ একটা teaser: "Mythos-class models coming in t
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-    </div>
+    </div></div><p class="sr-only" data-guide-copy-status role="status" aria-live="polite"></p></div>
 
 <!-- TEMPLATED-FAQ:START -->
 <section class="article-faq" aria-labelledby="faq-heading">

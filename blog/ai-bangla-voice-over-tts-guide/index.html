@@ -34,6 +34,8 @@
   <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <link rel="stylesheet" href="/css/site-shell.css">
   <link rel="stylesheet" href="/css/guide-reader.css">
+  <link rel="stylesheet" href="/css/guide-workshop.css">
+  <script src="/js/guide-workshop.js" defer></script>
 </head>
 <body data-author-mode="editorial">
     <!-- GUIDE-HEADER:START -->
@@ -50,33 +52,28 @@
 </header>
 <!-- GUIDE-HEADER:END -->
 
-    <div data-guide-reader class="article-sheet container">
-        <!-- ARTICLE-META:START -->
-<p class="article-kicker"><span class="article-chip">মিডিয়া</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৩ মিনিট পড়া</span></p>
-<!-- ARTICLE-META:END -->
-<h1 id="gs-content">AI দিয়ে বাংলা Voice Over — সেরা TTS টুলস ও সম্পূর্ণ গাইড ২০২৬</h1>
-
-<!-- ARTICLE-HERO:START -->
-<figure class="article-hero">
+    <div data-guide-reader class="article-sheet container" data-guide-workshop><div class="gw-hero"><div class="gw-hero-copy"><p class="article-kicker"><span class="article-chip">মিডিয়া</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৩ মিনিট পড়া</span></p><h1 id="gs-content">AI দিয়ে বাংলা Voice Over — সেরা TTS টুলস ও সম্পূর্ণ গাইড ২০২৬</h1><p class="gw-deck">AI দিয়ে বাংলা voice over কীভাবে বানাবেন? ElevenLabs, Murf, Google, Suno — সেরা বাংলা TTS টুলগুলোর তুলনা এবং YouTube/explainer ভিডিওর জন্য practical টিউটোরিয়াল।</p><a class="gw-actions" href="#sajeda-র-voice-cloning-workflow-one-time-setup">Sajeda-র Voice Cloning Workflow (One-time setup) <span aria-hidden="true">↓</span></a></div><div class="gw-hero-visual"><figure class="article-hero">
   <img src="/assets/editorial/audio.svg" width="1000" height="440" alt="স্টুডিও মাইক্রোফোন ও শব্দতরঙ্গের অঙ্কন" decoding="async" fetchpriority="high">
-</figure>
-<!-- ARTICLE-HERO:END -->
-<!-- ARTICLE-TOC:START -->
-<nav class="article-toc" aria-label="সূচিপত্র">
-  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
-  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
-  <ol class="toc-list">
-    <li class="toc-item"><a href="#২০২৬-এ-bangla-tts-reality">২০২৬-এ Bangla TTS Reality</a></li>
-    <li class="toc-item"><a href="#sajeda-র-voice-cloning-workflow-one-time-setup">Sajeda-র Voice Cloning Workflow (One-time setup)</a></li>
-    <li class="toc-item"><a href="#4-bd-use-cases">4 BD Use Cases</a></li>
-    <li class="toc-item"><a href="#sajeda-র-revenue-model">Sajeda-র Revenue Model</a></li>
-    <li class="toc-item"><a href="#৩টা-ethical-legal-issues">৩টা Ethical + Legal Issues</a></li>
-    <li class="toc-item"><a href="#উপসংহার-আপনার-আজকের-পদক্ষেপ">উপসংহার — আপনার আজকের পদক্ষেপ</a></li>
-    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
-    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
-  </ol>
-</nav>
-<!-- ARTICLE-TOC:END -->
+</figure></div></div><div class="gw-layout"><nav class="gw-chapters" aria-label="এই গাইডে"><details open><summary>এই গাইডে</summary><ol>
+<li><a href="#২০২৬-এ-bangla-tts-reality">২০২৬-এ Bangla TTS Reality</a></li>
+<li><a href="#sajeda-র-voice-cloning-workflow-one-time-setup">Sajeda-র Voice Cloning Workflow (One-time setup)</a></li>
+<li><a href="#4-bd-use-cases">4 BD Use Cases</a></li>
+<li><a href="#sajeda-র-revenue-model">Sajeda-র Revenue Model</a></li>
+<li><a href="#৩টা-ethical-legal-issues">৩টা Ethical + Legal Issues</a></li>
+<li><a href="#উপসংহার-আপনার-আজকের-পদক্ষেপ">উপসংহার — আপনার আজকের পদক্ষেপ</a></li>
+<li><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+</ol></details></nav><div class="gw-reading">
+
+
+
+
+
+
+
+
+
+
+
 
 <p class="lede">Sajeda Akter একজন BD freelance voice artist — Dhaka-base, 8 বছরের অভিজ্ঞতা। ২০২২ পর্যন্ত তিনি per-voice-over project $৫০-১৫০ charge করতেন। Recording, editing, mastering — সব নিজে। Monthly average revenue ৳৫০-৭০K, 12-15 project। ২০২৪-এর জুনে তিনি ElevenLabs-এ নিজের voice clone করলেন (Bangla + English natural)। আজ ২০২৬-এর মে-এ তাঁর monthly revenue ৳৩.৬ লাখ — একই 12-15 client retainer, প্রতিটায় ১০-২৫x more deliverable। Workflow: original recording-এ tone-base set, ElevenLabs-এ scale-output (multiple ad variation, audiobook chapter, YouTube faceless channel)। তাঁর insight: "AI আমার কণ্ঠ replace করেনি — আমার কণ্ঠকে scale-যোগ্য বানিয়েছে।"</p>
 
@@ -102,7 +99,7 @@
 
 <h2 id="sajeda-র-voice-cloning-workflow-one-time-setup">Sajeda-র Voice Cloning Workflow (One-time setup)</h2>
 
-<h3>Step 1: Voice sample recording (1 hour)</h3>
+<h3 class="gw-step-heading">Step 1: Voice sample recording (1 hour)</h3>
 <ul>
     <li>Professional studio (or quiet home + good mic ৳৪,০০০ Audio-Technica AT2020)।</li>
     <li>30-45 min Bangla reading: diverse content (news script, story, instructional, emotional)।</li>
@@ -110,7 +107,7 @@
     <li>WAV 44.1kHz format, no background noise।</li>
 </ul>
 
-<h3>Step 2: ElevenLabs Voice Lab upload</h3>
+<h3 class="gw-step-heading">Step 2: ElevenLabs Voice Lab upload</h3>
 <ul>
     <li>Voice Lab → "Create Voice" → "Instant Voice Clone"।</li>
     <li>Upload ৩-৫ min sample (best quality)।</li>
@@ -118,7 +115,7 @@
     <li>Within 30 seconds — your AI voice ready।</li>
 </ul>
 
-<h3>Step 3: Test + refine</h3>
+<h3 class="gw-step-heading">Step 3: Test + refine</h3>
 <ul>
     <li>Test text-to-speech with various tone (news, emotional, ad)।</li>
     <li>If unnatural — re-record sample + upgrade to "Professional Voice Clone" ($১৯ one-time, requires 30+ min sample)।</li>
@@ -208,7 +205,7 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-    </div>
+    </div></div><p class="sr-only" data-guide-copy-status role="status" aria-live="polite"></p></div>
 
     <!-- RELATED-POSTS:START -->
 <section class="related-posts" aria-label="সম্পর্কিত গাইড">

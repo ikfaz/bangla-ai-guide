@@ -34,6 +34,8 @@
 <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <link rel="stylesheet" href="/css/site-shell.css">
   <link rel="stylesheet" href="/css/guide-reader.css">
+<link rel="stylesheet" href="/css/guide-workshop.css">
+  <script src="/js/guide-workshop.js" defer></script>
   <!-- FAQ-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Google Veo 3 Advanced Techniques-এর কিছু practical উদাহরণ কী?","acceptedAnswer":{"@type":"Answer","text":"\"Cinematic wide shot. A Bangladeshi farmer in his 60s with weathered hands plants rice in a flooded paddy field. Golden hour, soft warm light. Camera slowly tracks right at his pace. 35mm film grain, shallow depth of field. Shot on Arri Alexa. The man hums an old Bengali song softly.\""}},{"@type":"Question","name":"Google Veo 3 Advanced Techniques-এর মূল features কী কী?","acceptedAnswer":{"@type":"Answer","text":"8-second clips (Veo 3.5: 30 second) 1080p native, 4K via upscale Audio: dialogue, sound effects, music Cinematic camera controls Character consistency across clips Image-to-video + text-to-video"}},{"@type":"Question","name":"Google Veo 3 Advanced Techniques-এর দাম কত এবং BD-তে এর ROI কেমন?","acceptedAnswer":{"@type":"Answer","text":"Free: very limited Veo via Gemini Gemini Advanced ($20): meaningful access Vertex AI: $0.50-2 per clip Compared to traditional: still 100x cheaper than shoot"}},{"@type":"Question","name":"Google Veo 3 Advanced Techniques কোন কাজে সবচেয়ে ভালো?","acceptedAnswer":{"@type":"Answer","text":"Product launch teaser NGO impact story Wedding cinematic moment Bangladesh tourism promo Educational explainer Bangla short film Real estate cinematic tour"}}]}</script>
 <!-- FAQ-SCHEMA:END -->
@@ -53,38 +55,33 @@
 </header>
 <!-- GUIDE-HEADER:END -->
 
-    <div data-guide-reader class="article-sheet container">
-        <!-- ARTICLE-META:START -->
-<p class="article-kicker"><span class="article-chip">মিডিয়া</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">২ মিনিট পড়া</span></p>
-<!-- ARTICLE-META:END -->
-<h1 id="gs-content">Google Veo 3 Advanced Techniques — Cinematic Video AI বাংলা গাইড</h1>
-
-<!-- ARTICLE-HERO:START -->
-<figure class="article-hero">
+    <div data-guide-reader class="article-sheet container" data-guide-workshop><div class="gw-hero"><div class="gw-hero-copy"><p class="article-kicker"><span class="article-chip">মিডিয়া</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">২ মিনিট পড়া</span></p><h1 id="gs-content">Google Veo 3 Advanced Techniques — Cinematic Video AI বাংলা গাইড</h1><p class="gw-deck">Veo 3-এ professional-grade video কীভাবে তৈরি করবেন? Camera movement, audio sync, prompt engineering, character consistency — advanced techniques।</p><a class="gw-actions" href="#prompt-structure-cinematic">Prompt structure — cinematic <span aria-hidden="true">↓</span></a></div><div class="gw-hero-visual"><figure class="article-hero">
   <img src="/assets/editorial/movies.svg" width="1000" height="440" alt="ভিডিওর ক্ল্যাপবোর্ড, ফিল্ম ও টাইমলাইনের অঙ্কন" decoding="async" fetchpriority="high">
-</figure>
-<!-- ARTICLE-HERO:END -->
-<!-- ARTICLE-TOC:START -->
-<nav class="article-toc" aria-label="সূচিপত্র">
-  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
-  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
-  <ol class="toc-list">
-    <li class="toc-item"><a href="#ভূমিকা">ভূমিকা</a></li>
-    <li class="toc-item"><a href="#veo-3-capabilities-recap">Veo 3 capabilities recap</a></li>
-    <li class="toc-item"><a href="#prompt-structure-cinematic">Prompt structure — cinematic</a></li>
-    <li class="toc-item"><a href="#example-prompt-high-quality">Example prompt (high quality)</a></li>
-    <li class="toc-item"><a href="#character-consistency-tricks">Character consistency tricks</a></li>
-    <li class="toc-item"><a href="#audio-integration">Audio integration</a></li>
-    <li class="toc-item"><a href="#camera-movement-techniques">Camera movement techniques</a></li>
-    <li class="toc-item"><a href="#stitching-clips-together">Stitching clips together</a></li>
-    <li class="toc-item"><a href="#bd-use-cases-practical">BD use cases — practical</a></li>
-    <li class="toc-item"><a href="#cost-production-reality">Cost — production reality</a></li>
-    <li class="toc-item"><a href="#উপসংহার">উপসংহার</a></li>
-    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
-    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
-  </ol>
-</nav>
-<!-- ARTICLE-TOC:END -->
+</figure></div></div><div class="gw-layout"><nav class="gw-chapters" aria-label="এই গাইডে"><details open><summary>এই গাইডে</summary><ol>
+<li><a href="#ভূমিকা">ভূমিকা</a></li>
+<li><a href="#veo-3-capabilities-recap">Veo 3 capabilities recap</a></li>
+<li><a href="#prompt-structure-cinematic">Prompt structure — cinematic</a></li>
+<li><a href="#example-prompt-high-quality">Example prompt (high quality)</a></li>
+<li><a href="#character-consistency-tricks">Character consistency tricks</a></li>
+<li><a href="#audio-integration">Audio integration</a></li>
+<li><a href="#camera-movement-techniques">Camera movement techniques</a></li>
+<li><a href="#stitching-clips-together">Stitching clips together</a></li>
+<li><a href="#bd-use-cases-practical">BD use cases — practical</a></li>
+<li><a href="#cost-production-reality">Cost — production reality</a></li>
+<li><a href="#উপসংহার">উপসংহার</a></li>
+<li><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+</ol></details></nav><div class="gw-reading">
+
+
+
+
+
+
+
+
+
+
+
 
         <h2 id="ভূমিকা">ভূমিকা</h2>
         <p>Google Veo 3 — এই মুহূর্তে সবচেয়ে শক্তিশালী AI video model (Sora discontinued হওয়ার পর)। Native audio, cinematic camera, character consistency — production-grade video possible।</p>
@@ -228,7 +225,7 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-    </div>
+    </div></div><p class="sr-only" data-guide-copy-status role="status" aria-live="polite"></p></div>
 
     <!-- TEMPLATED-FAQ:START -->
 <section class="article-faq" aria-labelledby="faq-heading">

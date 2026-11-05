@@ -32,6 +32,8 @@
 <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <link rel="stylesheet" href="/css/site-shell.css">
   <link rel="stylesheet" href="/css/guide-reader.css">
+<link rel="stylesheet" href="/css/guide-workshop.css">
+  <script src="/js/guide-workshop.js" defer></script>
   <!-- FAQ-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"কেন AI শেখা জরুরি?","acceptedAnswer":{"@type":"Answer","text":"২০২৬ সালে AI শুধু প্রযুক্তিবিদদের জন্য নয় — মার্কেটার, ডিজাইনার, লেখক, ব্যবসায়ী — সবার জন্য AI জ্ঞান অপরিহার্য হয়ে উঠেছে। বাংলাদেশের চাকরির বাজারে AI দক্ষতা এখন সবচেয়ে চাহিদাসম্পন্ন skill গুলোর একটি। ফ্রিল্যান্সিং মার্কেটে AI জানা ফ্রিল্যান্সাররা ২-৩ গুণ বেশি আয় করছেন।"}},{"@type":"Question","name":"AI শিখতে কি প্রোগ্রামিং জানা লাগে?","acceptedAnswer":{"@type":"Answer","text":"AI ব্যবহার করতে প্রোগ্রামিং লাগে না। AI ডেভেলপমেন্ট করতে চাইলে Python শেখা প্রয়োজন। AI কোডিং টুলস গাইড দেখুন।"}},{"@type":"Question","name":"বাংলাদেশে AI এর চাকরির সুযোগ কেমন?","acceptedAnswer":{"@type":"Answer","text":"দ্রুত বাড়ছে। Grameenphone, bKash, Pathao সহ বিভিন্ন প্রতিষ্ঠান AI ইঞ্জিনিয়ার খুঁজছে। রিমোট চাকরিতে আরও বেশি সুযোগ।"}},{"@type":"Question","name":"ফ্রিতে AI শেখার সেরা উপায় কী?","acceptedAnswer":{"@type":"Answer","text":"Coursera এ 'AI for Everyone' (ফ্রি অডিট), fast.ai, DeepLearning.AI শর্ট কোর্স — সব ফ্রি। ফ্রি AI টুলস দিয়ে হাতে-কলমে শিখুন।"}},{"@type":"Question","name":"AI শিখে কত আয় করা সম্ভব?","acceptedAnswer":{"@type":"Answer","text":"ফ্রিল্যান্সিং এ $30-$150/ঘণ্টা। বাংলাদেশে চাকরিতে ৳৫০,০০০-৳২,০০,০০০+/মাস। AI দিয়ে ফ্রিল্যান্সিং গাইড পড়ুন। 🔗 আরও AI টুলস সম্পর্কে জানতে আমাদের বাংলা AI গাইড পড়ুন — বাংলাদেশের সবচেয়ে বড় AI রিসোর্স। আরও বিস্তারিত জানতে আমাদের বাংলা AI গাইড পড়ুন। শেষ যাচাই: মার্চ ২০২৬ | $১ = ৳১২২"}}]}</script>
 <script type="application/ld+json" data-injected-by="inject-faq-schema">{"@context":"https://schema.org","@type":"HowTo","name":"পড়াশোনায় AI ব্যবহার: শিক্ষার্থীদের জন্য বাংলা গাইড","step":[{"@type":"HowToStep","position":1,"name":"AI/ML ইঞ্জিনিয়ার","text":"বেতন: ৳৫০,০০০ - ৳২,০০,০০০+/মাস (বাংলাদেশে) | $৮০,০০০-$১৫০,০০০/বছর (রিমোট) দক্ষতা: Python, PyTorch/TensorFlow, মেশিন লার্নিং, ডিপ লার্নিং","url":"https://banglaaiguide.com/blog/ai-education-bangladesh/#step-1"},{"@type":"HowToStep","position":2,"name":"AI প্রোডাক্ট ম্যানেজার","text":"বেতন: ৳৮০,০০০ - ৳১,৫০,০০০/মাস দক্ষতা: AI বোঝাপড়া, প্রোডাক্ট স্ট্র্যাটেজি, ডেটা বিশ্লেষণ","url":"https://banglaaiguide.com/blog/ai-education-bangladesh/#step-2"},{"@type":"HowToStep","position":3,"name":"প্রম্পট ইঞ্জিনিয়ার","text":"বেতন: ৳৪০,০০০ - ৳১,০০,০০০/মাস | ফ্রিল্যান্সিং: $৩০-$১০০/ঘণ্টা দক্ষতা: AI টুলস, প্রম্পট ডিজাইন, কন্টেন্ট স্ট্র্যাটেজি","url":"https://banglaaiguide.com/blog/ai-education-bangladesh/#step-3"},{"@type":"HowToStep","position":4,"name":"AI ফ্রিল্যান্সার","text":"Fiverr/Upwork এ AI-চালিত সার্ভিস দিন — কন্টেন্ট, ডিজাইন, কোডিং, অটোমেশন ফ্রিল্যান্সারদের জন্য AI টুলস গাইড পড়ুন।","url":"https://banglaaiguide.com/blog/ai-education-bangladesh/#step-4"}]}</script>
@@ -52,33 +54,29 @@
 </header>
 <!-- GUIDE-HEADER:END -->
 
-    <div data-guide-reader class="article-sheet container">
-        <article>
-        <!-- ARTICLE-META:START -->
-<p class="article-kicker"><span class="article-chip">গাইড</span><span class="article-chip">২৫ মার্চ, ২০২৬</span><span class="article-chip">৩ মিনিট পড়া</span></p>
-<!-- ARTICLE-META:END -->
-<h1 id="gs-content">পড়াশোনায় AI ব্যবহার</h1>
-
-<!-- ARTICLE-HERO:START -->
-<figure class="article-hero">
+    <div data-guide-reader class="article-sheet container" data-guide-workshop><div class="gw-hero"><div class="gw-hero-copy"><p class="article-kicker"><span class="article-chip">গাইড</span><span class="article-chip">২৫ মার্চ, ২০২৬</span><span class="article-chip">৩ মিনিট পড়া</span></p><h1 id="gs-content">পড়াশোনায় AI ব্যবহার</h1><p class="gw-deck">পড়াশোনা, নোট ও পরীক্ষা প্রস্তুতিতে সেরা AI টুলস কীভাবে ব্যবহার করবেন — বাংলাদেশের শিক্ষার্থীদের জন্য বাংলা গাইড।</p><a class="gw-actions" href="#কেন-ai-শেখা-জরুরি">কেন AI শেখা জরুরি? <span aria-hidden="true">↓</span></a></div><div class="gw-hero-visual"><figure class="article-hero">
   <img src="/assets/editorial/study.svg" width="1000" height="440" alt="খোলা পড়ার বই, বুকমার্ক ও পেনসিলের অঙ্কন" decoding="async" fetchpriority="high">
-</figure>
-<!-- ARTICLE-HERO:END -->
-<!-- ARTICLE-TOC:START -->
-<nav class="article-toc" aria-label="সূচিপত্র">
-  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
-  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
-  <ol class="toc-list">
-    <li class="toc-item"><a href="#কেন-ai-শেখা-জরুরি">কেন AI শেখা জরুরি?</a></li>
-    <li class="toc-item"><a href="#ai-শেখার-৩টি-স্তর">AI শেখার ৩টি স্তর</a></li>
-    <li class="toc-item"><a href="#সেরা-ফ্রি-ai-কোর্স">সেরা ফ্রি AI কোর্স</a></li>
-    <li class="toc-item"><a href="#বাংলায়-ai-শেখার-রিসোর্স">বাংলায় AI শেখার রিসোর্স</a></li>
-    <li class="toc-item"><a href="#ai-ক্যারিয়ার-পাথ-বাংলাদেশে">AI ক্যারিয়ার পাথ — বাংলাদেশে</a></li>
-    <li class="toc-item"><a href="#শুরু-করার-রোডম্যাপ">শুরু করার রোডম্যাপ</a></li>
-    <li class="toc-item"><a href="#প্রায়শই-জিজ্ঞাসিত-প্রশ্ন-faq">প্রায়শই জিজ্ঞাসিত প্রশ্ন (FAQ)</a></li>
-  </ol>
-</nav>
-<!-- ARTICLE-TOC:END -->
+</figure></div></div><div class="gw-layout"><nav class="gw-chapters" aria-label="এই গাইডে"><details open><summary>এই গাইডে</summary><ol>
+<li><a href="#কেন-ai-শেখা-জরুরি">কেন AI শেখা জরুরি?</a></li>
+<li><a href="#ai-শেখার-৩টি-স্তর">AI শেখার ৩টি স্তর</a></li>
+<li><a href="#সেরা-ফ্রি-ai-কোর্স">সেরা ফ্রি AI কোর্স</a></li>
+<li><a href="#বাংলায়-ai-শেখার-রিসোর্স">বাংলায় AI শেখার রিসোর্স</a></li>
+<li><a href="#ai-ক্যারিয়ার-পাথ-বাংলাদেশে">AI ক্যারিয়ার পাথ — বাংলাদেশে</a></li>
+<li><a href="#শুরু-করার-রোডম্যাপ">শুরু করার রোডম্যাপ</a></li>
+<li><a href="#প্রায়শই-জিজ্ঞাসিত-প্রশ্ন-faq">প্রায়শই জিজ্ঞাসিত প্রশ্ন (FAQ)</a></li>
+</ol></details></nav><div class="gw-reading">
+        <article>
+
+
+
+
+
+
+
+
+
+
+
 
         <h2 id="কেন-ai-শেখা-জরুরি">কেন AI শেখা জরুরি?</h2>
         <p>২০২৬ সালে AI শুধু প্রযুক্তিবিদদের জন্য নয় — মার্কেটার, ডিজাইনার, লেখক, ব্যবসায়ী — সবার জন্য AI জ্ঞান অপরিহার্য হয়ে উঠেছে। বাংলাদেশের চাকরির বাজারে AI দক্ষতা এখন সবচেয়ে চাহিদাসম্পন্ন skill গুলোর একটি। ফ্রিল্যান্সিং মার্কেটে AI জানা ফ্রিল্যান্সাররা ২-৩ গুণ বেশি আয় করছেন।</p>
@@ -112,17 +110,17 @@
         </ul>
 
         <h2 id="সেরা-ফ্রি-ai-কোর্স">সেরা ফ্রি AI কোর্স</h2>
-        <table style="width:100%;border-collapse:collapse;margin:1.5rem 0;">
+        <div class="gw-table-scroll" role="region" tabindex="0" aria-label="সেরা ফ্রি AI কোর্স"><table style="width:100%;border-collapse:collapse;margin:1.5rem 0;" class="gw-table">
             <thead><tr style="background:#f1f5f9;"><th style="padding:12px;border:1px solid #e5e7eb;text-align:left;">কোর্স</th><th style="padding:12px;border:1px solid #e5e7eb;text-align:center;">প্ল্যাটফর্ম</th><th style="padding:12px;border:1px solid #e5e7eb;text-align:center;">স্তর</th><th style="padding:12px;border:1px solid #e5e7eb;text-align:center;">মূল্য</th></tr></thead>
             <tbody>
-                <tr><td style="padding:10px;border:1px solid #e5e7eb;">AI for Everyone</td><td style="padding:10px;border:1px solid #e5e7eb;text-align:center;">Coursera</td><td style="padding:10px;border:1px solid #e5e7eb;text-align:center;">বিগিনার</td><td style="padding:10px;border:1px solid #e5e7eb;text-align:center;">ফ্রি (অডিট)</td></tr>
-                <tr><td style="padding:10px;border:1px solid #e5e7eb;">ChatGPT Prompt Engineering</td><td style="padding:10px;border:1px solid #e5e7eb;text-align:center;">DeepLearning.AI</td><td style="padding:10px;border:1px solid #e5e7eb;text-align:center;">বিগিনার</td><td style="padding:10px;border:1px solid #e5e7eb;text-align:center;">ফ্রি</td></tr>
-                <tr><td style="padding:10px;border:1px solid #e5e7eb;">Practical Deep Learning</td><td style="padding:10px;border:1px solid #e5e7eb;text-align:center;">fast.ai</td><td style="padding:10px;border:1px solid #e5e7eb;text-align:center;">ইন্টারমিডিয়েট</td><td style="padding:10px;border:1px solid #e5e7eb;text-align:center;">ফ্রি</td></tr>
-                <tr><td style="padding:10px;border:1px solid #e5e7eb;">Machine Learning Specialization</td><td style="padding:10px;border:1px solid #e5e7eb;text-align:center;">Coursera (Stanford)</td><td style="padding:10px;border:1px solid #e5e7eb;text-align:center;">ইন্টারমিডিয়েট</td><td style="padding:10px;border:1px solid #e5e7eb;text-align:center;">ফ্রি (অডিট)</td></tr>
-                <tr><td style="padding:10px;border:1px solid #e5e7eb;">Google AI Essentials</td><td style="padding:10px;border:1px solid #e5e7eb;text-align:center;">Coursera</td><td style="padding:10px;border:1px solid #e5e7eb;text-align:center;">বিগিনার</td><td style="padding:10px;border:1px solid #e5e7eb;text-align:center;">ফ্রি</td></tr>
-                <tr><td style="padding:10px;border:1px solid #e5e7eb;">CS50's AI with Python</td><td style="padding:10px;border:1px solid #e5e7eb;text-align:center;">Harvard (edX)</td><td style="padding:10px;border:1px solid #e5e7eb;text-align:center;">ইন্টারমিডিয়েট</td><td style="padding:10px;border:1px solid #e5e7eb;text-align:center;">ফ্রি</td></tr>
+                <tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="কোর্স">AI for Everyone</td><td style="padding:10px;border:1px solid #e5e7eb;text-align:center;" data-column="প্ল্যাটফর্ম">Coursera</td><td style="padding:10px;border:1px solid #e5e7eb;text-align:center;" data-column="স্তর">বিগিনার</td><td style="padding:10px;border:1px solid #e5e7eb;text-align:center;" data-column="মূল্য">ফ্রি (অডিট)</td></tr>
+                <tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="কোর্স">ChatGPT Prompt Engineering</td><td style="padding:10px;border:1px solid #e5e7eb;text-align:center;" data-column="প্ল্যাটফর্ম">DeepLearning.AI</td><td style="padding:10px;border:1px solid #e5e7eb;text-align:center;" data-column="স্তর">বিগিনার</td><td style="padding:10px;border:1px solid #e5e7eb;text-align:center;" data-column="মূল্য">ফ্রি</td></tr>
+                <tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="কোর্স">Practical Deep Learning</td><td style="padding:10px;border:1px solid #e5e7eb;text-align:center;" data-column="প্ল্যাটফর্ম">fast.ai</td><td style="padding:10px;border:1px solid #e5e7eb;text-align:center;" data-column="স্তর">ইন্টারমিডিয়েট</td><td style="padding:10px;border:1px solid #e5e7eb;text-align:center;" data-column="মূল্য">ফ্রি</td></tr>
+                <tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="কোর্স">Machine Learning Specialization</td><td style="padding:10px;border:1px solid #e5e7eb;text-align:center;" data-column="প্ল্যাটফর্ম">Coursera (Stanford)</td><td style="padding:10px;border:1px solid #e5e7eb;text-align:center;" data-column="স্তর">ইন্টারমিডিয়েট</td><td style="padding:10px;border:1px solid #e5e7eb;text-align:center;" data-column="মূল্য">ফ্রি (অডিট)</td></tr>
+                <tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="কোর্স">Google AI Essentials</td><td style="padding:10px;border:1px solid #e5e7eb;text-align:center;" data-column="প্ল্যাটফর্ম">Coursera</td><td style="padding:10px;border:1px solid #e5e7eb;text-align:center;" data-column="স্তর">বিগিনার</td><td style="padding:10px;border:1px solid #e5e7eb;text-align:center;" data-column="মূল্য">ফ্রি</td></tr>
+                <tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="কোর্স">CS50's AI with Python</td><td style="padding:10px;border:1px solid #e5e7eb;text-align:center;" data-column="প্ল্যাটফর্ম">Harvard (edX)</td><td style="padding:10px;border:1px solid #e5e7eb;text-align:center;" data-column="স্তর">ইন্টারমিডিয়েট</td><td style="padding:10px;border:1px solid #e5e7eb;text-align:center;" data-column="মূল্য">ফ্রি</td></tr>
             </tbody>
-        </table>
+        </table></div>
 
         <h2 id="বাংলায়-ai-শেখার-রিসোর্স">বাংলায় AI শেখার রিসোর্স</h2>
         <ul>
@@ -149,7 +147,7 @@
         <p><a href="/ai-tools-for-freelancers-bangladesh/">ফ্রিল্যান্সারদের জন্য AI টুলস</a> গাইড পড়ুন।</p>
 
         <h2 id="শুরু-করার-রোডম্যাপ">শুরু করার রোডম্যাপ</h2>
-        <ol>
+        <ol class="gw-steps">
             <li><strong>সপ্তাহ ১-২:</strong> AI for Everyone কোর্স করুন (Coursera, ফ্রি) + <a href="/chatgpt-bangladesh-theke-bebohar/">ChatGPT</a> ব্যবহার শুরু করুন</li>
             <li><strong>সপ্তাহ ৩-৪:</strong> প্রম্পট ইঞ্জিনিয়ারিং শিখুন + বিভিন্ন AI টুলস ব্যবহার করুন (<a href="/blog/gemini-ai-bangladesh-guide/">Gemini</a>, <a href="/blog/claude-ai-bangladesh-guide/">Claude</a>, <a href="/blog/perplexity-ai-bangla-guide/">Perplexity</a>)</li>
             <li><strong>মাস ২:</strong> Python বেসিক শিখুন (ফ্রি — YouTube বা Codecademy)</li>
@@ -159,7 +157,7 @@
         </ol>
 
         <h2 id="প্রায়শই-জিজ্ঞাসিত-প্রশ্ন-faq">প্রায়শই জিজ্ঞাসিত প্রশ্ন (FAQ)</h2>
-        
+
         <h3>AI শিখতে কি প্রোগ্রামিং জানা লাগে?</h3>
         <p>AI ব্যবহার করতে প্রোগ্রামিং লাগে না। AI ডেভেলপমেন্ট করতে চাইলে Python শেখা প্রয়োজন। <a href="/best-ai-coding-tools-for-beginners-bangladesh/">AI কোডিং টুলস গাইড</a> দেখুন।</p>
         <h3>বাংলাদেশে AI এর চাকরির সুযোগ কেমন?</h3>
@@ -208,7 +206,7 @@
   </div>
 </section>
 <!-- AUTHOR-BLOCK:END -->
-    </div>
+    </div></div><p class="sr-only" data-guide-copy-status role="status" aria-live="polite"></p></div>
     <!-- RELATED-POSTS:START -->
 <section class="related-posts" aria-label="সম্পর্কিত গাইড">
   <h3>সম্পর্কিত গাইড</h3>

@@ -32,6 +32,8 @@
 <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <link rel="stylesheet" href="/css/site-shell.css">
   <link rel="stylesheet" href="/css/guide-reader.css">
+<link rel="stylesheet" href="/css/guide-workshop.css">
+  <script src="/js/guide-workshop.js" defer></script>
   <!-- FAQ-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"বাংলাদেশ থেকে কি AI চ্যাটবট ব্যবহার করা যায়?","acceptedAnswer":{"@type":"Answer","text":"হ্যাঁ, Tidio, ManyChat, Chatfuel, এবং Crisp — এই সব টুলস বাংলাদেশ থেকে সরাসরি ব্যবহার করা যায়। কোনো VPN দরকার নেই। পেমেন্টের জন্য আন্তর্জাতিক ক্রেডিট/ডেবিট কার্ড বা Payoneer ব্যবহার করতে পারেন।"}},{"@type":"Question","name":"AI চ্যাটবট কি বাংলায় কথা বলতে পারে?","acceptedAnswer":{"@type":"Answer","text":"আধুনিক AI চ্যাটবট বাংলায় মোটামুটি কাজ করে, তবে ইংরেজিতে সবচেয়ে ভালো পারফর্ম করে। আপনি বাংলায় প্রি-সেট উত্তর তৈরি করে রাখতে পারেন যাতে কাস্টমাররা বাংলায় রিপ্লাই পান।"}},{"@type":"Question","name":"ফ্রিতে কোন AI চ্যাটবট সবচেয়ে ভালো?","acceptedAnswer":{"@type":"Answer","text":"ফ্রি প্ল্যানের জন্য ManyChat সবচেয়ে ভালো — ১,০০০ কন্ট্যাক্ট পর্যন্ত ফ্রি এবং Facebook Messenger অটোমেশন অসাধারণ। ওয়েবসাইটের জন্য Tidio-র ফ্রি প্ল্যানও ভালো কাজ করে।"}},{"@type":"Question","name":"AI চ্যাটবট সেটআপে কতক্ষণ সময় লাগে?","acceptedAnswer":{"@type":"Answer","text":"সাধারণ চ্যাটবট সেটআপে ১-২ ঘণ্টা সময় লাগে। জটিল ফ্লো তৈরি করলে ১-২ দিন লাগতে পারে। ManyChat এবং Tidio উভয়ই ড্র্যাগ-এন্ড-ড্রপ ইন্টারফেস দেয়, তাই কোডিং জানার দরকার নেই।"}},{"@type":"Question","name":"চ্যাটবট কি মানুষের কর্মীর বিকল্প?","acceptedAnswer":{"@type":"Answer","text":"না, চ্যাটবট মানুষের সম্পূর্ণ বিকল্প নয়। এটি সাধারণ ও পুনরাবৃত্তিমূলক প্রশ্নের উত্তর দিতে পারে, কিন্তু জটিল সমস্যা বা আবেগপূর্ণ পরিস্থিতিতে মানুষের এজেন্ট দরকার। সেরা পদ্ধতি হলো চ্যাটবট ও মানুষ একসাথে কাজ করা। { \"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [ {\"@type\": \"Question\", \"name\": \"বাংলাদেশ থেকে কি AI চ্যাটবট ব্যবহার করা যায়?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"হ্যাঁ, Tidio, ManyChat, Chatfuel, এবং Crisp — এই সব টুলস বাংলাদেশ থেকে সরাসরি ব্যবহার করা যায়। কোনো VPN দরকার নেই।\"}}, {\"@type\": \"Question\", \"name\": \"AI চ্যাটবট কি বাংলায় কথা বলতে পারে?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"আধুনিক AI চ্যাটবট বাংলায় মোটামুটি কাজ করে, তবে ইংরেজিতে সবচেয়ে ভালো পারফর্ম করে। আপনি বাংলায় প্রি-সেট উত্তর তৈরি করে রাখতে পারেন।\"}}, {\"@type\": \"Question\", \"name\": \"ফ্রিতে কোন AI চ্যাটবট সবচেয়ে ভালো?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"ফ্রি প্ল্যানের জন্য ManyChat সবচেয়ে ভালো — ১,০০০ কন্ট্যাক্ট পর্যন্ত ফ্রি এবং Facebook Messenger অটোমেশন অসাধারণ।\"}}, {\"@type\": \"Question\", \"name\": \"AI চ্যাটবট সেটআপে কতক্ষণ সময় লাগে?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"সাধারণ চ্যাটবট সেটআপে ১-২ ঘণ্টা সময় লাগে। ManyChat এবং Tidio উভয়ই"}}]}</script>
 <!-- FAQ-SCHEMA:END -->
@@ -50,33 +52,29 @@
   </div>
 </header>
 <!-- GUIDE-HEADER:END -->
-    <div data-guide-reader class="article-sheet container">
-        <article>
-        <!-- ARTICLE-META:START -->
-<p class="article-kicker"><span class="article-chip">ব্যবসা</span><span class="article-chip">২৪ মার্চ, ২০২৬</span><span class="article-chip">৫ মিনিট পড়া</span></p>
-<!-- ARTICLE-META:END -->
-<h1 id="gs-content">AI চ্যাটবট ব্যবসায় ব্যবহার — বাংলাদেশি উদ্যোক্তাদের গাইড ২০২৬</h1>
-
-<!-- ARTICLE-HERO:START -->
-<figure class="article-hero">
+    <div data-guide-reader class="article-sheet container" data-guide-workshop><div class="gw-hero"><div class="gw-hero-copy"><p class="article-kicker"><span class="article-chip">ব্যবসা</span><span class="article-chip">২৪ মার্চ, ২০২৬</span><span class="article-chip">৫ মিনিট পড়া</span></p><h1 id="gs-content">AI চ্যাটবট ব্যবসায় ব্যবহার — বাংলাদেশি উদ্যোক্তাদের গাইড ২০২৬</h1><p class="gw-deck">বাংলাদেশে ব্যবসায় AI চ্যাটবট কীভাবে ব্যবহার করবেন? Tidio, ManyChat, Intercom দিয়ে Facebook পেজ অটোমেশন ও কাস্টমার সার্ভিস — সম্পূর্ণ বাংলা গাইড।</p><a class="gw-actions" href="#marup-এর-chatbot-workflow">Marup-এর Chatbot Workflow <span aria-hidden="true">↓</span></a></div><div class="gw-hero-visual"><figure class="article-hero">
   <img src="/assets/editorial/conversation.svg" width="1000" height="440" alt="চ্যাট উইন্ডোতে প্রশ্ন ও উত্তরের বুদবুদের অঙ্কন" decoding="async" fetchpriority="high">
-</figure>
-<!-- ARTICLE-HERO:END -->
-<!-- ARTICLE-TOC:START -->
-<nav class="article-toc" aria-label="সূচিপত্র">
-  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
-  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
-  <ol class="toc-list">
-    <li class="toc-item"><a href="#২০২৬-এ-bd-compatible-chatbot-platforms">২০২৬-এ BD-Compatible Chatbot Platforms</a></li>
-    <li class="toc-item"><a href="#build-vs-buy-decision-tree">Build vs Buy Decision Tree</a></li>
-    <li class="toc-item"><a href="#marup-এর-chatbot-workflow">Marup-এর Chatbot Workflow</a></li>
-    <li class="toc-item"><a href="#bangla-nlp-reality-critical">Bangla NLP Reality (Critical)</a></li>
-    <li class="toc-item"><a href="#roi-calculation">ROI Calculation</a></li>
-    <li class="toc-item"><a href="#উপসংহার-আপনার-আজকের-পদক্ষেপ">উপসংহার — আপনার আজকের পদক্ষেপ</a></li>
-    <li class="toc-item"><a href="#প্রায়শই-জিজ্ঞাসিত-প্রশ্ন-faq">প্রায়শই জিজ্ঞাসিত প্রশ্ন (FAQ)</a></li>
-  </ol>
-</nav>
-<!-- ARTICLE-TOC:END -->
+</figure><aside class="gw-feature"><div class="gw-copy-head"><span>চেষ্টা করে দেখুন</span><button class="gw-copy" type="button" data-guide-copy="guide-copy-1" hidden aria-label="এই লেখা কপি করুন"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 5V4a1 1 0 0 0-1-1H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h1"/></svg><span>কপি করুন</span></button></div><p>"You are 'Onushilon Helper', BD-friendly education advisor। Tone: warm Bangla mix English, like a young teacher। Respond in user's language (Bangla/English auto-detect)। For pricing query → list 3 relevant courses। For refund → quote 7-day return policy। Complex query → escalate…</p></aside></div></div><div class="gw-layout"><nav class="gw-chapters" aria-label="এই গাইডে"><details open><summary>এই গাইডে</summary><ol>
+<li><a href="#২০২৬-এ-bd-compatible-chatbot-platforms">২০২৬-এ BD-Compatible Chatbot Platforms</a></li>
+<li><a href="#build-vs-buy-decision-tree">Build vs Buy Decision Tree</a></li>
+<li><a href="#marup-এর-chatbot-workflow">Marup-এর Chatbot Workflow</a></li>
+<li><a href="#bangla-nlp-reality-critical">Bangla NLP Reality (Critical)</a></li>
+<li><a href="#roi-calculation">ROI Calculation</a></li>
+<li><a href="#উপসংহার-আপনার-আজকের-পদক্ষেপ">উপসংহার — আপনার আজকের পদক্ষেপ</a></li>
+<li><a href="#প্রায়শই-জিজ্ঞাসিত-প্রশ্ন-faq">প্রায়শই জিজ্ঞাসিত প্রশ্ন (FAQ)</a></li>
+</ol></details></nav><div class="gw-reading">
+        <article>
+
+
+
+
+
+
+
+
+
+
+
 
 <p class="lede">Marup Rahman একটা Dhaka-based education startup "Onushilon"-এর co-founder — SSC/HSC online tutoring platform, ১২,০০০ subscriber। ২০২৪-এর শুরুতে তাঁর team-এ ৪জন full-time customer support agent ছিল — দৈনিক ৪০০-৬০০ inquiry handle (admission, course pricing, refund, tech support)। Monthly cost ৳১.৪ লাখ salary। ২০২৪-এর জুলাইয়ে তিনি একটা custom AI chatbot deploy করলেন — Chatbase + GPT API + own course catalog upload। ২০২৬-এর মে-এ daily inquiry ১,৪০০ (3.5x growth), কিন্তু support team ২জন। Monthly chatbot cost $৩৫ (~৳৪,২০০)। Customer satisfaction unchanged (4.6/5)। তাঁর insight: "AI chatbot SMB-এর জন্য hire-able employee — মাসিক ৳৪K-এ যা আগে ৳১L+ team করত। Scale-এর reality।"</p>
 
@@ -103,7 +101,7 @@
 <h2 id="build-vs-buy-decision-tree">Build vs Buy Decision Tree</h2>
 
 <ul>
-    <li><b>Daily inquiry < 100:</b> Buy off-shelf (ManyChat $15-25/mo)।</li>
+    <li><b>Daily inquiry &lt; 100:</b> Buy off-shelf (ManyChat $15-25/mo)।</li>
     <li><b>Daily inquiry 100-500 + standard use case:</b> Chatbase + GPT API custom-trained ($২৫-১০০/mo)।</li>
     <li><b>Daily inquiry 500+ + custom workflow:</b> Custom build (Botpress + own server) — one-time ৳১.৫-৩L development।</li>
     <li><b>Enterprise + data sensitive:</b> On-premise (Azure OpenAI + custom UI)।</li>
@@ -111,7 +109,7 @@
 
 <h2 id="marup-এর-chatbot-workflow">Marup-এর Chatbot Workflow</h2>
 
-<h3>Step 1: Knowledge base preparation</h3>
+<h3 class="gw-step-heading">Step 1: Knowledge base preparation</h3>
 <ul>
     <li>Course catalog (12 courses, prices, schedule)।</li>
     <li>FAQ (50+ common queries with answer)।</li>
@@ -120,13 +118,13 @@
     <li>All uploaded to Chatbase as training data।</li>
 </ul>
 
-<h3>Step 2: Persona + tone configuration</h3>
+<h3 class="gw-step-heading">Step 2: Persona + tone configuration</h3>
 
-<blockquote class="deep-blockquote">
+<div class="gw-copy-block"><div class="gw-copy-head"><span>কপি করার প্রম্পট</span><button class="gw-copy" type="button" data-guide-copy="guide-copy-1" hidden aria-label="এই লেখা কপি করুন"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 5V4a1 1 0 0 0-1-1H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h1"/></svg><span>কপি করুন</span></button></div><blockquote class="deep-blockquote" id="guide-copy-1" data-guide-source>
 "You are 'Onushilon Helper', BD-friendly education advisor। Tone: warm Bangla mix English, like a young teacher। Respond in user's language (Bangla/English auto-detect)। For pricing query → list 3 relevant courses। For refund → quote 7-day return policy। Complex query → escalate to human team — 'অপেক্ষা করুন, আমাদের team আপনাকে call করবে'।"
-</blockquote>
+</blockquote></div>
 
-<h3>Step 3: Multi-channel deployment</h3>
+<h3 class="gw-step-heading">Step 3: Multi-channel deployment</h3>
 
 <ul>
     <li>Website widget (embedded in onushilon.com)।</li>
@@ -135,7 +133,7 @@
     <li>Email auto-reply integration।</li>
 </ul>
 
-<h3>Step 4: Iterate weekly</h3>
+<h3 class="gw-step-heading">Step 4: Iterate weekly</h3>
 
 <ul>
     <li>Failed queries → manually train missing FAQ।</li>
@@ -191,7 +189,7 @@
             <p>না, চ্যাটবট মানুষের সম্পূর্ণ বিকল্প নয়। এটি সাধারণ ও পুনরাবৃত্তিমূলক প্রশ্নের উত্তর দিতে পারে, কিন্তু জটিল সমস্যা বা আবেগপূর্ণ পরিস্থিতিতে মানুষের এজেন্ট দরকার। সেরা পদ্ধতি হলো চ্যাটবট ও মানুষ একসাথে কাজ করা।</p>
         </div>
 
-        
+
 
         <div style="background:linear-gradient(135deg,#dcfce7,#f0fdf4);padding:1.5rem;border-radius:12px;margin:2rem 0;border-left:4px solid #16a34a;">
             <p style="margin:0;font-weight:600;font-size:1.1rem;">🔗 আরও AI টুলস সম্পর্কে জানতে আমাদের <a href="/bangla-ai-guide/" style="color:#16a34a;">বাংলা AI গাইড</a> পড়ুন।</p>
@@ -232,7 +230,7 @@
   </div>
 </section>
 <!-- AUTHOR-BLOCK:END -->
-    </div>
+    </div></div><p class="sr-only" data-guide-copy-status role="status" aria-live="polite"></p></div>
     <!-- RELATED-POSTS:START -->
 <section class="related-posts" aria-label="সম্পর্কিত গাইড">
   <h3>সম্পর্কিত গাইড</h3>

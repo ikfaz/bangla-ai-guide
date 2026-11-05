@@ -34,6 +34,8 @@
   <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <link rel="stylesheet" href="/css/site-shell.css">
   <link rel="stylesheet" href="/css/guide-reader.css">
+  <link rel="stylesheet" href="/css/guide-workshop.css">
+  <script src="/js/guide-workshop.js" defer></script>
 </head>
 <body data-author-mode="editorial">
     <!-- GUIDE-HEADER:START -->
@@ -50,34 +52,29 @@
 </header>
 <!-- GUIDE-HEADER:END -->
 
-    <div data-guide-reader class="article-sheet container">
-        <!-- ARTICLE-META:START -->
-<p class="article-kicker"><span class="article-chip">কন্টেন্ট</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৬ মিনিট পড়া</span></p>
-<!-- ARTICLE-META:END -->
-<h1 id="gs-content">AI দিয়ে হাতের লেখা Bangla → Digital Text — OCR সম্পূর্ণ গাইড</h1>
-
-<!-- ARTICLE-HERO:START -->
-<figure class="article-hero">
+    <div data-guide-reader class="article-sheet container" data-guide-workshop><div class="gw-hero"><div class="gw-hero-copy"><p class="article-kicker"><span class="article-chip">কন্টেন্ট</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৬ মিনিট পড়া</span></p><h1 id="gs-content">AI দিয়ে হাতের লেখা Bangla → Digital Text — OCR সম্পূর্ণ গাইড</h1><p class="gw-deck">হাতে লেখা বাংলা document/note কীভাবে AI দিয়ে digital text-এ রূপান্তর করবেন? Google Lens, ChatGPT vision, Bangla OCR tools — practical workflow।</p><a class="gw-actions" href="#নাজনীন-এর-exact-4-step-workflow-২-৪০০-pages-১৪-দিনে">নাজনীন-এর exact 4-step workflow — ২,৪০০ pages, ১৪… <span aria-hidden="true">↓</span></a></div><div class="gw-hero-visual"><figure class="article-hero">
   <img src="/assets/editorial/language.svg" width="1000" height="440" alt="বাংলা অক্ষর, সম্পাদনার পেনসিল ও কথার বুদবুদের অঙ্কন" decoding="async" fetchpriority="high">
-</figure>
-<!-- ARTICLE-HERO:END -->
-<!-- ARTICLE-TOC:START -->
-<nav class="article-toc" aria-label="সূচিপত্র">
-  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
-  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
-  <ol class="toc-list">
-    <li class="toc-item"><a href="#২০২৬-এ-bangla-ocr-এর-state">২০২৬-এ Bangla OCR-এর state</a></li>
-    <li class="toc-item"><a href="#নাজনীন-এর-exact-4-step-workflow-২-৪০০-pages-১৪-দিনে">নাজনীন-এর exact 4-step workflow — ২,৪০০ pages, ১৪ দিনে</a></li>
-    <li class="toc-item"><a href="#৪টা-ocr-tool-head-to-head-একই-bangla-handwritten-page">৪টা OCR tool — head-to-head (একই Bangla handwritten page)</a></li>
-    <li class="toc-item"><a href="#৫টা-bangla-specific-challenge-solution">৫টা Bangla-specific challenge + solution</a></li>
-    <li class="toc-item"><a href="#৭টা-practical-use-case-যা-২০২৬-এ-bd-তে-possible">৭টা practical use case — যা ২০২৬-এ BD-তে possible</a></li>
-    <li class="toc-item"><a href="#সাবধান-যেখানে-ai-ocr-এ-trust-করবেন-না">সাবধান — যেখানে AI OCR-এ trust করবেন না</a></li>
-    <li class="toc-item"><a href="#উপসংহার-আপনার-আজকের-পদক্ষেপ">উপসংহার — আপনার আজকের পদক্ষেপ</a></li>
-    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
-    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
-  </ol>
-</nav>
-<!-- ARTICLE-TOC:END -->
+</figure><aside class="gw-feature"><div class="gw-copy-head"><span>চেষ্টা করে দেখুন</span><button class="gw-copy" type="button" data-guide-copy="guide-copy-1" hidden aria-label="এই লেখা কপি করুন"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 5V4a1 1 0 0 0-1-1H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h1"/></svg><span>কপি করুন</span></button></div><p>"নিচের OCR text বাংলা handwriting থেকে। Cleanup করো: (১) Spelling/grammar correct, কিন্তু writer-এর voice preserve, (২) Paragraph structure (line break preserve), (৩) Date/name যেখানে আছে format করো, (৪) Uncertain word [?] flag preserve, (৫) Recipes/list items proper formatting।…</p></aside></div></div><div class="gw-layout"><nav class="gw-chapters" aria-label="এই গাইডে"><details open><summary>এই গাইডে</summary><ol>
+<li><a href="#২০২৬-এ-bangla-ocr-এর-state">২০২৬-এ Bangla OCR-এর state</a></li>
+<li><a href="#নাজনীন-এর-exact-4-step-workflow-২-৪০০-pages-১৪-দিনে">নাজনীন-এর exact 4-step workflow — ২,৪০০ pages, ১৪ দিনে</a></li>
+<li><a href="#৪টা-ocr-tool-head-to-head-একই-bangla-handwritten-page">৪টা OCR tool — head-to-head (একই Bangla handwritten page)</a></li>
+<li><a href="#৫টা-bangla-specific-challenge-solution">৫টা Bangla-specific challenge + solution</a></li>
+<li><a href="#৭টা-practical-use-case-যা-২০২৬-এ-bd-তে-possible">৭টা practical use case — যা ২০২৬-এ BD-তে possible</a></li>
+<li><a href="#সাবধান-যেখানে-ai-ocr-এ-trust-করবেন-না">সাবধান — যেখানে AI OCR-এ trust করবেন না</a></li>
+<li><a href="#উপসংহার-আপনার-আজকের-পদক্ষেপ">উপসংহার — আপনার আজকের পদক্ষেপ</a></li>
+<li><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+</ol></details></nav><div class="gw-reading">
+
+
+
+
+
+
+
+
+
+
+
 
         <p class="lede">নাজনীন আক্তার-এর মাকে তিনি হারিয়েছেন ২০২৩-এর ফেব্রুয়ারিতে। ঘরে রয়ে গেছে তাঁর মা'র ৩৭ বছরের diaries — ৯টা notebook, প্রায় ২,৪০০ পৃষ্ঠা handwritten Bangla। দাদীর পুরোনো recipes, ৬০ বছরের family history, নাজনীন-এর শৈশবের scribble। ২০২৪-এ তিনি একজন archivist-কে digitize-এর quote চেয়েছিলেন — ৳৪২,০০০, ৬ মাস সময়। ২০২৫-এর জুন-এ তিনি AI vision tools আবিষ্কার করলেন। নিজের iPhone-এ ১২ MP photo, Google Lens + Claude Vision + ChatGPT triple-verify workflow। ১৪ দিনে সম্পূর্ণ ২,৪০০ পৃষ্ঠা digitized — Word document, searchable PDF, এবং ১২০-page printed memorial book। মোট খরচ ৳১,২০০ (printing only)। প্রতিটি page-এ ৭৫-৯০% AI accuracy + manual cleanup। তাঁর পরিবারের ৩ generation-এর memory আজ digital আরকাইভ-এ — কারণ ২০২৬-এর Bangla handwriting OCR finally usable হয়েছে।</p>
 
@@ -104,7 +101,7 @@
 
 <h2 id="নাজনীন-এর-exact-4-step-workflow-২-৪০০-pages-১৪-দিনে">নাজনীন-এর exact 4-step workflow — ২,৪০০ pages, ১৪ দিনে</h2>
 
-<h3>Step 1: Capture (Day 1-3)</h3>
+<h3 class="gw-step-heading">Step 1: Capture (Day 1-3)</h3>
 <ul>
     <li><b>Smartphone camera:</b> iPhone 13/Samsung S22+ minimum (12 MP+ resolution)।</li>
     <li><b>Lighting:</b> Natural daylight, no direct sun (shadow problem)। Outside-near-window-এ best।</li>
@@ -114,10 +111,10 @@
     <li><b>Save format:</b> Cloud-sync folder (Google Drive)।</li>
 </ul>
 
-<h3>Step 2: OCR (Day 4-10)</h3>
+<h3 class="gw-step-heading">Step 2: OCR (Day 4-10)</h3>
 <p>Triple-verify workflow — same page-এ ৩ AI parallel:</p>
 
-<ol>
+<ol class="gw-steps">
     <li><b>Primary: Google Lens (mobile):</b> Photo upload, "Copy text" → Google Doc-এ paste। 70-85% accuracy।</li>
     <li><b>Cross-verify: Claude Sonnet 4.6 Vision:</b> Same photo, prompt: "এই handwritten Bangla page-এর exact text type করো। কোনো word uncertain হলে [?] দিয়ে indicate। Structure preserve — paragraph, list, heading আলাদা।"</li>
     <li><b>Final fallback: ChatGPT Vision:</b> Discrepancy থাকলে third opinion।</li>
@@ -125,14 +122,14 @@
 
 <p>৩টা output side-by-side Google Doc-এ paste। যেগুলো ২+ AI agree করে — সঠিক। ১টায় unique — মা-র own handwriting compared। নাজনীন-এর daily output: ৮-১০ ঘণ্টা work-এ ১৭০-২২০ pages OCR-ready।</p>
 
-<h3>Step 3: Cleanup (Day 11-13)</h3>
+<h3 class="gw-step-heading">Step 3: Cleanup (Day 11-13)</h3>
 <p>OCR output Claude-এ paste, structured cleanup prompt:</p>
 
-<blockquote class="deep-blockquote">
+<div class="gw-copy-block"><div class="gw-copy-head"><span>কপি করার প্রম্পট</span><button class="gw-copy" type="button" data-guide-copy="guide-copy-1" hidden aria-label="এই লেখা কপি করুন"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 5V4a1 1 0 0 0-1-1H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h1"/></svg><span>কপি করুন</span></button></div><blockquote class="deep-blockquote" id="guide-copy-1" data-guide-source>
 "নিচের OCR text বাংলা handwriting থেকে। Cleanup করো: (১) Spelling/grammar correct, কিন্তু writer-এর voice preserve, (২) Paragraph structure (line break preserve), (৩) Date/name যেখানে আছে format করো, (৪) Uncertain word [?] flag preserve, (৫) Recipes/list items proper formatting। Output: clean Word-ready text।"
-</blockquote>
+</blockquote></div>
 
-<h3>Step 4: Manual verification (Day 14)</h3>
+<h3 class="gw-step-heading">Step 4: Manual verification (Day 14)</h3>
 <p>Cleaned text একপাশে, original photo arekpose — verification reading। ১% real error rate detected। Final document Word + PDF + printed memorial book।</p>
 
 <h2 id="৪টা-ocr-tool-head-to-head-একই-bangla-handwritten-page">৪টা OCR tool — head-to-head (একই Bangla handwritten page)</h2>
@@ -237,7 +234,7 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-    </div>
+    </div></div><p class="sr-only" data-guide-copy-status role="status" aria-live="polite"></p></div>
 
     <!-- RELATED-POSTS:START -->
 <section class="related-posts" aria-label="সম্পর্কিত গাইড">

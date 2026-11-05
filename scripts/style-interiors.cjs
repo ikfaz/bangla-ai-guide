@@ -44,6 +44,7 @@ function fixMark(tag) {
   return tag.replace(/\bsrc="[^"]*"/i,'src="'+src+'"').replace(/\s+onerror="[^"]*"/i,'');
 }
 function enhance(input, route) {
+  if (input.includes('data-guide-workshop')) return input;
   if (/<meta\b[^>]*http-equiv\s*=\s*["']refresh["']/i.test(input)) return input;
   let html = input.replace(copyOnly,(_,copy)=>copy);
   const kind = pageKind(route,html);

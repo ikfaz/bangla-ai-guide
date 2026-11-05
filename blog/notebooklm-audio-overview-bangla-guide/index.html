@@ -34,6 +34,8 @@
 <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <link rel="stylesheet" href="/css/site-shell.css">
   <link rel="stylesheet" href="/css/guide-reader.css">
+<link rel="stylesheet" href="/css/guide-workshop.css">
+  <script src="/js/guide-workshop.js" defer></script>
   <!-- FAQ-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"NotebookLM Audio Overview কোন কাজে সবচেয়ে ভালো?","acceptedAnswer":{"@type":"Answer","text":"Student: textbook chapter → audio lecture Lawyer: contract → audio brief on commute Doctor: research paper → audio while exercising Business: board minutes → audio recap Author: book outline → audio brainstorm Teacher: course material → audio for students Journalist: interview → audio summary"}},{"@type":"Question","name":"কী আলাদা?","acceptedAnswer":{"@type":"Answer","text":"Two-voice dialogue: male + female AI host Natural conversation: question, answer, joke, \"wait what\" 10-15 minute typical: document length-অনুযায়ী Listen anywhere: car, gym, walk Free: NotebookLM free tier-এ"}},{"@type":"Question","name":"কীভাবে বানাবেন?","acceptedAnswer":{"@type":"Answer","text":"notebooklm.google.com → new notebook Sources upload: PDF, Google Doc, web URL, YouTube, audio Notebook open → \"Audio Overview\" generate 5-10 minutes processing Listen + download MP3"}},{"@type":"Question","name":"NotebookLM Audio Overview-এর কী কী সীমাবদ্ধতা আছে?","acceptedAnswer":{"@type":"Answer","text":"Free tier: limited Audio Overview/day Plus paid: more generation Privacy: documents private to your account Length max: ~15 minute typical Voice options: limited"}}]}</script>
 <!-- FAQ-SCHEMA:END -->
@@ -53,37 +55,32 @@
 </header>
 <!-- GUIDE-HEADER:END -->
 
-    <div data-guide-reader class="article-sheet container">
-        <!-- ARTICLE-META:START -->
-<p class="article-kicker"><span class="article-chip">এআই টুল</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">২ মিনিট পড়া</span></p>
-<!-- ARTICLE-META:END -->
-<h1 id="gs-content">NotebookLM Audio Overview বাংলা গাইড — পডকাস্ট-স্টাইল AI Discussion</h1>
-
-<!-- ARTICLE-HERO:START -->
-<figure class="article-hero">
+    <div data-guide-reader class="article-sheet container" data-guide-workshop><div class="gw-hero"><div class="gw-hero-copy"><p class="article-kicker"><span class="article-chip">এআই টুল</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">২ মিনিট পড়া</span></p><h1 id="gs-content">NotebookLM Audio Overview বাংলা গাইড — পডকাস্ট-স্টাইল AI Discussion</h1><p class="gw-deck">NotebookLM-এর Audio Overview feature — যেকোনো document থেকে দুই-host পডকাস্ট-স্টাইল conversation। বাংলা সাপোর্ট, ব্যবহার, ও creative use cases।</p><a class="gw-actions" href="#কীভাবে-বানাবেন">কীভাবে বানাবেন <span aria-hidden="true">↓</span></a></div><div class="gw-hero-visual"><figure class="article-hero">
   <img src="/assets/editorial/audio.svg" width="1000" height="440" alt="স্টুডিও মাইক্রোফোন ও শব্দতরঙ্গের অঙ্কন" decoding="async" fetchpriority="high">
-</figure>
-<!-- ARTICLE-HERO:END -->
-<!-- ARTICLE-TOC:START -->
-<nav class="article-toc" aria-label="সূচিপত্র">
-  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
-  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
-  <ol class="toc-list">
-    <li class="toc-item"><a href="#ভূমিকা">ভূমিকা</a></li>
-    <li class="toc-item"><a href="#কী-আলাদা">কী আলাদা</a></li>
-    <li class="toc-item"><a href="#কীভাবে-বানাবেন">কীভাবে বানাবেন</a></li>
-    <li class="toc-item"><a href="#বাংলা-support">বাংলা support</a></li>
-    <li class="toc-item"><a href="#creative-use-cases">Creative use cases</a></li>
-    <li class="toc-item"><a href="#audio-customization">Audio customization</a></li>
-    <li class="toc-item"><a href="#quality-tips">Quality tips</a></li>
-    <li class="toc-item"><a href="#use-case-full-workflow-example">Use case — full workflow example</a></li>
-    <li class="toc-item"><a href="#limit-privacy">Limit + privacy</a></li>
-    <li class="toc-item"><a href="#উপসংহার">উপসংহার</a></li>
-    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
-    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
-  </ol>
-</nav>
-<!-- ARTICLE-TOC:END -->
+</figure></div></div><div class="gw-layout"><nav class="gw-chapters" aria-label="এই গাইডে"><details open><summary>এই গাইডে</summary><ol>
+<li><a href="#ভূমিকা">ভূমিকা</a></li>
+<li><a href="#কী-আলাদা">কী আলাদা</a></li>
+<li><a href="#কীভাবে-বানাবেন">কীভাবে বানাবেন</a></li>
+<li><a href="#বাংলা-support">বাংলা support</a></li>
+<li><a href="#creative-use-cases">Creative use cases</a></li>
+<li><a href="#audio-customization">Audio customization</a></li>
+<li><a href="#quality-tips">Quality tips</a></li>
+<li><a href="#use-case-full-workflow-example">Use case — full workflow example</a></li>
+<li><a href="#limit-privacy">Limit + privacy</a></li>
+<li><a href="#উপসংহার">উপসংহার</a></li>
+<li><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+</ol></details></nav><div class="gw-reading">
+
+
+
+
+
+
+
+
+
+
+
 
         <h2 id="ভূমিকা">ভূমিকা</h2>
         <p>Google NotebookLM-এর Audio Overview — সবচেয়ে চমকপ্রদ AI features-এর একটি। যেকোনো PDF/document upload করলে, AI দুজন host-এর মধ্যে একটি ১০-১৫ মিনিটের পডকাস্ট-স্টাইল conversation তৈরি করে।</p>
@@ -219,7 +216,7 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-    </div>
+    </div></div><p class="sr-only" data-guide-copy-status role="status" aria-live="polite"></p></div>
 
     <!-- TEMPLATED-FAQ:START -->
 <section class="article-faq" aria-labelledby="faq-heading">

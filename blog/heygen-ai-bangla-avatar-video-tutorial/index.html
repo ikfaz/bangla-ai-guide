@@ -34,6 +34,8 @@
 <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <link rel="stylesheet" href="/css/site-shell.css">
   <link rel="stylesheet" href="/css/guide-reader.css">
+<link rel="stylesheet" href="/css/guide-workshop.css">
+  <script src="/js/guide-workshop.js" defer></script>
   <!-- FAQ-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"HeyGen কোন কাজে সবচেয়ে ভালো?","acceptedAnswer":{"@type":"Answer","text":"1. Edtech lesson production (Shikhbo Bangla / 10 Minute School) Daily 5-8 lessons, instructor avatar, slide narration। Cost effective vs in-person filming। 2. Corporate training (BD-US joint ventures) Compliance training, onboarding video, policy update। Same content multiple language version (Bangla/English/Hindi)। 3. Sales/marketing personalized video Sales team prospect outreach — same script, customer name auto-personalize, AI-generated talking video। Higher reply rate। 4. Internal communications HR announcement, CEO message, team updates — AI avatar consistent, professional। 5. Multilingual content scaling One English video → HeyGen Translate → 30 language versions (lip-synced)। Global…"}},{"@type":"Question","name":"HeyGen-এর মূল features কী কী?","acceptedAnswer":{"@type":"Answer","text":"500+ stock avatars: Diverse age/ethnicity/gender। South Asian representation strong। Custom avatar: 2-3 min own video record (Creator plan included) → AI clone (~30 min processing)। Unlimited use। 175+ languages, 1500+ voices: Bangla supported (improving)। Voice cloning available (Creator plan)। Slide-to-video: PowerPoint/Google Slides upload → narrated video output। HeyGen Translate: One video → 30+ language auto-translate + lip-sync। Industry-leading। Video templates: 200+ pre-built — marketing, education, training। API access: Pro+ tier — programmatic generation। Brand kit: Logo, colors, fonts pre-set।"}},{"@type":"Question","name":"HeyGen-এর কী কী সীমাবদ্ধতা আছে?","acceptedAnswer":{"@type":"Answer","text":"Bangla TTS quality: Built-in 75-83% native quality। Voice clone-এ own voice upload better। Subtle expressions: Avatar facial nuance limited। Strong emotion (anger, tears) — not realistic। Hand gestures: Default avatars-এ gesture vary, কিন্তু custom avatar-এ recorded gestures only। Cost at scale: 30 min/মাস-এ exhausted heavy users-এর জন্য। Pro+ tier দরকার। Uncanny valley: Photo-realistic avatar-এ minor lighting/eye movement-এ subtle disconnect। Ethical considerations: Deepfake risk — proper disclosure recommended।"}},{"@type":"Question","name":"HeyGen-এর দাম কত এবং BD-তে এর ROI কেমন?","acceptedAnswer":{"@type":"Answer","text":"Free: 3 video/মাস, 30 sec/video, watermark। Test only। Creator $২৪/মাস (Starter): 15 min/মাস, no watermark, basic features। Team $৪৮/মাস: 30 min/মাস, custom avatar (1 included), voice cloning। Rubaiya's team tier। Pro $৭২/মাস: 30 min + multi-avatar custom + advanced। Most BD edtech here। Enterprise: Custom। On-prem option, dedicated CSM। BD payment: USD card via bKash recharge।"}},{"@type":"Question","name":"ভূমিকা — HeyGen কী?","acceptedAnswer":{"@type":"Answer","text":"HeyGen (২০২০ founded, Los Angeles + Shenzhen) — AI-powered talking avatar video platform। ৫.৫ লাখ+ paid users globally। Custom avatar (own video record → AI clone), text-to-video, translation, slide-to-video — comprehensive video AI suite। Founded ২০২০ Joshua Xu (ex-Snap) Active users ~৫.৫ লাখ paid ~১২ লাখ free BD adoption ~৬,০০০ active Edtech/marketer-heavy Pricing Free + $২৪-$১২০+/মাস"}}]}</script>
 <!-- FAQ-SCHEMA:END -->
@@ -53,35 +55,30 @@
 </header>
 <!-- GUIDE-HEADER:END -->
 
-    <div data-guide-reader class="article-sheet container">
-        <!-- ARTICLE-META:START -->
-<p class="article-kicker"><span class="article-chip">মিডিয়া</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৪ মিনিট পড়া</span></p>
-<!-- ARTICLE-META:END -->
-<h1 id="gs-content">HeyGen বাংলা গাইড — AI Avatar দিয়ে ভিডিও তৈরির সম্পূর্ণ টিউটোরিয়াল</h1>
-
-<!-- ARTICLE-HERO:START -->
-<figure class="article-hero">
+    <div data-guide-reader class="article-sheet container" data-guide-workshop><div class="gw-hero"><div class="gw-hero-copy"><p class="article-kicker"><span class="article-chip">মিডিয়া</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৪ মিনিট পড়া</span></p><h1 id="gs-content">HeyGen বাংলা গাইড — AI Avatar দিয়ে ভিডিও তৈরির সম্পূর্ণ টিউটোরিয়াল</h1><p class="gw-deck">HeyGen-এ AI avatar দিয়ে কীভাবে professional ভিডিও বানাবেন? নিজের avatar clone, ১২০+ ভাষায় voice over, টেমপ্লেট ব্যবহার — বাংলা থেকে ইংরেজি video তৈরির সম্পূর্ণ…</p><a class="gw-actions" href="#প্রথম-ভিডিও-বানানোর-ধাপ">প্রথম ভিডিও বানানোর ধাপ <span aria-hidden="true">↓</span></a></div><div class="gw-hero-visual"><figure class="article-hero">
   <img src="/assets/editorial/classroom.svg" width="1000" height="440" alt="বোর্ড, চক ও খোলা বইয়ের অঙ্কন" decoding="async" fetchpriority="high">
-</figure>
-<!-- ARTICLE-HERO:END -->
-<!-- ARTICLE-TOC:START -->
-<nav class="article-toc" aria-label="সূচিপত্র">
-  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
-  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
-  <ol class="toc-list">
-    <li class="toc-item"><a href="#ভূমিকা-mirpur-এর-edtech-founder-এর-video-factory">ভূমিকা — Mirpur-এর edtech founder-এর video factory</a></li>
-    <li class="toc-item"><a href="#ভূমিকা-heygen-কী">ভূমিকা — HeyGen কী?</a></li>
-    <li class="toc-item"><a href="#মূল-ফিচারসমূহ">মূল ফিচারসমূহ</a></li>
-    <li class="toc-item"><a href="#প্রথম-ভিডিও-বানানোর-ধাপ">প্রথম ভিডিও বানানোর ধাপ</a></li>
-    <li class="toc-item"><a href="#দাম">দাম</a></li>
-    <li class="toc-item"><a href="#practical-use-cases-বাংলাদেশে">Practical use cases — বাংলাদেশে</a></li>
-    <li class="toc-item"><a href="#সীমাবদ্ধতা">সীমাবদ্ধতা</a></li>
-    <li class="toc-item"><a href="#উপসংহার">উপসংহার</a></li>
-    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
-    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
-  </ol>
-</nav>
-<!-- ARTICLE-TOC:END -->
+</figure></div></div><div class="gw-layout"><nav class="gw-chapters" aria-label="এই গাইডে"><details open><summary>এই গাইডে</summary><ol>
+<li><a href="#ভূমিকা-mirpur-এর-edtech-founder-এর-video-factory">ভূমিকা — Mirpur-এর edtech founder-এর video factory</a></li>
+<li><a href="#ভূমিকা-heygen-কী">ভূমিকা — HeyGen কী?</a></li>
+<li><a href="#মূল-ফিচারসমূহ">মূল ফিচারসমূহ</a></li>
+<li><a href="#প্রথম-ভিডিও-বানানোর-ধাপ">প্রথম ভিডিও বানানোর ধাপ</a></li>
+<li><a href="#দাম">দাম</a></li>
+<li><a href="#practical-use-cases-বাংলাদেশে">Practical use cases — বাংলাদেশে</a></li>
+<li><a href="#সীমাবদ্ধতা">সীমাবদ্ধতা</a></li>
+<li><a href="#উপসংহার">উপসংহার</a></li>
+<li><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+</ol></details></nav><div class="gw-reading">
+
+
+
+
+
+
+
+
+
+
+
 
 <h2 id="ভূমিকা-mirpur-এর-edtech-founder-এর-video-factory">ভূমিকা — Mirpur-এর edtech founder-এর video factory</h2>
 <p class="lede">আগের article-এ (synthesia-vs-heygen) আমরা Rubaiya-র "Shikhbo Bangla" edtech-এর কথা পড়েছিলাম — HeyGen Creator plan-এ migration। এই গাইড সেই HeyGen workflow-এর deep-dive — আরো specific। ২০২৬ মে-তে Shikhbo Bangla-এর ৩ instructor avatar (Rubaiya, Shahed, Nadira) — daily 6-8 lesson production, monthly 180-220। আগের পদ্ধতিতে in-person filming ৩.৫-৫ ঘণ্টা/lesson, এখন HeyGen-এ ২০-৩০ মিনিট/lesson। Quality: BD parent + student feedback positive, retention high। এই গাইড: HeyGen full workflow + practical tips for BD creators।</p>
@@ -113,7 +110,7 @@
 </ul>
 
 <h2 id="প্রথম-ভিডিও-বানানোর-ধাপ">প্রথম ভিডিও বানানোর ধাপ</h2>
-<ol>
+<ol class="gw-steps">
 <li><strong>Sign up:</strong> heygen.com → Google/email signup। Free tier: 3 video/মাস, 30 sec each।</li>
 <li><strong>Avatar select:</strong> Stock library থেকে browse বা "Create Avatar" → own video upload।</li>
 <li><strong>Script input:</strong> Text type (Bangla/English/etc.) বা audio upload।</li>
@@ -125,7 +122,7 @@
 </ol>
 
 <h3>Rubaiya-র actual lesson workflow (Class 8 Math):</h3>
-<ol>
+<ol class="gw-steps">
 <li>Lesson script (10-min, Bangla) ChatGPT-এ refine</li>
 <li>HeyGen-এ Rubaiya's custom avatar select</li>
 <li>Script paste → Bangla voice (Rubaiya's cloned voice from voice cloning)</li>
@@ -244,7 +241,7 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-    </div>
+    </div></div><p class="sr-only" data-guide-copy-status role="status" aria-live="polite"></p></div>
 
     <!-- TEMPLATED-FAQ:START -->
 <section class="article-faq" aria-labelledby="faq-heading">

@@ -39,6 +39,8 @@
 <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <link rel="stylesheet" href="/css/site-shell.css">
   <link rel="stylesheet" href="/css/guide-reader.css">
+<link rel="stylesheet" href="/css/guide-workshop.css">
+  <script src="/js/guide-workshop.js" defer></script>
   <!-- FAQ-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Wispr Flow কী?","acceptedAnswer":{"@type":"Answer","text":"Wispr Flow একটি AI-powered voice dictation app। সাধারণ speech-to-text tool শুধু আপনার কথা transcript করে; Flow-এর লক্ষ্য হলো কথাকে তুলনামূলক পরিষ্কার লেখায় রূপ দেওয়া। Official feature page অনুযায়ী এটি filler word সরানো, punctuation বসানো, numbered list বানানো এবং কথা বলার সময় correction বুঝতে পারে। এটি Notion, Gmail, Google Docs, WhatsApp, Cursor এবং text field আছে এমন বিভিন্ন app-এ কাজ করার জন্য তৈরি। অর্থাৎ আলাদা editor-এ লিখে copy-paste না করে বর্তমান app-এর text box-এই কথা বলে লেখা যায়।"}},{"@type":"Question","name":"বাংলায় কতটা কার্যকর?","acceptedAnswer":{"@type":"Answer","text":"Wispr Flow-এর official feature page “100+ languages” সমর্থনের কথা জানায়। তবে সেটি বাংলা ভাষায় সব accent, আঞ্চলিক উচ্চারণ এবং Bangla-English mixed speech সমানভাবে নির্ভুল হবে—এমন নিশ্চয়তা নয়। সৎ পরামর্শ: প্রথমে নিজের ৫–১০টি বাস্তব বাক্য দিয়ে পরীক্ষা করুন—বিশেষ করে বাংলা নাম, প্রতিষ্ঠান, ইংরেজি technical term, সংখ্যা ও টাকার অঙ্ক। গুরুত্বপূর্ণ document পাঠানোর আগে বানান ও অর্থ মিলিয়ে নিন।"}},{"@type":"Question","name":"কাদের জন্য ভালো, কাদের জন্য নয়?","acceptedAnswer":{"@type":"Answer","text":"ভালো: যারা প্রতিদিন অনেক email, note, document, prompt বা message লেখেন এবং keyboard-এর বদলে কথা বলে first draft বানাতে স্বাচ্ছন্দ্যবোধ করেন। নাও হতে পারে: খুব শান্ত পরিবেশ না থাকা, কঠোর offline requirement, sensitive data policy বা অল্প typing workload থাকলে built-in voice typing-ই যথেষ্ট হতে পারে।"}}]}</script>
 <!-- FAQ-SCHEMA:END -->
@@ -57,37 +59,33 @@
   </div>
 </header>
 <!-- GUIDE-HEADER:END -->
-<main class="article" id="gs-content"><article data-guide-reader class="card">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">হোম</a> › <a href="/blog/">ব্লগ</a> › Wispr Flow</nav>
-  <!-- ARTICLE-META:START -->
-<p class="article-kicker"><span class="article-chip">গাইড</span><span class="article-chip">১২ জুলাই, ২০২৬</span><span class="article-chip">৫ মিনিট পড়া</span></p>
-<!-- ARTICLE-META:END -->
-<h1>Wispr Flow বাংলা গাইড: কথা বলে দ্রুত লেখার AI টুল</h1>
-
-<!-- ARTICLE-HERO:START -->
-<figure class="article-hero">
+<main class="article" id="gs-content"><article data-guide-reader class="card" data-guide-workshop><nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">হোম</a> › <a href="/blog/">ব্লগ</a> › Wispr Flow</nav><div class="gw-hero"><div class="gw-hero-copy"><p class="article-kicker"><span class="article-chip">গাইড</span><span class="article-chip">১২ জুলাই, ২০২৬</span><span class="article-chip">৫ মিনিট পড়া</span></p><h1>Wispr Flow বাংলা গাইড: কথা বলে দ্রুত লেখার AI টুল</h1><p class="gw-deck">Wispr Flow কী, কীভাবে যেকোনো app-এ voice typing করবেন, বাংলা ব্যবহার, free ও Pro plan, privacy এবং সীমাবদ্ধতা—সহজ বাংলায় জানুন।</p><a class="gw-actions" href="#ধাপে-ধাপে-ব্যবহার">ধাপে ধাপে ব্যবহার <span aria-hidden="true">↓</span></a></div><div class="gw-hero-visual"><figure class="article-hero">
   <img src="/blog/wispr-flow-ai-dictation-bangla-guide/cover.png" width="1200" height="630" alt="মাইক্রোফোনের শব্দতরঙ্গ ল্যাপটপে লেখায় রূপান্তরিত হচ্ছে" decoding="async" fetchpriority="high">
-</figure>
-<!-- ARTICLE-HERO:END -->
-<!-- ARTICLE-TOC:START -->
-<nav class="article-toc" aria-label="সূচিপত্র">
-  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
-  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
-  <ol class="toc-list">
-    <li class="toc-item"><a href="#wispr-flow-কী">Wispr Flow কী?</a></li>
-    <li class="toc-item"><a href="#মূল-সুবিধাগুলো">মূল সুবিধাগুলো</a></li>
-    <li class="toc-item"><a href="#বাংলায়-কতটা-কার্যকর">বাংলায় কতটা কার্যকর?</a></li>
-    <li class="toc-item"><a href="#ধাপে-ধাপে-ব্যবহার">ধাপে ধাপে ব্যবহার</a></li>
-    <li class="toc-item"><a href="#বাংলাদেশি-ব্যবহারকারীর-বাস্তব-use-case">বাংলাদেশি ব্যবহারকারীর বাস্তব use case</a></li>
-    <li class="toc-item"><a href="#দাম-free-বনাম-pro">দাম: Free বনাম Pro</a></li>
-    <li class="toc-item"><a href="#privacy-ও-নিরাপত্তা">Privacy ও নিরাপত্তা</a></li>
-    <li class="toc-item"><a href="#সীমাবদ্ধতা">সীমাবদ্ধতা</a></li>
-    <li class="toc-item"><a href="#কাদের-জন্য-ভালো-কাদের-জন্য-নয়">কাদের জন্য ভালো, কাদের জন্য নয়?</a></li>
-    <li class="toc-item"><a href="#চূড়ান্ত-মতামত">চূড়ান্ত মতামত</a></li>
-    <li class="toc-item"><a href="#তথ্যসূত্র">তথ্যসূত্র</a></li>
-  </ol>
-</nav>
-<!-- ARTICLE-TOC:END -->
+</figure></div></div><div class="gw-layout"><nav class="gw-chapters" aria-label="এই গাইডে"><details open><summary>এই গাইডে</summary><ol>
+<li><a href="#wispr-flow-কী">Wispr Flow কী?</a></li>
+<li><a href="#মূল-সুবিধাগুলো">মূল সুবিধাগুলো</a></li>
+<li><a href="#বাংলায়-কতটা-কার্যকর">বাংলায় কতটা কার্যকর?</a></li>
+<li><a href="#ধাপে-ধাপে-ব্যবহার">ধাপে ধাপে ব্যবহার</a></li>
+<li><a href="#বাংলাদেশি-ব্যবহারকারীর-বাস্তব-use-case">বাংলাদেশি ব্যবহারকারীর বাস্তব use case</a></li>
+<li><a href="#দাম-free-বনাম-pro">দাম: Free বনাম Pro</a></li>
+<li><a href="#privacy-ও-নিরাপত্তা">Privacy ও নিরাপত্তা</a></li>
+<li><a href="#সীমাবদ্ধতা">সীমাবদ্ধতা</a></li>
+<li><a href="#কাদের-জন্য-ভালো-কাদের-জন্য-নয়">কাদের জন্য ভালো, কাদের জন্য নয়?</a></li>
+<li><a href="#চূড়ান্ত-মতামত">চূড়ান্ত মতামত</a></li>
+<li><a href="#তথ্যসূত্র">তথ্যসূত্র</a></li>
+</ol></details></nav><div class="gw-reading">
+
+
+
+
+
+
+
+
+
+
+
+
   <p class="meta">প্রকাশিত: ১২ জুলাই ২০২৬ · প্রকাশক: বাংলা AI গাইড · তথ্য যাচাই: Wispr Flow-এর official pages</p>
   <p class="lead">Keyboard-এ দীর্ঘ email, document বা AI prompt লিখতে সময় লাগে? <strong>Wispr Flow</strong> আপনার কথা শুনে text তৈরি করে এবং basic dictation-এর চেয়ে এক ধাপ এগিয়ে filler word, punctuation, list formatting ও কথার মাঝের correction সামলানোর চেষ্টা করে। তবে বাংলা accuracy, privacy setting ও paid plan বোঝার পর ব্যবহার করাই বুদ্ধিমানের কাজ।</p>
 
@@ -112,7 +110,7 @@
   <div class="callout warning"><strong>সৎ পরামর্শ:</strong> প্রথমে নিজের ৫–১০টি বাস্তব বাক্য দিয়ে পরীক্ষা করুন—বিশেষ করে বাংলা নাম, প্রতিষ্ঠান, ইংরেজি technical term, সংখ্যা ও টাকার অঙ্ক। গুরুত্বপূর্ণ document পাঠানোর আগে বানান ও অর্থ মিলিয়ে নিন।</div>
 
   <h2 id="ধাপে-ধাপে-ব্যবহার">ধাপে ধাপে ব্যবহার</h2>
-  <ol class="steps">
+  <ol class="steps gw-steps">
     <li>Official website থেকে আপনার device-এর app download করুন।</li>
     <li>Account তৈরি করে microphone permission দিন।</li>
     <li>Gmail, Google Docs বা অন্য কোনো text field খুলুন।</li>
@@ -129,11 +127,11 @@
   <h3>Developer</h3><p>Cursor বা অন্য editor-এ issue description, code comment বা AI prompt বলা যায়। Generated code বা command কখনো review ছাড়া চালাবেন না।</p>
 
   <h2 id="দাম-free-বনাম-pro">দাম: Free বনাম Pro</h2>
-  <div class="table-wrap"><table><thead><tr><th>Plan</th><th>Official page-এ যা দেখা গেছে</th><th>কার জন্য</th></tr></thead><tbody>
-    <tr><td>Basic</td><td>Free plan; নতুন account-এ ১৪ দিনের Pro trial</td><td>পরীক্ষা ও সীমিত ব্যবহার</td></tr>
-    <tr><td>Pro</td><td>Annual billing-এ $12/user/month; monthly billing-এ $15/user/month</td><td>নিয়মিত dictation ব্যবহারকারী</td></tr>
-    <tr><td>Enterprise</td><td>Contact sales</td><td>Team, admin ও compliance প্রয়োজন</td></tr>
-  </tbody></table></div>
+  <div class="table-wrap"><div class="gw-table-scroll" role="region" tabindex="0" aria-label="দাম: Free বনাম Pro"><table class="gw-table"><thead><tr><th>Plan</th><th>Official page-এ যা দেখা গেছে</th><th>কার জন্য</th></tr></thead><tbody>
+    <tr><td data-column="Plan">Basic</td><td data-column="Official page-এ যা দেখা গেছে">Free plan; নতুন account-এ ১৪ দিনের Pro trial</td><td data-column="কার জন্য">পরীক্ষা ও সীমিত ব্যবহার</td></tr>
+    <tr><td data-column="Plan">Pro</td><td data-column="Official page-এ যা দেখা গেছে">Annual billing-এ $12/user/month; monthly billing-এ $15/user/month</td><td data-column="কার জন্য">নিয়মিত dictation ব্যবহারকারী</td></tr>
+    <tr><td data-column="Plan">Enterprise</td><td data-column="Official page-এ যা দেখা গেছে">Contact sales</td><td data-column="কার জন্য">Team, admin ও compliance প্রয়োজন</td></tr>
+  </tbody></table></div></div>
   <p class="note">দাম, currency, tax এবং plan feature সময়ের সঙ্গে বদলাতে পারে। Payment-এর আগে official pricing page দেখুন। বাংলাদেশি card-এ international transaction চালু থাকা লাগতে পারে; bKash direct payment-এর কোনো official দাবি আমরা পাইনি।</p>
 
   <h2 id="privacy-ও-নিরাপত্তা">Privacy ও নিরাপত্তা</h2>
@@ -160,7 +158,7 @@
   <ul class="source-list">
     <li><a href="https://wisprflow.ai/features" rel="nofollow noopener noreferrer">Wispr Flow — Features</a> (যাচাই: ১২ জুলাই ২০২৬)</li>
     <li><a href="https://wisprflow.ai/pricing" rel="nofollow noopener noreferrer">Wispr Flow — Pricing</a> (যাচাই: ১২ জুলাই ২০২৬)</li>
-    <li><a href="https://wisprflow.ai/privacy" rel="nofollow noopener noreferrer">Wispr Flow — Privacy & Security</a> (যাচাই: ১২ জুলাই ২০২৬)</li>
+    <li><a href="https://wisprflow.ai/privacy" rel="nofollow noopener noreferrer">Wispr Flow — Privacy &amp; Security</a> (যাচাই: ১২ জুলাই ২০২৬)</li>
   </ul>
 
   <div class="author"><div class="avatar" aria-hidden="true">বাং</div><div><strong><a href="https://banglaaiguide.com/editorial-policy/">বাংলা AI গাইড</a></strong><br><span class="note">বাংলাদেশি ব্যবহারকারীদের জন্য AI tool যাচাই ও সহজ বাংলায় ব্যাখ্যা করেন।</span></div></div>
@@ -197,7 +195,7 @@
   </div>
 </section>
 <!-- AUTHOR-BLOCK:END -->
-</article><!-- RELATED-POSTS:START -->
+</div></div><p class="sr-only" data-guide-copy-status role="status" aria-live="polite"></p></article><!-- RELATED-POSTS:START -->
 <section class="related-posts" aria-label="সম্পর্কিত গাইড">
   <h3>সম্পর্কিত গাইড</h3>
   <p class="rp-sub">এই বিষয়ে আরও পড়ুন:</p>

@@ -34,6 +34,8 @@
 <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <link rel="stylesheet" href="/css/site-shell.css">
   <link rel="stylesheet" href="/css/guide-reader.css">
+<link rel="stylesheet" href="/css/guide-workshop.css">
+  <script src="/js/guide-workshop.js" defer></script>
   <!-- FAQ-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Google Gemini Omni Flash-এর দাম কত এবং BD-তে এর ROI কেমন?","acceptedAnswer":{"@type":"Answer","text":"Google AI Pro: $20/মাস — Gemini Advanced (Omni Flash included), Google Flow access। BD থেকে bKash USD card-এ pay হয়। Google AI Ultra: $250/মাস — higher rate limits, priority queue, full Flow access। BD agency/professional-এর জন্য overkill unless heavy production load। Veo 3 access: Same $20 Gemini Advanced tier-এ included (Google bundle). So separate cost নেই। YouTube Shorts free tier: Shorts app-এই Omni Flash generation free — no subscription। YouTube Create app free tier: Mobile editor-এ Omni Flash free integration। BD creator-এর জন্য math: মাসিক $২০ (~২৪০০ BDT) Gemini Advanced — Omni Flash + Veo 3 + Gemini chat (Pro tier) সব একসাথে। Veo 3 + Runway আলাদা subscribe করলে $৪০-৫০। Bundle…"}},{"@type":"Question","name":"Google Gemini Omni Flash কোন কাজে সবচেয়ে ভালো?","acceptedAnswer":{"@type":"Answer","text":"Case 1 — YouTube Shorts content (Omni জিতেছে): \"Dhaka rooftop at night, neon city lights, Lo-fi vibe\" — ৩০টা variation iterate করতে Omni-তে ১৫ মিনিট লেগেছে (conversational editing-এর কারণে)। Veo 3-এ একই কাজ ৪৫ মিনিট + $৪.৫০ cost। YouTube Shorts ১০-sec format-এ Omni-র resolution limit matter করে না। Verdict: Omni clear winner। Case 2 — Brand commercial 30-sec (Veo 3 জিতেছে): Daraz Eid campaign প্রেমিক mock-up — premium feel, 4K, smooth dolly shot। Veo 3 single-clip cinematic quality unmatched। Omni-তে ৩টা 10-sec clip stitch করে continuity break, resolution 1080p insufficient for billboard. Verdict: Premium client work-এ Veo 3 default থাকবে। Case 3 — Product photo → animated promo (Omni…"}},{"@type":"Question","name":"বাংলাদেশ থেকে Google Gemini Omni Flash কীভাবে access করব?","acceptedAnswer":{"@type":"Answer","text":"Sign-up: Google account দিয়ে Gemini Advanced — VPN ছাড়া কাজ করে। Payment: bKash USD card, EBL Aqua, City Bank dual-currency card, Wise, Payoneer — সব accepted। Mobile app: Gemini app Play Store + App Store-এ BD region-এ available। YouTube Shorts Omni: YouTube app-এ BD থেকে Shorts creation flow-এ Omni integration available। Speed: Mahir-এর Banglalink fiber-এ generation latency ~৩০-৪৫ সেকেন্ড per clip। US-এ ~২৫ সেকেন্ড — marginal difference।"}},{"@type":"Question","name":"Google Gemini Omni Flash-এর কী কী সীমাবদ্ধতা আছে?","acceptedAnswer":{"@type":"Answer","text":"4K resolution চাই? Veo 3 use করুন, Omni নয়। API integration দরকার? Omni এখনো নয় — Runway/Kling/Vertex AI (Veo 3)। 15+ sec single clip? Seedance 2.0 (15s)। Omni-তে stitching workaround। Bangla voiceover edit? Omni-তে audio editing withheld। Separate ElevenLabs/Adobe Podcast। Talking avatar? Held back at launch — wait। Premium human face photorealism? Kling 2.0 still leads।"}},{"@type":"Question","name":"বাংলাদেশ থেকে Access — VPN লাগে কি?","acceptedAnswer":{"@type":"Answer","text":"Sign-up: Google account দিয়ে Gemini Advanced — VPN ছাড়া কাজ করে। Payment: bKash USD card, EBL Aqua, City Bank dual-currency card, Wise, Payoneer — সব accepted। Mobile app: Gemini app Play Store + App Store-এ BD region-এ available। YouTube Shorts Omni: YouTube app-এ BD থেকে Shorts creation flow-এ Omni integration available। Speed: Mahir-এর Banglalink fiber-এ generation latency ~৩০-৪৫ সেকেন্ড per clip। US-এ ~২৫ সেকেন্ড — marginal difference।"}}]}</script>
 <!-- FAQ-SCHEMA:END -->
@@ -53,40 +55,35 @@
 </header>
 <!-- GUIDE-HEADER:END -->
 
-    <div data-guide-reader class="article-sheet container">
-        <!-- ARTICLE-META:START -->
-<p class="article-kicker"><span class="article-chip">এআই টুল</span><span class="article-chip">২৮ মে, ২০২৬</span><span class="article-chip">১৩ মিনিট পড়া</span></p>
-<!-- ARTICLE-META:END -->
-<h1 id="gs-content">Google Gemini Omni Flash বাংলা Review — সত্যিই কি Veo 3-এর Successor? ২০২৬</h1>
-
-<!-- ARTICLE-HERO:START -->
-<figure class="article-hero">
+    <div data-guide-reader class="article-sheet container" data-guide-workshop><div class="gw-hero"><div class="gw-hero-copy"><p class="article-kicker"><span class="article-chip">এআই টুল</span><span class="article-chip">২৮ মে, ২০২৬</span><span class="article-chip">১৩ মিনিট পড়া</span></p><h1 id="gs-content">Google Gemini Omni Flash বাংলা Review — সত্যিই কি Veo 3-এর Successor? ২০২৬</h1><p class="gw-deck">Google Gemini Omni Flash — I/O 2026-এ launched। 7-দিনের honest review: pros, cons, Veo 3 vs Kling vs Runway তুলনা, BD creator-এর জন্য verdict।</p><a class="gw-actions" href="#ভূমিকা-কেন-এই-review-matter-করে">ভূমিকা — কেন এই review matter করে <span aria-hidden="true">↓</span></a></div><div class="gw-hero-visual"><figure class="article-hero">
   <img src="/assets/editorial/model.svg" width="1000" height="440" alt="সংযুক্ত নোড ও একটি এআই মডেলের চিপের অঙ্কন" decoding="async" fetchpriority="high">
-</figure>
-<!-- ARTICLE-HERO:END -->
-<!-- ARTICLE-TOC:START -->
-<nav class="article-toc" aria-label="সূচিপত্র">
-  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
-  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
-  <ol class="toc-list">
-    <li class="toc-item"><a href="#ভূমিকা-কেন-এই-review-matter-করে">ভূমিকা — কেন এই review matter করে</a></li>
-    <li class="toc-item"><a href="#gemini-omni-flash-কী-google-এর-positioning">Gemini Omni Flash কী — Google-এর Positioning</a></li>
-    <li class="toc-item"><a href="#test-methodology-৬০-clips-৩-category">Test Methodology — ৬০ Clips, ৩ Category</a></li>
-    <li class="toc-item"><a href="#pros-যেখানে-omni-flash-সত্যিই-জিতেছে">✅ Pros — যেখানে Omni Flash সত্যিই জিতেছে</a></li>
-    <li class="toc-item"><a href="#cons-যেখানে-omni-flash-পিছিয়ে">❌ Cons — যেখানে Omni Flash পিছিয়ে</a></li>
-    <li class="toc-item"><a href="#head-to-head-test-results">Head-to-Head Test Results</a></li>
-    <li class="toc-item"><a href="#bd-context-use-case-tests">BD-Context Use Case Tests</a></li>
-    <li class="toc-item"><a href="#pricing-analysis-bd-perspective">Pricing Analysis — BD Perspective</a></li>
-    <li class="toc-item"><a href="#বাংলাদেশ-থেকে-access-vpn-লাগে-কি">বাংলাদেশ থেকে Access — VPN লাগে কি?</a></li>
-    <li class="toc-item"><a href="#সীমাবদ্ধতা-summary-real-deal-breakers">সীমাবদ্ধতা Summary — Real Deal-Breakers</a></li>
-    <li class="toc-item"><a href="#কাদের-জন্য-omni-flash-verdict-matrix">কাদের জন্য Omni Flash — Verdict Matrix</a></li>
-    <li class="toc-item"><a href="#মাহিরের-চূড়ান্ত-verdict-৭-৫-১০">মাহিরের চূড়ান্ত Verdict — ৭.৫/১০</a></li>
-    <li class="toc-item"><a href="#উপসংহার-মাহিরের-৯০-দিনের-projection">উপসংহার — মাহিরের ৯০-দিনের Projection</a></li>
-    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
-    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
-  </ol>
-</nav>
-<!-- ARTICLE-TOC:END -->
+</figure></div></div><div class="gw-layout"><nav class="gw-chapters" aria-label="এই গাইডে"><details open><summary>এই গাইডে</summary><ol>
+<li><a href="#ভূমিকা-কেন-এই-review-matter-করে">ভূমিকা — কেন এই review matter করে</a></li>
+<li><a href="#gemini-omni-flash-কী-google-এর-positioning">Gemini Omni Flash কী — Google-এর Positioning</a></li>
+<li><a href="#test-methodology-৬০-clips-৩-category">Test Methodology — ৬০ Clips, ৩ Category</a></li>
+<li><a href="#pros-যেখানে-omni-flash-সত্যিই-জিতেছে">✅ Pros — যেখানে Omni Flash সত্যিই জিতেছে</a></li>
+<li><a href="#cons-যেখানে-omni-flash-পিছিয়ে">❌ Cons — যেখানে Omni Flash পিছিয়ে</a></li>
+<li><a href="#head-to-head-test-results">Head-to-Head Test Results</a></li>
+<li><a href="#bd-context-use-case-tests">BD-Context Use Case Tests</a></li>
+<li><a href="#pricing-analysis-bd-perspective">Pricing Analysis — BD Perspective</a></li>
+<li><a href="#বাংলাদেশ-থেকে-access-vpn-লাগে-কি">বাংলাদেশ থেকে Access — VPN লাগে কি?</a></li>
+<li><a href="#সীমাবদ্ধতা-summary-real-deal-breakers">সীমাবদ্ধতা Summary — Real Deal-Breakers</a></li>
+<li><a href="#কাদের-জন্য-omni-flash-verdict-matrix">কাদের জন্য Omni Flash — Verdict Matrix</a></li>
+<li><a href="#মাহিরের-চূড়ান্ত-verdict-৭-৫-১০">মাহিরের চূড়ান্ত Verdict — ৭.৫/১০</a></li>
+<li><a href="#উপসংহার-মাহিরের-৯০-দিনের-projection">উপসংহার — মাহিরের ৯০-দিনের Projection</a></li>
+<li><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+</ol></details></nav><div class="gw-reading">
+
+
+
+
+
+
+
+
+
+
+
 
 <p class="lede">Google Gemini Omni Flash — I/O 2026-এ ১৯ মে launched, Google-এর প্রথম "Omni" family video model। মাহির তানভীর (৩০, BUET CSE ২০১৬, ঢাকা গুলশান-২) — "Mahir AI Reviews" YouTube channel-এর host (১.২M subscribers), বাংলা AI tool review niche-এর industry leader। আগে Brave Browser-এ Senior Engineer ছিলেন (remote ২ বছর), ২০২২ থেকে full-time content creator। Sora (deprecated), Veo 1/2/3, Pika 2.0, Kling 2.0, Runway Gen-4, Hailuo MiniMax, Seedance 2.0 — প্রায় সব AI video model তিনি hands-on test করেছেন। Omni Flash launch-এর ৪ ঘণ্টা পরে access পেয়েছেন। May 20-26, 2026 — ৭ দিন rigorous testing, ৬০টা clip generated, ৩টা category-তে (cinematic, conversational editing, multimodal input combos)। This is মাহিরের honest review — hype নয়, raw data।</p>
 
@@ -175,7 +172,7 @@
 
 <p>একই ৫টা prompt চারটা model-এ run করা হয়েছে। নিচের scoring মাহির + team-এর blind-review average (০-১০ scale)।</p>
 
-<table style="width:100%;border-collapse:collapse;margin:1rem 0;">
+<div class="gw-table-scroll" role="region" tabindex="0" aria-label="Head-to-Head Test Results"><table style="width:100%;border-collapse:collapse;margin:1rem 0;" class="gw-table">
 <thead>
 <tr style="background:#f1f5f9;">
 <th style="padding:10px;border:1px solid #e5e7eb;">Test</th>
@@ -186,16 +183,16 @@
 </tr>
 </thead>
 <tbody>
-<tr><td style="padding:10px;border:1px solid #e5e7eb;">Cinematic shot quality</td><td style="padding:10px;border:1px solid #e5e7eb;">৭.৫</td><td style="padding:10px;border:1px solid #e5e7eb;"><b>৯.২</b></td><td style="padding:10px;border:1px solid #e5e7eb;">৮.১</td><td style="padding:10px;border:1px solid #e5e7eb;">৮.৭</td></tr>
-<tr><td style="padding:10px;border:1px solid #e5e7eb;">Prompt adherence</td><td style="padding:10px;border:1px solid #e5e7eb;"><b>৮.৮</b></td><td style="padding:10px;border:1px solid #e5e7eb;">৮.০</td><td style="padding:10px;border:1px solid #e5e7eb;">৭.৩</td><td style="padding:10px;border:1px solid #e5e7eb;">৭.৯</td></tr>
-<tr><td style="padding:10px;border:1px solid #e5e7eb;">Human face photorealism</td><td style="padding:10px;border:1px solid #e5e7eb;">৭.০</td><td style="padding:10px;border:1px solid #e5e7eb;">৮.৪</td><td style="padding:10px;border:1px solid #e5e7eb;"><b>৯.০</b></td><td style="padding:10px;border:1px solid #e5e7eb;">৮.১</td></tr>
-<tr><td style="padding:10px;border:1px solid #e5e7eb;">Editing flexibility</td><td style="padding:10px;border:1px solid #e5e7eb;"><b>৯.৫</b></td><td style="padding:10px;border:1px solid #e5e7eb;">৫.৫</td><td style="padding:10px;border:1px solid #e5e7eb;">৬.০</td><td style="padding:10px;border:1px solid #e5e7eb;">৮.৭</td></tr>
-<tr><td style="padding:10px;border:1px solid #e5e7eb;">Multimodal input</td><td style="padding:10px;border:1px solid #e5e7eb;"><b>৯.৬</b></td><td style="padding:10px;border:1px solid #e5e7eb;">৬.৫</td><td style="padding:10px;border:1px solid #e5e7eb;">৬.২</td><td style="padding:10px;border:1px solid #e5e7eb;">৭.৪</td></tr>
-<tr><td style="padding:10px;border:1px solid #e5e7eb;">Max clip duration</td><td style="padding:10px;border:1px solid #e5e7eb;">১০ sec</td><td style="padding:10px;border:1px solid #e5e7eb;">৮ sec + extend</td><td style="padding:10px;border:1px solid #e5e7eb;">১০ sec</td><td style="padding:10px;border:1px solid #e5e7eb;">১০ sec</td></tr>
-<tr><td style="padding:10px;border:1px solid #e5e7eb;">Native resolution</td><td style="padding:10px;border:1px solid #e5e7eb;">1080p</td><td style="padding:10px;border:1px solid #e5e7eb;"><b>4K</b></td><td style="padding:10px;border:1px solid #e5e7eb;">1080p</td><td style="padding:10px;border:1px solid #e5e7eb;">1080p</td></tr>
-<tr><td style="padding:10px;border:1px solid #e5e7eb;">Public API</td><td style="padding:10px;border:1px solid #e5e7eb;">নেই (coming)</td><td style="padding:10px;border:1px solid #e5e7eb;"><b>Vertex AI</b></td><td style="padding:10px;border:1px solid #e5e7eb;">আছে</td><td style="padding:10px;border:1px solid #e5e7eb;">আছে</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Test">Cinematic shot quality</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Omni Flash">৭.৫</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Veo 3"><b>৯.২</b></td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Kling 2.0">৮.১</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Runway Gen-4">৮.৭</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Test">Prompt adherence</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Omni Flash"><b>৮.৮</b></td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Veo 3">৮.০</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Kling 2.0">৭.৩</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Runway Gen-4">৭.৯</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Test">Human face photorealism</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Omni Flash">৭.০</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Veo 3">৮.৪</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Kling 2.0"><b>৯.০</b></td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Runway Gen-4">৮.১</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Test">Editing flexibility</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Omni Flash"><b>৯.৫</b></td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Veo 3">৫.৫</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Kling 2.0">৬.০</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Runway Gen-4">৮.৭</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Test">Multimodal input</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Omni Flash"><b>৯.৬</b></td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Veo 3">৬.৫</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Kling 2.0">৬.২</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Runway Gen-4">৭.৪</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Test">Max clip duration</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Omni Flash">১০ sec</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Veo 3">৮ sec + extend</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Kling 2.0">১০ sec</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Runway Gen-4">১০ sec</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Test">Native resolution</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Omni Flash">1080p</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Veo 3"><b>4K</b></td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Kling 2.0">1080p</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Runway Gen-4">1080p</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Test">Public API</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Omni Flash">নেই (coming)</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Veo 3"><b>Vertex AI</b></td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Kling 2.0">আছে</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Runway Gen-4">আছে</td></tr>
 </tbody>
-</table>
+</table></div>
 
 <p><b>Note on Sora:</b> Sora 2 (যা ২৫-sec clip support করত) deprecated — OpenAI Sept 24, 2026-এ sunset করছে। তাই comparison-এ Sora বাদ। যাঁরা Sora-তে invested ছিলেন তাঁদের Veo 3 / Runway Gen-4 / Omni Flash-এ migrate করতে হবে।</p>
 
@@ -349,7 +346,7 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-    </div>
+    </div></div><p class="sr-only" data-guide-copy-status role="status" aria-live="polite"></p></div>
 
 <!-- TEMPLATED-FAQ:START -->
 <section class="article-faq" aria-labelledby="faq-heading">

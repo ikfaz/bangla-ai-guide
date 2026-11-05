@@ -34,6 +34,8 @@
 <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <link rel="stylesheet" href="/css/site-shell.css">
   <link rel="stylesheet" href="/css/guide-reader.css">
+<link rel="stylesheet" href="/css/guide-workshop.css">
+  <script src="/js/guide-workshop.js" defer></script>
   <!-- FAQ-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Claude Computer Use-এর কিছু practical উদাহরণ কী?","acceptedAnswer":{"@type":"Answer","text":"Data entry CSV file → AI opens Excel → enters each row → saves। 1-hour manual task → 10-15 minutes। Research compile AI opens browser → searches 10 sites → screenshot key findings → compiles document। Research time: 4 hours → 30 minutes। Email management AI reads inbox → categorizes → drafts replies for routine → flags important। 1 hour/day → 10 minutes review। Booking + scheduling AI books flights, hotels, restaurants by criteria। Hours of comparison → minutes।"}},{"@type":"Question","name":"কী করতে পারে?","acceptedAnswer":{"@type":"Answer","text":"Browser-এ navigate, form fill, button click Excel/Sheets — data entry, formula Email — read + reply + organize Multiple application switch File manager — find, organize Screen-reading — visual element identify Multi-step workflow execute"}},{"@type":"Question","name":"Claude Computer Use কীভাবে install বা setup করব?","acceptedAnswer":{"@type":"Answer","text":"Claude API key (Anthropic.com) Computer Use SDK: Python/Node Run in isolated environment (Docker recommended) Display passthrough (screen access) Initial setup: 15-30 minutes Pricing: pay-per-token + computer-use overhead"}},{"@type":"Question","name":"Claude Computer Use-এর সেরা alternative কোনগুলো?","acceptedAnswer":{"@type":"Answer","text":"OpenAI Operator: similar concept, ChatGPT integrated Microsoft Copilot Studio: business-focused Zapier + AI: simpler, less powerful Make.com + AI: visual workflow RPA tools (UiPath): traditional enterprise"}},{"@type":"Question","name":"ভূমিকা — Computer Use কী?","acceptedAnswer":{"@type":"Answer","text":"Computer Use — Anthropic-এর Claude-কে দেওয়া ক্ষমতা যেখানে AI সরাসরি আপনার computer-এর screen দেখে, mouse + keyboard control করে কাজ করে। আপনি বলবেন \"এই form fill করো\", Claude নিজেই করবে। ২০২৪-এ beta release, ২০২৬-এ Sonnet 4.6 + production-grade — entire computer \"automate\" করার নতুন paradigm।"}},{"@type":"Question","name":"Performance — কেমন ভালো?","acceptedAnswer":{"@type":"Answer","text":"Simple repetitive task: 95% success Multi-step with branching: 70-85% Complex new task: 50-70% (improving) Speed: human pace (3-5x slower than dedicated automation) Best ROI: high-volume repetitive"}}]}</script>
 <!-- FAQ-SCHEMA:END -->
@@ -53,36 +55,31 @@
 </header>
 <!-- GUIDE-HEADER:END -->
 
-    <div data-guide-reader class="article-sheet container">
-        <!-- ARTICLE-META:START -->
-<p class="article-kicker"><span class="article-chip">এআই টুল</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">২ মিনিট পড়া</span></p>
-<!-- ARTICLE-META:END -->
-<h1 id="gs-content">Claude Computer Use বাংলা গাইড — AI আপনার Computer চালাবে (২০২৬)</h1>
-
-<!-- ARTICLE-HERO:START -->
-<figure class="article-hero">
+    <div data-guide-reader class="article-sheet container" data-guide-workshop><div class="gw-hero"><div class="gw-hero-copy"><p class="article-kicker"><span class="article-chip">এআই টুল</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">২ মিনিট পড়া</span></p><h1 id="gs-content">Claude Computer Use বাংলা গাইড — AI আপনার Computer চালাবে (২০২৬)</h1><p class="gw-deck">Claude Computer Use — AI সরাসরি mouse, keyboard, screen control করে কাজ করে। কীভাবে ব্যবহার, কী safe, কী risky — বাংলা ব্যবহারকারীদের জন্য সম্পূর্ণ গাইড।</p><a class="gw-actions" href="#ভূমিকা-computer-use-কী">ভূমিকা — Computer Use কী? <span aria-hidden="true">↓</span></a></div><div class="gw-hero-visual"><figure class="article-hero">
   <img src="/assets/editorial/automation.svg" width="1000" height="440" alt="সংযুক্ত কাজের ধাপ ও সুইচের অঙ্কন" decoding="async" fetchpriority="high">
-</figure>
-<!-- ARTICLE-HERO:END -->
-<!-- ARTICLE-TOC:START -->
-<nav class="article-toc" aria-label="সূচিপত্র">
-  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
-  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
-  <ol class="toc-list">
-    <li class="toc-item"><a href="#ভূমিকা-computer-use-কী">ভূমিকা — Computer Use কী?</a></li>
-    <li class="toc-item"><a href="#কী-করতে-পারে">কী করতে পারে</a></li>
-    <li class="toc-item"><a href="#অ্যাক্সেস-setup">অ্যাক্সেস + setup</a></li>
-    <li class="toc-item"><a href="#practical-examples">Practical examples</a></li>
-    <li class="toc-item"><a href="#bangladesh-specific-use-cases">Bangladesh-specific use cases</a></li>
-    <li class="toc-item"><a href="#গুরুত্বপূর্ণ-সতর্কতা">গুরুত্বপূর্ণ সতর্কতা</a></li>
-    <li class="toc-item"><a href="#performance-কেমন-ভালো">Performance — কেমন ভালো?</a></li>
-    <li class="toc-item"><a href="#বিকল্প-যেগুলো-উন্নতিতে">বিকল্প — যেগুলো উন্নতিতে</a></li>
-    <li class="toc-item"><a href="#উপসংহার">উপসংহার</a></li>
-    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
-    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
-  </ol>
-</nav>
-<!-- ARTICLE-TOC:END -->
+</figure></div></div><div class="gw-layout"><nav class="gw-chapters" aria-label="এই গাইডে"><details open><summary>এই গাইডে</summary><ol>
+<li><a href="#ভূমিকা-computer-use-কী">ভূমিকা — Computer Use কী?</a></li>
+<li><a href="#কী-করতে-পারে">কী করতে পারে</a></li>
+<li><a href="#অ্যাক্সেস-setup">অ্যাক্সেস + setup</a></li>
+<li><a href="#practical-examples">Practical examples</a></li>
+<li><a href="#bangladesh-specific-use-cases">Bangladesh-specific use cases</a></li>
+<li><a href="#গুরুত্বপূর্ণ-সতর্কতা">গুরুত্বপূর্ণ সতর্কতা</a></li>
+<li><a href="#performance-কেমন-ভালো">Performance — কেমন ভালো?</a></li>
+<li><a href="#বিকল্প-যেগুলো-উন্নতিতে">বিকল্প — যেগুলো উন্নতিতে</a></li>
+<li><a href="#উপসংহার">উপসংহার</a></li>
+<li><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+</ol></details></nav><div class="gw-reading">
+
+
+
+
+
+
+
+
+
+
+
 
         <h2 id="ভূমিকা-computer-use-কী">ভূমিকা — Computer Use কী?</h2>
         <p>Computer Use — Anthropic-এর Claude-কে দেওয়া ক্ষমতা যেখানে AI সরাসরি আপনার computer-এর screen দেখে, mouse + keyboard control করে কাজ করে। আপনি বলবেন "এই form fill করো", Claude নিজেই করবে।</p>
@@ -216,7 +213,7 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-    </div>
+    </div></div><p class="sr-only" data-guide-copy-status role="status" aria-live="polite"></p></div>
 
     <!-- TEMPLATED-FAQ:START -->
 <section class="article-faq" aria-labelledby="faq-heading">

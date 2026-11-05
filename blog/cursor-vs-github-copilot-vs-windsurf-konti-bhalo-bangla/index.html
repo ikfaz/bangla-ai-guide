@@ -34,6 +34,8 @@
 <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <link rel="stylesheet" href="/css/site-shell.css">
   <link rel="stylesheet" href="/css/guide-reader.css">
+<link rel="stylesheet" href="/css/guide-workshop.css">
+  <script src="/js/guide-workshop.js" defer></script>
   <!-- FAQ-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Feature comparison — কোনটা বেছে নেব?","acceptedAnswer":{"@type":"Answer","text":"Feature Cursor Copilot Windsurf Tab autocomplete ★★★★★ ★★★★★ ★★★★★ Inline edit (Cmd+K) ★★★★★ (best) ★★★★ ★★★★ Multi-file edit ★★★★★ (Composer) ★★★★ (Edits) ★★★★★ (Cascade) Agent mode ★★★★ ★★★ (newer) ★★★★★ (durable) Multi-model (Sonnet/GPT/Gemini) ★★★★★ ★★★★ ★★★★★ VS Code feel ★★★★★ (95% fork) ★★★★★ (native ext) ★★★★ (92% fork) GitHub integration ★★★ ★★★★★ (PR review, Workspace) ★★★ Community/tutorials ★★★★★ ★★★★★ ★★★ (growing) Enterprise/on-prem ★★★ ★★★★ (Enterprise plan) ★★★★★ (on-prem heritage)"}},{"@type":"Question","name":"Cursor vs GitHub Copilot vs Windsurf-এর দাম কত এবং BD-তে এর ROI কেমন?","acceptedAnswer":{"@type":"Answer","text":"Plan Cursor Copilot Windsurf Free $০ (২,০০০ token/মাস) $০ — student Pack (FREE!) $০ (৫০ flow + unlimited autocomplete) Personal $২০/mo (Pro) $১০/mo (Individual) $১৫/mo (Pro) Pro/Higher $৪০/mo (Business) $১৯/mo (Pro+) $৩০/mo (Ultra) Team/Enterprise Custom $৩৯/user Custom (on-prem available) BD reality: Cursor সবচেয়ে expensive ($২০)। Copilot Student-এর জন্য FREE — undeniable winner সেখানে। Pro-দের জন্য Windsurf $৫ সস্তা। Annual savings: Cursor → Windsurf migration-এ ৳৭,২০০।"}},{"@type":"Question","name":"কাদের জন্য Cursor?","acceptedAnswer":{"@type":"Answer","text":"Cursor-এর fit: Pro developer (full-time coding ৮+ ঘণ্টা/দিন) Freelancer/agency — speed + Composer-এ time saving valuable VS Code-এর সঙ্গে maximum compatibility চান $২০/মাস justify করতে পারেন Community resources matter — tutorial, Discord, troubleshoot সহজ Inline edit Cmd+K daily ১০০+ বার ব্যবহার করেন Example: Sajid Hossain, BUET CSE, US startup CTO — daily ১০ ঘণ্টা coding, Composer-এ feature ship velocity ২.৫x।"}},{"@type":"Question","name":"কাদের জন্য Windsurf?","acceptedAnswer":{"@type":"Answer","text":"Windsurf-এর fit: Cost-conscious pro ($৫ savings × ১২ = $৬০/বছর matter করে) Long refactor/migration heavy কাজ (Cascade durable) Hobbyist/learner — best free tier in industry Test-aware editing valuable Enterprise/on-prem deployment দরকার Remote engineer-দের জন্য সাশ্রয়ী choice Example: Faruk Hossain (CUET CSE), US remote engineer — Cascade Flow-এ ২৮-file refactor ১:৪০ ঘণ্টায়। Cursor-এ ৩+ ঘণ্টা লাগত।"}},{"@type":"Question","name":"কাদের জন্য Copilot?","acceptedAnswer":{"@type":"Answer","text":"Copilot-এর fit: BD university CSE/EEE/IIT student — Student Pack FREE Open-source contributor — PR review integration GitHub-native workflow (heavy issue/PR/Actions use) $১০/মাস budget cap VS Code extension-এর সঙ্গে দৃঢ় integration চান Team using GitHub Enterprise Example: Tahmid (NSU CSE student) — ১৪ মাস free, পোর্টফোলিও ১২ repo, ৩ open-source contribution। Cost: $০।"}}]}</script>
 <!-- FAQ-SCHEMA:END -->
@@ -53,36 +55,31 @@
 </header>
 <!-- GUIDE-HEADER:END -->
 
-    <div data-guide-reader class="article-sheet container">
-        <!-- ARTICLE-META:START -->
-<p class="article-kicker"><span class="article-chip">তুলনা</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৫ মিনিট পড়া</span></p>
-<!-- ARTICLE-META:END -->
-<h1 id="gs-content">Cursor vs GitHub Copilot vs Windsurf — কোন AI Coding Tool ভালো?</h1>
-
-<!-- ARTICLE-HERO:START -->
-<figure class="article-hero">
+    <div data-guide-reader class="article-sheet container" data-guide-workshop><div class="gw-hero"><div class="gw-hero-copy"><p class="article-kicker"><span class="article-chip">তুলনা</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৫ মিনিট পড়া</span></p><h1 id="gs-content">Cursor vs GitHub Copilot vs Windsurf — কোন AI Coding Tool ভালো?</h1><p class="gw-deck">AI coding-এর ৩টি top tool: Cursor, GitHub Copilot, Windsurf। দাম, ফিচার, IDE experience, free tier — বাংলাদেশি developer-দের জন্য decision guide।</p><a class="gw-actions" href="#ভূমিকা-তিনটা-tool-একটাই-প্রশ্ন">ভূমিকা — তিনটা tool, একটাই প্রশ্ন <span aria-hidden="true">↓</span></a></div><div class="gw-hero-visual"><figure class="article-hero">
   <img src="/assets/editorial/coding.svg" width="1000" height="440" alt="কোড এডিটরের পর্দা ও কার্সরের অঙ্কন" decoding="async" fetchpriority="high">
-</figure>
-<!-- ARTICLE-HERO:END -->
-<!-- ARTICLE-TOC:START -->
-<nav class="article-toc" aria-label="সূচিপত্র">
-  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
-  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
-  <ol class="toc-list">
-    <li class="toc-item"><a href="#ভূমিকা-তিনটা-tool-একটাই-প্রশ্ন">ভূমিকা — তিনটা tool, একটাই প্রশ্ন</a></li>
-    <li class="toc-item"><a href="#এক-বাক্যে-পার্থক্য">এক বাক্যে পার্থক্য</a></li>
-    <li class="toc-item"><a href="#দাম-apples-to-apples">দাম — apples to apples</a></li>
-    <li class="toc-item"><a href="#feature-comparison-practical-lens">Feature comparison — practical lens</a></li>
-    <li class="toc-item"><a href="#কাদের-জন্য-cursor">কাদের জন্য Cursor?</a></li>
-    <li class="toc-item"><a href="#কাদের-জন্য-copilot">কাদের জন্য Copilot?</a></li>
-    <li class="toc-item"><a href="#কাদের-জন্য-windsurf">কাদের জন্য Windsurf?</a></li>
-    <li class="toc-item"><a href="#বাংলাদেশি-developer-দের-জন্য-সুপারিশ-framework">বাংলাদেশি developer-দের জন্য সুপারিশ framework</a></li>
-    <li class="toc-item"><a href="#উপসংহার-final-framework">উপসংহার — final framework</a></li>
-    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
-    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
-  </ol>
-</nav>
-<!-- ARTICLE-TOC:END -->
+</figure></div></div><div class="gw-layout"><nav class="gw-chapters" aria-label="এই গাইডে"><details open><summary>এই গাইডে</summary><ol>
+<li><a href="#ভূমিকা-তিনটা-tool-একটাই-প্রশ্ন">ভূমিকা — তিনটা tool, একটাই প্রশ্ন</a></li>
+<li><a href="#এক-বাক্যে-পার্থক্য">এক বাক্যে পার্থক্য</a></li>
+<li><a href="#দাম-apples-to-apples">দাম — apples to apples</a></li>
+<li><a href="#feature-comparison-practical-lens">Feature comparison — practical lens</a></li>
+<li><a href="#কাদের-জন্য-cursor">কাদের জন্য Cursor?</a></li>
+<li><a href="#কাদের-জন্য-copilot">কাদের জন্য Copilot?</a></li>
+<li><a href="#কাদের-জন্য-windsurf">কাদের জন্য Windsurf?</a></li>
+<li><a href="#বাংলাদেশি-developer-দের-জন্য-সুপারিশ-framework">বাংলাদেশি developer-দের জন্য সুপারিশ framework</a></li>
+<li><a href="#উপসংহার-final-framework">উপসংহার — final framework</a></li>
+<li><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+</ol></details></nav><div class="gw-reading">
+
+
+
+
+
+
+
+
+
+
+
 <p class="cluster-keeper">এই বিষয়ের মূল পাতা: <a href="/cursor-ai-bangla/">Cursor AI কী, কাজ ও দাম (টাকায়)</a>। নিচের লেখা সেই গাইডের পরিপূরক, প্রতিস্থাপন নয়।</p>
 
 <h2 id="ভূমিকা-তিনটা-tool-একটাই-প্রশ্ন">ভূমিকা — তিনটা tool, একটাই প্রশ্ন</h2>
@@ -101,34 +98,34 @@
 
 <h2 id="দাম-apples-to-apples">দাম — apples to apples</h2>
 
-<table style="width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;">
+<div class="gw-table-scroll" role="region" tabindex="0" aria-label="দাম — apples to apples"><table style="width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;" class="gw-table">
 <thead><tr style="background:#F1F5F9;"><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Plan</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Cursor</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Copilot</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Windsurf</th></tr></thead>
 <tbody>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Free</td><td style="padding:10px;border:1px solid #E2E8F0;">$০ (২,০০০ token/মাস)</td><td style="padding:10px;border:1px solid #E2E8F0;">$০ — student Pack (FREE!)</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>$০ (৫০ flow + unlimited autocomplete)</strong></td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Personal</td><td style="padding:10px;border:1px solid #E2E8F0;">$২০/mo (Pro)</td><td style="padding:10px;border:1px solid #E2E8F0;">$১০/mo (Individual)</td><td style="padding:10px;border:1px solid #E2E8F0;">$১৫/mo (Pro)</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Pro/Higher</td><td style="padding:10px;border:1px solid #E2E8F0;">$৪০/mo (Business)</td><td style="padding:10px;border:1px solid #E2E8F0;">$১৯/mo (Pro+)</td><td style="padding:10px;border:1px solid #E2E8F0;">$৩০/mo (Ultra)</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Team/Enterprise</td><td style="padding:10px;border:1px solid #E2E8F0;">Custom</td><td style="padding:10px;border:1px solid #E2E8F0;">$৩৯/user</td><td style="padding:10px;border:1px solid #E2E8F0;">Custom (on-prem available)</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Plan">Free</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Cursor">$০ (২,০০০ token/মাস)</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Copilot">$০ — student Pack (FREE!)</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Windsurf"><strong>$০ (৫০ flow + unlimited autocomplete)</strong></td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Plan">Personal</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Cursor">$২০/mo (Pro)</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Copilot">$১০/mo (Individual)</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Windsurf">$১৫/mo (Pro)</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Plan">Pro/Higher</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Cursor">$৪০/mo (Business)</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Copilot">$১৯/mo (Pro+)</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Windsurf">$৩০/mo (Ultra)</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Plan">Team/Enterprise</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Cursor">Custom</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Copilot">$৩৯/user</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Windsurf">Custom (on-prem available)</td></tr>
 </tbody>
-</table>
+</table></div>
 
 <p><strong>BD reality:</strong> Cursor সবচেয়ে expensive ($২০)। Copilot Student-এর জন্য FREE — undeniable winner সেখানে। Pro-দের জন্য Windsurf $৫ সস্তা। Annual savings: Cursor → Windsurf migration-এ ৳৭,২০০।</p>
 
 <h2 id="feature-comparison-practical-lens">Feature comparison — practical lens</h2>
 
-<table style="width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;">
+<div class="gw-table-scroll" role="region" tabindex="0" aria-label="Feature comparison — practical lens"><table style="width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;" class="gw-table">
 <thead><tr style="background:#F1F5F9;"><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Feature</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Cursor</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Copilot</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Windsurf</th></tr></thead>
 <tbody>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Tab autocomplete</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★★★</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★★★</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★★★</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Inline edit (Cmd+K)</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★★★ (best)</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★★</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★★</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Multi-file edit</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★★★ (Composer)</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★★ (Edits)</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★★★ (Cascade)</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Agent mode</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★★</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★ (newer)</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★★★ (durable)</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Multi-model (Sonnet/GPT/Gemini)</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★★★</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★★</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★★★</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">VS Code feel</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★★★ (95% fork)</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★★★ (native ext)</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★★ (92% fork)</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">GitHub integration</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★★★ (PR review, Workspace)</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Community/tutorials</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★★★</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★★★</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★ (growing)</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Enterprise/on-prem</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★★ (Enterprise plan)</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★★★ (on-prem heritage)</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Feature">Tab autocomplete</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Cursor">★★★★★</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Copilot">★★★★★</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Windsurf">★★★★★</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Feature">Inline edit (Cmd+K)</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Cursor">★★★★★ (best)</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Copilot">★★★★</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Windsurf">★★★★</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Feature">Multi-file edit</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Cursor">★★★★★ (Composer)</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Copilot">★★★★ (Edits)</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Windsurf">★★★★★ (Cascade)</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Feature">Agent mode</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Cursor">★★★★</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Copilot">★★★ (newer)</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Windsurf">★★★★★ (durable)</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Feature">Multi-model (Sonnet/GPT/Gemini)</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Cursor">★★★★★</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Copilot">★★★★</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Windsurf">★★★★★</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Feature">VS Code feel</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Cursor">★★★★★ (95% fork)</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Copilot">★★★★★ (native ext)</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Windsurf">★★★★ (92% fork)</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Feature">GitHub integration</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Cursor">★★★</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Copilot">★★★★★ (PR review, Workspace)</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Windsurf">★★★</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Feature">Community/tutorials</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Cursor">★★★★★</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Copilot">★★★★★</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Windsurf">★★★ (growing)</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Feature">Enterprise/on-prem</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Cursor">★★★</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Copilot">★★★★ (Enterprise plan)</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Windsurf">★★★★★ (on-prem heritage)</td></tr>
 </tbody>
-</table>
+</table></div>
 
 <h2 id="কাদের-জন্য-cursor">কাদের জন্য Cursor?</h2>
 <div class="case-study">
@@ -266,7 +263,7 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-    </div>
+    </div></div><p class="sr-only" data-guide-copy-status role="status" aria-live="polite"></p></div>
 
     <!-- TEMPLATED-FAQ:START -->
 <section class="article-faq" aria-labelledby="faq-heading">

@@ -34,6 +34,8 @@
   <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <link rel="stylesheet" href="/css/site-shell.css">
   <link rel="stylesheet" href="/css/guide-reader.css">
+  <link rel="stylesheet" href="/css/guide-workshop.css">
+  <script src="/js/guide-workshop.js" defer></script>
 </head>
 <body data-author-mode="editorial">
     <!-- GUIDE-HEADER:START -->
@@ -50,36 +52,31 @@
 </header>
 <!-- GUIDE-HEADER:END -->
 
-    <div data-guide-reader class="article-sheet container">
-        <!-- ARTICLE-META:START -->
-<p class="article-kicker"><span class="article-chip">মিডিয়া</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৪ মিনিট পড়া</span></p>
-<!-- ARTICLE-META:END -->
-<h1 id="gs-content">Stable Diffusion বাংলা ইনস্টল গাইড — নিজের কম্পিউটারে Local AI Image</h1>
-
-<!-- ARTICLE-HERO:START -->
-<figure class="article-hero">
+    <div data-guide-reader class="article-sheet container" data-guide-workshop><div class="gw-hero"><div class="gw-hero-copy"><p class="article-kicker"><span class="article-chip">মিডিয়া</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৪ মিনিট পড়া</span></p><h1 id="gs-content">Stable Diffusion বাংলা ইনস্টল গাইড — নিজের কম্পিউটারে Local AI Image</h1><p class="gw-deck">Stable Diffusion কীভাবে নিজের কম্পিউটারে install করবেন (Windows/Mac)? Automatic1111, ComfyUI, ফ্রি model — unlimited image generation-এর সম্পূর্ণ বাংলা গাইড।</p><a class="gw-actions" href="#comfyui-advanced-workflow">ComfyUI (advanced workflow) <span aria-hidden="true">↓</span></a></div><div class="gw-hero-visual"><figure class="article-hero">
   <img src="/assets/editorial/image.svg" width="1000" height="440" alt="কাগজের ফ্রেমে পাহাড়ের ছবি, রঙের নমুনা ও ঝিলিকের অঙ্কন" decoding="async" fetchpriority="high">
-</figure>
-<!-- ARTICLE-HERO:END -->
-<!-- ARTICLE-TOC:START -->
-<nav class="article-toc" aria-label="সূচিপত্র">
-  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
-  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
-  <ol class="toc-list">
-    <li class="toc-item"><a href="#ভূমিকা-mirpur-এর-এক-game-artist-এর-local-sd-setup">ভূমিকা — Mirpur-এর এক game artist-এর local SD setup</a></li>
-    <li class="toc-item"><a href="#কেন-local-stable-diffusion">কেন Local Stable Diffusion?</a></li>
-    <li class="toc-item"><a href="#হার্ডওয়্যার-minimum">হার্ডওয়্যার minimum</a></li>
-    <li class="toc-item"><a href="#automatic1111-সবচেয়ে-popular-windows-এ-install">Automatic1111 (সবচেয়ে popular) — Windows-এ install</a></li>
-    <li class="toc-item"><a href="#comfyui-advanced-workflow">ComfyUI (advanced workflow)</a></li>
-    <li class="toc-item"><a href="#model-download-civitai">Model download — Civitai</a></li>
-    <li class="toc-item"><a href="#বাংলাদেশি-ব্যবহারকারীদের-জন্য-টিপস">বাংলাদেশি ব্যবহারকারীদের জন্য টিপস</a></li>
-    <li class="toc-item"><a href="#সাধারণ-সমস্যা">সাধারণ সমস্যা</a></li>
-    <li class="toc-item"><a href="#উপসংহার">উপসংহার</a></li>
-    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
-    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
-  </ol>
-</nav>
-<!-- ARTICLE-TOC:END -->
+</figure></div></div><div class="gw-layout"><nav class="gw-chapters" aria-label="এই গাইডে"><details open><summary>এই গাইডে</summary><ol>
+<li><a href="#ভূমিকা-mirpur-এর-এক-game-artist-এর-local-sd-setup">ভূমিকা — Mirpur-এর এক game artist-এর local SD setup</a></li>
+<li><a href="#কেন-local-stable-diffusion">কেন Local Stable Diffusion?</a></li>
+<li><a href="#হার্ডওয়্যার-minimum">হার্ডওয়্যার minimum</a></li>
+<li><a href="#automatic1111-সবচেয়ে-popular-windows-এ-install">Automatic1111 (সবচেয়ে popular) — Windows-এ install</a></li>
+<li><a href="#comfyui-advanced-workflow">ComfyUI (advanced workflow)</a></li>
+<li><a href="#model-download-civitai">Model download — Civitai</a></li>
+<li><a href="#বাংলাদেশি-ব্যবহারকারীদের-জন্য-টিপস">বাংলাদেশি ব্যবহারকারীদের জন্য টিপস</a></li>
+<li><a href="#সাধারণ-সমস্যা">সাধারণ সমস্যা</a></li>
+<li><a href="#উপসংহার">উপসংহার</a></li>
+<li><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+</ol></details></nav><div class="gw-reading">
+
+
+
+
+
+
+
+
+
+
+
 
 <h2 id="ভূমিকা-mirpur-এর-এক-game-artist-এর-local-sd-setup">ভূমিকা — Mirpur-এর এক game artist-এর local SD setup</h2>
 <p class="lede">মিরপুর ১০-এর এক freelance 3D/game artist শাহরিয়ার রহমান — ২৬ বছর, IUT CSE ২০২২ batch, ৩ বছর Unity game development experience। ২০২৪-এ একটা US-based indie game studio-র contract পেলেন: ৭০০+ concept art deliverable, ৬ মাস deadline, $৪,২০০ total। Midjourney monthly $৩০ পরিকল্পনা ছিল, কিন্তু complex variants + style consistency-এ Midjourney limited (paid tier-এ commercial use OK, কিন্তু per-image control low)। বন্ধু Tausif suggest করল local Stable Diffusion + ComfyUI। শাহরিয়ারের desktop: RTX 3060 12GB + 32GB RAM + i5-12400। ৩ দিন setup, learning curve ২ সপ্তাহ। পরে: per image generation cost effectively ০ taka (electricity ৳১২/দিন), unlimited iterations, ControlNet + LoRA দিয়ে precise style control। ৬ মাসে contract delivered + extra clients onboard। এই গাইড সেই workflow।</p>
@@ -116,22 +113,22 @@
 
 <h2 id="automatic1111-সবচেয়ে-popular-windows-এ-install">Automatic1111 (সবচেয়ে popular) — Windows-এ install</h2>
 
-<h3>Step 1: Prerequisites</h3>
-<ol>
+<h3 class="gw-step-heading">Step 1: Prerequisites</h3>
+<ol class="gw-steps">
 <li>Python 3.10.6 download (specific version, latest doesn't work) — python.org</li>
 <li>Git download — git-scm.com</li>
 <li>"Add Python to PATH" check করুন install-এ</li>
 </ol>
 
-<h3>Step 2: Download Automatic1111</h3>
-<ol>
+<h3 class="gw-step-heading">Step 2: Download Automatic1111</h3>
+<ol class="gw-steps">
 <li>github.com/AUTOMATIC1111/stable-diffusion-webui</li>
 <li>Open folder you want (e.g., C:\AI\SD)</li>
 <li>Right-click → "Git Bash Here" → command: <code>git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git</code></li>
 </ol>
 
-<h3>Step 3: First run</h3>
-<ol>
+<h3 class="gw-step-heading">Step 3: First run</h3>
+<ol class="gw-steps">
 <li>Folder-এ <code>webui-user.bat</code> double-click</li>
 <li>First run: ১০-৩০ minutes (dependencies + base model download)</li>
 <li>Browser auto-opens: localhost:7860</li>
@@ -238,7 +235,7 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-    </div>
+    </div></div><p class="sr-only" data-guide-copy-status role="status" aria-live="polite"></p></div>
 
     <!-- RELATED-POSTS:START -->
 <section class="related-posts" aria-label="সম্পর্কিত গাইড">

@@ -34,6 +34,8 @@
 <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <link rel="stylesheet" href="/css/site-shell.css">
   <link rel="stylesheet" href="/css/guide-reader.css">
+<link rel="stylesheet" href="/css/guide-workshop.css">
+  <script src="/js/guide-workshop.js" defer></script>
   <!-- FAQ-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"বাংলাদেশ থেকে ChatGPT Atlas কীভাবে access করব?","acceptedAnswer":{"@type":"Answer","text":"Atlas BD থেকে access করা সহজ — কিন্তু কিছু গুরুত্বপূর্ণ পয়েন্ট আছে যেগুলো Rifat নিজে hands-on শিখেছেন। Download: chatgpt.com/atlas — সরাসরি, VPN লাগে না। Mac (primary): macOS 13+ supported। .dmg installer, ১০ মিনিটে setup। Windows (beta): Q1 ২০২৬-এ release। Windows 11 প্রায় bug-free, Windows 10-এ কিছু rendering issue। Linux: এখনো নেই — OpenAI ২০২৬-এর শেষে hint দিয়েছে। Login: ChatGPT account দিয়েই, Plus/Pro subscription auto-detect হয়। Plus tier ($20/mo): Atlas browser + basic features unlock। Pro tier ($200/mo): Agent mode + unlimited GPT-5 + advanced features। Payment from BD: bKash USD card, Wise multi-currency card, Payoneer — সব কাজ করে। Rifat-এর tip: \"প্রথমে Plus tier-এ ১৫ দিন try…"}},{"@type":"Question","name":"ChatGPT Atlas-এর মূল features কী কী?","acceptedAnswer":{"@type":"Answer","text":"Atlas-এর সব feature-ই যে নতুন তা নয় — Chrome + ChatGPT extension কিছুটা এমন করতে পারে। কিন্তু এই ৬টা feature একসাথে, native-ভাবে এবং Pro tier-এ Agent mode সহ — সেটাই Atlas-এর সম্মিলিত power। ১. Split-screen ChatGPT: যে কোনো page-এর পাশে ChatGPT permanent থাকে। URL এ যেতে হয় না, Cmd+L এ ChatGPT call। ২. Browser memory: Cross-session context সংরক্ষণ। গত সপ্তাহে যে ১৫টা site পড়েছেন সেগুলোর সারাংশ Atlas মনে রাখে — \"last week-এ Nagad-এর কী পড়েছিলাম?\" jaal চলে। ৩. Agent mode: Autonomous browsing — AI নিজে click, type, navigate করে। (Pro-only, বিস্তারিত নিচে)। ৪. Summarize page: এক ক্লিকে current page-এর সারাংশ — Bangla output সমর্থিত। ৫. Ask about page: Page-এর content নিয়ে question — \"এই…"}},{"@type":"Question","name":"ChatGPT Atlas কোন কাজে সবচেয়ে ভালো?","acceptedAnswer":{"@type":"Answer","text":"তিন সপ্তাহ Atlas ব্যবহারের পরে Rifat একটা list বানিয়েছেন — কোন কোন কাজে তার সবচেয়ে বেশি সময় বেঁচেছে। সবগুলোই BD context-এ। Use Case ১ — Competitor Monitoring: ৬টা BD wallet competitor-এর pricing, blog, careers page প্রতিদিন automated check। Agent mode সকাল ৯টায় নিজে run হয়, ৭ মিনিটে summary Slack-এ pinned মেসেজ হয়ে আসে। আগে: ২ ঘণ্টা manual। এখন: ০ minute Rifat-এর তরফ থেকে। Use Case ২ — BD News Daily Digest: Prothom Alo, Daily Star, bdnews24, Dhaka Tribune — প্রতিদিন business/tech section থেকে fintech-related news Atlas extract করে। বাংলা article-এ summarize Bangla-তে দেয়, English article-এ English-এ। ১০ মিনিট/দিন। Use Case ৩ — Daraz Price Tracking: ৪টা competitor product Daraz-এ…"}},{"@type":"Question","name":"ChatGPT Atlas-এর কী কী সীমাবদ্ধতা আছে?","acceptedAnswer":{"@type":"Answer","text":"Atlas perfect নয়। Rifat যেটাকে honest assessment বলেন: কিছু জিনিস Chrome এখনো ভালো করে। Privacy concern: Atlas আপনার browsing history-র context থেকেই কাজ করে। সব data OpenAI server-এ যায় (memory feature on থাকলে)। Sensitive work — banking, medical — এ আলাদা Chrome profile use করা ভালো। Bangla quality medium: Sonnet 4.6 বা Gemini 3.5-এর সাথে compare করলে Atlas-এর Bangla output literary নয়, কিন্তু extractive task (summarize, list) এ ভালো। Pro tier expensive: $200/mo BD context-এ অনেক — ২৪,০০০ টাকা। ROI তখনই যখন daily ৩+ ঘণ্টা research। Agent mode unreliable on SPAs: React/Vue heavy site (যেমন Bkash app web) মাঝে মাঝে fail। Battery drain: Mac-এ Chrome থেকে ১৫-২০% বেশি battery খায়, GPT…"}}]}</script>
 <!-- FAQ-SCHEMA:END -->
@@ -53,36 +55,31 @@
 </header>
 <!-- GUIDE-HEADER:END -->
 
-    <div data-guide-reader class="article-sheet container">
-        <!-- ARTICLE-META:START -->
-<p class="article-kicker"><span class="article-chip">এআই টুল</span><span class="article-chip">২৭ মে, ২০২৬</span><span class="article-chip">১১ মিনিট পড়া</span></p>
-<!-- ARTICLE-META:END -->
-<h1 id="gs-content">ChatGPT Atlas বাংলা গাইড — OpenAI-এর নতুন AI Browser ২০২৬</h1>
-
-<!-- ARTICLE-HERO:START -->
-<figure class="article-hero">
+    <div data-guide-reader class="article-sheet container" data-guide-workshop><div class="gw-hero"><div class="gw-hero-copy"><p class="article-kicker"><span class="article-chip">এআই টুল</span><span class="article-chip">২৭ মে, ২০২৬</span><span class="article-chip">১১ মিনিট পড়া</span></p><h1 id="gs-content">ChatGPT Atlas বাংলা গাইড — OpenAI-এর নতুন AI Browser ২০২৬</h1><p class="gw-deck">ChatGPT Atlas browser — OpenAI-এর নতুন AI-powered browser। বাংলাদেশ থেকে download, Agent mode, browsing automation, Chrome-এর সাথে পার্থক্য — সম্পূর্ণ গাইড।</p><a class="gw-actions" href="#ভূমিকা-banani-র-rifat-এর-research-transformation">ভূমিকা — Banani-র Rifat-এর Research Transformation <span aria-hidden="true">↓</span></a></div><div class="gw-hero-visual"><figure class="article-hero">
   <img src="/assets/editorial/conversation.svg" width="1000" height="440" alt="চ্যাট উইন্ডোতে প্রশ্ন ও উত্তরের বুদবুদের অঙ্কন" decoding="async" fetchpriority="high">
-</figure>
-<!-- ARTICLE-HERO:END -->
-<!-- ARTICLE-TOC:START -->
-<nav class="article-toc" aria-label="সূচিপত্র">
-  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
-  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
-  <ol class="toc-list">
-    <li class="toc-item"><a href="#ভূমিকা-banani-র-rifat-এর-research-transformation">ভূমিকা — Banani-র Rifat-এর Research Transformation</a></li>
-    <li class="toc-item"><a href="#chatgpt-atlas-কী-এবং-কেন-গুরুত্বপূর্ণ">ChatGPT Atlas কী এবং কেন গুরুত্বপূর্ণ</a></li>
-    <li class="toc-item"><a href="#chrome-edge-এর-সাথে-পার্থক্য">Chrome / Edge-এর সাথে পার্থক্য</a></li>
-    <li class="toc-item"><a href="#বাংলাদেশ-থেকে-access-ও-install">বাংলাদেশ থেকে Access ও Install</a></li>
-    <li class="toc-item"><a href="#মূল-৬টি-feature">মূল ৬টি Feature</a></li>
-    <li class="toc-item"><a href="#agent-mode-atlas-এর-সবচেয়ে-শক্তিশালী-feature">Agent Mode — Atlas-এর সবচেয়ে শক্তিশালী Feature</a></li>
-    <li class="toc-item"><a href="#rifat-এর-৫টি-practical-bd-use-case">Rifat-এর ৫টি Practical BD Use Case</a></li>
-    <li class="toc-item"><a href="#সীমাবদ্ধতা-ও-privacy-considerations">সীমাবদ্ধতা ও Privacy Considerations</a></li>
-    <li class="toc-item"><a href="#উপসংহার-কাদের-জন্য-atlas-worth-it">উপসংহার — কাদের জন্য Atlas Worth It</a></li>
-    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
-    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
-  </ol>
-</nav>
-<!-- ARTICLE-TOC:END -->
+</figure></div></div><div class="gw-layout"><nav class="gw-chapters" aria-label="এই গাইডে"><details open><summary>এই গাইডে</summary><ol>
+<li><a href="#ভূমিকা-banani-র-rifat-এর-research-transformation">ভূমিকা — Banani-র Rifat-এর Research Transformation</a></li>
+<li><a href="#chatgpt-atlas-কী-এবং-কেন-গুরুত্বপূর্ণ">ChatGPT Atlas কী এবং কেন গুরুত্বপূর্ণ</a></li>
+<li><a href="#chrome-edge-এর-সাথে-পার্থক্য">Chrome / Edge-এর সাথে পার্থক্য</a></li>
+<li><a href="#বাংলাদেশ-থেকে-access-ও-install">বাংলাদেশ থেকে Access ও Install</a></li>
+<li><a href="#মূল-৬টি-feature">মূল ৬টি Feature</a></li>
+<li><a href="#agent-mode-atlas-এর-সবচেয়ে-শক্তিশালী-feature">Agent Mode — Atlas-এর সবচেয়ে শক্তিশালী Feature</a></li>
+<li><a href="#rifat-এর-৫টি-practical-bd-use-case">Rifat-এর ৫টি Practical BD Use Case</a></li>
+<li><a href="#সীমাবদ্ধতা-ও-privacy-considerations">সীমাবদ্ধতা ও Privacy Considerations</a></li>
+<li><a href="#উপসংহার-কাদের-জন্য-atlas-worth-it">উপসংহার — কাদের জন্য Atlas Worth It</a></li>
+<li><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+</ol></details></nav><div class="gw-reading">
+
+
+
+
+
+
+
+
+
+
+
 
 <p class="lede">Banani-র কো-ওয়ার্কিং স্পেসে সকাল ৯টা। Rifat Khan, ২৭, NSU CSE ২০২১ ব্যাচ — একটা BD fintech startup-এর competitive intelligence researcher। কাজ এক লাইনে: প্রতিদিন ৮-১২টা BD ও regional competitor সাইট monitor করা, পরিবর্তন ধরা, product team-এর জন্য summary দাঁড় করানো। ২০২৫-এর শেষ পর্যন্ত তার দৈনিক রুটিন ছিল — Chrome-এ ৩০+ tab খোলা, একেকটা সাইটে গিয়ে pricing page, blog, careers page, app store review — সব নিজে পড়া, copy-paste করা, Google Doc-এ note করা। দৈনিক ৪-৫ ঘণ্টা শুধু এই research-এ যেত। ২০২৬-এর জানুয়ারিতে যখন ChatGPT Atlas — OpenAI-এর নিজের browser — তার Mac-এ install হলো, তিন সপ্তাহ পরে সেই ৪-৫ ঘণ্টা নেমে এলো ১ ঘণ্টায়। Weekly research output দ্বিগুণ। Rifat বলেন — "Atlas Chrome নয়, Chrome-এর জায়গায় বসা একটা researcher।"</p>
 
@@ -127,7 +124,7 @@
 
 <p>Rifat প্রথমে confused ছিলেন — "Chrome-এ ChatGPT extension আছে, Edge-এ Copilot built-in, Atlas-এ নতুন কী?" তিন সপ্তাহ ব্যবহারের পর তিনি একটা comparison table বানিয়েছিলেন team-এর জন্য। সেটাই এখানে:</p>
 
-<table style="width:100%;border-collapse:collapse;margin:1rem 0;">
+<div class="gw-table-scroll" role="region" tabindex="0" aria-label="Chrome / Edge-এর সাথে পার্থক্য"><table style="width:100%;border-collapse:collapse;margin:1rem 0;" class="gw-table">
 <thead>
 <tr style="background:#f1f5f9;">
 <th style="padding:10px;border:1px solid #e5e7eb;">Feature</th>
@@ -137,15 +134,15 @@
 </tr>
 </thead>
 <tbody>
-<tr><td style="padding:10px;border:1px solid #e5e7eb;">AI integration</td><td style="padding:10px;border:1px solid #e5e7eb;">Bolted-on</td><td style="padding:10px;border:1px solid #e5e7eb;">Sidebar (GPT-4o)</td><td style="padding:10px;border:1px solid #e5e7eb;"><b>Native (GPT-5)</b></td></tr>
-<tr><td style="padding:10px;border:1px solid #e5e7eb;">Browser memory</td><td style="padding:10px;border:1px solid #e5e7eb;">নেই</td><td style="padding:10px;border:1px solid #e5e7eb;">Limited</td><td style="padding:10px;border:1px solid #e5e7eb;"><b>Cross-session</b></td></tr>
-<tr><td style="padding:10px;border:1px solid #e5e7eb;">Agent mode</td><td style="padding:10px;border:1px solid #e5e7eb;">নেই</td><td style="padding:10px;border:1px solid #e5e7eb;">নেই</td><td style="padding:10px;border:1px solid #e5e7eb;"><b>Yes (Pro)</b></td></tr>
-<tr><td style="padding:10px;border:1px solid #e5e7eb;">Page summarize</td><td style="padding:10px;border:1px solid #e5e7eb;">Extension-dependent</td><td style="padding:10px;border:1px solid #e5e7eb;">Yes</td><td style="padding:10px;border:1px solid #e5e7eb;"><b>One-click, contextual</b></td></tr>
-<tr><td style="padding:10px;border:1px solid #e5e7eb;">Bangla content quality</td><td style="padding:10px;border:1px solid #e5e7eb;">Extension-dependent</td><td style="padding:10px;border:1px solid #e5e7eb;">Medium</td><td style="padding:10px;border:1px solid #e5e7eb;"><b>Good (GPT-5 native)</b></td></tr>
-<tr><td style="padding:10px;border:1px solid #e5e7eb;">Chrome extension compatible</td><td style="padding:10px;border:1px solid #e5e7eb;">Yes</td><td style="padding:10px;border:1px solid #e5e7eb;">Yes</td><td style="padding:10px;border:1px solid #e5e7eb;"><b>Yes (Chromium-based)</b></td></tr>
-<tr><td style="padding:10px;border:1px solid #e5e7eb;">Price</td><td style="padding:10px;border:1px solid #e5e7eb;">Free + ext fee</td><td style="padding:10px;border:1px solid #e5e7eb;">Free / M365</td><td style="padding:10px;border:1px solid #e5e7eb;"><b>$20 / $200 mo</b></td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Feature">AI integration</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Chrome + Extension">Bolted-on</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Edge + Copilot">Sidebar (GPT-4o)</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="ChatGPT Atlas"><b>Native (GPT-5)</b></td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Feature">Browser memory</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Chrome + Extension">নেই</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Edge + Copilot">Limited</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="ChatGPT Atlas"><b>Cross-session</b></td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Feature">Agent mode</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Chrome + Extension">নেই</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Edge + Copilot">নেই</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="ChatGPT Atlas"><b>Yes (Pro)</b></td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Feature">Page summarize</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Chrome + Extension">Extension-dependent</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Edge + Copilot">Yes</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="ChatGPT Atlas"><b>One-click, contextual</b></td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Feature">Bangla content quality</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Chrome + Extension">Extension-dependent</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Edge + Copilot">Medium</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="ChatGPT Atlas"><b>Good (GPT-5 native)</b></td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Feature">Chrome extension compatible</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Chrome + Extension">Yes</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Edge + Copilot">Yes</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="ChatGPT Atlas"><b>Yes (Chromium-based)</b></td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Feature">Price</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Chrome + Extension">Free + ext fee</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="Edge + Copilot">Free / M365</td><td style="padding:10px;border:1px solid #e5e7eb;" data-column="ChatGPT Atlas"><b>$20 / $200 mo</b></td></tr>
 </tbody>
-</table>
+</table></div>
 
 <p>Rifat-এর observation: Edge Copilot ভালো general task-এ, কিন্তু "go check pricing on 6 sites and report changes" — এই ধরনের multi-step autonomous task-এ Atlas-এর Agent mode-এর equivalent কিছু নেই Edge-এ। এখানেই pricing gap ($0 vs $200/mo) justified হয় power user-এর জন্য।</p>
 
@@ -297,7 +294,7 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-    </div>
+    </div></div><p class="sr-only" data-guide-copy-status role="status" aria-live="polite"></p></div>
 
 <!-- TEMPLATED-FAQ:START -->
 <section class="article-faq" aria-labelledby="faq-heading">

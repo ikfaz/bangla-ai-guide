@@ -46,6 +46,8 @@
 <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <link rel="stylesheet" href="/css/site-shell.css">
   <link rel="stylesheet" href="/css/guide-reader.css">
+<link rel="stylesheet" href="/css/guide-workshop.css">
+  <script src="/js/guide-workshop.js" defer></script>
   <!-- FAQ-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"বাংলাদেশে Grammarly-র সেরা বিকল্প কোনটি?","acceptedAnswer":{"@type":"Answer","text":"LanguageTool (বহু ভাষা সাপোর্ট, ফ্রি), ProWritingAid, Hemingway Editor এবং ChatGPT (গ্রামার চেক করতে) Grammarly-র জনপ্রিয় বিকল্প।"}},{"@type":"Question","name":"Grammarly কি বাংলা ভাষা সাপোর্ট করে?","acceptedAnswer":{"@type":"Answer","text":"না, Grammarly মূলত ইংরেজির জন্য। বাংলা লেখার ব্যাকরণ পরীক্ষার জন্য ChatGPT বা বাংলা Word Processor-এর স্পেল চেকার ব্যবহার করতে পারেন।"}},{"@type":"Question","name":"Grammarly Free নাকি Premium — কোনটি নেব?","acceptedAnswer":{"@type":"Answer","text":"শুরুতে Grammarly Free যথেষ্ট। Premium ($12/মাস) নিলে অ্যাডভান্সড পরামর্শ, টোন ডিটেকশন ও প্লাগিয়ারিজম চেক পাওয়া যায়।"}},{"@type":"Question","name":"ইমেইল ও প্রপোজাল লেখার জন্য Grammarly কতটা কার্যকর?","acceptedAnswer":{"@type":"Answer","text":"অত্যন্ত কার্যকর। ইংরেজি ইমেইল ও Upwork/Fiverr প্রপোজালে ব্যাকরণগত ভুল ও টোন সমস্যা দূর করতে Grammarly চমৎকার কাজ করে।"}},{"@type":"Question","name":"কেন বাংলা ভাষাভাষীদের জন্য Grammarly এর বিকল্প প্রয়োজন?","acceptedAnswer":{"@type":"Answer","text":"Grammarly মূলত ইংরেজি ভাষার জন্য তৈরি করা হয়েছে। এর অ্যালগরিদম এবং ডেটাবেস ইংরেজি ব্যাকরণ এবং শব্দভান্ডারের উপর ভিত্তি করে গঠিত। ফলস্বরূপ, এটি বাংলা লেখার ক্ষেত্রে সঠিক পরামর্শ দিতে পারে না। বাংলা ভাষার নিজস্ব ব্যাকরণগত কাঠামো, শব্দবিন্যাস এবং লিখনশৈলী রয়েছে যা ইংরেজির থেকে সম্পূর্ণ ভিন্ন। তাই, একজন বাংলাভাষী লেখক যখন Grammarly ব্যবহার করেন, তখন তিনি নিম্নলিখিত সমস্যাগুলির সম্মুখীন হতে পারেন: প্রথমত, ব্যাকরণগত ত্রুটি সনাক্তকরণে ব্যর্থতা : Grammarly বাংলা ব্যাকরণের জটিল নিয়মাবলী বুঝতে পারে না, ফলে এটি অনেক ব্যাকরণগত ভুল ধরতে পারে না বা ভুল পরামর্শ দেয়। দ্বিতীয়ত, বানান ভুল : যদিও কিছু সাধারণ বাংলা বানান ভুল এটি ধরতে পারে, তবে এটি বাংলা অভিধানের সাথে সম্পূর্ণরূপে সামঞ্জস্যপূর্ণ নয়, যার ফলে অনেক বানান ভুল অনাবিষ্কৃত থেকে যায়। তৃতীয়ত, শৈলী ও বাক্য গঠন : বাংলা লেখার নিজস্ব শৈলী এবং বাক্য গঠনের নিয়ম রয়েছে। Grammarly এই দিকগুলিতে কোনো কার্যকর সহায়তা দিতে পারে না, যা লেখার মানকে প্রভাবিত করে। চতুর্থত, প্রসঙ্গের অভাব : বাংলা লেখার প্রেক্ষাপট এবং সাংস্কৃতিক nuance Grammarly বুঝতে পারে না, যা লেখার অর্থকে বিকৃত করতে পারে। এই সীমাবদ্ধতাগুলির কারণে, বাংলা ভাষাভাষীদের জন্য এমন একটি টুল অপরিহার্য যা বিশেষভাবে বাংলা ভাষার জন্য ডিজাইন করা হয়েছে। এমন টুলগুলি বাংলা ব্যাকরণ, বানান এবং লিখনশ"}}]}</script>
 <!-- FAQ-SCHEMA:END -->
@@ -67,34 +69,27 @@
 <!-- GUIDE-HEADER:END -->
 
     <!-- Article Content -->
-    <div data-guide-reader class="article-sheet container">
-        <header>
-            <!-- Site Logo/Name - Optional -->
-        </header>
+    <div data-guide-reader class="article-sheet container" data-guide-workshop><div class="gw-hero"><div class="gw-hero-copy"><p class="article-kicker"><span class="article-chip">গাইড</span><span class="article-chip">১১ মার্চ, ২০২৬</span><span class="article-chip">৫ মিনিট পড়া</span></p><h1>Grammarly এর বিকল্প: সেরা বাংলা ব্যাকরণ ও লেখালেখির সহায়ক টুলস</h1><p class="gw-deck">Grammarly এর সেরা বিকল্পগুলি খুঁজুন যা বাংলা ভাষাভাষীদের জন্য উপযুক্ত। এই টুলসগুলি আপনার লেখালেখিকে আরও নির্ভুল ও উন্নত করতে সাহায্য করবে।</p><a class="gw-actions" href="#কেন-বাংলা-ভাষাভাষীদের-জন্য-grammarly-এর-বিকল্প-প্রয়োজন">কেন বাংলা ভাষাভাষীদের জন্য Grammarly এর বিকল্প… <span aria-hidden="true">↓</span></a></div><div class="gw-hero-visual"><figure class="article-hero">
+  <img src="/assets/editorial/language.svg" width="1000" height="440" alt="বাংলা অক্ষর, সম্পাদনার পেনসিল ও কথার বুদবুদের অঙ্কন" decoding="async" fetchpriority="high">
+</figure></div></div><div class="gw-layout"><nav class="gw-chapters" aria-label="এই গাইডে"><details open><summary>এই গাইডে</summary><ol>
+<li><a href="#কেন-বাংলা-ভাষাভাষীদের-জন্য-grammarly-এর-বিকল্প-প্রয়োজন">কেন বাংলা ভাষাভাষীদের জন্য Grammarly এর বিকল্প প্রয়োজন?</a></li>
+<li><a href="#বাংলা-ভাষাভাষীদের-জন্য-grammarly-এর-সেরা-বিকল্পসমূহ">বাংলা ভাষাভাষীদের জন্য Grammarly এর সেরা বিকল্পসমূহ</a></li>
+<li><a href="#faq">সচরাচর জিজ্ঞাসা (FAQ)</a></li>
+</ol></details></nav><div class="gw-reading">
+
         <main id="main-content">
             <article>
-                <!-- ARTICLE-META:START -->
-<p class="article-kicker"><span class="article-chip">গাইড</span><span class="article-chip">১১ মার্চ, ২০২৬</span><span class="article-chip">৫ মিনিট পড়া</span></p>
-<!-- ARTICLE-META:END -->
-<h1>Grammarly এর বিকল্প: সেরা বাংলা ব্যাকরণ ও লেখালেখির সহায়ক টুলস</h1>
 
-<!-- ARTICLE-HERO:START -->
-<figure class="article-hero">
-  <img src="/assets/editorial/language.svg" width="1000" height="440" alt="বাংলা অক্ষর, সম্পাদনার পেনসিল ও কথার বুদবুদের অঙ্কন" decoding="async" fetchpriority="high">
-</figure>
-<!-- ARTICLE-HERO:END -->
-<!-- ARTICLE-TOC:START -->
-<nav class="article-toc" aria-label="সূচিপত্র">
-  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
-  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
-  <ol class="toc-list">
-    <li class="toc-item"><a href="#কেন-বাংলা-ভাষাভাষীদের-জন্য-grammarly-এর-বিকল্প-প্রয়োজন">কেন বাংলা ভাষাভাষীদের জন্য Grammarly এর বিকল্প প্রয়োজন?</a></li>
-    <li class="toc-item"><a href="#বাংলা-ভাষাভাষীদের-জন্য-grammarly-এর-সেরা-বিকল্পসমূহ">বাংলা ভাষাভাষীদের জন্য Grammarly এর সেরা বিকল্পসমূহ</a></li>
-    <li class="toc-item"><a href="#faq">সচরাচর জিজ্ঞাসা (FAQ)</a></li>
-    <li class="toc-item"><a href="#আরও-পড়ুন-বাংলাদেশের-ai-গাইড">আরও পড়ুন — বাংলাদেশের AI গাইড</a></li>
-  </ol>
-</nav>
-<!-- ARTICLE-TOC:END -->
+
+
+
+
+
+
+
+
+
+
                 <p>লেখালেখি নির্ভুল এবং আকর্ষণীয় করার জন্য Grammarly একটি জনপ্রিয় টুল। কিন্তু বাংলা ভাষাভাষীদের জন্য এর কার্যকারিতা সীমিত। এই আর্টিকেলে আমরা Grammarly এর সেরা কিছু বিকল্প নিয়ে আলোচনা করব যা বাংলা ব্যাকরণ ও বানান পরীক্ষণে আপনাকে সাহায্য করবে এবং আপনার লেখালেখির মান উন্নত করবে।</p>
 
                 <h2 id="কেন-বাংলা-ভাষাভাষীদের-জন্য-grammarly-এর-বিকল্প-প্রয়োজন">কেন বাংলা ভাষাভাষীদের জন্য Grammarly এর বিকল্প প্রয়োজন?</h2>
@@ -213,7 +208,7 @@
 <!-- PILLAR-LINKS:END -->
 </main>
         <footer>
-            <p>&copy; 2026 Bangla AI Guide. All rights reserved.</p>
+            <p>© 2026 Bangla AI Guide. All rights reserved.</p>
         </footer>
 <!-- AUTHOR-BLOCK:START -->
 <section class="author-block" itemscope itemtype="https://schema.org/Organization" aria-label="প্রকাশক">
@@ -248,7 +243,7 @@
   </div>
 </section>
 <!-- AUTHOR-BLOCK:END -->
-    </div>
+    </div></div><p class="sr-only" data-guide-copy-status role="status" aria-live="polite"></p></div>
 
     <!-- Footer -->
     <footer class="gs-foot"><div class="gs-wrap"><div class="gs-foot-grid"><div><a class="gs-brand" href="/" aria-label="বাংলা AI গাইড হোম"><img src="/assets/brand/logo.svg" width="48" height="48" alt=""><span><strong>বাংলা AI গাইড</strong><small lang="en">AI, made simple. In Bangla.</small></span></a><p>বাংলাদেশের জন্য AI টুল, টাকায় দাম আর ব্যবহারিক গাইড—সব এক জায়গায়, বাংলায়।</p></div><div class="gs-foot-col"><strong>ডিরেক্টরি</strong><a href="/#toolsSection">সব টুলস</a><a href="/free-ai-tools-2026-bangladesh/">ফ্রি টুলস</a><a href="/ai-tools-bdt-price-2026-bangladesh/">টাকায় দাম</a><a href="/compare/">টুল তুলনা</a></div><div class="gs-foot-col"><strong>রিসোর্স</strong><a href="/blog/">সব লেখা</a><a href="/bangla-ai-guide/">বাংলা AI গাইড</a><a href="/quiz/">টুল বাছাই কুইজ</a><a href="/submit/">টুল সাবমিট</a></div><div class="gs-foot-col"><strong>আমাদের কথা</strong><a href="/about/">আমাদের সম্পর্কে</a><a href="/editorial-policy/">সম্পাদকীয় নীতি</a><a href="/contact/">যোগাযোগ</a><a href="/contact/#advertising">বিজ্ঞাপন</a></div></div>

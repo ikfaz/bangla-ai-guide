@@ -34,6 +34,8 @@
 <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <link rel="stylesheet" href="/css/site-shell.css">
   <link rel="stylesheet" href="/css/guide-reader.css">
+<link rel="stylesheet" href="/css/guide-workshop.css">
+  <script src="/js/guide-workshop.js" defer></script>
   <!-- FAQ-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Windsurf IDE-এর মূল features কী কী?","acceptedAnswer":{"@type":"Answer","text":"Cursor-এর Composer-এর সঙ্গে Cascade-এর তুলনা inevitable, কিন্তু পার্থক্য আছে: Multi-file aware: Cascade একটা task নিয়ে whole repo scan করে, dependency graph বানায়। Plan + execute pattern: First plan show করে, approve করার পর execute। Hallucination কম। Long task durability: ১-৩ ঘণ্টার task হ্যান্ডল করে disconnect ছাড়া। Test-aware: Code edit-এর সঙ্গে existing test run + fail হলে fix attempt। Terminal integration: Cascade নিজে terminal command run করতে পারে — package install, test run, build। Cascade real example (Faruk-এর project): Prompt: \"এই React project-এর ২৮টা class component functional + hooks-এ migrate করো। Test fail করা যাবে না।\" Cascade response: ১) Plan: ২৮টা file identified,…"}},{"@type":"Question","name":"Windsurf কী?","acceptedAnswer":{"@type":"Answer","text":"Windsurf হলো Codeium Inc.-এর তৈরি AI-first IDE — VS Code-এর fork। ২০২৪ নভেম্বরে launch (Codeium-এর pivot Windsurf-এ)। Cursor-এর সরাসরি competitor। মূল slogan: \"The first agentic IDE\" — Cascade নামক unique multi-step flow। Launch ২০২৪ Nov (Codeium → Windsurf) ২০২৫ Q1 general availability Active users (global) ~৫.৫ লাখ paid ~১২ লাখ free BD adoption ~৬,০০০ developer (২০২৫-এ ৫x growth) Models Claude Sonnet 4.6/Opus 4.7 GPT-5, Gemini 3.5 VS Code fork: ৯২% interface identical — migration easy Cascade Flow: Multi-step autonomous task — Cursor Composer-এর সমকক্ষ + একটু deeper Multi-model: সব major model accessible Best free tier (industry-leading): Free user-দেরও ৫০ flow action + unlimited…"}},{"@type":"Question","name":"Windsurf IDE কোন কাজে সবচেয়ে ভালো?","acceptedAnswer":{"@type":"Answer","text":"Project open: Windsurf launch → \"Open Folder\" → existing repo। Index wait: প্রথমবার Windsurf whole codebase index করে (১-৩ মিনিট ৫০K লাইনের জন্য)। তারপর context-aware। Daily inline edit: Code select → Cmd+I → instruction। যেমন: \"Add try-catch with Bangla error message।\" Multi-file task: Cmd+L → Cascade open। \"এই feature এই ৫টা file জুড়ে add কর\" → plan show, approve, execute। Codebase chat: Right sidebar chat-এ \"@codebase auth flow explain\" — repo-aware answer। Long task: Big refactor-এ Cascade Flow on → Faruk lunch break-এ যান, return-এ review।"}},{"@type":"Question","name":"Windsurf IDE কীভাবে install বা setup করব?","acceptedAnswer":{"@type":"Answer","text":"Download codeium.com/windsurf → \"Download\" — OS detect। ~১৪০MB installer। Mac: .dmg → Applications Windows: .exe → run installer Linux: .deb (Ubuntu/Debian) বা .AppImage Initial setup Launch → Codeium account sign up (Google/GitHub OAuth) \"Import settings from VS Code?\" → Yes Top-right model dropdown → Sonnet 4.6 default Privacy toggle: Settings → Privacy → \"Don't train on my code\" BD থেকে: VPN লাগে না। codeium.com সরাসরি accessible। GitHub OAuth fastest। Phone verification নেই।"}}]}</script>
 <!-- FAQ-SCHEMA:END -->
@@ -53,37 +55,32 @@
 </header>
 <!-- GUIDE-HEADER:END -->
 
-    <div data-guide-reader class="article-sheet container">
-        <!-- ARTICLE-META:START -->
-<p class="article-kicker"><span class="article-chip">কোডিং</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৬ মিনিট পড়া</span></p>
-<!-- ARTICLE-META:END -->
-<h1 id="gs-content">Windsurf IDE বাংলা গাইড — Codeium-এর AI-First Code Editor</h1>
-
-<!-- ARTICLE-HERO:START -->
-<figure class="article-hero">
+    <div data-guide-reader class="article-sheet container" data-guide-workshop><div class="gw-hero"><div class="gw-hero-copy"><p class="article-kicker"><span class="article-chip">কোডিং</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৬ মিনিট পড়া</span></p><h1 id="gs-content">Windsurf IDE বাংলা গাইড — Codeium-এর AI-First Code Editor</h1><p class="gw-deck">Windsurf IDE কী এবং কেন এটি Cursor-এর সবচেয়ে বড় প্রতিদ্বন্দ্বী? AI Flow, Cascade agent, multi-file edit — বাংলাদেশি developer-দের জন্য সম্পূর্ণ টিউটোরিয়াল।</p><a class="gw-actions" href="#প্রথম-project-এ-practical-workflow-faruk-এর-pattern">প্রথম project-এ practical workflow (Faruk-এর… <span aria-hidden="true">↓</span></a></div><div class="gw-hero-visual"><figure class="article-hero">
   <img src="/assets/editorial/classroom.svg" width="1000" height="440" alt="বোর্ড, চক ও খোলা বইয়ের অঙ্কন" decoding="async" fetchpriority="high">
-</figure>
-<!-- ARTICLE-HERO:END -->
-<!-- ARTICLE-TOC:START -->
-<nav class="article-toc" aria-label="সূচিপত্র">
-  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
-  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
-  <ol class="toc-list">
-    <li class="toc-item"><a href="#ভূমিকা-windsurf-কেন-bd-developer-দের-radar-এ">ভূমিকা — Windsurf কেন BD developer-দের radar-এ</a></li>
-    <li class="toc-item"><a href="#windsurf-কী">Windsurf কী?</a></li>
-    <li class="toc-item"><a href="#মূল-feature-cascade">মূল feature — Cascade</a></li>
-    <li class="toc-item"><a href="#install-windows-mac-linux">Install — Windows/Mac/Linux</a></li>
-    <li class="toc-item"><a href="#windsurf-vs-cursor-honest-পার্থক্য">Windsurf vs Cursor — honest পার্থক্য</a></li>
-    <li class="toc-item"><a href="#প্রথম-project-এ-practical-workflow-faruk-এর-pattern">প্রথম project-এ practical workflow (Faruk-এর pattern)</a></li>
-    <li class="toc-item"><a href="#৫টা-real-bd-use-case">৫টা real BD use case</a></li>
-    <li class="toc-item"><a href="#কখন-windsurf-বেছে-নেবেন">কখন Windsurf বেছে নেবেন</a></li>
-    <li class="toc-item"><a href="#কখন-cursor-preferable">কখন Cursor preferable</a></li>
-    <li class="toc-item"><a href="#উপসংহার-windsurf-bd-তে-কাদের-জন্য">উপসংহার — Windsurf BD-তে কাদের জন্য</a></li>
-    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
-    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
-  </ol>
-</nav>
-<!-- ARTICLE-TOC:END -->
+</figure></div></div><div class="gw-layout"><nav class="gw-chapters" aria-label="এই গাইডে"><details open><summary>এই গাইডে</summary><ol>
+<li><a href="#ভূমিকা-windsurf-কেন-bd-developer-দের-radar-এ">ভূমিকা — Windsurf কেন BD developer-দের radar-এ</a></li>
+<li><a href="#windsurf-কী">Windsurf কী?</a></li>
+<li><a href="#মূল-feature-cascade">মূল feature — Cascade</a></li>
+<li><a href="#install-windows-mac-linux">Install — Windows/Mac/Linux</a></li>
+<li><a href="#windsurf-vs-cursor-honest-পার্থক্য">Windsurf vs Cursor — honest পার্থক্য</a></li>
+<li><a href="#প্রথম-project-এ-practical-workflow-faruk-এর-pattern">প্রথম project-এ practical workflow (Faruk-এর pattern)</a></li>
+<li><a href="#৫টা-real-bd-use-case">৫টা real BD use case</a></li>
+<li><a href="#কখন-windsurf-বেছে-নেবেন">কখন Windsurf বেছে নেবেন</a></li>
+<li><a href="#কখন-cursor-preferable">কখন Cursor preferable</a></li>
+<li><a href="#উপসংহার-windsurf-bd-তে-কাদের-জন্য">উপসংহার — Windsurf BD-তে কাদের জন্য</a></li>
+<li><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+</ol></details></nav><div class="gw-reading">
+
+
+
+
+
+
+
+
+
+
+
 <p class="cluster-keeper">এই বিষয়ের মূল পাতা: <a href="/cursor-ai-bangla/">Cursor AI কী, কাজ ও দাম (টাকায়)</a>। নিচের লেখা সেই গাইডের পরিপূরক, প্রতিস্থাপন নয়।</p>
 
 <h2 id="ভূমিকা-windsurf-কেন-bd-developer-দের-radar-এ">ভূমিকা — Windsurf কেন BD developer-দের radar-এ</h2>
@@ -146,7 +143,7 @@ Total time: ১:৪০ ঘণ্টা vs Cursor-এ ৩:০০ ঘণ্টা
 </ul>
 
 <h3>Initial setup</h3>
-<ol>
+<ol class="gw-steps">
 <li>Launch → Codeium account sign up (Google/GitHub OAuth)</li>
 <li>"Import settings from VS Code?" → Yes</li>
 <li>Top-right model dropdown → Sonnet 4.6 default</li>
@@ -159,23 +156,23 @@ Total time: ১:৪০ ঘণ্টা vs Cursor-এ ৩:০০ ঘণ্টা
 
 <h2 id="windsurf-vs-cursor-honest-পার্থক্য">Windsurf vs Cursor — honest পার্থক্য</h2>
 
-<table style="width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;">
+<div class="gw-table-scroll" role="region" tabindex="0" aria-label="Windsurf vs Cursor — honest পার্থক্য"><table style="width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;" class="gw-table">
 <thead><tr style="background:#F1F5F9;"><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Aspect</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Windsurf</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Cursor</th></tr></thead>
 <tbody>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Pro price</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>$১৫/মাস</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">$২০/মাস</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Free tier</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>৫০ flow + unlimited autocomplete</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">২০০০ token only</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Multi-file flow</td><td style="padding:10px;border:1px solid #E2E8F0;">Cascade — deeper</td><td style="padding:10px;border:1px solid #E2E8F0;">Composer — faster</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Inline edit (Cmd+K)</td><td style="padding:10px;border:1px solid #E2E8F0;">Good</td><td style="padding:10px;border:1px solid #E2E8F0;">Excellent (more polished)</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Tab autocomplete</td><td style="padding:10px;border:1px solid #E2E8F0;">Excellent (from Codeium heritage)</td><td style="padding:10px;border:1px solid #E2E8F0;">Excellent</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Long-running task</td><td style="padding:10px;border:1px solid #E2E8F0;">Excellent (Cascade durable)</td><td style="padding:10px;border:1px solid #E2E8F0;">Good</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Community/tutorials</td><td style="padding:10px;border:1px solid #E2E8F0;">Growing</td><td style="padding:10px;border:1px solid #E2E8F0;">Mature (much more)</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">VS Code compat</td><td style="padding:10px;border:1px solid #E2E8F0;">৯২% (mostly all extensions)</td><td style="padding:10px;border:1px solid #E2E8F0;">৯৫%</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Enterprise/on-prem</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>Strong (Codeium enterprise heritage)</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">Standard</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Aspect">Pro price</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Windsurf"><strong>$১৫/মাস</strong></td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Cursor">$২০/মাস</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Aspect">Free tier</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Windsurf"><strong>৫০ flow + unlimited autocomplete</strong></td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Cursor">২০০০ token only</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Aspect">Multi-file flow</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Windsurf">Cascade — deeper</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Cursor">Composer — faster</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Aspect">Inline edit (Cmd+K)</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Windsurf">Good</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Cursor">Excellent (more polished)</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Aspect">Tab autocomplete</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Windsurf">Excellent (from Codeium heritage)</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Cursor">Excellent</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Aspect">Long-running task</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Windsurf">Excellent (Cascade durable)</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Cursor">Good</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Aspect">Community/tutorials</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Windsurf">Growing</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Cursor">Mature (much more)</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Aspect">VS Code compat</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Windsurf">৯২% (mostly all extensions)</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Cursor">৯৫%</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Aspect">Enterprise/on-prem</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Windsurf"><strong>Strong (Codeium enterprise heritage)</strong></td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Cursor">Standard</td></tr>
 </tbody>
-</table>
+</table></div>
 
 <h2 id="প্রথম-project-এ-practical-workflow-faruk-এর-pattern">প্রথম project-এ practical workflow (Faruk-এর pattern)</h2>
-<ol>
+<ol class="gw-steps">
 <li><strong>Project open:</strong> Windsurf launch → "Open Folder" → existing repo।</li>
 <li><strong>Index wait:</strong> প্রথমবার Windsurf whole codebase index করে (১-৩ মিনিট ৫০K লাইনের জন্য)। তারপর context-aware।</li>
 <li><strong>Daily inline edit:</strong> Code select → Cmd+I → instruction। যেমন: "Add try-catch with Bangla error message।"</li>
@@ -226,7 +223,7 @@ Total time: ১:৪০ ঘণ্টা vs Cursor-এ ৩:০০ ঘণ্টা
 <li>Daily fast inline edit-এ Cmd+K performance valued</li>
 <li>Community/learning resource matter (Cursor-এর community ৫x বড়)</li>
 <li>VS Code-এর সঙ্গে maximum compatibility</li>
-<li>Composer-এর speed > Cascade-এর depth</li>
+<li>Composer-এর speed &gt; Cascade-এর depth</li>
 <li>Already adapted, switching cost worth না</li>
 </ul>
 
@@ -287,7 +284,7 @@ Total time: ১:৪০ ঘণ্টা vs Cursor-এ ৩:০০ ঘণ্টা
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-    </div>
+    </div></div><p class="sr-only" data-guide-copy-status role="status" aria-live="polite"></p></div>
 
     <!-- TEMPLATED-FAQ:START -->
 <section class="article-faq" aria-labelledby="faq-heading">

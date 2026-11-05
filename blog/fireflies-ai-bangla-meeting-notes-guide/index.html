@@ -34,6 +34,8 @@
 <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <link rel="stylesheet" href="/css/site-shell.css">
   <link rel="stylesheet" href="/css/guide-reader.css">
+<link rel="stylesheet" href="/css/guide-workshop.css">
+  <script src="/js/guide-workshop.js" defer></script>
   <!-- FAQ-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Fireflies AI কোন কাজে সবচেয়ে ভালো?","acceptedAnswer":{"@type":"Answer","text":"Use case 1: AE post-call CRM update (Sarjil's team) 30 min discovery call শেষ। আগে AE 20-30 min CRM-এ notes-action items-stage update। এখন Fireflies auto-syncs সব। AE শুধু review করেন। Time saved 25 min/call × 5 calls/day × 14 reps = 29 hours/day team-wide। Use case 2: Sales manager coaching Sarjil weekly 2 hours dedicated coaching। আগে AE-এর সঙ্গে call-এ join করতে হত। এখন: Fireflies-এ AE-র last 10 calls listen on 2x speed। Talk ratio (60%+ AE talking = red flag), objection pattern, missed opportunity — data-driven coaching। Use case 3: Deal forecasting accuracy Sentiment analysis + conversation signals → AI deal-risk score per opportunity। Pipeline forecast accuracy 60% → 88%। Q4 quota…"}},{"@type":"Question","name":"Fireflies AI-এর মূল features কী কী?","acceptedAnswer":{"@type":"Answer","text":"Auto-join + transcript: Zoom/Meet/Teams/Webex — calendar-based auto-join। 99% language accuracy English-এ। AskFred (AI assistant): Meeting-related Q&A — \"What was the customer's main objection in this demo?\" → instant analysis। CRM sync: Salesforce/HubSpot-এ call notes, action items, deal stage updates auto-push। Sentiment analysis: Customer call positive/negative/neutral signals। Deal risk indicator। Talk ratio: AE vs customer talk time — coaching insight। Topic tracker: Pre-defined topics (pricing, competitors, integration) auto-detect। Smart Search: Cross-meeting search — \"When did customer X mention budget?\" Soundbites: Important quote clips share করা যায় team-এ।"}},{"@type":"Question","name":"Fireflies AI থেকে সর্বোচ্চ পেতে কী কী টিপস আছে?","acceptedAnswer":{"@type":"Answer","text":"Customer permission: Recording-এর জন্য customer-এর verbal consent meeting শুরুতে। Legal requirement। Topic tracker tune: \"Pricing\", \"Competitor (XYZ)\", \"Integration\", \"Timeline\" — custom topics define করুন BD market-এ। Bangla code-switch handle: Pure Bangla portion 65-75% accurate। English-dominant call best results। Hybrid call 80-85%। Privacy: Sensitive deal-এ \"do not record\" tag set কনুন। GDPR compliant। CRM permissions: Fireflies-এর write access scoped properly setup। Wrong field overwrite avoid। Weekly review: Manager-এর জন্য Fireflies dashboard weekly review — team health snapshot।"}},{"@type":"Question","name":"Fireflies কী?","acceptedAnswer":{"@type":"Answer","text":"Fireflies.ai (২০১৬ launch, San Francisco) — AI meeting assistant for sales teams primarily। Otter-এর সমকক্ষ but sales-focused features stronger। Y Combinator backed, ১৫,০০,০০০+ users globally। Founded ২০১৬ YC backed Active users ~১৫ লাখ global Sales/CS-heavy BD adoption ~৪,৫০০ active SaaS/B2B sales team Pricing Free + $১০-৩৯/seat"}}]}</script>
 <!-- FAQ-SCHEMA:END -->
@@ -53,36 +55,31 @@
 </header>
 <!-- GUIDE-HEADER:END -->
 
-    <div data-guide-reader class="article-sheet container">
-        <!-- ARTICLE-META:START -->
-<p class="article-kicker"><span class="article-chip">গাইড</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৪ মিনিট পড়া</span></p>
-<!-- ARTICLE-META:END -->
-<h1 id="gs-content">Fireflies AI বাংলা গাইড — Meeting Notes, CRM Sync ও Analytics</h1>
-
-<!-- ARTICLE-HERO:START -->
-<figure class="article-hero">
+    <div data-guide-reader class="article-sheet container" data-guide-workshop><div class="gw-hero"><div class="gw-hero-copy"><p class="article-kicker"><span class="article-chip">গাইড</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৪ মিনিট পড়া</span></p><h1 id="gs-content">Fireflies AI বাংলা গাইড — Meeting Notes, CRM Sync ও Analytics</h1><p class="gw-deck">Fireflies AI দিয়ে meeting auto-record, transcribe, CRM-এ sync কীভাবে করবেন? Sales team, HR, founder-দের জন্য সম্পূর্ণ workflow ও দাম-features বিশ্লেষণ।</p><a class="gw-actions" href="#ভূমিকা-gulshan-এর-saas-sales-team-এর-crm-transformation">ভূমিকা — Gulshan-এর SaaS sales team-এর CRM… <span aria-hidden="true">↓</span></a></div><div class="gw-hero-visual"><figure class="article-hero">
   <img src="/assets/editorial/transcript.svg" width="1000" height="440" alt="শব্দতরঙ্গ থেকে লেখার পাতায় রূপান্তরের অঙ্কন" decoding="async" fetchpriority="high">
-</figure>
-<!-- ARTICLE-HERO:END -->
-<!-- ARTICLE-TOC:START -->
-<nav class="article-toc" aria-label="সূচিপত্র">
-  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
-  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
-  <ol class="toc-list">
-    <li class="toc-item"><a href="#ভূমিকা-gulshan-এর-saas-sales-team-এর-crm-transformation">ভূমিকা — Gulshan-এর SaaS sales team-এর CRM transformation</a></li>
-    <li class="toc-item"><a href="#fireflies-কী">Fireflies কী?</a></li>
-    <li class="toc-item"><a href="#otter-এর-সাথে-পার্থক্য">Otter-এর সাথে পার্থক্য</a></li>
-    <li class="toc-item"><a href="#মূল-feature">মূল feature</a></li>
-    <li class="toc-item"><a href="#setup">Setup</a></li>
-    <li class="toc-item"><a href="#দাম">দাম</a></li>
-    <li class="toc-item"><a href="#বাংলাদেশি-sales-team-এর-জন্য-use-case">বাংলাদেশি sales team-এর জন্য use case</a></li>
-    <li class="toc-item"><a href="#টিপস">টিপস</a></li>
-    <li class="toc-item"><a href="#উপসংহার">উপসংহার</a></li>
-    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
-    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
-  </ol>
-</nav>
-<!-- ARTICLE-TOC:END -->
+</figure></div></div><div class="gw-layout"><nav class="gw-chapters" aria-label="এই গাইডে"><details open><summary>এই গাইডে</summary><ol>
+<li><a href="#ভূমিকা-gulshan-এর-saas-sales-team-এর-crm-transformation">ভূমিকা — Gulshan-এর SaaS sales team-এর CRM transformation</a></li>
+<li><a href="#fireflies-কী">Fireflies কী?</a></li>
+<li><a href="#otter-এর-সাথে-পার্থক্য">Otter-এর সাথে পার্থক্য</a></li>
+<li><a href="#মূল-feature">মূল feature</a></li>
+<li><a href="#setup">Setup</a></li>
+<li><a href="#দাম">দাম</a></li>
+<li><a href="#বাংলাদেশি-sales-team-এর-জন্য-use-case">বাংলাদেশি sales team-এর জন্য use case</a></li>
+<li><a href="#টিপস">টিপস</a></li>
+<li><a href="#উপসংহার">উপসংহার</a></li>
+<li><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+</ol></details></nav><div class="gw-reading">
+
+
+
+
+
+
+
+
+
+
+
 
 <h2 id="ভূমিকা-gulshan-এর-saas-sales-team-এর-crm-transformation">ভূমিকা — Gulshan-এর SaaS sales team-এর CRM transformation</h2>
 <p class="lede">গুলশান ১-এর একটা B2B SaaS company "FieldOps Bangladesh"-এর Sales Director সারজিল আহমেদ — ৩৫ বছর, NSU MBA ২০১২, ১১ বছর enterprise sales (Banglalink, Aamra)-এ। ২০২৫ পর্যন্ত team: ৮ Account Executives + ৪ SDRs + ২ Sales Engineers, total ১৪ জন। Daily reality: ৩০-৪৫টা discovery + demo calls সারা team-এ। Manual CRM update post-call ৩০-৪৫ মিনিট each। AE-রা selling time-এর ৪০% admin work-এ যেত। CRM data quality inconsistent — কেউ detailed, কেউ skeleton। ২০২৫ এপ্রিলে Fireflies trial শুরু। ৬ মাস পর: CRM data quality 95%+, selling time 40% → 70%, deal velocity 1.4x, pipeline visibility full। এই গাইড সেই workflow।</p>
@@ -102,21 +99,21 @@
 </div>
 
 <h2 id="otter-এর-সাথে-পার্থক্য">Otter-এর সাথে পার্থক্য</h2>
-<table style="width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;">
+<div class="gw-table-scroll" role="region" tabindex="0" aria-label="Otter-এর সাথে পার্থক্য"><table style="width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;" class="gw-table">
 <thead><tr style="background:#F1F5F9;"><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Aspect</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Fireflies</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Otter</th></tr></thead>
 <tbody>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">CRM integration</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>Deep (Salesforce, HubSpot, Pipedrive, Zoho)</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">Basic (Zapier)</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Sales analytics</td><td style="padding:10px;border:1px solid #E2E8F0;">Strong (sentiment, talk ratio, topic tracking)</td><td style="padding:10px;border:1px solid #E2E8F0;">Basic</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Conversation intelligence</td><td style="padding:10px;border:1px solid #E2E8F0;">Yes (deal risk indicators)</td><td style="padding:10px;border:1px solid #E2E8F0;">Limited</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Best for</td><td style="padding:10px;border:1px solid #E2E8F0;">Sales/CS teams</td><td style="padding:10px;border:1px solid #E2E8F0;">PM/general</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Price (Business)</td><td style="padding:10px;border:1px solid #E2E8F0;">$১৯/seat/মাস</td><td style="padding:10px;border:1px solid #E2E8F0;">$২০/user/মাস</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Aspect">CRM integration</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Fireflies"><strong>Deep (Salesforce, HubSpot, Pipedrive, Zoho)</strong></td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Otter">Basic (Zapier)</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Aspect">Sales analytics</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Fireflies">Strong (sentiment, talk ratio, topic tracking)</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Otter">Basic</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Aspect">Conversation intelligence</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Fireflies">Yes (deal risk indicators)</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Otter">Limited</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Aspect">Best for</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Fireflies">Sales/CS teams</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Otter">PM/general</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Aspect">Price (Business)</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Fireflies">$১৯/seat/মাস</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Otter">$২০/user/মাস</td></tr>
 </tbody>
-</table>
+</table></div>
 
 <h2 id="মূল-feature">মূল feature</h2>
 <ul>
 <li><strong>Auto-join + transcript:</strong> Zoom/Meet/Teams/Webex — calendar-based auto-join। 99% language accuracy English-এ।</li>
-<li><strong>AskFred (AI assistant):</strong> Meeting-related Q&A — "What was the customer's main objection in this demo?" → instant analysis।</li>
+<li><strong>AskFred (AI assistant):</strong> Meeting-related Q&amp;A — "What was the customer's main objection in this demo?" → instant analysis।</li>
 <li><strong>CRM sync:</strong> Salesforce/HubSpot-এ call notes, action items, deal stage updates auto-push।</li>
 <li><strong>Sentiment analysis:</strong> Customer call positive/negative/neutral signals। Deal risk indicator।</li>
 <li><strong>Talk ratio:</strong> AE vs customer talk time — coaching insight।</li>
@@ -126,7 +123,7 @@
 </ul>
 
 <h2 id="setup">Setup</h2>
-<ol>
+<ol class="gw-steps">
 <li>fireflies.ai → Sign up Google/Microsoft</li>
 <li>Calendar connect (Google/Outlook)</li>
 <li>"Fred" (Fireflies bot) auto-join enable</li>
@@ -236,7 +233,7 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-    </div>
+    </div></div><p class="sr-only" data-guide-copy-status role="status" aria-live="polite"></p></div>
 
     <!-- TEMPLATED-FAQ:START -->
 <section class="article-faq" aria-labelledby="faq-heading">

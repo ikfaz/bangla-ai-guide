@@ -300,6 +300,7 @@ function ensureHeadAssets(html) {
 function processFile(file, slug) {
   const original = fs.readFileSync(file, 'utf8');
   if (isRedirectStub(original)) return false;
+  if (original.includes('data-guide-workshop')) return false;
   let html = wrapBareArticle(original);
   const slice = articleSlice(html);
   const title = slice

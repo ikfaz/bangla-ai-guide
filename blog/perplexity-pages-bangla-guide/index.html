@@ -34,6 +34,8 @@
 <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <link rel="stylesheet" href="/css/site-shell.css">
   <link rel="stylesheet" href="/css/guide-reader.css">
+<link rel="stylesheet" href="/css/guide-workshop.css">
+  <script src="/js/guide-workshop.js" defer></script>
   <!-- FAQ-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Perplexity Pages কোন কাজে সবচেয়ে ভালো?","acceptedAnswer":{"@type":"Answer","text":"1. Journalist research draft (Saifur-এর মতো) Fintech story-র background research। Pages-এ initial structured outline + source list। তারপর interview + analysis manual add। 2. Student term paper / report University assignment-এ topic exploration। Citations source-verifiable। Plagiarism risk reduced (own rewrite mandatory)। 3. Blog content creator \"AI tools for Bangladeshi small business\" — Pages structure provides skeleton, blogger adds personal experience + BD-specific case। 4. Internal company research Sales team preparing for new market expansion (e.g., Pakistan)। Pages-এ \"Pakistan e-commerce landscape 2026\" — quick brief। 5. NGO/think tank report BRAC, BIDS, BIPSS researchers — initial…"}},{"@type":"Question","name":"কীভাবে শুরু করবেন?","acceptedAnswer":{"@type":"Answer","text":"perplexity.ai/pages → \"Create Page\" Topic input (Bangla/English): \"Bangladesh fintech ecosystem in 2026: bKash, Nagad, Rocket competitive landscape\" Audience select: General, Beginners, Experts \"Generate Page\" → AI structures + writes (60-90 seconds) Sections appear: intro, key players, growth metrics, regulation, future outlook — citation-rich Each section: rewrite, expand, remove, add — manual control \"Publish\" → public URL → share"}},{"@type":"Question","name":"কী আলাদা?","acceptedAnswer":{"@type":"Answer","text":"Aspect Normal Perplexity Pages Output format Q&A snippet (3-5 paragraph) Full article (sections, headings, 1000-3000 word) Structure Linear Multi-section + sub-headings Edit capability Re-prompt only Section rewrite/add/delete Sharing Link to chat Public URL like a blog post Best for Quick Q&A Research articles, reports"}},{"@type":"Question","name":"Perplexity Pages-এর দাম কত এবং BD-তে এর ROI কেমন?","acceptedAnswer":{"@type":"Answer","text":"Free: 5 Pages/দিন। Limited regenerations। Test করার জন্য enough। Pro $২০/মাস: Unlimited Pages, GPT-4 + Claude Opus access, file upload। Saifur-এর tier। Enterprise: Custom। Team workspaces, admin features। BD payment: USD card via bKash recharge।"}},{"@type":"Question","name":"ভূমিকা — Pages কী?","acceptedAnswer":{"@type":"Answer","text":"Perplexity Pages (২০২৪ মে launch) — Perplexity-এর research feature যা ১টা topic-এ একটা full structured article generate করে। Wikipedia-r মতো section + bullet + citation-rich, কিন্তু AI-generated এবং user-editable। Public-শারিং-এর জন্য URL দেয়।"}},{"@type":"Question","name":"Bangla content — কেমন কাজ?","acceptedAnswer":{"@type":"Answer","text":"Bangla prompt: \"বাংলাদেশের কৃষিতে AI প্রযুক্তির প্রভাব ২০২৬\" — Bangla output generate। Quality decent, কিছু sentence stiff। Bangla source coverage: Bangla news sites (Prothom Alo, Daily Star Bangla, BDnews24, Jugantor) indexed। English news source-এর তুলনায় limited। Mixed language: Bangla output + English source citations — common। Saifur-এর workflow-এ acceptable। Pro tip: English-এ generate করে, পরে Bangla-তে translate (অথবা Claude-এ refine) — best quality।"}}]}</script>
 <!-- FAQ-SCHEMA:END -->
@@ -53,37 +55,32 @@
 </header>
 <!-- GUIDE-HEADER:END -->
 
-    <div data-guide-reader class="article-sheet container">
-        <!-- ARTICLE-META:START -->
-<p class="article-kicker"><span class="article-chip">এআই টুল</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৪ মিনিট পড়া</span></p>
-<!-- ARTICLE-META:END -->
-<h1 id="gs-content">Perplexity Pages বাংলা গাইড — Research থেকে Publication ১ ক্লিকে</h1>
-
-<!-- ARTICLE-HERO:START -->
-<figure class="article-hero">
+    <div data-guide-reader class="article-sheet container" data-guide-workshop><div class="gw-hero"><div class="gw-hero-copy"><p class="article-kicker"><span class="article-chip">এআই টুল</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৪ মিনিট পড়া</span></p><h1 id="gs-content">Perplexity Pages বাংলা গাইড — Research থেকে Publication ১ ক্লিকে</h1><p class="gw-deck">Perplexity Pages কী, কীভাবে ব্যবহার করবেন? Research query → ready-to-publish article — citation সহ। বাংলাদেশি researcher, blogger-দের জন্য সম্পূর্ণ গাইড।</p><a class="gw-actions" href="#ভূমিকা-prothom-alo-র-এক-journalist-এর-research-workflow">ভূমিকা — Prothom Alo-র এক journalist-এর research… <span aria-hidden="true">↓</span></a></div><div class="gw-hero-visual"><figure class="article-hero">
   <img src="/assets/editorial/research.svg" width="1000" height="440" alt="গবেষণার কাগজ ও বড় করে দেখার আতশকাচের অঙ্কন" decoding="async" fetchpriority="high">
-</figure>
-<!-- ARTICLE-HERO:END -->
-<!-- ARTICLE-TOC:START -->
-<nav class="article-toc" aria-label="সূচিপত্র">
-  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
-  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
-  <ol class="toc-list">
-    <li class="toc-item"><a href="#ভূমিকা-prothom-alo-র-এক-journalist-এর-research-workflow">ভূমিকা — Prothom Alo-র এক journalist-এর research workflow</a></li>
-    <li class="toc-item"><a href="#ভূমিকা-pages-কী">ভূমিকা — Pages কী?</a></li>
-    <li class="toc-item"><a href="#কী-আলাদা-normal-perplexity-থেকে">কী আলাদা — normal Perplexity থেকে</a></li>
-    <li class="toc-item"><a href="#কীভাবে-শুরু-করবেন">কীভাবে শুরু করবেন</a></li>
-    <li class="toc-item"><a href="#bangla-content-কেমন-কাজ">Bangla content — কেমন কাজ?</a></li>
-    <li class="toc-item"><a href="#use-cases-top-8">Use cases — Top 8</a></li>
-    <li class="toc-item"><a href="#citation-quality-comparison">Citation quality — comparison</a></li>
-    <li class="toc-item"><a href="#edit-workflow">Edit workflow</a></li>
-    <li class="toc-item"><a href="#pricing">Pricing</a></li>
-    <li class="toc-item"><a href="#উপসংহার">উপসংহার</a></li>
-    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
-    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
-  </ol>
-</nav>
-<!-- ARTICLE-TOC:END -->
+</figure></div></div><div class="gw-layout"><nav class="gw-chapters" aria-label="এই গাইডে"><details open><summary>এই গাইডে</summary><ol>
+<li><a href="#ভূমিকা-prothom-alo-র-এক-journalist-এর-research-workflow">ভূমিকা — Prothom Alo-র এক journalist-এর research workflow</a></li>
+<li><a href="#ভূমিকা-pages-কী">ভূমিকা — Pages কী?</a></li>
+<li><a href="#কী-আলাদা-normal-perplexity-থেকে">কী আলাদা — normal Perplexity থেকে</a></li>
+<li><a href="#কীভাবে-শুরু-করবেন">কীভাবে শুরু করবেন</a></li>
+<li><a href="#bangla-content-কেমন-কাজ">Bangla content — কেমন কাজ?</a></li>
+<li><a href="#use-cases-top-8">Use cases — Top 8</a></li>
+<li><a href="#citation-quality-comparison">Citation quality — comparison</a></li>
+<li><a href="#edit-workflow">Edit workflow</a></li>
+<li><a href="#pricing">Pricing</a></li>
+<li><a href="#উপসংহার">উপসংহার</a></li>
+<li><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+</ol></details></nav><div class="gw-reading">
+
+
+
+
+
+
+
+
+
+
+
 
 <h2 id="ভূমিকা-prothom-alo-র-এক-journalist-এর-research-workflow">ভূমিকা — Prothom Alo-র এক journalist-এর research workflow</h2>
 <p class="lede">Prothom Alo-র বিজনেস সেকশনের senior reporter সাইফুর রহমান — ৩৪ বছর, ঢাবি Journalism ২০১৩ batch, ১১ বছর print + digital journalism। ২০২৬-এ তাঁর beat: BD startup ecosystem, fintech regulation, digital payments। প্রতি সপ্তাহে ৪-৫টা in-depth research piece, প্রতিটার জন্য ২০-৩০টা source verify, ৪-৬ ঘণ্টা reading। ২০২৫ ডিসেম্বরে Perplexity Pages discover করলেন। ২ মাসে workflow shift: research-to-draft time ৬ ঘণ্টা → ১.৫ ঘণ্টা, source diversity (BB, UNCDF, IMF reports সহ) দ্বিগুণ, factual accuracy improved। Pages-এর key advantage: AI-generated structured article + clickable citations + edit-able final draft। এই গাইড সেই workflow।</p>
@@ -96,19 +93,19 @@
 <p>Perplexity Pages (২০২৪ মে launch) — Perplexity-এর research feature যা ১টা topic-এ একটা full structured article generate করে। Wikipedia-r মতো section + bullet + citation-rich, কিন্তু AI-generated এবং user-editable। Public-শারিং-এর জন্য URL দেয়।</p>
 
 <h2 id="কী-আলাদা-normal-perplexity-থেকে">কী আলাদা — normal Perplexity থেকে</h2>
-<table style="width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;">
+<div class="gw-table-scroll" role="region" tabindex="0" aria-label="কী আলাদা — normal Perplexity থেকে"><table style="width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;" class="gw-table">
 <thead><tr style="background:#F1F5F9;"><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Aspect</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Normal Perplexity</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Pages</th></tr></thead>
 <tbody>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Output format</td><td style="padding:10px;border:1px solid #E2E8F0;">Q&A snippet (3-5 paragraph)</td><td style="padding:10px;border:1px solid #E2E8F0;">Full article (sections, headings, 1000-3000 word)</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Structure</td><td style="padding:10px;border:1px solid #E2E8F0;">Linear</td><td style="padding:10px;border:1px solid #E2E8F0;">Multi-section + sub-headings</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Edit capability</td><td style="padding:10px;border:1px solid #E2E8F0;">Re-prompt only</td><td style="padding:10px;border:1px solid #E2E8F0;">Section rewrite/add/delete</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Sharing</td><td style="padding:10px;border:1px solid #E2E8F0;">Link to chat</td><td style="padding:10px;border:1px solid #E2E8F0;">Public URL like a blog post</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Best for</td><td style="padding:10px;border:1px solid #E2E8F0;">Quick Q&A</td><td style="padding:10px;border:1px solid #E2E8F0;">Research articles, reports</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Aspect">Output format</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Normal Perplexity">Q&amp;A snippet (3-5 paragraph)</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Pages">Full article (sections, headings, 1000-3000 word)</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Aspect">Structure</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Normal Perplexity">Linear</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Pages">Multi-section + sub-headings</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Aspect">Edit capability</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Normal Perplexity">Re-prompt only</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Pages">Section rewrite/add/delete</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Aspect">Sharing</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Normal Perplexity">Link to chat</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Pages">Public URL like a blog post</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Aspect">Best for</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Normal Perplexity">Quick Q&amp;A</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Pages">Research articles, reports</td></tr>
 </tbody>
-</table>
+</table></div>
 
 <h2 id="কীভাবে-শুরু-করবেন">কীভাবে শুরু করবেন</h2>
-<ol>
+<ol class="gw-steps">
 <li>perplexity.ai/pages → "Create Page"</li>
 <li>Topic input (Bangla/English): "Bangladesh fintech ecosystem in 2026: bKash, Nagad, Rocket competitive landscape"</li>
 <li>Audience select: General, Beginners, Experts</li>
@@ -179,7 +176,7 @@
 <p>Saifur-এর verdict: "Citation accountability-এ Perplexity Pages best। Journalism-এর জন্য non-negotiable।"</p>
 
 <h2 id="edit-workflow">Edit workflow</h2>
-<ol>
+<ol class="gw-steps">
 <li>Page generate-এর পর scan সব sections</li>
 <li>Each section: "Edit" → rewrite (prompt-based) বা manual text edit</li>
 <li>"Add section" — missing topic add (e.g., "BD-specific regulatory environment")</li>
@@ -252,7 +249,7 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-    </div>
+    </div></div><p class="sr-only" data-guide-copy-status role="status" aria-live="polite"></p></div>
 
     <!-- TEMPLATED-FAQ:START -->
 <section class="article-faq" aria-labelledby="faq-heading">

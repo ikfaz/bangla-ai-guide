@@ -34,6 +34,8 @@
 <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <link rel="stylesheet" href="/css/site-shell.css">
   <link rel="stylesheet" href="/css/guide-reader.css">
+<link rel="stylesheet" href="/css/guide-workshop.css">
+  <script src="/js/guide-workshop.js" defer></script>
   <!-- FAQ-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Standard vs Advanced — কোনটা বেছে নেব?","acceptedAnswer":{"@type":"Answer","text":"Speed: AVM real-time (~0.3s); Standard 2-4s delay Interruption: AVM-এ আপনি কথা bich-এ থামাতে পারেন; Standard wait করতে হয় Emotion: AVM ভয়েসে emotion (হাসি, রাগ, sad) understand + produce Multi-language: AVM mid-sentence language switch smooth Singing/whisper: AVM-এ possible (limited) Phone call feel: AVM = real, Standard = walkie-talkie"}},{"@type":"Question","name":"ChatGPT Voice Mode বাংলা ব্যবহার-এর কী কী সীমাবদ্ধতা আছে?","acceptedAnswer":{"@type":"Answer","text":"\"Voice not working\": mic permission চেক, headphone unplug-plug বাংলা miss করছে: ধীরে স্পষ্টভাবে বলুন, background noise কম রাখুন Limit hit: Standard-এ switch করুন, বা wait App crash voice-এ: কম-RAM device-এ AVM heavy — Standard ব্যবহার Echo: headphone use করুন"}},{"@type":"Question","name":"ChatGPT Voice Mode বাংলা ব্যবহার বাংলায় কেমন কাজ করে?","acceptedAnswer":{"@type":"Answer","text":"বাংলা প্রশ্ন বুঝতে পারে ৯৫%+ accuracy বাংলায় উত্তর দেয় (যদি বাংলায় জিজ্ঞেস করেন) Mixed conversation — Banglish — চমৎকার handle করে উচ্চারণ slight অসুন্দর, কিন্তু পরিষ্কার Code-switch (Bangla → English mid-sentence) সমস্যা নেই"}},{"@type":"Question","name":"বাংলায় ব্যবহার — কেমন কাজ করে?","acceptedAnswer":{"@type":"Answer","text":"বাংলা প্রশ্ন বুঝতে পারে ৯৫%+ accuracy বাংলায় উত্তর দেয় (যদি বাংলায় জিজ্ঞেস করেন) Mixed conversation — Banglish — চমৎকার handle করে উচ্চারণ slight অসুন্দর, কিন্তু পরিষ্কার Code-switch (Bangla → English mid-sentence) সমস্যা নেই"}}]}</script>
 <!-- FAQ-SCHEMA:END -->
@@ -53,37 +55,32 @@
 </header>
 <!-- GUIDE-HEADER:END -->
 
-    <div data-guide-reader class="article-sheet container">
-        <!-- ARTICLE-META:START -->
-<p class="article-kicker"><span class="article-chip">মিডিয়া</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">২ মিনিট পড়া</span></p>
-<!-- ARTICLE-META:END -->
-<h1 id="gs-content">ChatGPT Voice Mode বাংলা ব্যবহার — Advanced + Standard সম্পূর্ণ গাইড</h1>
-
-<!-- ARTICLE-HERO:START -->
-<figure class="article-hero">
+    <div data-guide-reader class="article-sheet container" data-guide-workshop><div class="gw-hero"><div class="gw-hero-copy"><p class="article-kicker"><span class="article-chip">মিডিয়া</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">২ মিনিট পড়া</span></p><h1 id="gs-content">ChatGPT Voice Mode বাংলা ব্যবহার — Advanced + Standard সম্পূর্ণ গাইড</h1><p class="gw-deck">ChatGPT-এর voice mode কীভাবে বাংলায় ব্যবহার করবেন? Standard vs Advanced পার্থক্য, free vs paid, লাইভ কথোপকথন, accent — সব বাংলাদেশি ব্যবহারকারীর প্রশ্নের উত্তর।</p><a class="gw-actions" href="#voice-mode-কীভাবে-চালু-করবেন">Voice Mode কীভাবে চালু করবেন <span aria-hidden="true">↓</span></a></div><div class="gw-hero-visual"><figure class="article-hero">
   <img src="/assets/editorial/audio.svg" width="1000" height="440" alt="স্টুডিও মাইক্রোফোন ও শব্দতরঙ্গের অঙ্কন" decoding="async" fetchpriority="high">
-</figure>
-<!-- ARTICLE-HERO:END -->
-<!-- ARTICLE-TOC:START -->
-<nav class="article-toc" aria-label="সূচিপত্র">
-  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
-  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
-  <ol class="toc-list">
-    <li class="toc-item"><a href="#ভূমিকা">ভূমিকা</a></li>
-    <li class="toc-item"><a href="#দুই-ধরনের-voice-mode">দুই ধরনের voice mode</a></li>
-    <li class="toc-item"><a href="#voice-mode-কীভাবে-চালু-করবেন">Voice Mode কীভাবে চালু করবেন</a></li>
-    <li class="toc-item"><a href="#বাংলায়-ব্যবহার-কেমন-কাজ-করে">বাংলায় ব্যবহার — কেমন কাজ করে?</a></li>
-    <li class="toc-item"><a href="#standard-vs-advanced-মূল-পার্থক্য">Standard vs Advanced — মূল পার্থক্য</a></li>
-    <li class="toc-item"><a href="#বাস্তব-ব্যবহারের-৮টি-ক্ষেত্র">বাস্তব ব্যবহারের ৮টি ক্ষেত্র</a></li>
-    <li class="toc-item"><a href="#লিমিট-ও-বিল">লিমিট ও বিল</a></li>
-    <li class="toc-item"><a href="#সমস্যা-ও-সমাধান">সমস্যা ও সমাধান</a></li>
-    <li class="toc-item"><a href="#গোপনীয়তা">গোপনীয়তা</a></li>
-    <li class="toc-item"><a href="#উপসংহার">উপসংহার</a></li>
-    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
-    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
-  </ol>
-</nav>
-<!-- ARTICLE-TOC:END -->
+</figure></div></div><div class="gw-layout"><nav class="gw-chapters" aria-label="এই গাইডে"><details open><summary>এই গাইডে</summary><ol>
+<li><a href="#ভূমিকা">ভূমিকা</a></li>
+<li><a href="#দুই-ধরনের-voice-mode">দুই ধরনের voice mode</a></li>
+<li><a href="#voice-mode-কীভাবে-চালু-করবেন">Voice Mode কীভাবে চালু করবেন</a></li>
+<li><a href="#বাংলায়-ব্যবহার-কেমন-কাজ-করে">বাংলায় ব্যবহার — কেমন কাজ করে?</a></li>
+<li><a href="#standard-vs-advanced-মূল-পার্থক্য">Standard vs Advanced — মূল পার্থক্য</a></li>
+<li><a href="#বাস্তব-ব্যবহারের-৮টি-ক্ষেত্র">বাস্তব ব্যবহারের ৮টি ক্ষেত্র</a></li>
+<li><a href="#লিমিট-ও-বিল">লিমিট ও বিল</a></li>
+<li><a href="#সমস্যা-ও-সমাধান">সমস্যা ও সমাধান</a></li>
+<li><a href="#গোপনীয়তা">গোপনীয়তা</a></li>
+<li><a href="#উপসংহার">উপসংহার</a></li>
+<li><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+</ol></details></nav><div class="gw-reading">
+
+
+
+
+
+
+
+
+
+
+
 
         <h2 id="ভূমিকা">ভূমিকা</h2>
         <p>ChatGPT-এর Voice Mode AI ব্যবহারের সবচেয়ে natural way। আপনি কথা বলেন, AI কথা বলে — যেন একটি বন্ধুর সাথে চা খেতে খেতে আলোচনা। বাংলা accent সম্পূর্ণ বুঝতে পারে।</p>
@@ -124,7 +121,7 @@
 
         <h2 id="বাস্তব-ব্যবহারের-৮টি-ক্ষেত্র">বাস্তব ব্যবহারের ৮টি ক্ষেত্র</h2>
         <ul>
-            <li><b>Driving/cooking:</b> hands-free Q&A</li>
+            <li><b>Driving/cooking:</b> hands-free Q&amp;A</li>
             <li><b>IELTS Speaking practice:</b> আপনি practice partner পেলেন</li>
             <li><b>Bangla pronunciation:</b> "এই শব্দটা সঠিকভাবে বলো"</li>
             <li><b>Bedtime story:</b> বাচ্চাদের জন্য AI কাহিনী</li>
@@ -213,7 +210,7 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-    </div>
+    </div></div><p class="sr-only" data-guide-copy-status role="status" aria-live="polite"></p></div>
 
     <!-- TEMPLATED-FAQ:START -->
 <section class="article-faq" aria-labelledby="faq-heading">

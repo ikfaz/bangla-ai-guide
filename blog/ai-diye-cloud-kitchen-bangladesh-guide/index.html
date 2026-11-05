@@ -34,8 +34,10 @@
 <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <link rel="stylesheet" href="/css/site-shell.css">
   <link rel="stylesheet" href="/css/guide-reader.css">
+<link rel="stylesheet" href="/css/guide-workshop.css">
+  <script src="/js/guide-workshop.js" defer></script>
   <!-- FAQ-SCHEMA:START -->
-<script type="application/ld+json" data-injected-by="inject-faq-schema">{"@context":"https://schema.org","@type":"HowTo","name":"AI দিয়ে Cloud Kitchen — বাংলাদেশে শুরু করার সম্পূর্ণ গাইড ২০২৬","step":[{"@type":"HowToStep","position":1,"name":"Foodpanda data analysis (Monthly Claude session)","text":"\"নিচের Foodpanda dashboard CSV export-এ আমার ৪ brand-এর last 30 days। প্রতি brand-এর জন্য: (১) Top 5 selling items + revenue contribution (২) Bottom 5 items (kill candidates) (৩) Customer review keyword cloud — positive vs negative pattern (৪) Optimal pricing recommendation (current vs market position) (৫) Time-of-day demand pattern (৬) New menu item suggestions based on review gaps।\" Output: actionable list। রাশেদ প্রতি মাসে ৩-৪টা menu change implement করেন।","url":"https://banglaaiguide.com/blog/ai-diye-cloud-kitchen-bangladesh-guide/#step-1"},{"@type":"HowToStep","position":2,"name":"Dynamic pricing (Tuesday + Friday review)","text":"Foodpanda-এর Dynamic Pricing — peak hour-এ ১০-১৫% surge। রাশেদ AI-suggested pricing follow করেন: Lunch (12-2pm): base price। Dinner (7-9pm): +8%। Late-night (11pm-2am): +12% (low competition, high willingness to pay)। Weather rain day: +5-10% (demand surge)।","url":"https://banglaaiguide.com/blog/ai-diye-cloud-kitchen-bangladesh-guide/#step-2"},{"@type":"HowToStep","position":3,"name":"Customer review reply automation","text":"প্রতি 1-star review-এ ChatGPT auto-draft reply: \"নিচের negative Foodpanda review-এর জন্য একটা Bangla professional apology + corrective action reply draft করো: [paste review]। Tone: humble, accountable, specific fix mention। ৬০ word max।\" ৪ brand × ১৫-২০ daily review = ৬০-৮০ replies/day-এর কাজ ৩০ মিনিটে।","url":"https://banglaaiguide.com/blog/ai-diye-cloud-kitchen-bangladesh-guide/#step-3"},{"@type":"HowToStep","position":4,"name":"Marketing content generation","text":"প্রতি brand-এর Facebook page-এ weekly content। Claude-এ: \"[Brand name]-এর জন্য আগামী সপ্তাহের ৫টা Facebook post: ২টা product hero, ২টা customer story (anonymized), ১টা behind-the-scenes। প্রতিটায় hook (১২৫ char), 100-word body, CTA-Foodpanda link।\"","url":"https://banglaaiguide.com/blog/ai-diye-cloud-kitchen-bangladesh-guide/#step-4"}]}</script>
+<script type="application/ld+json" data-injected-by="inject-faq-schema">{"@context":"https://schema.org","@type":"HowTo","name":"AI দিয়ে Cloud Kitchen — বাংলাদেশে শুরু করার সম্পূর্ণ গাইড ২০২৬","step":[{"@type":"HowToStep","position":1,"name":"Foodpanda data analysis (Monthly Claude session)","text":"\"নিচের Foodpanda dashboard CSV export-এ আমার ৪ brand-এর last 30 days। প্রতি brand-এর জন্য: (১) Top 5 selling items + revenue contribution (২) Bottom 5 items (kill candidates) (৩) Customer review keyword cloud — positive vs negative pattern (৪) Optimal pricing recommendation (current vs market position) (৫) Time-of-day demand pattern (৬) New menu item suggestions based on review gaps।\" Output: actionable list। রাশেদ প্রতি মাসে ৩-৪টা menu change implement করেন।","url":"https://banglaaiguide.com/blog/ai-diye-cloud-kitchen-bangladesh-guide/#step-1"},{"@type":"HowToStep","position":2,"name":"Dynamic pricing (Tuesday + Friday review)","text":"Foodpanda-এর Dynamic Pricing — peak hour-এ ১০-১৫% surge। রাশেদ AI-suggested pricing follow করেন: Lunch (12-2pm): base price। Dinner (7-9pm): +8%। Late-night (11pm-2am): +12% (low competition, high willingness to pay)। Weather rain day: +5-10% (demand surge)।","url":"https://banglaaiguide.com/blog/ai-diye-cloud-kitchen-bangladesh-guide/#step-2"},{"@type":"HowToStep","position":3,"name":"Customer review reply automation","text":"প্রতি 1-star review-এ ChatGPT auto-draft reply: কপি করার প্রম্পট কপি করুন \"নিচের negative Foodpanda review-এর জন্য একটা Bangla professional apology + corrective action reply draft করো: [paste review]। Tone: humble, accountable, specific fix mention। ৬০ word max।\" ৪ brand × ১৫-২০ daily review = ৬০-৮০ replies/day-এর কাজ ৩০ মিনিটে।","url":"https://banglaaiguide.com/blog/ai-diye-cloud-kitchen-bangladesh-guide/#step-3"},{"@type":"HowToStep","position":4,"name":"Marketing content generation","text":"প্রতি brand-এর Facebook page-এ weekly content। Claude-এ: \"[Brand name]-এর জন্য আগামী সপ্তাহের ৫টা Facebook post: ২টা product hero, ২টা customer story (anonymized), ১টা behind-the-scenes। প্রতিটায় hook (১২৫ char), 100-word body, CTA-Foodpanda link।\"","url":"https://banglaaiguide.com/blog/ai-diye-cloud-kitchen-bangladesh-guide/#step-4"}]}</script>
 <!-- FAQ-SCHEMA:END -->
 </head>
 <body data-author-mode="editorial">
@@ -53,34 +55,29 @@
 </header>
 <!-- GUIDE-HEADER:END -->
 
-    <div data-guide-reader class="article-sheet container">
-        <!-- ARTICLE-META:START -->
-<p class="article-kicker"><span class="article-chip">গাইড</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৫ মিনিট পড়া</span></p>
-<!-- ARTICLE-META:END -->
-<h1 id="gs-content">AI দিয়ে Cloud Kitchen — বাংলাদেশে শুরু করার সম্পূর্ণ গাইড ২০২৬</h1>
-
-<!-- ARTICLE-HERO:START -->
-<figure class="article-hero">
+    <div data-guide-reader class="article-sheet container" data-guide-workshop><div class="gw-hero"><div class="gw-hero-copy"><p class="article-kicker"><span class="article-chip">গাইড</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৫ মিনিট পড়া</span></p><h1 id="gs-content">AI দিয়ে Cloud Kitchen — বাংলাদেশে শুরু করার সম্পূর্ণ গাইড ২০২৬</h1><p class="gw-deck">Cloud kitchen বা virtual restaurant কী, কীভাবে AI দিয়ে শুরু করবেন বাংলাদেশে? Brand, menu, location, marketing, scaling — full roadmap।</p><a class="gw-actions" href="#ai-menu-engineering-রাশেদের-actual-workflow">AI Menu Engineering — রাশেদের actual workflow <span aria-hidden="true">↓</span></a></div><div class="gw-hero-visual"><figure class="article-hero">
   <img src="/assets/editorial/food.svg" width="1000" height="440" alt="বাষ্প ওঠা হাঁড়ি ও সবুজ পাতার অঙ্কন" decoding="async" fetchpriority="high">
-</figure>
-<!-- ARTICLE-HERO:END -->
-<!-- ARTICLE-TOC:START -->
-<nav class="article-toc" aria-label="সূচিপত্র">
-  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
-  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
-  <ol class="toc-list">
-    <li class="toc-item"><a href="#২০২৬-এ-bd-cloud-kitchen-reality">২০২৬-এ BD Cloud Kitchen Reality</a></li>
-    <li class="toc-item"><a href="#রাশেদের-4-brand-strategy">রাশেদের 4-Brand Strategy</a></li>
-    <li class="toc-item"><a href="#ai-menu-engineering-রাশেদের-actual-workflow">AI Menu Engineering — রাশেদের actual workflow</a></li>
-    <li class="toc-item"><a href="#bd-specific-cost-structure-per-brand-monthly">BD-specific cost structure (per brand monthly)</a></li>
-    <li class="toc-item"><a href="#foodpanda-algorithm-hack-যা-রাশেদ-trial-and-error-এ-শিখেছেন">Foodpanda Algorithm Hack — যা রাশেদ trial-and-error-এ শিখেছেন</a></li>
-    <li class="toc-item"><a href="#৪টা-failure-mode-৭০-cloud-kitchen-৬-মাসে-close">৪টা failure mode — ৭০% Cloud Kitchen ৬ মাসে close</a></li>
-    <li class="toc-item"><a href="#উপসংহার-আপনার-আজকের-পদক্ষেপ">উপসংহার — আপনার আজকের পদক্ষেপ</a></li>
-    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
-    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
-  </ol>
-</nav>
-<!-- ARTICLE-TOC:END -->
+</figure><aside class="gw-feature"><div class="gw-copy-head"><span>চেষ্টা করে দেখুন</span><button class="gw-copy" type="button" data-guide-copy="guide-copy-1" hidden aria-label="এই লেখা কপি করুন"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 5V4a1 1 0 0 0-1-1H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h1"/></svg><span>কপি করুন</span></button></div><p>"নিচের negative Foodpanda review-এর জন্য একটা Bangla professional apology + corrective action reply draft করো: [paste review]। Tone: humble, accountable, specific fix mention। ৬০ word max।"</p></aside></div></div><div class="gw-layout"><nav class="gw-chapters" aria-label="এই গাইডে"><details open><summary>এই গাইডে</summary><ol>
+<li><a href="#২০২৬-এ-bd-cloud-kitchen-reality">২০২৬-এ BD Cloud Kitchen Reality</a></li>
+<li><a href="#রাশেদের-4-brand-strategy">রাশেদের 4-Brand Strategy</a></li>
+<li><a href="#ai-menu-engineering-রাশেদের-actual-workflow">AI Menu Engineering — রাশেদের actual workflow</a></li>
+<li><a href="#bd-specific-cost-structure-per-brand-monthly">BD-specific cost structure (per brand monthly)</a></li>
+<li><a href="#foodpanda-algorithm-hack-যা-রাশেদ-trial-and-error-এ-শিখেছেন">Foodpanda Algorithm Hack — যা রাশেদ trial-and-error-এ শিখেছেন</a></li>
+<li><a href="#৪টা-failure-mode-৭০-cloud-kitchen-৬-মাসে-close">৪টা failure mode — ৭০% Cloud Kitchen ৬ মাসে close</a></li>
+<li><a href="#উপসংহার-আপনার-আজকের-পদক্ষেপ">উপসংহার — আপনার আজকের পদক্ষেপ</a></li>
+<li><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+</ol></details></nav><div class="gw-reading">
+
+
+
+
+
+
+
+
+
+
+
 
 <p class="lede">রাশেদ মাহমুদ Dhanmondi-তে ২০২৪-এর মার্চ-এ তাঁর প্রথম cloud kitchen launched করেছিলেন — ৪০০ sq ft rented space, ১টা brand "Khichuri Express"। প্রথম ২ মাসে monthly revenue ৳১.২ লাখ, net loss ৳২৫,০০০। তিনি কাছ থেকে collapse-এর পথে ছিলেন। ২০২৪-এর মে-এ তিনি একটা AI-augmented multi-brand strategy adopt করলেন — same kitchen, 4 brands (Khichuri Express + Beef Boss + Veggie Bowl + Late-Night Cravings)। ২০২৬-এর মে-এ তাঁর monthly combined revenue ৳৭.৮ লাখ, net profit ৳২.১ লাখ (২৭% margin)। একই kitchen, একই 6-staff team, কিন্তু Foodpanda + Pathao Food-এ ৪টা distinct brand listing। AI menu engineering + dynamic pricing + customer review analysis — সবই LLM-assisted। তাঁর insight: "Cloud kitchen-এ AI isn't optional — physically cooking-এর বাইরে সব কাজ AI দিয়ে scale-যোগ্য।"</p>
 
@@ -147,9 +144,9 @@
 
 <p>প্রতি 1-star review-এ ChatGPT auto-draft reply:</p>
 
-<blockquote class="deep-blockquote">
+<div class="gw-copy-block"><div class="gw-copy-head"><span>কপি করার প্রম্পট</span><button class="gw-copy" type="button" data-guide-copy="guide-copy-1" hidden aria-label="এই লেখা কপি করুন"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 5V4a1 1 0 0 0-1-1H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h1"/></svg><span>কপি করুন</span></button></div><blockquote class="deep-blockquote" id="guide-copy-1" data-guide-source>
 "নিচের negative Foodpanda review-এর জন্য একটা Bangla professional apology + corrective action reply draft করো: [paste review]। Tone: humble, accountable, specific fix mention। ৬০ word max।"
-</blockquote>
+</blockquote></div>
 
 <p>৪ brand × ১৫-২০ daily review = ৬০-৮০ replies/day-এর কাজ ৩০ মিনিটে।</p>
 
@@ -167,13 +164,13 @@
     <div class="stat"><span class="num">২৫-৩০%</span><span class="label">Platform commission</span></div>
 </div>
 
-<p>রাশেদের monthly P&L (combined 4 brands): Revenue ৳৭.৮L, food cost ৳২.৩L, platform fee ৳২.১L, rent + utilities ৳৪৫K, staff ৳৬০K, marketing ৳২০K, misc ৳১৫K → Net ~৳২.১L।</p>
+<p>রাশেদের monthly P&amp;L (combined 4 brands): Revenue ৳৭.৮L, food cost ৳২.৩L, platform fee ৳২.১L, rent + utilities ৳৪৫K, staff ৳৬০K, marketing ৳২০K, misc ৳১৫K → Net ~৳২.১L।</p>
 
 <h2 id="foodpanda-algorithm-hack-যা-রাশেদ-trial-and-error-এ-শিখেছেন">Foodpanda Algorithm Hack — যা রাশেদ trial-and-error-এ শিখেছেন</h2>
 
 <ul>
-    <li><b>Acceptance rate >97%:</b> Algorithm boost। অস্বীকার করলে rank drop।</li>
-    <li><b>Average prep time <15 min:</b> Customer experience signal।</li>
+    <li><b>Acceptance rate &gt;97%:</b> Algorithm boost। অস্বীকার করলে rank drop।</li>
+    <li><b>Average prep time &lt;15 min:</b> Customer experience signal।</li>
     <li><b>4.5+ rating maintain:</b> Below 4.3 → demoted।</li>
     <li><b>Daily order volume:</b> ১৫+ daily order-এর brand-গুলো boosted listing পায়।</li>
     <li><b>Inactive items:</b> ৭ দিন order না হলে item auto-hidden — proactively remove।</li>
@@ -244,7 +241,7 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-    </div>
+    </div></div><p class="sr-only" data-guide-copy-status role="status" aria-live="polite"></p></div>
 
     <!-- RELATED-POSTS:START -->
 <section class="related-posts" aria-label="সম্পর্কিত গাইড">

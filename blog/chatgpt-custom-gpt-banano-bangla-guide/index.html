@@ -34,6 +34,8 @@
   <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <link rel="stylesheet" href="/css/site-shell.css">
   <link rel="stylesheet" href="/css/guide-reader.css">
+  <link rel="stylesheet" href="/css/guide-workshop.css">
+  <script src="/js/guide-workshop.js" defer></script>
 </head>
 <body data-author-mode="editorial">
     <!-- GUIDE-HEADER:START -->
@@ -50,34 +52,29 @@
 </header>
 <!-- GUIDE-HEADER:END -->
 
-    <div data-guide-reader class="article-sheet container">
-        <!-- ARTICLE-META:START -->
-<p class="article-kicker"><span class="article-chip">এআই টুল</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৩ মিনিট পড়া</span></p>
-<!-- ARTICLE-META:END -->
-<h1 id="gs-content">ChatGPT Custom GPT কীভাবে বানাবেন — সম্পূর্ণ বাংলা গাইড ২০২৬</h1>
-
-<!-- ARTICLE-HERO:START -->
-<figure class="article-hero">
+    <div data-guide-reader class="article-sheet container" data-guide-workshop><div class="gw-hero"><div class="gw-hero-copy"><p class="article-kicker"><span class="article-chip">এআই টুল</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৩ মিনিট পড়া</span></p><h1 id="gs-content">ChatGPT Custom GPT কীভাবে বানাবেন — সম্পূর্ণ বাংলা গাইড ২০২৬</h1><p class="gw-deck">নিজের specialized ChatGPT কীভাবে তৈরি করবেন? GPT Builder, instruction, knowledge file, action, publish — বাংলাদেশি ব্যবহারকারীদের জন্য step-by-step গাইড।</p><a class="gw-actions" href="#প্রথম-custom-gpt-৭-ধাপে">প্রথম Custom GPT (৭ ধাপে) <span aria-hidden="true">↓</span></a></div><div class="gw-hero-visual"><figure class="article-hero">
   <img src="/assets/editorial/prompts.svg" width="1000" height="440" alt="প্রশ্ন লেখার কার্ড ও উত্তর নির্দেশক কার্সরের অঙ্কন" decoding="async" fetchpriority="high">
-</figure>
-<!-- ARTICLE-HERO:END -->
-<!-- ARTICLE-TOC:START -->
-<nav class="article-toc" aria-label="সূচিপত্র">
-  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
-  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
-  <ol class="toc-list">
-    <li class="toc-item"><a href="#ভূমিকা-custom-gpt-কী">ভূমিকা — Custom GPT কী?</a></li>
-    <li class="toc-item"><a href="#কী-লাগবে">কী লাগবে</a></li>
-    <li class="toc-item"><a href="#প্রথম-custom-gpt-৭-ধাপে">প্রথম Custom GPT (৭ ধাপে)</a></li>
-    <li class="toc-item"><a href="#বাংলাদেশি-ব্যবহারের-১০টি-custom-gpt-idea">বাংলাদেশি ব্যবহারের ১০টি Custom GPT idea</a></li>
-    <li class="toc-item"><a href="#টিপস-ভালো-gpt-বানাতে">টিপস — ভালো GPT বানাতে</a></li>
-    <li class="toc-item"><a href="#gpt-store-এ-monetization">GPT Store-এ monetization</a></li>
-    <li class="toc-item"><a href="#উপসংহার">উপসংহার</a></li>
-    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
-    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
-  </ol>
-</nav>
-<!-- ARTICLE-TOC:END -->
+</figure></div></div><div class="gw-layout"><nav class="gw-chapters" aria-label="এই গাইডে"><details open><summary>এই গাইডে</summary><ol>
+<li><a href="#ভূমিকা-custom-gpt-কী">ভূমিকা — Custom GPT কী?</a></li>
+<li><a href="#কী-লাগবে">কী লাগবে</a></li>
+<li><a href="#প্রথম-custom-gpt-৭-ধাপে">প্রথম Custom GPT (৭ ধাপে)</a></li>
+<li><a href="#বাংলাদেশি-ব্যবহারের-১০টি-custom-gpt-idea">বাংলাদেশি ব্যবহারের ১০টি Custom GPT idea</a></li>
+<li><a href="#টিপস-ভালো-gpt-বানাতে">টিপস — ভালো GPT বানাতে</a></li>
+<li><a href="#gpt-store-এ-monetization">GPT Store-এ monetization</a></li>
+<li><a href="#উপসংহার">উপসংহার</a></li>
+<li><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+</ol></details></nav><div class="gw-reading">
+
+
+
+
+
+
+
+
+
+
+
 
         <h2 id="ভূমিকা-custom-gpt-কী">ভূমিকা — Custom GPT কী?</h2>
         <p>Custom GPT হলো ChatGPT-এর একটি specialized version যা আপনি নিজে তৈরি করতে পারেন — নির্দিষ্ট কাজে, নির্দিষ্ট personality-তে, নির্দিষ্ট knowledge দিয়ে। নিজের জন্য বানান, বা GPT Store-এ publish করে অন্যদেরও ব্যবহার করতে দিন।</p>
@@ -93,18 +90,18 @@
 
         <h2 id="প্রথম-custom-gpt-৭-ধাপে">প্রথম Custom GPT (৭ ধাপে)</h2>
 
-        <h3>ধাপ ১: GPT Builder খুলুন</h3>
+        <h3 class="gw-step-heading">ধাপ ১: GPT Builder খুলুন</h3>
         <ul>
             <li>ChatGPT sidebar → "Explore GPTs" → "Create" button</li>
             <li>বা: chatgpt.com/gpts/editor</li>
         </ul>
 
-        <h3>ধাপ ২: Builder-এর সাথে chat</h3>
+        <h3 class="gw-step-heading">ধাপ ২: Builder-এর সাথে chat</h3>
         <p>GPT Builder একটি conversational interface। আপনি বলবেন কী চান, এটি build করবে।</p>
         <p>উদাহরণ: "আমি একটা GPT বানাতে চাই যা বাংলা ব্লগ আর্টিকেল লিখবে SEO-friendly। User-কে topic + target keyword দিতে বলবে, তারপর ১৫০০ শব্দের আর্টিকেল লিখবে H2/H3 সহ।"</p>
         <p>Builder ফলো-আপ প্রশ্ন করবে: name, profile picture, tone, etc.</p>
 
-        <h3>ধাপ ৩: Configure tab-এ details refine</h3>
+        <h3 class="gw-step-heading">ধাপ ৩: Configure tab-এ details refine</h3>
         <ul>
             <li><b>Name:</b> e.g. "Bangla SEO Writer Pro"</li>
             <li><b>Description:</b> ১-line summary</li>
@@ -115,7 +112,7 @@
             <li><b>Actions:</b> External API call (advanced)</li>
         </ul>
 
-        <h3>ধাপ ৪: Instructions লেখার শিল্প</h3>
+        <h3 class="gw-step-heading">ধাপ ৪: Instructions লেখার শিল্প</h3>
         <p>এটাই GPT-এর "soul"। যত detailed instructions, তত better performance।</p>
         <ul>
             <li><b>Role:</b> "You are an expert Bangla SEO writer with 10 years experience..."</li>
@@ -127,14 +124,14 @@
             <li><b>What NOT to do:</b> "Never use clichés like 'একটি বিশাল পরিবর্তন'..."</li>
         </ul>
 
-        <h3>ধাপ ৫: Knowledge upload</h3>
+        <h3 class="gw-step-heading">ধাপ ৫: Knowledge upload</h3>
         <ul>
             <li>PDF/Word/TXT/CSV up to 20 files, each 512MB</li>
             <li>উদাহরণ: আপনার ব্র্যান্ড style guide, glossary, sample articles</li>
             <li>GPT এই files থেকে context নিতে পারবে</li>
         </ul>
 
-        <h3>ধাপ ৬: Test (Preview pane)</h3>
+        <h3 class="gw-step-heading">ধাপ ৬: Test (Preview pane)</h3>
         <ul>
             <li>ডানদিকে Preview-তে real-time test</li>
             <li>৫-১০টা case test করুন</li>
@@ -142,7 +139,7 @@
             <li>Iterate — typical GPT 5-10 iteration লাগে perfect হতে</li>
         </ul>
 
-        <h3>ধাপ ৭: Publish</h3>
+        <h3 class="gw-step-heading">ধাপ ৭: Publish</h3>
         <ul>
             <li>"Save" → তিনটি option:</li>
             <li>— Only me (private)</li>
@@ -237,7 +234,7 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-    </div>
+    </div></div><p class="sr-only" data-guide-copy-status role="status" aria-live="polite"></p></div>
 
     <!-- RELATED-POSTS:START -->
 <section class="related-posts" aria-label="সম্পর্কিত গাইড">

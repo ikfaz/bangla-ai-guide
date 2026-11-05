@@ -34,6 +34,8 @@
 <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <link rel="stylesheet" href="/css/site-shell.css">
   <link rel="stylesheet" href="/css/guide-reader.css">
+<link rel="stylesheet" href="/css/guide-workshop.css">
+  <script src="/js/guide-workshop.js" defer></script>
   <!-- FAQ-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"বাংলা text কাজ করে?","acceptedAnswer":{"@type":"Answer","text":"Tahira-র real test: Prompt: \"Bengali tea cafe poster with text 'তাজা চা, পেট ভরে আড্ডা' in beautiful hand-lettered Bangla style\" Ideogram 2.0: Readable Bangla text ৭৫-৮০% of time। কখনো শব্দ একটু distort, কিন্তু overall recognizable। ★★★★ Midjourney V6: Bangla text gibberish ৯৫% of time। ★ DALL-E 3: Better than Midjourney, but still inconsistent। ★★ FLUX Pro: Bangla weak-medium। ★★ Honest verdict: Ideogram Bangla text-এ best, কিন্তু English-এর সমান accurate না। ১০ generation-এ ২-৩টা usable। Pro tip: short + simple Bangla phrase use, complex sentence avoid।"}},{"@type":"Question","name":"Ideogram AI কোন কাজে সবচেয়ে ভালো?","acceptedAnswer":{"@type":"Answer","text":"Poster/flyer with readable text: Event poster, restaurant menu, brand campaign — text + image combined। Logo concepts: Wordmark logo first-draft। Brand name + visual style। Social media graphic with quote: Inspirational quote graphic, motivational post। Book/album cover with title: Title text + cover art together। T-shirt design with slogan: Text + graphic clean integration। Magazine cover: Title + subtitle + cover image। Infographic: Data labels + visual।"}},{"@type":"Question","name":"কেন Ideogram?","acceptedAnswer":{"@type":"Answer","text":"Ideogram (২০২৩ launch, US-based startup by ex-Google Brain researchers) — text-in-image generation-এ industry-leading। অন্য AI image generators (Midjourney, DALL-E, Stable Diffusion) text rendering-এ poor (gibberish letters)। Ideogram এই specific problem solve করার জন্য বানানো। Founded ২০২৩, San Francisco Ex-Imagen team Active users ~১৮ লাখ global Designer-heavy BD adoption ~৫,০০০ active Brand/social designer Pricing Free + paid $৭-৬০/মাস"}},{"@type":"Question","name":"Ideogram AI-এর দাম কত এবং BD-তে এর ROI কেমন?","acceptedAnswer":{"@type":"Answer","text":"Free: Daily 40 generations। Public gallery (your images visible)। Test করার জন্য fine। Basic $৭/মাস: 400 priority generations, private mode। Plus $১৬/মাস: Tahira-র tier। Magic Prompt, upscale, advanced features। Pro $৪৮/মাস: 14,000 generations, API access, team feature। BD payment: USD card via bKash recharge।"}}]}</script>
 <!-- FAQ-SCHEMA:END -->
@@ -53,36 +55,31 @@
 </header>
 <!-- GUIDE-HEADER:END -->
 
-    <div data-guide-reader class="article-sheet container">
-        <!-- ARTICLE-META:START -->
-<p class="article-kicker"><span class="article-chip">মিডিয়া</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৪ মিনিট পড়া</span></p>
-<!-- ARTICLE-META:END -->
-<h1 id="gs-content">Ideogram AI বাংলা গাইড — ছবিতে Text সঠিকভাবে Generate করার AI</h1>
-
-<!-- ARTICLE-HERO:START -->
-<figure class="article-hero">
+    <div data-guide-reader class="article-sheet container" data-guide-workshop><div class="gw-hero"><div class="gw-hero-copy"><p class="article-kicker"><span class="article-chip">মিডিয়া</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৪ মিনিট পড়া</span></p><h1 id="gs-content">Ideogram AI বাংলা গাইড — ছবিতে Text সঠিকভাবে Generate করার AI</h1><p class="gw-deck">Ideogram AI কেন text-heavy poster, logo, billboard image-এ Midjourney-এর চেয়ে ভালো? Use case, prompt tips, ও বাংলাদেশি designer-দের জন্য সম্পূর্ণ গাইড।</p><a class="gw-actions" href="#effective-prompt">Effective prompt <span aria-hidden="true">↓</span></a></div><div class="gw-hero-visual"><figure class="article-hero">
   <img src="/assets/editorial/image.svg" width="1000" height="440" alt="কাগজের ফ্রেমে পাহাড়ের ছবি, রঙের নমুনা ও ঝিলিকের অঙ্কন" decoding="async" fetchpriority="high">
-</figure>
-<!-- ARTICLE-HERO:END -->
-<!-- ARTICLE-TOC:START -->
-<nav class="article-toc" aria-label="সূচিপত্র">
-  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
-  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
-  <ol class="toc-list">
-    <li class="toc-item"><a href="#ভূমিকা-কেন-ideogram-bd-designer-দের-favorite-হয়ে-উঠছে">ভূমিকা — কেন Ideogram BD designer-দের favorite হয়ে উঠছে</a></li>
-    <li class="toc-item"><a href="#কেন-ideogram">কেন Ideogram?</a></li>
-    <li class="toc-item"><a href="#কী-ধরনের-কাজে-অপ্রতিদ্বন্দ্বী">কী ধরনের কাজে অপ্রতিদ্বন্দ্বী</a></li>
-    <li class="toc-item"><a href="#ব্যবহার">ব্যবহার</a></li>
-    <li class="toc-item"><a href="#দাম">দাম</a></li>
-    <li class="toc-item"><a href="#বাংলা-text-কাজ-করে">বাংলা text কাজ করে?</a></li>
-    <li class="toc-item"><a href="#effective-prompt">Effective prompt</a></li>
-    <li class="toc-item"><a href="#ideogram-vs-alternatives">Ideogram vs alternatives</a></li>
-    <li class="toc-item"><a href="#উপসংহার">উপসংহার</a></li>
-    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
-    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
-  </ol>
-</nav>
-<!-- ARTICLE-TOC:END -->
+</figure><aside class="gw-feature"><div class="gw-copy-head"><span>চেষ্টা করে দেখুন</span><button class="gw-copy" type="button" data-guide-copy="guide-copy-1" hidden aria-label="এই লেখা কপি করুন"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 5V4a1 1 0 0 0-1-1H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h1"/></svg><span>কপি করুন</span></button></div><p>Prompt: "Bengali tea cafe poster with text 'তাজা চা, পেট ভরে আড্ডা' in beautiful hand-lettered Bangla style"</p></aside></div></div><div class="gw-layout"><nav class="gw-chapters" aria-label="এই গাইডে"><details open><summary>এই গাইডে</summary><ol>
+<li><a href="#ভূমিকা-কেন-ideogram-bd-designer-দের-favorite-হয়ে-উঠছে">ভূমিকা — কেন Ideogram BD designer-দের favorite হয়ে উঠছে</a></li>
+<li><a href="#কেন-ideogram">কেন Ideogram?</a></li>
+<li><a href="#কী-ধরনের-কাজে-অপ্রতিদ্বন্দ্বী">কী ধরনের কাজে অপ্রতিদ্বন্দ্বী</a></li>
+<li><a href="#ব্যবহার">ব্যবহার</a></li>
+<li><a href="#দাম">দাম</a></li>
+<li><a href="#বাংলা-text-কাজ-করে">বাংলা text কাজ করে?</a></li>
+<li><a href="#effective-prompt">Effective prompt</a></li>
+<li><a href="#ideogram-vs-alternatives">Ideogram vs alternatives</a></li>
+<li><a href="#উপসংহার">উপসংহার</a></li>
+<li><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+</ol></details></nav><div class="gw-reading">
+
+
+
+
+
+
+
+
+
+
+
 
 <h2 id="ভূমিকা-কেন-ideogram-bd-designer-দের-favorite-হয়ে-উঠছে">ভূমিকা — কেন Ideogram BD designer-দের favorite হয়ে উঠছে</h2>
 <p class="lede">ঢাকার এক freelance brand designer তাহিরা ইসলাম — ২৮ বছর, NSU Marketing ২০১৯, ৩ বছর in-house designer (Aarong), পরে freelance। Logo + brand identity + social media graphic — Upwork + local client (Onushilon, Robi)। ২০২৫-এর জুনে একটা problem-এ stuck: একটা Bangladeshi cafe-র জন্য posters বানাচ্ছিলেন, "তাজা চা, পেট ভরে আড্ডা" এই tagline image-এ চাই, hand-lettered Bangla font style-এ। Midjourney-তে Bangla text gibberish হিসেবে আসে, DALL-E ৩-ও same problem। তাহিরা Ideogram try করলেন — version 2.0-এ Bangla text generation impressively legible। তারপর ৬ মাসে Ideogram তাঁর primary text-in-image tool হলো — মাসে $২০ subscription, ৫০-৭০টা client deliverable। এই গাইড সেই workflow।</p>
@@ -134,7 +131,7 @@
 <h2 id="বাংলা-text-কাজ-করে">বাংলা text কাজ করে?</h2>
 <div class="case-study">
 <strong>Tahira-র real test:</strong>
-<p>Prompt: "Bengali tea cafe poster with text 'তাজা চা, পেট ভরে আড্ডা' in beautiful hand-lettered Bangla style"</p>
+<div class="gw-copy-block"><div class="gw-copy-head"><span>কপি করার প্রম্পট</span><button class="gw-copy" type="button" data-guide-copy="guide-copy-1" hidden aria-label="এই লেখা কপি করুন"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 5V4a1 1 0 0 0-1-1H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h1"/></svg><span>কপি করুন</span></button></div><p id="guide-copy-1" data-guide-source>Prompt: "Bengali tea cafe poster with text 'তাজা চা, পেট ভরে আড্ডা' in beautiful hand-lettered Bangla style"</p></div>
 <ul>
 <li><strong>Ideogram 2.0:</strong> Readable Bangla text ৭৫-৮০% of time। কখনো শব্দ একটু distort, কিন্তু overall recognizable। ★★★★</li>
 <li><strong>Midjourney V6:</strong> Bangla text gibberish ৯৫% of time। ★</li>
@@ -146,9 +143,9 @@
 
 <h2 id="effective-prompt">Effective prompt</h2>
 <p>Tahira-র prompt template:</p>
-<pre><code>[Style descriptor] poster/graphic with the text
+<div class="gw-copy-block"><div class="gw-copy-head"><span>কপি করার প্রম্পট</span><button class="gw-copy" type="button" data-guide-copy="guide-copy-2" hidden aria-label="এই লেখা কপি করুন"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 5V4a1 1 0 0 0-1-1H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h1"/></svg><span>কপি করুন</span></button></div><pre id="guide-copy-2" data-guide-source><code>[Style descriptor] poster/graphic with the text
 "[Bangla phrase]" in [font style description]
-Bangla script, [color palette], [mood], [background description]</code></pre>
+Bangla script, [color palette], [mood], [background description]</code></pre></div>
 
 <p>Examples:</p>
 <ul>
@@ -166,16 +163,16 @@ Bangla script, [color palette], [mood], [background description]</code></pre>
 
 <h2 id="ideogram-vs-alternatives">Ideogram vs alternatives</h2>
 
-<table style="width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;">
+<div class="gw-table-scroll" role="region" tabindex="0" aria-label="Ideogram vs alternatives"><table style="width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;" class="gw-table">
 <thead><tr style="background:#F1F5F9;"><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Aspect</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Ideogram</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">Midjourney</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">DALL-E 3</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">FLUX</th></tr></thead>
 <tbody>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Text rendering</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>Excellent</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">Poor</td><td style="padding:10px;border:1px solid #E2E8F0;">Good</td><td style="padding:10px;border:1px solid #E2E8F0;">Good</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Photorealism</td><td style="padding:10px;border:1px solid #E2E8F0;">Good</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>Excellent</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">Very good</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>Excellent</strong></td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Artistic style</td><td style="padding:10px;border:1px solid #E2E8F0;">Very good</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>Best</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">Good</td><td style="padding:10px;border:1px solid #E2E8F0;">Very good</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Bangla text</td><td style="padding:10px;border:1px solid #E2E8F0;">★★★★</td><td style="padding:10px;border:1px solid #E2E8F0;">★</td><td style="padding:10px;border:1px solid #E2E8F0;">★★</td><td style="padding:10px;border:1px solid #E2E8F0;">★★</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Price (entry)</td><td style="padding:10px;border:1px solid #E2E8F0;">$৭/mo</td><td style="padding:10px;border:1px solid #E2E8F0;">$১০/mo</td><td style="padding:10px;border:1px solid #E2E8F0;">$২০/mo (ChatGPT Plus)</td><td style="padding:10px;border:1px solid #E2E8F0;">Free-$৩৫</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Aspect">Text rendering</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Ideogram"><strong>Excellent</strong></td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Midjourney">Poor</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="DALL-E 3">Good</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="FLUX">Good</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Aspect">Photorealism</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Ideogram">Good</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Midjourney"><strong>Excellent</strong></td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="DALL-E 3">Very good</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="FLUX"><strong>Excellent</strong></td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Aspect">Artistic style</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Ideogram">Very good</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Midjourney"><strong>Best</strong></td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="DALL-E 3">Good</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="FLUX">Very good</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Aspect">Bangla text</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Ideogram">★★★★</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Midjourney">★</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="DALL-E 3">★★</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="FLUX">★★</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Aspect">Price (entry)</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Ideogram">$৭/mo</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="Midjourney">$১০/mo</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="DALL-E 3">$২০/mo (ChatGPT Plus)</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="FLUX">Free-$৩৫</td></tr>
 </tbody>
-</table>
+</table></div>
 
 <h2 id="উপসংহার">উপসংহার</h2>
 <p>Tahira বলেন: "Ideogram replace করেনি Midjourney-কে — complement করেছে। Brand identity / artistic poster-এ Midjourney। Text-heavy graphic (event poster, quote, slogan) Ideogram। দু'টোই $৩০/মাস total, ৫০-৭০ client deliverable cover, freelance income 2.5x।"</p>
@@ -233,7 +230,7 @@ Bangla script, [color palette], [mood], [background description]</code></pre>
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-    </div>
+    </div></div><p class="sr-only" data-guide-copy-status role="status" aria-live="polite"></p></div>
 
     <!-- TEMPLATED-FAQ:START -->
 <section class="article-faq" aria-labelledby="faq-heading">

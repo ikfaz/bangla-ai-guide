@@ -34,6 +34,8 @@
 <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <link rel="stylesheet" href="/css/site-shell.css">
   <link rel="stylesheet" href="/css/guide-reader.css">
+<link rel="stylesheet" href="/css/guide-workshop.css">
+  <script src="/js/guide-workshop.js" defer></script>
   <!-- FAQ-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Claude Sonnet 4.6 vs Opus 4.7-এর কিছু practical উদাহরণ কী?","acceptedAnswer":{"@type":"Answer","text":"Example 1: Sabrina, content marketer (Sonnet only) Dhanmondi-র agency-তে Sabrina daily ৪-৫টা client blog post + email + social caption লিখেন। তাঁর কাজে কোনো Opus-level reasoning দরকার নেই — Sonnet 4.6 যথেষ্ট। মাসিক খরচ: Pro $২০। ROI: প্রতি ঘণ্টায় ২x output, ৭০% time saved। Opus upgrade-এ কোনো benefit নেই। Example 2: Tareq, fintech CTO (Hybrid) Gulshan-এর startup-এ Tareq Sonnet ৮৫% কাজে use করেন (daily code, standup notes, customer email)। ১৫% Opus (architecture decision, complex migration, hard bug)। মাসিক: Cursor $২০ + Claude Max $১০০ = $১২০ ≈ ৳১৪,৪০০। Team velocity ২.৩x — এই খরচ negligible। Example 3: Tanjim, M&A lawyer (Opus primary) Dhanmondi-র law firm-এ junior associate Tanjim…"}},{"@type":"Question","name":"Claude Sonnet 4.6 vs Opus 4.7 কোন কাজে সবচেয়ে ভালো?","acceptedAnswer":{"@type":"Answer","text":"Tareq-এর startup-এ যে pattern চলে — অন্যরাও use করতে পারে: Daily kickoff: Sonnet 4.6 দিয়ে standup note generate, calendar plan, email triage। Coding (regular): Cursor + Sonnet 4.6 — ৮০-৯০% feature implementation। Hard problem detection: Sonnet ২ বার ভুল দিলে → manual escalation to Opus। Architecture decision (weekly): Opus 4.7-এ deep session, system design review। Document analysis: Short doc ( ৫০ page) → Opus। Customer email/standup recap (end of day): Sonnet — fast, cheap।"}},{"@type":"Question","name":"Claude Sonnet 4.6 vs Opus 4.7-এর performance কেমন?","acceptedAnswer":{"@type":"Answer","text":"Benchmark + real-world test: SWE-bench Verified (coding): Sonnet 4.6 ৭৭.২%, Opus 4.7 ৮৪.৬% — Opus +৭.৪% MMLU (general knowledge): Sonnet 88.৭%, Opus ৯০.১% — পার্থক্য ছোট GPQA Diamond (PhD-level science): Sonnet ৬৪%, Opus ৭৪% — Opus +১০% Long context recall (১০০K+): Sonnet ৮৯%, Opus ৯৫% — Opus stable in deep context Bangla output quality (human eval): Sonnet 4.৬৮/৫, Opus ৪.৭৪/৫ — negligible Speed (token/sec): Sonnet ৯০ tok/s, Opus ৪০ tok/s — Sonnet ২.২x faster"}},{"@type":"Question","name":"Claude Sonnet 4.6 vs Opus 4.7-এর দাম কত এবং BD-তে এর ROI কেমন?","acceptedAnswer":{"@type":"Answer","text":"Casual user Pro $২০/মাস = ৳২,৪০০ Sonnet ৯৯% Verdict: Pro যথেষ্ট Power user (dev/PM) Pro $২০ → Max $১০০/মাস Sonnet ৮৫% + Opus ১৫% Upgrade যদি Opus মাসে ১০+ session-এ লাগে API heavy (team) ৳৪০-৬০K/মাস Smart routing দরকার ৮০% Sonnet, ২০% Opus Hobbyist Free (limited) Sonnet 4.6 daily ১০-১৫ message Opus access নেই API smart routing example: Cline/OpenRouter-এ rule set করুন — \"if task"}}]}</script>
 <!-- FAQ-SCHEMA:END -->
@@ -53,37 +55,32 @@
 </header>
 <!-- GUIDE-HEADER:END -->
 
-    <div data-guide-reader class="article-sheet container">
-        <!-- ARTICLE-META:START -->
-<p class="article-kicker"><span class="article-chip">তুলনা</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৫ মিনিট পড়া</span></p>
-<!-- ARTICLE-META:END -->
-<h1 id="gs-content">Claude Sonnet 4.6 vs Opus 4.7 — কখন কোনটি? বাংলা Decision Guide</h1>
-
-<!-- ARTICLE-HERO:START -->
-<figure class="article-hero">
+    <div data-guide-reader class="article-sheet container" data-guide-workshop><div class="gw-hero"><div class="gw-hero-copy"><p class="article-kicker"><span class="article-chip">তুলনা</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৫ মিনিট পড়া</span></p><h1 id="gs-content">Claude Sonnet 4.6 vs Opus 4.7 — কখন কোনটি? বাংলা Decision Guide</h1><p class="gw-deck">Anthropic-এর Sonnet 4.6 এবং Opus 4.7 — দুটোই Claude flagship। কখন কোনটি ব্যবহার করবেন? Cost, capability, real use cases — practical decision matrix।</p><a class="gw-actions" href="#combined-workflow-দু-জনের-সেরা">Combined workflow — দু'জনের সেরা <span aria-hidden="true">↓</span></a></div><div class="gw-hero-visual"><figure class="article-hero">
   <img src="/assets/editorial/comparison.svg" width="1000" height="440" alt="পাশাপাশি দুটি প্যানেলে বৈশিষ্ট্য মেলানোর অঙ্কন" decoding="async" fetchpriority="high">
-</figure>
-<!-- ARTICLE-HERO:END -->
-<!-- ARTICLE-TOC:START -->
-<nav class="article-toc" aria-label="সূচিপত্র">
-  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
-  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
-  <ol class="toc-list">
-    <li class="toc-item"><a href="#ভূমিকা-একটা-বাস্তব-দ্বিধা">ভূমিকা — একটা বাস্তব দ্বিধা</a></li>
-    <li class="toc-item"><a href="#quick-comparison-এক-পৃষ্ঠায়-সারমর্ম">Quick comparison — এক পৃষ্ঠায় সারমর্ম</a></li>
-    <li class="toc-item"><a href="#decision-matrix-কাজের-ধরন-অনুযায়ী">Decision matrix — কাজের ধরন অনুযায়ী</a></li>
-    <li class="toc-item"><a href="#৩টা-practical-example-bd-users">৩টা practical example — BD users</a></li>
-    <li class="toc-item"><a href="#performance-measurable-পার্থক্য">Performance — measurable পার্থক্য</a></li>
-    <li class="toc-item"><a href="#cost-analysis-মাসিক-bd-context">Cost analysis — মাসিক BD context</a></li>
-    <li class="toc-item"><a href="#combined-workflow-দু-জনের-সেরা">Combined workflow — দু'জনের সেরা</a></li>
-    <li class="toc-item"><a href="#কখন-opus-overkill-not-opus">কখন Opus overkill (NOT Opus)</a></li>
-    <li class="toc-item"><a href="#কখন-sonnet-এ-stuck-তখনই-opus">কখন Sonnet-এ stuck — তখনই Opus</a></li>
-    <li class="toc-item"><a href="#উপসংহার-আপনার-decision-rule">উপসংহার — আপনার decision rule</a></li>
-    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
-    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
-  </ol>
-</nav>
-<!-- ARTICLE-TOC:END -->
+</figure></div></div><div class="gw-layout"><nav class="gw-chapters" aria-label="এই গাইডে"><details open><summary>এই গাইডে</summary><ol>
+<li><a href="#ভূমিকা-একটা-বাস্তব-দ্বিধা">ভূমিকা — একটা বাস্তব দ্বিধা</a></li>
+<li><a href="#quick-comparison-এক-পৃষ্ঠায়-সারমর্ম">Quick comparison — এক পৃষ্ঠায় সারমর্ম</a></li>
+<li><a href="#decision-matrix-কাজের-ধরন-অনুযায়ী">Decision matrix — কাজের ধরন অনুযায়ী</a></li>
+<li><a href="#৩টা-practical-example-bd-users">৩টা practical example — BD users</a></li>
+<li><a href="#performance-measurable-পার্থক্য">Performance — measurable পার্থক্য</a></li>
+<li><a href="#cost-analysis-মাসিক-bd-context">Cost analysis — মাসিক BD context</a></li>
+<li><a href="#combined-workflow-দু-জনের-সেরা">Combined workflow — দু'জনের সেরা</a></li>
+<li><a href="#কখন-opus-overkill-not-opus">কখন Opus overkill (NOT Opus)</a></li>
+<li><a href="#কখন-sonnet-এ-stuck-তখনই-opus">কখন Sonnet-এ stuck — তখনই Opus</a></li>
+<li><a href="#উপসংহার-আপনার-decision-rule">উপসংহার — আপনার decision rule</a></li>
+<li><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+</ol></details></nav><div class="gw-reading">
+
+
+
+
+
+
+
+
+
+
+
 
 <h2 id="ভূমিকা-একটা-বাস্তব-দ্বিধা">ভূমিকা — একটা বাস্তব দ্বিধা</h2>
 <p class="lede">গত মাসে চট্টগ্রামের একজন product manager মিনহাজ চৌধুরী আমাকে message করলেন: "আমি Claude Pro $২০ দিয়ে চলছি ৮ মাস। Sonnet 4.6 ভালোই কাজ করে। কিন্তু Anthropic Max plan-এ Opus 4.7 access আছে — $১০০/মাস। আমি কি upgrade করব?" তিনি একটা logistics SaaS-এর PM, daily কাজ: feature spec লেখা, customer email reply, Excel data analysis, API documentation, কখনো architecture decision। আমি তাঁকে বললাম: "আগে ৩০ দিন track করুন — Sonnet আপনাকে কতবার fail করেছে?" দু সপ্তাহ পর তিনি জানালেন: "Sonnet ৪২ session-এ ৩ বার ব্যর্থ হয়েছে — দুটো complex system design + একটা multi-step Excel macro।" উত্তর clear: তাঁর জন্য Sonnet 4.6 যথেষ্ট, Opus extra cost waste। কিন্তু সবার ক্ষেত্রে decision এক না। এই গাইড: কীভাবে আপনি নিজে decide করবেন।</p>
@@ -103,23 +100,23 @@
 
 <h2 id="decision-matrix-কাজের-ধরন-অনুযায়ী">Decision matrix — কাজের ধরন অনুযায়ী</h2>
 
-<table style="width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;">
+<div class="gw-table-scroll" role="region" tabindex="0" aria-label="Decision matrix — কাজের ধরন অনুযায়ী"><table style="width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;" class="gw-table">
 <thead><tr style="background:#F1F5F9;"><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">কাজ</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">বাছুন</th><th style="text-align:left;padding:10px;border:1px solid #E2E8F0;">কারণ</th></tr></thead>
 <tbody>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Bangla blog/social post লেখা</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>Sonnet 4.6</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">Quality same, ৫x সস্তা</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Translation (Bangla↔English)</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>Sonnet 4.6</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">দু'টোই top-tier</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Customer support email</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>Sonnet 4.6</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">Simple task, Opus overkill</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Single-file code (<৩০০ লাইন)</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>Sonnet 4.6</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">SWE-bench close, cost কম</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Excel formula/macro</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>Sonnet 4.6</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">Standard task</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Article summarize</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>Sonnet 4.6</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">দু'টোই same</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Multi-file refactor (৬+ file)</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>Opus 4.7</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">Coherence স্পষ্ট better</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Architecture/system design</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>Opus 4.7</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">Multi-step reasoning</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">10+ research paper synthesis</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>Opus 4.7</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">Deep synthesis</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Complex contract/legal review</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>Opus 4.7</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">Cross-reference accuracy</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Multi-system debug</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>Opus 4.7</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">Deep reasoning</td></tr>
-<tr><td style="padding:10px;border:1px solid #E2E8F0;">Long Bangla novel (৮০K word)</td><td style="padding:10px;border:1px solid #E2E8F0;"><strong>Opus 4.7</strong></td><td style="padding:10px;border:1px solid #E2E8F0;">Coherence across chapters</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="কাজ">Bangla blog/social post লেখা</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="বাছুন"><strong>Sonnet 4.6</strong></td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="কারণ">Quality same, ৫x সস্তা</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="কাজ">Translation (Bangla↔English)</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="বাছুন"><strong>Sonnet 4.6</strong></td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="কারণ">দু'টোই top-tier</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="কাজ">Customer support email</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="বাছুন"><strong>Sonnet 4.6</strong></td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="কারণ">Simple task, Opus overkill</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="কাজ">Single-file code (&lt;৩০০ লাইন)</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="বাছুন"><strong>Sonnet 4.6</strong></td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="কারণ">SWE-bench close, cost কম</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="কাজ">Excel formula/macro</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="বাছুন"><strong>Sonnet 4.6</strong></td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="কারণ">Standard task</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="কাজ">Article summarize</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="বাছুন"><strong>Sonnet 4.6</strong></td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="কারণ">দু'টোই same</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="কাজ">Multi-file refactor (৬+ file)</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="বাছুন"><strong>Opus 4.7</strong></td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="কারণ">Coherence স্পষ্ট better</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="কাজ">Architecture/system design</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="বাছুন"><strong>Opus 4.7</strong></td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="কারণ">Multi-step reasoning</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="কাজ">10+ research paper synthesis</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="বাছুন"><strong>Opus 4.7</strong></td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="কারণ">Deep synthesis</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="কাজ">Complex contract/legal review</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="বাছুন"><strong>Opus 4.7</strong></td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="কারণ">Cross-reference accuracy</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="কাজ">Multi-system debug</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="বাছুন"><strong>Opus 4.7</strong></td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="কারণ">Deep reasoning</td></tr>
+<tr><td style="padding:10px;border:1px solid #E2E8F0;" data-column="কাজ">Long Bangla novel (৮০K word)</td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="বাছুন"><strong>Opus 4.7</strong></td><td style="padding:10px;border:1px solid #E2E8F0;" data-column="কারণ">Coherence across chapters</td></tr>
 </tbody>
-</table>
+</table></div>
 
 <h2 id="৩টা-practical-example-bd-users">৩টা practical example — BD users</h2>
 
@@ -134,7 +131,7 @@
 </div>
 
 <div class="case-study">
-<strong>Example 3: Tanjim, M&A lawyer (Opus primary)</strong>
+<strong>Example 3: Tanjim, M&amp;A lawyer (Opus primary)</strong>
 <p>Dhanmondi-র law firm-এ junior associate Tanjim ১২০-পৃষ্ঠার agreement review করেন। প্রতি client-এ ৬-৮ ঘণ্টা saved (Opus-এ cross-reference + risk identification)। মাসে ৩-৪ deal × $২,৫০০ fee = $৮,০০০-১০,০০০ revenue। তাঁর জন্য Opus অপরিহার্য — Claude Max $১০০ + occasional API spike $৩০ = total $১৩০। ROI: ৬০x।</p>
 </div>
 
@@ -158,17 +155,17 @@
 <div><strong>Hobbyist</strong><br>Free (limited)<br>Sonnet 4.6 daily ১০-১৫ message<br>Opus access নেই</div>
 </div>
 
-<p><strong>API smart routing example:</strong> Cline/OpenRouter-এ rule set করুন — "if task < ৫০০ token output AND no multi-file → Sonnet; else → Opus।" মাসে $৪০-৮০ savings।</p>
+<p><strong>API smart routing example:</strong> Cline/OpenRouter-এ rule set করুন — "if task &lt; ৫০০ token output AND no multi-file → Sonnet; else → Opus।" মাসে $৪০-৮০ savings।</p>
 
 <h2 id="combined-workflow-দু-জনের-সেরা">Combined workflow — দু'জনের সেরা</h2>
 <p>Tareq-এর startup-এ যে pattern চলে — অন্যরাও use করতে পারে:</p>
 
-<ol>
+<ol class="gw-steps">
 <li><strong>Daily kickoff:</strong> Sonnet 4.6 দিয়ে standup note generate, calendar plan, email triage।</li>
 <li><strong>Coding (regular):</strong> Cursor + Sonnet 4.6 — ৮০-৯০% feature implementation।</li>
 <li><strong>Hard problem detection:</strong> Sonnet ২ বার ভুল দিলে → manual escalation to Opus।</li>
 <li><strong>Architecture decision (weekly):</strong> Opus 4.7-এ deep session, system design review।</li>
-<li><strong>Document analysis:</strong> Short doc (<২০ page) → Sonnet; long doc (>৫০ page) → Opus।</li>
+<li><strong>Document analysis:</strong> Short doc (&lt;২০ page) → Sonnet; long doc (&gt;৫০ page) → Opus।</li>
 <li><strong>Customer email/standup recap (end of day):</strong> Sonnet — fast, cheap।</li>
 </ol>
 
@@ -176,7 +173,7 @@
 <p>নিচের কাজে Opus use করবেন না — শুধু খরচ বাড়াবে, quality benefit নেই:</p>
 <ul>
 <li>Simple email reply</li>
-<li>Bangla content post (<১,৫০০ word)</li>
+<li>Bangla content post (&lt;১,৫০০ word)</li>
 <li>Translation (Bangla ↔ English)</li>
 <li>Single file code edit</li>
 <li>Standard summarization</li>
@@ -192,7 +189,7 @@
 <li>Multi-step problem-এ Sonnet step ৮-এর পর confused</li>
 <li>৫+ file jointly edit করতে hallucination</li>
 <li>৩০+ page document analysis-এ Sonnet partial answer</li>
-<li>Bangla long-form (>৬,০০০ word) narrative inconsistent</li>
+<li>Bangla long-form (&gt;৬,০০০ word) narrative inconsistent</li>
 <li>Hard math/scientific reasoning (PhD-level)</li>
 <li>Cross-reference accuracy critical (legal, financial)</li>
 </ul>
@@ -254,7 +251,7 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-    </div>
+    </div></div><p class="sr-only" data-guide-copy-status role="status" aria-live="polite"></p></div>
 
     <!-- TEMPLATED-FAQ:START -->
 <section class="article-faq" aria-labelledby="faq-heading">

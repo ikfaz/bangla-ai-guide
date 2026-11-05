@@ -34,6 +34,8 @@
 <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <link rel="stylesheet" href="/css/site-shell.css">
   <link rel="stylesheet" href="/css/guide-reader.css">
+<link rel="stylesheet" href="/css/guide-workshop.css">
+  <script src="/js/guide-workshop.js" defer></script>
   <!-- FAQ-SCHEMA:START -->
 <script type="application/ld+json" data-injected-by="inject-faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Claude Opus 4.7-এর কিছু practical উদাহরণ কী?","acceptedAnswer":{"@type":"Answer","text":"Tareq-এর ব্যক্তিগত prompt library থেকে কিছু example যেগুলো Opus-এই কাজ করে: System design review: \"এই ৩টা microservice (auth, payment, notification) — current architecture-এ ৪টা bottleneck আছে। Identify করো, alternative architecture suggest করো, migration risk + timeline সহ।\" → Opus ৬-পৃষ্ঠার response, ৩টা viable alternative সহ। Long-form Bangla synthesis: \"বাংলাদেশে microfinance industry-র শেষ ১৫ বছরের ১২টা key research paper attached। একটা ৪,০০০ word literature review লিখো — gap, controversy, future direction সহ।\" → Opus citation-correct, contradiction-aware review দেয়। Complex regex/parser: \"এই ১০টা edge case Bangla phone number format-এ — একটা robust regex + parser লিখো, unit test সহ।\"…"}},{"@type":"Question","name":"বাংলাদেশ থেকে Claude Opus 4.7 কীভাবে access করব?","acceptedAnswer":{"@type":"Answer","text":"Opus পেতে ৩টা পথ: ১. Claude Pro/Max subscription (সহজ পথ) Claude Pro — $২০/মাস (~৳২,৪০০): Sonnet 4.6 unlimited + Opus 4.7 ~৫-১০ message/৫ ঘণ্টা। Casual ব্যবহারের জন্য যথেষ্ট না। Claude Max — $১০০/মাস (~৳১২,০০০): Opus 4.7 ~১৫০-২০০ message/৫ ঘণ্টা। Heavy user-এর জন্য sweet spot। Claude Max 20x — $২০০/মাস (~৳২৪,০০০): Opus ~৪০০+ message। Power user/team। Payment: bKash-linked Mastercard/Visa USD card (Brac, City, EBL, DBBL)। PayPal direct supported না। Wise card-ও কাজ করে। ২. API access (developer/team-এর জন্য) Console: console.anthropic.com → \"Get API keys\" Pricing: Input $১৫ per M token, Output $৭৫ per M token (Sonnet-এর ৫x) BD reality: ১ heavy session (৫০K input + ১০K output) = $১.৫ ≈ ৳১৮০।…"}},{"@type":"Question","name":"কখন Opus 4.7 ব্যবহার করবেন?","acceptedAnswer":{"@type":"Answer","text":"Use case 1: Legacy code migration (Tareq-এর মতো) ৫,০০০+ লাইনের একটা monolithic codebase microservice-এ break করতে। ১৫-২০টা coupling point identify করা, dependency unravel, rollback plan — Opus এই multi-step reasoning-এ Sonnet-এর চেয়ে অনেক ভালো। ROI: ২ সপ্তাহ saved × ৳১৫,০০০/দিন = ৳২.১ লাখ। Use case 2: Research paper synthesis BUET-এর PhD student Sumaiya ১২টা long paper (Transformer architecture-এর variants) read করে একটা ৬,০০০ word literature review লিখতে চান। Sonnet দিয়ে ৩ বার চেষ্টা — citation mix up, narrative thread হারিয়ে যায়। Opus 4.7-এ ১ session-এ clean review, citations সঠিক, contradiction-গুলো highlight সহ। Time: ৩ দিন → ৬ ঘণ্টা। Use case 3: Complex contract analysis…"}},{"@type":"Question","name":"কখন Opus overkill?","acceptedAnswer":{"@type":"Answer","text":"সবচেয়ে গুরুত্বপূর্ণ মৌলিক rule: ৮৫% কাজে Sonnet 4.6 যথেষ্ট। Opus ব্যবহার করুন শুধু যেখানে Sonnet ব্যর্থ। এই কাজগুলোয় Sonnet বেছে নিন: Simple Bangla content writing (blog post, FB caption, email reply) — Sonnet faster + cheaper Single-file code generate বা ২০০ লাইনের নিচে bug fix Translation (Bangla ↔ English) — Sonnet-ই better, faster Excel formula, basic data analysis, presentation outline Customer support reply, copywriting, social media planning Standard summarization (article, video transcript) Smart routing rule: প্রথমে Sonnet-এ try করুন। ২বার ভুল answer পেলে, OR ৫+ file/system involved হলে, OR ৩০-পৃষ্ঠা+ document analyze করতে হলে — তখন Opus। এই rule-এ মাসে $৪০-৮০ বাঁচবে।"}},{"@type":"Question","name":"ভূমিকা — Opus কী?","acceptedAnswer":{"@type":"Answer","text":"ঢাকার গুলশানে এক fintech startup-এর CTO তারেক মাহমুদ — ৩৪ বছর বয়স, BUET CSE ২০১৩ batch, ৭ বছর Singapore-এ Grab-এ কাজ করে দেশে ফিরেছেন। তাঁর কোম্পানি একটা micro-lending SaaS বানাচ্ছে যেটা NBFI-দের জন্য credit risk scoring করে। Sonnet 4.6 দিয়ে দৈনিক code লেখা, debug, documentation — সব ভালোই চলছিল। কিন্তু গত মাসে একটা সমস্যা এসেছিল: ৬টা legacy Python service-কে microservice architecture-এ migrate করতে হবে, ১৪,০০০ লাইন code, ৪২টা database table interconnection। Sonnet দিয়ে চেষ্টা — ৩ দিন গেছে, ১৭ বার \"context too complex\" বলে ভুল answer দিয়েছে। তারেক Opus 4.7-এ switch করলেন। ১ session-এ ৪ ঘণ্টা — পুরো migration plan, dependency graph, rollback strategy সহ। কাজটা ২ সপ্তাহে শেষ। তিনি বললেন: \"Opus সস্তা না, কিন্তু যেখানে Sonnet ব্যর্থ — সেখানে Opus দরকার।\" এই গাইডে যা থাকবে: Opus 4.7 কী, কখন Sonnet যথেষ্ট আর কখন Opus লাগবে (real decision framework), BD থেকে access + cost ($, ৳), ৫টি বাস্তব use case যেখানে Opus গেমচেঞ্জার, এবং কীভাবে $৪০-৮০/মাস বাঁচানো যায় smart routing দিয়ে।"}}]}</script>
 <!-- FAQ-SCHEMA:END -->
@@ -53,38 +55,33 @@
 </header>
 <!-- GUIDE-HEADER:END -->
 
-    <div data-guide-reader class="article-sheet container">
-        <!-- ARTICLE-META:START -->
-<p class="article-kicker"><span class="article-chip">এআই টুল</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৯ মিনিট পড়া</span></p>
-<!-- ARTICLE-META:END -->
-<h1 id="gs-content">Claude Opus 4.7 বাংলা গাইড — Anthropic-এর সবচেয়ে শক্তিশালী AI (২০২৬)</h1>
-
-<!-- ARTICLE-HERO:START -->
-<figure class="article-hero">
+    <div data-guide-reader class="article-sheet container" data-guide-workshop><div class="gw-hero"><div class="gw-hero-copy"><p class="article-kicker"><span class="article-chip">এআই টুল</span><span class="article-chip">২৬ মে, ২০২৬</span><span class="article-chip">৯ মিনিট পড়া</span></p><h1 id="gs-content">Claude Opus 4.7 বাংলা গাইড — Anthropic-এর সবচেয়ে শক্তিশালী AI (২০২৬)</h1><p class="gw-deck">Claude Opus 4.7 — Anthropic-এর top-tier model। কী পারে, কতটা শক্তিশালী, বাংলায় ব্যবহার, দাম, কখন worth it — researcher, developer ও power user-দের জন্য সম্পূর্ণ…</p><a class="gw-actions" href="#৫টি-real-world-examples-opus-prompt-output-style">৫টি real-world examples — Opus prompt + output style <span aria-hidden="true">↓</span></a></div><div class="gw-hero-visual"><figure class="article-hero">
   <img src="/assets/editorial/model.svg" width="1000" height="440" alt="সংযুক্ত নোড ও একটি এআই মডেলের চিপের অঙ্কন" decoding="async" fetchpriority="high">
-</figure>
-<!-- ARTICLE-HERO:END -->
-<!-- ARTICLE-TOC:START -->
-<nav class="article-toc" aria-label="সূচিপত্র">
-  <input class="article-toc-toggle" type="checkbox" id="article-toc-toggle">
-  <label class="article-toc-label" for="article-toc-toggle">সূচিপত্র</label>
-  <ol class="toc-list">
-    <li class="toc-item"><a href="#ভূমিকা-opus-কী">ভূমিকা — Opus কী?</a></li>
-    <li class="toc-item"><a href="#opus-4-7-কী-আলাদা-করে-sonnet-4-6-এর-চেয়ে-যা-পাবেন">Opus 4.7 কী আলাদা করে — Sonnet 4.6-এর চেয়ে যা পাবেন</a></li>
-    <li class="toc-item"><a href="#বাংলাদেশ-থেকে-opus-4-7-access-payment-plan-api">বাংলাদেশ থেকে Opus 4.7 access — payment, plan, API</a></li>
-    <li class="toc-item"><a href="#কখন-opus-4-7-ব্যবহার-করবেন-৫টি-use-case-যেখানে-value-স্পষ্ট">কখন Opus 4.7 ব্যবহার করবেন — ৫টি use case যেখানে value স্পষ্ট</a></li>
-    <li class="toc-item"><a href="#কখন-opus-overkill-sonnet-4-6-যথেষ্ট">কখন Opus overkill — Sonnet 4.6 যথেষ্ট</a></li>
-    <li class="toc-item"><a href="#বাংলায়-opus-4-7-quality-edge-case">বাংলায় Opus 4.7 — quality + edge case</a></li>
-    <li class="toc-item"><a href="#দাম-roi-বিশ্লেষণ-bd-context">দাম + ROI বিশ্লেষণ (BD context)</a></li>
-    <li class="toc-item"><a href="#opus-4-7-vs-প্রতিদ্বন্দ্বী-top-tier">Opus 4.7 vs প্রতিদ্বন্দ্বী top-tier</a></li>
-    <li class="toc-item"><a href="#৫টি-real-world-examples-opus-prompt-output-style">৫টি real-world examples — Opus prompt + output style</a></li>
-    <li class="toc-item"><a href="#টিপস-opus-থেকে-সর্বোচ্চ-পেতে">টিপস — Opus থেকে সর্বোচ্চ পেতে</a></li>
-    <li class="toc-item"><a href="#উপসংহার-opus-4-7-কাদের-জন্য-কাদের-জন্য-না">উপসংহার — Opus 4.7 কাদের জন্য, কাদের জন্য না</a></li>
-    <li class="toc-item"><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
-    <li class="toc-item"><a href="#ai-আপডেট-পেতে-চান">AI আপডেট পেতে চান?</a></li>
-  </ol>
-</nav>
-<!-- ARTICLE-TOC:END -->
+</figure></div></div><div class="gw-layout"><nav class="gw-chapters" aria-label="এই গাইডে"><details open><summary>এই গাইডে</summary><ol>
+<li><a href="#ভূমিকা-opus-কী">ভূমিকা — Opus কী?</a></li>
+<li><a href="#opus-4-7-কী-আলাদা-করে-sonnet-4-6-এর-চেয়ে-যা-পাবেন">Opus 4.7 কী আলাদা করে — Sonnet 4.6-এর চেয়ে যা পাবেন</a></li>
+<li><a href="#বাংলাদেশ-থেকে-opus-4-7-access-payment-plan-api">বাংলাদেশ থেকে Opus 4.7 access — payment, plan, API</a></li>
+<li><a href="#কখন-opus-4-7-ব্যবহার-করবেন-৫টি-use-case-যেখানে-value-স্পষ্ট">কখন Opus 4.7 ব্যবহার করবেন — ৫টি use case যেখানে value স্পষ্ট</a></li>
+<li><a href="#কখন-opus-overkill-sonnet-4-6-যথেষ্ট">কখন Opus overkill — Sonnet 4.6 যথেষ্ট</a></li>
+<li><a href="#বাংলায়-opus-4-7-quality-edge-case">বাংলায় Opus 4.7 — quality + edge case</a></li>
+<li><a href="#দাম-roi-বিশ্লেষণ-bd-context">দাম + ROI বিশ্লেষণ (BD context)</a></li>
+<li><a href="#opus-4-7-vs-প্রতিদ্বন্দ্বী-top-tier">Opus 4.7 vs প্রতিদ্বন্দ্বী top-tier</a></li>
+<li><a href="#৫টি-real-world-examples-opus-prompt-output-style">৫টি real-world examples — Opus prompt + output style</a></li>
+<li><a href="#টিপস-opus-থেকে-সর্বোচ্চ-পেতে">টিপস — Opus থেকে সর্বোচ্চ পেতে</a></li>
+<li><a href="#উপসংহার-opus-4-7-কাদের-জন্য-কাদের-জন্য-না">উপসংহার — Opus 4.7 কাদের জন্য, কাদের জন্য না</a></li>
+<li><a href="#প্রাসঙ্গিক-টুলস-ও-গাইড">প্রাসঙ্গিক টুলস ও গাইড</a></li>
+</ol></details></nav><div class="gw-reading">
+
+
+
+
+
+
+
+
+
+
+
 
 <h2 id="ভূমিকা-opus-কী">ভূমিকা — Opus কী?</h2>
 <p class="lede">ঢাকার গুলশানে এক fintech startup-এর CTO তারেক মাহমুদ — ৩৪ বছর বয়স, BUET CSE ২০১৩ batch, ৭ বছর Singapore-এ Grab-এ কাজ করে দেশে ফিরেছেন। তাঁর কোম্পানি একটা micro-lending SaaS বানাচ্ছে যেটা NBFI-দের জন্য credit risk scoring করে। Sonnet 4.6 দিয়ে দৈনিক code লেখা, debug, documentation — সব ভালোই চলছিল। কিন্তু গত মাসে একটা সমস্যা এসেছিল: ৬টা legacy Python service-কে microservice architecture-এ migrate করতে হবে, ১৪,০০০ লাইন code, ৪২টা database table interconnection। Sonnet দিয়ে চেষ্টা — ৩ দিন গেছে, ১৭ বার "context too complex" বলে ভুল answer দিয়েছে। তারেক Opus 4.7-এ switch করলেন। ১ session-এ ৪ ঘণ্টা — পুরো migration plan, dependency graph, rollback strategy সহ। কাজটা ২ সপ্তাহে শেষ। তিনি বললেন: "Opus সস্তা না, কিন্তু যেখানে Sonnet ব্যর্থ — সেখানে Opus দরকার।"</p>
@@ -151,7 +148,7 @@
 
 <div class="case-study">
 <strong>Use case 3: Complex contract analysis</strong>
-<p>Dhanmondi-র একটা law firm-এ junior associate Tanjim ১২০-পৃষ্ঠার একটা M&A agreement review করেন। ১৪টা clause cross-reference, hidden indemnity, jurisdiction conflict খুঁজতে। Opus-এর long context (২০০K) + deep reasoning — ১টা session-এ ১৮টা risk point identify। Sonnet-এ ১১টা মাত্র। ROI: client fee $২,৫০০ যেখানে Opus cost $৮।</p>
+<p>Dhanmondi-র একটা law firm-এ junior associate Tanjim ১২০-পৃষ্ঠার একটা M&amp;A agreement review করেন। ১৪টা clause cross-reference, hidden indemnity, jurisdiction conflict খুঁজতে। Opus-এর long context (২০০K) + deep reasoning — ১টা session-এ ১৮টা risk point identify। Sonnet-এ ১১টা মাত্র। ROI: client fee $২,৫০০ যেখানে Opus cost $৮।</p>
 </div>
 
 <div class="case-study">
@@ -291,7 +288,7 @@
 </section>
 <!-- AUTHOR-BLOCK:END -->
 
-    </div>
+    </div></div><p class="sr-only" data-guide-copy-status role="status" aria-live="polite"></p></div>
 
     <!-- TEMPLATED-FAQ:START -->
 <section class="article-faq" aria-labelledby="faq-heading">
