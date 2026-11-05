@@ -1,0 +1,82 @@
+/* This guide opens as a worked example. The original reference material keeps a reading measure. */
+body article[data-nano-guide] {
+  --nb-ink: #20372b;
+  --nb-muted: #516457;
+  --nb-line: #d6e0d1;
+  width: min(1176px, calc(100% - 48px));
+  max-width: none;
+  padding: 0;
+  margin: 24px auto 52px;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+body main:has(article[data-nano-guide]) {max-width: none; width: 100%; margin: 0; padding: 0;}
+[data-nano-guide] .breadcrumb {margin: 0 0 18px; padding: 0; font-size: 14px;}
+.nb-intro {display: grid; grid-template-columns: .88fr 1.12fr; align-items: center; gap: clamp(26px, 5vw, 72px);}
+body [data-nano-guide] .nb-eyebrow {display: flex; align-items: center; gap: 8px; margin: 0 0 16px; color: #38644c; font-size: 15px; font-weight: 600;}
+.nb-eyebrow span[aria-hidden] {font-family: system-ui; font-size: 1.45em; line-height: 1; color: #79934c;}
+body [data-nano-guide] .nb-eyebrow .article-chip {padding: 0; background: none; border: 0; font: inherit; color: inherit;}
+body [data-nano-guide] h1 {max-width: 15em; margin: 0; font-size: clamp(39px, 4.6vw, 65px); line-height: 1.22; letter-spacing: -.035em;}
+.nb-title h1 em {font-style: normal; color: #175b43;}
+body [data-nano-guide] .nb-deck {max-width: 39ch; margin: 17px 0; color: var(--nb-muted); font-size: 18px; line-height: 1.65;}
+body [data-nano-guide] .nb-jump {display: inline-flex; align-items: center; gap: 12px; margin: 5px 0; min-height: 44px; padding: 7px 16px; background: #175b43; border-radius: 7px; color: white; font-weight: 600; font-size: 15px; text-decoration: none;}
+body [data-nano-guide] .nb-byline {margin: 17px 0 0; color: var(--nb-muted); font-size: 13px; line-height: 1.5;}
+.nb-example {min-width: 0; border: 1px solid var(--nb-line); border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 9px 24px #26442a09;}
+body [data-nano-guide] figure.nb-compare {display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; margin: 0; overflow: visible; border-radius: 0;}
+.nb-photo {position: relative; min-width: 0; background: white;}
+.nb-photo + .nb-photo {border-left: 1px solid var(--nb-line);}
+body [data-nano-guide] .nb-photo img {display: block; width: 100%; height: auto; aspect-ratio: 1.17; object-fit: cover; margin: 0; border: 0; border-radius: 0;}
+.nb-photo span {position: absolute; bottom: 10px; left: 10px; padding: 2px 9px; border: 1px solid #d6dfd0; border-radius: 4px; background: #fffdf5f2; color: #2a4330; font: 600 13px/1.65 'Hind Siliguri',sans-serif;}
+body [data-nano-guide] .nb-compare figcaption {grid-column: 1 / -1; padding: 8px 16px; margin: 0; background: #f4f5ec; color: #506052; font: 400 12px/1.5 'Hind Siliguri',sans-serif; text-align: left;}
+.nb-demo-copy {padding: 14px 18px 15px;}
+.nb-demo-heading,.nb-row-heading {display: flex; align-items: center; gap: 9px;}
+.nb-demo-heading strong {font-size: 17px; color: #274234;}
+.nb-copy {display: inline-flex; flex: none; align-items: center; justify-content: center; gap: 5px; min-height: 40px; margin-left: auto; padding: 3px 9px; border: 1px solid #cbdac9; border-radius: 6px; background: #fff; color: #23573d; font: 600 13px/1.4 'Hind Siliguri',sans-serif; cursor: pointer;}
+.nb-copy:hover,.nb-tabs a:hover {background: #edf4e9;}
+[data-nano-guide] .nb-copy[hidden],[data-nano-guide] .nb-panel[hidden] {display: none;}
+body [data-nano-guide] .nb-text {margin: 6px 0 0; font-size: 16px; line-height: 1.65; color: #344a3d; overflow-wrap: anywhere;}
+.nb-actions {display: flex; gap: 16px; flex-wrap: wrap; align-items: center; margin-top: 9px;}
+body [data-nano-guide] .nb-actions a {display: inline-flex; align-items: center; min-height: 40px; color: #175b43; font: 600 14px/1.45 'Hind Siliguri',sans-serif; text-underline-offset: 4px;}
+.nb-library {margin: 44px 0 0; padding: 35px 0; border-block: 1px solid var(--nb-line); scroll-margin-top: 90px;}
+body [data-nano-guide] .nb-library h2 {margin: 0; padding: 0; border: none; font-size: clamp(28px,3.2vw,41px);}
+body [data-nano-guide] .nb-sub {margin: 5px 0 21px; color: var(--nb-muted); font-size: 16px;}
+.nb-shelf {display: grid; grid-template-columns: minmax(160px, .48fr) minmax(0,1.52fr); gap: clamp(16px,4vw,54px);}
+.nb-tabs {display: flex; flex-direction: column; align-self: start; gap: 4px;}
+body [data-nano-guide] .nb-tabs a {display: flex; gap: 10px; justify-content: space-between; align-items: center; min-height: 43px; padding: 7px 11px; border: 1px solid transparent; border-radius: 6px; color: var(--nb-ink); font-size: 16px; font-weight: 500; text-decoration: none;}
+body [data-nano-guide] .nb-tabs a[aria-selected="true"] {background: #e4eddb; border-color: #d3dfc7; color: #194a31; font-weight: 600;}
+.nb-tabs small {color: #5d715c; font-size: 13px;}
+.nb-panel {scroll-margin-top: 95px; border: 1px solid var(--nb-line); border-radius: 12px; background: white; padding: 17px clamp(14px,2vw,24px); margin: 0 0 12px;}
+body [data-nano-guide] .nb-panel h3 {margin: 0 0 11px; padding: 0 0 9px; border-bottom: 1px solid var(--nb-line); color: var(--nb-ink); font-size: 20px;}
+body [data-nano-guide] .nb-prompts {list-style: none; margin: 0; padding: 0;}
+body [data-nano-guide] .nb-prompts li {margin: 0; padding: 11px 0 15px; border: 0; border-bottom: 1px solid #e8ede5; color: var(--nb-ink); background: none; border-radius: 0;}
+body [data-nano-guide] .nb-prompts li:last-child {border: 0;}
+.nb-number {min-width: 26px; color: #5e754e; font: 600 16px/1 'Hind Siliguri',sans-serif;}
+body [data-nano-guide] .nb-row-heading h4 {margin: 0; color: var(--nb-ink); font: 600 18px/1.4 'Hind Siliguri',sans-serif;}
+body [data-nano-guide] .nb-related {font-size: 14px; margin: 12px 0 0;}
+.nb-reading {width: min(100%, 750px); margin: 35px auto 0;}
+[data-nano-guide] :is(a,button):focus-visible {outline: 3px solid #987337; outline-offset: 3px;}
+@media(max-width:760px) {
+  body article[data-nano-guide] {width: calc(100% - 32px); margin: 14px auto 30px;}
+  .nb-intro {grid-template-columns: 1fr; gap: 17px;}
+  body [data-nano-guide] h1 {font-size: clamp(33px,7vw,44px); line-height: 1.23;}
+  body [data-nano-guide] .nb-eyebrow {margin-bottom: 6px; font-size: 13px;}
+  body [data-nano-guide] .nb-deck {margin: 8px 0; font-size: 16px; max-width: 55ch;}
+  body [data-nano-guide] .nb-jump {margin: 1px 0; padding: 3px 0; color: #175b43; background: none; text-decoration: underline; text-underline-offset: 4px;}
+  body [data-nano-guide] .nb-byline {margin: 0; font-size: 12px;}
+  .nb-byline br {display: none;}
+  .nb-byline time::before {content: ' · ';}
+  .nb-library {margin-top: 26px; padding: 25px 0;}
+  .nb-shelf {grid-template-columns: 1fr; gap: 11px;}
+  .nb-tabs {flex-flow: row wrap; gap: 5px;}
+  body [data-nano-guide] .nb-tabs a {min-height: 40px; padding: 5px 9px; gap: 6px; font-size: 14px; background: white; border-color: var(--nb-line);}
+  .nb-demo-copy {padding: 10px 13px;}
+  body [data-nano-guide] .nb-compare figcaption {padding: 6px 11px;}
+  .nb-reading {margin-top: 22px;}
+}
+@media print {
+  .nb-copy,.nb-tabs,.nb-jump {display:none!important;}
+  [data-nano-guide] .nb-panel[hidden] {display:block;}
+  .nb-shelf {display:block;}
+}
