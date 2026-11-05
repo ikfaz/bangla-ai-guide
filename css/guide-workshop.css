@@ -69,6 +69,7 @@ body [data-guide-workshop] .gw-reading > :first-child {margin-top: 0;}
 body [data-guide-workshop] .gw-reading :is(.seo-block,.step-card) {background: transparent; border: 0; box-shadow: none; padding: 0; margin: 28px 0; border-radius: 0;}
 body [data-guide-workshop] .gw-reading .seo-toc {display: none;}
 body [data-guide-workshop] .gw-reading :is(figure,img,video) {max-width: 100%; height: auto;}
+body [data-guide-workshop] .gw-prompt-example {display: block; width: 100%; border: 1px solid var(--gw-line); border-radius: 10px; margin: 0 0 22px;}
 body [data-guide-workshop] .gw-copy-block,.gw-feature {background: #fff; border: 1px solid #d1ddca; border-radius: 10px; padding: 15px 19px; margin: 20px 0;}
 .gw-feature {margin: 12px 0 0;}
 .gw-copy-head {display: flex; align-items: center; justify-content: space-between; gap: 10px; font: 600 14px/1.4 'Hind Siliguri',sans-serif; color: #26543a;}
