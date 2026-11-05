@@ -1,0 +1,135 @@
+/* Practical guide layouts use the same paper and forest palette as home. */
+body [data-guide-workshop] {
+  --gw-line: #d8e2d2;
+  --gw-ink: #21372b;
+  --gw-muted: #526758;
+  box-sizing: border-box;
+  width: min(1176px, calc(100% - 48px));
+  max-width: none;
+  margin: 26px auto 48px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+  font: 17px/1.85 'Hind Siliguri', system-ui, sans-serif;
+}
+body main:has([data-guide-workshop]) {max-width: none; width: 100%; padding: 0; margin: 0;}
+body [data-guide-workshop]::before {content: none;}
+body [data-guide-workshop] .breadcrumb {margin: 0 0 20px; padding: 0; font-size: 14px;}
+.gw-hero {display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px,5vw,70px); align-items: center; margin-bottom: 38px;}
+body [data-guide-workshop] h1 {
+  max-width: 20em;
+  font: 700 clamp(32px,3.6vw,49px)/1.3 'Hind Siliguri',system-ui,sans-serif;
+  letter-spacing: -.025em;
+  color: #203d2c;
+  padding: 0;
+  margin: 7px 0 16px;
+  border: 0;
+}
+body [data-guide-workshop] .article-kicker {margin: 0 0 13px; gap: 7px;}
+body [data-guide-workshop] .article-chip {font-size: 12px;}
+body [data-guide-workshop] .gw-deck {margin: 0 0 18px; color: var(--gw-muted); font-size: 17px; line-height: 1.8;}
+body [data-guide-workshop] .byline {font-size: 13px; color: var(--gw-muted);}
+body [data-guide-workshop] .gw-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 100%;
+  min-height: 44px;
+  color: #fff;
+  background: #175b43;
+  border-radius: 7px;
+  text-decoration: none;
+  padding: 8px 16px;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+.gw-hero-visual {min-width: 0;}
+body [data-guide-workshop] .gw-hero .article-hero {display: block; margin: 0; border: 0; background: none; box-shadow: none; padding: 0; width: 100%;}
+body [data-guide-workshop] .gw-hero .article-hero img {display: block; margin: 0; width: 100%; max-height: 350px; height: auto; object-fit: contain; border: 1px solid var(--gw-line); border-radius: 12px;}
+.gw-layout {display: grid; grid-template-columns: 238px minmax(0,1fr); gap: clamp(25px,4.5vw,64px); padding-top: 27px; border-top: 1px solid var(--gw-line); align-items: start;}
+.gw-chapters {position: sticky; top: 102px; align-self: start; padding: 0; margin: 0; background: none; box-shadow: none; border: 0; z-index: 1;}
+body [data-guide-workshop] .gw-chapters details {padding: 0; margin: 0; border: 0; box-shadow: none; background: none; border-radius: 0;}
+body [data-guide-workshop] .gw-chapters summary {padding: 0 0 12px; margin: 0; font: 600 17px/1.5 'Hind Siliguri',sans-serif; color: #254e35; background: none; cursor: pointer;}
+body [data-guide-workshop] .gw-chapters ol {list-style: none; counter-reset: none; margin: 0; padding: 0; max-height: calc(100dvh - 180px); overflow-y: auto;}
+body [data-guide-workshop] .gw-chapters li {margin: 0; padding: 0; border: 0; background: none; border-radius: 0;}
+body [data-guide-workshop] .gw-chapters li::before {content: none;}
+body [data-guide-workshop] .gw-chapters a {display: block; text-decoration: none; color: #4f6454; font: 400 14px/1.6 'Hind Siliguri',sans-serif; border-left: 2px solid #dce5d6; padding: 8px 10px;}
+body [data-guide-workshop] .gw-chapters a:hover,body [data-guide-workshop] .gw-chapters a[aria-current] {background: #e8efdf; color: #175b43; border-left-color: #175b43;}
+.gw-reading {min-width: 0;}
+body [data-guide-workshop] .gw-reading .container {width: 100%; margin: 0; padding: 0; max-width: none; border: 0; box-shadow: none; background: transparent;}
+body [data-guide-workshop] .gw-reading :is(h2,h3,h4) {color: var(--gw-ink); font-family: 'Hind Siliguri',sans-serif; scroll-margin-top: 110px; text-align: left; overflow-wrap: anywhere;}
+body [data-guide-workshop] .gw-reading h2 {margin: 34px 0 15px; font-size: 28px; line-height: 1.4; padding: 0 0 10px; border: 0; border-bottom: 1px solid var(--gw-line);}
+body [data-guide-workshop] .gw-reading h3 {font-size: 22px; line-height: 1.45; margin: 26px 0 12px;}
+body [data-guide-workshop] .gw-reading h4 {font-size: 19px; line-height: 1.5;}
+body [data-guide-workshop] .gw-reading :is(p,li) {color: #354d3c;}
+body [data-guide-workshop] .gw-reading > :first-child {margin-top: 0;}
+body [data-guide-workshop] .gw-reading :is(.seo-block,.step-card) {background: transparent; border: 0; box-shadow: none; padding: 0; margin: 28px 0; border-radius: 0;}
+body [data-guide-workshop] .gw-reading .seo-toc {display: none;}
+body [data-guide-workshop] .gw-reading :is(figure,img,video) {max-width: 100%; height: auto;}
+body [data-guide-workshop] .gw-copy-block,.gw-feature {background: #fff; border: 1px solid #d1ddca; border-radius: 10px; padding: 15px 19px; margin: 20px 0;}
+.gw-feature {margin: 12px 0 0;}
+.gw-copy-head {display: flex; align-items: center; justify-content: space-between; gap: 10px; font: 600 14px/1.4 'Hind Siliguri',sans-serif; color: #26543a;}
+.gw-copy {display: inline-flex; align-items: center; justify-content: center; gap: 5px; min-height: 40px; padding: 5px 9px; border: 1px solid #c7d9c0; border-radius: 6px; background: #fff; font: 600 13px/1.4 'Hind Siliguri',sans-serif; color: #20553a; cursor: pointer; flex: none;}
+.gw-copy:hover {background: #e8f0df;}
+.gw-copy[hidden] {display: none;}
+body [data-guide-workshop] .gw-copy-block > :is(pre,blockquote,p) {margin: 11px 0 0; padding: 0; background: none; border: 0; border-radius: 0; color: #294330; box-shadow: none;}
+body [data-guide-workshop] .gw-copy-block pre {white-space: pre-wrap; overflow-wrap: anywhere; font-size: 15px; line-height: 1.7;}
+body [data-guide-workshop] .gw-copy-block pre code {color: inherit; font: inherit; background: none; padding: 0;}
+body [data-guide-workshop] .gw-copy-block blockquote {font-size: 17px; line-height: 1.75;}
+body [data-guide-workshop] .gw-feature p {font-size: 15px; line-height: 1.7; color: #425a48; margin: 10px 0 0;}
+body [data-guide-workshop] .gw-steps {counter-reset: guide-step; list-style: none; padding: 0; margin: 20px 0;}
+body [data-guide-workshop] .gw-steps > li {position: relative; counter-increment: guide-step; padding: 14px 16px 14px 57px; margin: 0; border: 0; border-bottom: 1px solid var(--gw-line); border-radius: 0; background: #f0f4ea;}
+body [data-guide-workshop] .gw-steps > li::before {content: counter(guide-step, bengali); position: absolute; left: 14px; top: 14px; width: 29px; height: 29px; display: grid; place-items: center; background: #dbe8ce; color: #28533a; border-radius: 50%; font: 600 17px/1 'Hind Siliguri',sans-serif;}
+body [data-guide-workshop] .gw-step-heading {padding: 13px 16px; background: #e9f0e0; border-left: 3px solid #799961; border-radius: 0 6px 6px 0;}
+body [data-guide-workshop] .gw-checklist {list-style: none; margin: 12px 0; padding: 0;}
+body [data-guide-workshop] .gw-checklist > li {padding: 12px 0; border: 0; border-bottom: 1px solid var(--gw-line); margin: 0; background: none; border-radius: 0;}
+.gw-checklist label {display: flex; gap: 11px; align-items: start; cursor: pointer;}
+.gw-checklist input {width: 19px; height: 19px; margin: 7px 0 0; flex: none; accent-color: #175b43;}
+.gw-checklist label:has(input:checked) > span {opacity: .66; text-decoration: line-through;}
+body [data-guide-workshop] .gw-check-progress {font-size: 13px; color: #546c4d; margin: 5px 0;}
+body [data-guide-workshop] .gw-table-scroll {overflow-x: auto; width: 100%; max-width: 100%; border: 1px solid var(--gw-line); border-radius: 9px; margin: 20px 0; background: white;}
+body [data-guide-workshop] .gw-table {border-collapse: collapse; width: 100%; min-width: 540px; font: 15px/1.7 'Hind Siliguri',sans-serif; margin: 0; border: 0; box-shadow: none; background: white;}
+body [data-guide-workshop] .gw-table th {background: #e7efdf; color: #254833;}
+body [data-guide-workshop] .gw-table :is(th,td) {border: 0; border-bottom: 1px solid #dfe7da; padding: 13px 15px; color: #314c39; text-align: left; vertical-align: top; word-break: normal;}
+body [data-guide-workshop] .gw-table tbody tr:nth-child(even) {background: #f5f7f1;}
+body [data-guide-workshop] .gw-table caption {padding: 11px 15px; text-align: left; color: #4e674e; font-weight: 600; background: #f5f7ef;}
+body [data-guide-workshop] .gw-reading :is(.callout,.av-tldr) {border: 1px solid #d4dfc9; background: #edf3e6; border-radius: 9px; padding: 17px 19px; color: #324c34; margin: 22px 0;}
+body [data-guide-workshop] .gw-reading .stat-row {display: flex; flex-wrap: wrap; gap: 12px; margin: 20px 0;}
+body [data-guide-workshop] .gw-reading .stat-row > * {flex: 1 1 140px; min-width: 0; background: #eef2e7; border: 1px solid #dde5d4; border-radius: 9px; color: #294b33;}
+body [data-guide-workshop] :is(a,button,input,summary,[tabindex]):focus-visible {outline: 3px solid #9a7730; outline-offset: 3px;}
+@media(max-width:900px) {
+  .gw-hero {gap: 25px;}
+  .gw-layout {grid-template-columns: 1fr; gap: 20px;}
+  .gw-chapters {position: static; border-block: 1px solid var(--gw-line); padding: 11px 0;}
+  body [data-guide-workshop] .gw-chapters summary {padding: 3px 0;}
+  body [data-guide-workshop] .gw-chapters ol {max-height: 50dvh; margin-top: 8px;}
+}
+@media(max-width:620px) {
+  body [data-guide-workshop] {width: calc(100% - 32px); padding: 0; margin: 15px auto 30px; border: 0; border-radius: 0;}
+  .gw-hero {grid-template-columns: 1fr; gap: 20px; margin-bottom: 25px;}
+  body [data-guide-workshop] h1 {font-size: 33px; line-height: 1.28;}
+  body [data-guide-workshop] .gw-deck {font-size: 16px; margin-bottom: 12px;}
+  body [data-guide-workshop] .gw-actions {font-size: 14px;}
+  .gw-layout {padding-top: 0; border: 0;}
+  body [data-guide-workshop] .gw-reading h2 {font-size: 26px;}
+  body [data-guide-workshop] .gw-reading h3 {font-size: 22px;}
+  body [data-guide-workshop] .gw-copy-block,.gw-feature {padding: 12px 14px;}
+  body [data-guide-workshop] .gw-reading .gw-steps > li {padding-left: 49px;}
+  body [data-guide-workshop] .gw-table-scroll:has(.gw-calendar) {border: 0; background: transparent;}
+  body [data-guide-workshop] .gw-calendar {display: block; min-width: 0; background: transparent;}
+  body [data-guide-workshop] .gw-calendar caption {display: block; width: 100%; box-sizing: border-box; border-radius: 8px; margin-bottom: 10px;}
+  .gw-calendar thead {position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%);}
+  .gw-calendar tbody {display: grid; gap: 12px;}
+  .gw-calendar tr {display: grid; background: #fff !important; border: 1px solid var(--gw-line); border-radius: 9px; padding: 10px 13px;}
+  body [data-guide-workshop] .gw-calendar :is(td,th) {display: block; padding: 6px 0; border: 0;}
+  .gw-calendar td::before {content: attr(data-column); display: block; font-size: 12px; color: #65795a;}
+}
+@media print {
+  .gw-chapters,.gw-copy,.gw-actions,.gw-feature {display: none !important;}
+  .gw-layout,.gw-hero {display: block;}
+  body [data-guide-workshop] {width: 100%;}
+  .gw-table-scroll {overflow: visible !important;}
+}

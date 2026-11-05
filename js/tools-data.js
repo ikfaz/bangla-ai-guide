@@ -1,5 +1,5 @@
 // BanglaAIGuide — tools-data.js
-// Logos via Clearbit API: https://logo.clearbit.com/{domain}
+// Product marks are served locally so directory, quiz and comparison images work without a third-party logo service.
 // No API key needed. Free to use.
 // Fallback: Google Favicon API if Clearbit fails
 
@@ -103,8 +103,8 @@ const tools = [
   },
   {
     name: "Perplexity AI",
-    logo: "https://logo.clearbit.com/perplexity.ai",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=perplexity.ai&sz=64",
+    logo: "/assets/tool-marks/perplexity-ai.svg",
+    logo_fallback: "/assets/tool-marks/perplexity-ai.svg",
     category: "llm",
     pricing: "freemium",
     usdPrice: "Free / $20/mo (Pro) / $200/mo (Max)",
@@ -131,8 +131,8 @@ const tools = [
   },
   {
     name: "Groq",
-    logo: "https://logo.clearbit.com/groq.com",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=groq.com&sz=64",
+    logo: "/assets/tool-marks/groq.svg",
+    logo_fallback: "/assets/tool-marks/groq.svg",
     category: "llm",
     pricing: "freemium",
     usdPrice: "Free / Pay-as-you-go (API)",
@@ -159,8 +159,8 @@ const tools = [
   },
   {
     name: "Mistral AI",
-    logo: "https://logo.clearbit.com/mistral.ai",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=mistral.ai&sz=64",
+    logo: "/assets/tool-marks/mistral-ai.svg",
+    logo_fallback: "/assets/tool-marks/mistral-ai.svg",
     category: "llm",
     pricing: "freemium",
     usdPrice: "Free / $14.99/mo (Le Chat Pro) / Pay-as-you-go (API)",
@@ -187,8 +187,8 @@ const tools = [
   },
   {
     name: "Poe",
-    logo: "https://logo.clearbit.com/poe.com",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=poe.com&sz=64",
+    logo: "/assets/tool-marks/poe.svg",
+    logo_fallback: "/assets/tool-marks/poe.svg",
     category: "llm",
     pricing: "freemium",
     usdPrice: "Free / $17/mo (Premium)",
@@ -215,8 +215,8 @@ const tools = [
   },
   {
     name: "Meta AI",
-    logo: "https://logo.clearbit.com/meta.com",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=meta.ai&sz=64",
+    logo: "/assets/tool-marks/meta-ai.svg",
+    logo_fallback: "/assets/tool-marks/meta-ai.svg",
     category: "llm",
     pricing: "free",
     usdPrice: "Free",
@@ -243,8 +243,8 @@ const tools = [
   },
   {
     name: "HuggingChat",
-    logo: "https://logo.clearbit.com/huggingface.co",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=huggingface.co&sz=64",
+    logo: "/assets/tool-marks/huggingchat.svg",
+    logo_fallback: "/assets/tool-marks/huggingchat.svg",
     category: "llm",
     pricing: "free",
     usdPrice: "সম্পূর্ণ ফ্রি",
@@ -270,8 +270,8 @@ const tools = [
   },
   {
     name: "DeepSeek",
-    logo: "https://logo.clearbit.com/deepseek.com",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=deepseek.com&sz=64",
+    logo: "/assets/tool-marks/deepseek.svg",
+    logo_fallback: "/assets/tool-marks/deepseek.svg",
     category: "llm",
     pricing: "free",
     usdPrice: "সম্পূর্ণ ফ্রি",
@@ -297,8 +297,8 @@ const tools = [
   },
   {
     name: "Grok",
-    logo: "https://logo.clearbit.com/x.ai",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=grok.com&sz=64",
+    logo: "/assets/tool-marks/grok.svg",
+    logo_fallback: "/assets/tool-marks/grok.svg",
     category: "llm",
     pricing: "freemium",
     usdPrice: "Free (limited) / $30/mo (SuperGrok)",
@@ -327,8 +327,8 @@ const tools = [
   // ── IMAGE & VIDEO ─────────────────────────────────────────────────
   {
     name: "Midjourney",
-    logo: "https://logo.clearbit.com/midjourney.com",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=midjourney.com&sz=64",
+    logo: "/assets/tool-marks/midjourney.svg",
+    logo_fallback: "/assets/tool-marks/midjourney.svg",
     category: "image",
     pricing: "paid",
     usdPrice: "$10/mo (Basic) / $30/mo (Standard) / $60/mo (Pro) / $120/mo (Mega)",
@@ -355,8 +355,8 @@ const tools = [
   },
   {
     name: "Ideogram",
-    logo: "https://logo.clearbit.com/ideogram.ai",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=ideogram.ai&sz=64",
+    logo: "/assets/tool-marks/ideogram.svg",
+    logo_fallback: "/assets/tool-marks/ideogram.svg",
     category: "image",
     pricing: "freemium",
     usdPrice: "Free / $16/mo (Plus)",
@@ -383,8 +383,8 @@ const tools = [
   },
   {
     name: "Kling AI",
-    logo: "https://logo.clearbit.com/klingai.com",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=klingai.com&sz=64",
+    logo: "/assets/tool-marks/kling-ai.svg",
+    logo_fallback: "/assets/tool-marks/kling-ai.svg",
     category: "image",
     pricing: "freemium",
     usdPrice: "~$10/mo (via Artlist)",
@@ -411,8 +411,8 @@ const tools = [
   },
   {
     name: "Runway ML",
-    logo: "https://logo.clearbit.com/runwayml.com",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=runwayml.com&sz=64",
+    logo: "/assets/tool-marks/runway-ml.svg",
+    logo_fallback: "/assets/tool-marks/runway-ml.svg",
     category: "image",
     pricing: "freemium",
     usdPrice: "Free (125 credits) / $12/mo (Standard)",
@@ -439,8 +439,8 @@ const tools = [
   },
   {
     name: "Leonardo AI",
-    logo: "https://logo.clearbit.com/leonardo.ai",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=leonardo.ai&sz=64",
+    logo: "/assets/tool-marks/leonardo-ai.svg",
+    logo_fallback: "/assets/tool-marks/leonardo-ai.svg",
     category: "image",
     pricing: "freemium",
     usdPrice: "Free (150 tokens/day) / $10/mo (Apprentice) / $24/mo (Artisan) / $48/mo (Maestro)",
@@ -467,8 +467,8 @@ const tools = [
   },
   {
     name: "Stable Diffusion",
-    logo: "https://logo.clearbit.com/stability.ai",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=stability.ai&sz=64",
+    logo: "/assets/tool-marks/stable-diffusion.svg",
+    logo_fallback: "/assets/tool-marks/stable-diffusion.svg",
     category: "image",
     pricing: "free",
     usdPrice: "সম্পূর্ণ ফ্রি",
@@ -494,8 +494,8 @@ const tools = [
   },
   {
     name: "Adobe Firefly",
-    logo: "https://logo.clearbit.com/adobe.com",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=firefly.adobe.com&sz=64",
+    logo: "/assets/tool-marks/adobe-firefly.svg",
+    logo_fallback: "/assets/tool-marks/adobe-firefly.svg",
     category: "image",
     pricing: "freemium",
     usdPrice: "Free / $9.99/mo (Standard) / $19.99/mo (Pro) / $199.99/mo (Premium)",
@@ -522,8 +522,8 @@ const tools = [
   },
   {
     name: "Flux",
-    logo: "https://logo.clearbit.com/blackforestlabs.ai",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=blackforestlabs.ai&sz=64",
+    logo: "/assets/tool-marks/flux.svg",
+    logo_fallback: "/assets/tool-marks/flux.svg",
     category: "image",
     pricing: "freemium",
     usdPrice: "Free / API paid",
@@ -551,8 +551,8 @@ const tools = [
   // ── CODING ────────────────────────────────────────────────────────
   {
     name: "Cursor",
-    logo: "https://logo.clearbit.com/cursor.com",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=cursor.com&sz=64",
+    logo: "/assets/tool-marks/cursor.svg",
+    logo_fallback: "/assets/tool-marks/cursor.svg",
     category: "coding",
     pricing: "freemium",
     usdPrice: "Free / $20/mo (Pro)",
@@ -579,8 +579,8 @@ const tools = [
   },
   {
     name: "GitHub Copilot",
-    logo: "https://logo.clearbit.com/github.com",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=github.com&sz=64",
+    logo: "/assets/tool-marks/github-copilot.svg",
+    logo_fallback: "/assets/tool-marks/github-copilot.svg",
     category: "coding",
     pricing: "freemium",
     usdPrice: "Free (limited) / $10/mo (Individual) / $19/user/mo (Business)",
@@ -607,8 +607,8 @@ const tools = [
   },
   {
     name: "Bolt.new",
-    logo: "https://logo.clearbit.com/bolt.new",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=bolt.new&sz=64",
+    logo: "/assets/tool-marks/bolt-new.svg",
+    logo_fallback: "/assets/tool-marks/bolt-new.svg",
     category: "coding",
     pricing: "freemium",
     usdPrice: "Free tier / Paid plans available",
@@ -635,8 +635,8 @@ const tools = [
   },
   {
     name: "v0 by Vercel",
-    logo: "https://logo.clearbit.com/vercel.com",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=v0.dev&sz=64",
+    logo: "/assets/tool-marks/v0-by-vercel.svg",
+    logo_fallback: "/assets/tool-marks/v0-by-vercel.svg",
     category: "coding",
     pricing: "freemium",
     usdPrice: "Free ($5 credits) / $20/mo",
@@ -663,8 +663,8 @@ const tools = [
   },
   {
     name: "Windsurf",
-    logo: "https://logo.clearbit.com/windsurf.com",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=windsurf.com&sz=64",
+    logo: "/assets/tool-marks/windsurf.svg",
+    logo_fallback: "/assets/tool-marks/windsurf.svg",
     category: "coding",
     pricing: "freemium",
     usdPrice: "Free (individuals) / $15/mo",
@@ -691,8 +691,8 @@ const tools = [
   },
   {
     name: "Replit AI",
-    logo: "https://logo.clearbit.com/replit.com",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=replit.com&sz=64",
+    logo: "/assets/tool-marks/replit-ai.svg",
+    logo_fallback: "/assets/tool-marks/replit-ai.svg",
     category: "coding",
     pricing: "freemium",
     usdPrice: "Free (Starter) / $20-25/mo (Core) / $100/mo (Pro)",
@@ -719,8 +719,8 @@ const tools = [
   },
   {
     name: "Claude Code",
-    logo: "https://logo.clearbit.com/anthropic.com",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=anthropic.com&sz=64",
+    logo: "/assets/tool-marks/claude-code.svg",
+    logo_fallback: "/assets/tool-marks/claude-code.svg",
     category: "coding",
     pricing: "paid",
     usdPrice: "Usage-based",
@@ -746,8 +746,8 @@ const tools = [
   },
   {
     name: "Lovable",
-    logo: "https://logo.clearbit.com/lovable.dev",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=lovable.dev&sz=64",
+    logo: "/assets/tool-marks/lovable.svg",
+    logo_fallback: "/assets/tool-marks/lovable.svg",
     category: "coding",
     pricing: "freemium",
     usdPrice: "Free / $20/mo (Pro)",
@@ -775,8 +775,8 @@ const tools = [
   // ── PRODUCTIVITY ──────────────────────────────────────────────────
   {
     name: "ElevenLabs",
-    logo: "https://logo.clearbit.com/elevenlabs.io",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=elevenlabs.io&sz=64",
+    logo: "/assets/tool-marks/elevenlabs.svg",
+    logo_fallback: "/assets/tool-marks/elevenlabs.svg",
     category: "productivity",
     pricing: "freemium",
     usdPrice: "Free (10k credits) / $1/mo (Starter promo) / $11-22/mo (Creator)",
@@ -803,8 +803,8 @@ const tools = [
   },
   {
     name: "Gamma",
-    logo: "https://logo.clearbit.com/gamma.app",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=gamma.app&sz=64",
+    logo: "/assets/tool-marks/gamma.svg",
+    logo_fallback: "/assets/tool-marks/gamma.svg",
     category: "productivity",
     pricing: "freemium",
     usdPrice: "Free (400 credits) / $8/mo (Plus) / $15-20/mo (Pro) / $100/mo (Ultra)",
@@ -831,8 +831,8 @@ const tools = [
   },
   {
     name: "Notion AI",
-    logo: "https://logo.clearbit.com/notion.so",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=notion.so&sz=64",
+    logo: "/assets/tool-marks/notion-ai.svg",
+    logo_fallback: "/assets/tool-marks/notion-ai.svg",
     category: "productivity",
     pricing: "freemium",
     usdPrice: "Limited trial / Included in Business ($20/user/mo)",
@@ -859,8 +859,8 @@ const tools = [
   },
   {
     name: "Suno AI",
-    logo: "https://logo.clearbit.com/suno.com",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=suno.com&sz=64",
+    logo: "/assets/tool-marks/suno-ai.svg",
+    logo_fallback: "/assets/tool-marks/suno-ai.svg",
     category: "productivity",
     pricing: "freemium",
     usdPrice: "Free (50 credits/day) / $10/mo (Pro) / $30/mo (Premier)",
@@ -887,8 +887,8 @@ const tools = [
   },
   {
     name: "Descript",
-    logo: "https://logo.clearbit.com/descript.com",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=descript.com&sz=64",
+    logo: "/assets/tool-marks/descript.svg",
+    logo_fallback: "/assets/tool-marks/descript.svg",
     category: "productivity",
     pricing: "freemium",
     usdPrice: "Free (1 hour) / $24/user/mo (Hobbyist)",
@@ -915,8 +915,8 @@ const tools = [
   },
   {
     name: "Otter.ai",
-    logo: "https://logo.clearbit.com/otter.ai",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=otter.ai&sz=64",
+    logo: "/assets/tool-marks/otter-ai.svg",
+    logo_fallback: "/assets/tool-marks/otter-ai.svg",
     category: "productivity",
     pricing: "freemium",
     usdPrice: "Free / $17/mo",
@@ -942,8 +942,8 @@ const tools = [
   },
   {
     name: "Zapier",
-    logo: "https://logo.clearbit.com/zapier.com",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=zapier.com&sz=64",
+    logo: "/assets/tool-marks/zapier.svg",
+    logo_fallback: "/assets/tool-marks/zapier.svg",
     category: "productivity",
     pricing: "freemium",
     usdPrice: "Free (100 tasks) / $29.99/mo (Professional) / $103.50/mo (Team)",
@@ -970,8 +970,8 @@ const tools = [
   },
   {
     name: "Make",
-    logo: "https://logo.clearbit.com/make.com",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=make.com&sz=64",
+    logo: "/assets/tool-marks/make.svg",
+    logo_fallback: "/assets/tool-marks/make.svg",
     category: "productivity",
     pricing: "freemium",
     usdPrice: "Free (1,000 ops) / $10.59/mo (Core) / $18.82/mo (Pro)",
@@ -998,8 +998,8 @@ const tools = [
   },
   {
     name: "Jasper AI",
-    logo: "https://logo.clearbit.com/jasper.ai",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=jasper.ai&sz=64",
+    logo: "/assets/tool-marks/jasper-ai.svg",
+    logo_fallback: "/assets/tool-marks/jasper-ai.svg",
     category: "productivity",
     pricing: "paid",
     usdPrice: "$59-69/mo (Pro) / Custom (Business)",
@@ -1026,8 +1026,8 @@ const tools = [
   },
   {
     name: "NotebookLM",
-    logo: "https://logo.clearbit.com/notebooklm.google.com",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=notebooklm.google.com&sz=64",
+    logo: "/assets/tool-marks/notebooklm.svg",
+    logo_fallback: "/assets/tool-marks/notebooklm.svg",
     category: "productivity",
     pricing: "free",
     usdPrice: "সম্পূর্ণ ফ্রি",
@@ -1055,8 +1055,8 @@ const tools = [
   // ── Batch 1: Video & Voice Tools ────────────────────────────────────────
   {
     name: "HeyGen",
-    logo: "https://logo.clearbit.com/heygen.com",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=heygen.com&sz=64",
+    logo: "/assets/tool-marks/heygen.svg",
+    logo_fallback: "/assets/tool-marks/heygen.svg",
     category: "productivity",
     pricing: "ফ্রি / ৳৩,৫৩৮",
     usdPrice: 29,
@@ -1081,8 +1081,8 @@ const tools = [
   },
   {
     name: "Synthesia",
-    logo: "https://logo.clearbit.com/synthesia.io",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=synthesia.io&sz=64",
+    logo: "/assets/tool-marks/synthesia.svg",
+    logo_fallback: "/assets/tool-marks/synthesia.svg",
     category: "productivity",
     pricing: "ফ্রি / ৳২,১৯৬",
     usdPrice: 18,
@@ -1107,8 +1107,8 @@ const tools = [
   },
   {
     name: "D-ID",
-    logo: "https://logo.clearbit.com/d-id.com",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=d-id.com&sz=64",
+    logo: "/assets/tool-marks/d-id.svg",
+    logo_fallback: "/assets/tool-marks/d-id.svg",
     category: "productivity",
     pricing: "ফ্রি / ৳৭২০",
     usdPrice: 5.9,
@@ -1133,8 +1133,8 @@ const tools = [
   },
   {
     name: "Opus Clip",
-    logo: "https://logo.clearbit.com/opus.pro",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=opus.pro&sz=64",
+    logo: "/assets/tool-marks/opus-clip.svg",
+    logo_fallback: "/assets/tool-marks/opus-clip.svg",
     category: "productivity",
     pricing: "ফ্রি / ৳১,৮৩০",
     usdPrice: 15,
@@ -1159,8 +1159,8 @@ const tools = [
   },
   {
     name: "Murf AI",
-    logo: "https://logo.clearbit.com/murf.ai",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=murf.ai&sz=64",
+    logo: "/assets/tool-marks/murf-ai.svg",
+    logo_fallback: "/assets/tool-marks/murf-ai.svg",
     category: "productivity",
     pricing: "ফ্রি / ৳২,৩১৮",
     usdPrice: 19,
@@ -1185,8 +1185,8 @@ const tools = [
   },
   {
     name: "PlayHT",
-    logo: "https://logo.clearbit.com/play.ht",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=play.ht&sz=64",
+    logo: "/assets/tool-marks/playht.svg",
+    logo_fallback: "/assets/tool-marks/playht.svg",
     category: "productivity",
     pricing: "ফ্রি / ৳৩,৮০৬",
     usdPrice: 31.2,
@@ -1211,8 +1211,8 @@ const tools = [
   },
   {
     name: "InVideo AI",
-    logo: "https://logo.clearbit.com/invideo.ai",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=invideo.ai&sz=64",
+    logo: "/assets/tool-marks/invideo-ai.svg",
+    logo_fallback: "/assets/tool-marks/invideo-ai.svg",
     category: "productivity",
     pricing: "ফ্রি / ৳২,৪৪০",
     usdPrice: 20,
@@ -1237,8 +1237,8 @@ const tools = [
   },
   {
     name: "Pictory",
-    logo: "https://logo.clearbit.com/pictory.ai",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=pictory.ai&sz=64",
+    logo: "/assets/tool-marks/pictory.svg",
+    logo_fallback: "/assets/tool-marks/pictory.svg",
     category: "productivity",
     pricing: "৳২,৩১৮",
     usdPrice: 19,
@@ -1263,8 +1263,8 @@ const tools = [
   },
   {
     name: "Fliki",
-    logo: "https://logo.clearbit.com/fliki.ai",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=fliki.ai&sz=64",
+    logo: "/assets/tool-marks/fliki.svg",
+    logo_fallback: "/assets/tool-marks/fliki.svg",
     category: "productivity",
     pricing: "ফ্রি / ৳২,৫৬২",
     usdPrice: 21,
@@ -1289,8 +1289,8 @@ const tools = [
   },
   {
     name: "CapCut AI",
-    logo: "https://logo.clearbit.com/capcut.com",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=capcut.com&sz=64",
+    logo: "/assets/tool-marks/capcut-ai.svg",
+    logo_fallback: "/assets/tool-marks/capcut-ai.svg",
     category: "productivity",
     pricing: "ফ্রি / ৳৭৩২",
     usdPrice: 6,
@@ -1315,8 +1315,8 @@ const tools = [
   },
   {
     name: "Loom AI",
-    logo: "https://logo.clearbit.com/loom.com",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=loom.com&sz=64",
+    logo: "/assets/tool-marks/loom-ai.svg",
+    logo_fallback: "/assets/tool-marks/loom-ai.svg",
     category: "productivity",
     pricing: "ফ্রি / ৳১,৫২৫",
     usdPrice: 12.5,
@@ -1341,8 +1341,8 @@ const tools = [
   },
   {
     name: "Adobe Podcast",
-    logo: "https://logo.clearbit.com/podcast.adobe.com",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=adobe.com&sz=64",
+    logo: "/assets/tool-marks/adobe-podcast.svg",
+    logo_fallback: "/assets/tool-marks/adobe-podcast.svg",
     category: "productivity",
     pricing: "ফ্রি",
     usdPrice: 0,
@@ -1369,8 +1369,8 @@ const tools = [
   // ── Batch 2: Marketing & SEO Tools ──────────────────────────────────────
   {
     name: "Copy.ai",
-    logo: "https://logo.clearbit.com/copy.ai",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=copy.ai&sz=64",
+    logo: "/assets/tool-marks/copy-ai.svg",
+    logo_fallback: "/assets/tool-marks/copy-ai.svg",
     category: "productivity",
     pricing: "ফ্রি / ৳৪,৩৯২",
     usdPrice: 36,
@@ -1395,8 +1395,8 @@ const tools = [
   },
   {
     name: "Writesonic",
-    logo: "https://logo.clearbit.com/writesonic.com",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=writesonic.com&sz=64",
+    logo: "/assets/tool-marks/writesonic.svg",
+    logo_fallback: "/assets/tool-marks/writesonic.svg",
     category: "productivity",
     pricing: "ফ্রি / ৳১,৯৫২",
     usdPrice: 16,
@@ -1421,8 +1421,8 @@ const tools = [
   },
   {
     name: "Rytr",
-    logo: "https://logo.clearbit.com/rytr.me",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=rytr.me&sz=64",
+    logo: "/assets/tool-marks/rytr.svg",
+    logo_fallback: "/assets/tool-marks/rytr.svg",
     category: "productivity",
     pricing: "ফ্রি / ৳১,০৯৮",
     usdPrice: 9,
@@ -1447,8 +1447,8 @@ const tools = [
   },
   {
     name: "Surfer SEO",
-    logo: "https://logo.clearbit.com/surferseo.com",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=surferseo.com&sz=64",
+    logo: "/assets/tool-marks/surfer-seo.svg",
+    logo_fallback: "/assets/tool-marks/surfer-seo.svg",
     category: "productivity",
     pricing: "৳১০,৮৫৮",
     usdPrice: 89,
@@ -1473,8 +1473,8 @@ const tools = [
   },
   {
     name: "Buffer AI",
-    logo: "https://logo.clearbit.com/buffer.com",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=buffer.com&sz=64",
+    logo: "/assets/tool-marks/buffer-ai.svg",
+    logo_fallback: "/assets/tool-marks/buffer-ai.svg",
     category: "productivity",
     pricing: "ফ্রি / ৳৭৩২",
     usdPrice: 6,
@@ -1499,8 +1499,8 @@ const tools = [
   },
   {
     name: "Canva Magic Write",
-    logo: "https://logo.clearbit.com/canva.com",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=canva.com&sz=64",
+    logo: "/assets/tool-marks/canva-magic-write.svg",
+    logo_fallback: "/assets/tool-marks/canva-magic-write.svg",
     category: "productivity",
     pricing: "ফ্রি / ৳১,৪৬৪",
     usdPrice: 12,
@@ -1527,8 +1527,8 @@ const tools = [
   // ── Batch 3: Design & Image Tools ───────────────────────────────────────
   {
     name: "Remove.bg",
-    logo: "https://logo.clearbit.com/remove.bg",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=remove.bg&sz=64",
+    logo: "/assets/tool-marks/remove-bg.svg",
+    logo_fallback: "/assets/tool-marks/remove-bg.svg",
     category: "image",
     pricing: "ফ্রি / ৳১,০৯৮",
     usdPrice: 9,
@@ -1553,8 +1553,8 @@ const tools = [
   },
   {
     name: "Clipdrop",
-    logo: "https://logo.clearbit.com/clipdrop.co",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=clipdrop.co&sz=64",
+    logo: "/assets/tool-marks/clipdrop.svg",
+    logo_fallback: "/assets/tool-marks/clipdrop.svg",
     category: "image",
     pricing: "ফ্রি / ৳৮৫৪",
     usdPrice: 7,
@@ -1579,8 +1579,8 @@ const tools = [
   },
   {
     name: "Pika Labs",
-    logo: "https://logo.clearbit.com/pika.art",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=pika.art&sz=64",
+    logo: "/assets/tool-marks/pika-labs.svg",
+    logo_fallback: "/assets/tool-marks/pika-labs.svg",
     category: "image",
     pricing: "ফ্রি / ৳৯৭৬",
     usdPrice: 8,
@@ -1605,8 +1605,8 @@ const tools = [
   },
   {
     name: "Looka",
-    logo: "https://logo.clearbit.com/looka.com",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=looka.com&sz=64",
+    logo: "/assets/tool-marks/looka.svg",
+    logo_fallback: "/assets/tool-marks/looka.svg",
     category: "image",
     pricing: "৳২,৪৪০",
     usdPrice: 20,
@@ -1633,8 +1633,8 @@ const tools = [
   // ── Batch 4: Coding & Dev Tools ──────────────────────────────────────────
   {
     name: "Tabnine",
-    logo: "https://logo.clearbit.com/tabnine.com",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=tabnine.com&sz=64",
+    logo: "/assets/tool-marks/tabnine.svg",
+    logo_fallback: "/assets/tool-marks/tabnine.svg",
     category: "coding",
     pricing: "ফ্রি / ৳১,৪৬৪",
     usdPrice: 12,
@@ -1659,8 +1659,8 @@ const tools = [
   },
   {
     name: "Codeium",
-    logo: "https://logo.clearbit.com/codeium.com",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=codeium.com&sz=64",
+    logo: "/assets/tool-marks/codeium.svg",
+    logo_fallback: "/assets/tool-marks/codeium.svg",
     category: "coding",
     pricing: "সম্পূর্ণ ফ্রি",
     usdPrice: 0,
@@ -1685,8 +1685,8 @@ const tools = [
   },
   {
     name: "Phind",
-    logo: "https://logo.clearbit.com/phind.com",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=phind.com&sz=64",
+    logo: "/assets/tool-marks/phind.svg",
+    logo_fallback: "/assets/tool-marks/phind.svg",
     category: "coding",
     pricing: "ফ্রি / ৳২,১৯৬",
     usdPrice: 18,
@@ -1711,8 +1711,8 @@ const tools = [
   },
   {
     name: "Warp AI",
-    logo: "https://logo.clearbit.com/warp.dev",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=warp.dev&sz=64",
+    logo: "/assets/tool-marks/warp-ai.svg",
+    logo_fallback: "/assets/tool-marks/warp-ai.svg",
     category: "coding",
     pricing: "ফ্রি / ৳১,৪৬৪",
     usdPrice: 12,
@@ -1739,8 +1739,8 @@ const tools = [
   // ── Batch 5: Research, LLM & Productivity ────────────────────────────────
   {
     name: "Microsoft Copilot",
-    logo: "https://logo.clearbit.com/copilot.microsoft.com",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
+    logo: "/assets/tool-marks/microsoft-copilot.svg",
+    logo_fallback: "/assets/tool-marks/microsoft-copilot.svg",
     category: "llm",
     pricing: "ফ্রি / ৳২,৪৪০",
     usdPrice: 20,
@@ -1765,8 +1765,8 @@ const tools = [
   },
   {
     name: "You.com",
-    logo: "https://logo.clearbit.com/you.com",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=you.com&sz=64",
+    logo: "/assets/tool-marks/you-com.svg",
+    logo_fallback: "/assets/tool-marks/you-com.svg",
     category: "llm",
     pricing: "ফ্রি / ৳২,০০৯",
     usdPrice: 16.49,
@@ -1791,8 +1791,8 @@ const tools = [
   },
   {
     name: "Fireflies.ai",
-    logo: "https://logo.clearbit.com/fireflies.ai",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=fireflies.ai&sz=64",
+    logo: "/assets/tool-marks/fireflies-ai.svg",
+    logo_fallback: "/assets/tool-marks/fireflies-ai.svg",
     category: "productivity",
     pricing: "ফ্রি / ৳১,২২০",
     usdPrice: 10,
@@ -1817,8 +1817,8 @@ const tools = [
   },
   {
     name: "Taskade AI",
-    logo: "https://logo.clearbit.com/taskade.com",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=taskade.com&sz=64",
+    logo: "/assets/tool-marks/taskade-ai.svg",
+    logo_fallback: "/assets/tool-marks/taskade-ai.svg",
     category: "productivity",
     pricing: "ফ্রি / ৳৯৭৬",
     usdPrice: 8,
@@ -1843,8 +1843,8 @@ const tools = [
   },
   {
     name: "Beautiful.ai",
-    logo: "https://logo.clearbit.com/beautiful.ai",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=beautiful.ai&sz=64",
+    logo: "/assets/tool-marks/beautiful-ai.svg",
+    logo_fallback: "/assets/tool-marks/beautiful-ai.svg",
     category: "productivity",
     pricing: "৳১,৪৬৪",
     usdPrice: 12,
@@ -1869,8 +1869,8 @@ const tools = [
   },
   {
     name: "Elicit",
-    logo: "https://logo.clearbit.com/elicit.com",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=elicit.com&sz=64",
+    logo: "/assets/tool-marks/elicit.svg",
+    logo_fallback: "/assets/tool-marks/elicit.svg",
     category: "llm",
     pricing: "ফ্রি / ৳১,২২০",
     usdPrice: 10,
@@ -1897,8 +1897,8 @@ const tools = [
   // ── NEW TOOLS — BATCH 3 (Image/Design) ──────────────────────────────
   {
     name: "Canva AI",
-    logo: "https://logo.clearbit.com/canva.com",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=canva.com&sz=64",
+    logo: "/assets/tool-marks/canva-ai.svg",
+    logo_fallback: "/assets/tool-marks/canva-ai.svg",
     category: "image",
     pricing: "ফ্রি / ৳১,৪৬৪",
     usdPrice: 12,
@@ -1923,8 +1923,8 @@ const tools = [
   },
   {
     name: "Figma AI",
-    logo: "https://logo.clearbit.com/figma.com",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=figma.com&sz=64",
+    logo: "/assets/tool-marks/figma-ai.svg",
+    logo_fallback: "/assets/tool-marks/figma-ai.svg",
     category: "image",
     pricing: "ফ্রি / ৳১,৮৩০",
     usdPrice: 15,
@@ -1949,8 +1949,8 @@ const tools = [
   },
   {
     name: "Adobe Express AI",
-    logo: "https://logo.clearbit.com/adobe.com",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=adobe.com&sz=64",
+    logo: "/assets/tool-marks/adobe-express-ai.svg",
+    logo_fallback: "/assets/tool-marks/adobe-express-ai.svg",
     category: "image",
     pricing: "ফ্রি / ৳১,৩৪২",
     usdPrice: 11,
@@ -1975,8 +1975,8 @@ const tools = [
   },
   {
     name: "Brandmark",
-    logo: "https://logo.clearbit.com/brandmark.io",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=brandmark.io&sz=64",
+    logo: "/assets/tool-marks/brandmark.svg",
+    logo_fallback: "/assets/tool-marks/brandmark.svg",
     category: "image",
     pricing: "৳৩,০৫০",
     usdPrice: 25,
@@ -2003,8 +2003,8 @@ const tools = [
   // ── NEW TOOLS — BATCH 2 (Marketing) ──────────────────────────────────
   {
     name: "Postwise",
-    logo: "https://logo.clearbit.com/postwise.ai",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=postwise.ai&sz=64",
+    logo: "/assets/tool-marks/postwise.svg",
+    logo_fallback: "/assets/tool-marks/postwise.svg",
     category: "productivity",
     pricing: "৳৪,৫১৪",
     usdPrice: 37,
@@ -2029,8 +2029,8 @@ const tools = [
   },
   {
     name: "Taplio",
-    logo: "https://logo.clearbit.com/taplio.com",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=taplio.com&sz=64",
+    logo: "/assets/tool-marks/taplio.svg",
+    logo_fallback: "/assets/tool-marks/taplio.svg",
     category: "productivity",
     pricing: "৳৪,৭৫৮",
     usdPrice: 39,
@@ -2055,8 +2055,8 @@ const tools = [
   },
   {
     name: "Mailmodo",
-    logo: "https://logo.clearbit.com/mailmodo.com",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=mailmodo.com&sz=64",
+    logo: "/assets/tool-marks/mailmodo.svg",
+    logo_fallback: "/assets/tool-marks/mailmodo.svg",
     category: "productivity",
     pricing: "ফ্রি / ৳৪,৭৫৮",
     usdPrice: 39,
@@ -2083,8 +2083,8 @@ const tools = [
   // ── NEW TOOLS — BATCH 4 (Coding) ─────────────────────────────────────
   {
     name: "Devin AI",
-    logo: "https://logo.clearbit.com/cognition.ai",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=cognition.ai&sz=64",
+    logo: "/assets/tool-marks/devin-ai.svg",
+    logo_fallback: "/assets/tool-marks/devin-ai.svg",
     category: "coding",
     pricing: "৳৬১,০০০",
     usdPrice: 500,
@@ -2109,8 +2109,8 @@ const tools = [
   },
   {
     name: "Aider",
-    logo: "https://logo.clearbit.com/aider.chat",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=aider.chat&sz=64",
+    logo: "/assets/tool-marks/aider.svg",
+    logo_fallback: "/assets/tool-marks/aider.svg",
     category: "coding",
     pricing: "ফ্রি (ওপেন সোর্স)",
     usdPrice: 0,
@@ -2135,8 +2135,8 @@ const tools = [
   },
   {
     name: "Continue.dev",
-    logo: "https://logo.clearbit.com/continue.dev",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=continue.dev&sz=64",
+    logo: "/assets/tool-marks/continue-dev.svg",
+    logo_fallback: "/assets/tool-marks/continue-dev.svg",
     category: "coding",
     pricing: "ফ্রি (ওপেন সোর্স)",
     usdPrice: 0,
@@ -2163,8 +2163,8 @@ const tools = [
   // ── NEW TOOLS — BATCH 5 (LLM & Productivity) ─────────────────────────
   {
     name: "Consensus",
-    logo: "https://logo.clearbit.com/consensus.app",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=consensus.app&sz=64",
+    logo: "/assets/tool-marks/consensus.svg",
+    logo_fallback: "/assets/tool-marks/consensus.svg",
     category: "llm",
     pricing: "ফ্রি / ৳১,২১৮",
     usdPrice: 9.99,
@@ -2189,8 +2189,8 @@ const tools = [
   },
   {
     name: "Kagi",
-    logo: "https://logo.clearbit.com/kagi.com",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=kagi.com&sz=64",
+    logo: "/assets/tool-marks/kagi.svg",
+    logo_fallback: "/assets/tool-marks/kagi.svg",
     category: "llm",
     pricing: "৳১,২২০",
     usdPrice: 10,
@@ -2215,8 +2215,8 @@ const tools = [
   },
   {
     name: "Tome",
-    logo: "https://logo.clearbit.com/tome.app",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=tome.app&sz=64",
+    logo: "/assets/tool-marks/tome.svg",
+    logo_fallback: "/assets/tool-marks/tome.svg",
     category: "productivity",
     pricing: "ফ্রি / ৳১,৯৫২",
     usdPrice: 16,
@@ -2241,8 +2241,8 @@ const tools = [
   },
   {
     name: "Mem AI",
-    logo: "https://logo.clearbit.com/mem.ai",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=mem.ai&sz=64",
+    logo: "/assets/tool-marks/mem-ai.svg",
+    logo_fallback: "/assets/tool-marks/mem-ai.svg",
     category: "productivity",
     pricing: "ফ্রি / ৳১,৮২৮",
     usdPrice: 14.99,
@@ -2267,8 +2267,8 @@ const tools = [
   },
   {
     name: "Craft AI",
-    logo: "https://logo.clearbit.com/craft.do",
-    logo_fallback: "https://www.google.com/s2/favicons?domain=craft.do&sz=64",
+    logo: "/assets/tool-marks/craft-ai.svg",
+    logo_fallback: "/assets/tool-marks/craft-ai.svg",
     category: "productivity",
     pricing: "ফ্রি / ৳৬১০",
     usdPrice: 5,

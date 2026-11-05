@@ -47,7 +47,8 @@ test('Nested route loads root-relative assets and truthful draft markup', () => 
   assert.match(html, /তথ্য এখনো পাঠানো হয়নি/); assert.match(html, /প্রকাশ বা নির্দিষ্ট সময়ে পর্যালোচনার নিশ্চয়তা নেই/);
   assert(!html.includes('৳৯৯৯')); assert(!html.includes('২৪ ঘন্টার মধ্যে'));
   const localHrefs = [...html.matchAll(/href="([^\"]+)"/g)].map(m => m[1]).filter(href => !/^[a-z]+:/i.test(href));
-  assert(localHrefs.every(href => href.startsWith('/')), 'local links must resolve from /submit/');
+  assert(localHrefs.every(href => href.startsWith('/') ||
+    (href.startsWith('#') && html.includes('id="' + href.slice(1) + '"'))), 'local links must resolve from /submit/');
 });
 test('Submit stays disabled until handler binds, and remains disabled if draft UI is missing', () => {
   const h = harness({}, { initialize: false }); assert.equal(h.submit.disabled, true); h.boot();

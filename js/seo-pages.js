@@ -500,7 +500,7 @@
   }
 
   function initSeoReadingEnhancements() {
-    if (!seoArticleRoot) {
+    if (!seoArticleRoot || seoArticleRoot.hasAttribute("data-guide-workshop")) {
       return;
     }
     const sectionItems = collectSeoSections(seoArticleRoot);

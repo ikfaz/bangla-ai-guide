@@ -12,8 +12,7 @@
  *   - Click result → open
  *   - Filter chips: All / Tools / Articles
  *
- * Designed to match dark elegant theme on homepage but also degrade
- * gracefully on light-theme pages.
+ * Uses the same paper and forest palette as the directory.
  */
 
 (function () {
@@ -24,143 +23,35 @@
 
   // ---------- styles ----------
   var STYLE = `
-    .bag-search-trigger {
-      display: inline-flex; align-items: center; gap: 10px;
-      padding: 7px 14px 7px 12px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 9999px;
-      color: rgba(255,255,255,0.7);
-      font-family: inherit; font-size: 13px;
-      cursor: pointer; transition: all .2s;
-    }
-    .bag-search-trigger:hover { background: rgba(255,255,255,0.1); color: #fff; border-color: rgba(255,255,255,0.2); }
-    .bag-search-trigger .kbd {
-      display: inline-flex; gap: 2px; padding: 2px 6px;
-      background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 6px; font-family: ui-monospace, monospace; font-size: 11px;
-    }
-
-    .bag-search-overlay {
-      position: fixed; inset: 0; z-index: 1000;
-      background: rgba(8,8,12,0.7);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      opacity: 0; pointer-events: none;
-      transition: opacity .15s ease;
-      display: grid; place-items: start center;
-      padding-top: 12vh;
-    }
-    .bag-search-overlay.open { opacity: 1; pointer-events: auto; }
-    .bag-search-modal {
-      width: min(680px, 92vw);
-      background: #13131A;
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 20px;
-      box-shadow: 0 32px 64px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.05) inset;
-      overflow: hidden;
-      transform: translateY(-12px) scale(0.98);
-      transition: transform .2s ease;
-      font-family: 'Hind Siliguri', 'Inter', system-ui, sans-serif;
-      color: #fff;
-    }
-    .bag-search-overlay.open .bag-search-modal { transform: translateY(0) scale(1); }
-
-    .bag-search-bar {
-      display: flex; align-items: center; gap: 12px;
-      padding: 18px 22px;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-    .bag-search-bar svg { width: 20px; height: 20px; color: #94A3B8; flex-shrink: 0; }
-    .bag-search-bar input {
-      flex: 1; background: transparent; border: none; outline: none;
-      color: #fff; font-size: 17px; font-family: inherit;
-    }
-    .bag-search-bar input::placeholder { color: #64748B; }
-    .bag-search-bar .esc {
-      padding: 4px 10px; background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12); border-radius: 6px;
-      color: #94A3B8; font-size: 11px; font-family: ui-monospace, monospace;
-    }
-
-    .bag-search-tabs {
-      display: flex; gap: 6px; padding: 12px 22px;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-    .bag-search-tab {
-      background: transparent; border: 1px solid transparent;
-      color: #94A3B8; padding: 6px 14px; border-radius: 9999px;
-      font-size: 13px; font-family: inherit; cursor: pointer; transition: all .15s;
-    }
-    .bag-search-tab:hover { color: #fff; background: rgba(255,255,255,0.04); }
-    .bag-search-tab.active { background: rgba(34,197,94,0.15); color: #22C55E; border-color: rgba(34,197,94,0.3); }
-    .bag-search-tab .count { opacity: 0.6; margin-left: 6px; font-size: 11px; }
-
-    .bag-search-results {
-      max-height: min(60vh, 480px); overflow-y: auto;
-      padding: 8px;
-    }
-    .bag-search-results::-webkit-scrollbar { width: 8px; }
-    .bag-search-results::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 4px; }
-
-    .bag-search-item {
-      display: flex; gap: 14px; align-items: center;
-      padding: 12px 14px; border-radius: 12px;
-      cursor: pointer; transition: background .12s;
-      text-decoration: none; color: inherit;
-    }
-    .bag-search-item:hover, .bag-search-item.active {
-      background: rgba(255,255,255,0.05);
-    }
-    .bag-search-item.active { background: rgba(34,197,94,0.1); }
-    .bag-search-item .icon {
-      width: 36px; height: 36px; border-radius: 10px; flex-shrink: 0;
-      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08);
-      display: grid; place-items: center; font-size: 18px;
-    }
-    .bag-search-item.kind-tool .icon { background: linear-gradient(135deg, rgba(99,102,241,.25), rgba(167,139,250,.15)); border-color: rgba(167,139,250,.3); }
-    .bag-search-item.kind-blog .icon { background: linear-gradient(135deg, rgba(34,197,94,.2), rgba(34,211,238,.15)); border-color: rgba(34,197,94,.3); }
-    .bag-search-item.kind-page .icon { background: linear-gradient(135deg, rgba(245,158,11,.2), rgba(251,113,133,.15)); border-color: rgba(245,158,11,.3); }
-    .bag-search-item .body { flex: 1; min-width: 0; }
-    .bag-search-item .title {
-      font-size: 14px; font-weight: 600; line-height: 1.35;
-      color: #fff; margin: 0 0 4px;
-      overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
-    }
-    .bag-search-item .meta { font-size: 12px; color: #94A3B8; display: flex; gap: 8px; align-items: center; }
-    .bag-search-item .badge {
-      padding: 2px 8px; border-radius: 9999px;
-      font-size: 10px; letter-spacing: 0.04em; text-transform: uppercase;
-      background: rgba(255,255,255,0.06); color: #C7D2DE;
-    }
-    .bag-search-item .arrow { color: #64748B; font-size: 14px; flex-shrink: 0; }
-
-    .bag-search-empty {
-      text-align: center; padding: 60px 20px; color: #64748B; font-size: 14px;
-    }
-    .bag-search-empty .big { font-size: 36px; margin-bottom: 12px; opacity: 0.5; }
-
-    .bag-search-footer {
-      padding: 10px 22px; border-top: 1px solid rgba(255,255,255,0.06);
-      display: flex; justify-content: space-between; align-items: center;
-      font-size: 11px; color: #64748B;
-    }
-    .bag-search-footer .keys { display: flex; gap: 16px; }
-    .bag-search-footer .key {
-      padding: 1px 7px; background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.1); border-radius: 4px;
-      font-family: ui-monospace, monospace;
-    }
-
-    /* Highlighted match */
-    .bag-hl { color: #22C55E; font-weight: 700; }
-
-    @media (max-width: 600px) {
-      .bag-search-overlay { padding-top: 6vh; }
-      .bag-search-bar input { font-size: 16px; }
-      .bag-search-tabs { padding: 10px 14px; overflow-x: auto; }
-      .bag-search-footer { display: none; }
-    }
+    .bag-search-trigger,.bag-search-bar .esc,.bag-search-tab,.bag-search-footer .key {font:inherit;border:1px solid #d9e2d5;color:#455b4d;background:#fff;border-radius:7px}
+    .bag-search-trigger {display:inline-flex;align-items:center;gap:8px;padding:7px 12px;cursor:pointer;font-size:14px}
+    .bag-search-trigger .kbd,.bag-search-footer .key {font:11px/1.5 ui-monospace,monospace;padding:2px 5px}
+    .bag-search-overlay {position:fixed;inset:0;z-index:2000;display:none;align-items:start;justify-items:center;padding-top:min(11vh,90px);background:#17332566;backdrop-filter:blur(4px)}
+    .bag-search-overlay.open {display:grid}
+    .bag-search-modal {width:min(650px,94vw);max-height:85dvh;display:flex;flex-direction:column;background:#fafbf7;color:#1e3028;border:1px solid #cedbc9;border-radius:16px;box-shadow:0 24px 80px #152c2340;overflow:hidden;font:15px/1.55 'Hind Siliguri',system-ui,sans-serif}
+    .bag-search-bar,.bag-search-tabs,.bag-search-footer {display:flex;align-items:center;gap:10px;padding:14px 20px;border-bottom:1px solid #e0e7db;flex:none}
+    .bag-search-bar svg {width:20px;height:20px;color:#526959;display:block}
+    .bag-search-bar input {min-width:0;flex:1;border:0;background:transparent;color:#203528;font:inherit;font-size:17px}
+    .bag-search-bar input::placeholder {color:#607265}
+    .bag-search-bar .esc {padding:6px 9px;cursor:pointer;font-size:13px}
+    .bag-search-tabs {gap:5px;padding:9px 15px;overflow-x:auto}
+    .bag-search-tab {border-color:transparent;background:transparent;padding:5px 10px;cursor:pointer;font-size:14px;white-space:nowrap}
+    .bag-search-tab:hover,.bag-search-item:hover,.bag-search-item.active {background:#eaf1e6}
+    .bag-search-tab.active {background:#175b43;color:#fff}
+    .bag-search-tab .count {margin-left:3px;font-size:11px}
+    .bag-search-results {overflow-y:auto;max-height:min(55vh,460px);padding:7px}
+    .bag-search-item {display:flex;align-items:center;gap:12px;padding:10px 12px;color:inherit;border-radius:8px;text-decoration:none}
+    .bag-search-item .icon {width:38px;height:38px;background:#f2e9d6;border-radius:9px;display:grid;place-items:center;flex-shrink:0}
+    .bag-search-item.kind-blog .icon {background:#e1edde}.bag-search-item.kind-tool .icon {background:#e8e4f0}
+    .bag-search-item .body {min-width:0;flex:1}
+    .bag-search-item .title {font-weight:600;line-height:1.45;color:#1e3028;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .bag-search-item .meta {display:flex;align-items:center;gap:8px;font-size:12px;color:#53695a}
+    .bag-search-item .badge {border:1px solid #d8e1d3;padding:0 5px;border-radius:4px}
+    .bag-search-empty {text-align:center;padding:32px 14px;color:#53695a}.bag-search-empty .big {font-size:28px}
+    .bag-search-footer {justify-content:space-between;gap:8px;border:0;border-top:1px solid #e0e7db;padding:10px 18px;font-size:11px;color:#53695a}
+    .bag-search-footer .keys {display:flex;gap:12px}.bag-hl {color:#175b43;font-weight:700}
+    .bag-search-modal :focus-visible {outline:2px solid #987434;outline-offset:2px}
+    @media(max-width:600px){.bag-search-bar{padding:12px}.bag-search-footer{display:none}.bag-search-overlay{padding-top:5vh}.bag-search-tab{padding:5px 8px}.bag-search-tabs{padding:8px}}
   `;
 
   // ---------- DOM ----------
@@ -247,7 +138,9 @@
     bar.appendChild(el('span', {}, ICON_SEARCH));
     var input = el('input', { type: 'search', placeholder: 'টুল বা গাইড খুঁজুন... (e.g. ChatGPT, ছবি, freelancing)', 'aria-label': 'সার্চ' });
     bar.appendChild(input);
-    bar.appendChild(el('span', { class: 'esc' }, 'ESC'));
+    var closeButton = el('button', { type:'button', class:'esc', 'aria-label':'সার্চ বন্ধ করুন' }, 'বন্ধ ×');
+    closeButton.addEventListener('click', close);
+    bar.appendChild(closeButton);
     modal.appendChild(bar);
 
     var tabs = el('div', { class: 'bag-search-tabs', role: 'tablist' });
@@ -279,6 +172,14 @@
     overlay.addEventListener('click', function (e) { if (e.target === overlay) close(); });
     input.addEventListener('input', function (e) { state.query = e.target.value; search(); });
     input.addEventListener('keydown', onKeydown);
+    overlay.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && state.open) { e.preventDefault(); close(); return; }
+      if (e.key !== 'Tab') return;
+      var focusables = overlay.querySelectorAll('input, button, a[href]');
+      var first = focusables[0], last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    });
   }
 
   function updateTabsActive() {
@@ -353,15 +254,17 @@
     if (state.open) return;
     state.open = true;
     if (!refs.overlay) buildModal();
+    refs.previousFocus = document.activeElement;
     refs.overlay.classList.add('open');
     loadIndex().then(function () { updateCounts(); search(); });
-    setTimeout(function () { refs.input.focus(); refs.input.select(); }, 50);
+    refs.input.focus(); refs.input.select();
     document.body.style.overflow = 'hidden';
   }
   function close() {
     state.open = false;
     if (refs.overlay) refs.overlay.classList.remove('open');
     document.body.style.overflow = '';
+    if (refs.previousFocus && refs.previousFocus.isConnected) refs.previousFocus.focus();
   }
 
   function setupTrigger() {
@@ -372,6 +275,15 @@
         e.preventDefault(); open();
       }
     });
+    // The mobile menu is a native disclosure and remains usable without JavaScript.
+    var menu = document.querySelector('.gs-mobile');
+    if (menu) {
+      document.addEventListener('click', function (e) { if (!menu.contains(e.target)) menu.open = false; });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && menu.open) { menu.open = false; menu.querySelector('summary').focus(); }
+      });
+      menu.addEventListener('focusout', function (e) { if (e.relatedTarget && !menu.contains(e.relatedTarget)) menu.open = false; });
+    }
     // Any element with data-bag-search opens it
     document.addEventListener('click', function (e) {
       var t = e.target.closest('[data-bag-search]');

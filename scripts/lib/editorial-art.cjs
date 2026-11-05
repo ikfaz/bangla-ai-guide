@@ -1,0 +1,98 @@
+// The first matching subject wins. Keep specific tasks before the product that
+// performs them (e.g. ChatGPT voice mode is an audio story).
+const subjects = [
+  ['cattle', /goru|cattle/, 'খামারের গরু ও ঘাসের শিষের অঙ্কন'],
+  ['poultry', /murgi|poultry/, 'মুরগি, ডিম ও শস্যের অঙ্কন'],
+  ['fishery', /mach-chash|fishery/, 'ঢেউয়ের ওপর মাছ ও জালের অঙ্কন'],
+  ['farming', /krishi|farmer|agricultur/, 'ধানের শিষ, চারা ও চাষের জমির অঙ্কন'],
+  ['law', /advocate|ukil|law-firm|legal|contract-review/, 'ন্যায়ের দাঁড়িপাল্লা ও নথির অঙ্কন'],
+  ['medicine', /doctor|medical|clinic|health|dengue|pharmacy/, 'স্টেথোস্কোপ ও চিকিৎসার নোটের অঙ্কন'],
+  ['accessibility', /disability|andho|accessibility|impaired/, 'চোখ, লেখার পাতা ও শব্দতরঙ্গের অঙ্কন'],
+  ['food', /kitchen|foodpanda|cook|restaurant|griihini/, 'বাষ্প ওঠা হাঁড়ি ও সবুজ পাতার অঙ্কন'],
+  ['apparel', /garment|rmg|print-on-demand/, 'পোশাকের নকশা, খাতা ও মাপের স্কেলের অঙ্কন'],
+  ['building', /civil-engineer|construction|real-estate|bproperty/, 'বাড়ির নকশা ও স্থাপত্যের স্কেলের অঙ্কন'],
+  ['travel', /travel|coxs-bazar|sajek|sundarbans|vacation|tourism/, 'ভাঁজ করা পথের মানচিত্র ও কম্পাসের অঙ্কন'],
+  ['passport', /visa-|passport/, 'পাসপোর্ট, টিকিট ও মানচিত্রের অঙ্কন'],
+  ['delivery', /pathao|driver|rider/, 'চাকা, পার্সেল ও পথের মানচিত্রের অঙ্কন'],
+  ['events', /event-|wedding/, 'অনুষ্ঠানের ক্যালেন্ডার ও ফুলের অঙ্কন'],
+  ['accounting', /accounting|bookkeeping|tax-|nbr-|banker|bank-loan/, 'ক্যালকুলেটর ও হিসাবের খাতার অঙ্কন'],
+  ['analytics', /visualization|data-analysis|excel|stock-market|dse-/, 'সারণি, রেখাচিত্র ও তথ্যের বিন্দুর অঙ্কন'],
+  ['payments', /bkash|bdt|payment|pricing|price-|credit-card|mastercard|subscription|khoroch/, 'পেমেন্ট কার্ড, কয়েন ও রসিদের অঙ্কন'],
+  ['shop', /ecommerce|daraz|dropshipping|online-dokan|product-launch|seller/, 'দোকানের ছাউনি, প্যাকেট ও মূল্যট্যাগের অঙ্কন'],
+  ['jobs', /resume|cv-|career|job-|chakri|bdjobs|interview|hr-recruiter/, 'জীবনবৃত্তান্ত ও কাজের ব্যাগের অঙ্কন'],
+  ['classroom', /teacher|shikkhok|tutor|kindergarten|online-course|vocational|parent-guide/, 'বোর্ড, চক ও খোলা বইয়ের অঙ্কন'],
+  ['study', /ssc|hsc|exam|student|admission|ielts|bcs|education|porashona|shikkharthi/, 'খোলা পড়ার বই, বুকমার্ক ও পেনসিলের অঙ্কন'],
+  ['research', /research|elicit|perplexity|investigation|content-detector/, 'গবেষণার কাগজ ও বড় করে দেখার আতশকাচের অঙ্কন'],
+  ['portrait', /avatar|headshot|d-id-|heygen|synthesia-vs/, 'মুখের প্রতিকৃতি, ফ্রেম ও রঙের নমুনার অঙ্কন'],
+  ['image-prompt', /nano-banana/, 'ছবি তৈরির প্রম্পটের পাশে ফ্রেমে আঁকা একটি কলা ও রঙের নমুনা'],
+  ['photo', /photograph|photo-edit|cv-photo|clipdrop/, 'ক্যামেরা, লেন্স ও ছবির প্রিন্টের অঙ্কন'],
+  ['image', /nano-banana|firefly|stable-diffusion|ideogram|midjourney|leonardo|flux|image-generator|text-in-image/, 'কাগজের ফ্রেমে পাহাড়ের ছবি, রঙের নমুনা ও ঝিলিকের অঙ্কন'],
+  ['movies', /video|gif-|shorts|veo-|runway|sora|kling|hailuo|capcut|opus-clip|synthesia|youtube-bangladesh|natok-script/, 'ভিডিওর ক্ল্যাপবোর্ড, ফিল্ম ও টাইমলাইনের অঙ্কন'],
+  ['design', /logo|graphics?|design|canva|thumbnail|ui-ux|personal-brand|business-name/, 'ভেক্টর নকশার রেখা, পেন টুল ও রঙের নমুনার অঙ্কন'],
+  ['slides', /presentation|gamma-ai/, 'প্রেজেন্টেশন বোর্ডে চার্ট ও স্লাইডের অঙ্কন'],
+  ['music', /music|suno|gaan-/, 'রেকর্ড প্লেয়ার, ডিস্ক ও সঙ্গীতের স্বরের অঙ্কন'],
+  ['transcript', /dictation|transcri|wispr|subtitle|caption|meeting-notes|whisper-ai/, 'শব্দতরঙ্গ থেকে লেখার পাতায় রূপান্তরের অঙ্কন'],
+  ['audio', /podcast|audio|tts|voice|elevenlabs|murf/, 'স্টুডিও মাইক্রোফোন ও শব্দতরঙ্গের অঙ্কন'],
+  ['language', /translat|autocorrect|typing|handwriting|grammarly/, 'বাংলা অক্ষর, সম্পাদনার পেনসিল ও কথার বুদবুদের অঙ্কন'],
+  ['news', /news-|journalist/, 'সংবাদপত্র ও সম্পাদনার পেনসিলের অঙ্কন'],
+  ['marketing', /market(ing|er)|biponone|facebook|instagram|seo-tools|affiliate/, 'মেগাফোন ও প্রচার পরিকল্পনার নোটের অঙ্কন'],
+  ['calendar', /calendar|scheduling|tasks-|notion|remote-work|productivity|virtual-assistant|claude-projects/, 'কাজের ক্যালেন্ডার ও টিক দেওয়া তালিকার অঙ্কন'],
+  ['writing', /writ|likha|lekha|content|blog|ebook|quotation|tender|proposal|jasper|rytr|copy-ai|business-plan/, 'সম্পাদিত পাণ্ডুলিপি ও ফাউন্টেন পেনের অঙ্কন'],
+  ['coding', /cod(e|ing|ers|ium)|developer|terminal|windsurf|github|cursor|cline-|warp-|replit|v0-dev|v0-by-vercel|website|development/, 'কোড এডিটরের পর্দা ও কার্সরের অঙ্কন'],
+  ['automation', /agent|automation|hermes|mcp-|openclaw|make-com|computer-use|claude-skills|manus-ai/, 'সংযুক্ত কাজের ধাপ ও সুইচের অঙ্কন'],
+  ['privacy', /vpn|privacy|nirapotta|kaj-korche-na/, 'ঢাল, তালা ও সুরক্ষিত সংযোগের অঙ্কন'],
+  ['mobile', /mobile|phone/, 'মোবাইলের পর্দা ও অ্যাপের অঙ্কন'],
+  ['comparison', /-vs-|comparison|partho|konti-bhalo|bikalpo|bikolpo/, 'পাশাপাশি দুটি প্যানেলে বৈশিষ্ট্য মেলানোর অঙ্কন'],
+  ['briefcase', /freelanc|income|taka-|earning/, 'কাজের ব্যাগ, কাজের নোট ও কয়েনের অঙ্কন'],
+  ['prompts', /prompt|custom-gpt/, 'প্রশ্ন লেখার কার্ড ও উত্তর নির্দেশক কার্সরের অঙ্কন'],
+  ['conversation', /chatgpt|gpt-5|chatbot|customer-service|grok/, 'চ্যাট উইন্ডোতে প্রশ্ন ও উত্তরের বুদবুদের অঙ্কন'],
+  ['model', /claude|gemini|deepseek|copilot/, 'সংযুক্ত নোড ও একটি এআই মডেলের চিপের অঙ্কন'],
+  ['toolkit', /toolkit|directory/, 'টুলবক্স, গিয়ার ও আতশকাচের অঙ্কন'],
+];
+
+const byTopic = Object.fromEntries(subjects.map(([id,,alt]) => [id, alt]));
+// Explicit exceptions keep feature articles from being filed under a broad
+// product or business keyword in their slug.
+const overrides = {
+  'adobe-express-ai':'design', 'adobe-firefly':'image', 'adobe-podcast':'audio',
+  'beautiful-ai':'slides', 'bolt-new':'coding', 'brandmark':'design', 'buffer-ai':'calendar',
+  'canva-magic-write':'writing', 'capcut-ai':'movies', 'claude-code':'coding', 'clipdrop':'photo',
+  'codeium':'coding', 'copy-ai':'writing', 'd-id':'portrait', 'descript':'audio',
+  'figma-ai':'design', 'fireflies-ai':'transcript', 'fliki':'movies', 'gamma':'slides',
+  'google-gemini-omni-bangla-review':'model', 'github-copilot':'coding', 'groq':'model',
+  'huggingchat':'conversation', 'jasper-ai':'writing', 'kling-ai':'movies', 'leonardo-ai':'image',
+  'looka':'design', 'loom-ai':'movies', 'lovable':'coding', 'make':'automation',
+  'meta-ai':'conversation', 'mistral-ai':'model', 'notebooklm':'research', 'opus-clip':'movies',
+  'otter-ai':'transcript', 'phind':'coding', 'pictory':'movies', 'pika-labs':'movies',
+  'play-ht':'audio', 'playht':'audio', 'poe':'conversation', 'remove-bg':'photo',
+  'runway-ml':'movies', 'rytr':'writing', 'surfer-seo':'marketing', 'synthesia':'movies',
+  'tabnine':'coding', 'taskade-ai':'calendar', 'v0-by-vercel':'coding', 'warp-ai':'coding',
+  'windsurf':'coding', 'writesonic':'writing', 'you-com':'research', 'zapier':'automation',
+  'notion-ai':'calendar', 'quiz':'toolkit', 'compare':'comparison',
+  'ai-product-photography-ecommerce-bangla-guide': 'photo',
+  'ai-diye-professional-headshot-cv-photo-bangla': 'portrait',
+  'ai-diye-social-media-content-calendar-bangla': 'calendar',
+  'choto-online-dokan-7-diner-content-plan': 'calendar',
+  'prompt-engineering-coders-bangla-guide': 'coding',
+  'ai-diye-bangla-subtitle-caption-generate': 'transcript',
+  'gemini-deep-research-bangla': 'research',
+  'ai-tools-for-graphic-design-bangladesh': 'design',
+  'ai-tools-for-youtube-bangladesh': 'movies',
+  'ai-diye-youtube-thumbnail-banano-ctr-baranor-guide': 'design',
+  'notebooklm-bangla-guide': 'research',
+  'claude-code-bangla-developer-guide': 'coding',
+  'ai-diye-it-student-career-bangladesh': 'jobs',
+  'gemini-avatar-share-bangla-guide': 'portrait',
+  'ai-diye-website-banano-no-code-bangla-guide': 'coding',
+  'biponone-ai-tools-bangladesher-prekhapote-ekti-bistarito-guide': 'marketing',
+  'ai-tools-mobile-low-spec-phone-bangladesh-guide': 'mobile',
+};
+
+function artFor(slug, title = '') {
+  const key = String(slug).split(/[?#]/)[0].replace(/\/index\.html$/, '').replace(/\/$/, '').split('/').pop().toLowerCase();
+  const titleKey = String(title).toLowerCase().replace(/\s+/g, '-');
+  const topic = overrides[key] || subjects.find(([,re]) => re.test(key))?.[0]
+    || subjects.find(([,re]) => re.test(titleKey))?.[0] || 'toolkit';
+  return {topic, src: '/assets/editorial/' + topic + '.svg', alt: byTopic[topic], width: 1000, height: 440};
+}
+module.exports = {artFor, byTopic};

@@ -3,10 +3,11 @@
   "private": true,
   "description": "Static site build for banglaaiguide.com",
   "engines": {
-    "node": ">=20"
+    "node": ">=20.18.1"
   },
   "dependencies": {
     "@resvg/resvg-js": "^2.6.2",
+    "cheerio": "1.2.0",
     "sharp": "^0.34.4"
   }
 }
