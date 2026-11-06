@@ -15,7 +15,7 @@ The shared magazine chrome (cover, chips, table of contents, reading time) is ad
 Do **not** manually add `<figure class="av-hero">` or inline `cover.png` inside the article body.
 - `scripts/inject-article-chrome.cjs` and `scripts/apply-guide-workshops.cjs` automatically inject `<figure class="article-hero">` in the top `.gw-hero-visual` slot using the clean vector editorial illustration `/assets/editorial/<topic>.svg` mapped by `scripts/lib/editorial-art.cjs`.
 - `scripts/generate-blog-covers.cjs` automatically generates the `1200×630` `cover.svg` and `cover.png` from that same `/assets/editorial/<topic>.svg` illustration for OpenGraph, Twitter Cards, Google News, and `Article` / `NewsArticle` JSON-LD schema.
-- If a new slug needs a specific editorial topic illustration, add a slug-to-topic mapping in `overrides` inside `scripts/lib/editorial-art.cjs`.
+- **Always match the article's real subject (never use unrelated or made-up art):** If a new article combines specific concepts (for example, `code-pricing` combining `['code', 'card', 'coin', 'blue']` for a coding tool's pricing & BDT cost guide), add a tailored scene `[hero, back, detail, palette]` in `scripts/generate-editorial-art.cjs`, register its topic and Bangla `alt` description at the end of `subjects` (and in `overrides`) inside `scripts/lib/editorial-art.cjs`, and run `node scripts/generate-editorial-art.cjs` before `node scripts/build.cjs`.
 
 ## Quick answer
 

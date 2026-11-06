@@ -48,6 +48,7 @@ const subjects = [
   ['conversation', /chatgpt|gpt-5|chatbot|customer-service|grok/, 'চ্যাট উইন্ডোতে প্রশ্ন ও উত্তরের বুদবুদের অঙ্কন'],
   ['model', /claude|gemini|deepseek|copilot/, 'সংযুক্ত নোড ও একটি এআই মডেলের চিপের অঙ্কন'],
   ['toolkit', /toolkit|directory/, 'টুলবক্স, গিয়ার ও আতশকাচের অঙ্কন'],
+  ['code-pricing', /claude-code-pricing|(?:cod(?:e|ing)|cursor|copilot|windsurf).*(?:pricing|price|khoroch|bundle)/, 'কোড এডিটরের পর্দা, পেমেন্ট কার্ড ও কয়েনের অঙ্কন'],
 ];
 
 const byTopic = Object.fromEntries(subjects.map(([id,,alt]) => [id, alt]));
@@ -81,7 +82,7 @@ const overrides = {
   'ai-diye-youtube-thumbnail-banano-ctr-baranor-guide': 'design',
   'notebooklm-bangla-guide': 'research',
   'claude-code-bangla-developer-guide': 'coding',
-  'claude-code-pricing-bangla': 'coding',
+  'claude-code-pricing-bangla': 'code-pricing',
   'ai-diye-it-student-career-bangladesh': 'jobs',
   'gemini-avatar-share-bangla-guide': 'portrait',
   'ai-diye-website-banano-no-code-bangla-guide': 'coding',
