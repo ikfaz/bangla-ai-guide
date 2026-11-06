@@ -50,6 +50,12 @@ function harness(initial = {}, brokenStorage = false) {
     script: () => document.getElementById('bagAnalyticsScript'),
     calls: () => JSON.parse(JSON.stringify(window.dataLayer.map(args => Array.from(args)))),
     load: () => document.getElementById('bagAnalyticsScript').onload(),
+    activateDownload(href, options = {}) {
+      const event = { type: 'click', button: 0, defaultPrevented: false,
+        target: { closest: selector => selector === 'a[download]' ? { href } : null }, ...options };
+      for (const fn of listeners.get('document:' + event.type) || []) fn(event);
+      return event;
+    },
   };
 }
 let passed = 0;
@@ -129,5 +135,65 @@ test('Invalid consent values cannot change the user choice', () => {
 test('A failed analytics download can be retried without blocking site consent', () => {
   const h = harness({ [KEY]: 'accepted' }); h.script().onerror(); assert.equal(h.script(), null);
   assert.equal(h.window.bagConsent.setAnalytics('accepted'), true); assert(h.script());
+});
+const calendarUrl = 'https://banglaaiguide.com/blog/choto-online-dokan-7-diner-content-plan/content-calendar.csv';
+const promptsUrl = calendarUrl.replace('content-calendar.csv', 'bangla-prompts.txt');
+const downloads = h => h.calls().filter(c => c[0] === 'event' && c[1] === 'template_download_click');
+test('Template clicks without consent or before loading are discarded, never replayed', () => {
+  for (const choice of [undefined, 'rejected', 'accepted']) {
+    const h = harness(choice ? { [KEY]: choice } : {});
+    h.activateDownload(calendarUrl);
+    assert.equal(downloads(h).length, 0);
+    h.window.bagConsent.setAnalytics('accepted'); h.load();
+    assert.equal(downloads(h).length, 0);
+  }
+});
+test('Mouse, keyboard and middle-click template activations emit fixed IDs without blocking navigation', () => {
+  const h = harness({ [KEY]: 'accepted' }); h.load();
+  let prevented = false;
+  h.activateDownload(calendarUrl, { preventDefault() { prevented = true; } });
+  h.activateDownload(promptsUrl, { detail: 0 });
+  h.activateDownload(calendarUrl, { type: 'auxclick', button: 1 });
+  assert.equal(prevented, false);
+  assert.deepEqual(downloads(h).map(c => c[2].resource_id), ['shop-calendar-csv', 'shop-prompts-txt', 'shop-calendar-csv']);
+  for (const call of downloads(h)) {
+    assert.deepEqual(Object.keys(call[2]).sort(), ['page_location', 'page_referrer', 'resource_id']);
+    assert.equal(call[2].page_location, 'https://banglaaiguide.com/');
+    assert.equal(call[2].page_referrer, 'https://example.org');
+  }
+});
+test('Unknown, external, query-bearing, fragment, non-download and cancelled links are ignored', () => {
+  const h = harness({ [KEY]: 'accepted' }); h.load();
+  for (const href of [calendarUrl.replace('banglaaiguide.com', 'example.org'), calendarUrl + '?email=private@example.org', calendarUrl + '#secret', calendarUrl.replace('content-calendar.csv', 'other.csv'), 'http://[']) h.activateDownload(href);
+  h.activateDownload(calendarUrl, { type: 'auxclick', button: 2 });
+  h.activateDownload(calendarUrl, { button: 1 });
+  h.activateDownload(calendarUrl, { defaultPrevented: true });
+  h.activateDownload(calendarUrl, { target: { closest: () => null } });
+  assert.equal(downloads(h).length, 0);
+});
+test('Revocation immediately stops download events and reacceptance never replays them', () => {
+  const h = harness({ [KEY]: 'accepted' }); h.load();
+  h.activateDownload(calendarUrl); h.window.bagConsent.setAnalytics('rejected');
+  h.activateDownload(promptsUrl); h.window.bagConsent.setAnalytics('accepted');
+  assert.equal(downloads(h).length, 1);
+  h.activateDownload(promptsUrl); assert.equal(downloads(h).length, 2);
+});
+test('Template event cannot pass arbitrary resource IDs or private fields', () => {
+  const h = harness({ [KEY]: 'accepted' }); h.load();
+  assert.equal(h.window.bagAnalytics.track('template_download_click', { resource_id: 'private@example.org' }), false);
+  assert.equal(h.window.bagAnalytics.track('template_download_click'), false);
+  assert.equal(h.window.bagAnalytics.track('template_download_click', null), false);
+  assert.equal(downloads(h).length, 0);
+  h.window.bagAnalytics.track('template_download_click', { resource_id: 'shop-calendar-csv', link_url: calendarUrl, file_name: 'secret.txt', query: 'secret' });
+  assert.deepEqual(Object.keys(downloads(h)[0][2]).sort(), ['page_location', 'page_referrer', 'resource_id']);
+});
+test('Published guide uses the fresh analytics script and both real downloadable resources', () => {
+  const articleDir = path.join(ROOT, 'blog/choto-online-dokan-7-diner-content-plan');
+  const html = fs.readFileSync(path.join(articleDir, 'index.html'), 'utf8');
+  assert(html.includes('/js/analytics.js?v=2026-11-06-downloads'));
+  for (const file of ['content-calendar.csv', 'bangla-prompts.txt']) {
+    assert(html.includes('href="' + file + '" download'));
+    assert(fs.statSync(path.join(articleDir, file)).size > 0);
+  }
 });
 console.log(`\n${passed} consent and analytics checks passed.`);

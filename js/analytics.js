@@ -60,9 +60,11 @@
     tool_save: { action: ['save', 'remove'], tool_id: 'slug' },
     category_select: { category: ['all', 'writing', 'image', 'video', 'coding', 'marketing', 'productivity', 'free'] },
     newsletter_submit: { source: ['homepage'] },
+    template_download_click: { resource_id: ['shop-calendar-csv', 'shop-prompts-txt'] },
   };
   function track(name, parameters = {}) {
     if (!accepted() || !loaded || !configured || !Object.hasOwn(schemas, name)) return false;
+    if (name === 'template_download_click' && !schemas[name].resource_id.includes(parameters?.resource_id)) return false;
     const payload = { page_location: safePageLocation(), page_referrer: safeReferrer() };
     for (const [key, rule] of Object.entries(schemas[name])) {
       const value = parameters[key];
@@ -73,6 +75,26 @@
     return true;
   }
   window.bagAnalytics = Object.freeze({ track });
+  // These events describe link activation, never a completed download or file use.
+  // Resolve only known local resources; do not send link text, filenames or URLs.
+  const templateResources = new Map([
+    ['/blog/choto-online-dokan-7-diner-content-plan/content-calendar.csv', 'shop-calendar-csv'],
+    ['/blog/choto-online-dokan-7-diner-content-plan/bangla-prompts.txt', 'shop-prompts-txt'],
+  ]);
+  function trackTemplateClick(event) {
+    if (event.defaultPrevented || (event.type === 'click' && event.button !== 0) ||
+        (event.type === 'auxclick' && event.button !== 1)) return;
+    const link = event.target?.closest?.('a[download]');
+    if (!link) return;
+    try {
+      const url = new URL(link.href, window.location.href);
+      if (url.origin !== window.location.origin || url.search || url.hash) return;
+      const resource = templateResources.get(url.pathname);
+      if (resource) track('template_download_click', { resource_id: resource });
+    } catch { /* Invalid links must not interfere with navigation. */ }
+  }
+  document.addEventListener('click', trackTemplateClick);
+  document.addEventListener('auxclick', trackTemplateClick);
   window.addEventListener('bag:consent-change', sync);
   sync();
 })();
