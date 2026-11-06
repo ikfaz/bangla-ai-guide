@@ -6,7 +6,14 @@
   <atom:link href="https://banglaaiguide.com/feed.xml" rel="self" type="application/rss+xml" />
   <description>বাংলাদেশের জন্য AI টুলস গাইড, রিভিউ ও টিউটোরিয়াল।</description>
   <language>bn-BD</language>
-  <lastBuildDate>Thu, 05 Nov 2026 07:28:04 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 06 Nov 2026 23:22:34 GMT</lastBuildDate>
+  <item>
+    <title>Claude Code Pricing ও Usage Bundles — বাংলা গাইড</title>
+    <link>https://banglaaiguide.com/blog/claude-code-pricing-bangla/</link>
+    <guid isPermaLink="true">https://banglaaiguide.com/blog/claude-code-pricing-bangla/</guid>
+    <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
+    <description>Claude Code pricing বাংলায়: Pro ($20), Max ($100) ও Ultra ($200) প্ল্যানের আনুমানিক টাকার হিসাব, নতুন Usage Bundles ছাড় ও টার্মিনাল/VS Code-এ ব্যবহারের নিয়ম।</description>
+  </item>
   <item>
     <title>Aesthetic Prompt for ChatGPT — বাংলায় ২০টি</title>
     <link>https://banglaaiguide.com/blog/chatgpt-aesthetic-prompt-bangla/</link>
@@ -1142,11 +1149,11 @@
     <description>Make.com (পূর্বে Integromat) দিয়ে কীভাবে Gmail, Sheets, ChatGPT, Slack এর মধ্যে workflow automate করবেন? বাংলাদেশি ফ্রিল্যান্সার ও ব্যবসার জন্য practical scenario।</description>
   </item>
   <item>
-    <title>Manus AI কী? এজেন্টের কাজ, দাম ও গাইড</title>
+    <title>Manus AI কী ও বাংলা অর্থ কী? এজেন্টের কাজ, দাম (৳) ও গাইড</title>
     <link>https://banglaaiguide.com/blog/manus-ai-bangla-guide/</link>
     <guid isPermaLink="true">https://banglaaiguide.com/blog/manus-ai-bangla-guide/</guid>
     <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
-    <description>Manus AI একটি এআই এজেন্ট: কাজ দিলে গবেষণা, স্লাইড বা সাইটের ধাপ এগিয়ে নেয়। Free ও Pro-এর যাচাই করা দাম, মাসিক ক্রেডিট, এবং বাংলাদেশ থেকে ব্যবহারের সীমা।</description>
+    <description>Manus AI কী (Manus এর বাংলা অর্থ কী)? এই AI এজেন্ট কীভাবে গবেষণা, স্লাইড ও ওয়েবসাইট বানায়, Free (৩০০ ক্রেডিট) ও Pro ($20/≈৳২,৪৮৭) দাম ও ব্যবহারের গাইড।</description>
   </item>
   <item>
     <title>MCP (Model Context Protocol) বাংলা গাইড — AI Tool Integration-এর Standard</title>
@@ -1436,11 +1443,11 @@
     <description>সেরা AI অনুবাদ টুলস দিয়ে বাংলা-ইংরেজি অনুবাদ করুন। Google Translate, DeepL, ChatGPT — কোনটি বাংলা অনুবাদে সেরা? সম্পূর্ণ তুলনা ও গাইড।</description>
   </item>
   <item>
-    <title>Claude-এর দাম বাংলাদেশে: Free, Pro ও Max</title>
+    <title>Claude Pricing বাংলাদেশে (৳): Free, Pro, Max ও Ultra দাম</title>
     <link>https://banglaaiguide.com/blog/claude-ai-bangladesh-guide/</link>
     <guid isPermaLink="true">https://banglaaiguide.com/blog/claude-ai-bangladesh-guide/</guid>
     <pubDate>Tue, 24 Mar 2026 00:00:00 GMT</pubDate>
-    <description>Claude-এর Free, Pro, Max ও Ultra-এর অফিসিয়াল দাম ডলারে, বাংলাদেশ ব্যাংকের রেটে আনুমানিক টাকায়। কোন প্ল্যান কাজে লাগে ও দেশ থেকে কীভাবে পেমেন্ট করবেন।</description>
+    <description>Claude pricing ও দাম বাংলাদেশে: Free ($0), Pro ($20/≈৳২,৪৮৭), Max ($100) ও Ultra ($200) প্ল্যানের টাকার হিসাব, Claude Code সীমা ও কার্ডে পেমেন্ট গাইড।</description>
   </item>
   <item>
     <title>Flux AI ইমেজ জেনারেটর — ফ্রি ও ওপেন সোর্স বিকল্প ২০২৬</title>

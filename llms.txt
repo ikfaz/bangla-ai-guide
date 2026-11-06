@@ -1,0 +1,74 @@
+# বাংলা AI গাইড (Bangla AI Guide)
+
+> বাংলাদেশের জন্য কিউরেটেড AI টুলস ডিরেক্টরি, বাংলা প্রম্পট গাইড, BDT প্রাইসিং (বাংলাদেশ ব্যাংকের রেটে আনুমানিক হিসাব), VPN ছাড়াই ব্যবহারযোগ্যতা এবং পেমেন্ট গাইড (https://banglaaiguide.com)।
+
+Bangla AI Guide (`banglaaiguide.com`) is the primary Bangla-language AI tools directory and practical tutorial hub for readers in Bangladesh and West Bengal. Every guide uses verified official pricing and documentation, explains whether a tool works from Bangladesh, provides approximate BDT conversions where verified, and includes copy-pasteable prompts.
+
+## মূল পিলার পাতা (Core Pillar Guides)
+
+- [বাংলা AI গাইড — হোম ও ডিরেক্টরি](https://banglaaiguide.com/): বাংলাদেশের জন্য ৮০+ কিউরেটেড AI টুলস, ক্যাটাগরি ফিল্টার ও তুলনা।
+- [বাংলা AI গাইড (পিলার গাইড)](https://banglaaiguide.com/bangla-ai-guide/): বাংলায় এআই শেখার সম্পূর্ণ শুরু থেকে অ্যাডভান্সড গাইড।
+- [bKash দিয়ে AI Tools কেনা যায়?](https://banglaaiguide.com/bkash-diye-ai-tools-kena-jay/): বাংলাদেশ থেকে আন্তর্জাতিক কার্ড, ডুয়াল কারেন্সি কার্ড ও মোবাইল ব্যাংকিং দিয়ে AI সাবস্ক্রিপশন পেমেন্ট গাইড।
+- [VPN ছাড়া AI Tools বাংলাদেশ](https://banglaaiguide.com/vpn-chara-ai-tools-bangladesh/): বাংলাদেশে সরাসরি কাজ করে এমন সেরা এআই টুলসের তালিকা।
+- [Free AI Tools 2026 Bangladesh](https://banglaaiguide.com/free-ai-tools-2026-bangladesh/): শিক্ষার্থীদের ও ফ্রিল্যান্সারদের জন্য ফ্রি এআই টুলস গাইড।
+- [Cursor AI বাংলা গাইড ও দাম (টাকায়)](https://banglaaiguide.com/cursor-ai-bangla/): কার্সর এআই কোড এডিটরের কাজ, Free থেকে Ultra প্ল্যানের দাম ও ব্যবহার।
+
+## প্রধান AI টুল প্রোফাইল (Reviewed AI Tool Profiles)
+
+- [ChatGPT বাংলা গাইড](https://banglaaiguide.com/chatgpt/): OpenAI ChatGPT-এর ফিচার, প্রম্পট ও বাংলাদেশ থেকে ব্যবহারের নিয়ম।
+- [Claude AI বাংলা গাইড](https://banglaaiguide.com/claude/): Anthropic Claude-এর দীর্ঘ ডকুমেন্ট বিশ্লেষণ, কোডিং ও প্ল্যান পরিচিতি।
+- [Google Gemini বাংলা গাইড](https://banglaaiguide.com/gemini/): Google Gemini ও Workspace ইন্টিগ্রেশন গাইড।
+- [Cursor AI প্রোফাইল](https://banglaaiguide.com/cursor/): এআই কোড এডিটর প্রোফাইল ও তুলনা।
+- [DeepSeek বাংলা গাইড](https://banglaaiguide.com/deepseek-bangladesh/): DeepSeek R1/V3 রিজনিং ও কোডিং গাইড।
+- [NotebookLM বাংলা গাইড](https://banglaaiguide.com/notebooklm-bangla-guide/): গবেষণার নোট, পিডিএফ ও অডিও ওভারভিউ গাইড।
+- [AI টুল তুলনা (Compare AI Tools)](https://banglaaiguide.com/compare/): ৫০+ এআই টুলের মুখোমুখি তুলনা।
+
+## সাম্প্রতিক ও জনপ্রিয় ব্লগ গাইড (Latest & Popular Bangla AI Guides)
+
+- [Claude Code Pricing ও Usage Bundles — বাংলা গাইড](https://banglaaiguide.com/blog/claude-code-pricing-bangla/): Claude Code pricing বাংলায়: Pro ($20), Max ($100) ও Ultra ($200) প্ল্যানের আনুমানিক টাকার হিসাব, নতুন Usage Bundles ছাড় ও টার্মিনাল/VS Code-এ ব্যবহারের নিয়ম।
+- [Aesthetic Prompt for ChatGPT — বাংলায় ২০টি](https://banglaaiguide.com/blog/chatgpt-aesthetic-prompt-bangla/): Aesthetic prompt for ChatGPT বাংলায় শিখুন—সফট ফিল্ম, গোল্ডেন আওয়ার ও ঢাকার বর্ষা লুক। ChatGPT Images-এ ২০টি কপি-পেস্ট প্রম্পট ও বাংলাদেশে ব্যবহারের ধাপ।
+- [Gemini Avatar শেয়ার: নিজের চেহারায় AI ভিডিও বানানোর গাইড | বাংলা AI গাইড](https://banglaaiguide.com/blog/gemini-avatar-share-bangla-guide/): Gemini-তে নিজের মুখ ও কণ্ঠের Avatar বানিয়ে বন্ধুদের সঙ্গে শেয়ার করা যায় এখন। বাংলাদেশ থেকে চালুর ধাপ, টাকায় খরচ, VPN ও নিরাপত্তার নিয়ম সহজ বাংলায় জানুন।
+- [Nano Banana কী? Gemini ছবি এডিটের ২৫টি প্রম্পট](https://banglaaiguide.com/blog/nano-banana-gemini-prompt-bangla/): Nano Banana হলো Gemini-এর ছবি এডিট মডেল। বাংলাদেশে ফ্রি ব্যবহারের ধাপ, Google AI Plan-এ উন্নত মডেল, আর ২৫টি কপি-পেস্ট প্রম্পট—পোর্ট্রেট থেকে থাম্বনেইল।
+- [প্রোডাক্ট লঞ্চ চেকলিস্ট: AI দিয়ে ধাপ](https://banglaaiguide.com/blog/ai-diye-product-launch-checklist-bangla/): নতুন প্রোডাক্ট ছাড়ার আগে, লঞ্চের দিনে ও পরের মাসে কী করবেন। AI দিয়ে গবেষণা, লেখা, যাচাই ও ফলোআপের চেকলিস্ট—ছোট দল ও স্টার্টআপের জন্য সহজ বাংলা গাইড।
+- [Manus AI কী ও বাংলা অর্থ কী? এজেন্টের কাজ, দাম (৳) ও গাইড](https://banglaaiguide.com/blog/manus-ai-bangla-guide/): Manus AI কী (Manus এর বাংলা অর্থ কী)? এই AI এজেন্ট কীভাবে গবেষণা, স্লাইড ও ওয়েবসাইট বানায়, Free (৩০০ ক্রেডিট) ও Pro ($20/≈৳২,৪৮৭) দাম ও ব্যবহারের গাইড।
+- [Claude Pricing বাংলাদেশে (৳): Free, Pro, Max ও Ultra দাম](https://banglaaiguide.com/blog/claude-ai-bangladesh-guide/): Claude pricing ও দাম বাংলাদেশে: Free ($0), Pro ($20/≈৳২,৪৮৭), Max ($100) ও Ultra ($200) প্ল্যানের টাকার হিসাব, Claude Code সীমা ও কার্ডে পেমেন্ট গাইড।
+- [ছোট অনলাইন দোকানের ৭ দিনের কনটেন্ট পরিকল্পনা | বাংলা AI গাইড](https://banglaaiguide.com/blog/choto-online-dokan-7-diner-content-plan/): কাল্পনিক কাপড়ের ব্যাগের দোকান দিয়ে সাত দিনের পোস্ট পরিকল্পনা শিখুন। বাংলা AI প্রম্পট, সম্পাদনাযোগ্য ক্যালেন্ডার ও প্রকাশের আগে যাচাইয়ের তালিকা।
+- [Wispr Flow বাংলা গাইড: কথা বলে দ্রুত লেখার AI টুল](https://banglaaiguide.com/blog/wispr-flow-ai-dictation-bangla-guide/): Wispr Flow কী, কীভাবে যেকোনো app-এ voice typing করবেন, বাংলা ব্যবহার, free ও Pro plan, privacy এবং সীমাবদ্ধতা—সহজ বাংলায় জানুন।
+- [ChatGPT Prompt Bangla: ৫০টি সেরা কপি-পেস্ট প্রম্পট (২০২৬)](https://banglaaiguide.com/blog/chatgpt-prompt-bangla-50-collection/): ChatGPT Prompt Bangla সংগ্রহে পড়াশোনা, কনটেন্ট, ব্যবসা, পরিকল্পনা ও কোডিংয়ের ৫০টি ব্যবহারযোগ্য বাংলা প্রম্পট। কপি-পেস্ট করে সম্পাদনা করুন।
+- [আইনজীবী/উকিল AI বাংলা গাইড — Bangladesh Court Practice ২০২৬](https://banglaaiguide.com/blog/advocate-ukil-ai-bangladesh/): Bangladesh আইনজীবীদের জন্য AI ব্যবহার — case research, contract drafting, client management, citation, court prep — বাংলা গাইড।
+- [AI দিয়ে গরু পালন — Dairy Farmer-দের জন্য বাংলা গাইড ২০২৬](https://banglaaiguide.com/blog/ai-diye-goru-palan-bangla/): AI দিয়ে dairy + beef cattle management — milk yield, health, AI breeding, market timing — বাংলাদেশী খামারী-দের জন্য গাইড।
+- [AI দিয়ে মাছ চাষ — বাংলাদেশী Fish Farmer-দের জন্য গাইড ২০২৬](https://banglaaiguide.com/blog/ai-diye-mach-chash-bangla/): AI দিয়ে মাছ চাষ — water quality monitoring, disease early detection, feed optimization, market price — বাংলাদেশী মাছ চাষীর জন্য গাইড।
+- [AI দিয়ে মুরগি ফার্ম — Poultry Farmer-দের জন্য বাংলা গাইড ২০২৬](https://banglaaiguide.com/blog/ai-diye-murgi-farm-bangla/): AI দিয়ে layer + broiler farm management — disease control, FCR, market price, hatchery — বাংলাদেশী poultry farmer-দের জন্য গাইড।
+- [গৃহিণীদের জন্য AI বাংলা গাইড — দৈনন্দিন কাজে ChatGPT ২০২৬](https://banglaaiguide.com/blog/ai-griihini-bangla-guide/): গৃহিণীদের জন্য AI — meal planning, recipe, কেনাকাটা budget, সন্তানের পড়া, পারিবারিক স্বাস্থ্য — দৈনন্দিন কাজে ChatGPT ব্যবহার বাংলা গাইড।
+- [AI দিয়ে Bangladesh Bank Loan Application — Personal, Home, SME ২০২৬](https://banglaaiguide.com/blog/bd-bank-loan-ai-bangla/): Bangladesh bank loan AI দিয়ে — personal loan, home loan, SME loan, car loan। Eligibility check, document, EMI calc, common reject — বাংলা গাইড।
+- [Brac Bank Mastercard দিয়ে Claude Pro Subscription — বাংলা ২০২৬](https://banglaaiguide.com/blog/brac-mastercard-claude-subscription-bangla/): Brac Bank Platinum/World Mastercard দিয়ে Claude Pro + Max সাবস্ক্রিপশন কেনা — step-by-step, USD limit, common issue + fix — বাংলা গাইড।
+- [ChatGPT Tasks বাংলা গাইড — Automated Scheduling ২০২৬](https://banglaaiguide.com/blog/chatgpt-tasks-scheduling-bangla/): ChatGPT Tasks — OpenAI-এর scheduling feature যা auto-run করে। বাংলাদেশী professional-এর জন্য practical use case সহ পূর্ণ গাইড।
+- [Claude Opus 4.8 বাংলা গাইড — Anthropic-এর নতুন Flagship ২০২৬](https://banglaaiguide.com/blog/claude-opus-4-8-bangla-guide/): Claude Opus 4.8 — Anthropic-এর latest flagship (May 28, 2026 released)। Effort Control, Dynamic Workflows, 2.5x fast mode, BD থেকে access — পূর্ণ বাংলা গাইড।
+- [Cox's Bazar Travel AI দিয়ে — Family Vacation Planning বাংলা গাইড ২০২৬](https://banglaaiguide.com/blog/coxs-bazar-travel-ai-bangla/): Cox's Bazar family ভ্রমণ AI দিয়ে — hotel comparison, Marine Drive, Inani, Saint Martin, Himchori, budget, transport, peak season — সম্পূর্ণ গাইড।
+- [AI দিয়ে ডেঙ্গু প্রতিরোধ ও সচেতনতা — ২০২৬ বাংলাদেশ গাইড](https://banglaaiguide.com/blog/dengue-prevention-ai-bangla/): ডেঙ্গু সচেতনতা, লক্ষণ চিহ্নিতকরণ, প্রতিরোধ, প্ল্যাটেলেট monitoring, hospital referral — AI দিয়ে কীভাবে — বাংলা গাইড ২০২৬।
+- [Google Gemini Omni Flash বাংলা Review — সত্যিই কি Veo 3-এর Successor? ২০২৬](https://banglaaiguide.com/blog/google-gemini-omni-bangla-review/): Google Gemini Omni Flash — I/O 2026-এ launched। 7-দিনের honest review: pros, cons, Veo 3 vs Kling vs Runway তুলনা, BD creator-এর জন্য verdict।
+- [AI দিয়ে Government Tender লেখা — Bangladesh e-GP গাইড ২০২৬](https://banglaaiguide.com/blog/govt-tender-likha-ai-bangla/): Bangladesh govt tender AI দিয়ে — e-GP submission, technical + financial proposal, BOQ, CV, past performance — সম্পূর্ণ বাংলা গাইড।
+- [GPT-5 mini বাংলা গাইড — Budget-friendly OpenAI Model ২০২৬](https://banglaaiguide.com/blog/gpt-5-mini-bangla/): GPT-5 mini — OpenAI-এর সাশ্রয়ী model। বাংলাদেশী dev + creator-দের জন্য access, capability, GPT-5 vs mini comparison, real use case।
+- [Hermes Agent বাংলা গাইড — Nous Research-এর Self-Improving AI Agent ২০২৬](https://banglaaiguide.com/blog/hermes-agent-bangla-guide/): Hermes Agent — Nous Research-এর self-improving open-source AI agent (v0.14 Foundation Release)। বাংলাদেশ থেকে install, persistent memory, BD developer-দের জন্য…
+- [Bangladesh HR Recruiter-দের জন্য AI বাংলা গাইড — ATS, Sourcing, Interview ২০২৬](https://banglaaiguide.com/blog/hr-recruiter-bd-ai-bangla/): BD HR recruiter-দের জন্য AI tools — resume screening, sourcing, ATS, interview, onboarding automation — পূর্ণ বাংলা গাইড।
+- [AI দিয়ে বাংলা নাটক Script লেখা — ২০২৬ Scriptwriter গাইড](https://banglaaiguide.com/blog/natok-script-ai-bangla/): AI দিয়ে বাংলা নাটক / ওয়েব সিরিজ / শর্টফিল্ম script — character arc, dialogue, plot — Claude + ChatGPT workflow, BD writer-এর জন্য পূর্ণ গাইড।
+- [AI দিয়ে NBR Tax Consultant Bangladesh — ITR, VAT, Return গাইড ২০২৬](https://banglaaiguide.com/blog/nbr-tax-consultant-ai-bangla/): Bangladesh NBR tax consultant-দের জন্য AI — Individual Tax Return, VAT calculation, audit prep, client management — বাংলা গাইড।
+- [OpenClaw বাংলা গাইড — Open-Source AI Agent (২০২৬ Updated)](https://banglaaiguide.com/blog/openclaw-bangla-guide/): OpenClaw — Peter Steinberger-এর open-source personal AI agent। বাংলাদেশ থেকে install, 100+ skills, multi-channel inbox, security concerns + alternatives — সম্পূর্ণ…
+- [AI দিয়ে Passport Renewal MRP/e-Passport বাংলাদেশ গাইড ২০২৬](https://banglaaiguide.com/blog/passport-mrp-ai-bangla/): Passport renewal AI দিয়ে — MRP to e-Passport conversion, NID matching, fees, status check, photo standard, common errors — বাংলা গাইড।
+- [Bangladesh থেকে Remote Work AI Workflow — বাংলা গাইড ২০২৬](https://banglaaiguide.com/blog/remote-work-from-bangladesh-ai-workflow/): Bangladesh থেকে remote work — Upwork, Toptal, US/EU client, timezone, payment, AI productivity stack, tax — সম্পূর্ণ বাংলা গাইড।
+- [Sajek Valley Vacation Planning AI দিয়ে — সম্পূর্ণ বাংলা গাইড ২০২৬](https://banglaaiguide.com/blog/sajek-vacation-planning-ai-bangla/): Sajek Valley ভ্রমণ পরিকল্পনা AI দিয়ে — itinerary, weather, transport (Khagrachari/Dighinala), cottage booking, budget, restricted access — সম্পূর্ণ বাংলা গাইড।
+- [Sundarbans Tourism AI দিয়ে Plan — Eco-Tour বাংলা গাইড ২০২৬](https://banglaaiguide.com/blog/sundarbans-tourism-ai-bangla/): Sundarbans tour AI দিয়ে — Khulna/Mongla এর তিন/চার দিনের itinerary, launch + boat selection, Forest Dept permission, wildlife spotting probability, budget —…
+- [Google Veo 3 বাংলা গাইড — Sora-র Successor AI Video Model ২০২৬](https://banglaaiguide.com/blog/veo-3-bangla-deep-guide/): Google Veo 3 — উন্নত AI video generation। বাংলাদেশ থেকে access, Bangla prompt, professional video creation — বাংলা গাইড।
+- [AI দিয়ে Visa Application Bangladesh — Schengen, US, UK, Canada গাইড ২০২৬](https://banglaaiguide.com/blog/visa-application-ai-bangladesh/): AI দিয়ে visa application — Schengen, US, UK, Canada, Australia, India। Form fill, document checklist, interview prep, cover letter — বাংলা গাইড।
+- [BDT Credit Card দিয়ে AI Subscription — Brac, City, EBL, DBBL ২০২৬ গাইড](https://banglaaiguide.com/blog/bdt-credit-card-ai-subscription-bangla/): BDT credit card দিয়ে ChatGPT, Claude, Midjourney subscription কেনা — কোন কার্ড কাজ করে, USD limit, charge — বাংলা গাইড।
+- [ChatGPT Atlas বাংলা গাইড — OpenAI-এর নতুন AI Browser ২০২৬](https://banglaaiguide.com/blog/chatgpt-atlas-bangla-guide/): ChatGPT Atlas browser — OpenAI-এর নতুন AI-powered browser। বাংলাদেশ থেকে download, Agent mode, browsing automation, Chrome-এর সাথে পার্থক্য — সম্পূর্ণ গাইড।
+- [Claude Projects বাংলা গাইড — Persistent Context Workspace ২০২৬](https://banglaaiguide.com/blog/claude-projects-bangla-guide/): Claude Projects — long-term context, file uploads, custom instructions। বাংলাদেশী professional-দের জন্য sample workflow + practical tips সহ পূর্ণ গাইড।
+- [Claude Skills বাংলা গাইড — Custom Workflow তৈরির সম্পূর্ণ পদ্ধতি ২০২৬](https://banglaaiguide.com/blog/claude-skills-bangla-byabohar/): Claude Skills — Anthropic-এর নতুন feature যা দিয়ে repeatable workflow তৈরি করা যায়। বাংলাদেশী developer + creator-দের জন্য পূর্ণ গাইড।
+- [Cline AI বাংলা গাইড — VS Code-এর Open Source Cursor Alternative ২০২৬](https://banglaaiguide.com/blog/cline-ai-bangla-coding-tutorial/): Cline AI — VS Code extension যেটা Cursor-এর বিকল্প, কোনো subscription ছাড়া নিজের API key দিয়ে চলে। বাংলাদেশী dev-দের জন্য full গাইড।
+
+## ফিড ও সাইটম্যাপ (Feeds & Sitemaps)
+
+- [Main Sitemap](https://banglaaiguide.com/sitemap.xml)
+- [Google News Sitemap](https://banglaaiguide.com/news-sitemap.xml)
+- [RSS Feed](https://banglaaiguide.com/feed.xml)
+- [Editorial Policy](https://banglaaiguide.com/editorial-policy/)

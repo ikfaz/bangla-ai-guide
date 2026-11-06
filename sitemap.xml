@@ -110,7 +110,7 @@
   </url>
   <url>
     <loc>https://banglaaiguide.com/blog/</loc>
-    <lastmod>2026-11-05</lastmod>
+    <lastmod>2026-11-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -933,6 +933,12 @@
   <url>
     <loc>https://banglaaiguide.com/blog/claude-code-bangla-developer-guide/</loc>
     <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://banglaaiguide.com/blog/claude-code-pricing-bangla/</loc>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1964,7 +1970,7 @@
   </url>
   <url>
     <loc>https://banglaaiguide.com/cursor-ai-bangla/</loc>
-    <lastmod>2026-11-05</lastmod>
+    <lastmod>2026-11-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

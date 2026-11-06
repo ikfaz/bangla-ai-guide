@@ -30,6 +30,8 @@ const steps = [
   ["generate-search-index.cjs"],
   ["generate-feed.cjs"],
   ["generate-sitemap.cjs"],
+  ["generate-news-sitemap.cjs"],
+  ["generate-llms-txt.cjs"],
   ["meta-lint.cjs", "--check"],
 ];
 

@@ -1,5 +1,5 @@
 # robots.txt — banglaaiguide.com
-# Last Updated: March 2026
+# Last Updated: November 2026
 
 User-agent: *
 Allow: /
@@ -7,7 +7,27 @@ Allow: /
 # Block any future admin or private paths
 Disallow: /admin/
 Disallow: /private/
-Disallow: /*.json$
 
-# Sitemap location
+# Explicitly welcome AI Answer Engines (AEO)
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Sitemaps & Feeds (Google Search, Google News & Discover, RSS)
 Sitemap: https://banglaaiguide.com/sitemap.xml
+Sitemap: https://banglaaiguide.com/news-sitemap.xml
+Sitemap: https://banglaaiguide.com/feed.xml
