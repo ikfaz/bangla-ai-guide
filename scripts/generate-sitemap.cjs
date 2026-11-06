@@ -108,6 +108,7 @@ const PRIORITY_RULES = [
     match: (slug) =>
       [
         "bangla-ai-guide",
+        "tools",
         "ai-tools-bangladesh-bengali",
         "free-ai-tools-2026-bangladesh",
         "bkash-diye-ai-tools-kena-jay",
@@ -139,7 +140,6 @@ const DEFAULT_RULE = { priority: "0.7", changefreq: "weekly" };
 const EXCLUDED_SLUGS = new Set([
   "404",
   "tool-detail",
-  "tools", // legacy redirect folder
 ]);
 
 function hasNonAscii(name) {

@@ -68,9 +68,4 @@ update('blog/index.html', html => {
   if (!/<main\b[\s\S]*?<\/main>/i.test(html)) throw new Error('Missing blog main element');
   return html.replace(/<main\b[\s\S]*?<\/main>/i, () => library);
 });
-// Keep the four curated home cards (copy and ordering) in sync with article artwork.
-update('index.html', html => html.replace(/(<a href="\/blog\/([^/"]+)\/" class="blog-card-mini">\s*)<div class="cover"[^>]*>[\s\S]*?<\/div>/g, (full, open, slug) => {
-  const article = articles.find(a => a.slug === slug);
-  return article ? open + '<div class="cover">' + image(article) + '</div>' : full;
-}));
 console.log('Blog archive: ' + articles.length + ' illustrated guides');

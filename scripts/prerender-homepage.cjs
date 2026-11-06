@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-// Pre-render the top featured tool cards into index.html's tools-grid so
-// crawlers see real content without JS. The client-side renderer in main.js
+// Pre-render the first tool cards on /tools/ so visitors have links without JS.
+// The client-side renderer in main.js
 // replaces innerHTML when it loads, so the dynamic UI is unaffected.
 //
 //   node scripts/prerender-homepage.cjs
@@ -13,14 +13,10 @@ const vm = require("vm");
 const toolRoutes = require("../js/tool-routes.js");
 
 const ROOT = path.resolve(__dirname, "..");
-const INDEX = path.join(ROOT, "index.html");
+const INDEX = path.join(ROOT, "tools", "index.html");
 const DATA = path.join(ROOT, "js", "tools-data.js");
 
-const SECTIONS = [
-  { id: "toolsGrid", count: 12, marker: "TOOLS", renderer: "card" },
-  { id: "heroFeatured", count: 4, marker: "HERO", renderer: "heroCard" },
-  { id: "trendingGrid", count: 8, marker: "TRENDING", renderer: "card" },
-];
+const TOOLS_SECTION = { id: "toolsGrid", count: 12, marker: "TOOLS" };
 
 function loadTools() {
   const source = fs.readFileSync(DATA, "utf8");
@@ -120,21 +116,6 @@ function pickTopTools(tools, n, offset = 0) {
     .slice(offset, offset + n);
 }
 
-function renderHeroCard(tool) {
-  const slug = slugify(tool.name);
-  const route = toolRoutes.resolve(tool);
-  const url = route?.href || tool.direct_url;
-  const cat = categoryLabel(tool.category);
-  return `<a class="hero-feature-card" href="${escapeHtml(url)}">
-  <img class="hero-feature-logo" src="${escapeHtml(`/assets/tool-marks/${slugify(tool.name)}.svg`)}" alt="${escapeHtml(tool.name)} logo" width="40" height="40" loading="lazy" decoding="async" />
-  <div class="hero-feature-body">
-    <h3>${escapeHtml(tool.name)}</h3>
-    <p class="hero-feature-cat">${escapeHtml(cat)}</p>
-    <p class="hero-feature-desc">${escapeHtml((tool.description_bn || "").slice(0, 90))}</p>
-  </div>
-</a>`;
-}
-
 function injectSection(html, section, block) {
   const start = `<!-- PRERENDER:${section.marker}:START -->`;
   const end = `<!-- PRERENDER:${section.marker}:END -->`;
@@ -169,22 +150,13 @@ function run() {
     const svg = '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><rect width="48" height="48" rx="13" fill="' + background + '"/><text x="24" y="31" fill="' + foreground + '" font-family="Arial,sans-serif" font-weight="700" font-size="21" text-anchor="middle">' + initials + '</text></svg>';
     fs.writeFileSync(path.join(markDir, slugify(tool.name) + ".svg"), svg, "utf8");
   });
-  let html = fs.readFileSync(INDEX, "utf8");
-  const before = html.length;
-  const summaries = [];
-
-  for (const section of SECTIONS) {
-    const picks = pickTopTools(tools, section.count);
-    const renderer = section.renderer === "heroCard" ? renderHeroCard : (t) => renderCard(t, USD_TO_BDT);
-    const block = picks.map(renderer).join("\n");
-    html = injectSection(html, section, block);
-    summaries.push(`${section.id}: ${picks.length}`);
-  }
-
-  fs.writeFileSync(INDEX, html, "utf8");
-  console.log(
-    `Pre-rendered ${summaries.join(", ")} into index.html (${before} → ${html.length} bytes)`,
-  );
+  const html = fs.readFileSync(INDEX, "utf8");
+  const picks = pickTopTools(tools, TOOLS_SECTION.count);
+  const cards = picks.map(tool => renderCard(tool, USD_TO_BDT)).join("\n");
+  const next = injectSection(html, TOOLS_SECTION, cards);
+  if (!next.includes("<!-- PRERENDER:TOOLS:START -->")) throw new Error("Missing tool grid");
+  if (next !== html) fs.writeFileSync(INDEX, next, "utf8");
+  console.log(`Pre-rendered ${picks.length} tool cards into /tools/.`);
 }
 
 run();

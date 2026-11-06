@@ -32,6 +32,11 @@ function scan(dir) {
 }
 scan(root);
 assert.ok(read('index.html').includes('id="categoryTabs"'));
+assert.ok(read('index.html').includes('id="toolsSection"'));
+assert.ok(!read('index.html').includes('id="toolsGrid"'));
+assert.ok(read('tools/index.html').includes('id="categoryTabs"'));
+assert.ok(read('tools/index.html').includes('id="toolsGrid"'));
+assert.ok(read('sitemap.xml').includes('<loc>https://banglaaiguide.com/tools/</loc>'));
 assert.ok(read('sitemap.xml').includes('https://banglaaiguide.com/editorial-policy/'));
 assert.ok(read('scripts/generate-seo-pages.cjs').includes('if (page.slug === "bkash-diye-ai-tools-kena-jay")'));
 console.log('Integration checks passed: six commercial destinations, ' + pages + ' HTML sources, consent ordering, provider handoffs, legacy anchor, policy sitemap and reviewed-page protection.');
