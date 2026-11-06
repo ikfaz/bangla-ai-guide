@@ -101,6 +101,9 @@ function run() {
       && !/content=["']image\/png["'][^>]*og:image:type/i.test(html)) {
       errors.push(`${where}: og:image:type is not image/png`);
     }
+    if (/<figure\b[^>]*\bclass=["'][^"']*\bav-hero\b/i.test(html)) {
+      errors.push(`${where}: duplicate inline figure.av-hero banner (use /assets/editorial/ in .article-hero only)`);
+    }
 
     const coverPath = path.join(BLOG, article.slug, 'cover.png');
     if (!fs.existsSync(coverPath)) {

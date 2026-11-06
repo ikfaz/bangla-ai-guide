@@ -326,6 +326,7 @@ function processFile(file, slug) {
   else if (!/class=(["'])[^"']*\barticle-kicker\b[^"']*\1/.test(article)) article = insertBeforeH1(article, meta);
 
   {
+    article = article.replace(/\s*<figure\b[^>]*\bclass=(["'])[^"']*\bav-hero\b[^"']*\1[^>]*>[\s\S]*?<\/figure>\s*/gi, '\n');
     const hero = heroBlock(slug, title);
     const replacedHero = replaceSentinel(article, '<!-- ARTICLE-HERO:START -->', '<!-- ARTICLE-HERO:END -->', hero);
     if (replacedHero) {

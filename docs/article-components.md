@@ -12,14 +12,10 @@ The shared magazine chrome (cover, chips, table of contents, reading time) is ad
 
 ## Hero
 
-```html
-<figure class="av-hero">
-  <img src="/blog/your-slug/cover.png" width="1200" height="630" alt="লেখাটির শিরোনাম" decoding="async" fetchpriority="high">
-  <figcaption>লেখাটির শিরোনাম</figcaption>
-</figure>
-```
-
-Use the PNG cover for social previews. Set `width` and `height` so the image does not shift the layout. The hero is the first image, so leave it eager.
+Do **not** manually add `<figure class="av-hero">` or inline `cover.png` inside the article body.
+- `scripts/inject-article-chrome.cjs` and `scripts/apply-guide-workshops.cjs` automatically inject `<figure class="article-hero">` in the top `.gw-hero-visual` slot using the clean vector editorial illustration `/assets/editorial/<topic>.svg` mapped by `scripts/lib/editorial-art.cjs`.
+- `scripts/generate-blog-covers.cjs` automatically generates the `1200×630` `cover.svg` and `cover.png` from that same `/assets/editorial/<topic>.svg` illustration for OpenGraph, Twitter Cards, Google News, and `Article` / `NewsArticle` JSON-LD schema.
+- If a new slug needs a specific editorial topic illustration, add a slug-to-topic mapping in `overrides` inside `scripts/lib/editorial-art.cjs`.
 
 ## Quick answer
 

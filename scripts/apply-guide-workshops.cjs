@@ -170,6 +170,7 @@ function frameReader(doc, reader, description) {
   reader.empty().append(breadcrumb).append(hero).append(layout);
 }
 function refreshHero(doc, reader) {
+  reader.find('.gw-reading .av-hero').remove();
   reader.find('.gw-feature,.gw-actions').remove();
   const headings = contentHeadings(doc, reader);
   const target = headings.filter((_, node) => /step|ধাপ|workflow|কীভাবে|কিভাবে|প্রম্পট|prompt|কাজের জন্য/i.test(doc(node).text())).first();

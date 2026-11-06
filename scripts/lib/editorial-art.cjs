@@ -81,6 +81,7 @@ const overrides = {
   'ai-diye-youtube-thumbnail-banano-ctr-baranor-guide': 'design',
   'notebooklm-bangla-guide': 'research',
   'claude-code-bangla-developer-guide': 'coding',
+  'claude-code-pricing-bangla': 'coding',
   'ai-diye-it-student-career-bangladesh': 'jobs',
   'gemini-avatar-share-bangla-guide': 'portrait',
   'ai-diye-website-banano-no-code-bangla-guide': 'coding',
