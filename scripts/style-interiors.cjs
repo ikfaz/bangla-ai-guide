@@ -44,7 +44,7 @@ function fixMark(tag) {
   return tag.replace(/\bsrc="[^"]*"/i,'src="'+src+'"').replace(/\s+onerror="[^"]*"/i,'');
 }
 function enhance(input, route) {
-  if (route === 'tools') return input;
+  if (route === 'tools' || route === 'post-planner') return input;
   if (input.includes('data-guide-workshop')) return input;
   if (/<meta\b[^>]*http-equiv\s*=\s*["']refresh["']/i.test(input)) return input;
   let html = input.replace(copyOnly,(_,copy)=>copy);

@@ -95,7 +95,7 @@ function collectRootPages() {
     if (isRedirectStub(html)) continue;
     const title = extractTag(html, 'title');
     if (!title) continue;
-    const kind = entry.name !== 'tools' && looksLikeTool(entry.name) ? 'tool' : 'page';
+    const kind = !['tools', 'post-planner'].includes(entry.name) && looksLikeTool(entry.name) ? 'tool' : 'page';
     out.push({
       t: title,
       u: `/${entry.name}/`,

@@ -11,6 +11,7 @@ RewriteEngine On
 # /index.html → /
 RewriteRule ^index\.html$ https://banglaaiguide.com/ [R=301,L]
 RewriteRule ^tools/index\.html$ https://banglaaiguide.com/tools/ [R=301,L]
+RewriteRule ^post-planner/index\.html$ https://banglaaiguide.com/post-planner/ [R=301,L]
 
 # Near-duplicate Cursor tutorial → keeper page for the Cursor cluster
 RewriteRule ^blog/cursor-ai-bangla-tutorial-codingye-biplob-anun/?$ https://banglaaiguide.com/cursor-ai-bangla/ [R=301,L]
