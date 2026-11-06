@@ -32,3 +32,10 @@ When the owner provides analytics access or an export, inspect this event and
 its resource IDs before using it for decisions. Compare which resources receive
 clicks among consenting readers; do not infer traffic, successful downloads,
 subscriber growth or revenue from these counts alone.
+
+The post planner adds two consent-gated events on `/post-planner/`.
+`post_plan_create` fires after the reader makes a plan from the form.
+`post_plan_csv_click` fires when the browser starts the CSV handoff and
+includes only the fixed `variant` value `example` or `custom`. Neither event
+includes the product, audience, shop facts, plan, or prompt. The download
+event does not confirm that a file was saved.

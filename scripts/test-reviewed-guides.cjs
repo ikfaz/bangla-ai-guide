@@ -9,7 +9,7 @@ vm.createContext(context);
 vm.runInContext(read('js/tools-data.js') + ';this.data = tools;', context);
 const main = read('js/main.js');
 vm.runInContext(main.slice(main.indexOf('  function getPriceInfo('), main.indexOf('  function matchSearch(')), context);
-const home = read('index.html');
+const directory = read('tools/index.html');
 let guides = 0;
 for (const slug of ['chatgpt', 'claude', 'gemini']) {
   const tool = context.data.find(t => t.name.toLowerCase() === slug);
@@ -39,7 +39,7 @@ for (const slug of ['chatgpt', 'claude', 'gemini']) {
     assert.equal(info.bdtLabel, tool['priceSummary_' + language]);
     assert.equal(info.paidBdt, null, slug + ' untested checkout must not be converted to BDT');
   }
-  assert.ok(home.includes(tool.priceSummary_bn), slug + ' static homepage price agrees with dynamic card');
+  assert.ok(directory.includes(tool.priceSummary_bn), slug + ' static directory price agrees with dynamic card');
   for (const [first, second] of require('./comparison-pairs.json')) {
     if (![first, second].includes(tool.name)) continue;
     const s = v => v.toLowerCase().replace(/\./g, '').replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');

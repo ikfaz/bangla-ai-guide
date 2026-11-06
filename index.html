@@ -4,6 +4,23 @@
   <link rel="stylesheet" href="/css/type.css">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>
+    // Keep bookmarked searches and directory fragments working after the move.
+    (() => {
+      const moveDirectoryLink = () => {
+        const directoryAnchors = ['#toolsSection', '#categoryTabs'];
+        const url = new URL(window.location.href);
+        const isDirectorySearch = ['q', 'category', 'payment', 'bd', 'price'].some(key => url.searchParams.has(key));
+        const isDirectoryAnchor = directoryAnchors.includes(url.hash);
+        if (!isDirectorySearch && !isDirectoryAnchor) return;
+        url.pathname = '/tools/';
+        if (!isDirectoryAnchor) url.hash = '';
+        window.location.replace(url.href);
+      };
+      moveDirectoryLink();
+      window.addEventListener('hashchange', moveDirectoryLink);
+    })();
+  </script>
   <link rel="icon" type="image/png" href="/favicon-96x96.png?v=2026-10-31" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2026-10-31" />
   <link rel="shortcut icon" href="/favicon.ico?v=2026-10-31" />
@@ -11,8 +28,8 @@
   <meta name="apple-mobile-web-app-title" content="BanglaAIGuide" />
   <link rel="manifest" href="/site.webmanifest?v=2026-10-31" />
   <meta name="theme-color" content="#155b45" />
-  <title>বাংলা AI গাইড — বাংলাদেশের সেরা AI টুলস ডিরেক্টরি ২০২৬</title>
-  <meta name="description" content="বাংলাদেশের জন্য সেরা AI টুলস খুঁজুন। কোন টুল BD থেকে কাজ করে, BDT প্রাইস, bKash পেমেন্ট — সব বাংলায়। ChatGPT, Claude, Midjourney, Cursor সহ কিউরেটেড AI টুলস।" />
+  <title>বাংলা AI গাইড — বাংলায় হাতে-কলমে AI শিখুন</title>
+  <meta name="description" content="ছবি এডিট, দোকানের কনটেন্ট পরিকল্পনা ও পড়াশোনায় AI ব্যবহার শিখুন। বাংলা টিউটোরিয়াল, নমুনা প্রম্পট ও AI টুল ডিরেক্টরি।" />
   <meta name="keywords" content="AI টুলস বাংলাদেশ, বাংলা AI গাইড, ChatGPT বাংলা, AI tools Bangladesh, free AI tools BD, বাংলাদেশে AI, AI tools BDT price, bangla ai guide" />
   <meta name="author" content="বাংলা AI গাইড" />
   <meta name="robots" content="index, follow" />
@@ -23,40 +40,28 @@
   <link rel="alternate" type="application/rss+xml" title="বাংলা AI গাইড — ব্লগ ফিড" href="https://banglaaiguide.com/feed.xml" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://banglaaiguide.com/" />
-  <meta property="og:title" content="বাংলা AI গাইড — বাংলাদেশের সেরা AI টুলস" />
-  <meta property="og:description" content="কিউরেটেড AI টুলস — বাংলায় রিভিউ, BDT প্রাইস, VPN লাগবে কিনা সব জানুন।" />
+  <meta property="og:title" content="বাংলা AI গাইড — বাংলায় হাতে-কলমে AI শিখুন" />
+  <meta property="og:description" content="ছবি এডিট, দোকানের কনটেন্ট পরিকল্পনা ও পড়াশোনায় AI ব্যবহার শিখুন। বাংলা টিউটোরিয়াল, নমুনা প্রম্পট ও AI টুল ডিরেক্টরি।" />
   <meta property="og:image" content="https://banglaaiguide.com/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="বাংলা AI গাইড — বাংলাদেশের সেরা AI টুলস ডিরেক্টরি" />
+  <meta property="og:image:alt" content="বাংলা AI গাইড" />
   <meta property="og:locale" content="bn_BD" />
   <meta property="og:site_name" content="বাংলা AI গাইড" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@banglaaiguide" />
-  <meta name="twitter:title" content="বাংলা AI গাইড — বাংলাদেশের সেরা AI টুলস" />
-  <meta name="twitter:description" content="বাংলাদেশের জন্য AI টুলস — বাংলায় রিভিউ, BDT প্রাইস, BD থেকে কাজ করে কিনা।" />
+  <meta name="twitter:title" content="বাংলা AI গাইড — বাংলায় হাতে-কলমে AI শিখুন" />
+  <meta name="twitter:description" content="ছবি এডিট, দোকানের কনটেন্ট পরিকল্পনা ও পড়াশোনায় AI ব্যবহার শিখুন। বাংলা টিউটোরিয়াল, নমুনা প্রম্পট ও AI টুল ডিরেক্টরি।" />
   <meta name="twitter:image" content="https://banglaaiguide.com/og-image.png" />
-  <link rel="preconnect" href="https://logo.clearbit.com" />
-  <script src="js/mailchimp.js?v=2026-10-26-trust" defer></script>
+  <script src="/js/mailchimp.js?v=2026-10-26-trust" defer></script>
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"WebSite","name":"বাংলা AI গাইড","url":"https://banglaaiguide.com","description":"বাংলাদেশের জন্য AI টুলস ডিরেক্টরি","inLanguage":"bn-BD","potentialAction":{"@type":"SearchAction","target":"https://banglaaiguide.com/?q={search_term_string}","query-input":"required name=search_term_string"}}
+  {"@context":"https://schema.org","@type":"WebSite","name":"বাংলা AI গাইড","url":"https://banglaaiguide.com","description":"বাংলায় AI শেখার ব্যবহারিক গাইড ও টুল ডিরেক্টরি","inLanguage":"bn-BD","potentialAction":{"@type":"SearchAction","target":"https://banglaaiguide.com/tools/?q={search_term_string}","query-input":"required name=search_term_string"}}
   </script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      var toolsArr = window.tools || (typeof tools !== "undefined" && Array.isArray(tools) ? tools : []);
-      if (!toolsArr.length) return;
-      var schema = {"@context":"https://schema.org","@type":"ItemList","name":"সেরা AI টুলস বাংলাদেশ ২০২৬","description":"বাংলাদেশের জন্য কিউরেটেড AI টুলস লিস্ট","numberOfItems":toolsArr.length,
-        "itemListElement": toolsArr.map(function(t,i){return {"@type":"ListItem","position":i+1,"name":t.name,"url":t.direct_url,"description":t.description_bn};})};
-      var el = document.createElement("script"); el.type="application/ld+json"; el.textContent=JSON.stringify(schema);
-      document.head.appendChild(el);
-    });
-  </script>
-  <script src="js/tools-data.js?v=2026-10-28-evidence" defer></script>
   <script src="/js/tool-routes.js?v=2026-10-27" defer></script>
-  <script src="js/main.js?v=2026-10-28-evidence" defer></script>
-  <script src="js/search-overlay.js?v=editorial-1" defer></script>
+  <script src="/js/main.js?v=guide-home-1" defer></script>
+  <script src="/js/search-overlay.js?v=editorial-1" defer></script>
   <script src="/js/consent.js?v=2026-10-26-trust" defer></script>
-  <script src="/js/analytics.js?v=2026-10-26-trust" defer></script>
+  <script src="/js/analytics.js?v=2026-10-31-template" defer></script>
   <script>
     // PWA service worker registration
     if ('serviceWorker' in navigator) {
@@ -67,16 +72,12 @@
   </script>
 
   <link rel="stylesheet" href="/css/home.css?v=2026-10-31" />
-  <script src="/js/home.js?v=2026-10-27-routes" defer></script>
+  <script src="/js/home.js?v=guide-home-1" defer></script>
+  <link rel="stylesheet" href="/css/home-guides.css">
 </head>
 
-<body>
+<body class="guide-home-body">
   <a class="skip-link" href="#main-content">মূল কন্টেন্টে যান</a>
-
-  <!-- TOP BAR -->
-  <div class="topbar">
-    <div class="container"><span class="new-label"><span data-home-bn="নতুন" data-home-en="NEW">নতুন</span></span> <span data-home-bn="AI শেখার শুরুটা হোক বাংলায়" data-home-en="Your AI journey starts in Bangla">AI শেখার শুরুটা হোক বাংলায়</span> <a href="/blog/"><span data-home-bn="গাইড পড়ুন ↗" data-home-en="Explore the guides ↗">গাইড পড়ুন ↗</span></a></div>
-  </div>
 
   <!-- NAV -->
   <header class="nav" id="top">
@@ -90,11 +91,11 @@
       </a>
 
       <nav class="nav-links" aria-label="প্রধান ন্যাভিগেশন">
-        <a href="#toolsSection" data-i18n="nav_view_tools">টুলস</a>
-        <a href="/compare/">তুলনা</a>
-        <a href="/quiz/">কুইজ</a>
-        <a href="/blog/" data-i18n="nav_blog">ব্লগ</a>
-        <a href="#newsletter" data-i18n="nav_newsletter">নিউজলেটার</a>
+        <a href="/tools/" data-home-bn="টুলস" data-home-en="Tools">টুলস</a>
+        <a href="/compare/" data-home-bn="তুলনা" data-home-en="Compare">তুলনা</a>
+        <a href="/quiz/" data-home-bn="কুইজ" data-home-en="Quiz">কুইজ</a>
+        <a href="/blog/" data-home-bn="গাইড" data-home-en="Guides">গাইড</a>
+
       </nav>
 
       <div class="nav-actions">
@@ -107,7 +108,7 @@
           <button type="button" class="active" data-language-toggle="bn">বাংলা</button>
           <button type="button" data-language-toggle="en">EN</button>
         </div>
-        <a href="/submit/" class="btn btn-primary btn-sm" data-i18n="nav_submit_tool">টুল সাবমিট +</a>
+        <a href="/submit/" class="btn btn-ghost btn-sm" data-i18n="nav_submit_tool">টুল সাবমিট +</a>
         <button class="hamburger" id="hamburgerBtn" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="মেনু">
           <span></span><span></span><span></span>
         </button>
@@ -118,503 +119,96 @@
   <!-- MOBILE MENU -->
   <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
   <aside class="mobile-menu" id="mobileMenu" aria-hidden="true">
-    <a href="#toolsSection">টুলস দেখুন</a>
-    <a href="/compare/">তুলনা</a>
-    <a href="/quiz/">🎯 কুইজ — আপনার পারফেক্ট AI</a>
-    <a href="/blog/">ব্লগ</a>
-    <a href="#newsletter">নিউজলেটার</a>
+    <a href="/tools/" data-home-bn="টুলস" data-home-en="Tools">টুলস</a>
+    <a href="/compare/" data-home-bn="তুলনা" data-home-en="Compare">তুলনা</a>
+    <a href="/quiz/" data-home-bn="কুইজ" data-home-en="Quiz">কুইজ</a>
+    <a href="/blog/" data-home-bn="গাইড" data-home-en="Guides">গাইড</a>
+
     <a href="/submit/" style="color: var(--accent);">টুল সাবমিট +</a>
   </aside>
 
-
-
   <main id="main-content">
-<section class="hero"><div class="container hero-layout"><div class="hero-copy">
-<div class="eyebrow"><span class="status-dot"></span><span data-home-bn="বাংলাদেশের জন্য, বাংলায়" data-home-en="FOR BANGLADESH. IN BANGLA.">বাংলাদেশের জন্য, বাংলায়</span></div>
-<h1 class="hero-title" data-home-bn="সঠিক AI টুল।<br>আরও <em>সহজ জীবন।</em>" data-home-en="The right AI.<br>A little <em>more possible.</em>">সঠিক AI টুল।<br>আরও <em>সহজ জীবন।</em></h1>
-<p class="hero-sub"><span data-home-bn="লেখা, ডিজাইন কিংবা কাজের গতি বাড়াতে—আপনার দরকারি AI টুল খুঁজুন। বাংলা গাইড, টাকায় দাম, আর বাংলাদেশ থেকে ব্যবহারের তথ্য এক জায়গায়।" data-home-en="Find AI for writing, design, and getting more done. Explore Bangla guides, prices in taka, and access from Bangladesh—all in one place.">লেখা, ডিজাইন কিংবা কাজের গতি বাড়াতে—আপনার দরকারি AI টুল খুঁজুন। বাংলা গাইড, টাকায় দাম, আর বাংলাদেশ থেকে ব্যবহারের তথ্য এক জায়গায়।</span></p>
-<form id="heroSearchForm" class="hero-search" action="/" method="get"><span aria-hidden="true">⌕</span><label class="sr-only" for="heroQuery">Search AI tools</label><input id="heroQuery" name="q" type="search" placeholder="কোন কাজের জন্য AI খুঁজছেন?" data-home-placeholder-bn="কোন কাজের জন্য AI খুঁজছেন?" data-home-placeholder-en="What would you like AI to help with?"/><button class="btn btn-primary" type="submit"><span data-home-bn="খুঁজুন →" data-home-en="Find tools →">খুঁজুন →</span></button></form>
-<div class="popular-search"><span><span data-home-bn="জনপ্রিয়:" data-home-en="Popular:">জনপ্রিয়:</span></span><button type="button" data-search-query="ChatGPT">ChatGPT</button><button type="button" data-jump-category="image"><span data-home-bn="ছবি তৈরি" data-home-en="Image creation">ছবি তৈরি</span></button><button type="button" data-jump-category="free"><span data-home-bn="ফ্রি টুলস" data-home-en="Free tools">ফ্রি টুলস</span></button></div>
-<div class="hero-note"><span class="note-symbol">✓</span><span data-home-bn="আপনার পরের ভালো আইডিয়ার শুরু এখানেই।" data-home-en="A good place to start your next great idea.">আপনার পরের ভালো আইডিয়ার শুরু এখানেই।</span></div></div>
-<div class="discovery-scene"><div class="scene-grid"></div><span class="scene-spark spark-one" aria-hidden="true">✳</span><span class="scene-spark spark-two" aria-hidden="true">✦</span><span class="scene-caption">YOUR EVERYDAY AI TOOLKIT</span>
-<div class="discovery-board"><div class="board-heading"><span class="board-icon">✦</span><div><strong><span data-home-bn="আজ কী তৈরি করবেন?" data-home-en="What will you create?">আজ কী তৈরি করবেন?</span></strong><small><span data-home-bn="একটি আইডিয়া। অনেক সম্ভাবনা।" data-home-en="One idea. Endless possibilities.">একটি আইডিয়া। অনেক সম্ভাবনা।</span></small></div><span class="board-dots">•••</span></div>
-<a class="board-row" href="/chatgpt/"><span class="app-mark mark-green">◎</span><span><strong>ChatGPT</strong><small><span data-home-bn="লেখা থেকে নতুন আইডিয়া" data-home-en="From a blank page to a bright idea">লেখা থেকে নতুন আইডিয়া</span></small></span><span class="row-arrow">↗</span></a><a class="board-row" href="/claude/"><span class="app-mark mark-clay">✳</span><span><strong>Claude</strong><small><span data-home-bn="ভাবুন, লিখুন, আরও এগিয়ে যান" data-home-en="Think, write, and go a little further">ভাবুন, লিখুন, আরও এগিয়ে যান</span></small></span><span class="row-arrow">↗</span></a><a class="board-row" href="/canva-ai/"><span class="app-mark mark-lilac">C</span><span><strong>Canva AI</strong><small><span data-home-bn="আপনার ভাবনা, আপনার ডিজাইন" data-home-en="Your ideas, beautifully designed">আপনার ভাবনা, আপনার ডিজাইন</span></small></span><span class="row-arrow">↗</span></a>
-<a class="board-bottom" href="#toolsSection"><span data-home-bn="আপনার টুলটি খুঁজে নিন" data-home-en="Find your next favorite tool">আপনার টুলটি খুঁজে নিন</span> <span>→</span></a></div>
-<a class="floating-note" href="/free-ai-tools-2026-bangladesh/"><span>↗</span><div><strong><span data-home-bn="শুরু হোক বিনামূল্যে" data-home-en="Start with something free">শুরু হোক বিনামূল্যে</span></strong><small><span data-home-bn="বড় আইডিয়ায় ছোট বাজেট" data-home-en="Big ideas. Small budgets.">বড় আইডিয়ায় ছোট বাজেট</span></small></div></a></div></div>
-<div class="container"><div class="hero-trust" id="heroStats"></div></div></section>
-<!-- PILLARS -->
-
-
-    <!-- FEATURED -->
-    <section class="section">
-      <div class="container">
-        <div class="section-head">
-          <span class="section-eyebrow">THE SHORTLIST</span>
-          <h2 class="section-title"><span data-home-bn="শুরু করতে পারেন এখান থেকে" data-home-en="A few good places to start">শুরু করতে পারেন এখান থেকে</span></h2>
-          <p class="section-sub"><span data-home-bn="আপনার কাজের জন্য পরিচিত কিছু AI টুল।" data-home-en="A selection of familiar AI tools for your everyday work.">আপনার কাজের জন্য পরিচিত কিছু AI টুল।</span></p>
+    <section class="guide-home-hero container" aria-labelledby="guide-home-title">
+      <div class="guide-home-intro">
+        <p class="guide-home-kicker" data-home-bn="হাতে-কলমে বাংলা গাইড" data-home-en="Practical guides in Bangla">হাতে-কলমে বাংলা গাইড</p>
+        <h1 id="guide-home-title"><span data-home-bn="আজ AI দিয়ে" data-home-en="What would you like">আজ AI দিয়ে</span> <em data-home-bn="কী করতে চান?" data-home-en="to do with AI today?">কী করতে চান?</em></h1>
+        <p class="guide-home-deck" data-home-bn="ছবি এডিট, দোকানের পোস্ট বা পড়ার প্রস্তুতি—একটা কাজ বেছে নিন। নমুনা দেখে বাংলায় ধাপে ধাপে চেষ্টা করুন।" data-home-en="Edit a photo, plan shop posts, or study from your notes. Pick a task and follow an example step by step.">ছবি এডিট, দোকানের পোস্ট বা পড়ার প্রস্তুতি—একটা কাজ বেছে নিন। নমুনা দেখে বাংলায় ধাপে ধাপে চেষ্টা করুন।</p>
+        <div class="guide-home-actions">
+          <a class="btn btn-primary btn-lg" href="#start-here"><span data-home-bn="একটি কাজ বেছে নিন" data-home-en="Pick a task">একটি কাজ বেছে নিন</span><span aria-hidden="true">↓</span></a>
+          <a class="guide-home-link" href="/blog/"><span data-home-bn="সব গাইড" data-home-en="All guides">সব গাইড</span><span aria-hidden="true">↗</span></a>
         </div>
-        <div id="heroFeatured"><!-- PRERENDER:HERO:START -->
-<a class="hero-feature-card" href="/chatgpt/">
-  <img class="hero-feature-logo" src="/assets/tool-marks/chatgpt.svg" alt="ChatGPT logo" width="40" height="40" loading="lazy" decoding="async" />
-  <div class="hero-feature-body">
-    <h3>ChatGPT</h3>
-    <p class="hero-feature-cat">LLM</p>
-    <p class="hero-feature-desc">OpenAI-এর ChatGPT। প্রশ্ন, লেখার খসড়া ও নিজের নোট গুছিয়ে নেওয়ার বাংলা অনুশীলন দেখুন।</p>
-  </div>
-</a>
-<a class="hero-feature-card" href="/claude/">
-  <img class="hero-feature-logo" src="/assets/tool-marks/claude.svg" alt="Claude logo" width="40" height="40" loading="lazy" decoding="async" />
-  <div class="hero-feature-body">
-    <h3>Claude</h3>
-    <p class="hero-feature-cat">LLM</p>
-    <p class="hero-feature-desc">Anthropic-এর AI সহকারী। লেখা ও নোট নিয়ে কাজের বাংলা অনুশীলন, সূত্র এবং সীমা দেখুন।</p>
-  </div>
-</a>
-<a class="hero-feature-card" href="/gemini/">
-  <img class="hero-feature-logo" src="/assets/tool-marks/gemini.svg" alt="Gemini logo" width="40" height="40" loading="lazy" decoding="async" />
-  <div class="hero-feature-body">
-    <h3>Gemini</h3>
-    <p class="hero-feature-cat">LLM</p>
-    <p class="hero-feature-desc">Google-এর AI সহকারী। নিজের পড়ার নোট থেকে প্রশ্ন তৈরি ও উত্তর মিলিয়ে দেখার বাংলা গাইড পড়</p>
-  </div>
-</a>
-<a class="hero-feature-card" href="/deepseek/">
-  <img class="hero-feature-logo" src="/assets/tool-marks/deepseek.svg" alt="DeepSeek logo" width="40" height="40" loading="lazy" decoding="async" />
-  <div class="hero-feature-body">
-    <h3>DeepSeek</h3>
-    <p class="hero-feature-cat">LLM</p>
-    <p class="hero-feature-desc">চীনের DeepSeek — কোডিং ও ম্যাথে ChatGPT-4 এর চেয়ে ভালো। রিজনিং মডেল সম্পূর্ণ ফ্রি।</p>
-  </div>
-</a>
-<!-- PRERENDER:HERO:END --></div>
+      </div>
+      <article class="guide-home-feature" aria-labelledby="featured-guide-title">
+        <figure class="guide-home-pair">
+          <div>
+            <img src="/blog/nano-banana-gemini-prompt-bangla/mug-before.webp" alt="কাঠের টেবিলে সবুজ সিরামিকের মগ" width="720" height="720" fetchpriority="high" decoding="async">
+            <span data-home-bn="আগে" data-home-en="Before">আগে</span>
+          </div>
+          <div>
+            <img src="/blog/nano-banana-gemini-prompt-bangla/mug-after.webp" alt="সাদা পটভূমিতে একই সবুজ সিরামিকের মগ" width="720" height="720" decoding="async">
+            <span data-home-bn="পরে" data-home-en="After">পরে</span>
+          </div>
+          <figcaption data-home-bn="পটভূমি বদলের AI-নির্মিত উদাহরণ" data-home-en="AI-generated example of a background edit">পটভূমি বদলের AI-নির্মিত উদাহরণ</figcaption>
+        </figure>
+        <div class="guide-home-feature-text">
+          <div>
+            <h2 id="featured-guide-title" data-home-bn="Gemini দিয়ে পণ্যের ছবি এডিট" data-home-en="Edit a product photo with Gemini">Gemini দিয়ে পণ্যের ছবি এডিট</h2>
+            <p data-home-bn="নমুনা ছবি আর বাংলা প্রম্পট দিয়ে শুরু করুন।" data-home-en="Start with the sample image and a Bangla prompt.">নমুনা ছবি আর বাংলা প্রম্পট দিয়ে শুরু করুন।</p>
+          </div>
+          <a class="btn btn-ghost" href="/blog/nano-banana-gemini-prompt-bangla/"><span data-home-bn="নিজে চেষ্টা করুন" data-home-en="Try it yourself">নিজে চেষ্টা করুন</span><span aria-hidden="true">↗</span></a>
+        </div>
+      </article>
+    </section>
+
+    <section class="guide-home-tasks container" id="start-here" aria-labelledby="start-here-title">
+      <h2 id="start-here-title" data-home-bn="কাজ বেছে নিয়ে শুরু করুন" data-home-en="Start with a task">কাজ বেছে নিয়ে শুরু করুন</h2>
+      <div class="guide-home-task-grid">
+        <a class="guide-home-task" href="/blog/nano-banana-gemini-prompt-bangla/">
+          <img src="/assets/editorial/image-prompt.svg" alt="" width="1000" height="440" loading="lazy" decoding="async">
+          <div>
+            <h3 data-home-bn="ছবি এডিট করুন" data-home-en="Edit a photo">ছবি এডিট করুন</h3>
+            <p data-home-bn="Gemini-তে পটভূমি বদলান বা নতুন স্টাইল চেষ্টা করুন।" data-home-en="Change a background or try a new style in Gemini.">Gemini-তে পটভূমি বদলান বা নতুন স্টাইল চেষ্টা করুন।</p>
+            <span aria-hidden="true">↗</span>
+          </div>
+        </a>
+        <a class="guide-home-task" href="/post-planner/">
+          <img src="/assets/editorial/calendar.svg" alt="" width="1000" height="440" loading="lazy" decoding="async">
+          <div>
+            <h3 data-home-bn="৭ দিনের পোস্ট প্ল্যান বানান" data-home-en="Build a week of shop posts">৭ দিনের পোস্ট প্ল্যান বানান</h3>
+            <p data-home-bn="পণ্যের নাম দিয়ে ক্যালেন্ডার, ছবির তালিকা আর বাংলা প্রম্পট নিন।" data-home-en="Enter a product to get a calendar, photo checklist, and Bangla prompt.">পণ্যের নাম দিয়ে ক্যালেন্ডার, ছবির তালিকা আর বাংলা প্রম্পট নিন।</p>
+            <span aria-hidden="true">↗</span>
+          </div>
+        </a>
+        <a class="guide-home-task" href="/blog/notebooklm-diye-porashona-students-bangla-guide/">
+          <img src="/assets/editorial/study.svg" alt="" width="1000" height="440" loading="lazy" decoding="async">
+          <div>
+            <h3 data-home-bn="নোট থেকে অনুশীলন করুন" data-home-en="Practice from your notes">নোট থেকে অনুশীলন করুন</h3>
+            <p data-home-bn="NotebookLM দিয়ে নিজের পড়ার উপকরণ গুছিয়ে নিন।" data-home-en="Use NotebookLM to organize and study your own material.">NotebookLM দিয়ে নিজের পড়ার উপকরণ গুছিয়ে নিন।</p>
+            <span aria-hidden="true">↗</span>
+          </div>
+        </a>
       </div>
     </section>
 
-    <!-- TOOLS -->
-    <section class="section directory-section" id="toolsSection">
-      <div class="container">
-        <div class="section-head">
-          <span class="section-eyebrow">EXPLORE THE DIRECTORY</span>
-          <h2 class="section-title" data-i18n="grid_title">সব AI টুলস</h2>
-          <p class="section-sub"><span data-home-bn="কাজের ধরন বেছে নিন। আপনার জন্য সঠিক টুল খুঁজে নিন।" data-home-en="Pick a category. Find the right tool for you.">কাজের ধরন বেছে নিন। আপনার জন্য সঠিক টুল খুঁজে নিন।</span></p>
+    <section class="guide-home-directory container" id="toolsSection" aria-labelledby="directory-link-title">
+      <div class="guide-home-directory-inner" id="categoryTabs">
+        <div>
+          <h2 id="directory-link-title" data-home-bn="নির্দিষ্ট টুল খুঁজছেন?" data-home-en="Looking for a specific tool?">নির্দিষ্ট টুল খুঁজছেন?</h2>
+          <p data-home-bn="নাম বা কাজ দিয়ে খুঁজুন, ক্যাটাগরি বেছে নিন, আর টুল তুলনা করুন।" data-home-en="Search by name or task, browse categories, and compare tools.">নাম বা কাজ দিয়ে খুঁজুন, ক্যাটাগরি বেছে নিন, আর টুল তুলনা করুন।</p>
         </div>
-        <div class="search-wrap">
-          <input id="searchInput" class="search-input" type="search" placeholder="টুল খুঁজুন... (যেমন: ChatGPT, ছবি, কোডিং)" aria-label="টুল সার্চ" />
-        </div>
-        <span id="categoryTabs" aria-hidden="true"></span><p class="tool-evidence-note" data-home-bn="তথ্য হালনাগাদের কাজ চলছে। দাম, ফ্রি সুবিধা ও বাংলাদেশ থেকে অ্যাক্সেস প্রদানকারীর কাছে মিলিয়ে নিন।" data-home-en="Information is being reviewed. Check current prices, free features and Bangladesh access with the provider.">তথ্য হালনাগাদের কাজ চলছে। দাম, ফ্রি সুবিধা ও বাংলাদেশ থেকে অ্যাক্সেস প্রদানকারীর কাছে মিলিয়ে নিন।</p>
-        <div class="category-tabs" id="categoryTabList" role="tablist" aria-label="Tool categories"><button type="button" class="tab-btn active" role="tab" aria-selected="true" aria-controls="toolsGrid" tabindex="0" data-category="all"><span data-home-bn="সব টুলস" data-home-en="All tools">সব টুলস</span></button><button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="toolsGrid" tabindex="-1" data-category="writing"><span data-home-bn="লেখালেখি" data-home-en="Writing">লেখালেখি</span></button><button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="toolsGrid" tabindex="-1" data-category="image"><span data-home-bn="ছবি ও ডিজাইন" data-home-en="Image & design">ছবি ও ডিজাইন</span></button><button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="toolsGrid" tabindex="-1" data-category="video"><span data-home-bn="ভিডিও" data-home-en="Video">ভিডিও</span></button><button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="toolsGrid" tabindex="-1" data-category="coding"><span data-home-bn="কোডিং" data-home-en="Coding">কোডিং</span></button><button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="toolsGrid" tabindex="-1" data-category="marketing"><span data-home-bn="মার্কেটিং" data-home-en="Marketing">মার্কেটিং</span></button><button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="toolsGrid" tabindex="-1" data-category="productivity"><span data-home-bn="প্রোডাক্টিভিটি" data-home-en="Productivity">প্রোডাক্টিভিটি</span></button><button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="toolsGrid" tabindex="-1" data-category="free"><span data-home-bn="ফ্রি টুলস" data-home-en="Free tools">ফ্রি টুলস</span></button></div><div class="results-toolbar"><span id="resultsCount" role="status" aria-live="polite"></span><button type="button" class="filter-chip" data-fav-filter>♡ <span data-home-bn="সংরক্ষিত টুলস" data-home-en="Saved tools">সংরক্ষিত টুলস</span><span class="fav-filter-count"></span></button></div>
-        <div id="toolsGrid" class="tools-grid" role="tabpanel" aria-label="AI tools"><!-- PRERENDER:TOOLS:START -->
-<article class="tool-card" itemscope itemtype="https://schema.org/SoftwareApplication" data-category="llm" data-pricing="freemium">
-  <div class="tool-card-topline">
-    <span class="category-tag">LLM</span>
-    <div class="tool-card-topline-right"></div>
-  </div>
-  <div class="tool-header tool-header-modern">
-    <div class="tool-title-wrap tool-title-wrap-modern">
-      <div class="tool-logo-shell">
-        <img class="tool-logo" src="/assets/tool-marks/chatgpt.svg" alt="ChatGPT logo" width="48" height="48" loading="lazy" decoding="async" />
-      </div>
-      <div class="tool-name-block">
-        <h3 class="tool-title" itemprop="name"><a href="/chatgpt/">ChatGPT</a></h3>
-        <p class="tool-subtitle">LLM</p>
-      </div>
-    </div>
-  </div>
-  <meta itemprop="applicationCategory" content="llm" />
-  <meta itemprop="operatingSystem" content="Web" />
-  <p class="tool-desc" itemprop="description">OpenAI-এর ChatGPT। প্রশ্ন, লেখার খসড়া ও নিজের নোট গুছিয়ে নেওয়ার বাংলা অনুশীলন দেখুন।</p>
-  <div class="tool-insight-grid">
-    <div class="tool-insight-card"><span>আনুমানিক মূল্য</span><strong>ফ্রি প্ল্যান আছে · অ্যাকাউন্টে বর্তমান পেইড দাম দেখুন</strong></div>
-    <div class="tool-insight-card"><span>অ্যাক্সেস</span><strong>ব্যবহারের আগে যাচাই করুন</strong></div>
-  </div>
-  <div class="tool-card-footer">
-    <a class="btn btn-ghost" href="/chatgpt/">টুলের বিস্তারিত</a>
-    <a class="btn btn-primary" href="https://chatgpt.com" target="_blank" rel="noopener noreferrer">টুল ব্যবহার করুন</a>
-  </div>
-</article>
-<article class="tool-card" itemscope itemtype="https://schema.org/SoftwareApplication" data-category="llm" data-pricing="freemium">
-  <div class="tool-card-topline">
-    <span class="category-tag">LLM</span>
-    <div class="tool-card-topline-right"></div>
-  </div>
-  <div class="tool-header tool-header-modern">
-    <div class="tool-title-wrap tool-title-wrap-modern">
-      <div class="tool-logo-shell">
-        <img class="tool-logo" src="/assets/tool-marks/claude.svg" alt="Claude logo" width="48" height="48" loading="lazy" decoding="async" />
-      </div>
-      <div class="tool-name-block">
-        <h3 class="tool-title" itemprop="name"><a href="/claude/">Claude</a></h3>
-        <p class="tool-subtitle">LLM</p>
-      </div>
-    </div>
-  </div>
-  <meta itemprop="applicationCategory" content="llm" />
-  <meta itemprop="operatingSystem" content="Web" />
-  <p class="tool-desc" itemprop="description">Anthropic-এর AI সহকারী। লেখা ও নোট নিয়ে কাজের বাংলা অনুশীলন, সূত্র এবং সীমা দেখুন।</p>
-  <div class="tool-insight-grid">
-    <div class="tool-insight-card"><span>আনুমানিক মূল্য</span><strong>ফ্রি আছে · Pro $20/মাস · Max $100/মাস থেকে; কর আলাদা</strong></div>
-    <div class="tool-insight-card"><span>অ্যাক্সেস</span><strong>ব্যবহারের আগে যাচাই করুন</strong></div>
-  </div>
-  <div class="tool-card-footer">
-    <a class="btn btn-ghost" href="/claude/">টুলের বিস্তারিত</a>
-    <a class="btn btn-primary" href="https://claude.ai" target="_blank" rel="noopener noreferrer">টুল ব্যবহার করুন</a>
-  </div>
-</article>
-<article class="tool-card" itemscope itemtype="https://schema.org/SoftwareApplication" data-category="llm" data-pricing="freemium">
-  <div class="tool-card-topline">
-    <span class="category-tag">LLM</span>
-    <div class="tool-card-topline-right"></div>
-  </div>
-  <div class="tool-header tool-header-modern">
-    <div class="tool-title-wrap tool-title-wrap-modern">
-      <div class="tool-logo-shell">
-        <img class="tool-logo" src="/assets/tool-marks/gemini.svg" alt="Gemini logo" width="48" height="48" loading="lazy" decoding="async" />
-      </div>
-      <div class="tool-name-block">
-        <h3 class="tool-title" itemprop="name"><a href="/gemini/">Gemini</a></h3>
-        <p class="tool-subtitle">LLM</p>
-      </div>
-    </div>
-  </div>
-  <meta itemprop="applicationCategory" content="llm" />
-  <meta itemprop="operatingSystem" content="Web" />
-  <p class="tool-desc" itemprop="description">Google-এর AI সহকারী। নিজের পড়ার নোট থেকে প্রশ্ন তৈরি ও উত্তর মিলিয়ে দেখার বাংলা গাইড পড়ুন।</p>
-  <div class="tool-insight-grid">
-    <div class="tool-insight-card"><span>আনুমানিক মূল্য</span><strong>ফ্রি ব্যবহার আছে · পেইড প্ল্যানের স্থানীয় দাম দেখুন</strong></div>
-    <div class="tool-insight-card"><span>অ্যাক্সেস</span><strong>ব্যবহারের আগে যাচাই করুন</strong></div>
-  </div>
-  <div class="tool-card-footer">
-    <a class="btn btn-ghost" href="/gemini/">টুলের বিস্তারিত</a>
-    <a class="btn btn-primary" href="https://gemini.google.com" target="_blank" rel="noopener noreferrer">টুল ব্যবহার করুন</a>
-  </div>
-</article>
-<article class="tool-card" itemscope itemtype="https://schema.org/SoftwareApplication" data-category="llm" data-pricing="free">
-  <div class="tool-card-topline">
-    <span class="category-tag">LLM</span>
-    <div class="tool-card-topline-right"></div>
-  </div>
-  <div class="tool-header tool-header-modern">
-    <div class="tool-title-wrap tool-title-wrap-modern">
-      <div class="tool-logo-shell">
-        <img class="tool-logo" src="/assets/tool-marks/deepseek.svg" alt="DeepSeek logo" width="48" height="48" loading="lazy" decoding="async" />
-      </div>
-      <div class="tool-name-block">
-        <h3 class="tool-title" itemprop="name"><a href="/deepseek/">DeepSeek</a></h3>
-        <p class="tool-subtitle">LLM</p>
-      </div>
-    </div>
-  </div>
-  <meta itemprop="applicationCategory" content="llm" />
-  <meta itemprop="operatingSystem" content="Web" />
-  <p class="tool-desc" itemprop="description">চীনের DeepSeek — কোডিং ও ম্যাথে ChatGPT-4 এর চেয়ে ভালো। রিজনিং মডেল সম্পূর্ণ ফ্রি।</p>
-  <div class="tool-insight-grid">
-    <div class="tool-insight-card"><span>আনুমানিক মূল্য</span><strong>৳০ — ফ্রি</strong></div>
-    <div class="tool-insight-card"><span>অ্যাক্সেস</span><strong>ব্যবহারের আগে যাচাই করুন</strong></div>
-  </div>
-  <div class="tool-card-footer">
-    <a class="btn btn-ghost" href="/deepseek/">টুলের বিস্তারিত</a>
-    <a class="btn btn-primary" href="https://chat.deepseek.com" target="_blank" rel="noopener noreferrer">টুল ব্যবহার করুন</a>
-  </div>
-</article>
-<article class="tool-card" itemscope itemtype="https://schema.org/SoftwareApplication" data-category="image" data-pricing="paid">
-  <div class="tool-card-topline">
-    <span class="category-tag">ইমেজ</span>
-    <div class="tool-card-topline-right"></div>
-  </div>
-  <div class="tool-header tool-header-modern">
-    <div class="tool-title-wrap tool-title-wrap-modern">
-      <div class="tool-logo-shell">
-        <img class="tool-logo" src="/assets/tool-marks/midjourney.svg" alt="Midjourney logo" width="48" height="48" loading="lazy" decoding="async" />
-      </div>
-      <div class="tool-name-block">
-        <h3 class="tool-title" itemprop="name"><a href="/midjourney/">Midjourney</a></h3>
-        <p class="tool-subtitle">ইমেজ</p>
-      </div>
-    </div>
-  </div>
-  <meta itemprop="applicationCategory" content="image" />
-  <meta itemprop="operatingSystem" content="Web" />
-  <p class="tool-desc" itemprop="description">বিশ্বের সেরা AI আর্ট জেনারেটর। Discord-এর মাধ্যমে ব্যবহার।</p>
-  <div class="tool-insight-grid">
-    <div class="tool-insight-card"><span>আনুমানিক মূল্য</span><strong>ফ্রি / ৳১,২২০/মাস</strong></div>
-    <div class="tool-insight-card"><span>অ্যাক্সেস</span><strong>ব্যবহারের আগে যাচাই করুন</strong></div>
-  </div>
-  <div class="tool-card-footer">
-    <a class="btn btn-ghost" href="/midjourney/">টুলের বিস্তারিত</a>
-    <a class="btn btn-primary" href="https://www.midjourney.com" target="_blank" rel="noopener noreferrer">টুল ব্যবহার করুন</a>
-  </div>
-</article>
-<article class="tool-card" itemscope itemtype="https://schema.org/SoftwareApplication" data-category="coding" data-pricing="freemium">
-  <div class="tool-card-topline">
-    <span class="category-tag">কোডিং</span>
-    <div class="tool-card-topline-right"></div>
-  </div>
-  <div class="tool-header tool-header-modern">
-    <div class="tool-title-wrap tool-title-wrap-modern">
-      <div class="tool-logo-shell">
-        <img class="tool-logo" src="/assets/tool-marks/cursor.svg" alt="Cursor logo" width="48" height="48" loading="lazy" decoding="async" />
-      </div>
-      <div class="tool-name-block">
-        <h3 class="tool-title" itemprop="name"><a href="/cursor/">Cursor</a></h3>
-        <p class="tool-subtitle">কোডিং</p>
-      </div>
-    </div>
-  </div>
-  <meta itemprop="applicationCategory" content="coding" />
-  <meta itemprop="operatingSystem" content="Web" />
-  <p class="tool-desc" itemprop="description">AI-ফার্স্ট কোড এডিটর। স্বাভাবিক ভাষায় কোড লিখুন, এডিট করুন, ডিবাগ করুন।</p>
-  <div class="tool-insight-grid">
-    <div class="tool-insight-card"><span>আনুমানিক মূল্য</span><strong>ফ্রি / ৳২,৪৪০/মাস</strong></div>
-    <div class="tool-insight-card"><span>অ্যাক্সেস</span><strong>ব্যবহারের আগে যাচাই করুন</strong></div>
-  </div>
-  <div class="tool-card-footer">
-    <a class="btn btn-ghost" href="/cursor/">টুলের বিস্তারিত</a>
-    <a class="btn btn-primary" href="https://cursor.com" target="_blank" rel="noopener noreferrer">টুল ব্যবহার করুন</a>
-  </div>
-</article>
-<article class="tool-card" itemscope itemtype="https://schema.org/SoftwareApplication" data-category="productivity" data-pricing="ফ্রি / ৳৩,৫৩৮">
-  <div class="tool-card-topline">
-    <span class="category-tag">প্রোডাক্টিভিটি</span>
-    <div class="tool-card-topline-right"></div>
-  </div>
-  <div class="tool-header tool-header-modern">
-    <div class="tool-title-wrap tool-title-wrap-modern">
-      <div class="tool-logo-shell">
-        <img class="tool-logo" src="/assets/tool-marks/heygen.svg" alt="HeyGen logo" width="48" height="48" loading="lazy" decoding="async" />
-      </div>
-      <div class="tool-name-block">
-        <h3 class="tool-title" itemprop="name"><a href="/heygen/">HeyGen</a></h3>
-        <p class="tool-subtitle">প্রোডাক্টিভিটি</p>
-      </div>
-    </div>
-  </div>
-  <meta itemprop="applicationCategory" content="productivity" />
-  <meta itemprop="operatingSystem" content="Web" />
-  <p class="tool-desc" itemprop="description">AI অবতার দিয়ে প্রফেশনাল মার্কেটিং ভিডিও তৈরি করুন — ক্যামেরার সামনে না গিয়েই। ১০০+ ভাষায় ভয়েস ক্লোনিং সাপোর্ট।</p>
-  <div class="tool-insight-grid">
-    <div class="tool-insight-card"><span>আনুমানিক মূল্য</span><strong>চাহিদাভিত্তিক</strong></div>
-    <div class="tool-insight-card"><span>অ্যাক্সেস</span><strong>ব্যবহারের আগে যাচাই করুন</strong></div>
-  </div>
-  <div class="tool-card-footer">
-    <a class="btn btn-ghost" href="/heygen/">টুলের বিস্তারিত</a>
-    <a class="btn btn-primary" href="https://www.heygen.com" target="_blank" rel="noopener noreferrer">টুল ব্যবহার করুন</a>
-  </div>
-</article>
-<article class="tool-card" itemscope itemtype="https://schema.org/SoftwareApplication" data-category="productivity" data-pricing="ফ্রি / ৳৭৩২">
-  <div class="tool-card-topline">
-    <span class="category-tag">প্রোডাক্টিভিটি</span>
-    <div class="tool-card-topline-right"></div>
-  </div>
-  <div class="tool-header tool-header-modern">
-    <div class="tool-title-wrap tool-title-wrap-modern">
-      <div class="tool-logo-shell">
-        <img class="tool-logo" src="/assets/tool-marks/capcut-ai.svg" alt="CapCut AI logo" width="48" height="48" loading="lazy" decoding="async" />
-      </div>
-      <div class="tool-name-block">
-        <h3 class="tool-title" itemprop="name"><a href="/capcut-ai/">CapCut AI</a></h3>
-        <p class="tool-subtitle">প্রোডাক্টিভিটি</p>
-      </div>
-    </div>
-  </div>
-  <meta itemprop="applicationCategory" content="productivity" />
-  <meta itemprop="operatingSystem" content="Web" />
-  <p class="tool-desc" itemprop="description">বাংলাদেশে সবচেয়ে জনপ্রিয় ভিডিও এডিটিং অ্যাপ — AI ক্যাপশন, ব্যাকগ্রাউন্ড রিমুভাল ও অটো সাবটাইটেল ফিচার।</p>
-  <div class="tool-insight-grid">
-    <div class="tool-insight-card"><span>আনুমানিক মূল্য</span><strong>চাহিদাভিত্তিক</strong></div>
-    <div class="tool-insight-card"><span>অ্যাক্সেস</span><strong>ব্যবহারের আগে যাচাই করুন</strong></div>
-  </div>
-  <div class="tool-card-footer">
-    <a class="btn btn-ghost" href="/capcut-ai/">টুলের বিস্তারিত</a>
-    <a class="btn btn-primary" href="https://www.capcut.com" target="_blank" rel="noopener noreferrer">টুল ব্যবহার করুন</a>
-  </div>
-</article>
-<article class="tool-card" itemscope itemtype="https://schema.org/SoftwareApplication" data-category="productivity" data-pricing="ফ্রি / ৳১,৪৬৪">
-  <div class="tool-card-topline">
-    <span class="category-tag">প্রোডাক্টিভিটি</span>
-    <div class="tool-card-topline-right"></div>
-  </div>
-  <div class="tool-header tool-header-modern">
-    <div class="tool-title-wrap tool-title-wrap-modern">
-      <div class="tool-logo-shell">
-        <img class="tool-logo" src="/assets/tool-marks/canva-magic-write.svg" alt="Canva Magic Write logo" width="48" height="48" loading="lazy" decoding="async" />
-      </div>
-      <div class="tool-name-block">
-        <h3 class="tool-title" itemprop="name"><a href="/canva-magic-write/">Canva Magic Write</a></h3>
-        <p class="tool-subtitle">প্রোডাক্টিভিটি</p>
-      </div>
-    </div>
-  </div>
-  <meta itemprop="applicationCategory" content="productivity" />
-  <meta itemprop="operatingSystem" content="Web" />
-  <p class="tool-desc" itemprop="description">Canva-র AI রাইটিং ও ডিজাইন টুল — মার্কেটিং পোস্টার, সোশ্যাল মিডিয়া গ্রাফিক ও বিজ্ঞাপন কপি একসাথে।</p>
-  <div class="tool-insight-grid">
-    <div class="tool-insight-card"><span>আনুমানিক মূল্য</span><strong>চাহিদাভিত্তিক</strong></div>
-    <div class="tool-insight-card"><span>অ্যাক্সেস</span><strong>ব্যবহারের আগে যাচাই করুন</strong></div>
-  </div>
-  <div class="tool-card-footer">
-    <a class="btn btn-ghost" href="/canva-magic-write/">টুলের বিস্তারিত</a>
-    <a class="btn btn-primary" href="https://www.canva.com" target="_blank" rel="noopener noreferrer">টুল ব্যবহার করুন</a>
-  </div>
-</article>
-<article class="tool-card" itemscope itemtype="https://schema.org/SoftwareApplication" data-category="image" data-pricing="ফ্রি / ৳১,০৯৮">
-  <div class="tool-card-topline">
-    <span class="category-tag">ইমেজ</span>
-    <div class="tool-card-topline-right"></div>
-  </div>
-  <div class="tool-header tool-header-modern">
-    <div class="tool-title-wrap tool-title-wrap-modern">
-      <div class="tool-logo-shell">
-        <img class="tool-logo" src="/assets/tool-marks/remove-bg.svg" alt="Remove.bg logo" width="48" height="48" loading="lazy" decoding="async" />
-      </div>
-      <div class="tool-name-block">
-        <h3 class="tool-title" itemprop="name"><a href="/remove-bg/">Remove.bg</a></h3>
-        <p class="tool-subtitle">ইমেজ</p>
-      </div>
-    </div>
-  </div>
-  <meta itemprop="applicationCategory" content="image" />
-  <meta itemprop="operatingSystem" content="Web" />
-  <p class="tool-desc" itemprop="description">এক ক্লিকে ছবির ব্যাকগ্রাউন্ড রিমুভ করুন — পণ্যের ছবি, প্রোফাইল ফটো ও ই-কমার্সের জন্য বাংলাদেশে সবচেয়ে বেশি ব্যবহৃত।</p>
-  <div class="tool-insight-grid">
-    <div class="tool-insight-card"><span>আনুমানিক মূল্য</span><strong>চাহিদাভিত্তিক</strong></div>
-    <div class="tool-insight-card"><span>অ্যাক্সেস</span><strong>ব্যবহারের আগে যাচাই করুন</strong></div>
-  </div>
-  <div class="tool-card-footer">
-    <a class="btn btn-ghost" href="/remove-bg/">টুলের বিস্তারিত</a>
-    <a class="btn btn-primary" href="https://www.remove.bg" target="_blank" rel="noopener noreferrer">টুল ব্যবহার করুন</a>
-  </div>
-</article>
-<article class="tool-card" itemscope itemtype="https://schema.org/SoftwareApplication" data-category="coding" data-pricing="সম্পূর্ণ ফ্রি">
-  <div class="tool-card-topline">
-    <span class="category-tag">কোডিং</span>
-    <div class="tool-card-topline-right"></div>
-  </div>
-  <div class="tool-header tool-header-modern">
-    <div class="tool-title-wrap tool-title-wrap-modern">
-      <div class="tool-logo-shell">
-        <img class="tool-logo" src="/assets/tool-marks/codeium.svg" alt="Codeium logo" width="48" height="48" loading="lazy" decoding="async" />
-      </div>
-      <div class="tool-name-block">
-        <h3 class="tool-title" itemprop="name"><a href="/codeium/">Codeium</a></h3>
-        <p class="tool-subtitle">কোডিং</p>
-      </div>
-    </div>
-  </div>
-  <meta itemprop="applicationCategory" content="coding" />
-  <meta itemprop="operatingSystem" content="Web" />
-  <p class="tool-desc" itemprop="description">সম্পূর্ণ ফ্রি AI কোড অ্যাসিস্ট্যান্ট — GitHub Copilot-এর বিকল্প। ৭০+ প্রোগ্রামিং ল্যাঙ্গুয়েজ সাপোর্ট, কোনো ক্রেডিট কার্ড লাগে না।</p>
-  <div class="tool-insight-grid">
-    <div class="tool-insight-card"><span>আনুমানিক মূল্য</span><strong>চাহিদাভিত্তিক</strong></div>
-    <div class="tool-insight-card"><span>অ্যাক্সেস</span><strong>ব্যবহারের আগে যাচাই করুন</strong></div>
-  </div>
-  <div class="tool-card-footer">
-    <a class="btn btn-ghost" href="/codeium/">টুলের বিস্তারিত</a>
-    <a class="btn btn-primary" href="https://codeium.com" target="_blank" rel="noopener noreferrer">টুল ব্যবহার করুন</a>
-  </div>
-</article>
-<article class="tool-card" itemscope itemtype="https://schema.org/SoftwareApplication" data-category="llm" data-pricing="ফ্রি / ৳২,৪৪০">
-  <div class="tool-card-topline">
-    <span class="category-tag">LLM</span>
-    <div class="tool-card-topline-right"></div>
-  </div>
-  <div class="tool-header tool-header-modern">
-    <div class="tool-title-wrap tool-title-wrap-modern">
-      <div class="tool-logo-shell">
-        <img class="tool-logo" src="/assets/tool-marks/microsoft-copilot.svg" alt="Microsoft Copilot logo" width="48" height="48" loading="lazy" decoding="async" />
-      </div>
-      <div class="tool-name-block">
-        <h3 class="tool-title" itemprop="name"><a href="https://copilot.microsoft.com/">Microsoft Copilot</a></h3>
-        <p class="tool-subtitle">LLM</p>
-      </div>
-    </div>
-  </div>
-  <meta itemprop="applicationCategory" content="llm" />
-  <meta itemprop="operatingSystem" content="Web" />
-  <p class="tool-desc" itemprop="description">Microsoft-এর GPT-4 চালিত ফ্রি AI — Bing সার্চ, Word, Excel ও Teams-এ সরাসরি ব্যবহার করুন। বাংলাদেশে VPN ছাড়া কাজ করে।</p>
-  <div class="tool-insight-grid">
-    <div class="tool-insight-card"><span>আনুমানিক মূল্য</span><strong>চাহিদাভিত্তিক</strong></div>
-    <div class="tool-insight-card"><span>অ্যাক্সেস</span><strong>ব্যবহারের আগে যাচাই করুন</strong></div>
-  </div>
-  <div class="tool-card-footer">
-    <a class="btn btn-ghost" href="https://copilot.microsoft.com/">টুলের ওয়েবসাইট</a>
-    <a class="btn btn-primary" href="https://copilot.microsoft.com" target="_blank" rel="noopener noreferrer">টুল ব্যবহার করুন</a>
-  </div>
-</article>
-<!-- PRERENDER:TOOLS:END --></div><div class="load-more"><button id="loadMoreBtn" type="button" class="btn btn-ghost" data-i18n="load_more">আরও টুলস দেখুন</button></div><noscript><p>সার্চ ও ফিল্টারের জন্য JavaScript চালু করুন। টুলের লিংক সরাসরি ব্যবহার করতে পারবেন।</p></noscript>
+        <a class="btn btn-primary" href="/tools/"><span data-home-bn="সব AI টুল দেখুন" data-home-en="Browse all AI tools">সব AI টুল দেখুন</span><span aria-hidden="true">↗</span></a>
       </div>
     </section>
 
-<section class="section"><div class="container"><div class="quiz-banner"><div class="quiz-art" aria-hidden="true">✳</div><div><span class="section-eyebrow">A LITTLE HELP CHOOSING</span><h2><span data-home-bn="কোন AI আপনার জন্য?" data-home-en="Which AI is right for you?">কোন AI আপনার জন্য?</span></h2><p><span data-home-bn="কয়েকটি সহজ প্রশ্নের উত্তর দিন। আপনার কাজের সঙ্গে মানানসই টুল খুঁজে নিন।" data-home-en="Answer a few simple questions and discover tools that fit the way you work.">কয়েকটি সহজ প্রশ্নের উত্তর দিন। আপনার কাজের সঙ্গে মানানসই টুল খুঁজে নিন।</span></p></div><a class="btn btn-primary" href="/quiz/"><span data-home-bn="কুইজ শুরু করুন →" data-home-en="Take the quiz →">কুইজ শুরু করুন →</span></a></div></div></section>
-    <!-- BLOG PREVIEW -->
-    <section class="section">
-      <div class="container">
-        <div class="section-head">
-          <span class="section-eyebrow">সাম্প্রতিক গাইড</span>
-          <h2 class="section-title">বাংলায় বিস্তারিত পড়ুন</h2>
-          <p class="section-sub">টিউটোরিয়াল, তুলনা ও ব্যবহার পদ্ধতি</p>
-        </div>
-        <div class="blog-preview-grid">
-          <a href="/blog/choto-online-dokan-7-diner-content-plan/" class="blog-card-mini">
-            <div class="cover"><img src="/assets/editorial/calendar.svg" alt="কাজের ক্যালেন্ডার ও টিক দেওয়া তালিকার অঙ্কন" width="1000" height="440" decoding="async" loading="lazy"></div>
-            <div class="body">
-              <span class="cat">কন্টেন্ট</span>
-              <h3>ছোট দোকানের ৭ দিনের কনটেন্ট পরিকল্পনা</h3>
-              <p>বাংলা প্রম্পট, নমুনা পোস্ট ও ডাউনলোডযোগ্য ক্যালেন্ডার</p>
-            </div>
-          </a>
-          <a href="/blog/ai-diye-taka-income-2026-bangladesh/" class="blog-card-mini">
-            <div class="cover"><img src="/assets/editorial/briefcase.svg" alt="কাজের ব্যাগ, কাজের নোট ও কয়েনের অঙ্কন" width="1000" height="440" decoding="async" loading="lazy"></div>
-            <div class="body">
-              <span class="cat">আয়</span>
-              <h3>AI দিয়ে টাকা ইনকাম ২০২৬</h3>
-              <p>বাংলাদেশ থেকে ১০টি প্রমাণিত পদ্ধতি</p>
-            </div>
-          </a>
-          <a href="/blog/manus-ai-bangla-guide/" class="blog-card-mini">
-            <div class="cover"><img src="/assets/editorial/automation.svg" alt="সংযুক্ত কাজের ধাপ ও সুইচের অঙ্কন" width="1000" height="440" decoding="async" loading="lazy"></div>
-            <div class="body">
-              <span class="cat">AI টুল</span>
-              <h3>Manus AI বাংলা গাইড</h3>
-              <p>অটোনোমাস AI এজেন্ট কী, কীভাবে কাজ করে?</p>
-            </div>
-          </a>
-          <a href="/blog/deepseek-vs-chatgpt-bangladesh-konti-bhalo/" class="blog-card-mini">
-            <div class="cover"><img src="/assets/editorial/comparison.svg" alt="পাশাপাশি দুটি প্যানেলে বৈশিষ্ট্য মেলানোর অঙ্কন" width="1000" height="440" decoding="async" loading="lazy"></div>
-            <div class="body">
-              <span class="cat">তুলনা</span>
-              <h3>DeepSeek vs ChatGPT বাংলাদেশে</h3>
-              <p>কোনটি ভালো? সম্পূর্ণ তুলনা</p>
-            </div>
-          </a>
-        </div>
-        <div style="text-align: center; margin-top: 48px;">
-          <a href="/blog/" class="btn btn-ghost btn-lg">সব গাইড দেখুন →</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="pillars" aria-label="জনপ্রিয় গাইড">
-      <div class="container">
-        <div class="pillars-row">
-          <a href="/free-ai-tools-2026-bangladesh/" class="pillar"><span class="icon">🎁</span>ফ্রি AI টুলস</a>
-          <a href="/bkash-diye-ai-tools-kena-jay/" class="pillar"><span class="icon">💳</span>bKash দিয়ে কেনা</a>
-          <a href="/vpn-chara-ai-tools-bangladesh/" class="pillar"><span class="icon">🌐</span>VPN ছাড়া</a>
-          <a href="/ai-tools-bdt-price-2026-bangladesh/" class="pillar"><span class="icon">💰</span>BDT প্রাইস</a>
-          <a href="/ai-tools-for-freelancers-bangladesh/" class="pillar"><span class="icon">💼</span>ফ্রিল্যান্সারদের জন্য</a>
-          <a href="/bangla-ai-guide/" class="pillar"><span class="icon">📖</span>সম্পূর্ণ গাইড</a>
-        </div>
-      </div>
-    </section>
-    <!-- NEWSLETTER -->
     <section class="newsletter" id="newsletter">
       <div class="container">
-        <h2>প্রতি সপ্তাহে নতুন AI টুলস বাংলায়</h2>
-        <p>বাংলাদেশি AI ব্যবহারকারীদের জন্য কিউরেটেড weekly update। কোনো spam না, যেকোনো সময় unsubscribe।</p>
+        <h2 data-home-bn="নতুন বাংলা গাইড ইমেইলে পান" data-home-en="Get new Bangla guides by email">নতুন বাংলা গাইড ইমেইলে পান</h2>
+        <p data-home-bn="নতুন অনুশীলন, প্রম্পট আর টুলের খবর।" data-home-en="New exercises, prompts, and tool updates.">নতুন অনুশীলন, প্রম্পট আর টুলের খবর।</p>
         <form class="newsletter-form newsletter-form--mailchimp" action="https://banglaaiguide.us15.list-manage.com/subscribe/post?u=d389c0647878724daecc58fc6&amp;id=aaca6896d2&amp;f_id=007c9ae1f0" method="post" target="_blank" rel="noopener noreferrer" accept-charset="UTF-8" data-mailchimp-form="true">
-          <input aria-label="Email address" type="email" name="EMAIL" placeholder="আপনার ইমেইল ঠিকানা" required />
-          <button type="submit" class="btn btn-primary btn-lg">সাবস্ক্রাইব করুন</button>
+          <input aria-label="ইমেইল ঠিকানা" type="email" name="EMAIL" placeholder="আপনার ইমেইল ঠিকানা" data-home-placeholder-bn="আপনার ইমেইল ঠিকানা" data-home-placeholder-en="Your email address" required />
+          <button type="submit" class="btn btn-primary btn-lg" data-home-bn="সাবস্ক্রাইব করুন" data-home-en="Subscribe">সাবস্ক্রাইব করুন</button>
         </form>
-        <p class="newsletter-meta">কোনো spam না · যেকোনো সময় বন্ধ করতে পারবেন</p>
+        <p class="newsletter-meta" data-home-bn="যেকোনো সময় বন্ধ করতে পারবেন" data-home-en="Unsubscribe any time">যেকোনো সময় বন্ধ করতে পারবেন</p>
       </div>
     </section>
   </main>
@@ -632,12 +226,12 @@
               <span class="brand-sub">AI, made simple. In Bangla.</span>
             </span>
           </a>
-          <p>বাংলাদেশের জন্য কিউরেটেড AI টুলস ডিরেক্টরি। কোন টুল BD থেকে কাজ করে, BDT প্রাইস, bKash পেমেন্ট — সব বাংলায় বিশ্লেষণ।</p>
+          <p>বাংলায় AI শেখার ব্যবহারিক গাইড, নমুনা প্রম্পট ও টুল ডিরেক্টরি।</p>
         </div>
         <div class="footer-col">
           <h4>ডিরেক্টরি</h4>
           <ul>
-            <li><a href="#toolsSection">সব টুলস</a></li>
+            <li><a href="/tools/">সব টুলস</a></li>
             <li><a href="/free-ai-tools-2026-bangladesh/">ফ্রি টুলস</a></li>
             <li><a href="/ai-tools-bdt-price-2026-bangladesh/">BDT প্রাইস</a></li>
             <li><a href="/vpn-chara-ai-tools-bangladesh/">VPN ছাড়া</a></li>

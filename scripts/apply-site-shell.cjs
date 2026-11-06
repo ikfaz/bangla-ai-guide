@@ -6,7 +6,7 @@ const path = require('node:path');
 const root = path.resolve(__dirname, '..');
 const read = file => fs.readFileSync(file, 'utf8');
 const links = [
-  ['/#toolsSection', 'টুলস'], ['/compare/', 'তুলনা'], ['/quiz/', 'কুইজ'],
+  ['/tools/', 'টুলস'], ['/compare/', 'তুলনা'], ['/quiz/', 'কুইজ'],
   ['/blog/', 'ব্লগ'], ['/#newsletter', 'নিউজলেটার']
 ];
 const brand = '<a class="gs-brand" href="/" aria-label="বাংলা AI গাইড হোম"><img src="/assets/brand/logo.svg" width="48" height="48" alt=""><span><strong>বাংলা AI গাইড</strong><small lang="en">AI, made simple. In Bangla.</small></span></a>';
@@ -34,7 +34,7 @@ function masthead(route, target) {
 <!-- GUIDE-HEADER:END -->`;
 }
 const groups = [
-  ['ডিরেক্টরি', [['/#toolsSection','সব টুলস'],['/free-ai-tools-2026-bangladesh/','ফ্রি টুলস'],['/ai-tools-bdt-price-2026-bangladesh/','টাকায় দাম'],['/compare/','টুল তুলনা']]],
+  ['ডিরেক্টরি', [['/tools/','সব টুলস'],['/free-ai-tools-2026-bangladesh/','ফ্রি টুলস'],['/ai-tools-bdt-price-2026-bangladesh/','টাকায় দাম'],['/compare/','টুল তুলনা']]],
   ['রিসোর্স', [['/blog/','সব লেখা'],['/bangla-ai-guide/','বাংলা AI গাইড'],['/quiz/','টুল বাছাই কুইজ'],['/submit/','টুল সাবমিট']]],
   ['আমাদের কথা', [['/about/','আমাদের সম্পর্কে'],['/editorial-policy/','সম্পাদকীয় নীতি'],['/contact/','যোগাযোগ'],['/contact/#advertising','বিজ্ঞাপন']]]
 ];
@@ -49,11 +49,13 @@ function skipTarget(html) {
   return [html.slice(0,m.index) + m[0].replace(/>$/, ' id="gs-content">') + html.slice(m.index+m[0].length), 'gs-content'];
 }
 function design(html, route) {
-  // The homepage implements its own language switcher and remains the design reference.
+  // The homepage and directory share their own bilingual navigation.
   let out = html.replace(/<link\b(?=[^>]*(?:fonts\.googleapis\.com|fonts\.gstatic\.com))[^>]*>\s*/gi, '');
   if (!out.includes('href="/css/type.css"')) out = out.replace(/(<head\b[^>]*>)/i, '$1\n  <link rel="stylesheet" href="/css/type.css">');
   out = out.replace(/search-overlay\.js\?v=[^"'\s>]+/g,'search-overlay.js?v=editorial-1');
-  if (route === '/') return out;
+  out = out.replace(/href="\/#toolsSection"/g, 'href="/tools/"');
+  out = out.replace(/href="\/#categoryTabs"/g, 'href="/tools/#categoryTabs"');
+  if (route === '/' || route === '/tools/') return out;
   let target; [out,target] = skipTarget(out);
   const head = masthead(route,target);
   const previous = /<!-- GUIDE-HEADER:START -->[\s\S]*?<!-- GUIDE-HEADER:END -->/;

@@ -1,0 +1,137 @@
+/* Small-shop planning tool */
+.planner {
+  max-width: 1184px;
+  margin: 0 auto;
+  padding: clamp(24px, 5vw, 50px) clamp(16px, 4vw, 32px) 0;
+  font: 16px/1.65 "Hind Siliguri", system-ui, sans-serif;
+  color: #213b2c;
+}
+.planner *, .planner *::before, .planner *::after { box-sizing: border-box; }
+.planner [hidden] { display: none !important; }
+.planner :is(h1, h2, h3, p) { margin: 0; }
+.planner :is(a, button, input, select, textarea, summary):focus-visible {
+  outline: 3px solid #337557;
+  outline-offset: 3px;
+}
+.planner-intro {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  padding-bottom: 23px;
+  border-bottom: 1px solid #dbe5d7;
+  margin-bottom: 23px;
+}
+.planner-crumb { display: flex; gap: 8px; align-items: center; margin-bottom: 16px; color: #4d6353; font-size: 14px; }
+.planner a:not(.planner-button) { color: #1a6245; text-underline-offset: 3px; }
+.planner-kicker { color: #286449; font-size: 15px; font-weight: 600; }
+.planner h1 {
+  color: #193c2a;
+  font-size: clamp(36px, 6vw, 66px);
+  font-weight: 700;
+  letter-spacing: -.035em;
+  line-height: 1.2;
+  margin: 4px 0 9px;
+}
+.planner .planner-lead { max-width: 54ch; color: #496354; font-size: clamp(16px, 1.7vw, 19px); }
+.planner-example-link { display: inline-block; margin-top: 9px; font-weight: 600; }
+.planner-art { width: clamp(150px, 29vw, 300px); height: auto; border: 1px solid #dbe5d7; border-radius: 12px; }
+.planner-layout { display: grid; grid-template-columns: minmax(265px, .86fr) minmax(0, 1.36fr); align-items: start; gap: clamp(15px, 3vw, 28px); }
+.planner-form-panel, .planner-result { min-width: 0; padding: clamp(14px, 2.2vw, 24px); border: 1px solid #d6e3d6; border-radius: 12px; background: #fff; }
+.planner h2 { font-size: clamp(23px, 2.5vw, 29px); line-height: 1.35; overflow-wrap: anywhere; }
+.planner h3 { font-size: 20px; line-height: 1.35; }
+.planner-form-panel > p, .planner-result-header p, .planner-prompt-header p, .planner-guide p { margin-top: 5px; color: #4f6656; }
+.planner form { margin-top: 16px; }
+.planner fieldset { min-width: 0; margin: 0; padding: 0; border: 0; }
+.planner-field { margin-bottom: 13px; }
+.planner-field label { display: block; margin-bottom: 4px; font-weight: 600; }
+.planner-optional { margin: 3px 0 13px; }
+.planner-optional summary { min-height: 42px; padding: 7px 0; color: #19563c; cursor: pointer; }
+.planner-optional summary span { margin-left: 4px; color: #506655; font-size: 13px; }
+.planner :is(input:not([type="checkbox"]), select, textarea) {
+  width: 100%;
+  border: 1px solid #cadaca;
+  border-radius: 7px;
+  padding: 8px 10px;
+  color: #203a2a;
+  background: #fbfcf9;
+  font: inherit;
+}
+.planner :is(input:not([type="checkbox"]), select) { min-height: 44px; }
+.planner textarea { resize: vertical; }
+.planner-form-actions, .planner-result-header, .planner-prompt-header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 9px 14px; }
+.planner-result-header > div { min-width: 0; overflow-wrap: anywhere; }
+.planner-form-actions { justify-content: flex-start; }
+.planner-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 44px;
+  padding: 7px 13px;
+  border: 1px solid #bacfbb;
+  border-radius: 7px;
+  background: #fff;
+  color: #19563c;
+  font: 600 15px/1.4 "Hind Siliguri", system-ui, sans-serif;
+  text-decoration: none;
+  cursor: pointer;
+}
+.planner-button:hover { background: #eef5ec; }
+.planner-button--primary { border-color: #19563c; background: #19563c; color: #fff; }
+.planner-button--primary:hover { background: #12452e; }
+.planner-button--quiet { border-color: transparent; padding-inline: 7px; }
+.planner-button:disabled { opacity: .6; cursor: default; }
+.planner .planner-status { margin: 8px 0; color: #215d40; }
+.planner-status:empty { display: none; }
+.planner-result h2 { scroll-margin-top: 105px; }
+.planner-days {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin: 14px 0 20px;
+  padding: 0;
+  list-style: none;
+}
+.planner-day {
+  min-width: 0;
+  border: 1px solid #d6e4d3;
+  border-left: 3px solid #55916f;
+  border-radius: 8px;
+  padding: 8px 10px;
+  background: #eff5eb;
+  overflow-wrap: anywhere;
+}
+.planner-day--rest { border-left-color: #c5d5c1; background: #f9fbf7; }
+.planner-weekday { display: block; color: #476750; font-size: 13px; }
+.planner-day strong { display: block; line-height: 1.35; }
+.planner-day p { margin-top: 3px; color: #425b4b; font-size: 14px; line-height: 1.5; }
+.planner-photos ul { margin: 6px 0 18px; padding-left: 18px; color: #3f5849; }
+.planner-photos ul:has(input) { list-style: none; padding: 0; }
+.planner-photos label { display: flex; align-items: start; gap: 9px; min-height: 30px; padding: 3px 0; cursor: pointer; }
+.planner-photos input { flex: none; width: 18px; height: 18px; margin: 4px 0 0; accent-color: #206344; }
+.planner-prompt { padding-top: 14px; border-top: 1px solid #dbe5d7; }
+.planner-prompt details { margin-top: 10px; }
+.planner-prompt summary { padding: 5px 0; color: #19563c; cursor: pointer; }
+.planner-prompt textarea { margin-top: 6px; overflow-wrap: anywhere; }
+.planner-newsletter { margin-top: 14px; border-radius: 7px; padding: 9px 12px; background: #eaf2e6; }
+.planner-guide {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  margin: 25px 0 0;
+  padding: clamp(14px, 2.2vw, 22px);
+  border-radius: 10px;
+  background: #eaf2e6;
+}
+.planner .planner-no-script { margin-top: 10px; }
+@media(max-width: 760px) {
+  .planner-layout { grid-template-columns: minmax(0, 1fr); }
+  .planner-art { display: none; }
+}
+@media(max-width: 425px) {
+  .planner-days { grid-template-columns: minmax(0, 1fr); }
+  .planner-photos label { min-height: 42px; }
+}

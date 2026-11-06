@@ -196,4 +196,16 @@ test('Published guide uses the fresh analytics script and both real downloadable
     assert(fs.statSync(path.join(articleDir, file)).size > 0);
   }
 });
+test('Post planner events omit shop details and stop when analytics consent is revoked', () => {
+  const h = harness({ [KEY]: 'accepted' }); h.load();
+  const analytics = h.window.bagAnalytics;
+  const details = { product: 'private product', audience: 'private audience', facts: 'private facts' };
+  assert.equal(analytics.track('post_plan_create', details), true);
+  assert.deepEqual(Object.keys(h.calls().at(-1)[2]).sort(), ['page_location', 'page_referrer']);
+  assert.equal(analytics.track('post_plan_csv_click', { variant: 'private product' }), false);
+  assert.equal(analytics.track('post_plan_csv_click', { ...details, variant: 'custom' }), true);
+  assert.deepEqual(Object.keys(h.calls().at(-1)[2]).sort(), ['page_location', 'page_referrer', 'variant']);
+  h.window.bagConsent.setAnalytics('rejected');
+  assert.equal(analytics.track('post_plan_create'), false);
+});
 console.log(`\n${passed} consent and analytics checks passed.`);

@@ -61,10 +61,13 @@
     category_select: { category: ['all', 'writing', 'image', 'video', 'coding', 'marketing', 'productivity', 'free'] },
     newsletter_submit: { source: ['homepage'] },
     template_download_click: { resource_id: ['shop-calendar-csv', 'shop-prompts-txt'] },
+    post_plan_create: {},
+    post_plan_csv_click: { variant: ['example', 'custom'] },
   };
   function track(name, parameters = {}) {
     if (!accepted() || !loaded || !configured || !Object.hasOwn(schemas, name)) return false;
     if (name === 'template_download_click' && !schemas[name].resource_id.includes(parameters?.resource_id)) return false;
+    if (name === 'post_plan_csv_click' && !schemas[name].variant.includes(parameters?.variant)) return false;
     const payload = { page_location: safePageLocation(), page_referrer: safeReferrer() };
     for (const [key, rule] of Object.entries(schemas[name])) {
       const value = parameters[key];

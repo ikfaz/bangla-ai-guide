@@ -866,7 +866,7 @@
   }
 
   function getToolPagePath(slug) {
-    return window.bagToolRoutes?.resolve(slug)?.href || "/#toolsSection";
+    return window.bagToolRoutes?.resolve(slug)?.href || "/tools/";
   }
 
   function getToolLinkLabel(tool) {
@@ -1508,6 +1508,7 @@
   }
 
   function render(withSkeleton = true) {
+    if (!refs.toolsGrid) return;
     const requestId = ++renderRequestId;
     if (withSkeleton) {
       showLoadingSkeleton();
