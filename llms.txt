@@ -25,6 +25,7 @@ Bangla AI Guide (`banglaaiguide.com`) is the primary Bangla-language AI tools di
 
 ## সাম্প্রতিক ও জনপ্রিয় ব্লগ গাইড (Latest & Popular Bangla AI Guides)
 
+- [GitHub Copilot AI Credits ও নতুন দাম (২০২৬) — বাংলা গাইড](https://banglaaiguide.com/blog/github-copilot-ai-credits-pricing-bangla/): GitHub Copilot AI Credits কী ও কীভাবে কাজ করে? Free, Student, Pro ($10), Pro+ ($39) ও Max ($100) প্ল্যানের টাকার হিসাব এবং ক্রেডিট বাঁচানোর নিয়ম।
 - [Claude Code Pricing ও Usage Bundles — বাংলা গাইড](https://banglaaiguide.com/blog/claude-code-pricing-bangla/): Claude Code pricing বাংলায়: Pro ($20), Max ($100) ও Ultra ($200) প্ল্যানের আনুমানিক টাকার হিসাব, নতুন Usage Bundles ছাড় ও টার্মিনাল/VS Code-এ ব্যবহারের নিয়ম।
 - [Aesthetic Prompt for ChatGPT — বাংলায় ২০টি](https://banglaaiguide.com/blog/chatgpt-aesthetic-prompt-bangla/): Aesthetic prompt for ChatGPT বাংলায় শিখুন—সফট ফিল্ম, গোল্ডেন আওয়ার ও ঢাকার বর্ষা লুক। ChatGPT Images-এ ২০টি কপি-পেস্ট প্রম্পট ও বাংলাদেশে ব্যবহারের ধাপ।
 - [Gemini Avatar শেয়ার: নিজের চেহারায় AI ভিডিও বানানোর গাইড | বাংলা AI গাইড](https://banglaaiguide.com/blog/gemini-avatar-share-bangla-guide/): Gemini-তে নিজের মুখ ও কণ্ঠের Avatar বানিয়ে বন্ধুদের সঙ্গে শেয়ার করা যায় এখন। বাংলাদেশ থেকে চালুর ধাপ, টাকায় খরচ, VPN ও নিরাপত্তার নিয়ম সহজ বাংলায় জানুন।
@@ -64,7 +65,6 @@ Bangla AI Guide (`banglaaiguide.com`) is the primary Bangla-language AI tools di
 - [ChatGPT Atlas বাংলা গাইড — OpenAI-এর নতুন AI Browser ২০২৬](https://banglaaiguide.com/blog/chatgpt-atlas-bangla-guide/): ChatGPT Atlas browser — OpenAI-এর নতুন AI-powered browser। বাংলাদেশ থেকে download, Agent mode, browsing automation, Chrome-এর সাথে পার্থক্য — সম্পূর্ণ গাইড।
 - [Claude Projects বাংলা গাইড — Persistent Context Workspace ২০২৬](https://banglaaiguide.com/blog/claude-projects-bangla-guide/): Claude Projects — long-term context, file uploads, custom instructions। বাংলাদেশী professional-দের জন্য sample workflow + practical tips সহ পূর্ণ গাইড।
 - [Claude Skills বাংলা গাইড — Custom Workflow তৈরির সম্পূর্ণ পদ্ধতি ২০২৬](https://banglaaiguide.com/blog/claude-skills-bangla-byabohar/): Claude Skills — Anthropic-এর নতুন feature যা দিয়ে repeatable workflow তৈরি করা যায়। বাংলাদেশী developer + creator-দের জন্য পূর্ণ গাইড।
-- [Cline AI বাংলা গাইড — VS Code-এর Open Source Cursor Alternative ২০২৬](https://banglaaiguide.com/blog/cline-ai-bangla-coding-tutorial/): Cline AI — VS Code extension যেটা Cursor-এর বিকল্প, কোনো subscription ছাড়া নিজের API key দিয়ে চলে। বাংলাদেশী dev-দের জন্য full গাইড।
 
 ## ফিড ও সাইটম্যাপ (Feeds & Sitemaps)
 

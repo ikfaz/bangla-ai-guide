@@ -83,6 +83,7 @@ const overrides = {
   'notebooklm-bangla-guide': 'research',
   'claude-code-bangla-developer-guide': 'coding',
   'claude-code-pricing-bangla': 'code-pricing',
+  'github-copilot-ai-credits-pricing-bangla': 'code-pricing',
   'ai-diye-it-student-career-bangladesh': 'jobs',
   'gemini-avatar-share-bangla-guide': 'portrait',
   'ai-diye-website-banano-no-code-bangla-guide': 'coding',

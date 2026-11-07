@@ -3,6 +3,22 @@
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
+    <loc>https://banglaaiguide.com/blog/github-copilot-ai-credits-pricing-bangla/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <news:news>
+      <news:publication>
+        <news:name>বাংলা AI গাইড</news:name>
+        <news:language>bn</news:language>
+      </news:publication>
+      <news:publication_date>2026-11-07</news:publication_date>
+      <news:title>GitHub Copilot AI Credits ও নতুন দাম (২০২৬) — বাংলা গাইড</news:title>
+    </news:news>
+    <image:image>
+      <image:loc>https://banglaaiguide.com/blog/github-copilot-ai-credits-pricing-bangla/cover.png</image:loc>
+      <image:title>GitHub Copilot AI Credits ও নতুন দাম (২০২৬) — বাংলা গাইড</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://banglaaiguide.com/blog/claude-code-pricing-bangla/</loc>
     <lastmod>2026-11-06</lastmod>
     <news:news>
