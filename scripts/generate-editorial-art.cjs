@@ -119,6 +119,7 @@ const scenes={
   news:['news','note','fountain','sand'], marketing:['horn','bars','note','rose'],
   calendar:['calendar','pencil','list','sage'], writing:['note','book','fountain','sand'],
   'code-pricing':['code','card','coin','blue'],
+  'copilot-credits':['chip','code','calc','lavender'],
   coding:['code','chip','cursor','blue'], automation:['flow','list','gear','sage'],
   privacy:['shield','chip','check','blue'], mobile:['phone','chat','cursor','lavender'],
   comparison:['compare','note','check','lavender'], briefcase:['briefcase','list','coin','sand'],
