@@ -79,7 +79,14 @@ RewriteCond %{THE_REQUEST} \ /(.+)\.html[?\ ]
 RewriteRule ^ /%1/ [R=301,L]
 
 # ============================================================
-# 5. Trailing-slash normalisation (add slash to bare directory names)
+# 5. Block public access to internal build scripts, configs & dotfiles
+# ============================================================
+RewriteRule (^|/)\.(?!well-known/) - [R=404,L]
+RewriteRule ^(scripts|docs|node_modules)(/|$) - [R=404,L]
+RewriteRule ^(package(-lock)?\.json|server\.js|README\.md|DEBANGLISH-PROGRESS\.md|.*\.(cjs|mjs|sh|md))$ - [R=404,L]
+
+# ============================================================
+# 6. Trailing-slash normalisation (add slash to bare directory names)
 # ============================================================
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_URI} !(.*)/$
@@ -142,10 +149,12 @@ DirectoryIndex index.html
 # Security Headers
 # ============================================================
 <IfModule mod_headers.c>
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
   Header set X-Content-Type-Options "nosniff"
   Header set X-Frame-Options "SAMEORIGIN"
   Header set X-XSS-Protection "1; mode=block"
   Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header set Cross-Origin-Opener-Policy "same-origin-allow-popups"
   Header set Permissions-Policy "camera=(), microphone=(), geolocation=()"
 </IfModule>
 

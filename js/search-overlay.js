@@ -92,10 +92,23 @@
   }
 
   // ---------- search ----------
-  function highlight(text, q) {
-    if (!q) return text;
+  function safeUrl(u) {
+    var s = String(u || '').trim();
+    if (/^\/(?!\/)/.test(s) || /^https:\/\//i.test(s)) return s;
+    return '/';
+  }
+
+  function highlight(rawText, q) {
+    var text = String(rawText == null ? '' : rawText);
+    if (!q) return escapeHtml(text);
     var re = new RegExp('(' + q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
-    return text.replace(re, '<span class="bag-hl">$1</span>');
+    var parts = text.split(re);
+    var out = '';
+    for (var i = 0; i < parts.length; i++) {
+      if (i % 2 === 1) out += '<span class="bag-hl">' + escapeHtml(parts[i]) + '</span>';
+      else out += escapeHtml(parts[i]);
+    }
+    return out;
   }
 
   function search() {
@@ -199,19 +212,19 @@
   function render() {
     var q = state.query.trim();
     if (!state.results.length) {
-      refs.results.innerHTML = '<div class="bag-search-empty"><div class="big">🔍</div><div>' + (q ? '"' + q + '" এর জন্য কোনো ফলাফল নেই' : 'কী খুঁজছেন?') + '</div></div>';
+      refs.results.innerHTML = '<div class="bag-search-empty"><div class="big">🔍</div><div>' + (q ? '"' + escapeHtml(q) + '" এর জন্য কোনো ফলাফল নেই' : 'কী খুঁজছেন?') + '</div></div>';
       return;
     }
     refs.results.innerHTML = '';
     state.results.forEach(function (it, idx) {
       var a = el('a', {
-        class: 'bag-search-item kind-' + (it.k || 'page') + (idx === state.selected ? ' active' : ''),
-        href: it.u, role: 'option', 'data-idx': idx,
+        class: 'bag-search-item kind-' + escapeHtml(it.k || 'page') + (idx === state.selected ? ' active' : ''),
+        href: safeUrl(it.u), role: 'option', 'data-idx': idx,
       });
       a.innerHTML =
         '<span class="icon">' + (KIND_ICON[it.k] || '🔗') + '</span>' +
         '<span class="body">' +
-          '<div class="title">' + highlight(escapeHtml(it.t || ''), q) + '</div>' +
+          '<div class="title">' + highlight(it.t || '', q) + '</div>' +
           '<div class="meta">' +
             '<span class="badge">' + escapeHtml(KIND_LABEL[it.k] || 'পেজ') + '</span>' +
             (it.c ? '<span>' + escapeHtml(it.c) + '</span>' : '') +
@@ -236,7 +249,7 @@
   }
 
   function escapeHtml(s) {
-    return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
   }
   function truncate(s, n) { return s.length <= n ? s : s.slice(0, n - 1) + '…'; }
 
@@ -246,7 +259,7 @@
     else if (e.key === 'Enter') {
       e.preventDefault();
       var it = state.results[state.selected];
-      if (it) window.location.href = it.u;
+      if (it) window.location.href = safeUrl(it.u);
     } else if (e.key === 'Escape') { e.preventDefault(); close(); }
   }
 

@@ -1639,8 +1639,8 @@
               const catClass = getCategoryCssClass(tool.category);
               const catLabel = getCategoryDisplayLabel(tool.category);
               return `<li class="autocomplete-item" role="option" data-index="${i}">
-                <span class="autocomplete-name">${tool.name}</span>
-                <span class="autocomplete-badge autocomplete-badge--${catClass}">${catLabel}</span>
+                <span class="autocomplete-name">${escapeHtml(tool.name)}</span>
+                <span class="autocomplete-badge autocomplete-badge--${escapeHtml(catClass)}">${escapeHtml(catLabel)}</span>
               </li>`;
             })
             .join("");

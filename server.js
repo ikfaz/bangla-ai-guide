@@ -21,19 +21,37 @@ const mimeTypes = {
   '.webmanifest': 'application/manifest+json'
 };
 
-const server = http.createServer((req, res) => {
-  let filePath = req.url === '/' ? '/index.html' : req.url;
+const BLOCKED_RE = /^\/(\.|scripts\/|docs\/|node_modules\/|package(-lock)?\.json$|server\.js$|.*\.(cjs|mjs|sh|md)$)/i;
 
-  // Remove query strings
-  filePath = filePath.split('?')[0];
+const server = http.createServer((req, res) => {
+  let rawPath = (req.url || '/').split('?')[0];
+  try {
+    rawPath = decodeURIComponent(rawPath);
+  } catch {
+    res.writeHead(400, { 'Content-Type': 'text/plain' });
+    res.end('Bad Request');
+    return;
+  }
+  if (rawPath.includes('\0') || BLOCKED_RE.test(rawPath)) {
+    res.writeHead(404, { 'Content-Type': 'text/html' });
+    res.end('<h1>404 - File Not Found</h1>');
+    return;
+  }
+
+  let filePath = rawPath === '/' ? '/index.html' : rawPath;
 
   // If path ends with /, try to serve index.html from that directory
   if (filePath.endsWith('/')) {
     filePath = path.join(filePath, 'index.html');
   }
 
-  const fullPath = path.join(__dirname, filePath);
-  const ext = path.extname(filePath).toLowerCase();
+  const fullPath = path.resolve(__dirname, '.' + filePath);
+  if (fullPath !== __dirname && !fullPath.startsWith(__dirname + path.sep)) {
+    res.writeHead(403, { 'Content-Type': 'text/plain' });
+    res.end('Forbidden');
+    return;
+  }
+  const ext = path.extname(fullPath).toLowerCase();
   const contentType = mimeTypes[ext] || 'application/octet-stream';
 
   // First, try to read the file

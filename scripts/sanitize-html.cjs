@@ -23,6 +23,17 @@ function sanitize(buf) {
     changed = true;
   }
   let html = bytes.toString('utf8');
+  const nextHtml = html.replace(/<a\b([^>]*\btarget=["']_blank["'][^>]*)>/gi, (match, attrs) => {
+    if (/\brel\s*=/i.test(attrs)) {
+      if (/\bnoopener\b/i.test(attrs)) return match;
+      return `<a${attrs.replace(/\brel=(["'])([^"']*)\1/i, (_m, q, val) => `rel=${q}${val.trim()} noopener noreferrer${q}`)}>`;
+    }
+    return `<a${attrs} rel="noopener noreferrer">`;
+  });
+  if (nextHtml !== html) {
+    html = nextHtml;
+    changed = true;
+  }
   const closeAt = html.lastIndexOf('</html>');
   if (closeAt !== -1) {
     const end = closeAt + '</html>'.length;
