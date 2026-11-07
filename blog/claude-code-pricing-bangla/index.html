@@ -172,6 +172,48 @@ unset ANTHROPIC_API_KEY
 claude update</code></pre></div>
 <p>ক্লিন কোডিং ও টোকেন বাঁচানোর প্রম্পট:</p>
 <div class="gw-copy-block"><div class="gw-copy-head"><span>কপি করার লেখা</span><button class="gw-copy" type="button" data-guide-copy="guide-copy-2" hidden aria-label="এই লেখা কপি করুন"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 5V4a1 1 0 0 0-1-1H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h1"/></svg><span>কপি করুন</span></button></div><pre id="guide-copy-2" data-guide-source><code>Inspect only the relevant files for this bug first. Summarize the root cause in 3 bullet points in Bangla before editing any code, and run the existing unit test file to verify the fix.</code></pre></div>
+
+<figure class="av-compare">
+  <div class="av-compare-item av-compare-item--before">
+    <span class="av-compare-badge">আগে (ভুল সেটআপ ও অস্পষ্ট প্রম্পট)</span>
+    <svg viewBox="0 0 360 110" role="img" aria-label="API &#x995;&#x9c0; &#x99a;&#x9be;&#x9b2;&#x9c1; &#x993; &#x985;&#x9b8;&#x9cd;&#x9aa;&#x9b7;&#x9cd;&#x99f; &#x9aa;&#x9cd;&#x9b0;&#x9ae;&#x9cd;&#x9aa;&#x99f;&#x9c7; &#x9ac;&#x9be;&#x9a1;&#x9bc;&#x9a4;&#x9bf; &#x99f;&#x9cb;&#x995;&#x9c7;&#x9a8; &#x996;&#x9b0;&#x99a;">
+      <rect x="4" y="8" width="352" height="94" rx="10" fill="#fff1f2" stroke="#fda4af"/>
+      <text x="20" y="34" font-family="monospace" font-size="13" fill="#9f1239">&#x24; ANTHROPIC_API_KEY=sk-ant-... claude</text>
+      <text x="20" y="58" font-family="monospace" font-size="13" fill="#881337">&gt; &quot;Fix all bugs in this whole repository&quot;</text>
+      <text x="20" y="84" font-family="Hind Siliguri, sans-serif" font-size="14" font-weight="700" fill="#be123c">&#x9ab;&#x9b2;&#x9be;&#x9ab;&#x9b2;: &#x9b8;&#x9be;&#x9ac;&#x9b8;&#x9cd;&#x995;&#x9cd;&#x9b0;&#x9bf;&#x9aa;&#x9b6;&#x9a8; &#x9ac;&#x9be;&#x9a6; &#x9a6;&#x9bf;&#x9af;&#x9bc;&#x9c7; API &#x9ac;&#x9bf;&#x9b2; &#x995;&#x9be;&#x99f;&#x9c7; + &#x9b8;&#x9c7;&#x9b6;&#x9a8; &#x9a6;&#x9cd;&#x9b0;&#x9c1;&#x9a4; &#x9b6;&#x9c7;&#x9b7;</text>
+    </svg>
+    <p>পুরো রিপোজিটরি একসঙ্গে পড়তে বলায় অপ্রয়োজনীয় ফাইল স্ক্যান হয় এবং <code>ANTHROPIC_API_KEY</code> থাকায় আলাদা API ব্যালেন্স খরচ হয়।</p>
+  </div>
+  <div class="av-compare-item av-compare-item--after">
+    <span class="av-compare-badge">পরে (সঠিক সেটআপ ও নির্দিষ্ট প্রম্পট)</span>
+    <svg viewBox="0 0 360 110" role="img" aria-label="&#x9b8;&#x9be;&#x9ac;&#x9b8;&#x9cd;&#x995;&#x9cd;&#x9b0;&#x9bf;&#x9aa;&#x9b6;&#x9a8; &#x9b2;&#x997;&#x987;&#x9a8; &#x993; &#x9a8;&#x9bf;&#x9b0;&#x9cd;&#x9a6;&#x9bf;&#x9b7;&#x9cd;&#x99f; &#x9aa;&#x9cd;&#x9b0;&#x9ae;&#x9cd;&#x9aa;&#x99f;&#x9c7; &#x99f;&#x9cb;&#x995;&#x9c7;&#x9a8; &#x9b8;&#x9be;&#x9b6;&#x9cd;&#x9b0;&#x9af;&#x9bc;">
+      <rect x="4" y="8" width="352" height="94" rx="10" fill="#ecfdf5" stroke="#6ee7b7"/>
+      <text x="20" y="34" font-family="monospace" font-size="13" fill="#065f46">&#x24; unset ANTHROPIC_API_KEY &amp;&amp; claude</text>
+      <text x="20" y="58" font-family="monospace" font-size="13" fill="#064e3b">&gt; &quot;Inspect only src/auth.ts and run auth.test.ts&quot;</text>
+      <text x="20" y="84" font-family="Hind Siliguri, sans-serif" font-size="14" font-weight="700" fill="#15803d">&#x9ab;&#x9b2;&#x9be;&#x9ab;&#x9b2;: Pro/Max &#x9aa;&#x9cd;&#x9b2;&#x9cd;&#x9af;&#x9be;&#x9a8;&#x9c7;&#x9b0; &#x9ad;&#x9c7;&#x9a4;&#x9b0;&#x9c7;&#x987; &#x995;&#x9ae; &#x99f;&#x9cb;&#x995;&#x9c7;&#x9a8;&#x9c7; &#x9a8;&#x9bf;&#x996;&#x9c1;&#x981;&#x9a4; &#x9b8;&#x9ae;&#x9be;&#x9a7;&#x9be;&#x9a8;</text>
+    </svg>
+    <p>সাবস্ক্রিপশন লগইন ব্যবহার করায় অতিরিক্ত API চার্জ কাটে না এবং নির্দিষ্ট ফাইলের নাম বলায় ৫ ঘণ্টার সেশন বাজেট অনেক বেশি সময় থাকে।</p>
+  </div>
+  <figcaption>আগে বনাম পরে: টার্মিনাল সেটআপ ও প্রম্পটের পার্থক্যে খরচের তুলনা</figcaption>
+</figure>
+
+<figure class="av-flow">
+  <svg viewBox="0 0 760 130" role="img" aria-label="&#x9b8;&#x9be;&#x9ac;&#x9b8;&#x9cd;&#x995;&#x9cd;&#x9b0;&#x9bf;&#x9aa;&#x9b6;&#x9a8; &#x9b8;&#x9c7;&#x9b6;&#x9a8; &#x9a5;&#x9c7;&#x995;&#x9c7; Wrap-up allowance &#x98f;&#x9ac;&#x982; Usage Bundle &#x9ac;&#x9cd;&#x9af;&#x9ac;&#x9b9;&#x9be;&#x9b0;&#x9c7;&#x9b0; &#x9a7;&#x9be;&#x9b0;&#x9be;">
+    <rect x="12" y="24" width="210" height="78" rx="14" fill="#f0fdf4" stroke="#16a34a"/>
+    <text x="117" y="56" text-anchor="middle" font-family="Hind Siliguri, sans-serif" font-size="17" font-weight="700" fill="#14532d">&#x9e7;. &#x9eb; &#x998;&#x9a3;&#x9cd;&#x99f;&#x9be;&#x9b0; &#x9b8;&#x9c7;&#x9b6;&#x9a8;</text>
+    <text x="117" y="80" text-anchor="middle" font-family="Hind Siliguri, sans-serif" font-size="14" fill="#166534">Pro (&#x24;20) / Max (&#x24;100)</text>
+    <text x="242" y="68" font-size="26" fill="#16a34a">&#x2192;</text>
+    <rect x="272" y="24" width="215" height="78" rx="14" fill="#f0fdf4" stroke="#16a34a"/>
+    <text x="380" y="56" text-anchor="middle" font-family="Hind Siliguri, sans-serif" font-size="17" font-weight="700" fill="#14532d">&#x9e8;. Wrap-up Allowance</text>
+    <text x="380" y="80" text-anchor="middle" font-family="Hind Siliguri, sans-serif" font-size="14" fill="#166534">&#x99a;&#x9b2;&#x9ae;&#x9be;&#x9a8; &#x99f;&#x9be;&#x9b8;&#x9cd;&#x995; &#x9b6;&#x9c7;&#x9b7; &#x995;&#x9b0;&#x9be;&#x9b0; &#x9b8;&#x9c1;&#x9af;&#x9cb;&#x997;</text>
+    <text x="507" y="68" font-size="26" fill="#16a34a">&#x2192;</text>
+    <rect x="536" y="24" width="212" height="78" rx="14" fill="#f0fdf4" stroke="#16a34a"/>
+    <text x="642" y="56" text-anchor="middle" font-family="Hind Siliguri, sans-serif" font-size="17" font-weight="700" fill="#14532d">&#x9e9;. Usage Bundles</text>
+    <text x="642" y="80" text-anchor="middle" font-family="Hind Siliguri, sans-serif" font-size="14" fill="#166534">&#x9e7;&#x9e6;%&#x2013;&#x9e9;&#x9e6;% &#x99b;&#x9be;&#x9a1;&#x9bc;&#x9c7; &#x9ac;&#x9be;&#x9a1;&#x9bc;&#x9a4;&#x9bf; &#x995;&#x9be;&#x99c;</text>
+  </svg>
+  <figcaption>Claude Code-এ সেশন লিমিট শেষ হলে কীভাবে কাজ চালু থাকে</figcaption>
+</figure>
+
 <aside class="av-callout av-callout--tip">
   <p class="av-callout-label">টিপ</p>
   <p>কাজের মাঝখানে ৫ ঘণ্টার সেশন সীমা শেষ হয়ে গেলে Claude Code হঠাৎ কোড অর্ধেক রেখে থেমে যায় না—অফিসিয়াল <strong>wrap-up allowance</strong> ফিচারের কারণে চলমান ধাপটুকু শেষ করার সুযোগ পায় (Pro-তে সপ্তাহে ১ বার, Max-এ প্রতি সেশনে)। তখন স্ক্রিনে <em>“Usage limit reached... wrapping up”</em> লেখা দেখাবে।</p>

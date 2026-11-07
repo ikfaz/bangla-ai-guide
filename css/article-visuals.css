@@ -273,8 +273,76 @@
   font-size: 13px;
 }
 
+.av-compare {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin: 16px 0 24px;
+  padding: 14px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+}
+
+.av-compare-item {
+  position: relative;
+  margin: 0;
+  padding: 14px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+}
+
+.av-compare-item--before {
+  border-color: #fecaca;
+  background: #fffafa;
+}
+
+.av-compare-item--after {
+  border-color: #86efac;
+  background: #f0fdf4;
+}
+
+.av-compare-item img,
+.av-compare-item svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.av-compare-badge {
+  display: inline-block;
+  margin-bottom: 8px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+}
+
+.av-compare-item--before .av-compare-badge {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.av-compare-item--after .av-compare-badge {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.av-compare figcaption {
+  grid-column: 1 / -1;
+  margin-top: 2px;
+  color: #64748b;
+  font-size: 13px;
+  text-align: center;
+}
+
 @media (min-width: 720px) {
-  .av-facts {
+  .av-facts,
+  .av-compare {
     grid-template-columns: 1fr 1fr;
   }
 }

@@ -123,3 +123,22 @@ Inline SVG keeps the labels in Bangla and adds no extra request. Use `Hind Silig
   <figcaption>দুই ধাপের সংক্ষিপ্ত ধারা</figcaption>
 </figure>
 ```
+
+## Before / After comparison & prompt examples (`.av-compare`)
+
+When an article teaches image/photo editing, prompt engineering, or configuration changes, include an inline `.av-compare` Before/After visual block (using real before/after WebP/SVG visuals or side-by-side prompt/setup comparison cards) inside the relevant section to make the transformation immediately clear:
+
+```html
+<figure class="av-compare">
+  <div class="av-compare-item av-compare-item--before">
+    <span class="av-compare-badge">আগে (ভুল প্রম্পট / সেটআপ)</span>
+    <p>অস্পষ্ট প্রম্পট বা ভুল সেটিংসের ফলাফল।</p>
+  </div>
+  <div class="av-compare-item av-compare-item--after">
+    <span class="av-compare-badge">পরে (সঠিক প্রম্পট / সেটআপ)</span>
+    <p>স্পষ্ট প্রম্পট বা অপ্টিমাইজড সেটিংসের ফলাফল।</p>
+  </div>
+  <figcaption>আগে বনাম পরে: প্রম্পট ও সেটআপের পার্থক্য</figcaption>
+</figure>
+```
+
