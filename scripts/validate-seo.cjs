@@ -74,6 +74,7 @@ function faqQuestions(json) {
 
 function run() {
   const errors = [];
+  const recentHeroSources = new Map();
   let articles = 0;
   for (const article of listBlogArticles()) {
     const buf = fs.readFileSync(article.file);
@@ -164,6 +165,17 @@ function run() {
       const modified = String(node.dateModified || '').slice(0, 10);
       if (modified && !html.includes(`datetime="${modified}"`)) {
         errors.push(`${where}: visible date does not match dateModified ${modified}`);
+      }
+      const published = String(node.datePublished || '').slice(0, 10);
+      if (published >= '2026-11-06') {
+        const heroSrc = (html.match(/<figure class="article-hero">\s*<img[^>]*src="([^"]+)"/i) || [])[1];
+        if (!heroSrc) {
+          errors.push(`${where}: missing .article-hero img src`);
+        } else if (recentHeroSources.has(heroSrc)) {
+          errors.push(`${where}: reuses hero illustration ${heroSrc} (already used by ${recentHeroSources.get(heroSrc)}; create a dedicated scene in scripts/generate-editorial-art.cjs)`);
+        } else {
+          recentHeroSources.set(heroSrc, where);
+        }
       }
     }
   }
