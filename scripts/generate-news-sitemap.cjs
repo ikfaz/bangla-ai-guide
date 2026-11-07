@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Generate /news-sitemap.xml for Google News & Google Discover crawlers.
+// Generate /news-sitemap.xml with original publication dates for Google News.
 // Follows the official Google News Sitemap 0.9 specification:
 // https://developers.google.com/search/docs/crawling-indexing/sitemaps/news-sitemap
 //
@@ -14,7 +14,6 @@ const {
   ORG_NAME,
   REDIRECT_BLOG_SLUGS,
   isRedirectStub,
-  readArticleDates,
 } = require("./lib/site-policy.cjs");
 
 const NEWS_SITEMAP_PATH = path.join(ROOT, "news-sitemap.xml");
@@ -33,62 +32,63 @@ function escapeXml(s) {
     .replace(/'/g, "&apos;");
 }
 
-function cleanHeadline(html, fallback) {
-  const ldMatch = html.match(/"headline"\s*:\s*"([^"]+)"/i);
-  if (ldMatch && ldMatch[1]) {
-    return ldMatch[1].replace(/\\"/g, '"').trim();
-  }
-  const h1Match = html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);
-  if (h1Match && h1Match[1]) {
-    return h1Match[1].replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim();
-  }
-  const titleMatch = html.match(/<title>([^<]+)<\/title>/i);
-  if (titleMatch && titleMatch[1]) {
-    return titleMatch[1].trim();
-  }
-  return fallback;
+// News dates must be explicit original publication dates, never edit/git dates.
+// Date-only metadata stays date-only; UTC midnight is used only for age filtering.
+function parseDate(value) {
+  if (typeof value !== 'string') return null;
+  const raw = value.trim();
+  const match = raw.match(/^(\d{4}-\d{2}-\d{2})(?:T(?:[01]\d|2[0-3]):[0-5]\d(?::[0-5]\d(?:\.\d+)?)?(?:Z|[+-](?:[01]\d|2[0-3]):[0-5]\d))?$/);
+  if (!match) return null;
+  const day = Date.parse(match[1] + 'T00:00:00Z');
+  if (!Number.isFinite(day) || new Date(day).toISOString().slice(0, 10) !== match[1]) return null;
+  const ms = Date.parse(raw.length === 10 ? raw + 'T00:00:00Z' : raw);
+  return Number.isFinite(ms) ? { value: raw, ms } : null;
 }
 
-function collectNewsArticles() {
-  if (!fs.existsSync(BLOG)) return [];
-  const all = [];
-  for (const entry of fs.readdirSync(BLOG, { withFileTypes: true })) {
-    if (!entry.isDirectory()) continue;
-    if (hasNonAscii(entry.name)) continue;
-    if (REDIRECT_BLOG_SLUGS.has(entry.name)) continue;
-    const indexPath = path.join(BLOG, entry.name, "index.html");
+function articleMetadata(html) {
+  for (const script of html.matchAll(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi)) {
+    let data;
+    try { data = JSON.parse(script[1]); } catch { continue; }
+    const nodes = Array.isArray(data) ? [...data] : [data];
+    while (nodes.length) {
+      const node = nodes.shift();
+      if (!node || typeof node !== 'object') continue;
+      if (Array.isArray(node['@graph'])) nodes.push(...node['@graph']);
+      const types = [].concat(node['@type'] || []);
+      if (types.some(type => ['Article', 'NewsArticle', 'BlogPosting'].includes(type))) return node;
+    }
+  }
+  return null;
+}
+
+function collectNewsArticles({ now = new Date(), blogDir = BLOG } = {}) {
+  const nowMs = new Date(now).getTime();
+  if (!Number.isFinite(nowMs)) throw new Error('Invalid news sitemap reference time');
+  if (!fs.existsSync(blogDir)) return [];
+  const recent = [];
+  for (const entry of fs.readdirSync(blogDir, { withFileTypes: true })) {
+    if (!entry.isDirectory() || hasNonAscii(entry.name) || REDIRECT_BLOG_SLUGS.has(entry.name)) continue;
+    const indexPath = path.join(blogDir, entry.name, 'index.html');
     if (!fs.existsSync(indexPath)) continue;
-    const html = fs.readFileSync(indexPath, "utf8");
+    const html = fs.readFileSync(indexPath, 'utf8');
     if (isRedirectStub(html)) continue;
-
-    const dates = readArticleDates(html, indexPath);
-    const headline = cleanHeadline(html, entry.name);
-    const freshDate = dates.modified >= dates.published ? dates.modified : dates.published;
-    const hasCover = fs.existsSync(path.join(BLOG, entry.name, "cover.png"));
-
-    all.push({
+    const metadata = articleMetadata(html);
+    const published = parseDate(metadata?.datePublished);
+    if (!published || published.ms > nowMs || nowMs - published.ms >= TWO_DAYS_MS) continue;
+    // Fail closed on missing original title/date rather than inventing news metadata.
+    if (typeof metadata.headline !== 'string' || !metadata.headline.trim()) continue;
+    const modified = parseDate(metadata.dateModified);
+    recent.push({
       slug: entry.name,
-      headline,
-      published: dates.published,
-      modified: dates.modified,
-      freshDate,
-      freshMs: Date.parse(`${freshDate}T00:00:00Z`) || 0,
-      hasCover,
+      headline: metadata.headline.trim(),
+      published: published.value,
+      publishedMs: published.ms,
+      modified: modified && modified.ms >= published.ms && modified.ms <= nowMs ? modified.value : published.value,
+      hasCover: fs.existsSync(path.join(blogDir, entry.name, 'cover.png')),
     });
   }
-
-  all.sort((a, b) => {
-    if (b.freshDate !== a.freshDate) return b.freshDate.localeCompare(a.freshDate);
-    if (b.published !== a.published) return b.published.localeCompare(a.published);
-    return a.slug.localeCompare(b.slug);
-  });
-
-  if (!all.length) return [];
-
-  // Reference anchor is the newest article date in the repository so builds are deterministic
-  const anchorMs = all[0].freshMs;
-  const recent = all.filter((item) => anchorMs - item.freshMs <= TWO_DAYS_MS);
-  return recent.length >= 1 ? recent.slice(0, 1000) : all.slice(0, 15);
+  recent.sort((a, b) => b.publishedMs - a.publishedMs || a.slug.localeCompare(b.slug));
+  return recent.slice(0, 1000);
 }
 
 function buildNewsSitemap(articles) {
@@ -101,7 +101,6 @@ function buildNewsSitemap(articles) {
 
   for (const article of articles) {
     const loc = `${SITE}/blog/${article.slug}/`;
-    const pubIso = `${article.freshDate}T09:00:00+06:00`;
     lines.push("  <url>");
     lines.push(`    <loc>${escapeXml(loc)}</loc>`);
     lines.push(`    <lastmod>${escapeXml(article.modified)}</lastmod>`);
@@ -110,7 +109,7 @@ function buildNewsSitemap(articles) {
     lines.push(`        <news:name>${escapeXml(ORG_NAME)}</news:name>`);
     lines.push("        <news:language>bn</news:language>");
     lines.push("      </news:publication>");
-    lines.push(`      <news:publication_date>${escapeXml(pubIso)}</news:publication_date>`);
+    lines.push(`      <news:publication_date>${escapeXml(article.published)}</news:publication_date>`);
     lines.push(`      <news:title>${escapeXml(article.headline)}</news:title>`);
     lines.push("    </news:news>");
     if (article.hasCover) {
